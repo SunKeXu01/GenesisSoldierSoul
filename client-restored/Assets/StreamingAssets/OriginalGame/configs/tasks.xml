@@ -1,0 +1,750 @@
+<taskconfig>
+ <!-- 战斗日常
+		id:任务id ms:任务描述(中文的解释放在语言包中,格式为t_id_ms) 
+		taskType:任务类别(1表示引导任务 2表示战斗日常，3表示生活日常，4表示活动日常 5在线时长任务 6玩家军阶目标 7天梯积分任务 8天梯日常) 
+		targetType:目标类别(1表示击杀人数 2表示完成局数 3表示胜利局数 4表示连杀数 5爆头数 6雷杀数 7刀或服务器杀数 8单局游戏击杀数 9战斗时间 10在线时间 11玩家等级 12天梯积分 13拆除C4 14安装C4 15引爆C4 16单局拆除C4 17单局安装C4 18单局引爆C4 19下载登陆器并重新登录) 
+		modeName:模式名称(用模式的英文名称 见:roomConfig.xml) 
+		mapName:地图名称(用地图的英文名称 见:roomConfig.xml) 
+		overNum:完成数量 
+		reward:奖励 id1:num1 id2:num2格式 -1战斗勋章 -2生活勋章 -3金币 -4经验 -5积分 其他各种道具ID
+		9990GS 9991G币 9992积分 9993天梯积分 9994经验 9995成就点数 9996勋章 9997通关卡
+		exp gold rmb medal勋章 score
+		precon="id1 id2 id3"任务触发的前置条件(可多个任务)
+		battleType:游戏形式(0表示全部形式 1表示天梯 2表示自由 3表示生化)
+		-->
+	<task>
+        <property  id="3101" precon="1303" battleType="1" taskType="8" targetType="2" modeName="leizhan" mapName="" overNum="3" reward="9996:50"/>
+    </task>	
+	<task>
+        <property  id="3102" precon="1303" battleType="1" taskType="8" targetType="1" modeName="leizhan" mapName="" overNum="30" reward="9996:50"/>
+    </task>		
+	<task>
+        <property  id="3103" precon="1303" battleType="1" taskType="8" targetType="8" modeName="leizhan" mapName="" overNum="10" reward="9996:50"/>
+    </task>		
+	<task>
+        <property  id="3104" precon="1303" battleType="1" taskType="8" targetType="3" modeName="leizhan" mapName="" overNum="2" reward="9996:50"/>
+    </task>		
+		
+	
+
+	<task>
+        <property  id="3105" precon="1305" battleType="1" taskType="8" targetType="2" modeName="baopo" mapName="" overNum="3" reward="9996:50"/>
+    </task>	
+	<task>
+        <property  id="3106" precon="1305" battleType="1" taskType="8" targetType="1" modeName="baopo" mapName="" overNum="20" reward="9996:50"/>
+    </task>		
+	<task>
+        <property  id="3107" precon="1305" battleType="1" taskType="8" targetType="8" modeName="baopo" mapName="" overNum="5" reward="9996:50"/>
+    </task>		
+	<task>
+        <property  id="3108" precon="1305" battleType="1" taskType="8" targetType="3" modeName="baopo" mapName="" overNum="2" reward="9996:50"/>
+    </task>	
+
+
+    <task>
+        <property  id="3111" precon="1307" battleType="1" taskType="8" targetType="2" modeName="juzhan" mapName="" overNum="3" reward="9996:50"/>
+    </task>	
+	<task>
+        <property  id="3112" precon="1307" battleType="1" taskType="8" targetType="1" modeName="juzhan" mapName="" overNum="30" reward="9996:50"/>
+    </task>		
+	<task>
+        <property  id="3113" precon="1307" battleType="1" taskType="8" targetType="8" modeName="juzhan" mapName="" overNum="10" reward="9996:50"/>
+    </task>		
+	<task>
+        <property  id="3114" precon="1307" battleType="1" taskType="8" targetType="3" modeName="juzhan" mapName="" overNum="2" reward="9996:50"/>
+    </task>	
+
+		
+	<task>
+        <property  id="3115" precon="1308" battleType="1" taskType="8" targetType="2" modeName="shouqiangzhan" mapName="" overNum="3" reward="9996:50"/>
+    </task>	
+	<task>
+        <property  id="3116" precon="1308" battleType="1" taskType="8" targetType="1" modeName="shouqiangzhan" mapName="" overNum="30" reward="9996:50"/>
+    </task>		
+	<task>
+        <property  id="3117" precon="1308" battleType="1" taskType="8" targetType="8" modeName="shouqiangzhan" mapName="" overNum="10" reward="9996:50"/>
+    </task>		
+	<task>
+        <property  id="3118" precon="1308" battleType="1" taskType="8" targetType="3" modeName="shouqiangzhan" mapName="" overNum="2" reward="9996:50"/>
+    </task>
+		
+	
+    <task>
+        <property  id="3119" precon="1309" battleType="1" taskType="8" targetType="2" modeName="daozhan" mapName="" overNum="3" reward="9996:50"/>
+    </task>	
+	<task>
+        <property  id="3120" precon="1309" battleType="1" taskType="8" targetType="1" modeName="daozhan" mapName="" overNum="30" reward="9996:50"/>
+    </task>		
+	<task>
+        <property  id="3121" precon="1309" battleType="1" taskType="8" targetType="8" modeName="daozhan" mapName="" overNum="10" reward="9996:50"/>
+    </task>		
+	<task>
+        <property  id="3122" precon="1309" battleType="1" taskType="8" targetType="3" modeName="daozhan" mapName="" overNum="2" reward="9996:50"/>
+    </task>
+	
+		
+    <task>
+        <property  id="2001" precon="" battleType="0" taskType="2" targetType="1" modeName="duikang" mapName="" overNum="10" reward="9996:50"/>
+    </task>
+    <task>
+        <property  id="2002" precon="" battleType="0" taskType="2" targetType="1" modeName="duikang" mapName="" overNum="20" reward="9996:50"/>
+    </task>
+	<task>
+        <property  id="2003" precon="" battleType="0" taskType="2" targetType="1" modeName="" mapName="polartown" overNum="10" reward="9996:50"/>
+
+    </task>
+	<task>
+        <property  id="2004" precon="" battleType="0" taskType="2" targetType="1" modeName="" mapName="gongdi" overNum="10" reward="9996:50"/>
+
+    </task>
+	<task>
+        <property  id="2005" precon="" battleType="0" taskType="2" targetType="1" modeName="" mapName="gongdi" overNum="20" reward="9996:50"/>
+        
+    </task>
+    <task>
+        <property  id="2006" precon="" battleType="0" taskType="2" targetType="1" modeName="duikang" mapName="" overNum="30" reward="9996:50"/>
+    </task>
+    <task>
+        <property  id="2007" precon="" battleType="0" taskType="2" targetType="1" modeName="daozhan" mapName="" overNum="10" reward="9996:50"/>
+    </task>
+    <task>
+        <property  id="2008" precon="" battleType="0" taskType="2" targetType="1" modeName="daozhan" mapName="" overNum="20" reward="9996:50"/>
+    </task>
+    <task>
+        <property  id="2009" precon="" battleType="0" taskType="2" targetType="1" modeName="daozhan" mapName="" overNum="30" reward="9996:50"/>
+    </task>
+    <task>
+        <property  id="2010" precon="" battleType="0" taskType="2" targetType="1" modeName="baopo" mapName="" overNum="5" reward="9996:50"/>
+    </task>
+    <task>
+        <property  id="2011" precon="" battleType="0" taskType="2" targetType="1" modeName="baopo" mapName="" overNum="10" reward="9996:50"/>
+    </task>
+    <task>
+        <property  id="2012" precon="" battleType="0" taskType="2" targetType="1" modeName="baopo" mapName="" overNum="15" reward="9996:50"/>
+    </task>
+	<task>
+        <property  id="2013" precon="" battleType="0" taskType="2" targetType="1" modeName="juzhan" mapName="" overNum="10" reward="9996:50"/>
+    </task>
+	<task>
+        <property  id="2014" precon="" battleType="0" taskType="2" targetType="1" modeName="juzhan" mapName="" overNum="20" reward="9996:50"/>
+    </task>
+	<task>
+        <property  id="2015" precon="" battleType="0" taskType="2" targetType="1" modeName="juzhan" mapName="" overNum="30" reward="9996:50"/>
+    </task>
+	<task>
+        <property  id="2016" precon="" battleType="0" taskType="2" targetType="1" modeName="leizhan" mapName="" overNum="10" reward="9996:50"/>
+    </task>
+	<task>
+        <property  id="2017" precon="" battleType="0" taskType="2" targetType="1" modeName="leizhan" mapName="" overNum="30" reward="9996:50"/>
+    </task>
+	<task>
+        <property  id="2018" precon="" battleType="0" taskType="2" targetType="1" modeName="leizhan" mapName="" overNum="20" reward="9996:50"/>
+    </task>
+	<task>
+        <property  id="2101" precon="" battleType="0" taskType="2" targetType="2" modeName="duikang" mapName="" overNum="2" reward="9996:50"/>
+     
+    </task>
+	<task>
+        <property  id="2102" precon="" battleType="0" taskType="2" targetType="2" modeName="duikang" mapName="" overNum="4" reward="9996:50"/>
+       
+    </task>
+	<task>
+        <property  id="2103" precon="" battleType="0" taskType="2" targetType="2" modeName="" mapName="polartown" overNum="2" reward="9996:50"/>
+        
+    </task>
+	<task>
+        <property  id="2104" precon="" battleType="0" taskType="2" targetType="2" modeName="duikang" mapName="polartown" overNum="2" reward="9996:50"/>
+       
+    </task>
+	<task>
+        <property  id="2105" precon="" battleType="0" taskType="2" targetType="2" modeName="" mapName="gongdi" overNum="4" reward="9996:50"/>
+      
+    </task>
+    <task>
+        <property  id="2106" precon="" battleType="0" taskType="2" targetType="2" modeName="duikang" mapName="" overNum="6" reward="9996:50"/>
+     
+    </task>
+    <task>
+        <property  id="2107" precon="" battleType="0" taskType="2" targetType="2" modeName="daozhan" mapName="" overNum="2" reward="9996:50"/>
+     
+    </task>
+    <task>
+        <property  id="2108" precon="" battleType="0" taskType="2" targetType="2" modeName="daozhan" mapName="" overNum="4" reward="9996:50"/>
+     
+    </task>
+    <task>
+        <property  id="2109" precon="" battleType="0" taskType="2" targetType="2" modeName="daozhan" mapName="" overNum="6" reward="9996:50"/>
+     
+    </task>
+    <task>
+        <property  id="2110" precon="" battleType="0" taskType="2" targetType="2" modeName="baopo" mapName="" overNum="2" reward="9996:50"/>
+     
+    </task>
+    <task>
+        <property  id="2111" precon="" battleType="0" taskType="2" targetType="2" modeName="baopo" mapName="" overNum="4" reward="9996:50"/>
+     
+    </task>
+    <task>
+        <property  id="2112" precon="" battleType="0" taskType="2" targetType="2" modeName="baopo" mapName="" overNum="6" reward="9996:50"/>
+     
+    </task>
+	<task>
+        <property  id="2113" precon="" battleType="0" taskType="2" targetType="2" modeName="juzhan" mapName="" overNum="2" reward="9996:50"/>
+     
+    </task>
+	<task>
+        <property  id="2114" precon="" battleType="0" taskType="2" targetType="2" modeName="juzhan" mapName="" overNum="4" reward="9996:50"/>
+     
+    </task>
+	<task>
+        <property  id="2115" precon="" battleType="0" taskType="2" targetType="2" modeName="juzhan" mapName="" overNum="6" reward="9996:50"/>
+     
+    </task>
+	<task>
+        <property  id="2116" precon="" battleType="0" taskType="2" targetType="2" modeName="leizhan" mapName="" overNum="2" reward="9996:50"/>
+     
+    </task>
+	<task>
+        <property  id="2117" precon="" battleType="0" taskType="2" targetType="2" modeName="leizhan" mapName="" overNum="4" reward="9996:50"/>
+     
+    </task>
+	<task>
+        <property  id="2118" precon="" battleType="0" taskType="2" targetType="2" modeName="leizhan" mapName="" overNum="6" reward="9996:50"/>
+     
+    </task>
+	<task>
+        <property  id="2201" precon="" battleType="0" taskType="2" targetType="3" modeName="duikang" mapName="" overNum="1" reward="9996:50"/>
+        
+    </task>
+	<task>
+        <property  id="2202" precon="" battleType="0" taskType="2" targetType="3" modeName="duikang" mapName="" overNum="2" reward="9996:50"/>
+        
+    </task>
+	<task>
+        <property  id="2203" precon="" battleType="0" taskType="2" targetType="3" modeName="" mapName="polartown" overNum="3" reward="9996:50"/>
+        
+    </task>
+	<task>
+        <property  id="2204" precon="" battleType="0" taskType="2" targetType="3" modeName="duikang" mapName="polartown" overNum="3" reward="9996:50"/>
+        
+    </task>
+	<task>
+        <property  id="2205" precon="" battleType="0" taskType="2" targetType="3" modeName="" mapName="gongdi" overNum="3" reward="9996:50"/>    
+    </task>
+    <task>
+        <property  id="2206" precon="" battleType="0" taskType="2" targetType="3" modeName="duikang" mapName="" overNum="3" reward="9996:50"/>        
+    </task>
+    <task>
+        <property  id="2207" precon="" battleType="0" taskType="2" targetType="3" modeName="daozhan" mapName="" overNum="1" reward="9996:50"/>       
+    </task>
+    <task>
+        <property  id="2208" precon="" battleType="0" taskType="2" targetType="3" modeName="daozhan" mapName="" overNum="2" reward="9996:50"/>        
+    </task>
+    <task>
+        <property  id="2209" precon="" battleType="0" taskType="2" targetType="3" modeName="daozhan" mapName="" overNum="3" reward="9996:50"/>        
+    </task>
+    <task>
+        <property  id="2210" precon="" battleType="0" taskType="2" targetType="3" modeName="baopo" mapName="" overNum="1" reward="9996:50"/>       
+    </task>
+    <task>
+        <property  id="2211" precon="" battleType="0" taskType="2" targetType="3" modeName="baopo" mapName="" overNum="2" reward="9996:50"/>        
+    </task>
+    <task>
+        <property  id="2212" precon="" battleType="0" taskType="2" targetType="3" modeName="baopo" mapName="" overNum="3" reward="9996:50"/>        
+    </task>
+	<task>
+        <property  id="2213" precon="" battleType="0" taskType="2" targetType="3" modeName="juzhan" mapName="" overNum="1" reward="9996:50"/>        
+    </task>
+	<task>
+        <property  id="2214" precon="" battleType="0" taskType="2" targetType="3" modeName="juzhan" mapName="" overNum="2" reward="9996:50"/>        
+    </task>
+	<task>
+        <property  id="2215" precon="" battleType="0" taskType="2" targetType="3" modeName="juzhan" mapName="" overNum="3" reward="9996:50"/>        
+    </task>
+	<task>
+        <property  id="2216" precon="" battleType="0" taskType="2" targetType="3" modeName="leizhan" mapName="" overNum="1" reward="9996:50"/>        
+    </task>
+	<task>
+        <property  id="2217" precon="" battleType="0" taskType="2" targetType="3" modeName="leizhan" mapName="" overNum="2" reward="9996:50"/>        
+    </task>
+	<task>
+        <property  id="2218" precon="" battleType="0" taskType="2" targetType="3" modeName="leizhan" mapName="" overNum="3" reward="9996:50"/>        
+    </task>
+	<task>
+        <property  id="2301" precon="" battleType="0" taskType="2" targetType="4" modeName="duikang" mapName="" overNum="3" reward="9996:50"/>       
+    </task>
+	<task>
+        <property  id="2302" precon="" battleType="0" taskType="2" targetType="4" modeName="duikang" mapName="" overNum="4" reward="9996:50"/>       
+    </task>
+	<task>
+        <property  id="2303" precon="" battleType="0" taskType="2" targetType="4" modeName="" mapName="polartown" overNum="4" reward="9996:50"/>      
+    </task>
+	<task>
+        <property  id="2304" precon="" battleType="0" taskType="2" targetType="4" modeName="duikang" mapName="gongdi" overNum="5" reward="9996:50"/>      
+    </task>
+    <task>
+        <property  id="2305" precon="" battleType="0" taskType="2" targetType="4" modeName="" mapName="gongdi" overNum="6" reward="9996:50"/>      
+    </task>
+    <task>
+        <property  id="2306" precon="" battleType="0" taskType="2" targetType="4" modeName="duikang" mapName="" overNum="5" reward="9996:50"/>       
+    </task>
+    <task>
+        <property  id="2307" precon="" battleType="0" taskType="2" targetType="4" modeName="daozhan" mapName="" overNum="2" reward="9996:50"/>       
+    </task>
+    <task>
+        <property  id="2308" precon="" battleType="0" taskType="2" targetType="4" modeName="daozhan" mapName="" overNum="3" reward="9996:50"/>       
+    </task>
+    <task>
+        <property  id="2309" precon="" battleType="0" taskType="2" targetType="4" modeName="daozhan" mapName="" overNum="4" reward="9996:50"/>       
+    </task>
+    <task>
+        <property  id="2310" precon="" battleType="0" taskType="2" targetType="4" modeName="baopo" mapName="" overNum="2" reward="9996:50"/>       
+    </task>
+    <task>
+        <property  id="2311" precon="" battleType="0" taskType="2" targetType="4" modeName="baopo" mapName="" overNum="3" reward="9996:50"/>       
+    </task>
+    <task>
+        <property  id="2312" precon="" battleType="0" taskType="2" targetType="4" modeName="baopo" mapName="" overNum="4" reward="9996:50"/>       
+    </task>
+	<task>
+        <property  id="2313" precon="" battleType="0" taskType="2" targetType="4" modeName="juzhan" mapName="" overNum="2" reward="9996:50"/>       
+    </task>
+	<task>
+        <property  id="2314" precon="" battleType="0" taskType="2" targetType="4" modeName="juzhan" mapName="" overNum="3" reward="9996:50"/>       
+    </task>
+	<task>
+        <property  id="2315" precon="" battleType="0" taskType="2" targetType="4" modeName="juzhan" mapName="" overNum="4" reward="9996:50"/>       
+    </task>
+	<task>
+        <property  id="2316" precon="" battleType="0" taskType="2" targetType="4" modeName="leizhan" mapName="" overNum="2" reward="9996:50"/>       
+    </task>
+	<task>
+        <property  id="2317" precon="" battleType="0" taskType="2" targetType="4" modeName="leizhan" mapName="" overNum="3" reward="9996:50"/>       
+    </task>
+	<task>
+        <property  id="2318" precon="" battleType="0" taskType="2" targetType="4" modeName="leizhan" mapName="" overNum="4" reward="9996:50"/>       
+    </task>
+	<task>
+        <property  id="2401" precon="" battleType="0" taskType="2" targetType="5" modeName="duikang" mapName="" overNum="5" reward="9996:50"/>      
+    </task>
+	<task>
+        <property  id="2402" precon="" battleType="0" taskType="2" targetType="5" modeName="duikang" mapName="" overNum="10" reward="9996:50"/>       
+    </task>
+	<task>
+        <property  id="2403" precon="" battleType="0" taskType="2" targetType="5" modeName="" mapName="polartown" overNum="10" reward="9996:50"/>      
+    </task>
+	<task>
+        <property  id="2404" precon="" battleType="0" taskType="2" targetType="5" modeName="duikang" mapName="polartown" overNum="10" reward="9996:50"/>       
+    </task>
+    <task>
+        <property  id="2405" precon="" battleType="0" taskType="2" targetType="5" modeName="" mapName="gongdi" overNum="15" reward="9996:50"/>     
+    </task>
+    <task>
+        <property  id="2406" precon="" battleType="0" taskType="2" targetType="5" modeName="duikang" mapName="" overNum="15" reward="9996:50"/>      
+    </task>
+    <task>
+        <property  id="2407" precon="" battleType="0" taskType="2" targetType="5" modeName="daozhan" mapName="" overNum="5" reward="9996:50"/>      
+    </task>
+    <task>
+        <property  id="2408" precon="" battleType="0" taskType="2" targetType="5" modeName="daozhan" mapName="" overNum="10" reward="9996:50"/>      
+    </task>
+    <task>
+        <property  id="2409" precon="" battleType="0" taskType="2" targetType="5" modeName="daozhan" mapName="" overNum="15" reward="9996:50"/>      
+    </task>
+    <task>
+        <property  id="2410" precon="" battleType="0" taskType="2" targetType="5" modeName="baopo" mapName="" overNum="5" reward="9996:50"/>      
+    </task>
+    <task>
+        <property  id="2411" precon="" battleType="0" taskType="2" targetType="5" modeName="baopo" mapName="" overNum="10" reward="9996:50"/>      
+    </task>
+    <task>
+        <property  id="2412" precon="" battleType="0" taskType="2" targetType="5" modeName="baopo" mapName="" overNum="15" reward="9996:50"/>      
+    </task>
+	<task>
+        <property  id="2413" precon="" battleType="0" taskType="2" targetType="5" modeName="juzhan" mapName="" overNum="5" reward="9996:50"/>      
+    </task>
+	<task>
+        <property  id="2414" precon="" battleType="0" taskType="2" targetType="5" modeName="juzhan" mapName="" overNum="10" reward="9996:50"/>      
+    </task>
+	<task>
+        <property  id="2415" precon="" battleType="0" taskType="2" targetType="5" modeName="juzhan" mapName="" overNum="15" reward="9996:50"/>      
+    </task>
+	<task>
+        <property  id="2501" precon="" battleType="0" taskType="2" targetType="6" modeName="duikang" mapName="" overNum="3" reward="9996:50"/>       
+    </task>
+	<task>
+        <property  id="2502" precon="" battleType="0" taskType="2" targetType="6" modeName="duikang" mapName="" overNum="4" reward="9996:50"/>       
+    </task>
+	<task>
+        <property  id="2503" precon="" battleType="0" taskType="2" targetType="6" modeName="" mapName="polartown" overNum="5" reward="9996:50"/>      
+    </task>
+	<task>
+        <property  id="2504" precon="" battleType="0" taskType="2" targetType="6" modeName="duikang" mapName="gongdi" overNum="5" reward="9996:50"/>      
+    </task>
+    <task>
+        <property  id="2505" precon="" battleType="0" taskType="2" targetType="6" modeName="" mapName="gongdi" overNum="5" reward="9996:50"/>     
+    </task>
+    <task>
+        <property  id="2506" precon="" battleType="0" taskType="2" targetType="6" modeName="duikang" mapName="" overNum="5" reward="9996:50"/>       
+    </task>
+	<task>
+        <property  id="2507" precon="" battleType="0" taskType="2" targetType="6" modeName="baopo" mapName="" overNum="1" reward="9996:50"/>       
+    </task>
+    <task>
+        <property  id="2508" precon="" battleType="0" taskType="2" targetType="6" modeName="baopo" mapName="" overNum="2" reward="9996:50"/>       
+    </task>
+    <task>
+        <property  id="2509" precon="" battleType="0" taskType="2" targetType="6" modeName="baopo" mapName="" overNum="3" reward="9996:50"/>       
+    </task>
+    <task>
+        <property  id="2510" precon="" battleType="0" taskType="2" targetType="6" modeName="baopo" mapName="" overNum="4" reward="9996:50"/>       
+    </task>
+    <task>
+        <property  id="2511" precon="" battleType="0" taskType="2" targetType="6" modeName="baopo" mapName="" overNum="5" reward="9996:50"/>       
+    </task>
+    <task>
+        <property  id="2512" precon="" battleType="0" taskType="2" targetType="6" modeName="baopo" mapName="" overNum="6" reward="9996:50"/>       
+    </task>    
+	<task>
+        <property  id="2601" precon="" battleType="0" taskType="2" targetType="7" modeName="duikang" mapName="" overNum="5" reward="9996:50"/>      
+    </task>
+	<task>
+        <property  id="2602" precon="" battleType="0" taskType="2" targetType="7" modeName="duikang" mapName="" overNum="10" reward="9996:50"/>       
+    </task>
+	<task>
+        <property  id="2603" precon="" battleType="0" taskType="2" targetType="7" modeName="" mapName="polartown" overNum="10" reward="9996:50"/>      
+    </task>
+	<task>
+        <property  id="2604" precon="" battleType="0" taskType="2" targetType="7" modeName="duikang" mapName="polartown" overNum="10" reward="9996:50"/>       
+    </task>
+    <task>
+        <property  id="2605" precon="" battleType="0" taskType="2" targetType="7" modeName="" mapName="gongdi" overNum="10" reward="9996:50"/>
+      
+    </task>
+    <task>
+        <property  id="2606" precon="" battleType="0" taskType="2" targetType="7" modeName="duikang" mapName="" overNum="15" reward="9996:50"/>      
+    </task>
+    <task>
+        <property  id="2607" precon="" battleType="0" taskType="2" targetType="7" modeName="daozhan" mapName="" overNum="10" reward="9996:50"/>      
+    </task>
+    <task>
+        <property  id="2608" precon="" battleType="0" taskType="2" targetType="7" modeName="daozhan" mapName="" overNum="20" reward="9996:50"/>      
+    </task>
+    <task>
+        <property  id="2609" precon="" battleType="0" taskType="2" targetType="7" modeName="daozhan" mapName="" overNum="30" reward="9996:50"/>      
+    </task>
+    <task>
+        <property  id="2610" precon="" battleType="0" taskType="2" targetType="7" modeName="baopo" mapName="" overNum="2" reward="9996:50"/>      
+    </task>
+    <task>
+        <property  id="2611" precon="" battleType="0" taskType="2" targetType="7" modeName="baopo" mapName="" overNum="4" reward="9996:50"/>      
+    </task>
+    <task>
+        <property  id="2612" precon="" battleType="0" taskType="2" targetType="7" modeName="baopo" mapName="" overNum="6" reward="9996:50"/>      
+    </task>
+	
+	<task>
+        <property  id="2701" precon="" battleType="0" taskType="2" targetType="8" modeName="" mapName="" overNum="10" reward="9996:50"/>
+       
+    </task>
+	<task>
+        <property  id="2702" precon="" battleType="0" taskType="2" targetType="8" modeName="" mapName="" overNum="20" reward="9996:50"/>
+       
+    </task>
+	<task>
+        <property  id="2703" precon="" battleType="0" taskType="2" targetType="8" modeName="" mapName="polartown" overNum="10" reward="9996:50"/>
+      
+    </task>
+	<task>
+        <property  id="2704" precon="" battleType="0" taskType="2" targetType="8" modeName="" mapName="heisechengzhen" overNum="10" reward="9996:50"/>
+       
+    </task>
+    <task>
+        <property  id="2705" precon="" battleType="0" taskType="2" targetType="8" modeName="" mapName="heisechengzhen" overNum="15" reward="9996:50"/>
+      
+    </task>
+    <task>
+        <property  id="2801" precon="" battleType="0" taskType="4" targetType="2" modeName="daozhan" mapName="" overNum="3" reward="9996:50"/>
+      
+    </task>
+    <task>
+        <property  id="2802" precon="" battleType="0" taskType="4" targetType="2" modeName="baopo" mapName="" overNum="3" reward="9996:50"/>
+      
+    </task>
+	<task>
+        <property  id="2803" precon="" battleType="0" taskType="4" targetType="2" modeName="juzhan" mapName="" overNum="3" reward="9996:50"/>
+      
+    </task>
+	<task>
+        <property  id="2804" precon="" battleType="0" taskType="4" targetType="2" modeName="leizhan" mapName="" overNum="3" reward="9996:50"/>
+      
+    </task>
+	<task>
+        <property  id="2805" precon="" battleType="0" taskType="4" targetType="2" modeName="shouqiangzhan" mapName="" overNum="3" reward="9996:50"/>
+      
+    </task>
+	<!-- 连续登陆
+		id:任务id ms:任务描述(中文的解释放在语言包中,格式为t_id_ms) 
+		taskType:任务类别(1表示引导任务 2表示战斗日常，3表示生活日常，4表示活动日常 5在线时长任务 6玩家军阶目标) 
+		targetType:目标类别(1表示击杀人数 2表示完成局数 3表示胜利局数 4表示连杀数 5爆头数 6雷杀数 7刀或服务器杀数 8单局游戏击杀数 9战斗时间 10在线时间 11玩家等级 12天梯积分 13拆除C4 14安装C4 15引爆C4 16单局拆除C4 17单局安装C4 18单局引爆C4 19下载登陆器并重新登录) 
+		modeName:模式名称(用模式的英文名称 见:roomConfig.xml) 
+		mapName:地图名称(用地图的英文名称 见:roomConfig.xml) 
+		overNum:完成数量 
+		reward:奖励 id1:num1 id2:num2格式 -1战斗勋章 -2生活勋章 -3金币 -4经验 -5积分 其他各种道具ID
+		exp gold rmb medal勋章 score
+		precon="id1 id2 id3"任务触发的前置条件(可多个任务)
+		battleType:游戏形式(0表示全部形式 1表示天梯 2表示自由 3表示生化)
+		-->
+	<task>
+		<property id="5001" overNum="1" reward="1211:1 9991:500"/>
+	</task>
+	<task>
+		<property id="5002" overNum="2" reward="1210:1 9991:600"/>
+	</task>
+	<task>
+		<property id="5003" overNum="3" reward="1212:1 9991:800"/>
+	</task>
+	<task>
+		<property id="5004" overNum="7" reward="1220:1 9991:1000"/>
+	</task>
+	<task>
+		<property id="5005" overNum="15" reward="2201:1 9991:1500"/>
+	</task>
+	<task>
+		<property id="5006" overNum="30" reward="2022:1 9991:2000"/>
+	</task>
+	
+	<!-- 主线任务
+		id:任务id ms:任务描述(中文的解释放在语言包中,格式为t_id_ms) 
+		taskType:任务类别(1表示引导任务 2表示战斗日常，3表示生活日常，4表示活动日常 5在线时长任务 6玩家军阶目标 7天梯积分任务 8天梯日常 9下载微端任务) 
+		targetType:目标类别(1表示击杀人数 2表示完成局数 3表示胜利局数 4表示连杀数 5爆头数 6雷杀数 7刀或服务器杀数 8单局游戏击杀数 9战斗时间 10在线时间 11玩家等级 12天梯积分 13拆除C4 14安装C4 15引爆C4 16单局拆除C4 17单局安装C4 18单局引爆C4 19下载登陆器并重新登录) 
+		modeName:模式名称(用模式的英文名称 见:roomConfig.xml) 
+		mapName:地图名称(用地图的英文名称 见:roomConfig.xml) 
+		overNum:完成数量 
+		reward:奖励 id1:num1 id2:num2格式 -1战斗勋章 -2生活勋章 9991金币 -4经验 -5积分 其他各种道具ID
+		9990GS 9991G币 9992积分 9993天梯积分 9994经验 9995成就点数 9996勋章 9997通关卡
+		exp gold rmb medal勋章 score
+		precon="id1 id2 id3"任务触发的前置条件(可多个任务)
+		battleType:游戏形式(0表示全部形式 1表示天梯 2表示自由 3表示生化)
+		-->
+
+	<task>
+        <property  id="1300" precon="1301" battleType="0" taskType="9" targetType="19" modeName="" mapName="" overNum="1" reward="11:1 911:1"/>
+    </task>	
+   
+	<task>
+        <property  id="1301" precon="" battleType="1" taskType="1" targetType="2" modeName="" mapName="" overNum="0" reward="414:1 9994:50"/>
+    </task>
+	<task>
+        <property  id="1302" precon="1301" battleType="1" taskType="7" targetType="12" modeName="" mapName="" overNum="850" reward="420:1 9994:100"/>
+    </task>
+	<task>
+        <property  id="1303" precon="1302" battleType="1" taskType="7" targetType="12" modeName="" mapName="" overNum="900" reward="9991:500 9994:200"/>
+    </task>
+	<task>
+        <property  id="1304" precon="1303" battleType="1" taskType="7" targetType="12" modeName="" mapName="" overNum="1000" reward="9991:500 9994:200"/>
+    </task>
+	<task>
+        <property  id="1305" precon="1304" battleType="1" taskType="7" targetType="12" modeName="" mapName="" overNum="1100" reward="9991:800 9994:300"/>
+    </task>
+	<task>
+        <property  id="1306" precon="1305" battleType="1" taskType="7" targetType="12" modeName="" mapName="" overNum="1200" reward="3:1 9994:350"/>
+    </task>
+	<task>
+        <property  id="1307" precon="1306" battleType="1" taskType="7" targetType="12" modeName="" mapName="" overNum="1300" reward="9991:1000 9994:400"/>
+    </task>
+	<task>
+        <property  id="1308" precon="1307" battleType="1" taskType="7" targetType="12" modeName="" mapName="" overNum="1400" reward="9991:1000 9994:450"/>
+    </task>
+	<task>
+        <property  id="1309" precon="1308" battleType="1" taskType="7" targetType="12" modeName="" mapName="" overNum="1600" reward="9991:1200 9994:500"/>
+    </task>
+	<task>
+        <property  id="1310" precon="1309" battleType="1" taskType="7" targetType="12" modeName="" mapName="" overNum="1800" reward="101:1 9994:600"/>
+    </task>
+	<task>
+        <property  id="1311" precon="1310" battleType="1" taskType="7" targetType="12" modeName="" mapName="" overNum="2000" reward="9991:5000 9994:700"/>
+    </task>
+	<task>
+        <property  id="1312" precon="1311" battleType="1" taskType="7" targetType="12" modeName="" mapName="" overNum="2300" reward="9991:8000 9994:800"/>
+    </task>
+	<task>
+        <property  id="1313" precon="1312" battleType="1" taskType="7" targetType="12" modeName="" mapName="" overNum="2600" reward="9991:10000 9994:1000"/>
+    </task>
+	
+	<task>
+        <property  id="3001" precon="1303" battleType="1" taskType="1" targetType="2" modeName="leizhan" mapName="" overNum="1" reward="9991:100 9994:50"/>
+    </task>
+	<task>
+        <property  id="3002" precon="3001" battleType="1" taskType="1" targetType="1" modeName="leizhan" mapName="" overNum="20" reward="9991:150 9994:50"/>
+    </task>
+	<task>
+        <property  id="3003" precon="3002" battleType="1" taskType="1" targetType="8" modeName="leizhan" mapName="" overNum="5" reward="9991:200 9994:50"/>
+    </task>
+	<task>
+        <property  id="3004" precon="1305" battleType="1" taskType="1" targetType="2" modeName="baopo" mapName="" overNum="3" reward="9991:100 9994:50"/>
+    </task>
+	<task>
+        <property  id="3005" precon="3004" battleType="1" taskType="1" targetType="8" modeName="baopo" mapName="" overNum="3" reward="9991:100 9994:50"/>
+    </task>
+	<task>
+        <property  id="3006" precon="3005" battleType="1" taskType="1" targetType="1" modeName="baopo" mapName="" overNum="10" reward="9991:100 9994:50"/>
+    </task>
+	<task>
+        <property  id="3007" precon="1306" battleType="1" taskType="1" targetType="13" modeName="baopo" mapName="" overNum="5" reward="9991:100 9994:50"/>
+    </task>
+	<task>
+        <property  id="3008" precon="3007" battleType="1" taskType="1" targetType="14" modeName="baopo" mapName="" overNum="5" reward="9991:100 9994:50"/>
+    </task>
+	<task>
+        <property  id="3009" precon="3008" battleType="1" taskType="1" targetType="3" modeName="baopo" mapName="" overNum="3" reward="9991:100 9994:50"/>
+    </task>
+	<task>
+        <property  id="3010" precon="1307" battleType="1" taskType="1" targetType="2" modeName="juzhan" mapName="" overNum="3" reward="9991:100 9994:50"/>
+    </task>
+	<task>
+        <property  id="3011" precon="3010" battleType="1" taskType="1" targetType="8" modeName="juzhan" mapName="" overNum="5" reward="9991:100 9994:50"/>
+    </task>
+	<task>
+        <property  id="3012" precon="3011" battleType="1" taskType="1" targetType="1" modeName="juzhan" mapName="" overNum="20" reward="9991:200 9994:100"/>
+    </task>
+	<task>
+        <property  id="3013" precon="3012" battleType="1" taskType="1" targetType="3" modeName="juzhan" mapName="" overNum="4" reward="9991:200 9994:100"/>
+    </task>
+	<task>
+        <property  id="3014" precon="1308" battleType="1" taskType="1" targetType="2" modeName="shouqiangzhan" mapName="" overNum="3" reward="9991:100 9994:50"/>
+    </task>
+	<task>
+        <property  id="3015" precon="3014" battleType="1" taskType="1" targetType="8" modeName="shouqiangzhan" mapName="" overNum="5" reward="9991:100 9994:50"/>
+    </task>
+	<task>
+        <property  id="3016" precon="3015" battleType="1" taskType="1" targetType="1" modeName="shouqiangzhan" mapName="" overNum="20" reward="9991:200 9994:100"/>
+    </task>
+	<task>
+        <property  id="3017" precon="3016" battleType="1" taskType="1" targetType="3" modeName="shouqiangzhan" mapName="" overNum="5" reward="9991:200 9994:100"/>
+    </task>
+	<task>
+        <property  id="3018" precon="1309" battleType="1" taskType="1" targetType="2" modeName="daozhan" mapName="" overNum="5" reward="9991:200 9994:100"/>
+    </task>
+	<task>
+        <property  id="3019" precon="3018" battleType="1" taskType="1" targetType="8" modeName="daozhan" mapName="" overNum="5" reward="9991:200 9994:100"/>
+    </task>
+	<task>
+        <property  id="3020" precon="3019" battleType="1" taskType="1" targetType="1" modeName="daozhan" mapName="" overNum="30" reward="9991:400 9994:200"/>
+    </task>
+	<task>
+        <property  id="3021" precon="3020" battleType="1" taskType="1" targetType="3" modeName="daozhan" mapName="" overNum="10" reward="9991:400 9994:200"/>
+    </task>
+	
+	<task>
+        <property  id="3022" precon="3009" battleType="1" taskType="1" targetType="15" modeName="baopo" mapName="" overNum="5" reward="9991:200 9994:100"/>
+    </task>
+	<task>
+        <property  id="3023" precon="3022" battleType="1" taskType="1" targetType="16" modeName="baopo" mapName="" overNum="3" reward="9991:200 9994:100"/>
+    </task>
+	<task>
+        <property  id="3024" precon="3023" battleType="1" taskType="1" targetType="17" modeName="baopo" mapName="" overNum="2" reward="9991:400 9994:200"/>
+    </task>
+	<task>
+        <property  id="3025" precon="3024" battleType="1" taskType="1" targetType="18" modeName="baopo" mapName="" overNum="3" reward="9991:400 9994:200"/>
+    </task>
+	
+	
+	
+	<task>
+        <property  id="1001" precon="1304" battleType="0" taskType="1" targetType="2" modeName="" mapName="" overNum="1" reward="9991:100 9994:50"/>
+    </task>
+	<task>
+        <property  id="1002" precon="1001" battleType="0" taskType="1" targetType="5" modeName="" mapName="" overNum="1" reward="9991:100 9994:50"/>
+    </task>
+	<task>
+        <property  id="1003" precon="1002" battleType="0" taskType="1" targetType="6" modeName="" mapName="" overNum="1" reward="9991:100 9994:50"/>
+    </task>
+	<task>
+        <property  id="1004" precon="1003" battleType="0" taskType="1" targetType="7" modeName="" mapName="" overNum="1" reward="9991:100 9994:50"/>
+    </task>
+	<task>
+        <property  id="1005" precon="1004" battleType="0" taskType="1" targetType="3" modeName="" mapName="" overNum="1" reward="9991:200 9994:50"/>
+    </task>
+	<task>
+        <property  id="1006" precon="1005" battleType="0" taskType="1" targetType="4" modeName="" mapName="" overNum="2" reward="9991:200 9994:50"/>
+    </task>
+	<task>
+        <property  id="1007" precon="1006" battleType="0" taskType="1" targetType="8" modeName="" mapName="" overNum="10" reward="9991:200 9994:50"/>
+    </task>
+	<task>
+        <property  id="1008" precon="1007" battleType="0" taskType="1" targetType="1" modeName="" mapName="" overNum="50" reward="9991:200 9994:50"/>
+    </task>
+	<task>
+        <property  id="1009" precon="1301" battleType="0" taskType="5" targetType="9" modeName="" mapName="" overNum="20" reward="9991:100 9994:50"/>
+    </task>
+	<task>
+        <property  id="1010" precon="1009" battleType="0" taskType="5" targetType="9" modeName="" mapName="" overNum="40" reward="9991:150 9994:50"/>
+    </task>
+	<task>
+        <property  id="1011" precon="1010" battleType="0" taskType="5" targetType="9" modeName="" mapName="" overNum="80" reward="9991:200 9994:50"/>
+    </task>
+	<task>
+        <property  id="1101" precon="" battleType="0" taskType="5" targetType="10" modeName="" mapName="" overNum="10" reward="9991:10 9994:100"/>
+    </task>
+	<task>
+        <property  id="1102" precon="1101" battleType="0" taskType="5" targetType="10" modeName="" mapName="" overNum="20" reward="9991:30 9994:210"/>
+    </task>
+	<task>
+        <property  id="1103" precon="1102" battleType="0" taskType="5" targetType="10" modeName="" mapName="" overNum="40" reward="9991:60 9994:420"/>
+    </task>
+	<task>
+        <property  id="1104" precon="1103" battleType="0" taskType="5" targetType="10" modeName="" mapName="" overNum="80" reward="9991:120 9994:830"/>
+    </task>
+	<task>
+        <property  id="1105" precon="1104" battleType="0" taskType="5" targetType="10" modeName="" mapName="" overNum="160" reward="9991:230 9994:1670"/>
+    </task>
+	<task>
+        <property  id="1201" precon="1301" battleType="0" taskType="6" targetType="11" modeName="" mapName="" overNum="3" reward="9991:1900 9994:180"/>
+    </task>
+	<task>
+        <property  id="1202" precon="1201" battleType="0" taskType="6" targetType="11" modeName="" mapName="" overNum="6" reward="9991:2300 9994:310"/>
+    </task>
+	<task>
+        <property  id="1203" precon="1202" battleType="0" taskType="6" targetType="11" modeName="" mapName="" overNum="10" reward="9991:2800 9994:640"/>
+    </task>
+	<task>
+        <property  id="1204" precon="1203" battleType="0" taskType="6" targetType="11" modeName="" mapName="" overNum="16" reward="9991:3300 9994:1600"/>
+    </task>
+	<task>
+        <property  id="1205" precon="1204" battleType="0" taskType="6" targetType="11" modeName="" mapName="" overNum="22" reward="9991:3900 9994:2500"/>
+    </task>
+	<task>
+        <property  id="1206" precon="1205" battleType="0" taskType="6" targetType="11" modeName="" mapName="" overNum="28" reward="9991:4400 9994:3700"/>
+    </task>
+	<task>
+        <property  id="1207" precon="1206" battleType="0" taskType="6" targetType="11" modeName="" mapName="" overNum="36" reward="9991:5100 9994:7200"/>
+    </task>
+	<task>
+        <property  id="1208" precon="1207" battleType="0" taskType="6" targetType="11" modeName="" mapName="" overNum="44" reward="9991:5700 9994:10100"/>
+    </task>
+	<task>
+        <property  id="1209" precon="1208" battleType="0" taskType="6" targetType="11" modeName="" mapName="" overNum="52" reward="9991:6400 9994:13600"/>
+    </task>
+	<task>
+        <property  id="1210" precon="1209" battleType="0" taskType="6" targetType="11" modeName="" mapName="" overNum="60" reward="9991:7200 9994:17600"/>
+    </task>
+	<task>
+        <property  id="1211" precon="1210" battleType="0" taskType="6" targetType="11" modeName="" mapName="" overNum="68" reward="9991:7900 9994:22200"/>
+    </task>
+	<task>
+        <property  id="1212" precon="1211" battleType="0" taskType="6" targetType="11" modeName="" mapName="" overNum="76" reward="9991:8800 9994:27200"/>
+    </task>
+	<task>
+        <property  id="1213" precon="1212" battleType="0" taskType="6" targetType="11" modeName="" mapName="" overNum="82" reward="9991:9600 9994:30600"/>
+    </task>
+	<task>
+        <property  id="1214" precon="1213" battleType="0" taskType="6" targetType="11" modeName="" mapName="" overNum="88" reward="9991:10500 9994:49300"/>
+    </task>
+	<task>
+        <property  id="1215" precon="1214" battleType="0" taskType="6" targetType="11" modeName="" mapName="" overNum="94" reward="9991:11400 9994:56000"/>
+    </task>
+	<task>
+        <property  id="1216" precon="1215" battleType="0" taskType="6" targetType="11" modeName="" mapName="" overNum="100" reward="9991:12400"/>
+    </task>
+</taskconfig>

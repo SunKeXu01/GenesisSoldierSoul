@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<preload>
+<mode id="25">
+<element>100,101,102,103</element>
+<rule>25,1000,1001,1002,1003</rule>
+<panels>CTFKeyPromptPanel,CTFnaqibiaoshilan,CTFnaqibiaoshihong,CTFProgressBar</panels>
+</mode>
+<mode id="26">
+<props>3008,933,927,3026,734</props>
+</mode>
+<mode id="14">
+<panels>EvilHpBonusProgressBar</panels>
+</mode>
+</preload>

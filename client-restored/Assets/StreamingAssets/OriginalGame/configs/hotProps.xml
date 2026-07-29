@@ -1,0 +1,8 @@
+﻿<hotprops>
+    <!-- id对应props.xml中的id type 1为手枪 2为散弹 以此类推 -->
+    <prop id="2255" type="14" />
+	<prop id="2257" type="14" />
+	<prop id="2256" type="14" />
+    <prop id="2258" type="14" />
+
+</hotprops>

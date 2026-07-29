@@ -1,0 +1,4395 @@
+{
+  "source_assets": "/Users/Admin/Documents/创世兵魂/原程序恢复/迷宫冰与火之歌/UnityProject/ExportedProject/Assets",
+  "root_asset": "Scenes/SceneMG.unity",
+  "target_assets": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/client-restored/Assets",
+  "namespace": "RecoveredMaps/IceFireMaze",
+  "asset_count": 1092,
+  "reused_guid_count": 1,
+  "missing_guid_count": 3,
+  "conflict_count": 1,
+  "copied": [
+    {
+      "source": "Avatar/AR BulletAvatar.asset",
+      "target": "RecoveredMaps/IceFireMaze/Avatar/AR BulletAvatar.asset"
+    },
+    {
+      "source": "Avatar/Frag GrenadeAvatar.asset",
+      "target": "RecoveredMaps/IceFireMaze/Avatar/Frag GrenadeAvatar.asset"
+    },
+    {
+      "source": "Avatar/fileAvatar.asset",
+      "target": "RecoveredMaps/IceFireMaze/Avatar/fileAvatar.asset"
+    },
+    {
+      "source": "Material/-2353017058b0a9f5.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/-2353017058b0a9f5.mat"
+    },
+    {
+      "source": "Material/-2b70256891ea8885.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/-2b70256891ea8885.mat"
+    },
+    {
+      "source": "Material/-30b9d92a448e4d32.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/-30b9d92a448e4d32.mat"
+    },
+    {
+      "source": "Material/-7a8afaf3e2b925d6.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/-7a8afaf3e2b925d6.mat"
+    },
+    {
+      "source": "Material/-ca484b5505888ea.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/-ca484b5505888ea.mat"
+    },
+    {
+      "source": "Material/00.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/00.mat"
+    },
+    {
+      "source": "Material/01 - Default.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/01 - Default.mat"
+    },
+    {
+      "source": "Material/01010a554406360000019ae90c659c.jpg@2o.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/01010a554406360000019ae90c659c.jpg@2o.mat"
+    },
+    {
+      "source": "Material/014d1a554406360000019ae9246f4f.jpg@2o.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/014d1a554406360000019ae9246f4f.jpg@2o.mat"
+    },
+    {
+      "source": "Material/015ade554406360000019ae9920d98.jpg@2o.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/015ade554406360000019ae9920d98.jpg@2o.mat"
+    },
+    {
+      "source": "Material/01cf41554406360000019ae92c8352.jpg@2o.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/01cf41554406360000019ae92c8352.jpg@2o.mat"
+    },
+    {
+      "source": "Material/01dcf1554406360000019ae9b6f18b.jpg@2o.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/01dcf1554406360000019ae9b6f18b.jpg@2o.mat"
+    },
+    {
+      "source": "Material/01f62e554406350000019ae9d1dfcf.jpg@2o.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/01f62e554406350000019ae9d1dfcf.jpg@2o.mat"
+    },
+    {
+      "source": "Material/02.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/02.mat"
+    },
+    {
+      "source": "Material/03 - Default.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/03 - Default.mat"
+    },
+    {
+      "source": "Material/04.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/04.mat"
+    },
+    {
+      "source": "Material/06 - Default.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/06 - Default.mat"
+    },
+    {
+      "source": "Material/1 (1).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1 (1).mat"
+    },
+    {
+      "source": "Material/1 (2).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1 (2).mat"
+    },
+    {
+      "source": "Material/1 (45).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1 (45).mat"
+    },
+    {
+      "source": "Material/1(2).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1(2).mat"
+    },
+    {
+      "source": "Material/10 - Default.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/10 - Default.mat"
+    },
+    {
+      "source": "Material/12 - Default.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/12 - Default.mat"
+    },
+    {
+      "source": "Material/1552611200681.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1552611200681.mat"
+    },
+    {
+      "source": "Material/1552611204044.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1552611204044.mat"
+    },
+    {
+      "source": "Material/1570158345561.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570158345561.mat"
+    },
+    {
+      "source": "Material/1570460406346.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570460406346.mat"
+    },
+    {
+      "source": "Material/1570509152865.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570509152865.mat"
+    },
+    {
+      "source": "Material/1570509167718.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570509167718.mat"
+    },
+    {
+      "source": "Material/1570509377150.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570509377150.mat"
+    },
+    {
+      "source": "Material/1570838481413.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570838481413.mat"
+    },
+    {
+      "source": "Material/1570838524858.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570838524858.mat"
+    },
+    {
+      "source": "Material/1570838586311.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570838586311.mat"
+    },
+    {
+      "source": "Material/1570838645358.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570838645358.mat"
+    },
+    {
+      "source": "Material/1570838653468.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570838653468.mat"
+    },
+    {
+      "source": "Material/1570838681767.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570838681767.mat"
+    },
+    {
+      "source": "Material/1570941509192.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570941509192.mat"
+    },
+    {
+      "source": "Material/1570941513988.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570941513988.mat"
+    },
+    {
+      "source": "Material/1570941526100.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570941526100.mat"
+    },
+    {
+      "source": "Material/1570941530772.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570941530772.mat"
+    },
+    {
+      "source": "Material/1570941537804.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570941537804.mat"
+    },
+    {
+      "source": "Material/1570941542299.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570941542299.mat"
+    },
+    {
+      "source": "Material/1570941546903.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570941546903.mat"
+    },
+    {
+      "source": "Material/1570941551313.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570941551313.mat"
+    },
+    {
+      "source": "Material/1570941555594.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570941555594.mat"
+    },
+    {
+      "source": "Material/1570941559985.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1570941559985.mat"
+    },
+    {
+      "source": "Material/15db296bb1f98dcb.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/15db296bb1f98dcb.mat"
+    },
+    {
+      "source": "Material/17 - Default.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/17 - Default.mat"
+    },
+    {
+      "source": "Material/18f7dcc8e44f90ca4c5104c415d806db572575a3685dd-M3MrMB(RGB)(noise_scale)(Level1)(x2.000000).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/18f7dcc8e44f90ca4c5104c415d806db572575a3685dd-M3MrMB(RGB)(noise_scale)(Level1)(x2.000000).mat"
+    },
+    {
+      "source": "Material/1911_1.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1911_1.mat"
+    },
+    {
+      "source": "Material/1e2e7726b9365b92.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/1e2e7726b9365b92.mat"
+    },
+    {
+      "source": "Material/2 (1).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/2 (1).mat"
+    },
+    {
+      "source": "Material/2 (2).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/2 (2).mat"
+    },
+    {
+      "source": "Material/20110804113702812135.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20110804113702812135.mat"
+    },
+    {
+      "source": "Material/20110804113702812868.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20110804113702812868.mat"
+    },
+    {
+      "source": "Material/20110804113702812942.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20110804113702812942.mat"
+    },
+    {
+      "source": "Material/20118122452825.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20118122452825.mat"
+    },
+    {
+      "source": "Material/20191012185724 1.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191012185724 1.mat"
+    },
+    {
+      "source": "Material/20191012185724.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191012185724.mat"
+    },
+    {
+      "source": "Material/20191012190234.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191012190234.mat"
+    },
+    {
+      "source": "Material/20191012190415.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191012190415.mat"
+    },
+    {
+      "source": "Material/20191012203336.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191012203336.mat"
+    },
+    {
+      "source": "Material/20191012204407.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191012204407.mat"
+    },
+    {
+      "source": "Material/20191012221427.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191012221427.mat"
+    },
+    {
+      "source": "Material/20191012221448.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191012221448.mat"
+    },
+    {
+      "source": "Material/20191012221508.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191012221508.mat"
+    },
+    {
+      "source": "Material/20191012221655.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191012221655.mat"
+    },
+    {
+      "source": "Material/20191013111402.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191013111402.mat"
+    },
+    {
+      "source": "Material/20191013111431.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191013111431.mat"
+    },
+    {
+      "source": "Material/20191013111458.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191013111458.mat"
+    },
+    {
+      "source": "Material/20191013111525.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191013111525.mat"
+    },
+    {
+      "source": "Material/20191013111543.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191013111543.mat"
+    },
+    {
+      "source": "Material/20191013111558.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191013111558.mat"
+    },
+    {
+      "source": "Material/20191013111611.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191013111611.mat"
+    },
+    {
+      "source": "Material/20191013111627.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191013111627.mat"
+    },
+    {
+      "source": "Material/20191013195716.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/20191013195716.mat"
+    },
+    {
+      "source": "Material/284e0a59981c18f8.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/284e0a59981c18f8.mat"
+    },
+    {
+      "source": "Material/29945ba8edda427b.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/29945ba8edda427b.mat"
+    },
+    {
+      "source": "Material/2d279690597aa11.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/2d279690597aa11.mat"
+    },
+    {
+      "source": "Material/2d9feb3818dedc95.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/2d9feb3818dedc95.mat"
+    },
+    {
+      "source": "Material/2d9feb3818dedc95_0.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/2d9feb3818dedc95_0.mat"
+    },
+    {
+      "source": "Material/2fe50c66b4b50f7.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/2fe50c66b4b50f7.mat"
+    },
+    {
+      "source": "Material/3 (1).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/3 (1).mat"
+    },
+    {
+      "source": "Material/370966059.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/370966059.mat"
+    },
+    {
+      "source": "Material/3e4a954ac33fcedf.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/3e4a954ac33fcedf.mat"
+    },
+    {
+      "source": "Material/3fd022487b70fd42.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/3fd022487b70fd42.mat"
+    },
+    {
+      "source": "Material/439F1FD811BF0EF849DAB517288A9A24.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/439F1FD811BF0EF849DAB517288A9A24.mat"
+    },
+    {
+      "source": "Material/4A9DB0E4BFEA91D1DF2C42C19D125927.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/4A9DB0E4BFEA91D1DF2C42C19D125927.mat"
+    },
+    {
+      "source": "Material/5.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/5.mat"
+    },
+    {
+      "source": "Material/55C9B3904E348D602313757D8EB6ADFC.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/55C9B3904E348D602313757D8EB6ADFC.mat"
+    },
+    {
+      "source": "Material/579997925-bbdb011b689bdeb.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/579997925-bbdb011b689bdeb.mat"
+    },
+    {
+      "source": "Material/5einst.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/5einst.mat"
+    },
+    {
+      "source": "Material/5etprb.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/5etprb.mat"
+    },
+    {
+      "source": "Material/5ewilb.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/5ewilb.mat"
+    },
+    {
+      "source": "Material/5ewilt.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/5ewilt.mat"
+    },
+    {
+      "source": "Material/5ewirt.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/5ewirt.mat"
+    },
+    {
+      "source": "Material/6.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/6.mat"
+    },
+    {
+      "source": "Material/6361f95be69b997c.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/6361f95be69b997c.mat"
+    },
+    {
+      "source": "Material/64cb81d54b8628eb.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/64cb81d54b8628eb.mat"
+    },
+    {
+      "source": "Material/658E66E89C96F032F3BA0CE1A06346A1.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/658E66E89C96F032F3BA0CE1A06346A1.mat"
+    },
+    {
+      "source": "Material/7993135EB1542C46B2A21D6F75E3067B.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/7993135EB1542C46B2A21D6F75E3067B.mat"
+    },
+    {
+      "source": "Material/838E54FD75C478FB12C652EFC599D5DD.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/838E54FD75C478FB12C652EFC599D5DD.mat"
+    },
+    {
+      "source": "Material/A9B341D482FF756CABFD4506FB3C0808.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/A9B341D482FF756CABFD4506FB3C0808.mat"
+    },
+    {
+      "source": "Material/AM84_001 Glass_Back.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/AM84_001 Glass_Back.mat"
+    },
+    {
+      "source": "Material/AM84_001 hamvi car.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/AM84_001 hamvi car.mat"
+    },
+    {
+      "source": "Material/AM84_001 orange light.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/AM84_001 orange light.mat"
+    },
+    {
+      "source": "Material/AM84_001_Humvee_Diff.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/AM84_001_Humvee_Diff.mat"
+    },
+    {
+      "source": "Material/AM84_001_Humvee_Glass.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/AM84_001_Humvee_Glass.mat"
+    },
+    {
+      "source": "Material/AM84_001_Humvee_wheele.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/AM84_001_Humvee_wheele.mat"
+    },
+    {
+      "source": "Material/AM84_001_glas2.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/AM84_001_glas2.mat"
+    },
+    {
+      "source": "Material/AluminiumGrip.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/AluminiumGrip.mat"
+    },
+    {
+      "source": "Material/AluminiumPipe.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/AluminiumPipe.mat"
+    },
+    {
+      "source": "Material/Archmodels_115_038_concrete_bump.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Archmodels_115_038_concrete_bump.mat"
+    },
+    {
+      "source": "Material/Archmodels_115_038_concrete_color.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Archmodels_115_038_concrete_color.mat"
+    },
+    {
+      "source": "Material/Aut.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Aut.mat"
+    },
+    {
+      "source": "Material/BALL LEATHER.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/BALL LEATHER.mat"
+    },
+    {
+      "source": "Material/BB3EE4498513CD69C5C62143318756DF.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/BB3EE4498513CD69C5C62143318756DF.mat"
+    },
+    {
+      "source": "Material/BLACK LEATHER.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/BLACK LEATHER.mat"
+    },
+    {
+      "source": "Material/Barrel.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Barrel.mat"
+    },
+    {
+      "source": "Material/BoltCarrier.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/BoltCarrier.mat"
+    },
+    {
+      "source": "Material/Butt.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Butt.mat"
+    },
+    {
+      "source": "Material/ButtPlate.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/ButtPlate.mat"
+    },
+    {
+      "source": "Material/C19AF86FA3DC5A273193E634B4CCB1CE.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/C19AF86FA3DC5A273193E634B4CCB1CE.mat"
+    },
+    {
+      "source": "Material/C5B1A9E73A8F99B0FE068EBE33A7FAA2.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/C5B1A9E73A8F99B0FE068EBE33A7FAA2.mat"
+    },
+    {
+      "source": "Material/Cache_13394d72d56b3db0..mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Cache_13394d72d56b3db0..mat"
+    },
+    {
+      "source": "Material/Cache_5aeeb7ba023ed75f..mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Cache_5aeeb7ba023ed75f..mat"
+    },
+    {
+      "source": "Material/Cache_e0968c6840f3b3a..mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Cache_e0968c6840f3b3a..mat"
+    },
+    {
+      "source": "Material/Cartridge.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Cartridge.mat"
+    },
+    {
+      "source": "Material/Chrome.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Chrome.mat"
+    },
+    {
+      "source": "Material/CorvoWater.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/CorvoWater.mat"
+    },
+    {
+      "source": "Material/Dark Blue Ext.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Dark Blue Ext.mat"
+    },
+    {
+      "source": "Material/Dark Gull Gray.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Dark Gull Gray.mat"
+    },
+    {
+      "source": "Material/Decal_SightAdjuster.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Decal_SightAdjuster.mat"
+    },
+    {
+      "source": "Material/Decal_SightAdjuster2.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Decal_SightAdjuster2.mat"
+    },
+    {
+      "source": "Material/Default Aluminimum.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Default Aluminimum.mat"
+    },
+    {
+      "source": "Material/Default Steel.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Default Steel.mat"
+    },
+    {
+      "source": "Material/Default.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Default.mat"
+    },
+    {
+      "source": "Material/DefaultAluminium.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/DefaultAluminium.mat"
+    },
+    {
+      "source": "Material/DefaultSteel.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/DefaultSteel.mat"
+    },
+    {
+      "source": "Material/F6CD5CE20FBB4F799B7A652B3F7DE638.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/F6CD5CE20FBB4F799B7A652B3F7DE638.mat"
+    },
+    {
+      "source": "Material/Flap Left Bottom.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Flap Left Bottom.mat"
+    },
+    {
+      "source": "Material/Flap Left Top.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Flap Left Top.mat"
+    },
+    {
+      "source": "Material/Flap Right Bottom.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Flap Right Bottom.mat"
+    },
+    {
+      "source": "Material/Flap Right Top.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Flap Right Top.mat"
+    },
+    {
+      "source": "Material/FlashHider.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/FlashHider.mat"
+    },
+    {
+      "source": "Material/FlashHiderMount.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/FlashHiderMount.mat"
+    },
+    {
+      "source": "Material/Flat Black.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Flat Black.mat"
+    },
+    {
+      "source": "Material/ForwardIronsight.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/ForwardIronsight.mat"
+    },
+    {
+      "source": "Material/Fuselage Right.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Fuselage Right.mat"
+    },
+    {
+      "source": "Material/Gear01 Door A.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Gear01 Door A.mat"
+    },
+    {
+      "source": "Material/Gear01 Door B.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Gear01 Door B.mat"
+    },
+    {
+      "source": "Material/Gear02 Door A.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Gear02 Door A.mat"
+    },
+    {
+      "source": "Material/Gear02 Door B.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Gear02 Door B.mat"
+    },
+    {
+      "source": "Material/Gear02 Door C.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Gear02 Door C.mat"
+    },
+    {
+      "source": "Material/Gear03 Door A.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Gear03 Door A.mat"
+    },
+    {
+      "source": "Material/Gear03 Door C.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Gear03 Door C.mat"
+    },
+    {
+      "source": "Material/Glass.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Glass.mat"
+    },
+    {
+      "source": "Material/Grip.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Grip.mat"
+    },
+    {
+      "source": "Material/Gun.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Gun.mat"
+    },
+    {
+      "source": "Material/Gunmetal.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Gunmetal.mat"
+    },
+    {
+      "source": "Material/IMG_3093.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/IMG_3093.mat"
+    },
+    {
+      "source": "Material/IMG_3098.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/IMG_3098.mat"
+    },
+    {
+      "source": "Material/IMG_3102.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/IMG_3102.mat"
+    },
+    {
+      "source": "Material/IMG_3103.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/IMG_3103.mat"
+    },
+    {
+      "source": "Material/IMG_3104.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/IMG_3104.mat"
+    },
+    {
+      "source": "Material/IMG_3105.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/IMG_3105.mat"
+    },
+    {
+      "source": "Material/IMG_9808.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/IMG_9808.mat"
+    },
+    {
+      "source": "Material/IMG_9819.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/IMG_9819.mat"
+    },
+    {
+      "source": "Material/Insignia.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Insignia.mat"
+    },
+    {
+      "source": "Material/Interior Black.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Interior Black.mat"
+    },
+    {
+      "source": "Material/Interior.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Interior.mat"
+    },
+    {
+      "source": "Material/IronSight.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/IronSight.mat"
+    },
+    {
+      "source": "Material/IronsightModule.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/IronsightModule.mat"
+    },
+    {
+      "source": "Material/IronsightModule2.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/IronsightModule2.mat"
+    },
+    {
+      "source": "Material/Light Ghost.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Light Ghost.mat"
+    },
+    {
+      "source": "Material/Light reflact.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Light reflact.mat"
+    },
+    {
+      "source": "Material/M60-CABE.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/M60-CABE.mat"
+    },
+    {
+      "source": "Material/M60-CABF.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/M60-CABF.mat"
+    },
+    {
+      "source": "Material/M60-META.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/M60-META.mat"
+    },
+    {
+      "source": "Material/M60-NEGR.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/M60-NEGR.mat"
+    },
+    {
+      "source": "Material/M60-PEGA.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/M60-PEGA.mat"
+    },
+    {
+      "source": "Material/M60-TORN.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/M60-TORN.mat"
+    },
+    {
+      "source": "Material/MagazineCap.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/MagazineCap.mat"
+    },
+    {
+      "source": "Material/Mashine gun.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Mashine gun.mat"
+    },
+    {
+      "source": "Material/Material #169.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Material #169.mat"
+    },
+    {
+      "source": "Material/Material #172.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Material #172.mat"
+    },
+    {
+      "source": "Material/Material #178.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Material #178.mat"
+    },
+    {
+      "source": "Material/Material #183.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Material #183.mat"
+    },
+    {
+      "source": "Material/Material #25.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Material #25.mat"
+    },
+    {
+      "source": "Material/Material #6.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Material #6.mat"
+    },
+    {
+      "source": "Material/Metallic Gray.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Metallic Gray.mat"
+    },
+    {
+      "source": "Material/Mirrors.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Mirrors.mat"
+    },
+    {
+      "source": "Material/MyMtl_01.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/MyMtl_01.mat"
+    },
+    {
+      "source": "Material/PicsArt_10-09-05.29.15.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/PicsArt_10-09-05.29.15.mat"
+    },
+    {
+      "source": "Material/QQ图片20190713161605 (2).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/QQ图片20190713161605 (2).mat"
+    },
+    {
+      "source": "Material/QQ图片20190713161605 (2)_0.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/QQ图片20190713161605 (2)_0.mat"
+    },
+    {
+      "source": "Material/QQ图片20190713161613.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/QQ图片20190713161613.mat"
+    },
+    {
+      "source": "Material/QQ图片2019080917.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/QQ图片2019080917.mat"
+    },
+    {
+      "source": "Material/ReceiverLeft.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/ReceiverLeft.mat"
+    },
+    {
+      "source": "Material/ReceiverRight.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/ReceiverRight.mat"
+    },
+    {
+      "source": "Material/Red Door Trim.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Red Door Trim.mat"
+    },
+    {
+      "source": "Material/Round grenade texture.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Round grenade texture.mat"
+    },
+    {
+      "source": "Material/Ruber.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Ruber.mat"
+    },
+    {
+      "source": "Material/Rudder Left.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Rudder Left.mat"
+    },
+    {
+      "source": "Material/Rudder Right.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Rudder Right.mat"
+    },
+    {
+      "source": "Material/Screenshot_2019-04-26-11-10-21.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Screenshot_2019-04-26-11-10-21.mat"
+    },
+    {
+      "source": "Material/Screenshot_20190108-224159.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Screenshot_20190108-224159.mat"
+    },
+    {
+      "source": "Material/Screenshot_20190402-145158.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Screenshot_20190402-145158.mat"
+    },
+    {
+      "source": "Material/Screenshot_20190402-145440.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Screenshot_20190402-145440.mat"
+    },
+    {
+      "source": "Material/Screenshot_20190426-110013.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Screenshot_20190426-110013.mat"
+    },
+    {
+      "source": "Material/Screenshot_20190426-110611.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Screenshot_20190426-110611.mat"
+    },
+    {
+      "source": "Material/Screenshot_20190426-110758.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Screenshot_20190426-110758.mat"
+    },
+    {
+      "source": "Material/Screenshot_20190426-110856.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Screenshot_20190426-110856.mat"
+    },
+    {
+      "source": "Material/Screenshot_20190426-110930.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Screenshot_20190426-110930.mat"
+    },
+    {
+      "source": "Material/Screenshot_20190426-110943.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Screenshot_20190426-110943.mat"
+    },
+    {
+      "source": "Material/Screenshot_20190426-110955.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Screenshot_20190426-110955.mat"
+    },
+    {
+      "source": "Material/Screenshot_20190426-111128.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Screenshot_20190426-111128.mat"
+    },
+    {
+      "source": "Material/Screenshot_20190427-003744.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Screenshot_20190427-003744.mat"
+    },
+    {
+      "source": "Material/Screenshot_20190427-003846.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Screenshot_20190427-003846.mat"
+    },
+    {
+      "source": "Material/Skybox12.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Skybox12.mat"
+    },
+    {
+      "source": "Material/Slat Left Bottom.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Slat Left Bottom.mat"
+    },
+    {
+      "source": "Material/Slat Left Top.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Slat Left Top.mat"
+    },
+    {
+      "source": "Material/Slat Right Bottom.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Slat Right Bottom.mat"
+    },
+    {
+      "source": "Material/Slat Right Top.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Slat Right Top.mat"
+    },
+    {
+      "source": "Material/Speedbrake 01.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Speedbrake 01.mat"
+    },
+    {
+      "source": "Material/Speedbrake 02.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Speedbrake 02.mat"
+    },
+    {
+      "source": "Material/SteelGrip.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/SteelGrip.mat"
+    },
+    {
+      "source": "Material/SteelScrew.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/SteelScrew.mat"
+    },
+    {
+      "source": "Material/StockPipe.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/StockPipe.mat"
+    },
+    {
+      "source": "Material/Tailhook.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Tailhook.mat"
+    },
+    {
+      "source": "Material/Tex_0010_1.dds.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Tex_0010_1.dds.mat"
+    },
+    {
+      "source": "Material/Tex_0011_1.dds.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Tex_0011_1.dds.mat"
+    },
+    {
+      "source": "Material/Texture.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Texture.mat"
+    },
+    {
+      "source": "Material/Tire Black.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/Tire Black.mat"
+    },
+    {
+      "source": "Material/White Gloss.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/White Gloss.mat"
+    },
+    {
+      "source": "Material/augTEX.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/augTEX.mat"
+    },
+    {
+      "source": "Material/bullet.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/bullet.mat"
+    },
+    {
+      "source": "Material/bullet_texture.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/bullet_texture.mat"
+    },
+    {
+      "source": "Material/car_Black metal.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/car_Black metal.mat"
+    },
+    {
+      "source": "Material/chair.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/chair.mat"
+    },
+    {
+      "source": "Material/desert_t.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/desert_t.mat"
+    },
+    {
+      "source": "Material/hk_mp5n.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/hk_mp5n.mat"
+    },
+    {
+      "source": "Material/lambert3.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/lambert3.mat"
+    },
+    {
+      "source": "Material/met.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/met.mat"
+    },
+    {
+      "source": "Material/mu.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/mu.mat"
+    },
+    {
+      "source": "Material/null-4b448f1e41d43c4.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/null-4b448f1e41d43c4.mat"
+    },
+    {
+      "source": "Material/pige.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/pige.mat"
+    },
+    {
+      "source": "Material/qiang2.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/qiang2.mat"
+    },
+    {
+      "source": "Material/qiang3.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/qiang3.mat"
+    },
+    {
+      "source": "Material/qiang4.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/qiang4.mat"
+    },
+    {
+      "source": "Material/qiang4_0.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/qiang4_0.mat"
+    },
+    {
+      "source": "Material/qiang5.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/qiang5.mat"
+    },
+    {
+      "source": "Material/shicai.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/shicai.mat"
+    },
+    {
+      "source": "Material/ssw.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/ssw.mat"
+    },
+    {
+      "source": "Material/sswa.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/sswa.mat"
+    },
+    {
+      "source": "Material/stone3.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/stone3.mat"
+    },
+    {
+      "source": "Material/t01a07f96dd3a399ad9.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/t01a07f96dd3a399ad9.mat"
+    },
+    {
+      "source": "Material/th(12).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/th(12).mat"
+    },
+    {
+      "source": "Material/th(14).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/th(14).mat"
+    },
+    {
+      "source": "Material/th(15).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/th(15).mat"
+    },
+    {
+      "source": "Material/th(16)(1).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/th(16)(1).mat"
+    },
+    {
+      "source": "Material/th(17).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/th(17).mat"
+    },
+    {
+      "source": "Material/th(18).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/th(18).mat"
+    },
+    {
+      "source": "Material/th(21).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/th(21).mat"
+    },
+    {
+      "source": "Material/th(22).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/th(22).mat"
+    },
+    {
+      "source": "Material/th(26).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/th(26).mat"
+    },
+    {
+      "source": "Material/th(30).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/th(30).mat"
+    },
+    {
+      "source": "Material/th(4)(1).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/th(4)(1).mat"
+    },
+    {
+      "source": "Material/th(6)(1).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/th(6)(1).mat"
+    },
+    {
+      "source": "Material/th(7)(1).mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/th(7)(1).mat"
+    },
+    {
+      "source": "Material/vray_material.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/vray_material.mat"
+    },
+    {
+      "source": "Material/wd_x.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/wd_x.mat"
+    },
+    {
+      "source": "Material/zi.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/zi.mat"
+    },
+    {
+      "source": "Material/下马石1 拷贝.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/下马石1 拷贝.mat"
+    },
+    {
+      "source": "Material/地面.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/地面.mat"
+    },
+    {
+      "source": "Material/柚木.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/柚木.mat"
+    },
+    {
+      "source": "Material/框架.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/框架.mat"
+    },
+    {
+      "source": "Material/海水.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/海水.mat"
+    },
+    {
+      "source": "Material/班妈线主路.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/班妈线主路.mat"
+    },
+    {
+      "source": "Material/窗.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/窗.mat"
+    },
+    {
+      "source": "Material/门.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/门.mat"
+    },
+    {
+      "source": "Material/门2.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/门2.mat"
+    },
+    {
+      "source": "Material/青砖.mat",
+      "target": "RecoveredMaps/IceFireMaze/Material/青砖.mat"
+    },
+    {
+      "source": "Mesh/5Ecanopy_acts_a.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Ecanopy_acts_a.asset"
+    },
+    {
+      "source": "Mesh/5Ecanopy_acts_b.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Ecanopy_acts_b.asset"
+    },
+    {
+      "source": "Mesh/5Ecanopy_glass.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Ecanopy_glass.asset"
+    },
+    {
+      "source": "Mesh/5Ecanopy_pivots.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Ecanopy_pivots.asset"
+    },
+    {
+      "source": "Mesh/5Eflap01.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Eflap01.asset"
+    },
+    {
+      "source": "Mesh/5Eflap02.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Eflap02.asset"
+    },
+    {
+      "source": "Mesh/5Efuselage.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Efuselage.asset"
+    },
+    {
+      "source": "Mesh/5Egear01actuator_mounts.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear01actuator_mounts.asset"
+    },
+    {
+      "source": "Mesh/5Egear01door_a.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear01door_a.asset"
+    },
+    {
+      "source": "Mesh/5Egear01door_acts_a.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear01door_acts_a.asset"
+    },
+    {
+      "source": "Mesh/5Egear01door_acts_b.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear01door_acts_b.asset"
+    },
+    {
+      "source": "Mesh/5Egear01door_b.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear01door_b.asset"
+    },
+    {
+      "source": "Mesh/5Egear01link_a.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear01link_a.asset"
+    },
+    {
+      "source": "Mesh/5Egear01link_b.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear01link_b.asset"
+    },
+    {
+      "source": "Mesh/5Egear01lower.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear01lower.asset"
+    },
+    {
+      "source": "Mesh/5Egear01scissor_a.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear01scissor_a.asset"
+    },
+    {
+      "source": "Mesh/5Egear01scissor_b.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear01scissor_b.asset"
+    },
+    {
+      "source": "Mesh/5Egear01scissor_braces.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear01scissor_braces.asset"
+    },
+    {
+      "source": "Mesh/5Egear01wheel.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear01wheel.asset"
+    },
+    {
+      "source": "Mesh/5Egear02.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear02.asset"
+    },
+    {
+      "source": "Mesh/5Egear02act_a.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear02act_a.asset"
+    },
+    {
+      "source": "Mesh/5Egear02act_b.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear02act_b.asset"
+    },
+    {
+      "source": "Mesh/5Egear02act_link_a.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear02act_link_a.asset"
+    },
+    {
+      "source": "Mesh/5Egear02act_link_b.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear02act_link_b.asset"
+    },
+    {
+      "source": "Mesh/5Egear02door_a.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear02door_a.asset"
+    },
+    {
+      "source": "Mesh/5Egear02door_b.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear02door_b.asset"
+    },
+    {
+      "source": "Mesh/5Egear02door_c.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear02door_c.asset"
+    },
+    {
+      "source": "Mesh/5Egear02lower.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear02lower.asset"
+    },
+    {
+      "source": "Mesh/5Egear02root.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear02root.asset"
+    },
+    {
+      "source": "Mesh/5Egear02wheel.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear02wheel.asset"
+    },
+    {
+      "source": "Mesh/5Egear03.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear03.asset"
+    },
+    {
+      "source": "Mesh/5Egear03act_a.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear03act_a.asset"
+    },
+    {
+      "source": "Mesh/5Egear03act_b.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear03act_b.asset"
+    },
+    {
+      "source": "Mesh/5Egear03act_link_a.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear03act_link_a.asset"
+    },
+    {
+      "source": "Mesh/5Egear03door_a.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear03door_a.asset"
+    },
+    {
+      "source": "Mesh/5Egear03door_b.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear03door_b.asset"
+    },
+    {
+      "source": "Mesh/5Egear03door_c.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear03door_c.asset"
+    },
+    {
+      "source": "Mesh/5Egear03root.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear03root.asset"
+    },
+    {
+      "source": "Mesh/5Egear03wheel.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egear03wheel.asset"
+    },
+    {
+      "source": "Mesh/5Egearbays.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Egearbays.asset"
+    },
+    {
+      "source": "Mesh/5Eguns.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Eguns.asset"
+    },
+    {
+      "source": "Mesh/5Ehud.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Ehud.asset"
+    },
+    {
+      "source": "Mesh/5Einst_panel.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Einst_panel.asset"
+    },
+    {
+      "source": "Mesh/5Einterior_details.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Einterior_details.asset"
+    },
+    {
+      "source": "Mesh/5Einterior_details02.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Einterior_details02.asset"
+    },
+    {
+      "source": "Mesh/5Emirrors.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Emirrors.asset"
+    },
+    {
+      "source": "Mesh/5Erudder.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Erudder.asset"
+    },
+    {
+      "source": "Mesh/5Eslat01.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Eslat01.asset"
+    },
+    {
+      "source": "Mesh/5Eslat02.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Eslat02.asset"
+    },
+    {
+      "source": "Mesh/5Espeedbrake01.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Espeedbrake01.asset"
+    },
+    {
+      "source": "Mesh/5Espeedbrake01act_a.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Espeedbrake01act_a.asset"
+    },
+    {
+      "source": "Mesh/5Espeedbrake01act_b.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Espeedbrake01act_b.asset"
+    },
+    {
+      "source": "Mesh/5Espeedbrake02.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Espeedbrake02.asset"
+    },
+    {
+      "source": "Mesh/5Espeedbrake02act_a.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Espeedbrake02act_a.asset"
+    },
+    {
+      "source": "Mesh/5Espeedbrake02act_b.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Espeedbrake02act_b.asset"
+    },
+    {
+      "source": "Mesh/5Estick.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Estick.asset"
+    },
+    {
+      "source": "Mesh/5Etailhook.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Etailhook.asset"
+    },
+    {
+      "source": "Mesh/5Etailplane01.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Etailplane01.asset"
+    },
+    {
+      "source": "Mesh/5Etailplane02.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Etailplane02.asset"
+    },
+    {
+      "source": "Mesh/5Ethrottle.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Ethrottle.asset"
+    },
+    {
+      "source": "Mesh/5Ewindshield.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Ewindshield.asset"
+    },
+    {
+      "source": "Mesh/5Ewindshield_trim.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Ewindshield_trim.asset"
+    },
+    {
+      "source": "Mesh/5Ewtiprails.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5Ewtiprails.asset"
+    },
+    {
+      "source": "Mesh/5ehud_lense.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/5ehud_lense.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_00.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_00.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_02.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_02.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_03.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_03.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_04.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_04.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_05.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_05.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_06.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_06.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_07.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_07.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_08.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_08.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_09.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_09.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_10.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_10.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_11.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_11.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_12.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_12.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_13.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_13.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_14.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_14.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_15.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_15.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_16.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_16.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_17.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_17.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_18.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_18.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_19.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_19.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_20.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_20.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_21.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_21.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_22.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_22.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_23.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_23.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_24.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_24.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_25.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_25.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_26.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_26.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_27.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_27.asset"
+    },
+    {
+      "source": "Mesh/AM115_038_28.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM115_038_28.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_00.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_00.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_01.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_01.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_02.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_02.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_03.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_03.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_04.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_04.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_05.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_05.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_06.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_06.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_07.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_07.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_08.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_08.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_09.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_09.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_10.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_10.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_11.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_11.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_12.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_12.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_13.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_13.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_14.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_14.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_15.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_15.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_16.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_16.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_17.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_17.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_18.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_18.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_19.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_19.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_20.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_20.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_21.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_21.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_22.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_22.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_23.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_23.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_24.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_24.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_25.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_25.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_26.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_26.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_27.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_27.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_28.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_28.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_29.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_29.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_30.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_30.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_31.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_31.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_32.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_32.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_33.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_33.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_34.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_34.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_35.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_35.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_36.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_36.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_37.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_37.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_38.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_38.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_39.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_39.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_40.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_40.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_41.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_41.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_42.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_42.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_43.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_43.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_44.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_44.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_45.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_45.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_46.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_46.asset"
+    },
+    {
+      "source": "Mesh/AM84_001_47.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/AM84_001_47.asset"
+    },
+    {
+      "source": "Mesh/Body.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Body.asset"
+    },
+    {
+      "source": "Mesh/Box01.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box01.asset"
+    },
+    {
+      "source": "Mesh/Box01_0.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box01_0.asset"
+    },
+    {
+      "source": "Mesh/Box02.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box02.asset"
+    },
+    {
+      "source": "Mesh/Box02_0.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box02_0.asset"
+    },
+    {
+      "source": "Mesh/Box03.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box03.asset"
+    },
+    {
+      "source": "Mesh/Box04.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box04.asset"
+    },
+    {
+      "source": "Mesh/Box05.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box05.asset"
+    },
+    {
+      "source": "Mesh/Box06.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box06.asset"
+    },
+    {
+      "source": "Mesh/Box07.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box07.asset"
+    },
+    {
+      "source": "Mesh/Box08.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box08.asset"
+    },
+    {
+      "source": "Mesh/Box09.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box09.asset"
+    },
+    {
+      "source": "Mesh/Box10.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box10.asset"
+    },
+    {
+      "source": "Mesh/Box11.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box11.asset"
+    },
+    {
+      "source": "Mesh/Box12.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box12.asset"
+    },
+    {
+      "source": "Mesh/Box13.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box13.asset"
+    },
+    {
+      "source": "Mesh/Box14.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box14.asset"
+    },
+    {
+      "source": "Mesh/Box15.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box15.asset"
+    },
+    {
+      "source": "Mesh/Box16.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box16.asset"
+    },
+    {
+      "source": "Mesh/Box17.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box17.asset"
+    },
+    {
+      "source": "Mesh/Box18.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box18.asset"
+    },
+    {
+      "source": "Mesh/Box19.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box19.asset"
+    },
+    {
+      "source": "Mesh/Box20.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box20.asset"
+    },
+    {
+      "source": "Mesh/Box21.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box21.asset"
+    },
+    {
+      "source": "Mesh/Box22.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box22.asset"
+    },
+    {
+      "source": "Mesh/Box23.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box23.asset"
+    },
+    {
+      "source": "Mesh/Box24.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box24.asset"
+    },
+    {
+      "source": "Mesh/Box25.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Box25.asset"
+    },
+    {
+      "source": "Mesh/Bullet.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Bullet.asset"
+    },
+    {
+      "source": "Mesh/ChamferCyl01.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/ChamferCyl01.asset"
+    },
+    {
+      "source": "Mesh/ChamferCyl02.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/ChamferCyl02.asset"
+    },
+    {
+      "source": "Mesh/ChamferCyl03.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/ChamferCyl03.asset"
+    },
+    {
+      "source": "Mesh/Circle02.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Circle02.asset"
+    },
+    {
+      "source": "Mesh/Circle03.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Circle03.asset"
+    },
+    {
+      "source": "Mesh/Cylinder01.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder01.asset"
+    },
+    {
+      "source": "Mesh/Cylinder01_0.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder01_0.asset"
+    },
+    {
+      "source": "Mesh/Cylinder02.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder02.asset"
+    },
+    {
+      "source": "Mesh/Cylinder03.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder03.asset"
+    },
+    {
+      "source": "Mesh/Cylinder04.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder04.asset"
+    },
+    {
+      "source": "Mesh/Cylinder05.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder05.asset"
+    },
+    {
+      "source": "Mesh/Cylinder06.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder06.asset"
+    },
+    {
+      "source": "Mesh/Cylinder07.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder07.asset"
+    },
+    {
+      "source": "Mesh/Cylinder08.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder08.asset"
+    },
+    {
+      "source": "Mesh/Cylinder09.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder09.asset"
+    },
+    {
+      "source": "Mesh/Cylinder09_0.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder09_0.asset"
+    },
+    {
+      "source": "Mesh/Cylinder10.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder10.asset"
+    },
+    {
+      "source": "Mesh/Cylinder10_0.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder10_0.asset"
+    },
+    {
+      "source": "Mesh/Cylinder11.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder11.asset"
+    },
+    {
+      "source": "Mesh/Cylinder12.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder12.asset"
+    },
+    {
+      "source": "Mesh/Cylinder13.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder13.asset"
+    },
+    {
+      "source": "Mesh/Cylinder14.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder14.asset"
+    },
+    {
+      "source": "Mesh/Cylinder15.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder15.asset"
+    },
+    {
+      "source": "Mesh/Cylinder16.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder16.asset"
+    },
+    {
+      "source": "Mesh/Cylinder17.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder17.asset"
+    },
+    {
+      "source": "Mesh/Cylinder18.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder18.asset"
+    },
+    {
+      "source": "Mesh/Cylinder19.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder19.asset"
+    },
+    {
+      "source": "Mesh/Cylinder20.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder20.asset"
+    },
+    {
+      "source": "Mesh/Cylinder20_0.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder20_0.asset"
+    },
+    {
+      "source": "Mesh/Cylinder21.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder21.asset"
+    },
+    {
+      "source": "Mesh/Cylinder22.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder22.asset"
+    },
+    {
+      "source": "Mesh/Cylinder23.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder23.asset"
+    },
+    {
+      "source": "Mesh/Cylinder24.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder24.asset"
+    },
+    {
+      "source": "Mesh/Cylinder25.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder25.asset"
+    },
+    {
+      "source": "Mesh/Cylinder25_0.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder25_0.asset"
+    },
+    {
+      "source": "Mesh/Cylinder26.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder26.asset"
+    },
+    {
+      "source": "Mesh/Cylinder27.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder27.asset"
+    },
+    {
+      "source": "Mesh/Cylinder28.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder28.asset"
+    },
+    {
+      "source": "Mesh/Cylinder29.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder29.asset"
+    },
+    {
+      "source": "Mesh/Cylinder30.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder30.asset"
+    },
+    {
+      "source": "Mesh/Cylinder31.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder31.asset"
+    },
+    {
+      "source": "Mesh/Cylinder32.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder32.asset"
+    },
+    {
+      "source": "Mesh/Cylinder33.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder33.asset"
+    },
+    {
+      "source": "Mesh/Cylinder34.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder34.asset"
+    },
+    {
+      "source": "Mesh/Cylinder35.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder35.asset"
+    },
+    {
+      "source": "Mesh/Cylinder36.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder36.asset"
+    },
+    {
+      "source": "Mesh/Cylinder37.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder37.asset"
+    },
+    {
+      "source": "Mesh/Cylinder38.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder38.asset"
+    },
+    {
+      "source": "Mesh/Cylinder39.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder39.asset"
+    },
+    {
+      "source": "Mesh/Cylinder40.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder40.asset"
+    },
+    {
+      "source": "Mesh/Cylinder41.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder41.asset"
+    },
+    {
+      "source": "Mesh/Cylinder42.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder42.asset"
+    },
+    {
+      "source": "Mesh/Cylinder43.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder43.asset"
+    },
+    {
+      "source": "Mesh/Cylinder44.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder44.asset"
+    },
+    {
+      "source": "Mesh/Cylinder45.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder45.asset"
+    },
+    {
+      "source": "Mesh/Cylinder46.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder46.asset"
+    },
+    {
+      "source": "Mesh/Cylinder47.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder47.asset"
+    },
+    {
+      "source": "Mesh/Cylinder48.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder48.asset"
+    },
+    {
+      "source": "Mesh/Cylinder49.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder49.asset"
+    },
+    {
+      "source": "Mesh/Cylinder50.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder50.asset"
+    },
+    {
+      "source": "Mesh/Cylinder51.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder51.asset"
+    },
+    {
+      "source": "Mesh/Cylinder52.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder52.asset"
+    },
+    {
+      "source": "Mesh/Cylinder53.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder53.asset"
+    },
+    {
+      "source": "Mesh/Cylinder54.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder54.asset"
+    },
+    {
+      "source": "Mesh/Cylinder55.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder55.asset"
+    },
+    {
+      "source": "Mesh/Cylinder56.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder56.asset"
+    },
+    {
+      "source": "Mesh/Cylinder57.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder57.asset"
+    },
+    {
+      "source": "Mesh/Cylinder58.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder58.asset"
+    },
+    {
+      "source": "Mesh/Cylinder59.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder59.asset"
+    },
+    {
+      "source": "Mesh/Cylinder60.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder60.asset"
+    },
+    {
+      "source": "Mesh/Cylinder61.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder61.asset"
+    },
+    {
+      "source": "Mesh/Cylinder62.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder62.asset"
+    },
+    {
+      "source": "Mesh/Cylinder63.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder63.asset"
+    },
+    {
+      "source": "Mesh/Cylinder64.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder64.asset"
+    },
+    {
+      "source": "Mesh/Cylinder65.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder65.asset"
+    },
+    {
+      "source": "Mesh/Cylinder66.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder66.asset"
+    },
+    {
+      "source": "Mesh/Cylinder67.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder67.asset"
+    },
+    {
+      "source": "Mesh/Cylinder68.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder68.asset"
+    },
+    {
+      "source": "Mesh/Cylinder69.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder69.asset"
+    },
+    {
+      "source": "Mesh/Cylinder70.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder70.asset"
+    },
+    {
+      "source": "Mesh/Cylinder71.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder71.asset"
+    },
+    {
+      "source": "Mesh/Cylinder72.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder72.asset"
+    },
+    {
+      "source": "Mesh/Cylinder73.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder73.asset"
+    },
+    {
+      "source": "Mesh/Cylinder74.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Cylinder74.asset"
+    },
+    {
+      "source": "Mesh/Handle.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Handle.asset"
+    },
+    {
+      "source": "Mesh/Head.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Head.asset"
+    },
+    {
+      "source": "Mesh/Hose01.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Hose01.asset"
+    },
+    {
+      "source": "Mesh/Line01.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line01.asset"
+    },
+    {
+      "source": "Mesh/Line01_0.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line01_0.asset"
+    },
+    {
+      "source": "Mesh/Line02.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line02.asset"
+    },
+    {
+      "source": "Mesh/Line03.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line03.asset"
+    },
+    {
+      "source": "Mesh/Line04.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line04.asset"
+    },
+    {
+      "source": "Mesh/Line05.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line05.asset"
+    },
+    {
+      "source": "Mesh/Line05_0.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line05_0.asset"
+    },
+    {
+      "source": "Mesh/Line06.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line06.asset"
+    },
+    {
+      "source": "Mesh/Line07.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line07.asset"
+    },
+    {
+      "source": "Mesh/Line08.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line08.asset"
+    },
+    {
+      "source": "Mesh/Line09.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line09.asset"
+    },
+    {
+      "source": "Mesh/Line10.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line10.asset"
+    },
+    {
+      "source": "Mesh/Line11.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line11.asset"
+    },
+    {
+      "source": "Mesh/Line12.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line12.asset"
+    },
+    {
+      "source": "Mesh/Line13.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line13.asset"
+    },
+    {
+      "source": "Mesh/Line14.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line14.asset"
+    },
+    {
+      "source": "Mesh/Line15.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line15.asset"
+    },
+    {
+      "source": "Mesh/Line16.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line16.asset"
+    },
+    {
+      "source": "Mesh/Line17.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line17.asset"
+    },
+    {
+      "source": "Mesh/Line18.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line18.asset"
+    },
+    {
+      "source": "Mesh/Line19.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line19.asset"
+    },
+    {
+      "source": "Mesh/Line20.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line20.asset"
+    },
+    {
+      "source": "Mesh/Line21.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line21.asset"
+    },
+    {
+      "source": "Mesh/Line22.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line22.asset"
+    },
+    {
+      "source": "Mesh/Line23.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line23.asset"
+    },
+    {
+      "source": "Mesh/Line24.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line24.asset"
+    },
+    {
+      "source": "Mesh/Line25.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Line25.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Barrel_Body.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Barrel_Body.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Barrel_FlashHider_Birdcage.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Barrel_FlashHider_Birdcage.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Barrel_FlashHider_Mount.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Barrel_FlashHider_Mount.asset"
+    },
+    {
+      "source": "Mesh/M4A1_CarryHandle_AdjustHeight.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_CarryHandle_AdjustHeight.asset"
+    },
+    {
+      "source": "Mesh/M4A1_CarryHandle_AdjustWidth.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_CarryHandle_AdjustWidth.asset"
+    },
+    {
+      "source": "Mesh/M4A1_CarryHandle_AdjustWidth_Bar.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_CarryHandle_AdjustWidth_Bar.asset"
+    },
+    {
+      "source": "Mesh/M4A1_CarryHandle_Body.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_CarryHandle_Body.asset"
+    },
+    {
+      "source": "Mesh/M4A1_CarryHandle_Bolt1.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_CarryHandle_Bolt1.asset"
+    },
+    {
+      "source": "Mesh/M4A1_CarryHandle_Bolt2.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_CarryHandle_Bolt2.asset"
+    },
+    {
+      "source": "Mesh/M4A1_CarryHandle_IronSight.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_CarryHandle_IronSight.asset"
+    },
+    {
+      "source": "Mesh/M4A1_CarryHandle_Module.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_CarryHandle_Module.asset"
+    },
+    {
+      "source": "Mesh/M4A1_CarryHandle_Screw1.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_CarryHandle_Screw1.asset"
+    },
+    {
+      "source": "Mesh/M4A1_CarryHandle_Screw2.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_CarryHandle_Screw2.asset"
+    },
+    {
+      "source": "Mesh/M4A1_CockingLever_Body.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_CockingLever_Body.asset"
+    },
+    {
+      "source": "Mesh/M4A1_CockingLever_Catch.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_CockingLever_Catch.asset"
+    },
+    {
+      "source": "Mesh/M4A1_EjectionFlap_Clip.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_EjectionFlap_Clip.asset"
+    },
+    {
+      "source": "Mesh/M4A1_EjectionFlap_Cover.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_EjectionFlap_Cover.asset"
+    },
+    {
+      "source": "Mesh/M4A1_ForegripBody1.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_ForegripBody1.asset"
+    },
+    {
+      "source": "Mesh/M4A1_ForegripBody2.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_ForegripBody2.asset"
+    },
+    {
+      "source": "Mesh/M4A1_ForegripPlate1.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_ForegripPlate1.asset"
+    },
+    {
+      "source": "Mesh/M4A1_ForegripPlate2.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_ForegripPlate2.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Foregrip_Ring1.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Foregrip_Ring1.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Foregrip_Ring2.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Foregrip_Ring2.asset"
+    },
+    {
+      "source": "Mesh/M4A1_IronSightBody.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_IronSightBody.asset"
+    },
+    {
+      "source": "Mesh/M4A1_IronSightPin.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_IronSightPin.asset"
+    },
+    {
+      "source": "Mesh/M4A1_IronSight_ForegripCap.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_IronSight_ForegripCap.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Ironsight_BayonetMount.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Ironsight_BayonetMount.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Ironsight_SlingMount.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Ironsight_SlingMount.asset"
+    },
+    {
+      "source": "Mesh/M4A1_LReceiver_Body.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_LReceiver_Body.asset"
+    },
+    {
+      "source": "Mesh/M4A1_LReceiver_BoltRelease.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_LReceiver_BoltRelease.asset"
+    },
+    {
+      "source": "Mesh/M4A1_LReceiver_FireSelector.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_LReceiver_FireSelector.asset"
+    },
+    {
+      "source": "Mesh/M4A1_LReceiver_Grip.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_LReceiver_Grip.asset"
+    },
+    {
+      "source": "Mesh/M4A1_LReceiver_MagazineCatch.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_LReceiver_MagazineCatch.asset"
+    },
+    {
+      "source": "Mesh/M4A1_LReceiver_Pin1.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_LReceiver_Pin1.asset"
+    },
+    {
+      "source": "Mesh/M4A1_LReceiver_Pin2.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_LReceiver_Pin2.asset"
+    },
+    {
+      "source": "Mesh/M4A1_LReceiver_Pin3.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_LReceiver_Pin3.asset"
+    },
+    {
+      "source": "Mesh/M4A1_LReceiver_Pin4.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_LReceiver_Pin4.asset"
+    },
+    {
+      "source": "Mesh/M4A1_LReceiver_Pin5.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_LReceiver_Pin5.asset"
+    },
+    {
+      "source": "Mesh/M4A1_LReceiver_StockPipe.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_LReceiver_StockPipe.asset"
+    },
+    {
+      "source": "Mesh/M4A1_LReceiver_StockPlate.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_LReceiver_StockPlate.asset"
+    },
+    {
+      "source": "Mesh/M4A1_LReceiver_StockScrew.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_LReceiver_StockScrew.asset"
+    },
+    {
+      "source": "Mesh/M4A1_LReceiver_Trigger.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_LReceiver_Trigger.asset"
+    },
+    {
+      "source": "Mesh/M4A1_LReceiver_TriggerGuard.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_LReceiver_TriggerGuard.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Body.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Body.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet01.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet01.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet03.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet03.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet04.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet04.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet05.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet05.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet06.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet06.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet07.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet07.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet08.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet08.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet09.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet09.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet10.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet10.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet11.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet11.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet12.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet12.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet13.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet13.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet14.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet14.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet15.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet15.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet16.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet16.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet17.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet17.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet18.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet18.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet19.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet19.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet20.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet20.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet21.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet21.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet22.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet22.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet23.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet23.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet24.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet24.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet25.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet25.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet26.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet26.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet27.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet27.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet28.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet28.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet29.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet29.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet30.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet30.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Bullet31.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Bullet31.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cap.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cap.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge01.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge01.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge03.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge03.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge04.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge04.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge05.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge05.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge06.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge06.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge07.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge07.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge08.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge08.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge09.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge09.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge10.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge10.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge11.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge11.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge12.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge12.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge13.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge13.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge14.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge14.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge15.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge15.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge16.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge16.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge17.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge17.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge18.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge18.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge19.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge19.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge20.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge20.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge21.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge21.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge22.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge22.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge23.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge23.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge24.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge24.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge25.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge25.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge26.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge26.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge27.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge27.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge28.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge28.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge29.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge29.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge30.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge30.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Cartridge31.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Cartridge31.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Magazine01_Stopper01.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Magazine01_Stopper01.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Stock_Adjust.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Stock_Adjust.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Stock_Body.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Stock_Body.asset"
+    },
+    {
+      "source": "Mesh/M4A1_Stock_Pin.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_Stock_Pin.asset"
+    },
+    {
+      "source": "Mesh/M4A1_UReceiver_Body.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_UReceiver_Body.asset"
+    },
+    {
+      "source": "Mesh/M4A1_UReceiver_BoltAid.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_UReceiver_BoltAid.asset"
+    },
+    {
+      "source": "Mesh/M4A1_UReceiver_Bolt_Body.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_UReceiver_Bolt_Body.asset"
+    },
+    {
+      "source": "Mesh/M4A1_UReceiver_Bolt_Carrier.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_UReceiver_Bolt_Carrier.asset"
+    },
+    {
+      "source": "Mesh/M4A1_UReceiver_Bolt_EjectionFlap.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_UReceiver_Bolt_EjectionFlap.asset"
+    },
+    {
+      "source": "Mesh/M4A1_UReceiver_EjectionFlapClip.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_UReceiver_EjectionFlapClip.asset"
+    },
+    {
+      "source": "Mesh/M4A1_UReceiver_EjectionFlapGuide.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_UReceiver_EjectionFlapGuide.asset"
+    },
+    {
+      "source": "Mesh/M4A1_UReceiver_EjectionFlapSpring.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M4A1_UReceiver_EjectionFlapSpring.asset"
+    },
+    {
+      "source": "Mesh/M60-CABE.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M60-CABE.asset"
+    },
+    {
+      "source": "Mesh/M60-CABF.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M60-CABF.asset"
+    },
+    {
+      "source": "Mesh/M60-DORA.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M60-DORA.asset"
+    },
+    {
+      "source": "Mesh/M60-META.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M60-META.asset"
+    },
+    {
+      "source": "Mesh/M60-NEGR.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/M60-NEGR.asset"
+    },
+    {
+      "source": "Mesh/Mesh02.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Mesh02.asset"
+    },
+    {
+      "source": "Mesh/Mesh_0010.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Mesh_0010.asset"
+    },
+    {
+      "source": "Mesh/Mesh_0011.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Mesh_0011.asset"
+    },
+    {
+      "source": "Mesh/Mesh_0012.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Mesh_0012.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-502113-1-949.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Obj3d66-502113-1-949.asset"
+    },
+    {
+      "source": "Mesh/Object01.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Object01.asset"
+    },
+    {
+      "source": "Mesh/Object01_0.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Object01_0.asset"
+    },
+    {
+      "source": "Mesh/Object02.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Object02.asset"
+    },
+    {
+      "source": "Mesh/Object03.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Object03.asset"
+    },
+    {
+      "source": "Mesh/Object04.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Object04.asset"
+    },
+    {
+      "source": "Mesh/Object05.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Object05.asset"
+    },
+    {
+      "source": "Mesh/Object10691.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Object10691.asset"
+    },
+    {
+      "source": "Mesh/Object10692.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Object10692.asset"
+    },
+    {
+      "source": "Mesh/OilTank01.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/OilTank01.asset"
+    },
+    {
+      "source": "Mesh/Pin.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Pin.asset"
+    },
+    {
+      "source": "Mesh/Rectangle01.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle01.asset"
+    },
+    {
+      "source": "Mesh/Rectangle02.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle02.asset"
+    },
+    {
+      "source": "Mesh/Rectangle03.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle03.asset"
+    },
+    {
+      "source": "Mesh/Rectangle04.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle04.asset"
+    },
+    {
+      "source": "Mesh/Rectangle05.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle05.asset"
+    },
+    {
+      "source": "Mesh/Rectangle07.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle07.asset"
+    },
+    {
+      "source": "Mesh/Rectangle08.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle08.asset"
+    },
+    {
+      "source": "Mesh/Rectangle09.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle09.asset"
+    },
+    {
+      "source": "Mesh/Rectangle10.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle10.asset"
+    },
+    {
+      "source": "Mesh/Rectangle12.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle12.asset"
+    },
+    {
+      "source": "Mesh/Rectangle13.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle13.asset"
+    },
+    {
+      "source": "Mesh/Rectangle15.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle15.asset"
+    },
+    {
+      "source": "Mesh/Rectangle16.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle16.asset"
+    },
+    {
+      "source": "Mesh/Rectangle17.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle17.asset"
+    },
+    {
+      "source": "Mesh/Rectangle18.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle18.asset"
+    },
+    {
+      "source": "Mesh/Rectangle19.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle19.asset"
+    },
+    {
+      "source": "Mesh/Rectangle20.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle20.asset"
+    },
+    {
+      "source": "Mesh/Rectangle21.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle21.asset"
+    },
+    {
+      "source": "Mesh/Rectangle23.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle23.asset"
+    },
+    {
+      "source": "Mesh/Rectangle24.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle24.asset"
+    },
+    {
+      "source": "Mesh/Rectangle25.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle25.asset"
+    },
+    {
+      "source": "Mesh/Rectangle26.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle26.asset"
+    },
+    {
+      "source": "Mesh/Rectangle27.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle27.asset"
+    },
+    {
+      "source": "Mesh/Rectangle28.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle28.asset"
+    },
+    {
+      "source": "Mesh/Rectangle29.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle29.asset"
+    },
+    {
+      "source": "Mesh/Rectangle30.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle30.asset"
+    },
+    {
+      "source": "Mesh/Rectangle31.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle31.asset"
+    },
+    {
+      "source": "Mesh/Rectangle32.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle32.asset"
+    },
+    {
+      "source": "Mesh/Rectangle33.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle33.asset"
+    },
+    {
+      "source": "Mesh/Rectangle34.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle34.asset"
+    },
+    {
+      "source": "Mesh/Rectangle35.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle35.asset"
+    },
+    {
+      "source": "Mesh/Rectangle36.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle36.asset"
+    },
+    {
+      "source": "Mesh/Rectangle37.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle37.asset"
+    },
+    {
+      "source": "Mesh/Rectangle38.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle38.asset"
+    },
+    {
+      "source": "Mesh/Rectangle39.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle39.asset"
+    },
+    {
+      "source": "Mesh/Rectangle40.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle40.asset"
+    },
+    {
+      "source": "Mesh/Rectangle41.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle41.asset"
+    },
+    {
+      "source": "Mesh/Rectangle42.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle42.asset"
+    },
+    {
+      "source": "Mesh/Rectangle43.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle43.asset"
+    },
+    {
+      "source": "Mesh/Rectangle44.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle44.asset"
+    },
+    {
+      "source": "Mesh/Rectangle45.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle45.asset"
+    },
+    {
+      "source": "Mesh/Rectangle46.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle46.asset"
+    },
+    {
+      "source": "Mesh/Rectangle47.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle47.asset"
+    },
+    {
+      "source": "Mesh/Rectangle48.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Rectangle48.asset"
+    },
+    {
+      "source": "Mesh/Shape02.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Shape02.asset"
+    },
+    {
+      "source": "Mesh/Shape04.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Shape04.asset"
+    },
+    {
+      "source": "Mesh/Shape07.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Shape07.asset"
+    },
+    {
+      "source": "Mesh/Shape12.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Shape12.asset"
+    },
+    {
+      "source": "Mesh/Shape13.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Shape13.asset"
+    },
+    {
+      "source": "Mesh/Shape18.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Shape18.asset"
+    },
+    {
+      "source": "Mesh/Shape19.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Shape19.asset"
+    },
+    {
+      "source": "Mesh/Shape20.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Shape20.asset"
+    },
+    {
+      "source": "Mesh/Shape22.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Shape22.asset"
+    },
+    {
+      "source": "Mesh/Shape24.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Shape24.asset"
+    },
+    {
+      "source": "Mesh/Shape26.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Shape26.asset"
+    },
+    {
+      "source": "Mesh/Shape27.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Shape27.asset"
+    },
+    {
+      "source": "Mesh/Shape29.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Shape29.asset"
+    },
+    {
+      "source": "Mesh/Shape31.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Shape31.asset"
+    },
+    {
+      "source": "Mesh/Shape33.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Shape33.asset"
+    },
+    {
+      "source": "Mesh/Shape35.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Shape35.asset"
+    },
+    {
+      "source": "Mesh/Shape37.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Shape37.asset"
+    },
+    {
+      "source": "Mesh/Shell.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Shell.asset"
+    },
+    {
+      "source": "Mesh/Sv Sniper (3disland.blogspot.com).asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/Sv Sniper (3disland.blogspot.com).asset"
+    },
+    {
+      "source": "Mesh/biggun.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/biggun.asset"
+    },
+    {
+      "source": "Mesh/bolt.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/bolt.asset"
+    },
+    {
+      "source": "Mesh/bullet001.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/bullet001.asset"
+    },
+    {
+      "source": "Mesh/bullet002.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/bullet002.asset"
+    },
+    {
+      "source": "Mesh/bullet_0.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/bullet_0.asset"
+    },
+    {
+      "source": "Mesh/default.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/default.asset"
+    },
+    {
+      "source": "Mesh/default_0.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/default_0.asset"
+    },
+    {
+      "source": "Mesh/frame.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/frame.asset"
+    },
+    {
+      "source": "Mesh/grip.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/grip.asset"
+    },
+    {
+      "source": "Mesh/gun.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/gun.asset"
+    },
+    {
+      "source": "Mesh/mag.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/mag.asset"
+    },
+    {
+      "source": "Mesh/magazine.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/magazine.asset"
+    },
+    {
+      "source": "Mesh/polySurface233.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface233.asset"
+    },
+    {
+      "source": "Mesh/polySurface245.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface245.asset"
+    },
+    {
+      "source": "Mesh/polySurface246.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface246.asset"
+    },
+    {
+      "source": "Mesh/polySurface247.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface247.asset"
+    },
+    {
+      "source": "Mesh/polySurface249.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface249.asset"
+    },
+    {
+      "source": "Mesh/polySurface250.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface250.asset"
+    },
+    {
+      "source": "Mesh/polySurface251.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface251.asset"
+    },
+    {
+      "source": "Mesh/polySurface252.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface252.asset"
+    },
+    {
+      "source": "Mesh/polySurface253.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface253.asset"
+    },
+    {
+      "source": "Mesh/polySurface254.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface254.asset"
+    },
+    {
+      "source": "Mesh/polySurface255.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface255.asset"
+    },
+    {
+      "source": "Mesh/polySurface256.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface256.asset"
+    },
+    {
+      "source": "Mesh/polySurface257.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface257.asset"
+    },
+    {
+      "source": "Mesh/polySurface258.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface258.asset"
+    },
+    {
+      "source": "Mesh/polySurface259.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface259.asset"
+    },
+    {
+      "source": "Mesh/polySurface260.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface260.asset"
+    },
+    {
+      "source": "Mesh/polySurface261.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface261.asset"
+    },
+    {
+      "source": "Mesh/polySurface262.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface262.asset"
+    },
+    {
+      "source": "Mesh/polySurface263.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface263.asset"
+    },
+    {
+      "source": "Mesh/polySurface264.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface264.asset"
+    },
+    {
+      "source": "Mesh/polySurface265.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface265.asset"
+    },
+    {
+      "source": "Mesh/polySurface266.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface266.asset"
+    },
+    {
+      "source": "Mesh/polySurface267.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface267.asset"
+    },
+    {
+      "source": "Mesh/polySurface268.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface268.asset"
+    },
+    {
+      "source": "Mesh/polySurface269.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface269.asset"
+    },
+    {
+      "source": "Mesh/polySurface290.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface290.asset"
+    },
+    {
+      "source": "Mesh/polySurface291.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface291.asset"
+    },
+    {
+      "source": "Mesh/polySurface293.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface293.asset"
+    },
+    {
+      "source": "Mesh/polySurface294.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface294.asset"
+    },
+    {
+      "source": "Mesh/polySurface295.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface295.asset"
+    },
+    {
+      "source": "Mesh/polySurface296.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface296.asset"
+    },
+    {
+      "source": "Mesh/polySurface297.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface297.asset"
+    },
+    {
+      "source": "Mesh/polySurface298.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface298.asset"
+    },
+    {
+      "source": "Mesh/polySurface299.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface299.asset"
+    },
+    {
+      "source": "Mesh/polySurface300.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface300.asset"
+    },
+    {
+      "source": "Mesh/polySurface301.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface301.asset"
+    },
+    {
+      "source": "Mesh/polySurface302.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface302.asset"
+    },
+    {
+      "source": "Mesh/polySurface303.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface303.asset"
+    },
+    {
+      "source": "Mesh/polySurface304.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface304.asset"
+    },
+    {
+      "source": "Mesh/polySurface305.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface305.asset"
+    },
+    {
+      "source": "Mesh/polySurface306.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface306.asset"
+    },
+    {
+      "source": "Mesh/polySurface307.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface307.asset"
+    },
+    {
+      "source": "Mesh/polySurface308.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface308.asset"
+    },
+    {
+      "source": "Mesh/polySurface309.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface309.asset"
+    },
+    {
+      "source": "Mesh/polySurface310.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface310.asset"
+    },
+    {
+      "source": "Mesh/polySurface311.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface311.asset"
+    },
+    {
+      "source": "Mesh/polySurface312.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface312.asset"
+    },
+    {
+      "source": "Mesh/polySurface313.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface313.asset"
+    },
+    {
+      "source": "Mesh/polySurface314.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface314.asset"
+    },
+    {
+      "source": "Mesh/polySurface315.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface315.asset"
+    },
+    {
+      "source": "Mesh/polySurface316.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface316.asset"
+    },
+    {
+      "source": "Mesh/polySurface317.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface317.asset"
+    },
+    {
+      "source": "Mesh/polySurface318.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface318.asset"
+    },
+    {
+      "source": "Mesh/polySurface319.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface319.asset"
+    },
+    {
+      "source": "Mesh/polySurface320.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface320.asset"
+    },
+    {
+      "source": "Mesh/polySurface321.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface321.asset"
+    },
+    {
+      "source": "Mesh/polySurface322.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface322.asset"
+    },
+    {
+      "source": "Mesh/polySurface323.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface323.asset"
+    },
+    {
+      "source": "Mesh/polySurface324.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface324.asset"
+    },
+    {
+      "source": "Mesh/polySurface325.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface325.asset"
+    },
+    {
+      "source": "Mesh/polySurface326.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface326.asset"
+    },
+    {
+      "source": "Mesh/polySurface327.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface327.asset"
+    },
+    {
+      "source": "Mesh/polySurface328.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface328.asset"
+    },
+    {
+      "source": "Mesh/polySurface329.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface329.asset"
+    },
+    {
+      "source": "Mesh/polySurface330.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface330.asset"
+    },
+    {
+      "source": "Mesh/polySurface331.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface331.asset"
+    },
+    {
+      "source": "Mesh/polySurface332.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface332.asset"
+    },
+    {
+      "source": "Mesh/polySurface333.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface333.asset"
+    },
+    {
+      "source": "Mesh/polySurface334.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface334.asset"
+    },
+    {
+      "source": "Mesh/polySurface335.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface335.asset"
+    },
+    {
+      "source": "Mesh/polySurface336.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface336.asset"
+    },
+    {
+      "source": "Mesh/polySurface337.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface337.asset"
+    },
+    {
+      "source": "Mesh/polySurface338.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface338.asset"
+    },
+    {
+      "source": "Mesh/polySurface339.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface339.asset"
+    },
+    {
+      "source": "Mesh/polySurface340.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface340.asset"
+    },
+    {
+      "source": "Mesh/polySurface341.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface341.asset"
+    },
+    {
+      "source": "Mesh/polySurface342.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface342.asset"
+    },
+    {
+      "source": "Mesh/polySurface343.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface343.asset"
+    },
+    {
+      "source": "Mesh/polySurface344.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface344.asset"
+    },
+    {
+      "source": "Mesh/polySurface345.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface345.asset"
+    },
+    {
+      "source": "Mesh/polySurface346.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface346.asset"
+    },
+    {
+      "source": "Mesh/polySurface347.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface347.asset"
+    },
+    {
+      "source": "Mesh/polySurface348.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface348.asset"
+    },
+    {
+      "source": "Mesh/polySurface349.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface349.asset"
+    },
+    {
+      "source": "Mesh/polySurface350.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface350.asset"
+    },
+    {
+      "source": "Mesh/polySurface351.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface351.asset"
+    },
+    {
+      "source": "Mesh/polySurface352.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface352.asset"
+    },
+    {
+      "source": "Mesh/polySurface378.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface378.asset"
+    },
+    {
+      "source": "Mesh/polySurface379.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface379.asset"
+    },
+    {
+      "source": "Mesh/polySurface380.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface380.asset"
+    },
+    {
+      "source": "Mesh/polySurface381.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface381.asset"
+    },
+    {
+      "source": "Mesh/polySurface382.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface382.asset"
+    },
+    {
+      "source": "Mesh/polySurface383.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface383.asset"
+    },
+    {
+      "source": "Mesh/polySurface384.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface384.asset"
+    },
+    {
+      "source": "Mesh/polySurface385.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface385.asset"
+    },
+    {
+      "source": "Mesh/polySurface386.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface386.asset"
+    },
+    {
+      "source": "Mesh/polySurface387.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface387.asset"
+    },
+    {
+      "source": "Mesh/polySurface388.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface388.asset"
+    },
+    {
+      "source": "Mesh/polySurface389.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface389.asset"
+    },
+    {
+      "source": "Mesh/polySurface390.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface390.asset"
+    },
+    {
+      "source": "Mesh/polySurface391.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface391.asset"
+    },
+    {
+      "source": "Mesh/polySurface392.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface392.asset"
+    },
+    {
+      "source": "Mesh/polySurface395.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface395.asset"
+    },
+    {
+      "source": "Mesh/polySurface396.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface396.asset"
+    },
+    {
+      "source": "Mesh/polySurface399.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface399.asset"
+    },
+    {
+      "source": "Mesh/polySurface51.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface51.asset"
+    },
+    {
+      "source": "Mesh/polySurface53.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface53.asset"
+    },
+    {
+      "source": "Mesh/polySurface54.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/polySurface54.asset"
+    },
+    {
+      "source": "Mesh/safety.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/safety.asset"
+    },
+    {
+      "source": "Mesh/soccerBall.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/soccerBall.asset"
+    },
+    {
+      "source": "Mesh/something_dustcover_maybe.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/something_dustcover_maybe.asset"
+    },
+    {
+      "source": "Mesh/stock.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/stock.asset"
+    },
+    {
+      "source": "Mesh/stock2.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/stock2.asset"
+    },
+    {
+      "source": "Mesh/switch.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/switch.asset"
+    },
+    {
+      "source": "Mesh/trigger.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/trigger.asset"
+    },
+    {
+      "source": "Mesh/trigger_0.asset",
+      "target": "RecoveredMaps/IceFireMaze/Mesh/trigger_0.asset"
+    },
+    {
+      "source": "Resources/audios/AK切枪.ogg",
+      "target": "RecoveredMaps/IceFireMaze/Resources/audios/AK切枪.ogg"
+    },
+    {
+      "source": "Resources/audios/Audio_move.ogg",
+      "target": "RecoveredMaps/IceFireMaze/Resources/audios/Audio_move.ogg"
+    },
+    {
+      "source": "Resources/audios/jump.ogg",
+      "target": "RecoveredMaps/IceFireMaze/Resources/audios/jump.ogg"
+    },
+    {
+      "source": "Resources/audios/开场女音.ogg",
+      "target": "RecoveredMaps/IceFireMaze/Resources/audios/开场女音.ogg"
+    },
+    {
+      "source": "Scenes/SceneMG/LightingData.asset",
+      "target": "RecoveredMaps/IceFireMaze/Scenes/SceneMG/LightingData.asset"
+    },
+    {
+      "source": "Scenes/SceneMG.unity",
+      "target": "RecoveredMaps/IceFireMaze/Scenes/SceneMG.unity"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/Audio.cs",
+      "target": "RecoveredMaps/IceFireMaze/Scripts/Assembly-CSharp/Audio.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/Move.cs",
+      "target": "RecoveredMaps/IceFireMaze/Scripts/Assembly-CSharp/Move.cs"
+    },
+    {
+      "source": "Shader/CorvoShader_WaterAusfA.shader",
+      "target": "RecoveredMaps/IceFireMaze/Shader/CorvoShader_WaterAusfA.shader"
+    },
+    {
+      "source": "Sprite/1(1).asset",
+      "target": "RecoveredMaps/IceFireMaze/Sprite/1(1).asset"
+    },
+    {
+      "source": "Sprite/s1阿卡2.0.asset",
+      "target": "RecoveredMaps/IceFireMaze/Sprite/s1阿卡2.0.asset"
+    },
+    {
+      "source": "Sprite/准心.asset",
+      "target": "RecoveredMaps/IceFireMaze/Sprite/准心.asset"
+    },
+    {
+      "source": "Texture2D/-2353017058b0a9f5.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/-2353017058b0a9f5.png"
+    },
+    {
+      "source": "Texture2D/-2b70256891ea8885.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/-2b70256891ea8885.png"
+    },
+    {
+      "source": "Texture2D/-30b9d92a448e4d32.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/-30b9d92a448e4d32.png"
+    },
+    {
+      "source": "Texture2D/-7a8afaf3e2b925d6.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/-7a8afaf3e2b925d6.png"
+    },
+    {
+      "source": "Texture2D/-ca484b5505888ea.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/-ca484b5505888ea.png"
+    },
+    {
+      "source": "Texture2D/00.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/00.png"
+    },
+    {
+      "source": "Texture2D/01010a554406360000019ae90c659c.jpg@2o.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/01010a554406360000019ae90c659c.jpg@2o.png"
+    },
+    {
+      "source": "Texture2D/014d1a554406360000019ae9246f4f.jpg@2o.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/014d1a554406360000019ae9246f4f.jpg@2o.png"
+    },
+    {
+      "source": "Texture2D/015ade554406360000019ae9920d98.jpg@2o.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/015ade554406360000019ae9920d98.jpg@2o.png"
+    },
+    {
+      "source": "Texture2D/01cf41554406360000019ae92c8352.jpg@2o.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/01cf41554406360000019ae92c8352.jpg@2o.png"
+    },
+    {
+      "source": "Texture2D/01dcf1554406360000019ae9b6f18b.jpg@2o.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/01dcf1554406360000019ae9b6f18b.jpg@2o.png"
+    },
+    {
+      "source": "Texture2D/01f62e554406350000019ae9d1dfcf.jpg@2o.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/01f62e554406350000019ae9d1dfcf.jpg@2o.png"
+    },
+    {
+      "source": "Texture2D/02.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/02.png"
+    },
+    {
+      "source": "Texture2D/04.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/04.png"
+    },
+    {
+      "source": "Texture2D/1 (1).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1 (1).png"
+    },
+    {
+      "source": "Texture2D/1 (2).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1 (2).png"
+    },
+    {
+      "source": "Texture2D/1 (45).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1 (45).png"
+    },
+    {
+      "source": "Texture2D/1(1).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1(1).png"
+    },
+    {
+      "source": "Texture2D/1(2).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1(2).png"
+    },
+    {
+      "source": "Texture2D/1552611200681.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1552611200681.png"
+    },
+    {
+      "source": "Texture2D/1552611204044.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1552611204044.png"
+    },
+    {
+      "source": "Texture2D/1570158345561.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570158345561.png"
+    },
+    {
+      "source": "Texture2D/1570460406346.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570460406346.png"
+    },
+    {
+      "source": "Texture2D/1570509152865.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570509152865.png"
+    },
+    {
+      "source": "Texture2D/1570509167718.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570509167718.png"
+    },
+    {
+      "source": "Texture2D/1570509377150.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570509377150.png"
+    },
+    {
+      "source": "Texture2D/1570838481413.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570838481413.png"
+    },
+    {
+      "source": "Texture2D/1570838524858.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570838524858.png"
+    },
+    {
+      "source": "Texture2D/1570838586311.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570838586311.png"
+    },
+    {
+      "source": "Texture2D/1570838645358.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570838645358.png"
+    },
+    {
+      "source": "Texture2D/1570838653468.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570838653468.png"
+    },
+    {
+      "source": "Texture2D/1570838681767.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570838681767.png"
+    },
+    {
+      "source": "Texture2D/1570941509192.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570941509192.png"
+    },
+    {
+      "source": "Texture2D/1570941513988.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570941513988.png"
+    },
+    {
+      "source": "Texture2D/1570941526100.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570941526100.png"
+    },
+    {
+      "source": "Texture2D/1570941530772.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570941530772.png"
+    },
+    {
+      "source": "Texture2D/1570941537804.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570941537804.png"
+    },
+    {
+      "source": "Texture2D/1570941542299.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570941542299.png"
+    },
+    {
+      "source": "Texture2D/1570941546903.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570941546903.png"
+    },
+    {
+      "source": "Texture2D/1570941551313.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570941551313.png"
+    },
+    {
+      "source": "Texture2D/1570941555594.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570941555594.png"
+    },
+    {
+      "source": "Texture2D/1570941559985.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1570941559985.png"
+    },
+    {
+      "source": "Texture2D/15db296bb1f98dcb.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/15db296bb1f98dcb.png"
+    },
+    {
+      "source": "Texture2D/18f7dcc8e44f90ca4c5104c415d806db572575a3685dd-M3MrMB(RGB)(noise_scale)(Level1)(x2.000000).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/18f7dcc8e44f90ca4c5104c415d806db572575a3685dd-M3MrMB(RGB)(noise_scale)(Level1)(x2.000000).png"
+    },
+    {
+      "source": "Texture2D/1911_1.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1911_1.png"
+    },
+    {
+      "source": "Texture2D/1e2e7726b9365b92.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/1e2e7726b9365b92.png"
+    },
+    {
+      "source": "Texture2D/2 (1).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/2 (1).png"
+    },
+    {
+      "source": "Texture2D/2 (2).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/2 (2).png"
+    },
+    {
+      "source": "Texture2D/20110804113702812135.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20110804113702812135.png"
+    },
+    {
+      "source": "Texture2D/20110804113702812868.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20110804113702812868.png"
+    },
+    {
+      "source": "Texture2D/20110804113702812942.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20110804113702812942.png"
+    },
+    {
+      "source": "Texture2D/20191012185724 1.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191012185724 1.png"
+    },
+    {
+      "source": "Texture2D/20191012185724.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191012185724.png"
+    },
+    {
+      "source": "Texture2D/20191012190234.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191012190234.png"
+    },
+    {
+      "source": "Texture2D/20191012190415.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191012190415.png"
+    },
+    {
+      "source": "Texture2D/20191012203336.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191012203336.png"
+    },
+    {
+      "source": "Texture2D/20191012204407.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191012204407.png"
+    },
+    {
+      "source": "Texture2D/20191012221427.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191012221427.png"
+    },
+    {
+      "source": "Texture2D/20191012221448.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191012221448.png"
+    },
+    {
+      "source": "Texture2D/20191012221508.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191012221508.png"
+    },
+    {
+      "source": "Texture2D/20191012221655.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191012221655.png"
+    },
+    {
+      "source": "Texture2D/20191012224554.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191012224554.png"
+    },
+    {
+      "source": "Texture2D/20191013111402.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191013111402.png"
+    },
+    {
+      "source": "Texture2D/20191013111431.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191013111431.png"
+    },
+    {
+      "source": "Texture2D/20191013111458.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191013111458.png"
+    },
+    {
+      "source": "Texture2D/20191013111525.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191013111525.png"
+    },
+    {
+      "source": "Texture2D/20191013111543.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191013111543.png"
+    },
+    {
+      "source": "Texture2D/20191013111558.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191013111558.png"
+    },
+    {
+      "source": "Texture2D/20191013111611.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191013111611.png"
+    },
+    {
+      "source": "Texture2D/20191013111627.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191013111627.png"
+    },
+    {
+      "source": "Texture2D/20191013195716.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/20191013195716.png"
+    },
+    {
+      "source": "Texture2D/284e0a59981c18f8.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/284e0a59981c18f8.png"
+    },
+    {
+      "source": "Texture2D/29945ba8edda427b.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/29945ba8edda427b.png"
+    },
+    {
+      "source": "Texture2D/2d279690597aa11.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/2d279690597aa11.png"
+    },
+    {
+      "source": "Texture2D/2d9feb3818dedc95.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/2d9feb3818dedc95.png"
+    },
+    {
+      "source": "Texture2D/2d9feb3818dedc95_0.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/2d9feb3818dedc95_0.png"
+    },
+    {
+      "source": "Texture2D/2fe50c66b4b50f7.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/2fe50c66b4b50f7.png"
+    },
+    {
+      "source": "Texture2D/3 (1).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/3 (1).png"
+    },
+    {
+      "source": "Texture2D/3e4a954ac33fcedf.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/3e4a954ac33fcedf.png"
+    },
+    {
+      "source": "Texture2D/3fd022487b70fd42.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/3fd022487b70fd42.png"
+    },
+    {
+      "source": "Texture2D/439F1FD811BF0EF849DAB517288A9A24.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/439F1FD811BF0EF849DAB517288A9A24.png"
+    },
+    {
+      "source": "Texture2D/4A9DB0E4BFEA91D1DF2C42C19D125927.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/4A9DB0E4BFEA91D1DF2C42C19D125927.png"
+    },
+    {
+      "source": "Texture2D/55C9B3904E348D602313757D8EB6ADFC.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/55C9B3904E348D602313757D8EB6ADFC.png"
+    },
+    {
+      "source": "Texture2D/579997925-bbdb011b689bdeb.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/579997925-bbdb011b689bdeb.png"
+    },
+    {
+      "source": "Texture2D/5_1.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/5_1.png"
+    },
+    {
+      "source": "Texture2D/5einst.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/5einst.png"
+    },
+    {
+      "source": "Texture2D/5etprb.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/5etprb.png"
+    },
+    {
+      "source": "Texture2D/5ewilb.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/5ewilb.png"
+    },
+    {
+      "source": "Texture2D/5ewilt.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/5ewilt.png"
+    },
+    {
+      "source": "Texture2D/5ewirt.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/5ewirt.png"
+    },
+    {
+      "source": "Texture2D/6361f95be69b997c.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/6361f95be69b997c.png"
+    },
+    {
+      "source": "Texture2D/64cb81d54b8628eb.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/64cb81d54b8628eb.png"
+    },
+    {
+      "source": "Texture2D/658E66E89C96F032F3BA0CE1A06346A1.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/658E66E89C96F032F3BA0CE1A06346A1.png"
+    },
+    {
+      "source": "Texture2D/6_0.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/6_0.png"
+    },
+    {
+      "source": "Texture2D/7993135EB1542C46B2A21D6F75E3067B.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/7993135EB1542C46B2A21D6F75E3067B.png"
+    },
+    {
+      "source": "Texture2D/838E54FD75C478FB12C652EFC599D5DD.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/838E54FD75C478FB12C652EFC599D5DD.png"
+    },
+    {
+      "source": "Texture2D/A9B341D482FF756CABFD4506FB3C0808.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/A9B341D482FF756CABFD4506FB3C0808.png"
+    },
+    {
+      "source": "Texture2D/AM84_001_Humvee_Diff.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/AM84_001_Humvee_Diff.png"
+    },
+    {
+      "source": "Texture2D/AM84_001_Humvee_Glass.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/AM84_001_Humvee_Glass.png"
+    },
+    {
+      "source": "Texture2D/Archmodels_115_038_concrete_bump.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Archmodels_115_038_concrete_bump.png"
+    },
+    {
+      "source": "Texture2D/Archmodels_115_038_concrete_color.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Archmodels_115_038_concrete_color.png"
+    },
+    {
+      "source": "Texture2D/Aut.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Aut.png"
+    },
+    {
+      "source": "Texture2D/BB3EE4498513CD69C5C62143318756DF.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/BB3EE4498513CD69C5C62143318756DF.png"
+    },
+    {
+      "source": "Texture2D/C19AF86FA3DC5A273193E634B4CCB1CE.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/C19AF86FA3DC5A273193E634B4CCB1CE.png"
+    },
+    {
+      "source": "Texture2D/C5B1A9E73A8F99B0FE068EBE33A7FAA2.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/C5B1A9E73A8F99B0FE068EBE33A7FAA2.png"
+    },
+    {
+      "source": "Texture2D/Cache_13394d72d56b3db0..png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Cache_13394d72d56b3db0..png"
+    },
+    {
+      "source": "Texture2D/Cache_5aeeb7ba023ed75f..png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Cache_5aeeb7ba023ed75f..png"
+    },
+    {
+      "source": "Texture2D/Cache_e0968c6840f3b3a..png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Cache_e0968c6840f3b3a..png"
+    },
+    {
+      "source": "Texture2D/F6CD5CE20FBB4F799B7A652B3F7DE638.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/F6CD5CE20FBB4F799B7A652B3F7DE638.png"
+    },
+    {
+      "source": "Texture2D/IMG_3093.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/IMG_3093.png"
+    },
+    {
+      "source": "Texture2D/IMG_3098.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/IMG_3098.png"
+    },
+    {
+      "source": "Texture2D/IMG_3102.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/IMG_3102.png"
+    },
+    {
+      "source": "Texture2D/IMG_3103.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/IMG_3103.png"
+    },
+    {
+      "source": "Texture2D/IMG_3104.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/IMG_3104.png"
+    },
+    {
+      "source": "Texture2D/IMG_3105.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/IMG_3105.png"
+    },
+    {
+      "source": "Texture2D/IMG_9808.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/IMG_9808.png"
+    },
+    {
+      "source": "Texture2D/IMG_9819.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/IMG_9819.png"
+    },
+    {
+      "source": "Texture2D/PicsArt_10-09-05.29.15.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/PicsArt_10-09-05.29.15.png"
+    },
+    {
+      "source": "Texture2D/QQ图片20190713161605 (2).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/QQ图片20190713161605 (2).png"
+    },
+    {
+      "source": "Texture2D/QQ图片20190713161605 (2)_0.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/QQ图片20190713161605 (2)_0.png"
+    },
+    {
+      "source": "Texture2D/QQ图片20190713161613.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/QQ图片20190713161613.png"
+    },
+    {
+      "source": "Texture2D/QQ图片2019080917.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/QQ图片2019080917.png"
+    },
+    {
+      "source": "Texture2D/Round grenade texture.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Round grenade texture.png"
+    },
+    {
+      "source": "Texture2D/Screenshot_2019-04-26-11-10-21.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Screenshot_2019-04-26-11-10-21.png"
+    },
+    {
+      "source": "Texture2D/Screenshot_20190108-224159.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Screenshot_20190108-224159.png"
+    },
+    {
+      "source": "Texture2D/Screenshot_20190402-145158.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Screenshot_20190402-145158.png"
+    },
+    {
+      "source": "Texture2D/Screenshot_20190402-145440.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Screenshot_20190402-145440.png"
+    },
+    {
+      "source": "Texture2D/Screenshot_20190426-110013.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Screenshot_20190426-110013.png"
+    },
+    {
+      "source": "Texture2D/Screenshot_20190426-110611.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Screenshot_20190426-110611.png"
+    },
+    {
+      "source": "Texture2D/Screenshot_20190426-110758.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Screenshot_20190426-110758.png"
+    },
+    {
+      "source": "Texture2D/Screenshot_20190426-110856.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Screenshot_20190426-110856.png"
+    },
+    {
+      "source": "Texture2D/Screenshot_20190426-110930.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Screenshot_20190426-110930.png"
+    },
+    {
+      "source": "Texture2D/Screenshot_20190426-110943.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Screenshot_20190426-110943.png"
+    },
+    {
+      "source": "Texture2D/Screenshot_20190426-110955.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Screenshot_20190426-110955.png"
+    },
+    {
+      "source": "Texture2D/Screenshot_20190426-111128.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Screenshot_20190426-111128.png"
+    },
+    {
+      "source": "Texture2D/Screenshot_20190427-003744.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Screenshot_20190427-003744.png"
+    },
+    {
+      "source": "Texture2D/Screenshot_20190427-003846.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Screenshot_20190427-003846.png"
+    },
+    {
+      "source": "Texture2D/Texture.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/Texture.png"
+    },
+    {
+      "source": "Texture2D/WaterGlow2.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/WaterGlow2.png"
+    },
+    {
+      "source": "Texture2D/augTEX.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/augTEX.png"
+    },
+    {
+      "source": "Texture2D/backax2.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/backax2.png"
+    },
+    {
+      "source": "Texture2D/bullet_texture.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/bullet_texture.png"
+    },
+    {
+      "source": "Texture2D/desert_t.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/desert_t.png"
+    },
+    {
+      "source": "Texture2D/frontax2.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/frontax2.png"
+    },
+    {
+      "source": "Texture2D/hk_mp5n.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/hk_mp5n.png"
+    },
+    {
+      "source": "Texture2D/leftax2.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/leftax2.png"
+    },
+    {
+      "source": "Texture2D/null-4b448f1e41d43c4.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/null-4b448f1e41d43c4.png"
+    },
+    {
+      "source": "Texture2D/qiang2.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/qiang2.png"
+    },
+    {
+      "source": "Texture2D/qiang3.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/qiang3.png"
+    },
+    {
+      "source": "Texture2D/qiang4.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/qiang4.png"
+    },
+    {
+      "source": "Texture2D/qiang4_0.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/qiang4_0.png"
+    },
+    {
+      "source": "Texture2D/qiang5.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/qiang5.png"
+    },
+    {
+      "source": "Texture2D/rightax2.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/rightax2.png"
+    },
+    {
+      "source": "Texture2D/s1阿卡2.0.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/s1阿卡2.0.png"
+    },
+    {
+      "source": "Texture2D/stone3.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/stone3.png"
+    },
+    {
+      "source": "Texture2D/t01a07f96dd3a399ad9.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/t01a07f96dd3a399ad9.png"
+    },
+    {
+      "source": "Texture2D/th(12).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/th(12).png"
+    },
+    {
+      "source": "Texture2D/th(14).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/th(14).png"
+    },
+    {
+      "source": "Texture2D/th(15).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/th(15).png"
+    },
+    {
+      "source": "Texture2D/th(16)(1).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/th(16)(1).png"
+    },
+    {
+      "source": "Texture2D/th(17).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/th(17).png"
+    },
+    {
+      "source": "Texture2D/th(18).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/th(18).png"
+    },
+    {
+      "source": "Texture2D/th(21).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/th(21).png"
+    },
+    {
+      "source": "Texture2D/th(22).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/th(22).png"
+    },
+    {
+      "source": "Texture2D/th(26).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/th(26).png"
+    },
+    {
+      "source": "Texture2D/th(30).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/th(30).png"
+    },
+    {
+      "source": "Texture2D/th(4)(1).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/th(4)(1).png"
+    },
+    {
+      "source": "Texture2D/th(6)(1).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/th(6)(1).png"
+    },
+    {
+      "source": "Texture2D/th(7)(1).png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/th(7)(1).png"
+    },
+    {
+      "source": "Texture2D/topax2.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/topax2.png"
+    },
+    {
+      "source": "Texture2D/water_tex.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/water_tex.png"
+    },
+    {
+      "source": "Texture2D/wd_x.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/wd_x.png"
+    },
+    {
+      "source": "Texture2D/下马石1 拷贝.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/下马石1 拷贝.png"
+    },
+    {
+      "source": "Texture2D/准心.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/准心.png"
+    },
+    {
+      "source": "Texture2D/地面.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/地面.png"
+    },
+    {
+      "source": "Texture2D/柚木.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/柚木.png"
+    },
+    {
+      "source": "Texture2D/框架.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/框架.png"
+    },
+    {
+      "source": "Texture2D/海水.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/海水.png"
+    },
+    {
+      "source": "Texture2D/班妈线主路.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/班妈线主路.png"
+    },
+    {
+      "source": "Texture2D/窗.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/窗.png"
+    },
+    {
+      "source": "Texture2D/门.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/门.png"
+    },
+    {
+      "source": "Texture2D/门2.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/门2.png"
+    },
+    {
+      "source": "Texture2D/青砖.png",
+      "target": "RecoveredMaps/IceFireMaze/Texture2D/青砖.png"
+    }
+  ],
+  "reused": {
+    "6158f98ce2641875c7ed285913faa064": "Scripts/Assembly-CSharp/MouseLook.cs"
+  },
+  "missing_guids": [
+    "0000000000000000e000000000000000",
+    "0000000000000000f000000000000000",
+    "f5f67c52d1564df4a8936ccd202a3bd8"
+  ],
+  "conflicts": [
+    {
+      "guid": "6158f98ce2641875c7ed285913faa064",
+      "source": "Scripts/Assembly-CSharp/MouseLook.cs",
+      "target": "Scripts/Assembly-CSharp/MouseLook.cs"
+    }
+  ]
+}

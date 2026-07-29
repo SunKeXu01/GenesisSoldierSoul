@@ -1,0 +1,2036 @@
+<achiements>
+    <types>
+        <type id="1"/> <!-- 角色成长 完成:1人物等级1-100-->
+        <type id="3"/> <!-- 财富 完成:1GS点301-400 2金币401-500 3积分501-600 -->
+        <type id="4"/> <!-- 任务掌握 完成:1战斗日常完成数量601-700 2生活日常完成数量701-800 3活动日常完成数量801-900 4任务勋章累计901-1000 5任务兑换奖励的次数1001-1100 6连续天数完成战斗日常任务1101-1200 7连续天数完成生活日常任务1201-1300 8连续天数完成活动日常任务1301-1400 9连续登录天数1401-1500 -->
+        <type id="5"/> <!-- 任务精英 完成:1战斗日常完成数量601-700 2生活日常完成数量701-800 3活动日常完成数量801-900 4任务勋章累计901-1000 5任务兑换奖励的次数1001-1100 6连续天数完成战斗日常任务1101-1200 7连续天数完成生活日常任务1201-1300 8连续天数完成活动日常任务1301-1400 9连续登录天数1401-1500 -->
+	<type id="6"/> <!-- 任务大师 完成:1战斗日常完成数量601-700 2生活日常完成数量701-800 3活动日常完成数量801-900 4任务勋章累计901-1000 5任务兑换奖励的次数1001-1100 6连续天数完成战斗日常任务1101-1200 7连续天数完成生活日常任务1201-1300 8连续天数完成活动日常任务1301-1400 9连续登录天数1401-1500 -->
+	<type id="7"/> <!-- 战斗掌握 完成:1击杀人数完成数量1501-1600 2爆头人数完成数量1601-1700 3刀杀人数完成数量1701-1800 4雷杀人数完成数量1801-1900 5连杀人数完成数量1901-2000 6单局击杀完成数量2001-2100 7单局爆头完成数量2101-2200 8单局刀杀完成数量2201-2300 9局雷杀完成数量2301-2400 10胜利局数2401-2500 11完成局数2501-2600-->
+        <type id="8"/> <!-- 战斗精英 完成:1击杀人数完成数量1501-1600 2爆头人数完成数量1601-1700 3刀杀人数完成数量1701-1800 4雷杀人数完成数量1801-1900 5连杀人数完成数量1901-2000 6单局击杀完成数量2001-2100 7单局爆头完成数量2101-2200 8单局刀杀完成数量2201-2300 9局雷杀完成数量2301-2400 10胜利局数2401-2500 11完成局数2501-2600-->
+	<type id="9"/> <!-- 战斗大师 完成:1击杀人数完成数量1501-1600 2爆头人数完成数量1601-1700 3刀杀人数完成数量1701-1800 4雷杀人数完成数量1801-1900 5连杀人数完成数量1901-2000 6单局击杀完成数量2001-2100 7单局爆头完成数量2101-2200 8单局刀杀完成数量2201-2300 9局雷杀完成数量2301-2400 10胜利局数2401-2500 11完成局数2501-2600-->
+	<type id="10"/> <!-- 探索掌握 完成:1完成某地图战斗的次数2601-2800 2在某地图胜利的次数2801-3000 map=“1-7”-->
+	<type id="11"/> <!-- 探索精英 完成:1完成某地图战斗的次数2601-2800 2在某地图胜利的次数2801-3000 map=“1-7”-->
+	<type id="12"/> <!-- 探索大师 完成:1完成某地图战斗的次数2601-2800 2在某地图胜利的次数2801-3000 map=“1-7”-->
+        <type id="13"/> <!-- 武器掌握 完成:1步枪击杀人数3001-3100 2手枪击杀人数3101-3200 3狙击枪击杀人数3201-3300 4冲锋枪击杀人数3301-3400 5散弹枪击杀人数3401-3500 6机枪击杀人数3501-3600 7近战武器击杀人数3601-3700 8手雷击杀人数3701-3800-->
+	<type id="14"/> <!-- 武器精英 完成:1步枪击杀人数3001-3100 2手枪击杀人数3101-3200 3狙击枪击杀人数3201-3300 4冲锋枪击杀人数3301-3400 5散弹枪击杀人数3401-3500 6机枪击杀人数3501-3600 7近战武器击杀人数3601-3700 8手雷击杀人数3701-3800-->
+	<type id="15"/> <!-- 武器大师 完成:1步枪击杀人数3001-3100 2手枪击杀人数3101-3200 3狙击枪击杀人数3201-3300 4冲锋枪击杀人数3301-3400 5散弹枪击杀人数3401-3500 6机枪击杀人数3501-3600 7近战武器击杀人数3601-3700 8手雷击杀人数3701-3800-->
+    </types>
+	<achis>
+		<achi id="1" typeId="1" childTypeId="1" target="10">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2" typeId="1" childTypeId="1" target="28">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3" typeId="1" childTypeId="1" target="52">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="4" typeId="1" childTypeId="1" target="82">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="5" typeId="1" childTypeId="1" target="100">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<!--
+		<achi id="101" typeId="2" childTypeId="1" target="3">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="102" typeId="2" childTypeId="1" target="9">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="121" typeId="2" childTypeId="2" target="3">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="122" typeId="2" childTypeId="2" target="9">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="141" typeId="2" childTypeId="3" target="3">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="142" typeId="2" childTypeId="3" target="9">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="161" typeId="2" childTypeId="4" target="3">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="162" typeId="2" childTypeId="4" target="9">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="181" typeId="2" childTypeId="5" target="3">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="182" typeId="2" childTypeId="5" target="9">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="201" typeId="2" childTypeId="6" target="3">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="202" typeId="2" childTypeId="6" target="9">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="221" typeId="2" childTypeId="7" target="3">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="222" typeId="2" childTypeId="7" target="9">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		-->
+		<achi id="301" typeId="3" childTypeId="1" target="100">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="302" typeId="3" childTypeId="1" target="10000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="303" typeId="3" childTypeId="1" target="100000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="401" typeId="3" childTypeId="2" target="20000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="402" typeId="3" childTypeId="2" target="200000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="403" typeId="3" childTypeId="2" target="500000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="501" typeId="3" childTypeId="3" target="500">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="502" typeId="3" childTypeId="3" target="5000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="503" typeId="3" childTypeId="3" target="50000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="601" typeId="4" childTypeId="1" target="25">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		
+		<!--<achi id="701" typeId="4" childTypeId="2" target="25">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		-->
+		<achi id="801" typeId="4" childTypeId="3" target="25">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="901" typeId="4" childTypeId="4" target="500">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1001" typeId="4" childTypeId="5" target="15">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1101" typeId="4" childTypeId="6" target="5">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<!--
+		<achi id="1201" typeId="4" childTypeId="7" target="5">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		-->
+		<achi id="1301" typeId="4" childTypeId="8" target="5">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1401" typeId="4" childTypeId="9" target="3">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="602" typeId="5" childTypeId="1" target="125">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<!--
+		<achi id="702" typeId="5" childTypeId="2" target="125">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		-->
+		<achi id="802" typeId="5" childTypeId="3" target="125">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="902" typeId="5" childTypeId="4" target="2500">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1002" typeId="5" childTypeId="5" target="75">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1102" typeId="5" childTypeId="6" target="25">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<!--
+		<achi id="1202" typeId="5" childTypeId="7" target="25">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		-->
+		<achi id="1302" typeId="5" childTypeId="8" target="25">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1402" typeId="5" childTypeId="9" target="15">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="603" typeId="6" childTypeId="1" target="500">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<!--
+		<achi id="703" typeId="6" childTypeId="2" target="500">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		-->
+		<achi id="803" typeId="6" childTypeId="3" target="500">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="903" typeId="6" childTypeId="4" target="10000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1003" typeId="6" childTypeId="5" target="300">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1103" typeId="6" childTypeId="6" target="100">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<!--
+		<achi id="1203" typeId="6" childTypeId="7" target="100">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		-->
+		<achi id="1303" typeId="6" childTypeId="8" target="100">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1403" typeId="6" childTypeId="9" target="60">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1501" typeId="7" childTypeId="1" target="1000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1601" typeId="7" childTypeId="2" target="200">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1701" typeId="7" childTypeId="3" target="200">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1801" typeId="7" childTypeId="4" target="100">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1901" typeId="7" childTypeId="5" target="4">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2001" typeId="7" childTypeId="6" target="50">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2101" typeId="7" childTypeId="7" target="10">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2201" typeId="7" childTypeId="8" target="10">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2301" typeId="7" childTypeId="9" target="5">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2401" typeId="7" childTypeId="10" target="15">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2501" typeId="7" childTypeId="11" target="30">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1502" typeId="8" childTypeId="1" target="5000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1602" typeId="8" childTypeId="2" target="1000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1702" typeId="8" childTypeId="3" target="1000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1802" typeId="8" childTypeId="4" target="500">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1902" typeId="8" childTypeId="5" target="8">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2002" typeId="8" childTypeId="6" target="100">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2102" typeId="8" childTypeId="7" target="20">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2202" typeId="8" childTypeId="8" target="20">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2302" typeId="8" childTypeId="9" target="10">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2402" typeId="8" childTypeId="10" target="75">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2502" typeId="8" childTypeId="11" target="150">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1503" typeId="9" childTypeId="1" target="20000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1603" typeId="9" childTypeId="2" target="4000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1703" typeId="9" childTypeId="3" target="4000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1803" typeId="9" childTypeId="4" target="2000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="1903" typeId="9" childTypeId="5" target="12">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2003" typeId="9" childTypeId="6" target="150">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2103" typeId="9" childTypeId="7" target="30">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2203" typeId="9" childTypeId="8" target="30">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2303" typeId="9" childTypeId="9" target="15">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2403" typeId="9" childTypeId="10" target="300">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2503" typeId="9" childTypeId="11" target="600">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2601" typeId="10" childTypeId="1" target="10" map="1">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2611" typeId="10" childTypeId="1" target="10" map="2">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2621" typeId="10" childTypeId="1" target="10" map="3">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2631" typeId="10" childTypeId="1" target="10" map="4">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2641" typeId="10" childTypeId="1" target="10" map="5">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2651" typeId="10" childTypeId="1" target="10" map="6">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2661" typeId="10" childTypeId="1" target="10" map="7">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2801" typeId="10" childTypeId="2" target="5" map="1">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2811" typeId="10" childTypeId="2" target="5" map="2">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2821" typeId="10" childTypeId="2" target="5" map="3">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2831" typeId="10" childTypeId="2" target="5" map="4">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2841" typeId="10" childTypeId="2" target="5" map="5">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2851" typeId="10" childTypeId="2" target="5" map="6">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2861" typeId="10" childTypeId="2" target="5" map="7">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2602" typeId="11" childTypeId="1" target="50" map="1">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2612" typeId="11" childTypeId="1" target="50" map="2">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2622" typeId="11" childTypeId="1" target="50" map="3">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2632" typeId="11" childTypeId="1" target="50" map="4">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2642" typeId="11" childTypeId="1" target="50" map="5">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2652" typeId="11" childTypeId="1" target="50" map="6">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2662" typeId="11" childTypeId="1" target="50" map="7">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2802" typeId="11" childTypeId="2" target="25" map="1">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2812" typeId="11" childTypeId="2" target="25" map="2">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2822" typeId="11" childTypeId="2" target="25" map="3">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2832" typeId="11" childTypeId="2" target="25" map="4">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2842" typeId="11" childTypeId="2" target="25" map="5">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2852" typeId="11" childTypeId="2" target="25" map="6">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2862" typeId="11" childTypeId="2" target="25" map="7">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2603" typeId="12" childTypeId="1" target="200" map="1">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2613" typeId="12" childTypeId="1" target="200" map="2">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2623" typeId="12" childTypeId="1" target="200" map="3">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2633" typeId="12" childTypeId="1" target="200" map="4">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2643" typeId="12" childTypeId="1" target="200" map="5">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2653" typeId="12" childTypeId="1" target="200" map="6">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2663" typeId="12" childTypeId="1" target="200" map="7">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2803" typeId="12" childTypeId="2" target="100" map="1">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2813" typeId="12" childTypeId="2" target="100" map="2">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2823" typeId="12" childTypeId="2" target="100" map="3">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2833" typeId="12" childTypeId="2" target="100" map="4">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2843" typeId="12" childTypeId="2" target="100" map="5">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2853" typeId="12" childTypeId="2" target="100" map="6">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="2863" typeId="12" childTypeId="2" target="100" map="7">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3001" typeId="13" childTypeId="1" target="150">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3101" typeId="13" childTypeId="2" target="150">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3201" typeId="13" childTypeId="3" target="150">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3301" typeId="13" childTypeId="4" target="150">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3401" typeId="13" childTypeId="5" target="150">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3501" typeId="13" childTypeId="6" target="150">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3601" typeId="13" childTypeId="7" target="150">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3701" typeId="13" childTypeId="8" target="150">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3002" typeId="14" childTypeId="1" target="750">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3102" typeId="14" childTypeId="2" target="750">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3202" typeId="14" childTypeId="3" target="750">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3302" typeId="14" childTypeId="4" target="750">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3402" typeId="14" childTypeId="5" target="750">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3502" typeId="14" childTypeId="6" target="750">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3602" typeId="14" childTypeId="7" target="750">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3702" typeId="14" childTypeId="8" target="750">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3003" typeId="15" childTypeId="1" target="3000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3103" typeId="15" childTypeId="2" target="3000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3203" typeId="15" childTypeId="3" target="3000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3303" typeId="15" childTypeId="4" target="3000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3403" typeId="15" childTypeId="5" target="3000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3503" typeId="15" childTypeId="6" target="3000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3603" typeId="15" childTypeId="7" target="3000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+		<achi id="3703" typeId="15" childTypeId="8" target="3000">
+			<reward>
+				<props>
+					<prop id="2201" num="1"/>
+				</props>
+				<ch/>
+				<gs value="0"/>
+				<exp value="50"/>
+				<gold value="250"/>
+				<integral value="0"/>
+				<achiPoints value="10"/>
+			</reward>
+		</achi>
+	</achis>
+</achiements>

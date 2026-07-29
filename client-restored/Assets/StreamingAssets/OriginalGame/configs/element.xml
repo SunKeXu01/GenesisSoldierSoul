@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<!-- 
+      地图中刷出的动态元素      
+      
+      type 唯一标示，100以前预留
+      minimapIcon 小地图图标
+      model 模型资源
+      material 贴图资源
+      isAlpha 是否使用透明
+      object 对象类型 0模型 1 平面（朝向摄像机）
+      
+      shape   范围形状 1球 2 立方体
+      redius  球的半径
+      
+      length 立方体长
+      width 立方体宽
+      height 立方体高
+      
+      spriteWidth  平面的宽
+      spriteHeight 平面的高
+      perspective  平面是否透视
+
+ -->
+  <element type="100" model="flag" material="flag_hong" isAlpha="1"  redius="150" shape="1" minimapIcon="10"></element>
+  <element type="101" model="flag" material="flag_lv" isAlpha="1" redius="150" shape="1" minimapIcon="9"></element>
+  <element type="102" model="flag_point" material="flag_hong" isAlpha="1" redius="150" shape="1"></element>
+  <element type="103" model="flag_point" material="flag_lv" isAlpha="1" redius="150" shape="1"></element>
+  <element type="104" material="qz_leiting_02" isAlpha="1" object="1" spriteWidth="128" spriteHeight="128" perspective="1"></element>
+  <element type="105" material="qz_leiting_01" isAlpha="1" object="1" spriteWidth="128" spriteHeight="128" perspective="1"></element>
+  <element type="106" material="qz_liehuo_02" isAlpha="1" object="1" spriteWidth="128" spriteHeight="128" perspective="1"></element>
+  <element type="107" material="qz_liehuo_01" isAlpha="1" object="1" spriteWidth="128" spriteHeight="128" perspective="1"></element>
+  <element type="108" material="qz_mubiaodian" isAlpha="1" object="1" spriteWidth="128" spriteHeight="256" perspective="1"></element>
+</root>

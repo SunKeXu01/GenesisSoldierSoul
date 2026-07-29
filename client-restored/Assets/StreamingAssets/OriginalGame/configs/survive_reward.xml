@@ -1,0 +1,17 @@
+﻿<survive_reward>
+	<!--id:箱子ID name：箱子名称 score：战斗得分 rewards：箱子开出物品N选1 cost：消耗兑换券数量  reward：兑换券对应的物品奖励   -->
+	<boxes>
+	<box id="1" name="qingtongwuqixiang" score="15000" rewards="1002:1:800 1004:1:800 1001:1:1700 1003:1:1700 1222:1:5000"/>
+	<box id="2" name="baiyinwuqixiang" score="50000" rewards="1022:1:800 1021:1:800 1002:1:1700 1004:1:1700 1223:1:5000"/>
+	<box id="3" name="huangjinwuqixiang" score="80000" rewards="6:1:600 1023:1:1200 1020:1:1200 1002:1:1500 1004:1:1500 1224:1:4000"/>
+	<box id="4" name="baijinwuqixiang" score="100000" rewards="803:1:700 903:1:700 6:1:1200 1023:1:1700 1020:1:1700 1225:1:4000"/>
+	<box id="5" name="zuanshiwuqixiang" score="150000" rewards="706:1:800 205:1:800 804:1:1200 6:1:1200 1020:1:1500 1023:1:1500 1226:1:3000"/>
+	</boxes>
+	<convert>
+	<reward id="1" cost="3" reward="1022:1"/>
+	<reward id="2" cost="5" reward="1021:1"/>
+	<reward id="3" cost="7" reward="1023:1"/>
+	<reward id="4" cost="10" reward="1020:1"/>
+	<reward id="5" cost="12" reward="1002:2"/>
+	</convert>
+</survive_reward>

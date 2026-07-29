@@ -1,0 +1,47 @@
+{
+  "source_assets": "/Users/Admin/Documents/创世兵魂/原程序恢复/离别作/UnityProject/ExportedProject/Assets",
+  "root_asset": "Scenes/Scene99.unity",
+  "target_assets": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/client-restored/Assets",
+  "namespace": "RecoveredMaps/FarewellScene99",
+  "asset_count": 7,
+  "reused_guid_count": 0,
+  "missing_guid_count": 3,
+  "conflict_count": 0,
+  "copied": [
+    {
+      "source": "Cubemap/Cubemap_10.png",
+      "target": "RecoveredMaps/FarewellScene99/Cubemap/Cubemap_10.png"
+    },
+    {
+      "source": "Scenes/Scene99/LightProbes.asset",
+      "target": "RecoveredMaps/FarewellScene99/Scenes/Scene99/LightProbes.asset"
+    },
+    {
+      "source": "Scenes/Scene99/LightingData.asset",
+      "target": "RecoveredMaps/FarewellScene99/Scenes/Scene99/LightingData.asset"
+    },
+    {
+      "source": "Scenes/Scene99.unity",
+      "target": "RecoveredMaps/FarewellScene99/Scenes/Scene99.unity"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/tofsjq.cs",
+      "target": "RecoveredMaps/FarewellScene99/Scripts/Assembly-CSharp/tofsjq.cs"
+    },
+    {
+      "source": "Sprite/4(Z%Z0LOZVDMIH{V0DGEETE.asset",
+      "target": "RecoveredMaps/FarewellScene99/Sprite/4(Z%Z0LOZVDMIH{V0DGEETE.asset"
+    },
+    {
+      "source": "Texture2D/4(Z%Z0LOZVDMIH{V0DGEETE.png",
+      "target": "RecoveredMaps/FarewellScene99/Texture2D/4(Z%Z0LOZVDMIH{V0DGEETE.png"
+    }
+  ],
+  "reused": {},
+  "missing_guids": [
+    "0000000000000000e000000000000000",
+    "0000000000000000f000000000000000",
+    "f5f67c52d1564df4a8936ccd202a3bd8"
+  ],
+  "conflicts": []
+}

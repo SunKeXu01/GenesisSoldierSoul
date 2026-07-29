@@ -1,0 +1,865 @@
+﻿<activity>
+
+<!-- 7K7K p = 3,4399 p=7,fengyun p=9,2144 p=10  hulai p=13 360 p=4, baidu p=5, duowan p=6, 91wan p=8,酷狗 P=22, 360wan p=21 ,铁血 P=25,迅雷 p=27-->
+	<!--7K7K-->	
+	<!-- isNew字段更名为status 1=新  2=永久  3=免费 -->
+	
+	<!--新手活动-->		
+	<act p="3" name="xinshoujiangli" url="7k7k/101.jpg" status="1"/>
+
+	<!--日常活动-->
+	<!--新官网活动开始-->	
+	<!--<act p="3" name="chaojihuiyuanjihua" url="7k7k/28.jpg" status="4" selfId="1"/>		
+	<act p="3" name="guanfangfuli1" url="7k7k/24.jpg" status="4" selfId="1"/>-->
+	<act p="3" name="zhandoulingfuli33" url="7k7k/25.jpg" status="4" selfId="1"/>	
+	<act p="3" name="zhouniandajizhe" url="7k7k/26.jpg" status="4" selfId="1">
+		<button normal="7k7k/26-1.png" over="" x="267" y="443" propId="120" type="buy"/>		
+    </act>		
+	<act p="3" name="heijinzhanhunlibao1" url="7k7k/34.jpg" status="4" selfId="1"/>	
+	<!--新官网活动截止-->	
+	<!--<act p="3" name="eryueshouchonga" url="7k7k/6.jpg" status="1">
+		<button normal="7k7k/6-1.png" over="" x="355" y="446" type="charge"/>
+    </act>-->
+	<act p="3" name="jinianyiyueshouchong" url="7k7k/16.jpg" status="1">
+		<button normal="7k7k/16-1.png" over="" x="443" y="457" type="charge"/>
+    </act>
+	<act p="3" name="fulishengji1" url="7k7k/21.jpg" status="1">
+		<button normal="7k7k/21-1.png" over="" x="268" y="292" propId="5143" type="buy"/>
+    </act>
+	<act p="3" name="niannianyouyu" url="7k7k/30.jpg" status="1">
+		<button normal="7k7k/30-1.png" over="" x="283" y="433" propId="5150" type="buy"/>
+    </act>	
+	<act p="3" name="shenshoulaixi" url="7k7k/31.jpg" status="1">
+		<button normal="7k7k/31-1.png" over="" x="128" y="252" propId="456" type="buy"/>
+		<button normal="7k7k/31-1.png" over="" x="525" y="252" propId="455" type="buy"/>	
+		<button normal="7k7k/31-1.png" over="" x="128" y="434" propId="476" type="buy"/>
+		<button normal="7k7k/31-1.png" over="" x="525" y="434" propId="45" type="buy"/>					
+    </act>		
+
+	<act p="3" name="chaozhifudai" url="7k7k/19.jpg" status="1">
+		<button normal="7k7k/19-1.png" over="" x="95" y="432" propId="5139" type="buy"/>
+		<button normal="7k7k/19-1.png" over="" x="469" y="432" propId="5140" type="buy"/>		
+    </act>		
+	<act p="3" name="chongzhisongfuliaa" url="7k7k/3.jpg" status="1">
+		<button normal="7k7k/3-1.png" over="" x="285" y="209" propId="482" type="buy"/>	
+		<button normal="7k7k/3-1.png" over="" x="186" y="426" propId="968" type="buy"/>	
+		<button normal="7k7k/3-1.png" over="" x="387" y="426" propId="852" type="buy"/>			
+    </act>		
+	<act p="3" name="fengkuangqiangbuting" url="7k7k/4.jpg" status="1">
+		<button normal="7k7k/4-1.png" over="" x="289" y="449" propId="5137" type="buy"/>
+    </act>		
+
+	<act p="3" name="mqzhandouji" url="7k7k/10.jpg" status="1">
+		<button normal="7k7k/10-1.png" over="" x="287" y="448" propId="5138" type="buy"/>
+    </act>		
+	<act p="3" name="xingzuozhuanshu" url="7k7k/18.jpg" status="1">
+		<button normal="7k7k/18-1.png" over="" x="99" y="433" propId="2552" type="buy"/>			
+    </act>		
+	<act p="3" name="lansehuanxiang1" url="7k7k/13.jpg" status="1">
+		<button normal="7k7k/13-1.png" over="" x="184" y="405" propId="5146" type="buy"/>
+		<button normal="7k7k/13-1.png" over="" x="308" y="405" propId="5147" type="buy"/>	
+		<button normal="7k7k/13-1.png" over="" x="431" y="405" propId="5148" type="buy"/>
+		<button normal="7k7k/13-1.png" over="" x="554" y="405" propId="5149" type="buy"/>					
+    </act>	
+	<act p="3" name="fengkuangbeibao12" url="7k7k/7.jpg" status="1">
+		<button normal="7k7k/7-1.png" over="" x="133" y="498" propId="5128" type="buy"/>
+    </act>		
+
+	<act p="3" name="quanminkuanghuan" url="7k7k/8.jpg" status="1">
+		<button normal="7k7k/8-1.png" over="" x="282" y="442" propId="5126" type="buy"/>		
+    </act>		
+	<act p="3" name="yuandankuanghuan" url="7k7k/15.jpg" status="1">
+		<button normal="7k7k/15-1.png" over="" x="266" y="482" propId="5122" type="buy"/>		
+    </act>				
+	<act p="3" name="wanzhuanbaofeng" url="7k7k/2.jpg">
+		<button normal="7k7k/2-1.png" over="" x="262" y="419" propId="5068" type="buy"/>		
+    </act>	
+	
+	<act p="3" name="p90xukongzhiyi1" url="7k7k/20.jpg" status="2">
+		<button normal="7k7k/20-1.png" over="" x="192" y="422" propId="232" type="buy"/>		
+    </act>			
+	<!--<act p="3" name="qinglongm4" url="7k7k/11.jpg" status="2">
+		<button normal="7k7k/11-1.png" over="" x="261" y="456" propId="456" type="buy"/>		
+    </act>-->
+	<act p="3" name="fengkuangdenglu11" url="7k7k/32.jpg" status="3"/>		
+	<act p="3" name="xinchunbaozhu" url="7k7k/35.jpg" status="3"/>		
+	<act p="3" name="zhandousonghali" url="7k7k/27.jpg" status="3"/>	
+	<act p="3" name="fengkuangjisha" url="7k7k/33.jpg" status="3"/>	
+	<act p="3" name="zhoumolingGS" url="7k7k/14.jpg" status="3"/>
+	<act p="3" name="meirizaixianlingwuqi" url="7k7k/17.jpg" status="3"/>
+	<act p="3" name="zhoumoqiang" url="7k7k/9.jpg" status="1"/>	
+
+
+	<!--固定活动-->	
+	
+	<act p="3" name="meiriqiandao_road" url="7k7k/1.jpg" status="1"/>		
+	<act p="3" name="erweima" url="7k7k/12.jpg"/>				
+	
+	
+	<!--4399-->
+	<!--新手活动-->		
+	<act p="7" name="xinshoujiangli" url="7k7k/101.jpg" status="1"/>	
+	
+	<!--日常活动-->		
+	<!--新官网活动开始-->	
+
+	<act p="7" name="zhandoulingfuli33" url="7k7k/25.jpg" status="4" selfId="1"/>	
+	<act p="7" name="zhouniandajizhe" url="7k7k/26.jpg" status="4" selfId="1">
+		<button normal="7k7k/26-1.png" over="" x="267" y="443" propId="120" type="buy"/>		
+    </act>		
+	<act p="7" name="heijinzhanhunlibao1" url="7k7k/34.jpg" status="4" selfId="1"/>	
+	<!--新官网活动截止-->	
+
+	<!--<act p="7" name="eryueshouchonga" url="7k7k/6.jpg" status="1">
+		<button normal="7k7k/6-1.png" over="" x="355" y="446" type="charge"/>
+    </act>-->
+	<act p="7" name="jinianyiyueshouchong" url="7k7k/16.jpg" status="1">
+		<button normal="7k7k/16-1.png" over="" x="443" y="457" type="charge"/>
+    </act>
+	<act p="7" name="fulishengji1" url="7k7k/21.jpg" status="1">
+		<button normal="7k7k/21-1.png" over="" x="268" y="292" propId="5143" type="buy"/>
+    </act>
+	<act p="7" name="niannianyouyu" url="7k7k/30.jpg" status="1">
+		<button normal="7k7k/30-1.png" over="" x="283" y="433" propId="5150" type="buy"/>
+    </act>	
+	<act p="7" name="shenshoulaixi" url="7k7k/31.jpg" status="1">
+		<button normal="7k7k/31-1.png" over="" x="128" y="252" propId="456" type="buy"/>
+		<button normal="7k7k/31-1.png" over="" x="525" y="252" propId="455" type="buy"/>	
+		<button normal="7k7k/31-1.png" over="" x="128" y="434" propId="476" type="buy"/>
+		<button normal="7k7k/31-1.png" over="" x="525" y="434" propId="45" type="buy"/>					
+    </act>		
+
+	<act p="7" name="chaozhifudai" url="7k7k/19.jpg" status="1">
+		<button normal="7k7k/19-1.png" over="" x="95" y="432" propId="5139" type="buy"/>
+		<button normal="7k7k/19-1.png" over="" x="469" y="432" propId="5140" type="buy"/>		
+    </act>		
+	<act p="7" name="chongzhisongfuliaa" url="7k7k/3.jpg" status="1">
+		<button normal="7k7k/3-1.png" over="" x="285" y="209" propId="482" type="buy"/>	
+		<button normal="7k7k/3-1.png" over="" x="186" y="426" propId="968" type="buy"/>	
+		<button normal="7k7k/3-1.png" over="" x="387" y="426" propId="852" type="buy"/>			
+    </act>		
+	<act p="7" name="fengkuangqiangbuting" url="7k7k/4.jpg" status="1">
+		<button normal="7k7k/4-1.png" over="" x="289" y="449" propId="5137" type="buy"/>
+    </act>		
+
+	<act p="7" name="mqzhandouji" url="7k7k/10.jpg" status="1">
+		<button normal="7k7k/10-1.png" over="" x="287" y="448" propId="5138" type="buy"/>
+    </act>		
+	<act p="7" name="xingzuozhuanshu" url="7k7k/18.jpg" status="1">
+		<button normal="7k7k/18-1.png" over="" x="99" y="433" propId="2552" type="buy"/>			
+    </act>		
+	<act p="7" name="lansehuanxiang1" url="7k7k/13.jpg" status="1">
+		<button normal="7k7k/13-1.png" over="" x="184" y="405" propId="5146" type="buy"/>
+		<button normal="7k7k/13-1.png" over="" x="308" y="405" propId="5147" type="buy"/>	
+		<button normal="7k7k/13-1.png" over="" x="431" y="405" propId="5148" type="buy"/>
+		<button normal="7k7k/13-1.png" over="" x="554" y="405" propId="5149" type="buy"/>					
+    </act>	
+	<act p="7" name="fengkuangbeibao12" url="7k7k/7.jpg" status="1">
+		<button normal="7k7k/7-1.png" over="" x="133" y="498" propId="5128" type="buy"/>
+    </act>		
+
+	<act p="7" name="quanminkuanghuan" url="7k7k/8.jpg" status="1">
+		<button normal="7k7k/8-1.png" over="" x="282" y="442" propId="5126" type="buy"/>		
+    </act>		
+	<act p="7" name="yuandankuanghuan" url="7k7k/15.jpg" status="1">
+		<button normal="7k7k/15-1.png" over="" x="266" y="482" propId="5122" type="buy"/>		
+    </act>				
+	<act p="7" name="wanzhuanbaofeng" url="7k7k/2.jpg">
+		<button normal="7k7k/2-1.png" over="" x="262" y="419" propId="5068" type="buy"/>		
+    </act>	
+	
+	<act p="7" name="p90xukongzhiyi1" url="7k7k/20.jpg" status="2">
+		<button normal="7k7k/20-1.png" over="" x="192" y="422" propId="232" type="buy"/>		
+    </act>			
+	<!--<act p="7" name="qinglongm4" url="7k7k/11.jpg" status="2">
+		<button normal="7k7k/11-1.png" over="" x="261" y="456" propId="456" type="buy"/>		
+    </act>-->
+	<act p="7" name="fengkuangdenglu11" url="7k7k/32.jpg" status="3"/>		
+	<act p="7" name="xinchunbaozhu" url="7k7k/35.jpg" status="3"/>	
+	<act p="7" name="zhandousonghali" url="7k7k/27.jpg" status="3"/>	
+	<act p="7" name="fengkuangjisha" url="7k7k/33.jpg" status="3"/>	
+	<act p="7" name="zhoumolingGS" url="7k7k/14.jpg" status="3"/>
+	<act p="7" name="meirizaixianlingwuqi" url="7k7k/17.jpg" status="3"/>
+	<act p="7" name="zhoumoqiang" url="7k7k/9.jpg" status="1"/>	
+	
+	<!--固定活动-->	
+	<act p="7" name="4399youxihe" url="7k7k/41.jpg" status="1"/>		
+	<act p="7" name="meiriqiandao_road" url="7k7k/1.jpg" status="1"/>						
+	
+
+<!---风云直播-->
+
+	<!--新手活动-->		
+	<act p="9" name="xinshoujiangli" url="7k7k/101.jpg" status="1"/>	
+	
+	<!--日常活动-->
+	<!--新官网活动开始-->	
+	<act p="9" name="zhandoulingfuli33" url="7k7k/25.jpg" status="4" selfId="1"/>	
+	<act p="9" name="zhouniandajizhe" url="7k7k/26.jpg" status="4" selfId="1">
+		<button normal="7k7k/26-1.png" over="" x="267" y="443" propId="120" type="buy"/>		
+    </act>		
+	<act p="9" name="heijinzhanhunlibao1" url="7k7k/34.jpg" status="4" selfId="1"/>	
+	<!--新官网活动截止-->	
+
+	<!--<act p="9" name="eryueshouchonga" url="7k7k/6.jpg" status="1">
+		<button normal="7k7k/6-1.png" over="" x="355" y="446" type="charge"/>
+    </act>-->
+	<act p="9" name="jinianyiyueshouchong" url="7k7k/16.jpg" status="1">
+		<button normal="7k7k/16-1.png" over="" x="443" y="457" type="charge"/>
+    </act>
+	<act p="9" name="fulishengji1" url="7k7k/21.jpg" status="1">
+		<button normal="7k7k/21-1.png" over="" x="268" y="292" propId="5143" type="buy"/>
+    </act>
+	<act p="9" name="niannianyouyu" url="7k7k/30.jpg" status="1">
+		<button normal="7k7k/30-1.png" over="" x="283" y="433" propId="5150" type="buy"/>
+    </act>	
+	<act p="9" name="shenshoulaixi" url="7k7k/31.jpg" status="1">
+		<button normal="7k7k/31-1.png" over="" x="128" y="252" propId="456" type="buy"/>
+		<button normal="7k7k/31-1.png" over="" x="525" y="252" propId="455" type="buy"/>	
+		<button normal="7k7k/31-1.png" over="" x="128" y="434" propId="476" type="buy"/>
+		<button normal="7k7k/31-1.png" over="" x="525" y="434" propId="45" type="buy"/>					
+    </act>		
+
+	<act p="9" name="chaozhifudai" url="7k7k/19.jpg" status="1">
+		<button normal="7k7k/19-1.png" over="" x="95" y="432" propId="5139" type="buy"/>
+		<button normal="7k7k/19-1.png" over="" x="469" y="432" propId="5140" type="buy"/>		
+    </act>		
+	<act p="9" name="chongzhisongfuliaa" url="7k7k/3.jpg" status="1">
+		<button normal="7k7k/3-1.png" over="" x="285" y="209" propId="482" type="buy"/>	
+		<button normal="7k7k/3-1.png" over="" x="186" y="426" propId="968" type="buy"/>	
+		<button normal="7k7k/3-1.png" over="" x="387" y="426" propId="852" type="buy"/>			
+    </act>		
+	<act p="9" name="fengkuangqiangbuting" url="7k7k/4.jpg" status="1">
+		<button normal="7k7k/4-1.png" over="" x="289" y="449" propId="5137" type="buy"/>
+    </act>		
+
+	<act p="9" name="mqzhandouji" url="7k7k/10.jpg" status="1">
+		<button normal="7k7k/10-1.png" over="" x="287" y="448" propId="5138" type="buy"/>
+    </act>		
+	<act p="9" name="xingzuozhuanshu" url="7k7k/18.jpg" status="1">
+		<button normal="7k7k/18-1.png" over="" x="99" y="433" propId="2552" type="buy"/>			
+    </act>		
+	<act p="9" name="lansehuanxiang1" url="7k7k/13.jpg" status="1">
+		<button normal="7k7k/13-1.png" over="" x="184" y="405" propId="5146" type="buy"/>
+		<button normal="7k7k/13-1.png" over="" x="308" y="405" propId="5147" type="buy"/>	
+		<button normal="7k7k/13-1.png" over="" x="431" y="405" propId="5148" type="buy"/>
+		<button normal="7k7k/13-1.png" over="" x="554" y="405" propId="5149" type="buy"/>					
+    </act>	
+	<act p="9" name="fengkuangbeibao12" url="7k7k/7.jpg" status="1">
+		<button normal="7k7k/7-1.png" over="" x="133" y="498" propId="5128" type="buy"/>
+    </act>		
+
+	<act p="9" name="quanminkuanghuan" url="7k7k/8.jpg" status="1">
+		<button normal="7k7k/8-1.png" over="" x="282" y="442" propId="5126" type="buy"/>		
+    </act>		
+	<act p="9" name="yuandankuanghuan" url="7k7k/15.jpg" status="1">
+		<button normal="7k7k/15-1.png" over="" x="266" y="482" propId="5122" type="buy"/>		
+    </act>				
+	<act p="9" name="wanzhuanbaofeng" url="7k7k/2.jpg">
+		<button normal="7k7k/2-1.png" over="" x="262" y="419" propId="5068" type="buy"/>		
+    </act>	
+	
+	<act p="9" name="p90xukongzhiyi1" url="7k7k/20.jpg" status="2">
+		<button normal="7k7k/20-1.png" over="" x="192" y="422" propId="232" type="buy"/>		
+    </act>			
+	<!--<act p="9" name="qinglongm4" url="7k7k/11.jpg" status="2">
+		<button normal="7k7k/11-1.png" over="" x="261" y="456" propId="456" type="buy"/>		
+    </act>-->
+	<act p="9" name="fengkuangdenglu11" url="7k7k/32.jpg" status="3"/>		
+	<act p="9" name="xinchunbaozhu" url="7k7k/35.jpg" status="3"/>	
+	<act p="9" name="zhandousonghali" url="7k7k/27.jpg" status="3"/>	
+	<act p="9" name="fengkuangjisha" url="7k7k/33.jpg" status="3"/>	
+	<act p="9" name="zhoumolingGS" url="7k7k/14.jpg" status="3"/>
+	<act p="9" name="meirizaixianlingwuqi" url="7k7k/17.jpg" status="3"/>
+	<act p="9" name="zhoumoqiang" url="7k7k/9.jpg" status="1"/>	
+	
+	<!--固定活动-->	
+	<act p="9" name="meiriqiandao_road" url="7k7k/1.jpg" status="1"/>		
+	<act p="9" name="erweima" url="7k7k/12.jpg"/>				
+	
+
+	  
+	
+<!--2144-->
+
+	<!--新手活动-->		
+	<act p="10" name="xinshoujiangli" url="7k7k/101.jpg" status="1"/>	
+	
+	<!--日常活动-->	
+	<!--新官网活动开始-->	
+	<act p="10" name="zhandoulingfuli33" url="7k7k/25.jpg" status="4" selfId="1"/>	
+	<act p="10" name="zhouniandajizhe" url="7k7k/26.jpg" status="4" selfId="1">
+		<button normal="7k7k/26-1.png" over="" x="267" y="443" propId="120" type="buy"/>		
+    </act>		
+	<act p="10" name="heijinzhanhunlibao1" url="7k7k/34.jpg" status="4" selfId="1"/>	
+	<!--新官网活动截止-->	
+
+	<!--<act p="10" name="eryueshouchonga" url="7k7k/6.jpg" status="1">
+		<button normal="7k7k/6-1.png" over="" x="355" y="446" type="charge"/>
+    </act>-->
+	<act p="10" name="jinianyiyueshouchong" url="7k7k/16.jpg" status="1">
+		<button normal="7k7k/16-1.png" over="" x="443" y="457" type="charge"/>
+    </act>
+	<act p="10" name="fulishengji1" url="7k7k/21.jpg" status="1">
+		<button normal="7k7k/21-1.png" over="" x="268" y="292" propId="5143" type="buy"/>
+    </act>
+	<act p="10" name="niannianyouyu" url="7k7k/30.jpg" status="1">
+		<button normal="7k7k/30-1.png" over="" x="283" y="433" propId="5150" type="buy"/>
+    </act>	
+	<act p="10" name="shenshoulaixi" url="7k7k/31.jpg" status="1">
+		<button normal="7k7k/31-1.png" over="" x="128" y="252" propId="456" type="buy"/>
+		<button normal="7k7k/31-1.png" over="" x="525" y="252" propId="455" type="buy"/>	
+		<button normal="7k7k/31-1.png" over="" x="128" y="434" propId="476" type="buy"/>
+		<button normal="7k7k/31-1.png" over="" x="525" y="434" propId="45" type="buy"/>					
+    </act>		
+
+	<act p="10" name="chaozhifudai" url="7k7k/19.jpg" status="1">
+		<button normal="7k7k/19-1.png" over="" x="95" y="432" propId="5139" type="buy"/>
+		<button normal="7k7k/19-1.png" over="" x="469" y="432" propId="5140" type="buy"/>		
+    </act>		
+	<act p="10" name="chongzhisongfuliaa" url="7k7k/3.jpg" status="1">
+		<button normal="7k7k/3-1.png" over="" x="285" y="209" propId="482" type="buy"/>	
+		<button normal="7k7k/3-1.png" over="" x="186" y="426" propId="968" type="buy"/>	
+		<button normal="7k7k/3-1.png" over="" x="387" y="426" propId="852" type="buy"/>			
+    </act>		
+	<act p="10" name="fengkuangqiangbuting" url="7k7k/4.jpg" status="1">
+		<button normal="7k7k/4-1.png" over="" x="289" y="449" propId="5137" type="buy"/>
+    </act>		
+
+	<act p="10" name="mqzhandouji" url="7k7k/10.jpg" status="1">
+		<button normal="7k7k/10-1.png" over="" x="287" y="448" propId="5138" type="buy"/>
+    </act>		
+	<act p="10" name="xingzuozhuanshu" url="7k7k/18.jpg" status="1">
+		<button normal="7k7k/18-1.png" over="" x="99" y="433" propId="2552" type="buy"/>			
+    </act>		
+	<act p="10" name="lansehuanxiang1" url="7k7k/13.jpg" status="1">
+		<button normal="7k7k/13-1.png" over="" x="184" y="405" propId="5146" type="buy"/>
+		<button normal="7k7k/13-1.png" over="" x="308" y="405" propId="5147" type="buy"/>	
+		<button normal="7k7k/13-1.png" over="" x="431" y="405" propId="5148" type="buy"/>
+		<button normal="7k7k/13-1.png" over="" x="554" y="405" propId="5149" type="buy"/>					
+    </act>	
+	<act p="10" name="fengkuangbeibao12" url="7k7k/7.jpg" status="1">
+		<button normal="7k7k/7-1.png" over="" x="133" y="498" propId="5128" type="buy"/>
+    </act>		
+
+	<act p="10" name="quanminkuanghuan" url="7k7k/8.jpg" status="1">
+		<button normal="7k7k/8-1.png" over="" x="282" y="442" propId="5126" type="buy"/>		
+    </act>		
+	<act p="10" name="yuandankuanghuan" url="7k7k/15.jpg" status="1">
+		<button normal="7k7k/15-1.png" over="" x="266" y="482" propId="5122" type="buy"/>		
+    </act>				
+	<act p="10" name="wanzhuanbaofeng" url="7k7k/2.jpg">
+		<button normal="7k7k/2-1.png" over="" x="262" y="419" propId="5068" type="buy"/>		
+    </act>	
+	
+	<act p="10" name="p90xukongzhiyi1" url="7k7k/20.jpg" status="2">
+		<button normal="7k7k/20-1.png" over="" x="192" y="422" propId="232" type="buy"/>		
+    </act>			
+	<!--<act p="10" name="qinglongm4" url="7k7k/11.jpg" status="2">
+		<button normal="7k7k/11-1.png" over="" x="261" y="456" propId="456" type="buy"/>		
+    </act>-->
+	<act p="10" name="fengkuangdenglu11" url="7k7k/32.jpg" status="3"/>		
+	<act p="10" name="xinchunbaozhu" url="7k7k/35.jpg" status="3"/>	
+	<act p="10" name="zhandousonghali" url="7k7k/27.jpg" status="3"/>	
+	<act p="10" name="fengkuangjisha" url="7k7k/33.jpg" status="3"/>	
+	<act p="10" name="zhoumolingGS" url="7k7k/14.jpg" status="3"/>
+	<act p="10" name="meirizaixianlingwuqi" url="7k7k/17.jpg" status="3"/>
+	<act p="10" name="zhoumoqiang" url="7k7k/9.jpg" status="1"/>									
+
+	
+	<!--固定活动-->	
+	<act p="10" name="meiriqiandao_road" url="7k7k/1.jpg" status="1"/>		
+	<act p="10" name="erweima" url="7k7k/12.jpg"/>				
+
+
+		
+	
+<!--360-->
+
+	<!--新手活动-->		
+	<act p="21" name="xinshoujiangli" url="7k7k/101.jpg" status="1"/>	
+	
+	<!--日常活动-->
+	<!--新官网活动开始-->	
+	<act p="21" name="zhandoulingfuli33" url="7k7k/25.jpg" status="4" selfId="1"/>	
+	<act p="21" name="zhouniandajizhe" url="7k7k/26.jpg" status="4" selfId="1">
+		<button normal="7k7k/26-1.png" over="" x="267" y="443" propId="120" type="buy"/>		
+    </act>		
+	<act p="21" name="heijinzhanhunlibao1" url="7k7k/34.jpg" status="4" selfId="1"/>	
+	<!--新官网活动截止-->	
+
+	<!--<act p="21" name="eryueshouchonga" url="7k7k/6.jpg" status="1">
+		<button normal="7k7k/6-1.png" over="" x="355" y="446" type="charge"/>
+    </act>-->
+	<act p="21" name="jinianyiyueshouchong" url="7k7k/16.jpg" status="1">
+		<button normal="7k7k/16-1.png" over="" x="443" y="457" type="charge"/>
+    </act>
+	<act p="21" name="fulishengji1" url="7k7k/21.jpg" status="1">
+		<button normal="7k7k/21-1.png" over="" x="268" y="292" propId="5143" type="buy"/>
+    </act>
+	<act p="21" name="niannianyouyu" url="7k7k/30.jpg" status="1">
+		<button normal="7k7k/30-1.png" over="" x="283" y="433" propId="5150" type="buy"/>
+    </act>	
+	<act p="21" name="shenshoulaixi" url="7k7k/31.jpg" status="1">
+		<button normal="7k7k/31-1.png" over="" x="128" y="252" propId="456" type="buy"/>
+		<button normal="7k7k/31-1.png" over="" x="525" y="252" propId="455" type="buy"/>	
+		<button normal="7k7k/31-1.png" over="" x="128" y="434" propId="476" type="buy"/>
+		<button normal="7k7k/31-1.png" over="" x="525" y="434" propId="45" type="buy"/>					
+    </act>		
+
+	<act p="21" name="chaozhifudai" url="7k7k/19.jpg" status="1">
+		<button normal="7k7k/19-1.png" over="" x="95" y="432" propId="5139" type="buy"/>
+		<button normal="7k7k/19-1.png" over="" x="469" y="432" propId="5140" type="buy"/>		
+    </act>		
+	<act p="21" name="chongzhisongfuliaa" url="7k7k/3.jpg" status="1">
+		<button normal="7k7k/3-1.png" over="" x="285" y="209" propId="482" type="buy"/>	
+		<button normal="7k7k/3-1.png" over="" x="186" y="426" propId="968" type="buy"/>	
+		<button normal="7k7k/3-1.png" over="" x="387" y="426" propId="852" type="buy"/>			
+    </act>		
+	<act p="21" name="fengkuangqiangbuting" url="7k7k/4.jpg" status="1">
+		<button normal="7k7k/4-1.png" over="" x="289" y="449" propId="5137" type="buy"/>
+    </act>		
+
+	<act p="21" name="mqzhandouji" url="7k7k/10.jpg" status="1">
+		<button normal="7k7k/10-1.png" over="" x="287" y="448" propId="5138" type="buy"/>
+    </act>		
+	<act p="21" name="xingzuozhuanshu" url="7k7k/18.jpg" status="1">
+		<button normal="7k7k/18-1.png" over="" x="99" y="433" propId="2552" type="buy"/>			
+    </act>		
+	<act p="21" name="lansehuanxiang1" url="7k7k/13.jpg" status="1">
+		<button normal="7k7k/13-1.png" over="" x="184" y="405" propId="5146" type="buy"/>
+		<button normal="7k7k/13-1.png" over="" x="308" y="405" propId="5147" type="buy"/>	
+		<button normal="7k7k/13-1.png" over="" x="431" y="405" propId="5148" type="buy"/>
+		<button normal="7k7k/13-1.png" over="" x="554" y="405" propId="5149" type="buy"/>					
+    </act>	
+	<act p="21" name="fengkuangbeibao12" url="7k7k/7.jpg" status="1">
+		<button normal="7k7k/7-1.png" over="" x="133" y="498" propId="5128" type="buy"/>
+    </act>		
+
+	<act p="21" name="quanminkuanghuan" url="7k7k/8.jpg" status="1">
+		<button normal="7k7k/8-1.png" over="" x="282" y="442" propId="5126" type="buy"/>		
+    </act>		
+	<act p="21" name="yuandankuanghuan" url="7k7k/15.jpg" status="1">
+		<button normal="7k7k/15-1.png" over="" x="266" y="482" propId="5122" type="buy"/>		
+    </act>				
+	<act p="21" name="wanzhuanbaofeng" url="7k7k/2.jpg">
+		<button normal="7k7k/2-1.png" over="" x="262" y="419" propId="5068" type="buy"/>		
+    </act>	
+	
+	<act p="21" name="p90xukongzhiyi1" url="7k7k/20.jpg" status="2">
+		<button normal="7k7k/20-1.png" over="" x="192" y="422" propId="232" type="buy"/>		
+    </act>			
+	<!--<act p="21" name="qinglongm4" url="7k7k/11.jpg" status="2">
+		<button normal="7k7k/11-1.png" over="" x="261" y="456" propId="456" type="buy"/>		
+    </act>-->
+	<act p="21" name="fengkuangdenglu11" url="7k7k/32.jpg" status="3"/>		
+	<act p="21" name="xinchunbaozhu" url="7k7k/35.jpg" status="3"/>	
+	<act p="21" name="zhandousonghali" url="7k7k/27.jpg" status="3"/>	
+	<act p="21" name="fengkuangjisha" url="7k7k/33.jpg" status="3"/>	
+	<act p="21" name="zhoumolingGS" url="7k7k/14.jpg" status="3"/>
+	<act p="21" name="meirizaixianlingwuqi" url="7k7k/17.jpg" status="3"/>
+	<act p="21" name="zhoumoqiang" url="7k7k/9.jpg" status="1"/>							
+	
+	<!--固定活动-->	
+	<act p="21" name="meiriqiandao_road" url="7k7k/1.jpg" status="1"/>		
+	<act p="21" name="erweima" url="7k7k/12.jpg"/>				
+	
+
+	
+	
+<!--酷狗-->
+
+	<!--新手活动-->		
+	<act p="22" name="xinshoujiangli" url="7k7k/101.jpg" status="1"/>	
+	
+	<!--日常活动-->	
+	<!--新官网活动开始-->	
+	<act p="22" name="zhandoulingfuli33" url="7k7k/25.jpg" status="4" selfId="1"/>	
+	<act p="22" name="zhouniandajizhe" url="7k7k/26.jpg" status="4" selfId="1">
+		<button normal="7k7k/26-1.png" over="" x="267" y="443" propId="120" type="buy"/>		
+    </act>		
+	<act p="22" name="heijinzhanhunlibao1" url="7k7k/34.jpg" status="4" selfId="1"/>	
+	<!--新官网活动截止-->	
+	<!--<act p="22" name="eryueshouchonga" url="7k7k/6.jpg" status="1">
+		<button normal="7k7k/6-1.png" over="" x="355" y="446" type="charge"/>
+    </act>-->
+	<act p="22" name="jinianyiyueshouchong" url="7k7k/16.jpg" status="1">
+		<button normal="7k7k/16-1.png" over="" x="443" y="457" type="charge"/>
+    </act>
+	<act p="22" name="fulishengji1" url="7k7k/21.jpg" status="1">
+		<button normal="7k7k/21-1.png" over="" x="268" y="292" propId="5143" type="buy"/>
+    </act>
+	<act p="22" name="niannianyouyu" url="7k7k/30.jpg" status="1">
+		<button normal="7k7k/30-1.png" over="" x="283" y="433" propId="5150" type="buy"/>
+    </act>	
+	<act p="22" name="shenshoulaixi" url="7k7k/31.jpg" status="1">
+		<button normal="7k7k/31-1.png" over="" x="128" y="252" propId="456" type="buy"/>
+		<button normal="7k7k/31-1.png" over="" x="525" y="252" propId="455" type="buy"/>	
+		<button normal="7k7k/31-1.png" over="" x="128" y="434" propId="476" type="buy"/>
+		<button normal="7k7k/31-1.png" over="" x="525" y="434" propId="45" type="buy"/>					
+    </act>		
+
+	<act p="22" name="chaozhifudai" url="7k7k/19.jpg" status="1">
+		<button normal="7k7k/19-1.png" over="" x="95" y="432" propId="5139" type="buy"/>
+		<button normal="7k7k/19-1.png" over="" x="469" y="432" propId="5140" type="buy"/>		
+    </act>		
+	<act p="22" name="chongzhisongfuliaa" url="7k7k/3.jpg" status="1">
+		<button normal="7k7k/3-1.png" over="" x="285" y="209" propId="482" type="buy"/>	
+		<button normal="7k7k/3-1.png" over="" x="186" y="426" propId="968" type="buy"/>	
+		<button normal="7k7k/3-1.png" over="" x="387" y="426" propId="852" type="buy"/>			
+    </act>		
+	<act p="22" name="fengkuangqiangbuting" url="7k7k/4.jpg" status="1">
+		<button normal="7k7k/4-1.png" over="" x="289" y="449" propId="5137" type="buy"/>
+    </act>		
+
+	<act p="22" name="mqzhandouji" url="7k7k/10.jpg" status="1">
+		<button normal="7k7k/10-1.png" over="" x="287" y="448" propId="5138" type="buy"/>
+    </act>		
+	<act p="22" name="xingzuozhuanshu" url="7k7k/18.jpg" status="1">
+		<button normal="7k7k/18-1.png" over="" x="99" y="433" propId="2552" type="buy"/>			
+    </act>		
+	<act p="22" name="lansehuanxiang1" url="7k7k/13.jpg" status="1">
+		<button normal="7k7k/13-1.png" over="" x="184" y="405" propId="5146" type="buy"/>
+		<button normal="7k7k/13-1.png" over="" x="308" y="405" propId="5147" type="buy"/>	
+		<button normal="7k7k/13-1.png" over="" x="431" y="405" propId="5148" type="buy"/>
+		<button normal="7k7k/13-1.png" over="" x="554" y="405" propId="5149" type="buy"/>					
+    </act>	
+	<act p="22" name="fengkuangbeibao12" url="7k7k/7.jpg" status="1">
+		<button normal="7k7k/7-1.png" over="" x="133" y="498" propId="5128" type="buy"/>
+    </act>		
+
+	<act p="22" name="quanminkuanghuan" url="7k7k/8.jpg" status="1">
+		<button normal="7k7k/8-1.png" over="" x="282" y="442" propId="5126" type="buy"/>		
+    </act>		
+	<act p="22" name="yuandankuanghuan" url="7k7k/15.jpg" status="1">
+		<button normal="7k7k/15-1.png" over="" x="266" y="482" propId="5122" type="buy"/>		
+    </act>				
+	<act p="22" name="wanzhuanbaofeng" url="7k7k/2.jpg">
+		<button normal="7k7k/2-1.png" over="" x="262" y="419" propId="5068" type="buy"/>		
+    </act>	
+	
+	<act p="22" name="p90xukongzhiyi1" url="7k7k/20.jpg" status="2">
+		<button normal="7k7k/20-1.png" over="" x="192" y="422" propId="232" type="buy"/>		
+    </act>			
+	<!--<act p="22" name="qinglongm4" url="7k7k/11.jpg" status="2">
+		<button normal="7k7k/11-1.png" over="" x="261" y="456" propId="456" type="buy"/>		
+    </act>-->
+	<act p="22" name="fengkuangdenglu11" url="7k7k/32.jpg" status="3"/>		
+	<act p="22" name="xinchunbaozhu" url="7k7k/35.jpg" status="3"/>	
+	<act p="22" name="zhandousonghali" url="7k7k/27.jpg" status="3"/>	
+	<act p="22" name="fengkuangjisha" url="7k7k/33.jpg" status="3"/>	
+	<act p="22" name="zhoumolingGS" url="7k7k/14.jpg" status="3"/>
+	<act p="22" name="meirizaixianlingwuqi" url="7k7k/17.jpg" status="3"/>
+	<act p="22" name="zhoumoqiang" url="7k7k/9.jpg" status="1"/>										
+	
+	<!--固定活动-->	
+	<act p="22" name="meiriqiandao_road" url="7k7k/1.jpg" status="1"/>	
+	<act p="22" name="erweima" url="7k7k/12.jpg"/>				
+
+
+	
+	<!--胡莱腾讯动网-->
+
+	<!--新手活动-->		
+	<act p="13" name="xinshoujiangli" url="7k7k/101.jpg" status="1"/>	
+	
+	<!--日常活动-->	
+	<!--新官网活动开始-->	
+	<act p="13" name="zhandoulingfuli33" url="7k7k/25.jpg" status="4" selfId="1"/>	
+	<act p="13" name="zhouniandajizhe" url="7k7k/26.jpg" status="4" selfId="1">
+		<button normal="7k7k/26-1.png" over="" x="267" y="443" propId="120" type="buy"/>		
+    </act>		
+	<act p="3" name="heijinzhanhunlibao1" url="7k7k/34.jpg" status="4" selfId="1"/>	
+	<!--新官网活动截止-->	
+	<!--<act p="13" name="eryueshouchonga" url="7k7k/6.jpg" status="1">
+		<button normal="7k7k/6-1.png" over="" x="355" y="446" type="charge"/>
+    </act>-->
+	<act p="13" name="jinianyiyueshouchong" url="7k7k/16.jpg" status="1">
+		<button normal="7k7k/16-1.png" over="" x="443" y="457" type="charge"/>
+    </act>
+	<act p="13" name="fulishengji1" url="7k7k/21.jpg" status="1">
+		<button normal="7k7k/21-1.png" over="" x="268" y="292" propId="5143" type="buy"/>
+    </act>
+	<act p="13" name="niannianyouyu" url="7k7k/30.jpg" status="1">
+		<button normal="7k7k/30-1.png" over="" x="283" y="433" propId="5150" type="buy"/>
+    </act>	
+	<act p="13" name="shenshoulaixi" url="7k7k/31.jpg" status="1">
+		<button normal="7k7k/31-1.png" over="" x="128" y="252" propId="456" type="buy"/>
+		<button normal="7k7k/31-1.png" over="" x="525" y="252" propId="455" type="buy"/>	
+		<button normal="7k7k/31-1.png" over="" x="128" y="434" propId="476" type="buy"/>
+		<button normal="7k7k/31-1.png" over="" x="525" y="434" propId="45" type="buy"/>					
+    </act>		
+
+	<act p="13" name="chaozhifudai" url="7k7k/19.jpg" status="1">
+		<button normal="7k7k/19-1.png" over="" x="95" y="432" propId="5139" type="buy"/>
+		<button normal="7k7k/19-1.png" over="" x="469" y="432" propId="5140" type="buy"/>		
+    </act>		
+	<act p="13" name="chongzhisongfuliaa" url="7k7k/3.jpg" status="1">
+		<button normal="7k7k/3-1.png" over="" x="285" y="209" propId="482" type="buy"/>	
+		<button normal="7k7k/3-1.png" over="" x="186" y="426" propId="968" type="buy"/>	
+		<button normal="7k7k/3-1.png" over="" x="387" y="426" propId="852" type="buy"/>			
+    </act>		
+	<act p="13" name="fengkuangqiangbuting" url="7k7k/4.jpg" status="1">
+		<button normal="7k7k/4-1.png" over="" x="289" y="449" propId="5137" type="buy"/>
+    </act>		
+
+	<act p="13" name="mqzhandouji" url="7k7k/10.jpg" status="1">
+		<button normal="7k7k/10-1.png" over="" x="287" y="448" propId="5138" type="buy"/>
+    </act>		
+	<act p="13" name="xingzuozhuanshu" url="7k7k/18.jpg" status="1">
+		<button normal="7k7k/18-1.png" over="" x="99" y="433" propId="2552" type="buy"/>			
+    </act>		
+	<act p="13" name="lansehuanxiang1" url="7k7k/13.jpg" status="1">
+		<button normal="7k7k/13-1.png" over="" x="184" y="405" propId="5146" type="buy"/>
+		<button normal="7k7k/13-1.png" over="" x="308" y="405" propId="5147" type="buy"/>	
+		<button normal="7k7k/13-1.png" over="" x="431" y="405" propId="5148" type="buy"/>
+		<button normal="7k7k/13-1.png" over="" x="554" y="405" propId="5149" type="buy"/>					
+    </act>	
+	<act p="13" name="fengkuangbeibao12" url="7k7k/7.jpg" status="1">
+		<button normal="7k7k/7-1.png" over="" x="133" y="498" propId="5128" type="buy"/>
+    </act>		
+
+	<act p="13" name="quanminkuanghuan" url="7k7k/8.jpg" status="1">
+		<button normal="7k7k/8-1.png" over="" x="282" y="442" propId="5126" type="buy"/>		
+    </act>		
+	<act p="13" name="yuandankuanghuan" url="7k7k/15.jpg" status="1">
+		<button normal="7k7k/15-1.png" over="" x="266" y="482" propId="5122" type="buy"/>		
+    </act>				
+	<act p="13" name="wanzhuanbaofeng" url="7k7k/2.jpg">
+		<button normal="7k7k/2-1.png" over="" x="262" y="419" propId="5068" type="buy"/>		
+    </act>	
+	
+	<act p="13" name="p90xukongzhiyi1" url="7k7k/20.jpg" status="2">
+		<button normal="7k7k/20-1.png" over="" x="192" y="422" propId="232" type="buy"/>		
+    </act>			
+	<!--<act p="13" name="qinglongm4" url="7k7k/11.jpg" status="2">
+		<button normal="7k7k/11-1.png" over="" x="261" y="456" propId="456" type="buy"/>		
+    </act>-->
+	<act p="13" name="fengkuangdenglu11" url="7k7k/32.jpg" status="3"/>		
+	<act p="13" name="xinchunbaozhu" url="7k7k/35.jpg" status="3"/>	
+	<act p="13" name="zhandousonghali" url="7k7k/27.jpg" status="3"/>	
+	<act p="13" name="fengkuangjisha" url="7k7k/33.jpg" status="3"/>				
+	<act p="13" name="zhoumolingGS" url="7k7k/14.jpg" status="3"/>
+	<act p="13" name="meirizaixianlingwuqi" url="7k7k/17.jpg" status="3"/>
+	<act p="13" name="zhoumoqiang" url="7k7k/9.jpg" status="1"/>						
+	
+
+	<!--签到首充-->	
+	<act p="13" name="meiriqiandao_road" url="7k7k/1.jpg" status="1"/>
+	
+		<!--固定活动-->
+
+
+
+	
+	<!--铁血-->
+
+	<!--新手活动-->		
+	<act p="25" name="xinshoujiangli" url="7k7k/101.jpg" status="1"/>	
+	
+	<!--日常活动-->	
+	<!--新官网活动开始-->	
+	<act p="25" name="zhandoulingfuli33" url="7k7k/25.jpg" status="4" selfId="1"/>	
+	<act p="25" name="zhouniandajizhe" url="7k7k/26.jpg" status="4" selfId="1">
+		<button normal="7k7k/26-1.png" over="" x="267" y="443" propId="120" type="buy"/>		
+    </act>		
+	<act p="25" name="heijinzhanhunlibao1" url="7k7k/34.jpg" status="4" selfId="1"/>	
+	<!--新官网活动截止-->	
+
+	<!--<act p="25" name="eryueshouchonga" url="7k7k/6.jpg" status="1">
+		<button normal="7k7k/6-1.png" over="" x="355" y="446" type="charge"/>
+    </act>-->
+	<act p="25" name="jinianyiyueshouchong" url="7k7k/16.jpg" status="1">
+		<button normal="7k7k/16-1.png" over="" x="443" y="457" type="charge"/>
+    </act>
+	<act p="25" name="fulishengji1" url="7k7k/21.jpg" status="1">
+		<button normal="7k7k/21-1.png" over="" x="268" y="292" propId="5143" type="buy"/>
+    </act>
+	<act p="25" name="niannianyouyu" url="7k7k/30.jpg" status="1">
+		<button normal="7k7k/30-1.png" over="" x="283" y="433" propId="5150" type="buy"/>
+    </act>	
+	<act p="25" name="shenshoulaixi" url="7k7k/31.jpg" status="1">
+		<button normal="7k7k/31-1.png" over="" x="128" y="252" propId="456" type="buy"/>
+		<button normal="7k7k/31-1.png" over="" x="525" y="252" propId="455" type="buy"/>	
+		<button normal="7k7k/31-1.png" over="" x="128" y="434" propId="476" type="buy"/>
+		<button normal="7k7k/31-1.png" over="" x="525" y="434" propId="45" type="buy"/>					
+    </act>		
+
+	<act p="25" name="chaozhifudai" url="7k7k/19.jpg" status="1">
+		<button normal="7k7k/19-1.png" over="" x="95" y="432" propId="5139" type="buy"/>
+		<button normal="7k7k/19-1.png" over="" x="469" y="432" propId="5140" type="buy"/>		
+    </act>		
+	<act p="25" name="chongzhisongfuliaa" url="7k7k/3.jpg" status="1">
+		<button normal="7k7k/3-1.png" over="" x="285" y="209" propId="482" type="buy"/>	
+		<button normal="7k7k/3-1.png" over="" x="186" y="426" propId="968" type="buy"/>	
+		<button normal="7k7k/3-1.png" over="" x="387" y="426" propId="852" type="buy"/>			
+    </act>		
+	<act p="25" name="fengkuangqiangbuting" url="7k7k/4.jpg" status="1">
+		<button normal="7k7k/4-1.png" over="" x="289" y="449" propId="5137" type="buy"/>
+    </act>		
+
+	<act p="25" name="mqzhandouji" url="7k7k/10.jpg" status="1">
+		<button normal="7k7k/10-1.png" over="" x="287" y="448" propId="5138" type="buy"/>
+    </act>		
+	<act p="25" name="xingzuozhuanshu" url="7k7k/18.jpg" status="1">
+		<button normal="7k7k/18-1.png" over="" x="99" y="433" propId="2552" type="buy"/>			
+    </act>		
+	<act p="25" name="lansehuanxiang1" url="7k7k/13.jpg" status="1">
+		<button normal="7k7k/13-1.png" over="" x="184" y="405" propId="5146" type="buy"/>
+		<button normal="7k7k/13-1.png" over="" x="308" y="405" propId="5147" type="buy"/>	
+		<button normal="7k7k/13-1.png" over="" x="431" y="405" propId="5148" type="buy"/>
+		<button normal="7k7k/13-1.png" over="" x="554" y="405" propId="5149" type="buy"/>					
+    </act>	
+	<act p="25" name="fengkuangbeibao12" url="7k7k/7.jpg" status="1">
+		<button normal="7k7k/7-1.png" over="" x="133" y="498" propId="5128" type="buy"/>
+    </act>		
+
+	<act p="25" name="quanminkuanghuan" url="7k7k/8.jpg" status="1">
+		<button normal="7k7k/8-1.png" over="" x="282" y="442" propId="5126" type="buy"/>		
+    </act>		
+	<act p="25" name="yuandankuanghuan" url="7k7k/15.jpg" status="1">
+		<button normal="7k7k/15-1.png" over="" x="266" y="482" propId="5122" type="buy"/>		
+    </act>				
+	<act p="25" name="wanzhuanbaofeng" url="7k7k/2.jpg">
+		<button normal="7k7k/2-1.png" over="" x="262" y="419" propId="5068" type="buy"/>		
+    </act>	
+	
+	<act p="25" name="p90xukongzhiyi1" url="7k7k/20.jpg" status="2">
+		<button normal="7k7k/20-1.png" over="" x="192" y="422" propId="232" type="buy"/>		
+    </act>			
+	<!--<act p="25" name="qinglongm4" url="7k7k/11.jpg" status="2">
+		<button normal="7k7k/11-1.png" over="" x="261" y="456" propId="456" type="buy"/>		
+    </act>-->
+	<act p="25" name="fengkuangdenglu11" url="7k7k/32.jpg" status="3"/>		
+	<act p="25" name="xinchunbaozhu" url="7k7k/35.jpg" status="3"/>	
+	<act p="25" name="zhandousonghali" url="7k7k/27.jpg" status="3"/>	
+	<act p="25" name="fengkuangjisha" url="7k7k/33.jpg" status="3"/>	
+	<act p="25" name="zhoumolingGS" url="7k7k/14.jpg" status="3"/>
+	<act p="25" name="meirizaixianlingwuqi" url="7k7k/17.jpg" status="3"/>
+	<act p="25" name="zhoumoqiang" url="7k7k/9.jpg" status="1"/>					
+	
+	<!--固定活动-->	
+	<act p="25" name="meiriqiandao_road" url="7k7k/1.jpg" status="1"/>		
+	<act p="25" name="erweima" url="7k7k/12.jpg"/>				
+	
+	
+	
+	<!--迅雷-->
+	
+	<!--新手活动-->		
+	<act p="27" name="xinshoujiangli" url="7k7k/101.jpg" status="1"/>
+	
+	<!--日常活动-->
+
+	<!--新官网活动开始-->	
+	<act p="27" name="zhandoulingfuli33" url="7k7k/25.jpg" status="4" selfId="1"/>	
+	<act p="27" name="zhouniandajizhe" url="7k7k/26.jpg" status="4" selfId="1">
+		<button normal="7k7k/26-1.png" over="" x="267" y="443" propId="120" type="buy"/>		
+    </act>		
+	<act p="27" name="heijinzhanhunlibao1" url="7k7k/34.jpg" status="4" selfId="1"/>	
+	<!--新官网活动截止-->	
+
+	<!--<act p="27" name="eryueshouchonga" url="7k7k/6.jpg" status="1">
+		<button normal="7k7k/6-1.png" over="" x="355" y="446" type="charge"/>
+    </act>-->
+	<act p="27" name="jinianyiyueshouchong" url="7k7k/16.jpg" status="1">
+		<button normal="7k7k/16-1.png" over="" x="443" y="457" type="charge"/>
+    </act>
+	<act p="27" name="fulishengji1" url="7k7k/21.jpg" status="1">
+		<button normal="7k7k/21-1.png" over="" x="268" y="292" propId="5143" type="buy"/>
+    </act>
+	<act p="27" name="niannianyouyu" url="7k7k/30.jpg" status="1">
+		<button normal="7k7k/30-1.png" over="" x="283" y="433" propId="5150" type="buy"/>
+    </act>	
+	<act p="27" name="shenshoulaixi" url="7k7k/31.jpg" status="1">
+		<button normal="7k7k/31-1.png" over="" x="128" y="252" propId="456" type="buy"/>
+		<button normal="7k7k/31-1.png" over="" x="525" y="252" propId="455" type="buy"/>	
+		<button normal="7k7k/31-1.png" over="" x="128" y="434" propId="476" type="buy"/>
+		<button normal="7k7k/31-1.png" over="" x="525" y="434" propId="45" type="buy"/>					
+    </act>		
+
+	<act p="27" name="chaozhifudai" url="7k7k/19.jpg" status="1">
+		<button normal="7k7k/19-1.png" over="" x="95" y="432" propId="5139" type="buy"/>
+		<button normal="7k7k/19-1.png" over="" x="469" y="432" propId="5140" type="buy"/>		
+    </act>		
+	<act p="27" name="chongzhisongfuliaa" url="7k7k/3.jpg" status="1">
+		<button normal="7k7k/3-1.png" over="" x="285" y="209" propId="482" type="buy"/>	
+		<button normal="7k7k/3-1.png" over="" x="186" y="426" propId="968" type="buy"/>	
+		<button normal="7k7k/3-1.png" over="" x="387" y="426" propId="852" type="buy"/>			
+    </act>		
+	<act p="27" name="fengkuangqiangbuting" url="7k7k/4.jpg" status="1">
+		<button normal="7k7k/4-1.png" over="" x="289" y="449" propId="5137" type="buy"/>
+    </act>		
+
+	<act p="27" name="mqzhandouji" url="7k7k/10.jpg" status="1">
+		<button normal="7k7k/10-1.png" over="" x="287" y="448" propId="5138" type="buy"/>
+    </act>		
+	<act p="27" name="xingzuozhuanshu" url="7k7k/18.jpg" status="1">
+		<button normal="7k7k/18-1.png" over="" x="99" y="433" propId="2552" type="buy"/>			
+    </act>		
+	<act p="27" name="lansehuanxiang1" url="7k7k/13.jpg" status="1">
+		<button normal="7k7k/13-1.png" over="" x="184" y="405" propId="5146" type="buy"/>
+		<button normal="7k7k/13-1.png" over="" x="308" y="405" propId="5147" type="buy"/>	
+		<button normal="7k7k/13-1.png" over="" x="431" y="405" propId="5148" type="buy"/>
+		<button normal="7k7k/13-1.png" over="" x="554" y="405" propId="5149" type="buy"/>					
+    </act>	
+	<act p="27" name="fengkuangbeibao12" url="7k7k/7.jpg" status="1">
+		<button normal="7k7k/7-1.png" over="" x="133" y="498" propId="5128" type="buy"/>
+    </act>		
+
+	<act p="27" name="quanminkuanghuan" url="7k7k/8.jpg" status="1">
+		<button normal="7k7k/8-1.png" over="" x="282" y="442" propId="5126" type="buy"/>		
+    </act>		
+	<act p="27" name="yuandankuanghuan" url="7k7k/15.jpg" status="1">
+		<button normal="7k7k/15-1.png" over="" x="266" y="482" propId="5122" type="buy"/>		
+    </act>				
+	<act p="27" name="wanzhuanbaofeng" url="7k7k/2.jpg">
+		<button normal="7k7k/2-1.png" over="" x="262" y="419" propId="5068" type="buy"/>		
+    </act>	
+	
+	<act p="27" name="p90xukongzhiyi1" url="7k7k/20.jpg" status="2">
+		<button normal="7k7k/20-1.png" over="" x="192" y="422" propId="232" type="buy"/>		
+    </act>			
+	<!--<act p="27" name="qinglongm4" url="7k7k/11.jpg" status="2">
+		<button normal="7k7k/11-1.png" over="" x="261" y="456" propId="456" type="buy"/>		
+    </act>-->
+	<act p="27" name="fengkuangdenglu11" url="7k7k/32.jpg" status="3"/>		
+	<act p="27" name="xinchunbaozhu" url="7k7k/35.jpg" status="3"/>	
+	<act p="27" name="zhandousonghali" url="7k7k/27.jpg" status="3"/>	
+	<act p="27" name="fengkuangjisha" url="7k7k/33.jpg" status="3"/>	
+	<act p="27" name="zhoumolingGS" url="7k7k/14.jpg" status="3"/>
+	<act p="27" name="meirizaixianlingwuqi" url="7k7k/17.jpg" status="3"/>
+	<act p="27" name="zhoumoqiang" url="7k7k/9.jpg" status="1"/>		
+	
+	<!--固定活动-->	
+	<act p="27" name="meiriqiandao_road" url="7k7k/1.jpg" status="1"/>	
+	
+
+	
+	
+	
+	<!-- <act p="12" name="leitingguilai_road" url="tw/5.jpg"/>
+	<act p="12" name="bingyuhuozhige_road" url="tw/19.jpg"/>
+	<act p="12" name="youhuilibao_road" url="tw/20.jpg"/>
+	<act p="12" name="leijixiaofei_road" url="tw/3.jpg"/>
+	<act p="12" name="gongdizhanzheng_road" url="tw/16.jpg"/>
+	<act p="12" name="jingjichangdeshenpan_road" url="tw/17.jpg"/>
+	<act p="12" name="mowufeiyang_road" url="tw/6.jpg"/>
+	<act p="12" name="quanminshouchongxinshidai_gift" url="tw/7.jpg"/>	
+	<act p="12" name="rech_vip" url="tw/9.jpg"/>		
+
+	<act p="14" name="meiriqiandao_road" url="wan7k/1.jpg" status="1"/>
+	<act p="14" name="tiantiwuqidierbo_road" url="wan7k/1.jpg" status="1"/>
+	<act p="14" name="lafengwujixian_road" url="wan7k/2.jpg" status="1"/>
+	<act p="14" name="jingbaolaixi_gift" url="wan7k/3.jpg" status="1">
+		<button normal="wan7k/goumai.png" over="" x="250" y="478" page="1" type="store"/>
+	</act>
+	<act p="14" name="qiaolelibangmowu_road" url="wan7k/4.jpg" status="1"/>		
+	<act p="14" name="tiantigongjianzhan_road" url="wan7k/5.jpg" status="1"/>
+	<act p="14" name="leijizhandounahaoli_road" url="wan7k/7.jpg" status="1"/>
+    <act p="14" name="quanminshouchongxinshidai_gift" url="wan7k/15.jpg"/>
+    <act p="14" name="shoucichongzhi_road" url="wan7k/6.jpg"/>	
+	<act p="14" name="bisaizhuanshubeibao_gift" url="wan7k/20.jpg"/>				
+	<act p="14" name="waiguafengsha_road" url="wan7k/16.jpg"/>	
+	<act p="14" name="quanxin_vip" url="wan7k/21.jpg"/>-->
+</activity>

@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CorvoWater
+  m_Shader: {fileID: 4800000, guid: c1b00b05a52a50d4e87244bf32397089, type: 3}
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _MainTex:
+        m_Texture: {fileID: 2800000, guid: aee33dbf7360bbb41b4abd3882a75f52, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _refMap:
+        m_Texture: {fileID: 2800000, guid: 5fdaae0afa02f234b99eb73d75fbd7ea, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _BumpScale: 1
+      _Cutoff: 0.5
+      _DetailNormalMapScale: 1
+      _DstBlend: 0
+      _GlossMapScale: 1
+      _Glossiness: 0.876
+      _GlossyReflections: 1
+      _Metallic: 0
+      _Mode: 0
+      _OcclusionStrength: 1
+      _Parallax: 0.02
+      _RefSpeed: 10
+      _RefSpeedX: 0.3
+      _RefSpeedY: 0.3
+      _SmoothnessTextureChannel: 0
+      _SpecularHighlights: 1
+      _SrcBlend: 1
+      _TextureSize: 2000
+      _UVSec: 0
+      _WatRot: 195
+      _WatSpeed: 3.09
+      _WatSpeedX: 0.1
+      _WatSpeedY: 0.1
+      _WaveL: 1
+      _WaveS: 3.01
+      _ZWrite: 1
+      _mixCoeff: 0.025
+    m_Colors:
+      _Color: {r: 0, g: 0, b: 0, a: 0.628}
+      _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

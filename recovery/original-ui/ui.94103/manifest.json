@@ -1,0 +1,1142 @@
+{
+  "source": "/Users/Admin/Documents/创世兵魂/_解压资源/创世兵魂素材/创世兵魂/ui.94103.swf",
+  "bitmapCount": 94,
+  "errors": 0,
+  "bitmaps": [
+    {
+      "characterId": 1,
+      "tagCode": 35,
+      "width": 144,
+      "height": 142,
+      "file": "bitmap-00001.png"
+    },
+    {
+      "characterId": 2,
+      "tagCode": 35,
+      "width": 144,
+      "height": 142,
+      "file": "bitmap-00002.png"
+    },
+    {
+      "characterId": 3,
+      "tagCode": 36,
+      "width": 421,
+      "height": 269,
+      "file": "bitmap-00003.png"
+    },
+    {
+      "characterId": 4,
+      "tagCode": 36,
+      "width": 33,
+      "height": 33,
+      "file": "bitmap-00004.png"
+    },
+    {
+      "characterId": 5,
+      "tagCode": 35,
+      "width": 22,
+      "height": 29,
+      "file": "bitmap-00005.png"
+    },
+    {
+      "characterId": 6,
+      "tagCode": 35,
+      "width": 112,
+      "height": 112,
+      "file": "bitmap-00006.png"
+    },
+    {
+      "characterId": 8,
+      "tagCode": 36,
+      "width": 17,
+      "height": 27,
+      "file": "bitmap-00008.png"
+    },
+    {
+      "characterId": 9,
+      "tagCode": 35,
+      "width": 258,
+      "height": 43,
+      "file": "bitmap-00009.png"
+    },
+    {
+      "characterId": 10,
+      "tagCode": 36,
+      "width": 29,
+      "height": 21,
+      "file": "bitmap-00010.png"
+    },
+    {
+      "characterId": 11,
+      "tagCode": 36,
+      "width": 24,
+      "height": 24,
+      "file": "bitmap-00011.png"
+    },
+    {
+      "characterId": 12,
+      "tagCode": 35,
+      "width": 144,
+      "height": 142,
+      "file": "bitmap-00012.png"
+    },
+    {
+      "characterId": 13,
+      "tagCode": 35,
+      "width": 144,
+      "height": 142,
+      "file": "bitmap-00013.png"
+    },
+    {
+      "characterId": 14,
+      "tagCode": 35,
+      "width": 517,
+      "height": 98,
+      "file": "bitmap-00014.png"
+    },
+    {
+      "characterId": 15,
+      "tagCode": 36,
+      "width": 29,
+      "height": 24,
+      "file": "bitmap-00015.png"
+    },
+    {
+      "characterId": 16,
+      "tagCode": 36,
+      "width": 20,
+      "height": 21,
+      "file": "bitmap-00016.png"
+    },
+    {
+      "characterId": 17,
+      "tagCode": 36,
+      "width": 33,
+      "height": 34,
+      "file": "bitmap-00017.png"
+    },
+    {
+      "characterId": 18,
+      "tagCode": 36,
+      "width": 23,
+      "height": 22,
+      "file": "bitmap-00018.png"
+    },
+    {
+      "characterId": 19,
+      "tagCode": 36,
+      "width": 23,
+      "height": 21,
+      "file": "bitmap-00019.png"
+    },
+    {
+      "characterId": 20,
+      "tagCode": 35,
+      "width": 144,
+      "height": 142,
+      "file": "bitmap-00020.png"
+    },
+    {
+      "characterId": 21,
+      "tagCode": 35,
+      "width": 144,
+      "height": 142,
+      "file": "bitmap-00021.png"
+    },
+    {
+      "characterId": 22,
+      "tagCode": 36,
+      "width": 23,
+      "height": 15,
+      "file": "bitmap-00022.png"
+    },
+    {
+      "characterId": 23,
+      "tagCode": 35,
+      "width": 120,
+      "height": 84,
+      "file": "bitmap-00023.png"
+    },
+    {
+      "characterId": 24,
+      "tagCode": 36,
+      "width": 120,
+      "height": 19,
+      "file": "bitmap-00024.png"
+    },
+    {
+      "characterId": 25,
+      "tagCode": 36,
+      "width": 23,
+      "height": 15,
+      "file": "bitmap-00025.png"
+    },
+    {
+      "characterId": 26,
+      "tagCode": 36,
+      "width": 51,
+      "height": 31,
+      "file": "bitmap-00026.png"
+    },
+    {
+      "characterId": 27,
+      "tagCode": 36,
+      "width": 51,
+      "height": 31,
+      "file": "bitmap-00027.png"
+    },
+    {
+      "characterId": 28,
+      "tagCode": 36,
+      "width": 51,
+      "height": 31,
+      "file": "bitmap-00028.png"
+    },
+    {
+      "characterId": 29,
+      "tagCode": 36,
+      "width": 17,
+      "height": 21,
+      "file": "bitmap-00029.png"
+    },
+    {
+      "characterId": 30,
+      "tagCode": 36,
+      "width": 214,
+      "height": 165,
+      "file": "bitmap-00030.png"
+    },
+    {
+      "characterId": 31,
+      "tagCode": 35,
+      "width": 769,
+      "height": 137,
+      "file": "bitmap-00031.png"
+    },
+    {
+      "characterId": 32,
+      "tagCode": 36,
+      "width": 60,
+      "height": 24,
+      "file": "bitmap-00032.png"
+    },
+    {
+      "characterId": 33,
+      "tagCode": 36,
+      "width": 60,
+      "height": 24,
+      "file": "bitmap-00033.png"
+    },
+    {
+      "characterId": 34,
+      "tagCode": 36,
+      "width": 60,
+      "height": 24,
+      "file": "bitmap-00034.png"
+    },
+    {
+      "characterId": 36,
+      "tagCode": 36,
+      "width": 33,
+      "height": 34,
+      "file": "bitmap-00036.png"
+    },
+    {
+      "characterId": 37,
+      "tagCode": 36,
+      "width": 33,
+      "height": 34,
+      "file": "bitmap-00037.png"
+    },
+    {
+      "characterId": 38,
+      "tagCode": 36,
+      "width": 33,
+      "height": 34,
+      "file": "bitmap-00038.png"
+    },
+    {
+      "characterId": 39,
+      "tagCode": 36,
+      "width": 33,
+      "height": 34,
+      "file": "bitmap-00039.png"
+    },
+    {
+      "characterId": 40,
+      "tagCode": 36,
+      "width": 33,
+      "height": 34,
+      "file": "bitmap-00040.png"
+    },
+    {
+      "characterId": 41,
+      "tagCode": 35,
+      "width": 144,
+      "height": 142,
+      "file": "bitmap-00041.png"
+    },
+    {
+      "characterId": 42,
+      "tagCode": 35,
+      "width": 144,
+      "height": 142,
+      "file": "bitmap-00042.png"
+    },
+    {
+      "characterId": 43,
+      "tagCode": 35,
+      "width": 144,
+      "height": 142,
+      "file": "bitmap-00043.png"
+    },
+    {
+      "characterId": 44,
+      "tagCode": 35,
+      "width": 144,
+      "height": 142,
+      "file": "bitmap-00044.png"
+    },
+    {
+      "characterId": 45,
+      "tagCode": 36,
+      "width": 169,
+      "height": 9,
+      "file": "bitmap-00045.png"
+    },
+    {
+      "characterId": 46,
+      "tagCode": 36,
+      "width": 169,
+      "height": 9,
+      "file": "bitmap-00046.png"
+    },
+    {
+      "characterId": 47,
+      "tagCode": 36,
+      "width": 169,
+      "height": 9,
+      "file": "bitmap-00047.png"
+    },
+    {
+      "characterId": 48,
+      "tagCode": 36,
+      "width": 169,
+      "height": 9,
+      "file": "bitmap-00048.png"
+    },
+    {
+      "characterId": 49,
+      "tagCode": 36,
+      "width": 2,
+      "height": 9,
+      "file": "bitmap-00049.png"
+    },
+    {
+      "characterId": 50,
+      "tagCode": 35,
+      "width": 38,
+      "height": 40,
+      "file": "bitmap-00050.png"
+    },
+    {
+      "characterId": 51,
+      "tagCode": 35,
+      "width": 38,
+      "height": 40,
+      "file": "bitmap-00051.png"
+    },
+    {
+      "characterId": 52,
+      "tagCode": 36,
+      "width": 71,
+      "height": 29,
+      "file": "bitmap-00052.png"
+    },
+    {
+      "characterId": 53,
+      "tagCode": 35,
+      "width": 71,
+      "height": 31,
+      "file": "bitmap-00053.png"
+    },
+    {
+      "characterId": 54,
+      "tagCode": 36,
+      "width": 18,
+      "height": 14,
+      "file": "bitmap-00054.png"
+    },
+    {
+      "characterId": 55,
+      "tagCode": 36,
+      "width": 18,
+      "height": 14,
+      "file": "bitmap-00055.png"
+    },
+    {
+      "characterId": 56,
+      "tagCode": 36,
+      "width": 43,
+      "height": 25,
+      "file": "bitmap-00056.png"
+    },
+    {
+      "characterId": 57,
+      "tagCode": 36,
+      "width": 43,
+      "height": 25,
+      "file": "bitmap-00057.png"
+    },
+    {
+      "characterId": 58,
+      "tagCode": 36,
+      "width": 43,
+      "height": 25,
+      "file": "bitmap-00058.png"
+    },
+    {
+      "characterId": 59,
+      "tagCode": 36,
+      "width": 43,
+      "height": 25,
+      "file": "bitmap-00059.png"
+    },
+    {
+      "characterId": 60,
+      "tagCode": 36,
+      "width": 43,
+      "height": 25,
+      "file": "bitmap-00060.png"
+    },
+    {
+      "characterId": 61,
+      "tagCode": 36,
+      "width": 43,
+      "height": 25,
+      "file": "bitmap-00061.png"
+    },
+    {
+      "characterId": 62,
+      "tagCode": 35,
+      "width": 392,
+      "height": 196,
+      "file": "bitmap-00062.png"
+    },
+    {
+      "characterId": 63,
+      "tagCode": 35,
+      "width": 288,
+      "height": 48,
+      "file": "bitmap-00063.png"
+    },
+    {
+      "characterId": 64,
+      "tagCode": 36,
+      "width": 24,
+      "height": 20,
+      "file": "bitmap-00064.png"
+    },
+    {
+      "characterId": 65,
+      "tagCode": 35,
+      "width": 151,
+      "height": 168,
+      "file": "bitmap-00065.png"
+    },
+    {
+      "characterId": 66,
+      "tagCode": 35,
+      "width": 151,
+      "height": 164,
+      "file": "bitmap-00066.png"
+    },
+    {
+      "characterId": 67,
+      "tagCode": 35,
+      "width": 151,
+      "height": 164,
+      "file": "bitmap-00067.png"
+    },
+    {
+      "characterId": 68,
+      "tagCode": 35,
+      "width": 155,
+      "height": 169,
+      "file": "bitmap-00068.png"
+    },
+    {
+      "characterId": 69,
+      "tagCode": 36,
+      "width": 270,
+      "height": 30,
+      "file": "bitmap-00069.png"
+    },
+    {
+      "characterId": 70,
+      "tagCode": 36,
+      "width": 302,
+      "height": 30,
+      "file": "bitmap-00070.png"
+    },
+    {
+      "characterId": 71,
+      "tagCode": 36,
+      "width": 304,
+      "height": 30,
+      "file": "bitmap-00071.png"
+    },
+    {
+      "characterId": 72,
+      "tagCode": 36,
+      "width": 210,
+      "height": 23,
+      "file": "bitmap-00072.png"
+    },
+    {
+      "characterId": 73,
+      "tagCode": 36,
+      "width": 210,
+      "height": 23,
+      "file": "bitmap-00073.png"
+    },
+    {
+      "characterId": 74,
+      "tagCode": 36,
+      "width": 210,
+      "height": 23,
+      "file": "bitmap-00074.png"
+    },
+    {
+      "characterId": 75,
+      "tagCode": 36,
+      "width": 210,
+      "height": 23,
+      "file": "bitmap-00075.png"
+    },
+    {
+      "characterId": 76,
+      "tagCode": 36,
+      "width": 210,
+      "height": 23,
+      "file": "bitmap-00076.png"
+    },
+    {
+      "characterId": 77,
+      "tagCode": 36,
+      "width": 210,
+      "height": 23,
+      "file": "bitmap-00077.png"
+    },
+    {
+      "characterId": 78,
+      "tagCode": 36,
+      "width": 210,
+      "height": 23,
+      "file": "bitmap-00078.png"
+    },
+    {
+      "characterId": 79,
+      "tagCode": 36,
+      "width": 210,
+      "height": 23,
+      "file": "bitmap-00079.png"
+    },
+    {
+      "characterId": 80,
+      "tagCode": 36,
+      "width": 168,
+      "height": 17,
+      "file": "bitmap-00080.png"
+    },
+    {
+      "characterId": 81,
+      "tagCode": 20,
+      "width": 9,
+      "height": 12,
+      "file": "bitmap-00081.png"
+    },
+    {
+      "characterId": 84,
+      "tagCode": 20,
+      "width": 9,
+      "height": 12,
+      "file": "bitmap-00084.png"
+    },
+    {
+      "characterId": 87,
+      "tagCode": 36,
+      "width": 30,
+      "height": 13,
+      "file": "bitmap-00087.png"
+    },
+    {
+      "characterId": 90,
+      "tagCode": 35,
+      "width": 132,
+      "height": 131,
+      "file": "bitmap-00090.png"
+    },
+    {
+      "characterId": 92,
+      "tagCode": 35,
+      "width": 132,
+      "height": 131,
+      "file": "bitmap-00092.png"
+    },
+    {
+      "characterId": 97,
+      "tagCode": 35,
+      "width": 132,
+      "height": 131,
+      "file": "bitmap-00097.png"
+    },
+    {
+      "characterId": 101,
+      "tagCode": 35,
+      "width": 131,
+      "height": 131,
+      "file": "bitmap-00101.png"
+    },
+    {
+      "characterId": 106,
+      "tagCode": 35,
+      "width": 132,
+      "height": 131,
+      "file": "bitmap-00106.png"
+    },
+    {
+      "characterId": 110,
+      "tagCode": 35,
+      "width": 132,
+      "height": 131,
+      "file": "bitmap-00110.png"
+    },
+    {
+      "characterId": 114,
+      "tagCode": 35,
+      "width": 132,
+      "height": 131,
+      "file": "bitmap-00114.png"
+    },
+    {
+      "characterId": 118,
+      "tagCode": 36,
+      "width": 10,
+      "height": 15,
+      "file": "bitmap-00118.png"
+    },
+    {
+      "characterId": 121,
+      "tagCode": 36,
+      "width": 205,
+      "height": 53,
+      "file": "bitmap-00121.png"
+    },
+    {
+      "characterId": 124,
+      "tagCode": 35,
+      "width": 724,
+      "height": 522,
+      "file": "bitmap-00124.png"
+    },
+    {
+      "characterId": 127,
+      "tagCode": 36,
+      "width": 37,
+      "height": 37,
+      "file": "bitmap-00127.png"
+    },
+    {
+      "characterId": 130,
+      "tagCode": 20,
+      "width": 23,
+      "height": 11,
+      "file": "bitmap-00130.png"
+    },
+    {
+      "characterId": 133,
+      "tagCode": 21,
+      "width": 811,
+      "height": 575,
+      "file": "bitmap-00133.png"
+    }
+  ],
+  "exportedSymbols": [
+    {
+      "characterId": 135,
+      "name": "ui.common.panelBg",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 132,
+      "name": "ui.common.ScrollButtonNormal",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 129,
+      "name": "ui.common.ContentBg",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 126,
+      "name": "ui.common.TPanel",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 123,
+      "name": "ui.goods.Tip",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 120,
+      "name": "ui.wp.ProContainer",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 117,
+      "name": "ui.sc.box.platina",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 113,
+      "name": "ui.sc.box.silver",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 109,
+      "name": "ui.sc.box.gold",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 105,
+      "name": "ui.sc.box.bronze",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 100,
+      "name": "ui.sc.box.special",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 96,
+      "name": "ui.sc.box.diamond",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 89,
+      "name": "ui.chat.drop",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 86,
+      "name": "ui.battle.chat.scroll2down",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 83,
+      "name": "ui.battle.chat.scroll2normal",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 80,
+      "name": "ui.font.tadb5b8_18",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 79,
+      "name": "ui.font.tfeffd2_24",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 78,
+      "name": "ui.font.td1fffa_24",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 77,
+      "name": "ui.font.tdeffc6_24",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 76,
+      "name": "ui.font.t498fa9_24",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 75,
+      "name": "ui.font.teba954_24",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 74,
+      "name": "ui.font.tffffff_24",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 73,
+      "name": "ui.font.t93c6da_24",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 72,
+      "name": "ui.font.tf4d083_24",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 71,
+      "name": "ui.font.tffffff_36",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 70,
+      "name": "ui.font.t386054_36",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 69,
+      "name": "ui.font.tff3222_36",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 68,
+      "name": "ui.battle.c4green",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 67,
+      "name": "ui.battle.c4normal",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 66,
+      "name": "ui.battle.c4red",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 65,
+      "name": "ui.battle.c4yellow",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 64,
+      "name": "ui.battle.c4map",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 63,
+      "name": "ui.battle.chat.fontSetBg",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 62,
+      "name": "ui.battle.chat.Bg",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 61,
+      "name": "ui.battle.chat.packupBtnDown",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 60,
+      "name": "ui.battle.chat.packupBtnNormal",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 59,
+      "name": "ui.battle.chat.packupBtnOver",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 58,
+      "name": "ui.battle.chat.fontBtnDown",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 57,
+      "name": "ui.battle.chat.fontBtnNormal",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 56,
+      "name": "ui.battle.chat.fontBtnOver",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 55,
+      "name": "ui.battle.chat.scrolldown",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 54,
+      "name": "ui.battle.chat.scrollnormal",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 53,
+      "name": "ui.battle.chat.tabDown",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 52,
+      "name": "ui.battle.chat.tabNormal",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 51,
+      "name": "ui.battle.chat.setBtnNormal",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 50,
+      "name": "ui.battle.chat.setBtnDown",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 49,
+      "name": "ui.wp.Pro",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 48,
+      "name": "ui.wp.Pro0",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 47,
+      "name": "ui.wp.Pro1",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 46,
+      "name": "ui.wp.Pro2",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 45,
+      "name": "ui.wp.Pro3",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 44,
+      "name": "ui.sc.box.platinaSelect",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 43,
+      "name": "ui.sc.box.platinaNormal",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 42,
+      "name": "ui.sc.box.silverSelect",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 41,
+      "name": "ui.sc.box.silverNormal",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 40,
+      "name": "ui.warehouse.equip1",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 39,
+      "name": "ui.warehouse.equip2",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 38,
+      "name": "ui.warehouse.equip3",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 37,
+      "name": "ui.warehouse.equip4",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 36,
+      "name": "ui.warehouse.equip5",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 35,
+      "name": "ui.warehouse.itemBg",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 34,
+      "name": "ui.sc.convertDown",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 33,
+      "name": "ui.sc.convertHover",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 32,
+      "name": "ui.sc.convertNormal",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 31,
+      "name": "ui.sc.reward.topTextBg",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 30,
+      "name": "ui.sc.rw.propBg",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 29,
+      "name": "ui.hall.RoomPwd",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 28,
+      "name": "ui.common.CloseDown",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 27,
+      "name": "ui.common.CloseHover",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 26,
+      "name": "ui.common.CloseNormal",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 25,
+      "name": "ui.common.ScrollButton2Normal",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 24,
+      "name": "ui.friend.FriendTipItemOver",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 23,
+      "name": "ui.friend.tip.Bg",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 22,
+      "name": "ui.common.ScrollButton2Hover",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 21,
+      "name": "ui.sc.box.goldSelect",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 20,
+      "name": "ui.sc.box.goldNormal",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 19,
+      "name": "ui.icon.integral",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 18,
+      "name": "ui.ladderresult.addFriend",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 17,
+      "name": "ui.warehouse.equipRole",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 16,
+      "name": "ui.hall.Ban",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 15,
+      "name": "ui.icon.exp",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 14,
+      "name": "ui.levelup.tip",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 13,
+      "name": "ui.sc.box.bronzeSelect",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 12,
+      "name": "ui.sc.box.bronzeNormal",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 11,
+      "name": "ui.icon.gold",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 10,
+      "name": "ui.icon.prop",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 9,
+      "name": "ui.sc.top.bg",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 8,
+      "name": "ui.icon.leisha",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 7,
+      "name": "ui.prop.ItemBg",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 6,
+      "name": "ui.sc.box.light",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 5,
+      "name": "ui.icon.medal",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 4,
+      "name": "ui.warehouse.timeout",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 3,
+      "name": "ui.common.Confirm",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 2,
+      "name": "ui.sc.box.diamondSelect",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 1,
+      "name": "ui.sc.box.diamondNormal",
+      "sourceTag": "SymbolClass"
+    }
+  ]
+}

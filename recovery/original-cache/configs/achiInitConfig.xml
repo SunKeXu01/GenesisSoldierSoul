@@ -1,0 +1,32 @@
+﻿<inits>
+    <renwuInfo>
+	    <exp>499</exp>
+	    <level>1</level>
+	    <battleCount>0</battleCount>
+	    <winCount>0</winCount>
+	    <failCount>0</failCount>
+	    <runCount>0</runCount>
+	    <killCount>0</killCount>
+	    <deadCount>0</deadCount>
+	    <hsCount>0</hsCount>
+	    <wasHsCount>0</wasHsCount>
+	    <zhandui>wu</zhandui>
+	    <youxibi>30000</youxibi>
+	    <rmb>0</rmb>
+	    <jifen>0</jifen>
+	    <top>0</top>
+	    <chenghao>wu</chenghao>
+        <ladderScore>800</ladderScore>
+    </renwuInfo>
+    <weaponInfo>
+        <zhuwuqi>13015</zhuwuqi>
+        <fuwuqi>10011</fuwuqi>
+        <dao>17001</dao>
+        <lei>16001</lei>
+    </weaponInfo>
+	<giftInfo>
+		<!--id:物品 cxsj:持续时间 cxsjlx:持续时间类型（0:天,1:分钟） sl:数量-->
+		<gift id="462" cxsj="120" cxsjlx="1" sl="1"/>
+		<gift id="6132" cxsj="7" cxsjlx="0" sl="1"/>
+	</giftInfo>
+</inits>

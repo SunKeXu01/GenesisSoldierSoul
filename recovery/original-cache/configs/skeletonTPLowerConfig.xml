@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<skeleton>
+	<Bone>Bip001 Pelvis</Bone>
+	<Bone>Bip001 Spine2</Bone>
+	<Bone>Bip001</Bone>
+	<Bone>Bip001 Spine</Bone>
+	<Bone>Bip001 Spine1</Bone>
+	<Bone>Bip001 L Thigh</Bone>
+	<Bone>Bip001 L Foot</Bone>
+	<Bone>Bip001 R Foot</Bone>
+	<Bone>Bip001 R Calf</Bone>
+	<Bone>Bip001 R Thigh</Bone>
+	<Bone>Bip001 L Calf</Bone>
+	<Bone>Bip001 R Toe0</Bone>
+	<Bone>Bip001 L Toe0</Bone>
+</skeleton>

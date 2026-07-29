@@ -1,0 +1,1279 @@
+{
+  "source_assets": "/Users/Admin/Documents/创世兵魂/原程序恢复/生化小镇电脑版/UnityProject/ExportedProject/Assets",
+  "root_asset": "Scenes/20160409.unity",
+  "target_assets": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/client-restored/Assets",
+  "namespace": "RecoveredMaps/BiochemicalTown",
+  "asset_count": 315,
+  "reused_guid_count": 0,
+  "missing_guid_count": 3,
+  "conflict_count": 0,
+  "copied": [
+    {
+      "source": "AnimationClip/AniBlood.anim",
+      "target": "RecoveredMaps/BiochemicalTown/AnimationClip/AniBlood.anim"
+    },
+    {
+      "source": "AnimationClip/attack.anim",
+      "target": "RecoveredMaps/BiochemicalTown/AnimationClip/attack.anim"
+    },
+    {
+      "source": "AnimationClip/dance.anim",
+      "target": "RecoveredMaps/BiochemicalTown/AnimationClip/dance.anim"
+    },
+    {
+      "source": "AnimationClip/die.anim",
+      "target": "RecoveredMaps/BiochemicalTown/AnimationClip/die.anim"
+    },
+    {
+      "source": "AnimationClip/gethit.anim",
+      "target": "RecoveredMaps/BiochemicalTown/AnimationClip/gethit.anim"
+    },
+    {
+      "source": "AnimationClip/run.anim",
+      "target": "RecoveredMaps/BiochemicalTown/AnimationClip/run.anim"
+    },
+    {
+      "source": "AnimationClip/waitingforbattle.anim",
+      "target": "RecoveredMaps/BiochemicalTown/AnimationClip/waitingforbattle.anim"
+    },
+    {
+      "source": "AnimatorController/AddBlood.controller",
+      "target": "RecoveredMaps/BiochemicalTown/AnimatorController/AddBlood.controller"
+    },
+    {
+      "source": "AudioClip/Footstep01.wav",
+      "target": "RecoveredMaps/BiochemicalTown/AudioClip/Footstep01.wav"
+    },
+    {
+      "source": "AudioClip/Footstep02.wav",
+      "target": "RecoveredMaps/BiochemicalTown/AudioClip/Footstep02.wav"
+    },
+    {
+      "source": "AudioClip/Footstep04.wav",
+      "target": "RecoveredMaps/BiochemicalTown/AudioClip/Footstep04.wav"
+    },
+    {
+      "source": "AudioClip/Jump.wav",
+      "target": "RecoveredMaps/BiochemicalTown/AudioClip/Jump.wav"
+    },
+    {
+      "source": "AudioClip/Land.wav",
+      "target": "RecoveredMaps/BiochemicalTown/AudioClip/Land.wav"
+    },
+    {
+      "source": "AudioClip/fire.ogg",
+      "target": "RecoveredMaps/BiochemicalTown/AudioClip/fire.ogg"
+    },
+    {
+      "source": "AudioClip/jump.ogg",
+      "target": "RecoveredMaps/BiochemicalTown/AudioClip/jump.ogg"
+    },
+    {
+      "source": "AudioClip/land.ogg",
+      "target": "RecoveredMaps/BiochemicalTown/AudioClip/land.ogg"
+    },
+    {
+      "source": "AudioClip/step3.ogg",
+      "target": "RecoveredMaps/BiochemicalTown/AudioClip/step3.ogg"
+    },
+    {
+      "source": "AudioClip/step4.ogg",
+      "target": "RecoveredMaps/BiochemicalTown/AudioClip/step4.ogg"
+    },
+    {
+      "source": "Cubemap/Cubemap_0.png",
+      "target": "RecoveredMaps/BiochemicalTown/Cubemap/Cubemap_0.png"
+    },
+    {
+      "source": "GameObject/FPSController.prefab",
+      "target": "RecoveredMaps/BiochemicalTown/GameObject/FPSController.prefab"
+    },
+    {
+      "source": "GameObject/bullet.prefab",
+      "target": "RecoveredMaps/BiochemicalTown/GameObject/bullet.prefab"
+    },
+    {
+      "source": "GameObject/skeletonDark.prefab",
+      "target": "RecoveredMaps/BiochemicalTown/GameObject/skeletonDark.prefab"
+    },
+    {
+      "source": "Material/15 - Default.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/15 - Default.mat"
+    },
+    {
+      "source": "Material/21 - Default.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/21 - Default.mat"
+    },
+    {
+      "source": "Material/Ak47 Magazine NRM.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/Ak47 Magazine NRM.mat"
+    },
+    {
+      "source": "Material/Ak47Body__Untitled.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/Ak47Body__Untitled.mat"
+    },
+    {
+      "source": "Material/ArchedWin_Ver2SmallDiffuse.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/ArchedWin_Ver2SmallDiffuse.mat"
+    },
+    {
+      "source": "Material/ArchedWindow_Diffuse.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/ArchedWindow_Diffuse.mat"
+    },
+    {
+      "source": "Material/Crate_Simple.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/Crate_Simple.mat"
+    },
+    {
+      "source": "Material/Dagger.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/Dagger.mat"
+    },
+    {
+      "source": "Material/Dome_Diffuse.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/Dome_Diffuse.mat"
+    },
+    {
+      "source": "Material/Gate.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/Gate.mat"
+    },
+    {
+      "source": "Material/No Name.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/No Name.mat"
+    },
+    {
+      "source": "Material/Plaster1.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/Plaster1.mat"
+    },
+    {
+      "source": "Material/SBWDiffuse.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/SBWDiffuse.mat"
+    },
+    {
+      "source": "Material/Sand.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/Sand.mat"
+    },
+    {
+      "source": "Material/SimpleWindowShutters.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/SimpleWindowShutters.mat"
+    },
+    {
+      "source": "Material/SlimWindow_diffuse.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/SlimWindow_diffuse.mat"
+    },
+    {
+      "source": "Material/TInyShutterDiff.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/TInyShutterDiff.mat"
+    },
+    {
+      "source": "Material/blood.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/blood.mat"
+    },
+    {
+      "source": "Material/bronzeshield-Material #5.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/bronzeshield-Material #5.mat"
+    },
+    {
+      "source": "Material/cape-New.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/cape-New.mat"
+    },
+    {
+      "source": "Material/crate_simpleVer2.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/crate_simpleVer2.mat"
+    },
+    {
+      "source": "Material/crate_simpleVer3.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/crate_simpleVer3.mat"
+    },
+    {
+      "source": "Material/darkBody.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/darkBody.mat"
+    },
+    {
+      "source": "Material/darkHead.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/darkHead.mat"
+    },
+    {
+      "source": "Material/orig_orig_orig_01 - Default.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/orig_orig_orig_01 - Default.mat"
+    },
+    {
+      "source": "Material/sky_startday.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/sky_startday.mat"
+    },
+    {
+      "source": "Material/vHelmet-Helmet M.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/vHelmet-Helmet M.mat"
+    },
+    {
+      "source": "Material/vHelmet-Horn M.mat",
+      "target": "RecoveredMaps/BiochemicalTown/Material/vHelmet-Horn M.mat"
+    },
+    {
+      "source": "Mesh/Ak47Body.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Ak47Body.asset"
+    },
+    {
+      "source": "Mesh/Ak47Mag.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Ak47Mag.asset"
+    },
+    {
+      "source": "Mesh/ArchedWindow02.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ArchedWindow02.asset"
+    },
+    {
+      "source": "Mesh/ArchedWindow03.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ArchedWindow03.asset"
+    },
+    {
+      "source": "Mesh/ArchedWindow04.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ArchedWindow04.asset"
+    },
+    {
+      "source": "Mesh/ArchedWindow05.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ArchedWindow05.asset"
+    },
+    {
+      "source": "Mesh/ArchedWindow06.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ArchedWindow06.asset"
+    },
+    {
+      "source": "Mesh/ArchedWindow07.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ArchedWindow07.asset"
+    },
+    {
+      "source": "Mesh/ArchedWindow08.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ArchedWindow08.asset"
+    },
+    {
+      "source": "Mesh/ArchedWindow09.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ArchedWindow09.asset"
+    },
+    {
+      "source": "Mesh/ArchedWindow10.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ArchedWindow10.asset"
+    },
+    {
+      "source": "Mesh/ArchedWindow11.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ArchedWindow11.asset"
+    },
+    {
+      "source": "Mesh/Box01.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Box01.asset"
+    },
+    {
+      "source": "Mesh/Box02.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Box02.asset"
+    },
+    {
+      "source": "Mesh/Box03.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Box03.asset"
+    },
+    {
+      "source": "Mesh/Box05.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Box05.asset"
+    },
+    {
+      "source": "Mesh/Box06.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Box06.asset"
+    },
+    {
+      "source": "Mesh/Box07.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Box07.asset"
+    },
+    {
+      "source": "Mesh/Box08.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Box08.asset"
+    },
+    {
+      "source": "Mesh/Box09.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Box09.asset"
+    },
+    {
+      "source": "Mesh/Box10.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Box10.asset"
+    },
+    {
+      "source": "Mesh/Box11.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Box11.asset"
+    },
+    {
+      "source": "Mesh/Box12.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Box12.asset"
+    },
+    {
+      "source": "Mesh/Box13.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Box13.asset"
+    },
+    {
+      "source": "Mesh/Box14.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Box14.asset"
+    },
+    {
+      "source": "Mesh/CRATE.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE.asset"
+    },
+    {
+      "source": "Mesh/CRATE04.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE04.asset"
+    },
+    {
+      "source": "Mesh/CRATE05.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE05.asset"
+    },
+    {
+      "source": "Mesh/CRATE06.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE06.asset"
+    },
+    {
+      "source": "Mesh/CRATE07.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE07.asset"
+    },
+    {
+      "source": "Mesh/CRATE08.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE08.asset"
+    },
+    {
+      "source": "Mesh/CRATE09.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE09.asset"
+    },
+    {
+      "source": "Mesh/CRATE10.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE10.asset"
+    },
+    {
+      "source": "Mesh/CRATE11.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE11.asset"
+    },
+    {
+      "source": "Mesh/CRATE12.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE12.asset"
+    },
+    {
+      "source": "Mesh/CRATE13.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE13.asset"
+    },
+    {
+      "source": "Mesh/CRATE14.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE14.asset"
+    },
+    {
+      "source": "Mesh/CRATE15.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE15.asset"
+    },
+    {
+      "source": "Mesh/CRATE16.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE16.asset"
+    },
+    {
+      "source": "Mesh/CRATE17.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE17.asset"
+    },
+    {
+      "source": "Mesh/CRATE18.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE18.asset"
+    },
+    {
+      "source": "Mesh/CRATE19.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE19.asset"
+    },
+    {
+      "source": "Mesh/CRATE20.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE20.asset"
+    },
+    {
+      "source": "Mesh/CRATE21.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE21.asset"
+    },
+    {
+      "source": "Mesh/CRATE22.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/CRATE22.asset"
+    },
+    {
+      "source": "Mesh/Combined Mesh (root_ scene).asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Combined Mesh (root_ scene).asset"
+    },
+    {
+      "source": "Mesh/Cube_001.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Cube_001.asset"
+    },
+    {
+      "source": "Mesh/Cylinder01.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Cylinder01.asset"
+    },
+    {
+      "source": "Mesh/Ground.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Ground.asset"
+    },
+    {
+      "source": "Mesh/House1.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/House1.asset"
+    },
+    {
+      "source": "Mesh/Object01.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object01.asset"
+    },
+    {
+      "source": "Mesh/Object03.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object03.asset"
+    },
+    {
+      "source": "Mesh/Object04.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object04.asset"
+    },
+    {
+      "source": "Mesh/Object08.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object08.asset"
+    },
+    {
+      "source": "Mesh/Object09.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object09.asset"
+    },
+    {
+      "source": "Mesh/Object10.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object10.asset"
+    },
+    {
+      "source": "Mesh/Object11.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object11.asset"
+    },
+    {
+      "source": "Mesh/Object12.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object12.asset"
+    },
+    {
+      "source": "Mesh/Object13.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object13.asset"
+    },
+    {
+      "source": "Mesh/Object14.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object14.asset"
+    },
+    {
+      "source": "Mesh/Object16.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object16.asset"
+    },
+    {
+      "source": "Mesh/Object17.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object17.asset"
+    },
+    {
+      "source": "Mesh/Object18.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object18.asset"
+    },
+    {
+      "source": "Mesh/Object19.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object19.asset"
+    },
+    {
+      "source": "Mesh/Object20.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object20.asset"
+    },
+    {
+      "source": "Mesh/Object21.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object21.asset"
+    },
+    {
+      "source": "Mesh/Object23.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object23.asset"
+    },
+    {
+      "source": "Mesh/Object24.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object24.asset"
+    },
+    {
+      "source": "Mesh/Object25.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object25.asset"
+    },
+    {
+      "source": "Mesh/Object26.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object26.asset"
+    },
+    {
+      "source": "Mesh/Object27.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object27.asset"
+    },
+    {
+      "source": "Mesh/Object28.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object28.asset"
+    },
+    {
+      "source": "Mesh/Object29.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object29.asset"
+    },
+    {
+      "source": "Mesh/Object30.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object30.asset"
+    },
+    {
+      "source": "Mesh/Object31.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object31.asset"
+    },
+    {
+      "source": "Mesh/Object32.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object32.asset"
+    },
+    {
+      "source": "Mesh/Object33.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object33.asset"
+    },
+    {
+      "source": "Mesh/Object34.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object34.asset"
+    },
+    {
+      "source": "Mesh/Object35.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object35.asset"
+    },
+    {
+      "source": "Mesh/Object36.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object36.asset"
+    },
+    {
+      "source": "Mesh/Object37.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object37.asset"
+    },
+    {
+      "source": "Mesh/Object38.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object38.asset"
+    },
+    {
+      "source": "Mesh/Object39.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object39.asset"
+    },
+    {
+      "source": "Mesh/Object40.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object40.asset"
+    },
+    {
+      "source": "Mesh/Object41.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object41.asset"
+    },
+    {
+      "source": "Mesh/Object43.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object43.asset"
+    },
+    {
+      "source": "Mesh/Object44.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object44.asset"
+    },
+    {
+      "source": "Mesh/Object45.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object45.asset"
+    },
+    {
+      "source": "Mesh/Object46.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object46.asset"
+    },
+    {
+      "source": "Mesh/Object47.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object47.asset"
+    },
+    {
+      "source": "Mesh/Object49.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object49.asset"
+    },
+    {
+      "source": "Mesh/Object50.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object50.asset"
+    },
+    {
+      "source": "Mesh/Object51.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object51.asset"
+    },
+    {
+      "source": "Mesh/Object52.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object52.asset"
+    },
+    {
+      "source": "Mesh/Object53.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object53.asset"
+    },
+    {
+      "source": "Mesh/Object54.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object54.asset"
+    },
+    {
+      "source": "Mesh/Object55.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object55.asset"
+    },
+    {
+      "source": "Mesh/Object56.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object56.asset"
+    },
+    {
+      "source": "Mesh/Object57.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object57.asset"
+    },
+    {
+      "source": "Mesh/Object62.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object62.asset"
+    },
+    {
+      "source": "Mesh/Object67.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object67.asset"
+    },
+    {
+      "source": "Mesh/Object68.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object68.asset"
+    },
+    {
+      "source": "Mesh/Object69.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object69.asset"
+    },
+    {
+      "source": "Mesh/Object70.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object70.asset"
+    },
+    {
+      "source": "Mesh/Object71.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object71.asset"
+    },
+    {
+      "source": "Mesh/Object73.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object73.asset"
+    },
+    {
+      "source": "Mesh/Object74.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object74.asset"
+    },
+    {
+      "source": "Mesh/Object75.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object75.asset"
+    },
+    {
+      "source": "Mesh/Object78.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object78.asset"
+    },
+    {
+      "source": "Mesh/Object79.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object79.asset"
+    },
+    {
+      "source": "Mesh/Object80.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object80.asset"
+    },
+    {
+      "source": "Mesh/Object81.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object81.asset"
+    },
+    {
+      "source": "Mesh/Object82.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object82.asset"
+    },
+    {
+      "source": "Mesh/Object83.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object83.asset"
+    },
+    {
+      "source": "Mesh/Object84.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object84.asset"
+    },
+    {
+      "source": "Mesh/Object85.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object85.asset"
+    },
+    {
+      "source": "Mesh/Object86.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object86.asset"
+    },
+    {
+      "source": "Mesh/Object87.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object87.asset"
+    },
+    {
+      "source": "Mesh/Object88.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Object88.asset"
+    },
+    {
+      "source": "Mesh/Plane01.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Plane01.asset"
+    },
+    {
+      "source": "Mesh/ShutterBox.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ShutterBox.asset"
+    },
+    {
+      "source": "Mesh/ShutterBox01.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ShutterBox01.asset"
+    },
+    {
+      "source": "Mesh/ShutterBox02.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ShutterBox02.asset"
+    },
+    {
+      "source": "Mesh/ShutterBox03.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ShutterBox03.asset"
+    },
+    {
+      "source": "Mesh/ShutterBox04.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ShutterBox04.asset"
+    },
+    {
+      "source": "Mesh/ShutterBox05.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ShutterBox05.asset"
+    },
+    {
+      "source": "Mesh/ShutterBox06.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ShutterBox06.asset"
+    },
+    {
+      "source": "Mesh/ShutterBox07.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ShutterBox07.asset"
+    },
+    {
+      "source": "Mesh/ShutterBox08.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ShutterBox08.asset"
+    },
+    {
+      "source": "Mesh/ShutterBox09.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ShutterBox09.asset"
+    },
+    {
+      "source": "Mesh/ShutterBox10.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/ShutterBox10.asset"
+    },
+    {
+      "source": "Mesh/SimpleGratedWindow.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleGratedWindow.asset"
+    },
+    {
+      "source": "Mesh/SimpleGratedWindow03.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleGratedWindow03.asset"
+    },
+    {
+      "source": "Mesh/SimpleGratedWindow04.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleGratedWindow04.asset"
+    },
+    {
+      "source": "Mesh/SimpleGratedWindow05.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleGratedWindow05.asset"
+    },
+    {
+      "source": "Mesh/SimpleGratedWindow06.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleGratedWindow06.asset"
+    },
+    {
+      "source": "Mesh/SimpleWindow.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleWindow.asset"
+    },
+    {
+      "source": "Mesh/SimpleWindow01.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleWindow01.asset"
+    },
+    {
+      "source": "Mesh/SimpleWindow02.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleWindow02.asset"
+    },
+    {
+      "source": "Mesh/SimpleWindow03.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleWindow03.asset"
+    },
+    {
+      "source": "Mesh/SimpleWindow04.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleWindow04.asset"
+    },
+    {
+      "source": "Mesh/SimpleWindow05.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleWindow05.asset"
+    },
+    {
+      "source": "Mesh/SimpleWindow06.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleWindow06.asset"
+    },
+    {
+      "source": "Mesh/SimpleWindow07.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleWindow07.asset"
+    },
+    {
+      "source": "Mesh/SimpleWindow08.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleWindow08.asset"
+    },
+    {
+      "source": "Mesh/SimpleWindow09.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleWindow09.asset"
+    },
+    {
+      "source": "Mesh/SimpleWindow10.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleWindow10.asset"
+    },
+    {
+      "source": "Mesh/SimpleWindow11.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleWindow11.asset"
+    },
+    {
+      "source": "Mesh/SimpleWindow12.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleWindow12.asset"
+    },
+    {
+      "source": "Mesh/SimpleWindow13.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleWindow13.asset"
+    },
+    {
+      "source": "Mesh/SimpleWindow14.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleWindow14.asset"
+    },
+    {
+      "source": "Mesh/SimpleWindow15.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SimpleWindow15.asset"
+    },
+    {
+      "source": "Mesh/SmallBoxyWindow01.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SmallBoxyWindow01.asset"
+    },
+    {
+      "source": "Mesh/SmallBoxyWindow02.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/SmallBoxyWindow02.asset"
+    },
+    {
+      "source": "Mesh/Sphere01.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Sphere01.asset"
+    },
+    {
+      "source": "Mesh/Sphere02.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Sphere02.asset"
+    },
+    {
+      "source": "Mesh/Sphere06.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Sphere06.asset"
+    },
+    {
+      "source": "Mesh/Sphere07.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Sphere07.asset"
+    },
+    {
+      "source": "Mesh/Sphere08.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Sphere08.asset"
+    },
+    {
+      "source": "Mesh/Sphere10.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Sphere10.asset"
+    },
+    {
+      "source": "Mesh/Sphere11.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Sphere11.asset"
+    },
+    {
+      "source": "Mesh/Sphere12.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Sphere12.asset"
+    },
+    {
+      "source": "Mesh/Sphere13.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Sphere13.asset"
+    },
+    {
+      "source": "Mesh/Sphere14.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Sphere14.asset"
+    },
+    {
+      "source": "Mesh/Sphere15.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Sphere15.asset"
+    },
+    {
+      "source": "Mesh/Sphere16.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Sphere16.asset"
+    },
+    {
+      "source": "Mesh/Sphere17.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/Sphere17.asset"
+    },
+    {
+      "source": "Mesh/horn carriage left.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/horn carriage left.asset"
+    },
+    {
+      "source": "Mesh/horn right.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/horn right.asset"
+    },
+    {
+      "source": "Mesh/pointy.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/pointy.asset"
+    },
+    {
+      "source": "Mesh/pointy01.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/pointy01.asset"
+    },
+    {
+      "source": "Mesh/pointy02.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/pointy02.asset"
+    },
+    {
+      "source": "Mesh/pointy03.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/pointy03.asset"
+    },
+    {
+      "source": "Mesh/pointy04.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/pointy04.asset"
+    },
+    {
+      "source": "Mesh/polySurface9.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/polySurface9.asset"
+    },
+    {
+      "source": "Mesh/skeleton.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Mesh/skeleton.asset"
+    },
+    {
+      "source": "NavMeshData/NavMesh.asset",
+      "target": "RecoveredMaps/BiochemicalTown/NavMeshData/NavMesh.asset"
+    },
+    {
+      "source": "Plugins/Assembly-CSharp-firstpass/UnityStandardAssets/Characters/FirstPerson/FirstPersonController.cs",
+      "target": "RecoveredMaps/BiochemicalTown/Plugins/Assembly-CSharp-firstpass/UnityStandardAssets/Characters/FirstPerson/FirstPersonController.cs"
+    },
+    {
+      "source": "Scenes/20160409/LightProbes.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/LightProbes.asset"
+    },
+    {
+      "source": "Scenes/20160409/LightingData.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/LightingData.asset"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_0.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_0.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_1.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_1.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_10.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_10.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_11.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_11.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_12.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_12.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_13.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_13.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_14.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_14.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_15.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_15.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_16.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_16.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_17.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_17.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_18.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_18.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_19.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_19.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_2.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_2.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_20.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_20.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_21.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_21.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_22.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_22.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_23.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_23.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_24.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_24.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_25.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_25.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_26.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_26.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_27.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_27.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_28.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_28.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_29.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_29.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_3.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_3.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_30.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_30.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_31.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_31.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_32.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_32.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_33.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_33.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_34.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_34.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_35.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_35.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_36.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_36.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_4.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_4.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_5.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_5.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_6.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_6.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_7.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_7.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_8.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_8.texture2D"
+    },
+    {
+      "source": "Scenes/20160409/Texture2D_9.texture2D",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409/Texture2D_9.texture2D"
+    },
+    {
+      "source": "Scenes/20160409.unity",
+      "target": "RecoveredMaps/BiochemicalTown/Scenes/20160409.unity"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/AddBlood.cs",
+      "target": "RecoveredMaps/BiochemicalTown/Scripts/Assembly-CSharp/AddBlood.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/AppearEnemy.cs",
+      "target": "RecoveredMaps/BiochemicalTown/Scripts/Assembly-CSharp/AppearEnemy.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/EnemyController.cs",
+      "target": "RecoveredMaps/BiochemicalTown/Scripts/Assembly-CSharp/EnemyController.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/RoleBulletController.cs",
+      "target": "RecoveredMaps/BiochemicalTown/Scripts/Assembly-CSharp/RoleBulletController.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/ShootAudio.cs",
+      "target": "RecoveredMaps/BiochemicalTown/Scripts/Assembly-CSharp/ShootAudio.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/bullet.cs",
+      "target": "RecoveredMaps/BiochemicalTown/Scripts/Assembly-CSharp/bullet.cs"
+    },
+    {
+      "source": "Sprite/20200207214605.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Sprite/20200207214605.asset"
+    },
+    {
+      "source": "Sprite/20200207214618.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Sprite/20200207214618.asset"
+    },
+    {
+      "source": "Sprite/20200207221211.asset",
+      "target": "RecoveredMaps/BiochemicalTown/Sprite/20200207221211.asset"
+    },
+    {
+      "source": "Texture2D/20200207214605.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/20200207214605.png"
+    },
+    {
+      "source": "Texture2D/20200207214618.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/20200207214618.png"
+    },
+    {
+      "source": "Texture2D/20200207221211.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/20200207221211.png"
+    },
+    {
+      "source": "Texture2D/Ak47 Body Diffuse.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/Ak47 Body Diffuse.png"
+    },
+    {
+      "source": "Texture2D/Ak47 Body NRM.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/Ak47 Body NRM.png"
+    },
+    {
+      "source": "Texture2D/Ak47 Magazine Diffuse.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/Ak47 Magazine Diffuse.png"
+    },
+    {
+      "source": "Texture2D/Ak47 Magazine NRM.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/Ak47 Magazine NRM.png"
+    },
+    {
+      "source": "Texture2D/AllRed.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/AllRed.png"
+    },
+    {
+      "source": "Texture2D/ArchedWin_Ver2SmallDiffuse.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/ArchedWin_Ver2SmallDiffuse.png"
+    },
+    {
+      "source": "Texture2D/ArchedWindow_Diffuse.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/ArchedWindow_Diffuse.png"
+    },
+    {
+      "source": "Texture2D/Crate_Simple.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/Crate_Simple.png"
+    },
+    {
+      "source": "Texture2D/Dagger.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/Dagger.png"
+    },
+    {
+      "source": "Texture2D/Dome_Diffuse.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/Dome_Diffuse.png"
+    },
+    {
+      "source": "Texture2D/Gate.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/Gate.png"
+    },
+    {
+      "source": "Texture2D/Plaster1.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/Plaster1.png"
+    },
+    {
+      "source": "Texture2D/SBWDiffuse.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/SBWDiffuse.png"
+    },
+    {
+      "source": "Texture2D/Sand.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/Sand.png"
+    },
+    {
+      "source": "Texture2D/SimpleWindowShutters.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/SimpleWindowShutters.png"
+    },
+    {
+      "source": "Texture2D/SlimWindow_diffuse.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/SlimWindow_diffuse.png"
+    },
+    {
+      "source": "Texture2D/TInyShutterDiff.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/TInyShutterDiff.png"
+    },
+    {
+      "source": "Texture2D/back.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/back.png"
+    },
+    {
+      "source": "Texture2D/blood.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/blood.png"
+    },
+    {
+      "source": "Texture2D/bloodBGT.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/bloodBGT.png"
+    },
+    {
+      "source": "Texture2D/bloodT.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/bloodT.png"
+    },
+    {
+      "source": "Texture2D/bot.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/bot.png"
+    },
+    {
+      "source": "Texture2D/bronzeshield.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/bronzeshield.png"
+    },
+    {
+      "source": "Texture2D/crate_simpleVer2.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/crate_simpleVer2.png"
+    },
+    {
+      "source": "Texture2D/crate_simpleVer3.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/crate_simpleVer3.png"
+    },
+    {
+      "source": "Texture2D/front.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/front.png"
+    },
+    {
+      "source": "Texture2D/l.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/l.png"
+    },
+    {
+      "source": "Texture2D/lightning-texture-2.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/lightning-texture-2.png"
+    },
+    {
+      "source": "Texture2D/r.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/r.png"
+    },
+    {
+      "source": "Texture2D/shoot.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/shoot.png"
+    },
+    {
+      "source": "Texture2D/skeletonDarkbody.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/skeletonDarkbody.png"
+    },
+    {
+      "source": "Texture2D/skeletonDarkhead.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/skeletonDarkhead.png"
+    },
+    {
+      "source": "Texture2D/up.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/up.png"
+    },
+    {
+      "source": "Texture2D/vHelmet.png",
+      "target": "RecoveredMaps/BiochemicalTown/Texture2D/vHelmet.png"
+    }
+  ],
+  "reused": {},
+  "missing_guids": [
+    "0000000000000000e000000000000000",
+    "0000000000000000f000000000000000",
+    "f5f67c52d1564df4a8936ccd202a3bd8"
+  ],
+  "conflicts": []
+}

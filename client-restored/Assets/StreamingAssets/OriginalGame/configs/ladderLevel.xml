@@ -1,0 +1,46 @@
+﻿<levels maps="4 44 45 48" mode="0" weapons="duikangzhandou">
+	<!-- id:段位id所有其他文件中需要引用天梯就引用这里的 pf:段位积分下限 pu:段位积分上限--> 
+		<!-- nfp:解锁内容的所需积分下限 nup:解锁内容的所需积分上限 c:开启内容(如果是道具就填道具id,多个道具以空格隔开.如果是模式就填模式id,多个模式以空格隔开.没有就不填)-->
+	<level id="1" pf="800" pu="1000" upgrade="1000">
+	    <lock nfp="850" maps="60 7 58 44 45 28" mode="0" weapons="duikangzhandou" tip="解锁地图：新金字塔\n推荐模式：对抗模式"/>
+		<lock nfp="900" maps="60 7 58 44 45 28 11" mode="0 4" weapons="duikangzhandou" tip="解锁模式：雷战模式\n解锁地图：寒冰要塞"/>
+		<lock nfp="950" maps="60 7 58 44 45 28 11 51" mode="0 4" weapons="duikangzhandou" tip="解锁地图：新年边贸城\n推荐模式：对抗模式"/>
+		<lock nfp="1000" maps="60 7 58 44 45 28 11 51" mode="0 4" weapons="duikangzhandou" tip="解锁内容：升级青铜武器\n解锁内容：生命上限提高10点"/>
+	</level>	
+	<level id="2" pf="1000" pu="1300" upgrade="1300">
+	    <lock nfp="1075" maps="60 7 58 44 45 28 11 51" mode="0 4 2" weapons="duikangzhandou baopozhandou" tip="解锁模式：爆破模式"/>	
+		<lock nfp="1150" maps="54 66 74 61 60 7 58 44 45 28 63 11 73 51 59 3" mode="0 4 2" weapons="duikangzhandou baopozhandou" tip="解锁地图：极地小镇\n推荐模式：爆破模式"/>
+		<lock nfp="1225" maps="54 66 74 61 60 7 58 44 45 48 63 28 11 73 51 59 3" mode="0 4 2" weapons="duikangzhandou baopozhandou" tip="解锁地图：远洋货轮\n推荐模式：对抗模式"/>
+		<lock nfp="1300" maps="54 66 74 61 60 7 58 44 45 48 63 28 11 73 51 59 3" mode="0 4 2" weapons="duikangzhandou baopozhandou" tip="解锁内容：升级白银武器\n解锁内容：生命上限提高20点，解锁个人模式"/>
+	</level>	
+    <level id="3" pf="1300" pu="1800" upgrade="1800"> 		
+		<lock nfp="1425" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10" mode="0 4 2 3" weapons="duikangzhandou baopozhandou jujizhandou" tip="解锁模式：狙战模式\n解锁地图：荒芜之地"/>	
+		<lock nfp="1550" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25" mode="0 4 2 3" weapons="duikangzhandou baopozhandou jujizhandou" tip="解锁地图：神秘基地\n推荐模式：爆破模式"/>
+		<lock nfp="1675" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25" mode="0 4 2 3 7" weapons="duikangzhandou baopozhandou jujizhandou" tip="解锁模式：手枪模式"/>
+		<lock nfp="1800" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25" mode="0 4 2 3 7 5" weapons="duikangzhandou baopozhandou gerenjingjizhandou jujizhandou" tip="解锁内容：升级黄金武器\n解锁内容：生命上限提高30点，解锁枪王模式"/>
+	</level>
+	<level id="4" pf="1800" pu="2300" upgrade="2300"> 	
+		<lock nfp="1925" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25 21 76" mode="0 4 2 3 7 5" weapons="duikangzhandou baopozhandou gerenjingjizhandou jujizhandou" tip="解锁地图：边境哨所\n推荐模式：对抗模式"/>	
+		<lock nfp="2050" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25 21 76 9" mode="0 4 2 3 7 5 1" weapons="duikangzhandou baopozhandou gerenjingjizhandou jujizhandou" tip="解锁模式：刀战模式\n解锁地图：斗兽场"/>
+		<lock nfp="2175" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25 21 76 9 15" mode="0 4 2 3 7 5 1" weapons="duikangzhandou baopozhandou gerenjingjizhandou jujizhandou" tip="解锁地图：航空母舰\n推荐模式：爆破模式"/>
+		<lock nfp="2300" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25 21 76 9 15" mode="0 4 2 3 7 5 1 18" weapons="duikangzhandou baopozhandou gerenjingjizhandou qiangwangzhiwangzhandou jujizhandou" tip="解锁内容：升级冰钻武器\n解锁内容：生命上限提高40点"/>
+	</level>
+	<level id="5" pf="2300" pu="2800" upgrade="2800"> 	
+		<lock nfp="2425" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25 21 76 9 15 17" mode="0 4 2 3 7 5 1 18" weapons="duikangzhandou baopozhandou gerenjingjizhandou qiangwangzhiwangzhandou jujizhandou" tip="解锁地图：双塔广场\n推荐模式：狙战模式"/>	
+		<lock nfp="2550" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25 21 76 9 15 17 18" mode="0 4 2 3 7 5 1 18" weapons="duikangzhandou baopozhandou gerenjingjizhandou qiangwangzhiwangzhandou jujizhandou" tip="解锁地图：能源站\n推荐模式：爆破模式"/>
+		<lock nfp="2675" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25 21 76 9 15 17 18 23" mode="0 4 2 3 7 5 1 18" weapons="duikangzhandou baopozhandou gerenjingjizhandou qiangwangzhiwangzhandou jujizhandou" tip="推荐模式：对抗模式"/>
+		<lock nfp="2800" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25 21 76 9 15 17 18 23 26" mode="0 4 2 3 7 5 1 18" weapons="duikangzhandou baopozhandou gerenjingjizhandou qiangwangzhiwangzhandou jujizhandou" tip="解锁地图：走私仓库\n推荐模式：爆破模式"/>
+	</level>
+	<level id="6" pf="2800" pu="5000" upgrade="800"> 	
+	    <lock nfp="3350" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25 21 76 9 15 17 18 23 26 7 22 1 6 77" mode="0 4 2 3 7 5 1 18" c="603" weapons="duikangzhandou baopozhandou gerenjingjizhandou qiangwangzhiwangzhandou jujizhandou" tip="奖励道具：AWM银蛇x7天"/>	
+		<lock nfp="3900" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25 21 76 9 15 17 18 23 26 7 22 1 6 77" mode="0 4 2 3 7 5 1 18" c="330" weapons="duikangzhandou baopozhandou gerenjingjizhandou qiangwangzhiwangzhandou jujizhandou" tip="奖励道具：解放者95式x7天"/>
+		<lock nfp="4450" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25 21 76 9 15 17 18 23 26 7 22 1 6 77" mode="0 4 2 3 7 5 1 18" c="343" weapons="duikangzhandou baopozhandou gerenjingjizhandou qiangwangzhiwangzhandou jujizhandou" tip="奖励道具：冰巫师M4x7天"/>
+		<lock nfp="5000" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25 21 76 9 15 17 18 23 26 7 22 1 6 77" mode="0 4 2 3 7 5 1 18" c="313" weapons="duikangzhandou baopozhandou gerenjingjizhandou qiangwangzhiwangzhandou jujizhandou" tip="奖励道具：炮仗AK47x7天"/>
+	</level>
+	<level id="7" pf="2800" pu="5000" upgrade="800"> 	
+	    <lock nfp="2800" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25 21 76 9 15 17 18 23 26 7 22 1 6 77" mode="0 4 2 3 7 5 1 18" weapons="duikangzhandou baopozhandou gerenjingjizhandou qiangwangzhiwangzhandou jujizhandou"/>	
+		<lock nfp="2800" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25 21 76 9 15 17 18 23 26 7 22 1 6 77" mode="0 4 2 3 7 5 1 18" weapons="duikangzhandou baopozhandou gerenjingjizhandou qiangwangzhiwangzhandou jujizhandou"/>
+		<lock nfp="2800" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25 21 76 9 15 17 18 23 26 7 22 1 6 77" mode="0 4 2 3 7 5 1 18" weapons="duikangzhandou baopozhandou gerenjingjizhandou qiangwangzhiwangzhandou jujizhandou"/>
+		<lock nfp="2800" maps="54 66 74 61 60 7 58 44 45 48 28 75 63 11 73 51 59 3 10 25 21 76 9 15 17 18 23 26 7 22 1 6 77" mode="0 4 2 3 7 5 1 18" weapons="duikangzhandou baopozhandou gerenjingjizhandou qiangwangzhiwangzhandou jujizhandou"/>
+	</level>
+</levels>

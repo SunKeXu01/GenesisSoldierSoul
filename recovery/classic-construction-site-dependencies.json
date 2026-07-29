@@ -1,0 +1,911 @@
+{
+  "source_assets": "/Users/Admin/Documents/创世兵魂/原程序恢复/旧工地重现天梯王者归来/UnityProject/ExportedProject/Assets",
+  "root_asset": "Scenes/Scenegd.unity",
+  "target_assets": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/client-restored/Assets",
+  "namespace": "RecoveredMaps/ClassicConstructionSite",
+  "asset_count": 221,
+  "reused_guid_count": 1,
+  "missing_guid_count": 3,
+  "conflict_count": 1,
+  "copied": [
+    {
+      "source": "AudioClip/开场男声音.ogg",
+      "target": "RecoveredMaps/ClassicConstructionSite/AudioClip/开场男声音.ogg"
+    },
+    {
+      "source": "Avatar/Dungeon_SkeletonAvatar.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Avatar/Dungeon_SkeletonAvatar.asset"
+    },
+    {
+      "source": "Material/0.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/0.mat"
+    },
+    {
+      "source": "Material/20191113155547.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/20191113155547.mat"
+    },
+    {
+      "source": "Material/20191113164122.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/20191113164122.mat"
+    },
+    {
+      "source": "Material/20191121154413.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/20191121154413.mat"
+    },
+    {
+      "source": "Material/20191121154901.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/20191121154901.mat"
+    },
+    {
+      "source": "Material/20191121170909.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/20191121170909.mat"
+    },
+    {
+      "source": "Material/20191122171338.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/20191122171338.mat"
+    },
+    {
+      "source": "Material/20191122220657 1.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/20191122220657 1.mat"
+    },
+    {
+      "source": "Material/20191122220657.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/20191122220657.mat"
+    },
+    {
+      "source": "Material/20191122222127.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/20191122222127.mat"
+    },
+    {
+      "source": "Material/293混凝土_爱给网_aigei_com.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/293混凝土_爱给网_aigei_com.mat"
+    },
+    {
+      "source": "Material/370.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/370.mat"
+    },
+    {
+      "source": "Material/371.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/371.mat"
+    },
+    {
+      "source": "Material/482.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/482.mat"
+    },
+    {
+      "source": "Material/492.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/492.mat"
+    },
+    {
+      "source": "Material/DS_equipment_standard.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/DS_equipment_standard.mat"
+    },
+    {
+      "source": "Material/DS_equipment_standard_0.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/DS_equipment_standard_0.mat"
+    },
+    {
+      "source": "Material/DS_skeleton_standard.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/DS_skeleton_standard.mat"
+    },
+    {
+      "source": "Material/Material #4614.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/Material #4614.mat"
+    },
+    {
+      "source": "Material/Material #4615.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/Material #4615.mat"
+    },
+    {
+      "source": "Material/Material #4617.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/Material #4617.mat"
+    },
+    {
+      "source": "Material/Material #4651.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/Material #4651.mat"
+    },
+    {
+      "source": "Material/Material #5489.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/Material #5489.mat"
+    },
+    {
+      "source": "Material/Material #5490.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/Material #5490.mat"
+    },
+    {
+      "source": "Material/Material #5495.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/Material #5495.mat"
+    },
+    {
+      "source": "Material/Material #5566.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/Material #5566.mat"
+    },
+    {
+      "source": "Material/Material #7048.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/Material #7048.mat"
+    },
+    {
+      "source": "Material/Material #7049.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/Material #7049.mat"
+    },
+    {
+      "source": "Material/Material #7054.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/Material #7054.mat"
+    },
+    {
+      "source": "Material/Material #7100.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/Material #7100.mat"
+    },
+    {
+      "source": "Material/Material #9051.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/Material #9051.mat"
+    },
+    {
+      "source": "Material/Material #9144.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/Material #9144.mat"
+    },
+    {
+      "source": "Material/Material #9146.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/Material #9146.mat"
+    },
+    {
+      "source": "Material/Skybox6.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/Skybox6.mat"
+    },
+    {
+      "source": "Material/archmodels67_040_06.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/archmodels67_040_06.mat"
+    },
+    {
+      "source": "Material/archmodels67_040_07.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/archmodels67_040_07.mat"
+    },
+    {
+      "source": "Material/archmodels69_055_04.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/archmodels69_055_04.mat"
+    },
+    {
+      "source": "Material/archmodels69_055_sand.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/archmodels69_055_sand.mat"
+    },
+    {
+      "source": "Material/cemian.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/cemian.mat"
+    },
+    {
+      "source": "Material/rdmobj79Mat.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/rdmobj79Mat.mat"
+    },
+    {
+      "source": "Material/下.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/下.mat"
+    },
+    {
+      "source": "Material/围墙灰色灰3.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/围墙灰色灰3.mat"
+    },
+    {
+      "source": "Material/地面PS.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/地面PS.mat"
+    },
+    {
+      "source": "Material/地面最终.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/地面最终.mat"
+    },
+    {
+      "source": "Material/基地下.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/基地下.mat"
+    },
+    {
+      "source": "Material/基地铁皮顶 1.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/基地铁皮顶 1.mat"
+    },
+    {
+      "source": "Material/基地铁皮顶.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/基地铁皮顶.mat"
+    },
+    {
+      "source": "Material/房子周围 1.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/房子周围 1.mat"
+    },
+    {
+      "source": "Material/房子正面 5.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/房子正面 5.mat"
+    },
+    {
+      "source": "Material/房子正面 6.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/房子正面 6.mat"
+    },
+    {
+      "source": "Material/房子正面 7.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/房子正面 7.mat"
+    },
+    {
+      "source": "Material/房子正面 8.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/房子正面 8.mat"
+    },
+    {
+      "source": "Material/斜.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/斜.mat"
+    },
+    {
+      "source": "Material/最终 2.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/最终 2.mat"
+    },
+    {
+      "source": "Material/最终.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/最终.mat"
+    },
+    {
+      "source": "Material/水管2.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/水管2.mat"
+    },
+    {
+      "source": "Material/混泥土2.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/混泥土2.mat"
+    },
+    {
+      "source": "Material/电箱.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/电箱.mat"
+    },
+    {
+      "source": "Material/矮墙.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/矮墙.mat"
+    },
+    {
+      "source": "Material/矮墙2.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/矮墙2.mat"
+    },
+    {
+      "source": "Material/矮墙3.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/矮墙3.mat"
+    },
+    {
+      "source": "Material/窗户.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/窗户.mat"
+    },
+    {
+      "source": "Material/路灯.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/路灯.mat"
+    },
+    {
+      "source": "Material/边.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/边.mat"
+    },
+    {
+      "source": "Material/铁皮.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/铁皮.mat"
+    },
+    {
+      "source": "Material/镀锌金属_爱给网_aigei_com.mat",
+      "target": "RecoveredMaps/ClassicConstructionSite/Material/镀锌金属_爱给网_aigei_com.mat"
+    },
+    {
+      "source": "Mesh/4.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/4.asset"
+    },
+    {
+      "source": "Mesh/5.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/5.asset"
+    },
+    {
+      "source": "Mesh/6.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/6.asset"
+    },
+    {
+      "source": "Mesh/7.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/7.asset"
+    },
+    {
+      "source": "Mesh/Axe.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/Axe.asset"
+    },
+    {
+      "source": "Mesh/Bow.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/Bow.asset"
+    },
+    {
+      "source": "Mesh/Box001.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/Box001.asset"
+    },
+    {
+      "source": "Mesh/Fould_add_L.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/Fould_add_L.asset"
+    },
+    {
+      "source": "Mesh/Fould_add_R.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/Fould_add_R.asset"
+    },
+    {
+      "source": "Mesh/LongSword.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/LongSword.asset"
+    },
+    {
+      "source": "Mesh/Mace.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/Mace.asset"
+    },
+    {
+      "source": "Mesh/Pauldron_A_L.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/Pauldron_A_L.asset"
+    },
+    {
+      "source": "Mesh/Pauldron_A_R.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/Pauldron_A_R.asset"
+    },
+    {
+      "source": "Mesh/Pauldron_B_L.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/Pauldron_B_L.asset"
+    },
+    {
+      "source": "Mesh/Pauldron_B_R.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/Pauldron_B_R.asset"
+    },
+    {
+      "source": "Mesh/TwoHanded_Axe.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/TwoHanded_Axe.asset"
+    },
+    {
+      "source": "Mesh/archmodels69_055_01.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/archmodels69_055_01.asset"
+    },
+    {
+      "source": "Mesh/archmodels69_055_02.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/archmodels69_055_02.asset"
+    },
+    {
+      "source": "Mesh/archmodels69_055_03.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/archmodels69_055_03.asset"
+    },
+    {
+      "source": "Mesh/archmodels69_055_05.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/archmodels69_055_05.asset"
+    },
+    {
+      "source": "Mesh/archmodels69_055_06.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/archmodels69_055_06.asset"
+    },
+    {
+      "source": "Mesh/archmodels69_055_23.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/archmodels69_055_23.asset"
+    },
+    {
+      "source": "Mesh/archmodels69_055_25.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/archmodels69_055_25.asset"
+    },
+    {
+      "source": "Mesh/archmodels69_055_26.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/archmodels69_055_26.asset"
+    },
+    {
+      "source": "Mesh/archmodels69_055_27.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/archmodels69_055_27.asset"
+    },
+    {
+      "source": "Mesh/archmodels69_055_30.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/archmodels69_055_30.asset"
+    },
+    {
+      "source": "Mesh/fould_A.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/fould_A.asset"
+    },
+    {
+      "source": "Mesh/fould_B.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/fould_B.asset"
+    },
+    {
+      "source": "Mesh/gauntlet_A_L.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/gauntlet_A_L.asset"
+    },
+    {
+      "source": "Mesh/gauntlet_A_R.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/gauntlet_A_R.asset"
+    },
+    {
+      "source": "Mesh/gauntlet_B_L.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/gauntlet_B_L.asset"
+    },
+    {
+      "source": "Mesh/gauntlet_B_R.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/gauntlet_B_R.asset"
+    },
+    {
+      "source": "Mesh/greaves_A_L.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/greaves_A_L.asset"
+    },
+    {
+      "source": "Mesh/greaves_A_R.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/greaves_A_R.asset"
+    },
+    {
+      "source": "Mesh/helmet_A.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/helmet_A.asset"
+    },
+    {
+      "source": "Mesh/helmet_B.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/helmet_B.asset"
+    },
+    {
+      "source": "Mesh/helmet_C.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/helmet_C.asset"
+    },
+    {
+      "source": "Mesh/quiver.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/quiver.asset"
+    },
+    {
+      "source": "Mesh/rdmobj04.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj04.asset"
+    },
+    {
+      "source": "Mesh/rdmobj05.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj05.asset"
+    },
+    {
+      "source": "Mesh/rdmobj08.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj08.asset"
+    },
+    {
+      "source": "Mesh/rdmobj09.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj09.asset"
+    },
+    {
+      "source": "Mesh/rdmobj10.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj10.asset"
+    },
+    {
+      "source": "Mesh/rdmobj11.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj11.asset"
+    },
+    {
+      "source": "Mesh/rdmobj13.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj13.asset"
+    },
+    {
+      "source": "Mesh/rdmobj18.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj18.asset"
+    },
+    {
+      "source": "Mesh/rdmobj19.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj19.asset"
+    },
+    {
+      "source": "Mesh/rdmobj21.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj21.asset"
+    },
+    {
+      "source": "Mesh/rdmobj22.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj22.asset"
+    },
+    {
+      "source": "Mesh/rdmobj23.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj23.asset"
+    },
+    {
+      "source": "Mesh/rdmobj24.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj24.asset"
+    },
+    {
+      "source": "Mesh/rdmobj29.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj29.asset"
+    },
+    {
+      "source": "Mesh/rdmobj33.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj33.asset"
+    },
+    {
+      "source": "Mesh/rdmobj36.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj36.asset"
+    },
+    {
+      "source": "Mesh/rdmobj37.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj37.asset"
+    },
+    {
+      "source": "Mesh/rdmobj39.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj39.asset"
+    },
+    {
+      "source": "Mesh/rdmobj40.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj40.asset"
+    },
+    {
+      "source": "Mesh/rdmobj42.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj42.asset"
+    },
+    {
+      "source": "Mesh/rdmobj45.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj45.asset"
+    },
+    {
+      "source": "Mesh/rdmobj46.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj46.asset"
+    },
+    {
+      "source": "Mesh/rdmobj47.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj47.asset"
+    },
+    {
+      "source": "Mesh/rdmobj51.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj51.asset"
+    },
+    {
+      "source": "Mesh/rdmobj54.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj54.asset"
+    },
+    {
+      "source": "Mesh/rdmobj55.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj55.asset"
+    },
+    {
+      "source": "Mesh/rdmobj58.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj58.asset"
+    },
+    {
+      "source": "Mesh/rdmobj61.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj61.asset"
+    },
+    {
+      "source": "Mesh/rdmobj63.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj63.asset"
+    },
+    {
+      "source": "Mesh/rdmobj64.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj64.asset"
+    },
+    {
+      "source": "Mesh/rdmobj65.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj65.asset"
+    },
+    {
+      "source": "Mesh/rdmobj66.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj66.asset"
+    },
+    {
+      "source": "Mesh/rdmobj68.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj68.asset"
+    },
+    {
+      "source": "Mesh/rdmobj69.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj69.asset"
+    },
+    {
+      "source": "Mesh/rdmobj70.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj70.asset"
+    },
+    {
+      "source": "Mesh/rdmobj71.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj71.asset"
+    },
+    {
+      "source": "Mesh/rdmobj72.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj72.asset"
+    },
+    {
+      "source": "Mesh/rdmobj73.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj73.asset"
+    },
+    {
+      "source": "Mesh/rdmobj76.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj76.asset"
+    },
+    {
+      "source": "Mesh/rdmobj79.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj79.asset"
+    },
+    {
+      "source": "Mesh/rdmobj80.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj80.asset"
+    },
+    {
+      "source": "Mesh/rdmobj82.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj82.asset"
+    },
+    {
+      "source": "Mesh/rdmobj84.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj84.asset"
+    },
+    {
+      "source": "Mesh/rdmobj85.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj85.asset"
+    },
+    {
+      "source": "Mesh/rdmobj86.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj86.asset"
+    },
+    {
+      "source": "Mesh/rdmobj88.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj88.asset"
+    },
+    {
+      "source": "Mesh/rdmobj90.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj90.asset"
+    },
+    {
+      "source": "Mesh/rdmobj93.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj93.asset"
+    },
+    {
+      "source": "Mesh/rdmobj95.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj95.asset"
+    },
+    {
+      "source": "Mesh/rdmobj96.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj96.asset"
+    },
+    {
+      "source": "Mesh/rdmobj97.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj97.asset"
+    },
+    {
+      "source": "Mesh/rdmobj98.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj98.asset"
+    },
+    {
+      "source": "Mesh/rdmobj99.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/rdmobj99.asset"
+    },
+    {
+      "source": "Mesh/shield_A.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/shield_A.asset"
+    },
+    {
+      "source": "Mesh/shield_B.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/shield_B.asset"
+    },
+    {
+      "source": "Mesh/shield_C.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/shield_C.asset"
+    },
+    {
+      "source": "Mesh/skeleton_mesh.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/skeleton_mesh.asset"
+    },
+    {
+      "source": "Mesh/路灯2.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Mesh/路灯2.asset"
+    },
+    {
+      "source": "Scenes/Scenegd/LightingData.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Scenes/Scenegd/LightingData.asset"
+    },
+    {
+      "source": "Scenes/Scenegd.unity",
+      "target": "RecoveredMaps/ClassicConstructionSite/Scenes/Scenegd.unity"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/Audio.cs",
+      "target": "RecoveredMaps/ClassicConstructionSite/Scripts/Assembly-CSharp/Audio.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/Move.cs",
+      "target": "RecoveredMaps/ClassicConstructionSite/Scripts/Assembly-CSharp/Move.cs"
+    },
+    {
+      "source": "Sprite/1(1).asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Sprite/1(1).asset"
+    },
+    {
+      "source": "Sprite/hand.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Sprite/hand.asset"
+    },
+    {
+      "source": "Sprite/准心.asset",
+      "target": "RecoveredMaps/ClassicConstructionSite/Sprite/准心.asset"
+    },
+    {
+      "source": "Texture2D/0_1.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/0_1.png"
+    },
+    {
+      "source": "Texture2D/1(1).png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/1(1).png"
+    },
+    {
+      "source": "Texture2D/20191113155547.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/20191113155547.png"
+    },
+    {
+      "source": "Texture2D/20191113164122.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/20191113164122.png"
+    },
+    {
+      "source": "Texture2D/20191121154413.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/20191121154413.png"
+    },
+    {
+      "source": "Texture2D/20191121154901.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/20191121154901.png"
+    },
+    {
+      "source": "Texture2D/20191121170909.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/20191121170909.png"
+    },
+    {
+      "source": "Texture2D/20191122171338.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/20191122171338.png"
+    },
+    {
+      "source": "Texture2D/20191122220657 1.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/20191122220657 1.png"
+    },
+    {
+      "source": "Texture2D/20191122220657.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/20191122220657.png"
+    },
+    {
+      "source": "Texture2D/20191122222127.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/20191122222127.png"
+    },
+    {
+      "source": "Texture2D/293混凝土_爱给网_aigei_com.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/293混凝土_爱给网_aigei_com.png"
+    },
+    {
+      "source": "Texture2D/370.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/370.png"
+    },
+    {
+      "source": "Texture2D/371.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/371.png"
+    },
+    {
+      "source": "Texture2D/482.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/482.png"
+    },
+    {
+      "source": "Texture2D/492.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/492.png"
+    },
+    {
+      "source": "Texture2D/DS_equipment_standard.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/DS_equipment_standard.png"
+    },
+    {
+      "source": "Texture2D/DS_skeleton_standard.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/DS_skeleton_standard.png"
+    },
+    {
+      "source": "Texture2D/archmodels69_055_sand.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/archmodels69_055_sand.png"
+    },
+    {
+      "source": "Texture2D/cemian.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/cemian.png"
+    },
+    {
+      "source": "Texture2D/hand.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/hand.png"
+    },
+    {
+      "source": "Texture2D/oback19.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/oback19.png"
+    },
+    {
+      "source": "Texture2D/ofront19.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/ofront19.png"
+    },
+    {
+      "source": "Texture2D/oleft19.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/oleft19.png"
+    },
+    {
+      "source": "Texture2D/oright19.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/oright19.png"
+    },
+    {
+      "source": "Texture2D/otop19.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/otop19.png"
+    },
+    {
+      "source": "Texture2D/下.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/下.png"
+    },
+    {
+      "source": "Texture2D/准心.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/准心.png"
+    },
+    {
+      "source": "Texture2D/围墙灰色灰3.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/围墙灰色灰3.png"
+    },
+    {
+      "source": "Texture2D/地面PS.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/地面PS.png"
+    },
+    {
+      "source": "Texture2D/地面最终.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/地面最终.png"
+    },
+    {
+      "source": "Texture2D/基地下.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/基地下.png"
+    },
+    {
+      "source": "Texture2D/基地铁皮顶 1.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/基地铁皮顶 1.png"
+    },
+    {
+      "source": "Texture2D/基地铁皮顶.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/基地铁皮顶.png"
+    },
+    {
+      "source": "Texture2D/房子周围 1.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/房子周围 1.png"
+    },
+    {
+      "source": "Texture2D/房子正面 1.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/房子正面 1.png"
+    },
+    {
+      "source": "Texture2D/斜.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/斜.png"
+    },
+    {
+      "source": "Texture2D/最终 2.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/最终 2.png"
+    },
+    {
+      "source": "Texture2D/最终.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/最终.png"
+    },
+    {
+      "source": "Texture2D/水管2.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/水管2.png"
+    },
+    {
+      "source": "Texture2D/混泥土2.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/混泥土2.png"
+    },
+    {
+      "source": "Texture2D/电箱.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/电箱.png"
+    },
+    {
+      "source": "Texture2D/矮墙.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/矮墙.png"
+    },
+    {
+      "source": "Texture2D/矮墙2.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/矮墙2.png"
+    },
+    {
+      "source": "Texture2D/矮墙3.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/矮墙3.png"
+    },
+    {
+      "source": "Texture2D/窗户.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/窗户.png"
+    },
+    {
+      "source": "Texture2D/路灯.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/路灯.png"
+    },
+    {
+      "source": "Texture2D/边.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/边.png"
+    },
+    {
+      "source": "Texture2D/铁皮.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/铁皮.png"
+    },
+    {
+      "source": "Texture2D/镀锌金属_爱给网_aigei_com.png",
+      "target": "RecoveredMaps/ClassicConstructionSite/Texture2D/镀锌金属_爱给网_aigei_com.png"
+    }
+  ],
+  "reused": {
+    "6158f98ce2641875c7ed285913faa064": "Scripts/Assembly-CSharp/MouseLook.cs"
+  },
+  "missing_guids": [
+    "0000000000000000e000000000000000",
+    "0000000000000000f000000000000000",
+    "f5f67c52d1564df4a8936ccd202a3bd8"
+  ],
+  "conflicts": [
+    {
+      "guid": "6158f98ce2641875c7ed285913faa064",
+      "source": "Scripts/Assembly-CSharp/MouseLook.cs",
+      "target": "Scripts/Assembly-CSharp/MouseLook.cs"
+    }
+  ]
+}

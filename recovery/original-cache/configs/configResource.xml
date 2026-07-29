@@ -1,0 +1,167 @@
+<config>
+	<asset>	
+		<!--
+		<resource id="ui2" url="ui.swf" tip=""/>
+		<resource id="ui2" url="item2.swf" tip=""/>
+		<resource id="ui2" url="collectables.swf" tip=""/>
+		<resource id="ui2" url="ui_reconstruct.swf" tip=""/>
+		-->
+	</asset>
+    <version swf="0"/>
+    <state>
+        <resource class="TeamConfig" path="bigTeam/team.dfdt"/>
+		<resource class="CompetitionConfig" path="competition/battlearea.dfdt"/>
+		<resource class="DivisionConfig" path="competition/division.dfdt"/>
+		<resource class="BlueConfig" path="yellowDiamond/blue_reward.dfdt"/>
+		<resource class="YellowConfig" path="yellowDiamond/hz_reward.dfdt"/>
+		<resource class="QQConfig" path="qqbd_reward.dfdt"/>
+        <resource class="LimitTimePropsConfig" path="limitProps.dfdt"/>
+        <resource class="SeasonConfig" path="bigTeam/season.dfdt"/>
+        <resource class="TeamLevelConfig" path="bigTeam/teamLevel.dfdt"/>
+        <resource class="DutyConfig" path="bigTeam/duty.dfdt"/>
+        <resource class="RecruitCostConfig" path="bigTeam/recruitCost.dfdt"/>
+        <resource class="MemberIdentityConfig" path="bigTeam/memberidentity.dfdt" /> 
+        <resource class="MemberGiftConfig" path="bigTeam/memberGift.dfdt" />
+        <resource class="DivisionConfig" path="competition/division.dfdt" />
+        <resource class="TeamGiftConfig" path="bigTeam/teamGift.dfdt" />
+        <resource class="TeamActiveLevelConfig" path="bigTeam/activeLevel.dfdt" />
+		<resource class="ExchangeCompetitionRewardConfig" path="competition/battlereward.dfdt" /> 
+		<resource class="VipGrowConfig" path="vip/VIPchengzhang.dfdt" /> 
+		<resource class="VipPropConfig" path="vip/VIPshuxing.dfdt" /> 
+		<resource class="LadderSeasonConfig" path="ladder/ladderSeason.dfdt" /> 
+		<resource class="LadderSeasonTitlesConfig" path="ladder/seasonTitles.dfdt" /> 
+		<resource class="LuckyConfig" path="act/luck.dfdt" /> 
+		<resource class="LuckySpendConfig" path="act/luckspend.dfdt" />
+		<resource class="LimitNumPropsConfig" path="props/limitNumProps.dfdt" /> 
+		<resource class="AttendanceConfig" path="attendance/attendance.dfdt" />
+		<resource class="QuickSearchConfig" path="search/quickSearch.dfdt" />
+		<resource class="CoupeCompetitionConfig" path="competition/couplebattle.dfdt" /> 
+        <resource class="SeasonKingWpConfig" path="ladder/seasonKingWp.dfdt" />
+		<resource class="CoupeCompetitionConfig" path="competition/couplebattle.dfdt" /> 
+		<resource class="LadderGreenChannelConfig" path="ladder/ladderGreenChannel.dfdt"/>
+		<resource class="PVRRaidsConfig" path="pvr/story.dfdt"/>
+		<resource class="MysteryCrystalStore" path="crystal/crystalProps.dfdt"/>
+		<resource class="PVRTaskConfig" path="pvrtask/pvrtask.dfdt"/>
+		<resource class="PVRDailyTaskConfig" path="pvrtask/pvrdailytask.dfdt"/>		
+		<resource class="PropsOpenLockConfig" path="props/propsopenlock.dfdt"/>
+		<resource class="TencentVipPropConfig" path="vip/tencentVipshuxing.dfdt"/>
+		<resource class="LadderAdditionConfig" path="ladder/addition.dfdt"/>
+
+		<resource class="ScoreRewardConfig" path="ladder/score_reward.dfdt" />
+
+		<resource class="LadderAchievementConfig" path="ladder/ladderAchievement.dfdt" />
+		<resource class="LadderAchieveRewardConfig" path="ladder/ladderAchieveReward.dfdt" />
+
+		<resource class="RobotConfig" path="robot/robot_free.dfdt" />
+		<resource class="TutorialAwardConfig" path="act/tutorialAward.dfdt" />
+		<resource class="WeaponChangeSkinConfig" path="weapon/changeSkin.dfdt" /> 
+		
+		<resource class="PaintConfig" path="paint/painthandbook.dfdt" /> \
+    </state>
+    <match>
+        <resource class="ModeMapConfig" path="bigTeam/modemap.dfdt"/>
+		<resource class="QuickSearchConfig" path="search/quickSearch.dfdt" />
+    </match>
+    <battle>
+		<resource class="LadderSpyConfig" path="ladder/ladderSpy.dfdt"/> 
+		<resource class="LadderSpyHitConfig" path="ladder/ladderSpyHit.dfdt"/> 
+		<resource class="NewLadderRankConfig" path="ladder/rank.dfdt" /> 
+		<resource class="NewLadderScoreConfig" path="ladder/battle.dfdt" /> 
+		<resource class="VipGrowConfig" path="vip/VIPchengzhang.dfdt" /> 
+		<resource class="VipPropConfig" path="vip/VIPshuxing.dfdt" />
+		<resource class="TencentVipPropConfig" path="vip/tencentVipshuxing.dfdt"/>
+		<resource class="LadderAdditionConfig" path="ladder/addition.dfdt"/>
+    <resource class="ModeMapConfig" path="bigTeam/modemap.dfdt"/> 
+		<resource class="ProvokeConfig" path="povoke/provoke.dfdt"/>
+		
+		<resource class="RobotConfig" path="robot/robot.dfdt"/>
+		<!-- <resource class="PvrSettingsConfig" path="robot/setting.dfdt"/> -->
+		
+		<resource class="PositionConfig" path="robot/position.dfdt"/>
+		<resource class="AssignPosConfig" path="robot/assignpos.dfdt"/>
+		<resource class="RoundPosConfig" path="robot/roundpos.dfdt"/>
+		<resource class="TriggerConfig" path="robot/trigger.dfdt"/>
+		<resource class="PVRRaidsConfig" path="pvr/story.dfdt"/>
+		<resource class="BattleMissionConfig" path="battleMission/battlemission.dfdt"/>
+		<resource class="BattleTargetConfig" path="battleMission/battletarget.dfdt"/>
+		<resource class="GoldBulletConfig" path="range/goldbullet.dfdt"/>
+		<resource class="RebornConfig" path="pvr/reborn.dfdt"/>
+    </battle>
+	<pve>
+		<resource class="BornPosConfig" path="Survive/bornposition.dfdt"/>
+		<resource class="BrushMonsterConfig" path="Survive/brushmonster.dfdt"/>
+		<resource class="SkillConfig" path="Survive/skill.dfdt"/>
+	</pve>
+	<pvr>
+		<resource class="AIConditionConfig" path="robot/aicondition.dfdt"/>
+		<resource class="AIBehaviorConfig" path="robot/aibehavior.dfdt"/>
+		<resource class="AIStateConfig" path="robot/aistate.dfdt"/>
+		<resource class="AIConfig" path="robot/ai.dfdt"/>
+		<resource class="PositionConfig" path="robot/position.dfdt"/>
+		<resource class="RobotConfig" path="robot/robot.dfdt"/>
+		<resource class="GlobalConfig" path="robot/global.dfdt"/>
+	</pvr>
+	<!-- 专门用于闯关模式 -->
+	<pvrmode>
+		<resource class="AIConditionConfig" path="robot/pvrmode/aicondition.dfdt"/>
+		<resource class="AIBehaviorConfig" path="robot/pvrmode/aibehavior.dfdt"/>
+		<resource class="AIStateConfig" path="robot/pvrmode/aistate.dfdt"/>
+		<resource class="AIConfig" path="robot/pvrmode/ai.dfdt"/>
+		<resource class="RobotConfig" path="robot/pvrmode/robot.dfdt"/>
+	</pvrmode>
+	<data>
+		<resource id="teamActiveLevel" url="bigTeam/activeLevel.dfdt" tip="team"/>
+		<resource id="teamDuty" url="bigTeam/duty.dfdt" tip="team"/>
+		<resource id="teamMemberIdentity" url="bigTeam/memberidentity.dfdt" tip="team"/>
+		<resource id="teamRecruitCost" url="bigTeam/recruitCost.dfdt" tip="team"/>
+		<resource id="teamSeason" url="bigTeam/season.dfdt" tip="team"/>
+		<resource id="teamActiveGift" url="bigTeam/memberGift.dfdt" tip="team"/>
+		<resource id="teamGift" url="bigTeam/teamGift.dfdt" tip="team"/>
+		<resource id="teamLevel" url="bigTeam/teamLevel.dfdt" tip="team"/>
+		<resource id="teamActiveAdd" url="bigTeam/activeadd.dfdt" tip="team"/>
+		<resource id="teamConfig" url="bigTeam/team.dfdt" tip="team"/>
+		<resource id="paintConfig" url="paintConfig.dfdt" tip="paint"/>
+		<resource id="YellowConfig" url="yellowDiamond/hz_reward.dfdt" tip="yellow"/>
+		<resource id="BlueConfig" url="yellowDiamond/blue_reward.dfdt" tip="blue"/>
+		<resource id="limitPropsConfig" url="limitProps.dfdt" tip="limitProps"/>
+		<resource id="limitNumPropsConfig" url="props/limitNumProps.dfdt" tip="limitNumProps"/>
+		<resource id="qqBondingConfig" url="qqbd_reward.dfdt" tip="QQ"/>
+		<resource id="qqCustomConfig" url="qqkf.dfdt" tip="QQcs"/>
+		<resource id="raceInfoConfig" url="competition/battlearea.dfdt" tip="raceInfo"/>
+		<resource id="raceInfoConfig2" url="competition/couplebattle.dfdt" tip="raceInfo2"/>
+		<resource id="raceModeConfig" url="competition/division.dfdt" tip="raceMode"/>
+		<resource id="raceRewardConfig" url="competition/battlereward.dfdt" tip="raceReward"/>
+		<resource id="scoreRewardConfig" url="competition/scoreReward.dfdt" tip="scoreReward"/>
+		<resource id="vipAdvanceConfig" url="vip/VIPshuxing.dfdt" tip="vipAdvance"/>
+		<resource id="vipLevelConfig" url="vip/VIPchengzhang.dfdt" tip="vipLevel"/>
+		<resource id="ladderSeasonConfig" url="ladder/ladderSeason.dfdt" tip="ladderSeason"/>
+		<resource id="seasonKingWpConfig" url="ladder/seasonKingWp.dfdt" tip="seasonKingWp"/>
+		<resource id="dailyConfig" url="attendance/attendance.dfdt" tip="daily"/>
+		<resource id="roleConfig" url="props/roleadornment.dfdt" tip="role"/>
+        <resource id="boxWeaponConfig" url="box/boxweapon.dfdt" tip="boxweapon"/>
+        <resource id="quickSearchConfig" url="search/quickSearch.dfdt" tip="quickSearch"/>
+        <resource id="cgConfig" url="cg/cg.dfdt" tip="cg"/>
+        <resource id="pvrStoryConfig" url="pvr/story.dfdt" tip="pvrStory"/>
+        <resource id="pvrTaskConfig" url="pvrtask/pvrtask.dfdt" tip="pvrtask"/>
+        <resource id="pvrDailyTaskConfig" url="pvrtask/pvrdailytask.dfdt" tip="pvrdailytask"/>
+		<resource id="crystalPropsConfig" url="crystal/crystalProps.dfdt" tip="crystalProps"/>
+        <resource id="checkWeaponConfig" url="rooms/checkWeapon.dfdt" tip="checkWeapon"/>
+        <resource id="createRoomConfig" url="rooms/createRoom.dfdt" tip="createRoom"/>
+        <resource id="goWhereConfig" url="login/goWhere.dfdt" tip="goWhere"/>
+        <resource id="robotConfig" url="robot/robot.dfdt" tip="robot"/>
+		<resource id="levelUnlockConfig" url="props/propsopenlock.dfdt" tip="propsopenlock"/>
+		<resource id="storeRecommendConfig" url="props/recommend.dfdt" tip="recommend"/>
+		<resource id="luckConfig" url="act/luck.dfdt" tip="luck"/>
+		<resource id="tutorialAwardConfig" url="act/tutorialAward.dfdt" tip="tutorialAward"/>
+		<resource id="luckspendConfig" url="act/luckspend.dfdt" tip="luckspend"/>
+		<resource id="positionConfig" url="robot/roundpos.dfdt" tip="positionConfig"/>
+		<resource id="rcmdConfig" url="props/rcmd.dfdt" tip="rcmd"/>
+		<resource id="noticeConfig" url="notice/notice.dfdt" tip="notice"/>
+		<resource id="ladderScoreRewardConfig" url="ladder/score_reward.dfdt" tip="score_reward"/>
+		<resource id="ladderAchievementConfig" url="ladder/ladderAchievement.dfdt" tip="ladderAchievement"/>
+		<resource id="ladderAchieveRewardConfig" url="ladder/ladderAchieveReward.dfdt" tip="ladderAchieveReward"/>
+		<resource id="changeSkinConfig" url="weapon/changeSkin.dfdt" tip="changeSkin"/>
+		<resource id="paintPokedexConfig" url="paint/painthandbook.dfdt" tip="paintPokedex"/>
+		<resource id="titleConfig" url="title/title.dfdt" tip="title"/>
+	</data>
+</config>

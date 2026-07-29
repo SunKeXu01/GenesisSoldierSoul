@@ -1,0 +1,566 @@
+{
+  "source_assets": "/Users/Admin/Documents/创世兵魂/原程序恢复/离别作/UnityProject/ExportedProject/Assets",
+  "root_asset": "辐射街区/Scenefsjq.unity",
+  "target_assets": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/client-restored/Assets",
+  "namespace": "RecoveredMaps/RadiationDistrict",
+  "asset_count": 137,
+  "reused_guid_count": 0,
+  "missing_guid_count": 2,
+  "conflict_count": 0,
+  "copied": [
+    {
+      "source": "AudioClip/PistolDryFire.ogg",
+      "target": "RecoveredMaps/RadiationDistrict/AudioClip/PistolDryFire.ogg"
+    },
+    {
+      "source": "AudioClip/PistolFire.ogg",
+      "target": "RecoveredMaps/RadiationDistrict/AudioClip/PistolFire.ogg"
+    },
+    {
+      "source": "AudioClip/PistolWield.ogg",
+      "target": "RecoveredMaps/RadiationDistrict/AudioClip/PistolWield.ogg"
+    },
+    {
+      "source": "AudioClip/Shell45Bounce01.ogg",
+      "target": "RecoveredMaps/RadiationDistrict/AudioClip/Shell45Bounce01.ogg"
+    },
+    {
+      "source": "AudioClip/Shell45Bounce02.ogg",
+      "target": "RecoveredMaps/RadiationDistrict/AudioClip/Shell45Bounce02.ogg"
+    },
+    {
+      "source": "AudioClip/Shell45Bounce03.ogg",
+      "target": "RecoveredMaps/RadiationDistrict/AudioClip/Shell45Bounce03.ogg"
+    },
+    {
+      "source": "AudioClip/Shell45Bounce04.ogg",
+      "target": "RecoveredMaps/RadiationDistrict/AudioClip/Shell45Bounce04.ogg"
+    },
+    {
+      "source": "AudioClip/UnWield.ogg",
+      "target": "RecoveredMaps/RadiationDistrict/AudioClip/UnWield.ogg"
+    },
+    {
+      "source": "Cubemap/Cubemap_9.png",
+      "target": "RecoveredMaps/RadiationDistrict/Cubemap/Cubemap_9.png"
+    },
+    {
+      "source": "GameObject/Pistol.prefab",
+      "target": "RecoveredMaps/RadiationDistrict/GameObject/Pistol.prefab"
+    },
+    {
+      "source": "GameObject/PistolBullet.prefab",
+      "target": "RecoveredMaps/RadiationDistrict/GameObject/PistolBullet.prefab"
+    },
+    {
+      "source": "GameObject/PistolMuzzleFlash.prefab",
+      "target": "RecoveredMaps/RadiationDistrict/GameObject/PistolMuzzleFlash.prefab"
+    },
+    {
+      "source": "GameObject/PistolShell.prefab",
+      "target": "RecoveredMaps/RadiationDistrict/GameObject/PistolShell.prefab"
+    },
+    {
+      "source": "Material/Handgun02-1.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/Handgun02-1.mat"
+    },
+    {
+      "source": "Material/Handgun02-2.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/Handgun02-2.mat"
+    },
+    {
+      "source": "Material/Handgun02-3.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/Handgun02-3.mat"
+    },
+    {
+      "source": "Material/MoonShine Skybox.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/MoonShine Skybox.mat"
+    },
+    {
+      "source": "Material/MuzzleFlash03.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/MuzzleFlash03.mat"
+    },
+    {
+      "source": "Material/Shell-02 - Default.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/Shell-02 - Default.mat"
+    },
+    {
+      "source": "Material/____001Mat.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/____001Mat.mat"
+    },
+    {
+      "source": "Material/____002Mat.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/____002Mat.mat"
+    },
+    {
+      "source": "Material/____005Mat.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/____005Mat.mat"
+    },
+    {
+      "source": "Material/____006Mat.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/____006Mat.mat"
+    },
+    {
+      "source": "Material/chuanqiang_00.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/chuanqiang_00.mat"
+    },
+    {
+      "source": "Material/ground_00.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/ground_00.mat"
+    },
+    {
+      "source": "Material/other_00.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/other_00.mat"
+    },
+    {
+      "source": "Material/other_01.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/other_01.mat"
+    },
+    {
+      "source": "Material/other_02.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/other_02.mat"
+    },
+    {
+      "source": "Material/other_03.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/other_03.mat"
+    },
+    {
+      "source": "Material/other_04.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/other_04.mat"
+    },
+    {
+      "source": "Material/other_05.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/other_05.mat"
+    },
+    {
+      "source": "Material/other_05_l.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/other_05_l.mat"
+    },
+    {
+      "source": "Material/other_06.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/other_06.mat"
+    },
+    {
+      "source": "Material/wall_00.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/wall_00.mat"
+    },
+    {
+      "source": "Material/wall_01.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/wall_01.mat"
+    },
+    {
+      "source": "Material/wall_02.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/wall_02.mat"
+    },
+    {
+      "source": "Material/wall_03.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/wall_03.mat"
+    },
+    {
+      "source": "Material/wall_04.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/wall_04.mat"
+    },
+    {
+      "source": "Material/wall_05.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/wall_05.mat"
+    },
+    {
+      "source": "Material/wall_06.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/wall_06.mat"
+    },
+    {
+      "source": "Material/wall_07.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/wall_07.mat"
+    },
+    {
+      "source": "Material/wall_08.mat",
+      "target": "RecoveredMaps/RadiationDistrict/Material/wall_08.mat"
+    },
+    {
+      "source": "Mesh/Box01_1.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/Box01_1.asset"
+    },
+    {
+      "source": "Mesh/Mesh.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/Mesh.asset"
+    },
+    {
+      "source": "Mesh/Shell.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/Shell.asset"
+    },
+    {
+      "source": "Mesh/____001.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/____001.asset"
+    },
+    {
+      "source": "Mesh/____002.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/____002.asset"
+    },
+    {
+      "source": "Mesh/____003.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/____003.asset"
+    },
+    {
+      "source": "Mesh/____004.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/____004.asset"
+    },
+    {
+      "source": "Mesh/____005.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/____005.asset"
+    },
+    {
+      "source": "Mesh/____006.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/____006.asset"
+    },
+    {
+      "source": "Mesh/chuanqiang_00.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/chuanqiang_00.asset"
+    },
+    {
+      "source": "Mesh/ground_00.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/ground_00.asset"
+    },
+    {
+      "source": "Mesh/other_00.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/other_00.asset"
+    },
+    {
+      "source": "Mesh/other_01.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/other_01.asset"
+    },
+    {
+      "source": "Mesh/other_02.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/other_02.asset"
+    },
+    {
+      "source": "Mesh/other_03.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/other_03.asset"
+    },
+    {
+      "source": "Mesh/other_04.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/other_04.asset"
+    },
+    {
+      "source": "Mesh/other_05.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/other_05.asset"
+    },
+    {
+      "source": "Mesh/other_06.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/other_06.asset"
+    },
+    {
+      "source": "Mesh/wall_00.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/wall_00.asset"
+    },
+    {
+      "source": "Mesh/wall_01.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/wall_01.asset"
+    },
+    {
+      "source": "Mesh/wall_02.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/wall_02.asset"
+    },
+    {
+      "source": "Mesh/wall_03.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/wall_03.asset"
+    },
+    {
+      "source": "Mesh/wall_04.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/wall_04.asset"
+    },
+    {
+      "source": "Mesh/wall_05.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/wall_05.asset"
+    },
+    {
+      "source": "Mesh/wall_06.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/wall_06.asset"
+    },
+    {
+      "source": "Mesh/wall_07.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/wall_07.asset"
+    },
+    {
+      "source": "Mesh/wall_08.asset",
+      "target": "RecoveredMaps/RadiationDistrict/Mesh/wall_08.asset"
+    },
+    {
+      "source": "MonoBehaviour/BulletHit.asset",
+      "target": "RecoveredMaps/RadiationDistrict/MonoBehaviour/BulletHit.asset"
+    },
+    {
+      "source": "PhysicMaterial/Shell.physicMaterial",
+      "target": "RecoveredMaps/RadiationDistrict/PhysicMaterial/Shell.physicMaterial"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_FPCamera.cs",
+      "target": "RecoveredMaps/RadiationDistrict/Scripts/Assembly-CSharp/vp_FPCamera.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_FPController.cs",
+      "target": "RecoveredMaps/RadiationDistrict/Scripts/Assembly-CSharp/vp_FPController.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_FPInput.cs",
+      "target": "RecoveredMaps/RadiationDistrict/Scripts/Assembly-CSharp/vp_FPInput.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_FPPlayerEventHandler.cs",
+      "target": "RecoveredMaps/RadiationDistrict/Scripts/Assembly-CSharp/vp_FPPlayerEventHandler.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_FPWeapon.cs",
+      "target": "RecoveredMaps/RadiationDistrict/Scripts/Assembly-CSharp/vp_FPWeapon.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_FPWeaponReloader.cs",
+      "target": "RecoveredMaps/RadiationDistrict/Scripts/Assembly-CSharp/vp_FPWeaponReloader.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_FPWeaponShooter.cs",
+      "target": "RecoveredMaps/RadiationDistrict/Scripts/Assembly-CSharp/vp_FPWeaponShooter.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_FXBullet.cs",
+      "target": "RecoveredMaps/RadiationDistrict/Scripts/Assembly-CSharp/vp_FXBullet.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_ImpactEvent.cs",
+      "target": "RecoveredMaps/RadiationDistrict/Scripts/Assembly-CSharp/vp_ImpactEvent.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_MuzzleFlash.cs",
+      "target": "RecoveredMaps/RadiationDistrict/Scripts/Assembly-CSharp/vp_MuzzleFlash.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_Shell.cs",
+      "target": "RecoveredMaps/RadiationDistrict/Scripts/Assembly-CSharp/vp_Shell.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_SimpleFiring.cs",
+      "target": "RecoveredMaps/RadiationDistrict/Scripts/Assembly-CSharp/vp_SimpleFiring.cs"
+    },
+    {
+      "source": "TextAsset/CameraCrouch.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/CameraCrouch.txt"
+    },
+    {
+      "source": "TextAsset/CameraFreeze.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/CameraFreeze.txt"
+    },
+    {
+      "source": "TextAsset/CameraOutOfControl.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/CameraOutOfControl.txt"
+    },
+    {
+      "source": "TextAsset/CameraReload.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/CameraReload.txt"
+    },
+    {
+      "source": "TextAsset/CameraRun.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/CameraRun.txt"
+    },
+    {
+      "source": "TextAsset/CameraSlide.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/CameraSlide.txt"
+    },
+    {
+      "source": "TextAsset/CameraZoom.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/CameraZoom.txt"
+    },
+    {
+      "source": "TextAsset/ControllerCrouch.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/ControllerCrouch.txt"
+    },
+    {
+      "source": "TextAsset/ControllerDead.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/ControllerDead.txt"
+    },
+    {
+      "source": "TextAsset/ControllerFreeze.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/ControllerFreeze.txt"
+    },
+    {
+      "source": "TextAsset/ControllerRun.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/ControllerRun.txt"
+    },
+    {
+      "source": "TextAsset/ControllerZoom.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/ControllerZoom.txt"
+    },
+    {
+      "source": "TextAsset/InputDead.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/InputDead.txt"
+    },
+    {
+      "source": "TextAsset/InputZoom.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/InputZoom.txt"
+    },
+    {
+      "source": "TextAsset/ShooterPistolOutOfControl.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/ShooterPistolOutOfControl.txt"
+    },
+    {
+      "source": "TextAsset/ShooterPistolZoom.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/ShooterPistolZoom.txt"
+    },
+    {
+      "source": "TextAsset/WeaponPistolReload.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/WeaponPistolReload.txt"
+    },
+    {
+      "source": "TextAsset/WeaponPistolReload2.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/WeaponPistolReload2.txt"
+    },
+    {
+      "source": "TextAsset/WeaponPistolZoom.txt",
+      "target": "RecoveredMaps/RadiationDistrict/TextAsset/WeaponPistolZoom.txt"
+    },
+    {
+      "source": "Texture2D/ArmDiffuse.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/ArmDiffuse.png"
+    },
+    {
+      "source": "Texture2D/ArmNormal.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/ArmNormal.png"
+    },
+    {
+      "source": "Texture2D/Handgun02Diffuse.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/Handgun02Diffuse.png"
+    },
+    {
+      "source": "Texture2D/Handgun02Normal.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/Handgun02Normal.png"
+    },
+    {
+      "source": "Texture2D/MoonShine_back.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/MoonShine_back.png"
+    },
+    {
+      "source": "Texture2D/MoonShine_down.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/MoonShine_down.png"
+    },
+    {
+      "source": "Texture2D/MoonShine_front.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/MoonShine_front.png"
+    },
+    {
+      "source": "Texture2D/MoonShine_left.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/MoonShine_left.png"
+    },
+    {
+      "source": "Texture2D/MoonShine_right.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/MoonShine_right.png"
+    },
+    {
+      "source": "Texture2D/MoonShine_up.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/MoonShine_up.png"
+    },
+    {
+      "source": "Texture2D/MuzzleFlash03.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/MuzzleFlash03.png"
+    },
+    {
+      "source": "Texture2D/ShellDiffuse.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/ShellDiffuse.png"
+    },
+    {
+      "source": "Texture2D/ShellNormal.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/ShellNormal.png"
+    },
+    {
+      "source": "Texture2D/chuanqiang_00.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/chuanqiang_00.png"
+    },
+    {
+      "source": "Texture2D/ground_00.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/ground_00.png"
+    },
+    {
+      "source": "Texture2D/other_00.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/other_00.png"
+    },
+    {
+      "source": "Texture2D/other_01.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/other_01.png"
+    },
+    {
+      "source": "Texture2D/other_02.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/other_02.png"
+    },
+    {
+      "source": "Texture2D/other_03.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/other_03.png"
+    },
+    {
+      "source": "Texture2D/other_04.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/other_04.png"
+    },
+    {
+      "source": "Texture2D/other_05.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/other_05.png"
+    },
+    {
+      "source": "Texture2D/other_05_l.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/other_05_l.png"
+    },
+    {
+      "source": "Texture2D/other_06.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/other_06.png"
+    },
+    {
+      "source": "Texture2D/wall_00.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/wall_00.png"
+    },
+    {
+      "source": "Texture2D/wall_01.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/wall_01.png"
+    },
+    {
+      "source": "Texture2D/wall_02.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/wall_02.png"
+    },
+    {
+      "source": "Texture2D/wall_03.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/wall_03.png"
+    },
+    {
+      "source": "Texture2D/wall_04.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/wall_04.png"
+    },
+    {
+      "source": "Texture2D/wall_05.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/wall_05.png"
+    },
+    {
+      "source": "Texture2D/wall_06.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/wall_06.png"
+    },
+    {
+      "source": "Texture2D/wall_07.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/wall_07.png"
+    },
+    {
+      "source": "Texture2D/wall_08.png",
+      "target": "RecoveredMaps/RadiationDistrict/Texture2D/wall_08.png"
+    },
+    {
+      "source": "辐射街区/Scenefsjq/LightProbes.asset",
+      "target": "RecoveredMaps/RadiationDistrict/辐射街区/Scenefsjq/LightProbes.asset"
+    },
+    {
+      "source": "辐射街区/Scenefsjq/LightingData.asset",
+      "target": "RecoveredMaps/RadiationDistrict/辐射街区/Scenefsjq/LightingData.asset"
+    },
+    {
+      "source": "辐射街区/Scenefsjq.unity",
+      "target": "RecoveredMaps/RadiationDistrict/辐射街区/Scenefsjq.unity"
+    }
+  ],
+  "reused": {},
+  "missing_guids": [
+    "0000000000000000e000000000000000",
+    "0000000000000000f000000000000000"
+  ],
+  "conflicts": []
+}

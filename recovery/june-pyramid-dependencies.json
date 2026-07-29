@@ -1,0 +1,1935 @@
+{
+  "source_assets": "/Users/Admin/Documents/创世兵魂/原程序恢复/六月单机更新金字塔/UnityProject/ExportedProject/Assets",
+  "root_asset": "金字塔/Scenep.unity",
+  "target_assets": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/client-restored/Assets",
+  "namespace": "RecoveredMaps/JunePyramid",
+  "asset_count": 479,
+  "reused_guid_count": 0,
+  "missing_guid_count": 3,
+  "conflict_count": 0,
+  "copied": [
+    {
+      "source": "AudioClip/BulletImpact01.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/BulletImpact01.ogg"
+    },
+    {
+      "source": "AudioClip/BulletImpact02.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/BulletImpact02.ogg"
+    },
+    {
+      "source": "AudioClip/BulletImpact03.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/BulletImpact03.ogg"
+    },
+    {
+      "source": "AudioClip/BulletImpact04.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/BulletImpact04.ogg"
+    },
+    {
+      "source": "AudioClip/FallImpactGeneric01.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/FallImpactGeneric01.ogg"
+    },
+    {
+      "source": "AudioClip/FallImpactGeneric02.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/FallImpactGeneric02.ogg"
+    },
+    {
+      "source": "AudioClip/FootstepRock01.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/FootstepRock01.ogg"
+    },
+    {
+      "source": "AudioClip/FootstepRock02.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/FootstepRock02.ogg"
+    },
+    {
+      "source": "AudioClip/FootstepRock03.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/FootstepRock03.ogg"
+    },
+    {
+      "source": "AudioClip/FootstepRock04.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/FootstepRock04.ogg"
+    },
+    {
+      "source": "AudioClip/FootstepRock05.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/FootstepRock05.ogg"
+    },
+    {
+      "source": "AudioClip/FootstepRock06.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/FootstepRock06.ogg"
+    },
+    {
+      "source": "AudioClip/FootstepRock07.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/FootstepRock07.ogg"
+    },
+    {
+      "source": "AudioClip/FootstepRock08.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/FootstepRock08.ogg"
+    },
+    {
+      "source": "AudioClip/FootstepWood01.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/FootstepWood01.ogg"
+    },
+    {
+      "source": "AudioClip/FootstepWood02.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/FootstepWood02.ogg"
+    },
+    {
+      "source": "AudioClip/FootstepWood03.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/FootstepWood03.ogg"
+    },
+    {
+      "source": "AudioClip/FootstepWood04.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/FootstepWood04.ogg"
+    },
+    {
+      "source": "AudioClip/JumpGeneric.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/JumpGeneric.ogg"
+    },
+    {
+      "source": "AudioClip/MaceImpact01.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/MaceImpact01.ogg"
+    },
+    {
+      "source": "AudioClip/MaceImpact02.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/MaceImpact02.ogg"
+    },
+    {
+      "source": "AudioClip/MaceImpact03.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/MaceImpact03.ogg"
+    },
+    {
+      "source": "AudioClip/MaceImpact04.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/MaceImpact04.ogg"
+    },
+    {
+      "source": "AudioClip/PistolDryFire.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/PistolDryFire.ogg"
+    },
+    {
+      "source": "AudioClip/PistolFire.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/PistolFire.ogg"
+    },
+    {
+      "source": "AudioClip/PistolWield.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/PistolWield.ogg"
+    },
+    {
+      "source": "AudioClip/RagdollDrop.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/RagdollDrop.ogg"
+    },
+    {
+      "source": "AudioClip/Shell45Bounce01.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/Shell45Bounce01.ogg"
+    },
+    {
+      "source": "AudioClip/Shell45Bounce02.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/Shell45Bounce02.ogg"
+    },
+    {
+      "source": "AudioClip/Shell45Bounce03.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/Shell45Bounce03.ogg"
+    },
+    {
+      "source": "AudioClip/Shell45Bounce04.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/Shell45Bounce04.ogg"
+    },
+    {
+      "source": "AudioClip/Thump.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/Thump.ogg"
+    },
+    {
+      "source": "AudioClip/ThumpSoft.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/ThumpSoft.ogg"
+    },
+    {
+      "source": "AudioClip/UnWield.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/UnWield.ogg"
+    },
+    {
+      "source": "AudioClip/WoodObjectImpact01.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/WoodObjectImpact01.ogg"
+    },
+    {
+      "source": "AudioClip/WoodObjectImpact02.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/WoodObjectImpact02.ogg"
+    },
+    {
+      "source": "AudioClip/WoodObjectImpact03.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/WoodObjectImpact03.ogg"
+    },
+    {
+      "source": "AudioClip/WoodObjectImpact04.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/WoodObjectImpact04.ogg"
+    },
+    {
+      "source": "AudioClip/sun - 一天一天（钢琴版） _mqms_.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/sun - 一天一天（钢琴版） _mqms_.ogg"
+    },
+    {
+      "source": "AudioClip/开场女音效.ogg",
+      "target": "RecoveredMaps/JunePyramid/AudioClip/开场女音效.ogg"
+    },
+    {
+      "source": "Avatar/金字塔Avatar.asset",
+      "target": "RecoveredMaps/JunePyramid/Avatar/金字塔Avatar.asset"
+    },
+    {
+      "source": "Cubemap/Cubemap_11.png",
+      "target": "RecoveredMaps/JunePyramid/Cubemap/Cubemap_11.png"
+    },
+    {
+      "source": "GameObject/BulletRock1.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/BulletRock1.prefab"
+    },
+    {
+      "source": "GameObject/BulletRock2.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/BulletRock2.prefab"
+    },
+    {
+      "source": "GameObject/BulletRock3.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/BulletRock3.prefab"
+    },
+    {
+      "source": "GameObject/BulletRock4.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/BulletRock4.prefab"
+    },
+    {
+      "source": "GameObject/BulletWood1.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/BulletWood1.prefab"
+    },
+    {
+      "source": "GameObject/BulletWood2.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/BulletWood2.prefab"
+    },
+    {
+      "source": "GameObject/BulletWood3.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/BulletWood3.prefab"
+    },
+    {
+      "source": "GameObject/BulletWood4.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/BulletWood4.prefab"
+    },
+    {
+      "source": "GameObject/CollisionDust.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/CollisionDust.prefab"
+    },
+    {
+      "source": "GameObject/CollisionDustSmall.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/CollisionDustSmall.prefab"
+    },
+    {
+      "source": "GameObject/CrateSplinterBig.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/CrateSplinterBig.prefab"
+    },
+    {
+      "source": "GameObject/CrateSplinterSmall.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/CrateSplinterSmall.prefab"
+    },
+    {
+      "source": "GameObject/FallImpactDecal.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/FallImpactDecal.prefab"
+    },
+    {
+      "source": "GameObject/FallImpactDust.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/FallImpactDust.prefab"
+    },
+    {
+      "source": "GameObject/FootstepGravelDust.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/FootstepGravelDust.prefab"
+    },
+    {
+      "source": "GameObject/ItemDropDust.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/ItemDropDust.prefab"
+    },
+    {
+      "source": "GameObject/MachinegunBulletDust.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/MachinegunBulletDust.prefab"
+    },
+    {
+      "source": "GameObject/MachinegunBulletImpact.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/MachinegunBulletImpact.prefab"
+    },
+    {
+      "source": "GameObject/MachinegunBulletSpark.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/MachinegunBulletSpark.prefab"
+    },
+    {
+      "source": "GameObject/Pistol.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/Pistol.prefab"
+    },
+    {
+      "source": "GameObject/PistolBullet.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/PistolBullet.prefab"
+    },
+    {
+      "source": "GameObject/PistolBulletDebris.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/PistolBulletDebris.prefab"
+    },
+    {
+      "source": "GameObject/PistolBulletDust.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/PistolBulletDust.prefab"
+    },
+    {
+      "source": "GameObject/PistolBulletImpact.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/PistolBulletImpact.prefab"
+    },
+    {
+      "source": "GameObject/PistolBulletSpark.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/PistolBulletSpark.prefab"
+    },
+    {
+      "source": "GameObject/PistolMuzzleFlash.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/PistolMuzzleFlash.prefab"
+    },
+    {
+      "source": "GameObject/PistolShell.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/PistolShell.prefab"
+    },
+    {
+      "source": "GameObject/ShotgunPelletRock1.prefab",
+      "target": "RecoveredMaps/JunePyramid/GameObject/ShotgunPelletRock1.prefab"
+    },
+    {
+      "source": "Material/0HQH0_UL27Z5A@BTCR}1BBB.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/0HQH0_UL27Z5A@BTCR}1BBB.mat"
+    },
+    {
+      "source": "Material/1 (137).mat",
+      "target": "RecoveredMaps/JunePyramid/Material/1 (137).mat"
+    },
+    {
+      "source": "Material/1D0RZ3I15NSB%)_EGF$${A8.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/1D0RZ3I15NSB%)_EGF$${A8.mat"
+    },
+    {
+      "source": "Material/28EB1E_3M_@C`_O}3W%WFQX.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/28EB1E_3M_@C`_O}3W%WFQX.mat"
+    },
+    {
+      "source": "Material/30C8ZS9XO_YXTP$UA5%(ZGN.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/30C8ZS9XO_YXTP$UA5%(ZGN.mat"
+    },
+    {
+      "source": "Material/360截图20190730180239819.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/360截图20190730180239819.mat"
+    },
+    {
+      "source": "Material/52_9DLXP1RE6789}43($YTL.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/52_9DLXP1RE6789}43($YTL.mat"
+    },
+    {
+      "source": "Material/5K(G}FDTPWHWB_SK_(2}6}0.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/5K(G}FDTPWHWB_SK_(2}6}0.mat"
+    },
+    {
+      "source": "Material/8@_)_4QJQF6)(DJ(ZHQB~(N.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/8@_)_4QJQF6)(DJ(ZHQB~(N.mat"
+    },
+    {
+      "source": "Material/B000AF81AF3276B3CB2A80437E8E5AA5.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/B000AF81AF3276B3CB2A80437E8E5AA5.mat"
+    },
+    {
+      "source": "Material/CJX1HSW~4MZEVJ__L3L_9$T.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/CJX1HSW~4MZEVJ__L3L_9$T.mat"
+    },
+    {
+      "source": "Material/ENG2FY6B888D1BH~UULRHG0.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/ENG2FY6B888D1BH~UULRHG0.mat"
+    },
+    {
+      "source": "Material/GSG9_Working1.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/GSG9_Working1.mat"
+    },
+    {
+      "source": "Material/H@YCYKA(CC$8ZDXP`88{IB0.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/H@YCYKA(CC$8ZDXP`88{IB0.mat"
+    },
+    {
+      "source": "Material/Handgun02-1.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/Handgun02-1.mat"
+    },
+    {
+      "source": "Material/Handgun02-2.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/Handgun02-2.mat"
+    },
+    {
+      "source": "Material/Handgun02-3.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/Handgun02-3.mat"
+    },
+    {
+      "source": "Material/LHB30EIZE_%_6ODVYX6$G_7.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/LHB30EIZE_%_6ODVYX6$G_7.mat"
+    },
+    {
+      "source": "Material/M3DB7WT_9XEU5OL@3WI2W}W.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/M3DB7WT_9XEU5OL@3WI2W}W.mat"
+    },
+    {
+      "source": "Material/MK@VO@2$363_V9GAK5~8K(I.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/MK@VO@2$363_V9GAK5~8K(I.mat"
+    },
+    {
+      "source": "Material/MNGQ_U7V53UET_JCY@0_4MS.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/MNGQ_U7V53UET_JCY@0_4MS.mat"
+    },
+    {
+      "source": "Material/M_Crate01.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/M_Crate01.mat"
+    },
+    {
+      "source": "Material/M_CrateSplinter.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/M_CrateSplinter.mat"
+    },
+    {
+      "source": "Material/Mat3d66-577096-10-726.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/Mat3d66-577096-10-726.mat"
+    },
+    {
+      "source": "Material/Mat3d66-577096-18-600.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/Mat3d66-577096-18-600.mat"
+    },
+    {
+      "source": "Material/MuzzleFlash03.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/MuzzleFlash03.mat"
+    },
+    {
+      "source": "Material/New Material.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/New Material.mat"
+    },
+    {
+      "source": "Material/P9982{J1{MW8Y0WCHL4DJ05.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/P9982{J1{MW8Y0WCHL4DJ05.mat"
+    },
+    {
+      "source": "Material/Q2X80~D{F6C847OG7N1(DRC.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/Q2X80~D{F6C847OG7N1(DRC.mat"
+    },
+    {
+      "source": "Material/QQ截图20160316204414.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/QQ截图20160316204414.mat"
+    },
+    {
+      "source": "Material/QQ截图20200327134209.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/QQ截图20200327134209.mat"
+    },
+    {
+      "source": "Material/QQ截图20200327134209_0.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/QQ截图20200327134209_0.mat"
+    },
+    {
+      "source": "Material/R7JAL_P)}%ZUB2QL50U}009.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/R7JAL_P)}%ZUB2QL50U}009.mat"
+    },
+    {
+      "source": "Material/S%S3(A9DDYP~9MAI0DA4R(X.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/S%S3(A9DDYP~9MAI0DA4R(X.mat"
+    },
+    {
+      "source": "Material/Shell-02 - Default.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/Shell-02 - Default.mat"
+    },
+    {
+      "source": "Material/Skybox.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/Skybox.mat"
+    },
+    {
+      "source": "Material/T$OP5W{K{_QMXT9GZG3)2(0.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/T$OP5W{K{_QMXT9GZG3)2(0.mat"
+    },
+    {
+      "source": "Material/T`J(DN9@Y7PN$$P7$JORJ1F.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/T`J(DN9@Y7PN$$P7$JORJ1F.mat"
+    },
+    {
+      "source": "Material/X419DI90`7RVR)V)S(CI9}0.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/X419DI90`7RVR)V)S(CI9}0.mat"
+    },
+    {
+      "source": "Material/Z_CTUM60{BHRBO59_S9S(YR.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/Z_CTUM60{BHRBO59_S9S(YR.mat"
+    },
+    {
+      "source": "Material/_%$_Y(0726_D4FNDN%B0(WL.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/_%$_Y(0726_D4FNDN%B0(WL.mat"
+    },
+    {
+      "source": "Material/_@}YP_C~GXO5~`CUGZ3}_VV.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/_@}YP_C~GXO5~`CUGZ3}_VV.mat"
+    },
+    {
+      "source": "Material/_KG~DJW_4_4QJO82$F7MZX5.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/_KG~DJW_4_4QJO82$F7MZX5.mat"
+    },
+    {
+      "source": "Material/_QZP~1{F(YZ%WPR3G6S_FLS.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/_QZP~1{F(YZ%WPR3G6S_FLS.mat"
+    },
+    {
+      "source": "Material/bulletrock1.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/bulletrock1.mat"
+    },
+    {
+      "source": "Material/bulletrock2.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/bulletrock2.mat"
+    },
+    {
+      "source": "Material/bulletrock3.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/bulletrock3.mat"
+    },
+    {
+      "source": "Material/bulletrock4.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/bulletrock4.mat"
+    },
+    {
+      "source": "Material/bulletwood1.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/bulletwood1.mat"
+    },
+    {
+      "source": "Material/bulletwood2.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/bulletwood2.mat"
+    },
+    {
+      "source": "Material/bulletwood3.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/bulletwood3.mat"
+    },
+    {
+      "source": "Material/bulletwood4.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/bulletwood4.mat"
+    },
+    {
+      "source": "Material/fallImpact.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/fallImpact.mat"
+    },
+    {
+      "source": "Material/polySurface1299_polySurface1303Mat.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/polySurface1299_polySurface1303Mat.mat"
+    },
+    {
+      "source": "Material/polySurface1299_polySurface1304Mat.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/polySurface1299_polySurface1304Mat.mat"
+    },
+    {
+      "source": "Material/polySurface1299_polySurface1306Mat.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/polySurface1299_polySurface1306Mat.mat"
+    },
+    {
+      "source": "Material/polySurface1299_polySurface1308Mat.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/polySurface1299_polySurface1308Mat.mat"
+    },
+    {
+      "source": "Material/polySurface1299_polySurface1328Mat.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/polySurface1299_polySurface1328Mat.mat"
+    },
+    {
+      "source": "Material/polySurface1299_polySurface1347Mat.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/polySurface1299_polySurface1347Mat.mat"
+    },
+    {
+      "source": "Material/polySurface1299_polySurface1348Mat.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/polySurface1299_polySurface1348Mat.mat"
+    },
+    {
+      "source": "Material/shenghuaqiang2_dif.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/shenghuaqiang2_dif.mat"
+    },
+    {
+      "source": "Material/shotgunpelletrock1.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/shotgunpelletrock1.mat"
+    },
+    {
+      "source": "Material/ДЕРЕВО ОРЕХ ТЕМНЫЙ (СТАР).mat",
+      "target": "RecoveredMaps/JunePyramid/Material/ДЕРЕВО ОРЕХ ТЕМНЫЙ (СТАР).mat"
+    },
+    {
+      "source": "Material/固定壁画1.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/固定壁画1.mat"
+    },
+    {
+      "source": "Material/图案.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/图案.mat"
+    },
+    {
+      "source": "Material/墙壁爱给.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/墙壁爱给.mat"
+    },
+    {
+      "source": "Material/墙砖 (44)_爱给网_aigei_com.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/墙砖 (44)_爱给网_aigei_com.mat"
+    },
+    {
+      "source": "Material/壁画修改后 (1).mat",
+      "target": "RecoveredMaps/JunePyramid/Material/壁画修改后 (1).mat"
+    },
+    {
+      "source": "Material/壁画修改后.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/壁画修改后.mat"
+    },
+    {
+      "source": "Material/大理石_爱给网_aigei_com.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/大理石_爱给网_aigei_com.mat"
+    },
+    {
+      "source": "Material/金字塔侧面小块壁画.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/金字塔侧面小块壁画.mat"
+    },
+    {
+      "source": "Material/金字塔侧面小块改正 (1).mat",
+      "target": "RecoveredMaps/JunePyramid/Material/金字塔侧面小块改正 (1).mat"
+    },
+    {
+      "source": "Material/金字塔侧面小块改正.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/金字塔侧面小块改正.mat"
+    },
+    {
+      "source": "Material/金字塔外面壁画 (1).mat",
+      "target": "RecoveredMaps/JunePyramid/Material/金字塔外面壁画 (1).mat"
+    },
+    {
+      "source": "Material/金字塔外面壁画.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/金字塔外面壁画.mat"
+    },
+    {
+      "source": "Material/金字塔箱子全部.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/金字塔箱子全部.mat"
+    },
+    {
+      "source": "Material/金字塔经典墙壁石砖 13.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/金字塔经典墙壁石砖 13.mat"
+    },
+    {
+      "source": "Material/金字塔经典墙壁石砖 14.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/金字塔经典墙壁石砖 14.mat"
+    },
+    {
+      "source": "Material/金字塔经典墙壁石砖 15.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/金字塔经典墙壁石砖 15.mat"
+    },
+    {
+      "source": "Material/金字塔经典墙壁石砖 16.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/金字塔经典墙壁石砖 16.mat"
+    },
+    {
+      "source": "Material/金字塔经典墙壁石砖 17.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/金字塔经典墙壁石砖 17.mat"
+    },
+    {
+      "source": "Material/金字塔经典墙壁石砖 18.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/金字塔经典墙壁石砖 18.mat"
+    },
+    {
+      "source": "Material/金字塔经典墙壁石砖 19.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/金字塔经典墙壁石砖 19.mat"
+    },
+    {
+      "source": "Material/金字塔经典墙壁石砖 20.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/金字塔经典墙壁石砖 20.mat"
+    },
+    {
+      "source": "Material/金字塔经典墙壁石砖.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/金字塔经典墙壁石砖.mat"
+    },
+    {
+      "source": "Material/随机壁画1.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/随机壁画1.mat"
+    },
+    {
+      "source": "Material/随机壁画2.mat",
+      "target": "RecoveredMaps/JunePyramid/Material/随机壁画2.mat"
+    },
+    {
+      "source": "Mesh/Box01_0.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Box01_0.asset"
+    },
+    {
+      "source": "Mesh/Box01_1.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Box01_1.asset"
+    },
+    {
+      "source": "Mesh/Line02.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Line02.asset"
+    },
+    {
+      "source": "Mesh/Line03.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Line03.asset"
+    },
+    {
+      "source": "Mesh/Line08.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Line08.asset"
+    },
+    {
+      "source": "Mesh/Line09.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Line09.asset"
+    },
+    {
+      "source": "Mesh/Line10.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Line10.asset"
+    },
+    {
+      "source": "Mesh/Line11.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Line11.asset"
+    },
+    {
+      "source": "Mesh/Line12.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Line12.asset"
+    },
+    {
+      "source": "Mesh/Line13.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Line13.asset"
+    },
+    {
+      "source": "Mesh/Line14.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Line14.asset"
+    },
+    {
+      "source": "Mesh/Line15.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Line15.asset"
+    },
+    {
+      "source": "Mesh/Line16.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Line16.asset"
+    },
+    {
+      "source": "Mesh/Mesh.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Mesh.asset"
+    },
+    {
+      "source": "Mesh/Mesh_5.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Mesh_5.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-1-912.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-1-912.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-10-830.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-10-830.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-104-281.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-104-281.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-105-927.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-105-927.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-113-270.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-113-270.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-114-776.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-114-776.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-115-538.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-115-538.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-116-36.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-116-36.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-117-919.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-117-919.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-118-103.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-118-103.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-12-439.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-12-439.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-120-144.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-120-144.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-121-593.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-121-593.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-126-45.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-126-45.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-129-490.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-129-490.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-13-738.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-13-738.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-130-61.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-130-61.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-138-299.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-138-299.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-14-821.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-14-821.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-140-907.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-140-907.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-15-751.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-15-751.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-156-703.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-156-703.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-157-274.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-157-274.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-16-16.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-16-16.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-17-125.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-17-125.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-18-399.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-18-399.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-19-464.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-19-464.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-190-797.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-190-797.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-2-441.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-2-441.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-20-402.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-20-402.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-21-536.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-21-536.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-22-501.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-22-501.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-23-97.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-23-97.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-24-79.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-24-79.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-25-397.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-25-397.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-26-354.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-26-354.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-27-892.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-27-892.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-28-46.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-28-46.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-29-874.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-29-874.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-3-585.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-3-585.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-30-356.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-30-356.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-31-523.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-31-523.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-32-446.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-32-446.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-33-286.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-33-286.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-34-333.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-34-333.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-35-265.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-35-265.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-36-301.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-36-301.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-37-395.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-37-395.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-38-33.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-38-33.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-39-459.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-39-459.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-4-220.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-4-220.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-40-953.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-40-953.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-41-286.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-41-286.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-42-169.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-42-169.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-43-734.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-43-734.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-44-320.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-44-320.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-48-537.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-48-537.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-5-402.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-5-402.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-50-22.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-50-22.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-51-455.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-51-455.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-52-90.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-52-90.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-53-733.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-53-733.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-57-335.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-57-335.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-58-897.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-58-897.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-59-994.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-59-994.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-6-935.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-6-935.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-63-805.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-63-805.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-67-605.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-67-605.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-69-205.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-69-205.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-7-97.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-7-97.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-72-994.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-72-994.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-74-638.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-74-638.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-75-378.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-75-378.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-76-388.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-76-388.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-8-112.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-8-112.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-87-824.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-87-824.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-88-235.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-88-235.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-89-358.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-89-358.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-9-928.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-9-928.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-90-339.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-90-339.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-91-11.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-91-11.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-92-711.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-92-711.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-93-633.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-93-633.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-94-825.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-94-825.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-95-441.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-95-441.asset"
+    },
+    {
+      "source": "Mesh/Obj3d66-577096-96-36.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Obj3d66-577096-96-36.asset"
+    },
+    {
+      "source": "Mesh/Paint-0011.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Paint-0011.asset"
+    },
+    {
+      "source": "Mesh/Prism001.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Prism001.asset"
+    },
+    {
+      "source": "Mesh/Shell.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/Shell.asset"
+    },
+    {
+      "source": "Mesh/default.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/default.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1301.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1301.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1302.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1302.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1303.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1303.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1304.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1304.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1305.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1305.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1306.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1306.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1307.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1307.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1308.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1308.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1309.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1309.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1310.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1310.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1311.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1311.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1312.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1312.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1313.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1313.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1314.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1314.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1315.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1315.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1316.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1316.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1317.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1317.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1318.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1318.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1319.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1319.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1320.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1320.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1321.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1321.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1322.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1322.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1323.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1323.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1324.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1324.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1325.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1325.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1326.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1326.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1327.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1327.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1328.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1328.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1329.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1329.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1330.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1330.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1331.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1331.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1332.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1332.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1333.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1333.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1334.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1334.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1335.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1335.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1336.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1336.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1337.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1337.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1338.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1338.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1339.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1339.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1340.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1340.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1341.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1341.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1342.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1342.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1343.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1343.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1344.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1344.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1345.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1345.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1346.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1346.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1347.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1347.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1348.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1348.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1349.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1349.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1350.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1350.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1351.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1351.asset"
+    },
+    {
+      "source": "Mesh/polySurface1299_polySurface1352.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1299_polySurface1352.asset"
+    },
+    {
+      "source": "Mesh/polySurface1300_polySurface1299.asset",
+      "target": "RecoveredMaps/JunePyramid/Mesh/polySurface1300_polySurface1299.asset"
+    },
+    {
+      "source": "MonoBehaviour/BluntHit.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/BluntHit.asset"
+    },
+    {
+      "source": "MonoBehaviour/BulletHit.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/BulletHit.asset"
+    },
+    {
+      "source": "MonoBehaviour/BulletOnRock.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/BulletOnRock.asset"
+    },
+    {
+      "source": "MonoBehaviour/BulletOnWood.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/BulletOnWood.asset"
+    },
+    {
+      "source": "MonoBehaviour/CollisionOnRock.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/CollisionOnRock.asset"
+    },
+    {
+      "source": "MonoBehaviour/Default.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/Default.asset"
+    },
+    {
+      "source": "MonoBehaviour/Default_0.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/Default_0.asset"
+    },
+    {
+      "source": "MonoBehaviour/FallImpact.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/FallImpact.asset"
+    },
+    {
+      "source": "MonoBehaviour/FallImpactGeneric.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/FallImpactGeneric.asset"
+    },
+    {
+      "source": "MonoBehaviour/Footstep.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/Footstep.asset"
+    },
+    {
+      "source": "MonoBehaviour/FootstepOnRock.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/FootstepOnRock.asset"
+    },
+    {
+      "source": "MonoBehaviour/FootstepOnWood.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/FootstepOnWood.asset"
+    },
+    {
+      "source": "MonoBehaviour/ItemDrop.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/ItemDrop.asset"
+    },
+    {
+      "source": "MonoBehaviour/ItemDropGeneric.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/ItemDropGeneric.asset"
+    },
+    {
+      "source": "MonoBehaviour/Jump.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/Jump.asset"
+    },
+    {
+      "source": "MonoBehaviour/JumpGeneric.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/JumpGeneric.asset"
+    },
+    {
+      "source": "MonoBehaviour/MaceGeneric.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/MaceGeneric.asset"
+    },
+    {
+      "source": "MonoBehaviour/RagdollDrop.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/RagdollDrop.asset"
+    },
+    {
+      "source": "MonoBehaviour/RagdollDrop_0.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/RagdollDrop_0.asset"
+    },
+    {
+      "source": "MonoBehaviour/RigidbodyCollision.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/RigidbodyCollision.asset"
+    },
+    {
+      "source": "MonoBehaviour/Rock.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/Rock.asset"
+    },
+    {
+      "source": "MonoBehaviour/ShotgunPelletHit.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/ShotgunPelletHit.asset"
+    },
+    {
+      "source": "MonoBehaviour/ShotgunPelletOnRock.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/ShotgunPelletOnRock.asset"
+    },
+    {
+      "source": "MonoBehaviour/ThumpSoft.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/ThumpSoft.asset"
+    },
+    {
+      "source": "MonoBehaviour/Wood.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/Wood.asset"
+    },
+    {
+      "source": "MonoBehaviour/WoodBash.asset",
+      "target": "RecoveredMaps/JunePyramid/MonoBehaviour/WoodBash.asset"
+    },
+    {
+      "source": "PhysicMaterial/Shell.physicMaterial",
+      "target": "RecoveredMaps/JunePyramid/PhysicMaterial/Shell.physicMaterial"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/game.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/game.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_FPCamera.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/vp_FPCamera.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_FPController.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/vp_FPController.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_FPInput.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/vp_FPInput.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_FPPlayerEventHandler.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/vp_FPPlayerEventHandler.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_FPWeapon.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/vp_FPWeapon.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_FPWeaponReloader.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/vp_FPWeaponReloader.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_FPWeaponShooter.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/vp_FPWeaponShooter.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_FXBullet.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/vp_FXBullet.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_ImpactEvent.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/vp_ImpactEvent.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_MuzzleFlash.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/vp_MuzzleFlash.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_ParticleFXPooler.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/vp_ParticleFXPooler.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_Remover.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/vp_Remover.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_RigidbodyImpulse.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/vp_RigidbodyImpulse.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_Shell.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/vp_Shell.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_SimpleFiring.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/vp_SimpleFiring.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_SurfaceEffect.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/vp_SurfaceEffect.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_SurfaceIdentifier.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/vp_SurfaceIdentifier.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/vp_SurfaceType.cs",
+      "target": "RecoveredMaps/JunePyramid/Scripts/Assembly-CSharp/vp_SurfaceType.cs"
+    },
+    {
+      "source": "Sprite/520.3_0.asset",
+      "target": "RecoveredMaps/JunePyramid/Sprite/520.3_0.asset"
+    },
+    {
+      "source": "Sprite/usp-2.asset",
+      "target": "RecoveredMaps/JunePyramid/Sprite/usp-2.asset"
+    },
+    {
+      "source": "Sprite/小地图.asset",
+      "target": "RecoveredMaps/JunePyramid/Sprite/小地图.asset"
+    },
+    {
+      "source": "Sprite/战绩.asset",
+      "target": "RecoveredMaps/JunePyramid/Sprite/战绩.asset"
+    },
+    {
+      "source": "Sprite/正面视角反恐射击游戏素材-准星_1(zhunxing_1)_爱给网_aigei_com.asset",
+      "target": "RecoveredMaps/JunePyramid/Sprite/正面视角反恐射击游戏素材-准星_1(zhunxing_1)_爱给网_aigei_com.asset"
+    },
+    {
+      "source": "Sprite/血条.asset",
+      "target": "RecoveredMaps/JunePyramid/Sprite/血条.asset"
+    },
+    {
+      "source": "TextAsset/CameraCrouch.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/CameraCrouch.txt"
+    },
+    {
+      "source": "TextAsset/CameraFreeze.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/CameraFreeze.txt"
+    },
+    {
+      "source": "TextAsset/CameraOutOfControl.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/CameraOutOfControl.txt"
+    },
+    {
+      "source": "TextAsset/CameraReload.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/CameraReload.txt"
+    },
+    {
+      "source": "TextAsset/CameraRun.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/CameraRun.txt"
+    },
+    {
+      "source": "TextAsset/CameraSlide.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/CameraSlide.txt"
+    },
+    {
+      "source": "TextAsset/CameraZoom.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/CameraZoom.txt"
+    },
+    {
+      "source": "TextAsset/ControllerCrouch.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/ControllerCrouch.txt"
+    },
+    {
+      "source": "TextAsset/ControllerDead.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/ControllerDead.txt"
+    },
+    {
+      "source": "TextAsset/ControllerFreeze.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/ControllerFreeze.txt"
+    },
+    {
+      "source": "TextAsset/ControllerRun.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/ControllerRun.txt"
+    },
+    {
+      "source": "TextAsset/ControllerZoom.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/ControllerZoom.txt"
+    },
+    {
+      "source": "TextAsset/InputDead.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/InputDead.txt"
+    },
+    {
+      "source": "TextAsset/InputZoom.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/InputZoom.txt"
+    },
+    {
+      "source": "TextAsset/ShooterPistolOutOfControl.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/ShooterPistolOutOfControl.txt"
+    },
+    {
+      "source": "TextAsset/ShooterPistolZoom.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/ShooterPistolZoom.txt"
+    },
+    {
+      "source": "TextAsset/WeaponPistolReload.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/WeaponPistolReload.txt"
+    },
+    {
+      "source": "TextAsset/WeaponPistolReload2.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/WeaponPistolReload2.txt"
+    },
+    {
+      "source": "TextAsset/WeaponPistolZoom.txt",
+      "target": "RecoveredMaps/JunePyramid/TextAsset/WeaponPistolZoom.txt"
+    },
+    {
+      "source": "Texture2D/0HQH0_UL27Z5A@BTCR}1BBB.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/0HQH0_UL27Z5A@BTCR}1BBB.png"
+    },
+    {
+      "source": "Texture2D/1 (137).png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/1 (137).png"
+    },
+    {
+      "source": "Texture2D/1D0RZ3I15NSB%)_EGF$${A8.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/1D0RZ3I15NSB%)_EGF$${A8.png"
+    },
+    {
+      "source": "Texture2D/28EB1E_3M_@C`_O}3W%WFQX.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/28EB1E_3M_@C`_O}3W%WFQX.png"
+    },
+    {
+      "source": "Texture2D/30C8ZS9XO_YXTP$UA5%(ZGN.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/30C8ZS9XO_YXTP$UA5%(ZGN.png"
+    },
+    {
+      "source": "Texture2D/360截图20190730180239819.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/360截图20190730180239819.png"
+    },
+    {
+      "source": "Texture2D/520.3_0.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/520.3_0.png"
+    },
+    {
+      "source": "Texture2D/52_9DLXP1RE6789}43($YTL.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/52_9DLXP1RE6789}43($YTL.png"
+    },
+    {
+      "source": "Texture2D/5K(G}FDTPWHWB_SK_(2}6}0.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/5K(G}FDTPWHWB_SK_(2}6}0.png"
+    },
+    {
+      "source": "Texture2D/8@_)_4QJQF6)(DJ(ZHQB~(N.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/8@_)_4QJQF6)(DJ(ZHQB~(N.png"
+    },
+    {
+      "source": "Texture2D/ArmDiffuse.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/ArmDiffuse.png"
+    },
+    {
+      "source": "Texture2D/ArmNormal.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/ArmNormal.png"
+    },
+    {
+      "source": "Texture2D/B000AF81AF3276B3CB2A80437E8E5AA5.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/B000AF81AF3276B3CB2A80437E8E5AA5.png"
+    },
+    {
+      "source": "Texture2D/CJX1HSW~4MZEVJ__L3L_9$T.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/CJX1HSW~4MZEVJ__L3L_9$T.png"
+    },
+    {
+      "source": "Texture2D/D_Crate01.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/D_Crate01.png"
+    },
+    {
+      "source": "Texture2D/D_CrateSplinter.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/D_CrateSplinter.png"
+    },
+    {
+      "source": "Texture2D/Decal_Generic_Heightmap.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Decal_Generic_Heightmap.png"
+    },
+    {
+      "source": "Texture2D/Decal_Rock01.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Decal_Rock01.png"
+    },
+    {
+      "source": "Texture2D/Decal_Rock01_Normal.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Decal_Rock01_Normal.png"
+    },
+    {
+      "source": "Texture2D/Decal_Rock02.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Decal_Rock02.png"
+    },
+    {
+      "source": "Texture2D/Decal_Rock02_Normal.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Decal_Rock02_Normal.png"
+    },
+    {
+      "source": "Texture2D/Decal_Rock03.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Decal_Rock03.png"
+    },
+    {
+      "source": "Texture2D/Decal_Rock03_Normal.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Decal_Rock03_Normal.png"
+    },
+    {
+      "source": "Texture2D/Decal_Rock04.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Decal_Rock04.png"
+    },
+    {
+      "source": "Texture2D/Decal_Rock04_Normal.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Decal_Rock04_Normal.png"
+    },
+    {
+      "source": "Texture2D/Decal_Sand_Collision.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Decal_Sand_Collision.png"
+    },
+    {
+      "source": "Texture2D/Decal_Wood01.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Decal_Wood01.png"
+    },
+    {
+      "source": "Texture2D/Decal_Wood01_Normal.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Decal_Wood01_Normal.png"
+    },
+    {
+      "source": "Texture2D/Decal_Wood02.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Decal_Wood02.png"
+    },
+    {
+      "source": "Texture2D/Decal_Wood02_Normal.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Decal_Wood02_Normal.png"
+    },
+    {
+      "source": "Texture2D/Decal_Wood03.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Decal_Wood03.png"
+    },
+    {
+      "source": "Texture2D/Decal_Wood03_Normal.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Decal_Wood03_Normal.png"
+    },
+    {
+      "source": "Texture2D/Decal_Wood04.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Decal_Wood04.png"
+    },
+    {
+      "source": "Texture2D/Decal_Wood04_Normal.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Decal_Wood04_Normal.png"
+    },
+    {
+      "source": "Texture2D/ENG2FY6B888D1BH~UULRHG0.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/ENG2FY6B888D1BH~UULRHG0.png"
+    },
+    {
+      "source": "Texture2D/GSG9_Working1.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/GSG9_Working1.png"
+    },
+    {
+      "source": "Texture2D/H@YCYKA(CC$8ZDXP`88{IB0.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/H@YCYKA(CC$8ZDXP`88{IB0.png"
+    },
+    {
+      "source": "Texture2D/Handgun02Diffuse.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Handgun02Diffuse.png"
+    },
+    {
+      "source": "Texture2D/Handgun02Normal.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Handgun02Normal.png"
+    },
+    {
+      "source": "Texture2D/LHB30EIZE_%_6ODVYX6$G_7.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/LHB30EIZE_%_6ODVYX6$G_7.png"
+    },
+    {
+      "source": "Texture2D/M3DB7WT_9XEU5OL@3WI2W}W.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/M3DB7WT_9XEU5OL@3WI2W}W.png"
+    },
+    {
+      "source": "Texture2D/MK@VO@2$363_V9GAK5~8K(I.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/MK@VO@2$363_V9GAK5~8K(I.png"
+    },
+    {
+      "source": "Texture2D/MNGQ_U7V53UET_JCY@0_4MS.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/MNGQ_U7V53UET_JCY@0_4MS.png"
+    },
+    {
+      "source": "Texture2D/MuzzleFlash03.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/MuzzleFlash03.png"
+    },
+    {
+      "source": "Texture2D/NM_Crate01.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/NM_Crate01.png"
+    },
+    {
+      "source": "Texture2D/P9982{J1{MW8Y0WCHL4DJ05.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/P9982{J1{MW8Y0WCHL4DJ05.png"
+    },
+    {
+      "source": "Texture2D/Q2X80~D{F6C847OG7N1(DRC.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Q2X80~D{F6C847OG7N1(DRC.png"
+    },
+    {
+      "source": "Texture2D/QQ截图20160316204414.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/QQ截图20160316204414.png"
+    },
+    {
+      "source": "Texture2D/QQ截图20200327134209.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/QQ截图20200327134209.png"
+    },
+    {
+      "source": "Texture2D/R7JAL_P)}%ZUB2QL50U}009.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/R7JAL_P)}%ZUB2QL50U}009.png"
+    },
+    {
+      "source": "Texture2D/S%S3(A9DDYP~9MAI0DA4R(X.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/S%S3(A9DDYP~9MAI0DA4R(X.png"
+    },
+    {
+      "source": "Texture2D/ShellDiffuse.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/ShellDiffuse.png"
+    },
+    {
+      "source": "Texture2D/ShellNormal.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/ShellNormal.png"
+    },
+    {
+      "source": "Texture2D/T$OP5W{K{_QMXT9GZG3)2(0.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/T$OP5W{K{_QMXT9GZG3)2(0.png"
+    },
+    {
+      "source": "Texture2D/T`J(DN9@Y7PN$$P7$JORJ1F.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/T`J(DN9@Y7PN$$P7$JORJ1F.png"
+    },
+    {
+      "source": "Texture2D/X419DI90`7RVR)V)S(CI9}0.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/X419DI90`7RVR)V)S(CI9}0.png"
+    },
+    {
+      "source": "Texture2D/Z_CTUM60{BHRBO59_S9S(YR.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/Z_CTUM60{BHRBO59_S9S(YR.png"
+    },
+    {
+      "source": "Texture2D/_%$_Y(0726_D4FNDN%B0(WL.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/_%$_Y(0726_D4FNDN%B0(WL.png"
+    },
+    {
+      "source": "Texture2D/_@}YP_C~GXO5~`CUGZ3}_VV.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/_@}YP_C~GXO5~`CUGZ3}_VV.png"
+    },
+    {
+      "source": "Texture2D/_KG~DJW_4_4QJO82$F7MZX5.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/_KG~DJW_4_4QJO82$F7MZX5.png"
+    },
+    {
+      "source": "Texture2D/_QZP~1{F(YZ%WPR3G6S_FLS.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/_QZP~1{F(YZ%WPR3G6S_FLS.png"
+    },
+    {
+      "source": "Texture2D/shenghuaqiang2_dif.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/shenghuaqiang2_dif.png"
+    },
+    {
+      "source": "Texture2D/skybox_back.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/skybox_back.png"
+    },
+    {
+      "source": "Texture2D/skybox_bottom.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/skybox_bottom.png"
+    },
+    {
+      "source": "Texture2D/skybox_front.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/skybox_front.png"
+    },
+    {
+      "source": "Texture2D/skybox_left.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/skybox_left.png"
+    },
+    {
+      "source": "Texture2D/skybox_right.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/skybox_right.png"
+    },
+    {
+      "source": "Texture2D/skybox_top.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/skybox_top.png"
+    },
+    {
+      "source": "Texture2D/usp-2.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/usp-2.png"
+    },
+    {
+      "source": "Texture2D/固定壁画1.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/固定壁画1.png"
+    },
+    {
+      "source": "Texture2D/图案.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/图案.png"
+    },
+    {
+      "source": "Texture2D/墙壁爱给.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/墙壁爱给.png"
+    },
+    {
+      "source": "Texture2D/墙砖 (44)_爱给网_aigei_com.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/墙砖 (44)_爱给网_aigei_com.png"
+    },
+    {
+      "source": "Texture2D/壁画修改后 (1).png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/壁画修改后 (1).png"
+    },
+    {
+      "source": "Texture2D/壁画修改后.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/壁画修改后.png"
+    },
+    {
+      "source": "Texture2D/大理石_爱给网_aigei_com.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/大理石_爱给网_aigei_com.png"
+    },
+    {
+      "source": "Texture2D/小地图.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/小地图.png"
+    },
+    {
+      "source": "Texture2D/战绩.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/战绩.png"
+    },
+    {
+      "source": "Texture2D/正面视角反恐射击游戏素材-准星_1(zhunxing_1)_爱给网_aigei_com.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/正面视角反恐射击游戏素材-准星_1(zhunxing_1)_爱给网_aigei_com.png"
+    },
+    {
+      "source": "Texture2D/血条.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/血条.png"
+    },
+    {
+      "source": "Texture2D/金字塔侧面小块壁画.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/金字塔侧面小块壁画.png"
+    },
+    {
+      "source": "Texture2D/金字塔侧面小块改正 (1).png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/金字塔侧面小块改正 (1).png"
+    },
+    {
+      "source": "Texture2D/金字塔侧面小块改正.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/金字塔侧面小块改正.png"
+    },
+    {
+      "source": "Texture2D/金字塔外面壁画 (1).png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/金字塔外面壁画 (1).png"
+    },
+    {
+      "source": "Texture2D/金字塔外面壁画.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/金字塔外面壁画.png"
+    },
+    {
+      "source": "Texture2D/金字塔箱子全部.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/金字塔箱子全部.png"
+    },
+    {
+      "source": "Texture2D/金字塔经典墙壁石砖 1.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/金字塔经典墙壁石砖 1.png"
+    },
+    {
+      "source": "Texture2D/金字塔经典墙壁石砖.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/金字塔经典墙壁石砖.png"
+    },
+    {
+      "source": "Texture2D/随机壁画1.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/随机壁画1.png"
+    },
+    {
+      "source": "Texture2D/随机壁画2.png",
+      "target": "RecoveredMaps/JunePyramid/Texture2D/随机壁画2.png"
+    },
+    {
+      "source": "金字塔/Scenep/LightProbes.asset",
+      "target": "RecoveredMaps/JunePyramid/金字塔/Scenep/LightProbes.asset"
+    },
+    {
+      "source": "金字塔/Scenep/LightingData.asset",
+      "target": "RecoveredMaps/JunePyramid/金字塔/Scenep/LightingData.asset"
+    },
+    {
+      "source": "金字塔/Scenep.unity",
+      "target": "RecoveredMaps/JunePyramid/金字塔/Scenep.unity"
+    }
+  ],
+  "reused": {},
+  "missing_guids": [
+    "0000000000000000e000000000000000",
+    "0000000000000000f000000000000000",
+    "f5f67c52d1564df4a8936ccd202a3bd8"
+  ],
+  "conflicts": []
+}

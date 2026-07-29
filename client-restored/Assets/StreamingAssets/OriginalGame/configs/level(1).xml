@@ -1,0 +1,48 @@
+﻿<level>
+	<base>1500</base>
+	<ladderRatios>1,6,24,60,150</ladderRatios>
+	<primaryWeaponRatio>1</primaryWeaponRatio>
+	<secondaryWeaoinRatio>0.6</secondaryWeaoinRatio>
+	<meleeWeaponRatio>0.4</meleeWeaponRatio>
+	<thorwingWeaponRatio>0.8</thorwingWeaponRatio>
+	<openLevel>4</openLevel>
+	
+	<weapons>
+		<weapon>32,33,34,35,36,37</weapon>
+		<weapon>420,421,422,423,424,425</weapon>
+		<weapon>414,415,416,417,418,419</weapon>
+		<weapon>640,641,642,643,644,645</weapon>
+		<weapon>223,224,225,226,227,228</weapon>
+		<weapon>107,108,109,110,111,112</weapon>
+		<weapon>813,814,815,816,817,818</weapon>
+		<weapon>916,917,918,919,920,921</weapon>
+		<weapon>315,316,317,318,319,320</weapon>
+		<weapon>322,323,324,325,326,327</weapon>
+		<weapon>16,17,18,19,20,21</weapon>
+		<weapon>606,607,608,609,610,611</weapon>
+		<weapon>726,727,728,729,730,731</weapon>
+	</weapons>
+	
+	<images>
+		<image name="步枪" type="1">
+			<subImage name="普通系列" special_id="0"/>
+			<subImage name="瞄镜系列" special_id="3"/>
+			<subImage name="可近战系列" special_id="6"/>
+			<subImage name="榴弹系列" special_id="15"/>
+		</image>
+		<image name="狙击枪" type="2"/>
+		<image name="冲锋枪" type="3">
+			<subImage name="普通系列" special_id="0"/>
+			<subImage name="虫刺系列" special_id="6"/>
+		</image>
+		<image name="霰弹枪" type="4"/>
+		<image name="机枪" type="5">
+			<subImage name="普通系列" special_id="0"/>
+			<subImage name="mg4系列" special_id="3"/>
+			<subImage name="加特林系列" special_id="4"/>
+		</image>
+		<image name="手枪" type="6"/>
+		<image name="近战武器" type="7"/>
+		<image name="投掷武器" type="8"/>
+	</images>
+</level>

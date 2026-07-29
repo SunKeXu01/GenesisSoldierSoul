@@ -1,0 +1,146 @@
+﻿<anims>
+	<anim value="showUpAnim1_weaponAnim1" swf="animationShow">
+			<daiji>0,20</daiji>
+	</anim>
+	<anim value="showUpAnim1_weaponAnim2" swf="animationShow">
+			<daiji>30,50</daiji>
+	</anim>
+	<anim value="showUpAnim1_weaponAnim3" swf="animationShow">
+			<daiji>60,80</daiji>
+	</anim>
+	<anim value="showUpAnim1_weaponAnim4" swf="animationShow">
+			<daiji>90,110</daiji>
+	</anim>
+	<anim value="showUpAnim1_weaponAnim5" swf="animationShow">
+			<daiji>120,140</daiji>
+	</anim>
+	<anim value="showUpAnim1_weaponAnim6" swf="animationShow">
+			<daiji>150,170</daiji>
+	</anim>
+	<anim value="showUpAnim1_weaponAnim7" swf="animationShow">
+			<daiji>180,200</daiji>
+	</anim>
+	<anim value="showUpAnim1_weaponAnim8" swf="animationShow">
+			<daiji>210,230</daiji>
+	</anim>
+	<anim value="showUpAnim1_weaponAnim9" swf="animationShow">
+			<daiji>240,260</daiji>
+	</anim>
+	<anim value="showLowAnim1_weaponAnim1" swf="animationShow">
+		<zhanlidaiji>0,20</zhanlidaiji>
+	</anim>
+	<anim value="showLowAnim1_weaponAnim2" swf="animationShow">
+		<zhanlidaiji>30,50</zhanlidaiji>
+	</anim>
+	<anim value="showLowAnim1_weaponAnim3" swf="animationShow">
+		<zhanlidaiji>60,80</zhanlidaiji>
+	</anim>
+	<anim value="showLowAnim1_weaponAnim4" swf="animationShow">
+		<zhanlidaiji>90,110</zhanlidaiji>
+	</anim>
+	<anim value="showLowAnim1_weaponAnim5" swf="animationShow">
+		<zhanlidaiji>120,140</zhanlidaiji>
+	</anim>
+	<anim value="showLowAnim1_weaponAnim6" swf="animationShow">
+		<zhanlidaiji>150,170</zhanlidaiji>
+	</anim>
+	<anim value="showLowAnim1_weaponAnim7" swf="animationShow">
+		<zhanlidaiji>180,200</zhanlidaiji>
+	</anim>
+	<anim value="showLowAnim1_weaponAnim8" swf="animationShow">
+		<zhanlidaiji>210,230</zhanlidaiji>
+	</anim>
+	<anim value="showLowAnim1_weaponAnim9" swf="animationShow">
+		<zhanlidaiji>240,260</zhanlidaiji>
+	</anim>
+	<anim value="showUpAnim2_weaponAnim1" swf="animationShow">
+		<daiji>0,20</daiji>
+	</anim>
+	<anim value="showUpAnim2_weaponAnim2" swf="animationShow">
+		<daiji>30,50</daiji>
+	</anim>
+	<anim value="showUpAnim2_weaponAnim3" swf="animationShow">
+		<daiji>60,80</daiji>
+	</anim>
+	<anim value="showUpAnim2_weaponAnim4" swf="animationShow">
+		<daiji>90,110</daiji>
+	</anim>
+	<anim value="showUpAnim2_weaponAnim5" swf="animationShow">
+		<daiji>120,140</daiji>
+	</anim>
+	<anim value="showUpAnim2_weaponAnim6" swf="animationShow">
+		<daiji>150,170</daiji>
+	</anim>
+	<anim value="showUpAnim2_weaponAnim7" swf="animationShow">
+		<daiji>180,200</daiji>
+	</anim>
+	<anim value="showUpAnim2_weaponAnim8" swf="animationShow">
+		<daiji>210,230</daiji>
+	</anim>
+	<anim value="showUpAnim2_weaponAnim9" swf="animationShow">
+		<daiji>240,260</daiji>
+	</anim>
+	<anim value="showLowAnim2_weaponAnim1" swf="animationShow">
+		<zhanlidaiji>0,20</zhanlidaiji>
+	</anim>
+	<anim value="showLowAnim2_weaponAnim2" swf="animationShow">
+		<zhanlidaiji>30,50</zhanlidaiji>
+	</anim>
+	<anim value="showLowAnim2_weaponAnim3" swf="animationShow">
+		<zhanlidaiji>60,80</zhanlidaiji>
+	</anim>
+	<anim value="showLowAnim2_weaponAnim4" swf="animationShow">
+		<zhanlidaiji>90,110</zhanlidaiji>
+	</anim>
+	<anim value="showLowAnim2_weaponAnim5" swf="animationShow">
+		<zhanlidaiji>120,140</zhanlidaiji>
+	</anim>
+	<anim value="showLowAnim2_weaponAnim6" swf="animationShow">
+		<zhanlidaiji>150,170</zhanlidaiji>
+	</anim>
+	<anim value="showLowAnim2_weaponAnim7" swf="animationShow">
+		<zhanlidaiji>180,200</zhanlidaiji>
+	</anim>
+	<anim value="showLowAnim2_weaponAnim8" swf="animationShow">
+		<zhanlidaiji>210,230</zhanlidaiji>
+	</anim>
+	<anim value="showLowAnim2_weaponAnim9" swf="animationShow">
+		<zhanlidaiji>240,260</zhanlidaiji>
+	</anim>
+	<anim value="nan16_show_animct_tp_up">
+		<daiji>0,271</daiji>
+	</anim>
+	<anim value="nan16_show_animct_tp_low">
+		<daiji>0,271</daiji>
+	</anim>
+	<anim value="nan16_show_animt_tp_up">
+		<daiji>0,271</daiji>
+	</anim>
+	<anim value="nan16_show_animt_tp_low">
+		<daiji>0,271</daiji>
+	</anim>
+	<anim value="nv11_show_animct_tp_up">
+		<daiji>0,228</daiji>
+	</anim>
+	<anim value="nv11_show_animct_tp_low">
+		<daiji>0,228</daiji>
+	</anim>
+	<anim value="nv11_show_animt_tp_up">
+		<daiji>0,228</daiji>
+	</anim>
+	<anim value="nv11_show_animt_tp_low">
+		<daiji>0,228</daiji>
+	</anim>
+	<anim value="nv14_show_animct_tp_up">
+		<daiji>0,313</daiji>
+	</anim>
+	<anim value="nv14_show_animct_tp_low">
+		<daiji>0,313</daiji>
+	</anim>
+	<anim value="nv14_show_animt_tp_up">
+		<daiji>0,313</daiji>
+	</anim>
+	<anim value="nv14_show_animt_tp_low">
+		<daiji>0,313</daiji>
+	</anim>
+</anims>

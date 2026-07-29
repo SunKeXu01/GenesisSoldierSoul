@@ -1,0 +1,241 @@
+{
+  "source": "/Users/Admin/Documents/创世兵魂/_解压资源/创世兵魂素材/创世兵魂/taskUI.81697.swf",
+  "bitmapCount": 31,
+  "errors": 0,
+  "bitmaps": [
+    {
+      "characterId": 1,
+      "tagCode": 35,
+      "width": 331,
+      "height": 263,
+      "file": "bitmap-00001.png"
+    },
+    {
+      "characterId": 3,
+      "tagCode": 36,
+      "width": 163,
+      "height": 62,
+      "file": "bitmap-00003.png"
+    },
+    {
+      "characterId": 6,
+      "tagCode": 35,
+      "width": 252,
+      "height": 95,
+      "file": "bitmap-00006.png"
+    },
+    {
+      "characterId": 7,
+      "tagCode": 35,
+      "width": 302,
+      "height": 201,
+      "file": "bitmap-00007.png"
+    },
+    {
+      "characterId": 12,
+      "tagCode": 35,
+      "width": 48,
+      "height": 26,
+      "file": "bitmap-00012.png"
+    },
+    {
+      "characterId": 15,
+      "tagCode": 35,
+      "width": 48,
+      "height": 26,
+      "file": "bitmap-00015.png"
+    },
+    {
+      "characterId": 17,
+      "tagCode": 35,
+      "width": 48,
+      "height": 26,
+      "file": "bitmap-00017.png"
+    },
+    {
+      "characterId": 21,
+      "tagCode": 36,
+      "width": 666,
+      "height": 46,
+      "file": "bitmap-00021.png"
+    },
+    {
+      "characterId": 33,
+      "tagCode": 36,
+      "width": 666,
+      "height": 28,
+      "file": "bitmap-00033.png"
+    },
+    {
+      "characterId": 39,
+      "tagCode": 36,
+      "width": 666,
+      "height": 2,
+      "file": "bitmap-00039.png"
+    },
+    {
+      "characterId": 43,
+      "tagCode": 35,
+      "width": 724,
+      "height": 577,
+      "file": "bitmap-00043.png"
+    },
+    {
+      "characterId": 45,
+      "tagCode": 36,
+      "width": 694,
+      "height": 22,
+      "file": "bitmap-00045.png"
+    },
+    {
+      "characterId": 46,
+      "tagCode": 36,
+      "width": 703,
+      "height": 36,
+      "file": "bitmap-00046.png"
+    },
+    {
+      "characterId": 47,
+      "tagCode": 35,
+      "width": 703,
+      "height": 393,
+      "file": "bitmap-00047.png"
+    },
+    {
+      "characterId": 52,
+      "tagCode": 35,
+      "width": 114,
+      "height": 54,
+      "file": "bitmap-00052.png"
+    },
+    {
+      "characterId": 63,
+      "tagCode": 36,
+      "width": 20,
+      "height": 96,
+      "file": "bitmap-00063.png"
+    },
+    {
+      "characterId": 66,
+      "tagCode": 36,
+      "width": 20,
+      "height": 51,
+      "file": "bitmap-00066.png"
+    },
+    {
+      "characterId": 70,
+      "tagCode": 36,
+      "width": 20,
+      "height": 15,
+      "file": "bitmap-00070.png"
+    },
+    {
+      "characterId": 72,
+      "tagCode": 36,
+      "width": 20,
+      "height": 15,
+      "file": "bitmap-00072.png"
+    },
+    {
+      "characterId": 74,
+      "tagCode": 36,
+      "width": 20,
+      "height": 15,
+      "file": "bitmap-00074.png"
+    },
+    {
+      "characterId": 77,
+      "tagCode": 36,
+      "width": 20,
+      "height": 15,
+      "file": "bitmap-00077.png"
+    },
+    {
+      "characterId": 79,
+      "tagCode": 36,
+      "width": 20,
+      "height": 15,
+      "file": "bitmap-00079.png"
+    },
+    {
+      "characterId": 81,
+      "tagCode": 36,
+      "width": 20,
+      "height": 15,
+      "file": "bitmap-00081.png"
+    },
+    {
+      "characterId": 85,
+      "tagCode": 36,
+      "width": 674,
+      "height": 354,
+      "file": "bitmap-00085.png"
+    },
+    {
+      "characterId": 88,
+      "tagCode": 35,
+      "width": 73,
+      "height": 24,
+      "file": "bitmap-00088.png"
+    },
+    {
+      "characterId": 91,
+      "tagCode": 35,
+      "width": 73,
+      "height": 24,
+      "file": "bitmap-00091.png"
+    },
+    {
+      "characterId": 94,
+      "tagCode": 35,
+      "width": 86,
+      "height": 24,
+      "file": "bitmap-00094.png"
+    },
+    {
+      "characterId": 97,
+      "tagCode": 35,
+      "width": 86,
+      "height": 24,
+      "file": "bitmap-00097.png"
+    },
+    {
+      "characterId": 101,
+      "tagCode": 35,
+      "width": 33,
+      "height": 26,
+      "file": "bitmap-00101.png"
+    },
+    {
+      "characterId": 103,
+      "tagCode": 35,
+      "width": 33,
+      "height": 26,
+      "file": "bitmap-00103.png"
+    },
+    {
+      "characterId": 105,
+      "tagCode": 35,
+      "width": 33,
+      "height": 26,
+      "file": "bitmap-00105.png"
+    }
+  ],
+  "exportedSymbols": [
+    {
+      "characterId": 108,
+      "name": "ui.TaskShootingView",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 42,
+      "name": "ui.TaskItem",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 20,
+      "name": "ui.EquipAlertPopup",
+      "sourceTag": "SymbolClass"
+    }
+  ]
+}

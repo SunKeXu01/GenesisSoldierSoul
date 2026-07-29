@@ -1,0 +1,285 @@
+{
+  "source": "/Users/Admin/Documents/创世兵魂/_解压资源/创世兵魂素材/创世兵魂/RedpacketsUI.96706.swf",
+  "bitmapCount": 38,
+  "errors": 0,
+  "bitmaps": [
+    {
+      "characterId": 1,
+      "tagCode": 35,
+      "width": 724,
+      "height": 577,
+      "file": "bitmap-00001.png"
+    },
+    {
+      "characterId": 4,
+      "tagCode": 35,
+      "width": 627,
+      "height": 496,
+      "file": "bitmap-00004.png"
+    },
+    {
+      "characterId": 5,
+      "tagCode": 35,
+      "width": 343,
+      "height": 214,
+      "file": "bitmap-00005.png"
+    },
+    {
+      "characterId": 6,
+      "tagCode": 35,
+      "width": 318,
+      "height": 204,
+      "file": "bitmap-00006.png"
+    },
+    {
+      "characterId": 7,
+      "tagCode": 35,
+      "width": 350,
+      "height": 428,
+      "file": "bitmap-00007.png"
+    },
+    {
+      "characterId": 9,
+      "tagCode": 35,
+      "width": 33,
+      "height": 26,
+      "file": "bitmap-00009.png"
+    },
+    {
+      "characterId": 11,
+      "tagCode": 35,
+      "width": 33,
+      "height": 26,
+      "file": "bitmap-00011.png"
+    },
+    {
+      "characterId": 13,
+      "tagCode": 35,
+      "width": 33,
+      "height": 26,
+      "file": "bitmap-00013.png"
+    },
+    {
+      "characterId": 16,
+      "tagCode": 35,
+      "width": 83,
+      "height": 39,
+      "file": "bitmap-00016.png"
+    },
+    {
+      "characterId": 20,
+      "tagCode": 35,
+      "width": 83,
+      "height": 39,
+      "file": "bitmap-00020.png"
+    },
+    {
+      "characterId": 22,
+      "tagCode": 35,
+      "width": 83,
+      "height": 39,
+      "file": "bitmap-00022.png"
+    },
+    {
+      "characterId": 25,
+      "tagCode": 36,
+      "width": 55,
+      "height": 62,
+      "file": "bitmap-00025.png"
+    },
+    {
+      "characterId": 26,
+      "tagCode": 36,
+      "width": 57,
+      "height": 68,
+      "file": "bitmap-00026.png"
+    },
+    {
+      "characterId": 27,
+      "tagCode": 35,
+      "width": 581,
+      "height": 96,
+      "file": "bitmap-00027.png"
+    },
+    {
+      "characterId": 30,
+      "tagCode": 35,
+      "width": 55,
+      "height": 62,
+      "file": "bitmap-00030.png"
+    },
+    {
+      "characterId": 31,
+      "tagCode": 35,
+      "width": 581,
+      "height": 96,
+      "file": "bitmap-00031.png"
+    },
+    {
+      "characterId": 39,
+      "tagCode": 36,
+      "width": 99,
+      "height": 48,
+      "file": "bitmap-00039.png"
+    },
+    {
+      "characterId": 44,
+      "tagCode": 36,
+      "width": 99,
+      "height": 48,
+      "file": "bitmap-00044.png"
+    },
+    {
+      "characterId": 46,
+      "tagCode": 36,
+      "width": 99,
+      "height": 48,
+      "file": "bitmap-00046.png"
+    },
+    {
+      "characterId": 50,
+      "tagCode": 36,
+      "width": 163,
+      "height": 62,
+      "file": "bitmap-00050.png"
+    },
+    {
+      "characterId": 53,
+      "tagCode": 36,
+      "width": 22,
+      "height": 28,
+      "file": "bitmap-00053.png"
+    },
+    {
+      "characterId": 56,
+      "tagCode": 36,
+      "width": 22,
+      "height": 28,
+      "file": "bitmap-00056.png"
+    },
+    {
+      "characterId": 59,
+      "tagCode": 36,
+      "width": 26,
+      "height": 23,
+      "file": "bitmap-00059.png"
+    },
+    {
+      "characterId": 62,
+      "tagCode": 36,
+      "width": 26,
+      "height": 23,
+      "file": "bitmap-00062.png"
+    },
+    {
+      "characterId": 72,
+      "tagCode": 35,
+      "width": 165,
+      "height": 27,
+      "file": "bitmap-00072.png"
+    },
+    {
+      "characterId": 73,
+      "tagCode": 35,
+      "width": 258,
+      "height": 47,
+      "file": "bitmap-00073.png"
+    },
+    {
+      "characterId": 74,
+      "tagCode": 35,
+      "width": 621,
+      "height": 538,
+      "file": "bitmap-00074.png"
+    },
+    {
+      "characterId": 76,
+      "tagCode": 35,
+      "width": 87,
+      "height": 25,
+      "file": "bitmap-00076.png"
+    },
+    {
+      "characterId": 77,
+      "tagCode": 36,
+      "width": 149,
+      "height": 37,
+      "file": "bitmap-00077.png"
+    },
+    {
+      "characterId": 78,
+      "tagCode": 35,
+      "width": 236,
+      "height": 26,
+      "file": "bitmap-00078.png"
+    },
+    {
+      "characterId": 88,
+      "tagCode": 35,
+      "width": 48,
+      "height": 26,
+      "file": "bitmap-00088.png"
+    },
+    {
+      "characterId": 91,
+      "tagCode": 35,
+      "width": 48,
+      "height": 26,
+      "file": "bitmap-00091.png"
+    },
+    {
+      "characterId": 93,
+      "tagCode": 35,
+      "width": 48,
+      "height": 26,
+      "file": "bitmap-00093.png"
+    },
+    {
+      "characterId": 99,
+      "tagCode": 36,
+      "width": 449,
+      "height": 3,
+      "file": "bitmap-00099.png"
+    },
+    {
+      "characterId": 101,
+      "tagCode": 36,
+      "width": 393,
+      "height": 21,
+      "file": "bitmap-00101.png"
+    },
+    {
+      "characterId": 103,
+      "tagCode": 36,
+      "width": 28,
+      "height": 22,
+      "file": "bitmap-00103.png"
+    },
+    {
+      "characterId": 105,
+      "tagCode": 36,
+      "width": 28,
+      "height": 22,
+      "file": "bitmap-00105.png"
+    },
+    {
+      "characterId": 107,
+      "tagCode": 36,
+      "width": 28,
+      "height": 22,
+      "file": "bitmap-00107.png"
+    }
+  ],
+  "exportedSymbols": [
+    {
+      "characterId": 116,
+      "name": "ui.RedPacketsRecordView",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 71,
+      "name": "ui.RedPacketsView",
+      "sourceTag": "SymbolClass"
+    }
+  ]
+}

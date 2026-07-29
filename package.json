@@ -1,0 +1,12 @@
+{
+  "name": "genesis-soldier-soul",
+  "private": true,
+  "workspaces": [
+    "server"
+  ],
+  "scripts": {
+    "build": "pnpm --filter @genesis-soldier-soul/server build",
+    "dev": "pnpm --filter @genesis-soldier-soul/server dev",
+    "test": "pnpm --filter @genesis-soldier-soul/server test"
+  }
+}

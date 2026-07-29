@@ -1,0 +1,941 @@
+{
+  "source": "/Users/Admin/Documents/创世兵魂/_解压资源/创世兵魂素材/创世兵魂/teamUI.107929.swf",
+  "bitmapCount": 121,
+  "errors": 0,
+  "bitmaps": [
+    {
+      "characterId": 1,
+      "tagCode": 36,
+      "width": 105,
+      "height": 78,
+      "file": "bitmap-00001.png"
+    },
+    {
+      "characterId": 4,
+      "tagCode": 36,
+      "width": 64,
+      "height": 18,
+      "file": "bitmap-00004.png"
+    },
+    {
+      "characterId": 12,
+      "tagCode": 36,
+      "width": 20,
+      "height": 96,
+      "file": "bitmap-00012.png"
+    },
+    {
+      "characterId": 15,
+      "tagCode": 36,
+      "width": 20,
+      "height": 51,
+      "file": "bitmap-00015.png"
+    },
+    {
+      "characterId": 18,
+      "tagCode": 36,
+      "width": 20,
+      "height": 15,
+      "file": "bitmap-00018.png"
+    },
+    {
+      "characterId": 20,
+      "tagCode": 36,
+      "width": 20,
+      "height": 15,
+      "file": "bitmap-00020.png"
+    },
+    {
+      "characterId": 22,
+      "tagCode": 36,
+      "width": 20,
+      "height": 15,
+      "file": "bitmap-00022.png"
+    },
+    {
+      "characterId": 25,
+      "tagCode": 36,
+      "width": 20,
+      "height": 15,
+      "file": "bitmap-00025.png"
+    },
+    {
+      "characterId": 27,
+      "tagCode": 36,
+      "width": 20,
+      "height": 15,
+      "file": "bitmap-00027.png"
+    },
+    {
+      "characterId": 29,
+      "tagCode": 36,
+      "width": 20,
+      "height": 15,
+      "file": "bitmap-00029.png"
+    },
+    {
+      "characterId": 34,
+      "tagCode": 35,
+      "width": 724,
+      "height": 577,
+      "file": "bitmap-00034.png"
+    },
+    {
+      "characterId": 37,
+      "tagCode": 36,
+      "width": 163,
+      "height": 62,
+      "file": "bitmap-00037.png"
+    },
+    {
+      "characterId": 44,
+      "tagCode": 35,
+      "width": 33,
+      "height": 26,
+      "file": "bitmap-00044.png"
+    },
+    {
+      "characterId": 46,
+      "tagCode": 35,
+      "width": 33,
+      "height": 26,
+      "file": "bitmap-00046.png"
+    },
+    {
+      "characterId": 48,
+      "tagCode": 35,
+      "width": 33,
+      "height": 26,
+      "file": "bitmap-00048.png"
+    },
+    {
+      "characterId": 51,
+      "tagCode": 35,
+      "width": 77,
+      "height": 27,
+      "file": "bitmap-00051.png"
+    },
+    {
+      "characterId": 54,
+      "tagCode": 36,
+      "width": 77,
+      "height": 23,
+      "file": "bitmap-00054.png"
+    },
+    {
+      "characterId": 57,
+      "tagCode": 36,
+      "width": 77,
+      "height": 23,
+      "file": "bitmap-00057.png"
+    },
+    {
+      "characterId": 66,
+      "tagCode": 35,
+      "width": 367,
+      "height": 347,
+      "file": "bitmap-00066.png"
+    },
+    {
+      "characterId": 69,
+      "tagCode": 36,
+      "width": 108,
+      "height": 21,
+      "file": "bitmap-00069.png"
+    },
+    {
+      "characterId": 79,
+      "tagCode": 35,
+      "width": 48,
+      "height": 26,
+      "file": "bitmap-00079.png"
+    },
+    {
+      "characterId": 82,
+      "tagCode": 35,
+      "width": 48,
+      "height": 26,
+      "file": "bitmap-00082.png"
+    },
+    {
+      "characterId": 84,
+      "tagCode": 35,
+      "width": 48,
+      "height": 26,
+      "file": "bitmap-00084.png"
+    },
+    {
+      "characterId": 96,
+      "tagCode": 36,
+      "width": 105,
+      "height": 21,
+      "file": "bitmap-00096.png"
+    },
+    {
+      "characterId": 98,
+      "tagCode": 35,
+      "width": 33,
+      "height": 19,
+      "file": "bitmap-00098.png"
+    },
+    {
+      "characterId": 101,
+      "tagCode": 36,
+      "width": 33,
+      "height": 19,
+      "file": "bitmap-00101.png"
+    },
+    {
+      "characterId": 103,
+      "tagCode": 36,
+      "width": 33,
+      "height": 20,
+      "file": "bitmap-00103.png"
+    },
+    {
+      "characterId": 109,
+      "tagCode": 35,
+      "width": 386,
+      "height": 108,
+      "file": "bitmap-00109.png"
+    },
+    {
+      "characterId": 111,
+      "tagCode": 36,
+      "width": 376,
+      "height": 25,
+      "file": "bitmap-00111.png"
+    },
+    {
+      "characterId": 121,
+      "tagCode": 36,
+      "width": 14,
+      "height": 14,
+      "file": "bitmap-00121.png"
+    },
+    {
+      "characterId": 124,
+      "tagCode": 20,
+      "width": 6,
+      "height": 6,
+      "file": "bitmap-00124.png"
+    },
+    {
+      "characterId": 131,
+      "tagCode": 35,
+      "width": 386,
+      "height": 90,
+      "file": "bitmap-00131.png"
+    },
+    {
+      "characterId": 135,
+      "tagCode": 35,
+      "width": 85,
+      "height": 68,
+      "file": "bitmap-00135.png"
+    },
+    {
+      "characterId": 182,
+      "tagCode": 35,
+      "width": 108,
+      "height": 46,
+      "file": "bitmap-00182.png"
+    },
+    {
+      "characterId": 190,
+      "tagCode": 35,
+      "width": 108,
+      "height": 46,
+      "file": "bitmap-00190.png"
+    },
+    {
+      "characterId": 192,
+      "tagCode": 35,
+      "width": 108,
+      "height": 46,
+      "file": "bitmap-00192.png"
+    },
+    {
+      "characterId": 197,
+      "tagCode": 36,
+      "width": 357,
+      "height": 288,
+      "file": "bitmap-00197.png"
+    },
+    {
+      "characterId": 214,
+      "tagCode": 35,
+      "width": 372,
+      "height": 202,
+      "file": "bitmap-00214.png"
+    },
+    {
+      "characterId": 215,
+      "tagCode": 36,
+      "width": 379,
+      "height": 210,
+      "file": "bitmap-00215.png"
+    },
+    {
+      "characterId": 221,
+      "tagCode": 36,
+      "width": 18,
+      "height": 18,
+      "file": "bitmap-00221.png"
+    },
+    {
+      "characterId": 228,
+      "tagCode": 35,
+      "width": 654,
+      "height": 284,
+      "file": "bitmap-00228.png"
+    },
+    {
+      "characterId": 229,
+      "tagCode": 35,
+      "width": 664,
+      "height": 300,
+      "file": "bitmap-00229.png"
+    },
+    {
+      "characterId": 231,
+      "tagCode": 35,
+      "width": 130,
+      "height": 52,
+      "file": "bitmap-00231.png"
+    },
+    {
+      "characterId": 234,
+      "tagCode": 35,
+      "width": 130,
+      "height": 52,
+      "file": "bitmap-00234.png"
+    },
+    {
+      "characterId": 236,
+      "tagCode": 35,
+      "width": 130,
+      "height": 52,
+      "file": "bitmap-00236.png"
+    },
+    {
+      "characterId": 243,
+      "tagCode": 35,
+      "width": 92,
+      "height": 161,
+      "file": "bitmap-00243.png"
+    },
+    {
+      "characterId": 245,
+      "tagCode": 35,
+      "width": 92,
+      "height": 161,
+      "file": "bitmap-00245.png"
+    },
+    {
+      "characterId": 247,
+      "tagCode": 35,
+      "width": 92,
+      "height": 161,
+      "file": "bitmap-00247.png"
+    },
+    {
+      "characterId": 252,
+      "tagCode": 35,
+      "width": 92,
+      "height": 161,
+      "file": "bitmap-00252.png"
+    },
+    {
+      "characterId": 267,
+      "tagCode": 35,
+      "width": 92,
+      "height": 161,
+      "file": "bitmap-00267.png"
+    },
+    {
+      "characterId": 269,
+      "tagCode": 35,
+      "width": 92,
+      "height": 161,
+      "file": "bitmap-00269.png"
+    },
+    {
+      "characterId": 272,
+      "tagCode": 35,
+      "width": 98,
+      "height": 115,
+      "file": "bitmap-00272.png"
+    },
+    {
+      "characterId": 274,
+      "tagCode": 36,
+      "width": 15,
+      "height": 18,
+      "file": "bitmap-00274.png"
+    },
+    {
+      "characterId": 277,
+      "tagCode": 36,
+      "width": 16,
+      "height": 18,
+      "file": "bitmap-00277.png"
+    },
+    {
+      "characterId": 279,
+      "tagCode": 36,
+      "width": 14,
+      "height": 18,
+      "file": "bitmap-00279.png"
+    },
+    {
+      "characterId": 280,
+      "tagCode": 35,
+      "width": 48,
+      "height": 26,
+      "file": "bitmap-00280.png"
+    },
+    {
+      "characterId": 283,
+      "tagCode": 36,
+      "width": 22,
+      "height": 53,
+      "file": "bitmap-00283.png"
+    },
+    {
+      "characterId": 287,
+      "tagCode": 36,
+      "width": 22,
+      "height": 53,
+      "file": "bitmap-00287.png"
+    },
+    {
+      "characterId": 291,
+      "tagCode": 36,
+      "width": 22,
+      "height": 53,
+      "file": "bitmap-00291.png"
+    },
+    {
+      "characterId": 301,
+      "tagCode": 35,
+      "width": 33,
+      "height": 26,
+      "file": "bitmap-00301.png"
+    },
+    {
+      "characterId": 307,
+      "tagCode": 35,
+      "width": 201,
+      "height": 218,
+      "file": "bitmap-00307.png"
+    },
+    {
+      "characterId": 309,
+      "tagCode": 36,
+      "width": 185,
+      "height": 28,
+      "file": "bitmap-00309.png"
+    },
+    {
+      "characterId": 312,
+      "tagCode": 36,
+      "width": 20,
+      "height": 18,
+      "file": "bitmap-00312.png"
+    },
+    {
+      "characterId": 319,
+      "tagCode": 36,
+      "width": 31,
+      "height": 29,
+      "file": "bitmap-00319.png"
+    },
+    {
+      "characterId": 325,
+      "tagCode": 35,
+      "width": 304,
+      "height": 130,
+      "file": "bitmap-00325.png"
+    },
+    {
+      "characterId": 340,
+      "tagCode": 35,
+      "width": 234,
+      "height": 89,
+      "file": "bitmap-00340.png"
+    },
+    {
+      "characterId": 347,
+      "tagCode": 36,
+      "width": 20,
+      "height": 18,
+      "file": "bitmap-00347.png"
+    },
+    {
+      "characterId": 352,
+      "tagCode": 36,
+      "width": 17,
+      "height": 17,
+      "file": "bitmap-00352.png"
+    },
+    {
+      "characterId": 374,
+      "tagCode": 35,
+      "width": 295,
+      "height": 486,
+      "file": "bitmap-00374.png"
+    },
+    {
+      "characterId": 377,
+      "tagCode": 35,
+      "width": 640,
+      "height": 49,
+      "file": "bitmap-00377.png"
+    },
+    {
+      "characterId": 378,
+      "tagCode": 36,
+      "width": 640,
+      "height": 49,
+      "file": "bitmap-00378.png"
+    },
+    {
+      "characterId": 379,
+      "tagCode": 36,
+      "width": 648,
+      "height": 364,
+      "file": "bitmap-00379.png"
+    },
+    {
+      "characterId": 393,
+      "tagCode": 36,
+      "width": 14,
+      "height": 15,
+      "file": "bitmap-00393.png"
+    },
+    {
+      "characterId": 401,
+      "tagCode": 36,
+      "width": 26,
+      "height": 23,
+      "file": "bitmap-00401.png"
+    },
+    {
+      "characterId": 404,
+      "tagCode": 36,
+      "width": 26,
+      "height": 23,
+      "file": "bitmap-00404.png"
+    },
+    {
+      "characterId": 410,
+      "tagCode": 36,
+      "width": 105,
+      "height": 21,
+      "file": "bitmap-00410.png"
+    },
+    {
+      "characterId": 412,
+      "tagCode": 36,
+      "width": 26,
+      "height": 22,
+      "file": "bitmap-00412.png"
+    },
+    {
+      "characterId": 417,
+      "tagCode": 36,
+      "width": 627,
+      "height": 335,
+      "file": "bitmap-00417.png"
+    },
+    {
+      "characterId": 427,
+      "tagCode": 36,
+      "width": 17,
+      "height": 17,
+      "file": "bitmap-00427.png"
+    },
+    {
+      "characterId": 431,
+      "tagCode": 36,
+      "width": 56,
+      "height": 8,
+      "file": "bitmap-00431.png"
+    },
+    {
+      "characterId": 433,
+      "tagCode": 36,
+      "width": 35,
+      "height": 6,
+      "file": "bitmap-00433.png"
+    },
+    {
+      "characterId": 439,
+      "tagCode": 36,
+      "width": 18,
+      "height": 11,
+      "file": "bitmap-00439.png"
+    },
+    {
+      "characterId": 443,
+      "tagCode": 36,
+      "width": 17,
+      "height": 18,
+      "file": "bitmap-00443.png"
+    },
+    {
+      "characterId": 456,
+      "tagCode": 36,
+      "width": 628,
+      "height": 211,
+      "file": "bitmap-00456.png"
+    },
+    {
+      "characterId": 457,
+      "tagCode": 35,
+      "width": 660,
+      "height": 226,
+      "file": "bitmap-00457.png"
+    },
+    {
+      "characterId": 458,
+      "tagCode": 36,
+      "width": 646,
+      "height": 39,
+      "file": "bitmap-00458.png"
+    },
+    {
+      "characterId": 460,
+      "tagCode": 36,
+      "width": 640,
+      "height": 49,
+      "file": "bitmap-00460.png"
+    },
+    {
+      "characterId": 463,
+      "tagCode": 36,
+      "width": 640,
+      "height": 49,
+      "file": "bitmap-00463.png"
+    },
+    {
+      "characterId": 472,
+      "tagCode": 35,
+      "width": 46,
+      "height": 44,
+      "file": "bitmap-00472.png"
+    },
+    {
+      "characterId": 475,
+      "tagCode": 35,
+      "width": 50,
+      "height": 51,
+      "file": "bitmap-00475.png"
+    },
+    {
+      "characterId": 486,
+      "tagCode": 35,
+      "width": 659,
+      "height": 44,
+      "file": "bitmap-00486.png"
+    },
+    {
+      "characterId": 488,
+      "tagCode": 35,
+      "width": 624,
+      "height": 26,
+      "file": "bitmap-00488.png"
+    },
+    {
+      "characterId": 497,
+      "tagCode": 36,
+      "width": 68,
+      "height": 22,
+      "file": "bitmap-00497.png"
+    },
+    {
+      "characterId": 500,
+      "tagCode": 36,
+      "width": 68,
+      "height": 22,
+      "file": "bitmap-00500.png"
+    },
+    {
+      "characterId": 503,
+      "tagCode": 36,
+      "width": 68,
+      "height": 22,
+      "file": "bitmap-00503.png"
+    },
+    {
+      "characterId": 512,
+      "tagCode": 35,
+      "width": 36,
+      "height": 87,
+      "file": "bitmap-00512.png"
+    },
+    {
+      "characterId": 516,
+      "tagCode": 36,
+      "width": 23,
+      "height": 27,
+      "file": "bitmap-00516.png"
+    },
+    {
+      "characterId": 525,
+      "tagCode": 36,
+      "width": 8,
+      "height": 25,
+      "file": "bitmap-00525.png"
+    },
+    {
+      "characterId": 533,
+      "tagCode": 36,
+      "width": 627,
+      "height": 365,
+      "file": "bitmap-00533.png"
+    },
+    {
+      "characterId": 548,
+      "tagCode": 35,
+      "width": 123,
+      "height": 126,
+      "file": "bitmap-00548.png"
+    },
+    {
+      "characterId": 549,
+      "tagCode": 35,
+      "width": 295,
+      "height": 486,
+      "file": "bitmap-00549.png"
+    },
+    {
+      "characterId": 558,
+      "tagCode": 36,
+      "width": 18,
+      "height": 18,
+      "file": "bitmap-00558.png"
+    },
+    {
+      "characterId": 562,
+      "tagCode": 36,
+      "width": 129,
+      "height": 13,
+      "file": "bitmap-00562.png"
+    },
+    {
+      "characterId": 566,
+      "tagCode": 36,
+      "width": 12,
+      "height": 15,
+      "file": "bitmap-00566.png"
+    },
+    {
+      "characterId": 569,
+      "tagCode": 36,
+      "width": 32,
+      "height": 32,
+      "file": "bitmap-00569.png"
+    },
+    {
+      "characterId": 572,
+      "tagCode": 36,
+      "width": 22,
+      "height": 20,
+      "file": "bitmap-00572.png"
+    },
+    {
+      "characterId": 580,
+      "tagCode": 35,
+      "width": 294,
+      "height": 279,
+      "file": "bitmap-00580.png"
+    },
+    {
+      "characterId": 586,
+      "tagCode": 35,
+      "width": 288,
+      "height": 144,
+      "file": "bitmap-00586.png"
+    },
+    {
+      "characterId": 595,
+      "tagCode": 35,
+      "width": 288,
+      "height": 144,
+      "file": "bitmap-00595.png"
+    },
+    {
+      "characterId": 597,
+      "tagCode": 35,
+      "width": 288,
+      "height": 144,
+      "file": "bitmap-00597.png"
+    },
+    {
+      "characterId": 604,
+      "tagCode": 35,
+      "width": 500,
+      "height": 253,
+      "file": "bitmap-00604.png"
+    },
+    {
+      "characterId": 606,
+      "tagCode": 35,
+      "width": 472,
+      "height": 159,
+      "file": "bitmap-00606.png"
+    },
+    {
+      "characterId": 611,
+      "tagCode": 36,
+      "width": 348,
+      "height": 273,
+      "file": "bitmap-00611.png"
+    },
+    {
+      "characterId": 612,
+      "tagCode": 35,
+      "width": 375,
+      "height": 36,
+      "file": "bitmap-00612.png"
+    },
+    {
+      "characterId": 614,
+      "tagCode": 36,
+      "width": 342,
+      "height": 28,
+      "file": "bitmap-00614.png"
+    },
+    {
+      "characterId": 616,
+      "tagCode": 36,
+      "width": 342,
+      "height": 28,
+      "file": "bitmap-00616.png"
+    },
+    {
+      "characterId": 629,
+      "tagCode": 35,
+      "width": 93,
+      "height": 24,
+      "file": "bitmap-00629.png"
+    },
+    {
+      "characterId": 632,
+      "tagCode": 35,
+      "width": 93,
+      "height": 24,
+      "file": "bitmap-00632.png"
+    },
+    {
+      "characterId": 639,
+      "tagCode": 35,
+      "width": 331,
+      "height": 263,
+      "file": "bitmap-00639.png"
+    },
+    {
+      "characterId": 641,
+      "tagCode": 35,
+      "width": 302,
+      "height": 201,
+      "file": "bitmap-00641.png"
+    },
+    {
+      "characterId": 647,
+      "tagCode": 20,
+      "width": 193,
+      "height": 32,
+      "file": "bitmap-00647.png"
+    }
+  ],
+  "exportedSymbols": [
+    {
+      "characterId": 651,
+      "name": "ui.CreateTeamView",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 646,
+      "name": "ui.ExtendTeamView",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 638,
+      "name": "ui.TeamAnnounceView",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 635,
+      "name": "ui.TeamJoinManageView",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 610,
+      "name": "ui.TeamPlayerManageView",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 603,
+      "name": "ui.BGroupView1",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 373,
+      "name": "ui.TeamActiveRuleView",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 362,
+      "name": "ui.TeamApplyManageView",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 344,
+      "name": "ui.TeamAwardItem",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 324,
+      "name": "ui.TeamBattleRoomItem",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 306,
+      "name": "ui.TeamBattleRoomView",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 226,
+      "name": "ui.TeamMyApplyPopup",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 213,
+      "name": "ui.TeamPostManagerView",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 130,
+      "name": "ui.TeamRecruitConditionView",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 89,
+      "name": "ui.TeamRecruitFundView",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 65,
+      "name": "ui.TeamSpecialAwardPopup",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 33,
+      "name": "ui.duowan.DropListMenu",
+      "sourceTag": "SymbolClass"
+    }
+  ]
+}

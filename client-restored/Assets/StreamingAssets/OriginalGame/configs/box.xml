@@ -1,0 +1,246 @@
+﻿<box>
+	<func>
+		<box type="1" icon="3" name="supplybox" range="150" jinhua="10" />
+		<box type="2" icon="3" name="yiliaobao" range="150" hp="40"/>
+		<box type="3" icon="3" name="supplybox" range="150" shengji="1"/>
+		<box type="4" icon="4" name="wuqixiang" range="150" wuqi="355,3501,3502,357" />
+		<box type="5" icon="3" name="danyaoxiang" range="150" danyao="1" />
+		
+		<box type="6" icon="4" name="wuqixiang" range="150" wuqi="355,3501,3502,357"/>
+		<box type="7" icon="2" name="wenhaoxiang" range="150" attack="130" duration="90000"/> <!--攻击强度-->
+		<box type="8" icon="2" name="wenhaoxiang" range="150" shotspeed="130" duration="90000"/><!--攻击速度-->
+		<box type="9" icon="5" name="wuqixiang2" range="150" wuqi="219,442,452,720" loop="true" mWidth="1024" mHeight="1024" uWidth="512" uHeight="512" fps="1" /><!--娱乐模式箱子-->
+		<box type="10" icon="2" name="wenhaoxiang" range="150" runspeed="130" duration="90000"/><!--移动速度-->
+		<box type="11" icon="2" name="wenhaoxiang" range="150" shield="50" duration="90000"/><!--吸收伤害-->
+		<box type="12" icon="2" name="wenhaoxiang" range="150" bomb="50"/><!--炸弹-->
+		<box type="13" icon="2" name="wenhaoxiang" range="150" hero="3008"/><!--变身英雄-->
+		<box type="14" icon="1" name="yiliaoxiang" range="150" addmaxhp="50,210"/><!--增加血量上限的回血包  hphpmax恢复量,血量上限-->
+		<box type="15" icon="6" name="wuqixiang" range="150" wuqi="442,452,717,719"/><!--疯狂道具模式武器箱子-->
+		<box type="16" icon="7" name="stronghold1" shape="cube" kuan="1000" chang="1000" gao="400" isAlpha="true"/>
+		<box type="17" icon="8" name="stronghold2" range="200" isAlpha="true" />
+	</func>
+	<maps>
+		<map id="16" mode="8 14">
+			<pos>-2302,-2719,-526,721</pos>
+			<pos>-193,-2336,-369,744</pos>
+			<pos>1708,-2614,-395,716</pos>
+			<pos>1023,-723,-395,902</pos>
+			<pos>-1804,-610,-395,1071</pos>
+			<pos>-239,1479,629,79</pos>
+			<pos>1761,2241,-395,1075</pos>
+			<pos>-150,2667,-395,989</pos>
+			<pos>-2112,3083,-395,1075</pos>
+			<pos>-3056,0,-526,1077</pos>
+			<pos>2734,435,-395,1075</pos>
+			<pos>2911,-2066,-383,1067</pos>
+		</map>
+		<map id="14" mode="8 14">
+			<pos>3243,-4598,108,211</pos>
+			<pos>4767,174,741,-87</pos>
+			<pos>3455,-800,765,362</pos>
+			<pos>2896,2614,488,141</pos>
+			<pos>293,4369,10,307</pos>
+			<pos>559,7,17,363</pos>
+			<pos>-2391,-1666,488,633</pos>
+			<pos>-2206,1273,488,371</pos>
+			<pos>-4638,3978,172,362</pos>
+			<pos>-4313,-1332,572,176</pos>
+			<pos>296,-3360,10,-175</pos>
+			<pos>-2152,3636,55,-65</pos>
+		</map>
+		<map id="27" mode="8 14">
+			<pos>2235,-1379,672,-121</pos>
+			<pos>-681,2024,365,1079</pos>
+			<pos>-59,-659,158,-618</pos>
+            <pos>-486,-2874,10,1258</pos>
+            <pos>-1860,1520,131,1096</pos>
+            <pos>-2448,759,44,20</pos>
+			<pos>-2424,-646,372,1165</pos>
+			<pos>792,-2034,143,1285</pos>
+            <pos>2364,547,1,1717</pos>
+            <pos>-1533,3554,148,1416</pos>
+            <pos>1322,-1580,1,2059</pos>
+            <pos>-2431,5710,10,84</pos>
+		</map>
+        <map id="31" mode="8 14">
+			<pos>3770,-1581,733,-1960</pos>
+			<pos>2340,-2622,680,-1888</pos>
+			<pos>-694,-3254,810,-1986</pos>
+            <pos>-1655,-2902,810,-2055</pos>
+            <pos>-680,-546,195,-197</pos>
+            <pos>-418,2264,195,-1616</pos>
+			<pos>-1057,679,550,-1990</pos>
+			<pos>-1621,1931,1056,-2075</pos>
+            <pos>2065,1836,19,-2149</pos>
+            <pos>3764,-194,122,-2514</pos>
+            <pos>3238,-1473,120,-2695</pos>
+             <pos>-474,-2399,185,-2621</pos>
+		</map>
+		<map id="49" mode="14">
+			<pos>-3207,-3975,-247,-278</pos>
+			<pos>1001,-3589,-188,-488</pos>
+			<pos>4820,-4092,61,-172</pos>
+            <pos>4809,-707,61,-148</pos>
+            <pos>530,-218,-279,-93</pos>
+            <pos>-1749,-216,-515,-100</pos>
+			<pos>-3625,-2137,-254,-273</pos>
+			<pos>-3141,1513,-515,-357</pos>
+            <pos>-2937,4793,-276,-85</pos>
+            <pos>602,4684,-278,-361</pos>
+            <pos>2585,2520,-276,-362</pos>
+             <pos>4090,1568,212,-1985</pos>
+		</map>
+		<map id="50" mode="14">
+			<pos>5330,2775,619,269</pos>
+			<pos>3832,4411,480,268</pos>
+			<pos>1906,5853,591,355</pos>
+            <pos>647,4053,480,0</pos>
+            <pos>-715,1501,458,-5</pos>
+            <pos>-2327,-521,57,2</pos>
+			<pos>-5254,-2201,-213,2</pos>
+			<pos>-1858,-2190,656,-63</pos>
+            <pos>1687,-3079,688,268</pos>
+            <pos>52,-3053,293,268</pos>
+            <pos>4744,-2639,466,177</pos>
+             <pos>3185,1802,469,89</pos>
+		</map>
+		<map id="81" mode="14">
+			<pos>-761,-807,103,-181</pos>
+			<pos>776,-818,103,-136</pos>
+			<pos>700,148,103,182</pos>
+            <pos>-808,731,103,148</pos>
+            <pos>24,-71,154,6</pos>
+            <pos>2319,-429,70,284</pos>
+			<pos>781,-2259,43,143</pos>
+			<pos>-1930,-1659,70,164</pos>
+            <pos>1842,1708,43,0</pos>
+            <pos>-2009,593,43,294</pos>
+            <pos>-816,2460,70,31</pos>
+            <pos>480,1006,100,295</pos>
+            <pos>1818,1514,43,280</pos>
+		</map>			
+		<!--娱乐模式刷新点配置-->
+		<map id="3" mode="21">
+			<pos>2945,-4079,-241,275</pos>
+			<pos>-4285,2007,16,182</pos>
+			<pos>2542,-306,-254,-92</pos>
+			<pos>-927,-177,-493,-92</pos>
+		</map>
+		<!--需要按照顺序填写刷箱子坐标，先是两根阵营坐标然后是中间箱子坐标-->
+		<map id="6" mode="21">
+			<pos>-3560,4435,-101,-353</pos>
+			<pos>2144,-3015,233,-181</pos>
+			<pos>-2354,630,79,1</pos>
+			<pos>4917,260,230,1</pos>
+			
+		</map>
+		
+		<!--疯狂道具模式刷新点配置-->
+		<map id="6" mode="22"><!--正式版本修改,还需要修改英雄的武器-黑色城镇-->
+		    <pos>-237,12,-110,1</pos>
+			<pos>2144,-3015,233,-181</pos>
+			<pos>3248,-369,191,91</pos>
+			<pos>4942,1403,230,-192</pos>
+			<pos>-3560,4435,-101,-353</pos>
+			<pos>-4321,2302,23,-178</pos>
+			<pos>-3922,-760,79,-179</pos>
+		</map>
+		<map id="3" mode="22"><!--正式版本修改,还需要修改英雄的武器，极低小镇-->
+		    <pos>234,341,-254,-92</pos>
+			<pos>2945,-4079,-241,275</pos>
+			<pos>2209,-247,-254,-272</pos>
+			<pos>337,-3568,-165,-94</pos>
+			<pos>-4285,2007,16,182</pos>
+			<pos>1317,2589,-254,83</pos>
+			<pos>-157,4586,-254,-95</pos>
+		</map>
+		<map id="68" mode="23"><!--正式版本修改,还需要修改英雄的武器，极低小镇-->
+		    <pos>-3308,3920,62,0</pos>
+			<pos>-3755,-527,62,0</pos>
+			<pos>834,1448,62,0</pos>
+		</map>
+		<map id="69" mode="23"><!--正式版本修改,还需要修改英雄的武器，极低小镇-->
+		    <pos>-4299,3804,16,0</pos>
+			<pos>1607,-3380,-241,0</pos>
+			<pos>-62,3126,-254,0</pos>
+			<pos>1208,0,-254,0</pos>
+			<pos>-4544,-4206,-161,0</pos>
+		</map>
+		<map id="70" mode="24"><!--正式版本修改,还需要修改英雄的武器，极低小镇-->
+		    <pos>862,1439,62,0</pos>
+			<pos>5005,1768,-361,0</pos>
+			<pos>3694,-1866,-361,0</pos>
+			<pos>-3743,4140,62,0</pos>
+			<pos>-3441,-608,62,0</pos>
+		</map>
+		<map id="6" mode="24"><!--正式版本修改,还需要修改英雄的武器，极低小镇-->
+		    <pos>-903,3174,-262,0</pos>
+			<pos>3156,4943,353,0</pos>
+			<pos>4915,-2390,276,0</pos>
+			<pos>-636,-2015,84,0</pos>
+			<pos>-3868,1385,79,0</pos>
+			<pos>-4386,-3347,19,0</pos>
+			<pos>-3391,5646,75,0</pos>
+		</map>
+	</maps>
+	<modes>
+		<mode id="8" shuaxin="30">
+			<box type="3" num="10" />
+		</mode>
+		<mode id="14" shuaxin="30">
+			<box type="4" num="1" />
+			<box type="5" num="10" />
+		</mode>
+		<mode id="5" shuaxin="0">
+			<box type="2" num="0" />
+		</mode>
+		<mode id="9" shuaxin="0">
+			<box type="2" num="0" />
+		</mode>
+		<mode id="10" shuaxin="0">
+			<box type="2" num="0" />
+		</mode>
+		<!--娱乐模式-->
+		<mode id="21" shuaxin="60">
+			<box type="9" num="0"/>
+		</mode>
+		<!--疯狂道具模式-->
+		<mode id="22" shuaxin="0">
+			<box type="15" num="1"/> <!--武器箱子数量对应上面map标签配置的位置，比如数量配了1 则第一个位置会刷武器, 如果数量配了2 则第一，第二个位置会刷武器-->
+			<box type="7" num="0"/><!--其他箱子数量不用配置-->
+			<box type="8" num="0"/>
+			<box type="10" num="0"/>
+			<box type="11" num="0"/>
+			<box type="12" num="0"/>
+			<box type="13" num="0"/>
+			<box type="14" num="0"/>
+		</mode>
+
+		<mode id="23" shuaxin="10">
+			<box type="16" num="1"/> <!--武器箱子数量对应上面map标签配置的位置，比如数量配了1 则第一个位置会刷武器, 如果数量配了2 则第一，第二个位置会刷武器-->
+		</mode>
+		<mode id="24" shuaxin="0">
+			<box type="17" num="7"/> <!--武器箱子数量对应上面map标签配置的位置，比如数量配了1 则第一个位置会刷武器, 如果数量配了2 则第一，第二个位置会刷武器-->
+		</mode>
+		<mode id="25" shuaxin="0">
+			<box type="18" num="3"/> <!--武器箱子数量对应上面map标签配置的位置，比如数量配了1 则第一个位置会刷武器, 如果数量配了2 则第一，第二个位置会刷武器-->
+		</mode>
+	</modes>
+	
+	<!--娱乐模式箱子数量配置-->
+	<pleasure_box_config>
+		<refresh_num player_num="4" box_num="2"/>
+		<refresh_num player_num="8" box_num="3"/>
+		<refresh_num player_num="12" box_num="4"/>
+	</pleasure_box_config>
+	
+	<!--疯狂道具模式配置-->
+	<!--weapon_refresh武器箱子刷新时间  other_refresh非武器箱子刷新时间  hero_hp英雄血量  hero_armor英雄护甲  hero_attack英雄攻击-->
+	<insane_box_config weapon_refresh="90" other_refresh="30" hero_hp="2500" hero_armor="0" hero_attack="1000"/>
+
+	<!--changePoint积分达到数值换据点  firstPoint首个据点出现时间  addScore据点中每秒加分  refreshTime据点更换时间  decayScore据点外加分 hladdscore洪流模式据点加分 hladdtime据点占领时间-->	
+	<point_mode_config changePoint="100" firstPoint="10" addScore="2" refreshTime="5" decayScore="1" hladdscore="1" hladdtime="4">
+	</point_mode_config>
+	<flag_mode_config refreshTime="3">
+	</flag_mode_config>
+</box>

@@ -1,0 +1,176 @@
+<reward>
+	<!--不同靶场开火获得经验值-->
+	<exp free_bullet="1" gold_bullet="2" bojin_bullet="6" jingz_bullet="25" heishi_bullet="0"></exp>
+	<!--不同靶场开火花费子弹-->
+	<cost free_bullet="20" gold_bullet="20" bojin_bullet="20" jingz_bullet="20" heishi_bullet="20" exterme_bojin="1" exterme_jingz="1" exterme_heishi="1"></cost>
+	<!-- 靶场概率增长规则 bullet="达到次数之后:增加权重值"-->
+	<randRule free_bullet="100:3000" gold_bullet="100:3000" bojin_bullet="100:3000" jingz_bullet="25:1000000" heishi_bullet="29:1000000"
+				extre_bojin_bullet="500:3000" extre_jingz_bullet="500:3000" extre_heishi_bullet="500:3000"></randRule>
+	<cj type="1">
+	<!-- 幸运靶场
+	id奖励ID
+	sn编号 1 到 12
+	dj奖品等级，共四个等级。
+	sl奖品数量
+	cxts奖品持续天数 -1表示永久
+	cxsjlx 持续时间类型  0天 1分钟
+	czgl抽中概率，两个值分别为免费子弹和黄金子弹概率，总和为十万（100000）,总和不能超过十万。
+	czsx抽中上限，-1为没有上限，每次重启服务器czsx的累计计数重置。
+	jgcd间隔CD，-1为没有cd，单位为分钟-->
+		<rw id="213" sn="1" dj="4" sl="1" cxts="3" czgl="0,0" czsx="-1" jgcd="-1" isNew="1"/>
+		<rw id="15" sn="4" dj="4" sl="1" cxts="2" czgl="30,60" czsx="-1" jgcd="-1"/>
+		<rw id="344" sn="7" dj="4" sl="1" cxts="1" czgl="30,60" czsx="-1" jgcd="-1"/>
+		<rw id="340" sn="10" dj="4" sl="1" cxts="1" czgl="40,80" czsx="-1" jgcd="-1"/>
+		<rw id="6004" sn="2" dj="2" sl="1" cxts="1" czgl="300,600" czsx="-1" jgcd="-1"/>
+		<rw id="9004" sn="8" dj="1" sl="1" cxts="-1" czgl="300,600" czsx="-1" jgcd="-1"/>
+		<rw id="9003" sn="5" dj="1" sl="1" cxts="-1" czgl="300,600" czsx="-1" jgcd="-1"/>
+		<rw id="9003" sn="11" dj="1" sl="2" cxts="-1" czgl="500,1000" czsx="-1" jgcd="-1"/>
+		<rw id="9011" sn="3" dj="1" sl="1" cxts="-1" czgl="400,800" czsx="-1" jgcd="-1"/>
+		<rw id="9011" sn="6" dj="1" sl="2" cxts="-1" czgl="500,1000" czsx="-1" jgcd="-1"/>
+		<rw id="9991" sn="9" dj="1" sl="500" cxts="-1" czgl="3800,2600" czsx="-1" jgcd="-1"/>
+		<rw id="9994" sn="12" dj="1" sl="300" cxts="-1" czgl="3800,2600" czsx="-1" jgcd="-1"/>
+	</cj>
+	
+	<cj type="2">
+	<!-- 铂金靶场
+	id奖励ID
+	sn编号 21到32
+	dj奖品等级，共四个等级。
+	sl奖品数量
+	cxts奖品持续天数 -1表示永久
+	cxsjlx 持续时间类型  0天 1分钟
+	czgl抽中概率，两个值分别为免费子弹和黄金子弹概率，总和为十万（100000）,总和不能超过十万。
+	czsx抽中上限，-1为没有上限，每次重启服务器czsx的累计计数重置。
+	jgcd间隔CD，-1为没有cd，单位为分钟-->
+		<rw id="9012" sn="21" dj="4" sl="1" cxts="-1" czgl="0,0" czsx="-1" jgcd="-1"/>
+		<rw id="391" sn="22" dj="4" sl="1" cxts="1" czgl="0,300" czsx="-1" jgcd="-1"/>
+		<rw id="314" sn="23" dj="4" sl="1" cxts="1" czgl="0,300" czsx="-1" jgcd="-1"/>
+		<rw id="204" sn="24" dj="4" sl="1" cxts="1" czgl="0,2000" czsx="-1" jgcd="-1"/>
+		<rw id="9" sn="25" dj="4" sl="1" cxts="1" czgl="0,1000" czsx="-1" jgcd="-1"/>
+		<rw id="805" sn="26" dj="4" sl="1" cxts="1" czgl="0,2000" czsx="-1" jgcd="-1"/>
+		<rw id="330" sn="27" dj="4" sl="1" cxts="3" czgl="0,300" czsx="-1" jgcd="-1"/>
+		<rw id="302" sn="28" dj="4" sl="1" cxts="3" czgl="0,300" czsx="-1" jgcd="-1"/>
+		<rw id="5" sn="29" dj="4" sl="1" cxts="3" czgl="0,3000" czsx="-1" jgcd="-1"/>
+		<rw id="935" sn="30" dj="4" sl="1" cxts="3" czgl="0,300" czsx="-1" jgcd="-1"/>
+		<rw id="104" sn="31" dj="4" sl="1" cxts="7" czgl="0,300" czsx="-1" jgcd="-1"/>
+		<rw id="924" sn="32" dj="4" sl="1" cxts="7" czgl="0,200" czsx="-1" jgcd="-1"/>
+	</cj>
+	
+	<cj type="3">
+	<!-- 精钻靶场
+	id奖励ID
+	sn编号 41到52
+	dj奖品等级，共四个等级。
+	sl奖品数量
+	cxts奖品持续天数 -1表示永久
+	cxsjlx 持续时间类型  0天 1分钟
+	czgl抽中概率，两个值分别为免费子弹和黄金子弹概率，总和为十万（100000）,总和不能超过十万。
+	czsx抽中上限，-1为没有上限，每次重启服务器czsx的累计计数重置。
+	jgcd间隔CD，-1为没有cd，单位为分钟-->
+		<rw id="628" sn="52" dj="4" sl="1" cxts="1" czgl="0,1500" czsx="-1" jgcd="-1"/>
+		<rw id="369" sn="42" dj="4" sl="1" cxts="1" czgl="0,200" czsx="-1" jgcd="-1"/>
+		<rw id="714" sn="43" dj="4" sl="1" cxts="1" czgl="0,1500" czsx="-1" jgcd="-1"/>
+		<rw id="940" sn="44" dj="4" sl="1" cxts="1" czgl="0,1500" czsx="-1" jgcd="-1"/>
+		<rw id="850" sn="45" dj="4" sl="1" cxts="1" czgl="0,2920" czsx="-1" jgcd="-1"/>
+		<rw id="387" sn="46" dj="4" sl="1" cxts="3" czgl="0,1200" czsx="-1" jgcd="-1"/>
+		<rw id="625" sn="47" dj="4" sl="1" cxts="3" czgl="0,300" czsx="-1" jgcd="-1"/>
+		<rw id="11" sn="48" dj="4" sl="1" cxts="3" czgl="0,350" czsx="-1" jgcd="-1"/>
+		<rw id="638" sn="49" dj="4" sl="1" cxts="3" czgl="0,200" czsx="-1" jgcd="-1"/>
+		<rw id="708" sn="50" dj="4" sl="1" cxts="7" czgl="0,200" czsx="-1" jgcd="-1"/>
+		<rw id="368" sn="51" dj="4" sl="1" cxts="7" czgl="0,130" czsx="-1" jgcd="-1"/>
+		<rw id="9013" sn="41" dj="4" sl="1" cxts="-1" czgl="0,0" czsx="-1" jgcd="-1"/>
+	</cj>
+	
+	<cj type="4">
+	<!-- 黑市靶场
+	id奖励ID
+	sn编号 61到72
+	dj奖品等级，共四个等级。
+	sl奖品数量
+	cxts奖品持续天数 -1表示永久
+	cxsjlx 持续时间类型  0天 1分钟
+	czgl抽中概率，两个值分别为免费子弹和黄金子弹概率，总和为十万（100000）,总和不能超过十万。
+	czsx抽中上限，-1为没有上限，每次重启服务器czsx的累计计数重置。
+	jgcd间隔CD，-1为没有cd，单位为分钟-->
+		<rw id="6539" sn="61" dj="4" sl="1" cxts="5" czgl="0,200" czsx="-1" jgcd="-1"/>
+		<rw id="6540" sn="62" dj="4" sl="1" cxts="5" czgl="0,299" czsx="-1" jgcd="-1"/>
+		<rw id="6541" sn="63" dj="4" sl="1" cxts="5" czgl="0,300" czsx="-1" jgcd="-1"/>
+		<rw id="6542" sn="64" dj="4" sl="1" cxts="5" czgl="0,1" czsx="-1" jgcd="-1"/>
+		<rw id="6543" sn="65" dj="4" sl="1" cxts="10" czgl="0,200" czsx="-1" jgcd="-1"/>
+		<rw id="31" sn="66" dj="4" sl="1" cxts="10" czgl="0,1500" czsx="-1" jgcd="-1"/>
+		<rw id="413" sn="67" dj="4" sl="1" cxts="10" czgl="0,1500" czsx="-1" jgcd="-1"/>
+		<rw id="635" sn="68" dj="4" sl="1" cxts="10" czgl="0,1500" czsx="-1" jgcd="-1"/>
+		<rw id="715" sn="69" dj="4" sl="1" cxts="10" czgl="0,1500" czsx="-1" jgcd="-1"/>
+		<rw id="947" sn="70" dj="4" sl="1" cxts="10" czgl="0,1500" czsx="-1" jgcd="-1"/>
+		<rw id="720" sn="71" dj="4" sl="1" cxts="15" czgl="0,1500" czsx="-1" jgcd="-1"/>
+		<rw id="9014" sn="72" dj="4" sl="1" cxts="-1" czgl="0,0" czsx="-1" jgcd="-1"/>
+	</cj>
+	
+	<cj type="5">
+	<!-- 铂金靶场 超级靶场 sn编号 101到112-->
+		<rw id="9005" sn="101" dj="4" sl="2" cxts="-1" czgl="0,300" czsx="-1" jgcd="-1"/>
+		<rw id="391" sn="102" dj="4" sl="1" cxts="-1" czgl="0,500" czsx="-1" jgcd="-1"/>
+		<rw id="314" sn="103" dj="4" sl="1" cxts="-1" czgl="0,800" czsx="-1" jgcd="-1"/>
+		<rw id="204" sn="104" dj="4" sl="1" cxts="-1" czgl="0,800" czsx="-1" jgcd="-1"/>
+		<rw id="9" sn="105" dj="4" sl="1" cxts="-1" czgl="0,500" czsx="-1" jgcd="-1"/>
+		<rw id="805" sn="106" dj="4" sl="1" cxts="-1" czgl="0,800" czsx="-1" jgcd="-1"/>
+		<rw id="330" sn="107" dj="4" sl="1" cxts="-1" czgl="0,1200" czsx="-1" jgcd="-1"/>
+		<rw id="302" sn="108" dj="4" sl="1" cxts="-1" czgl="0,1200" czsx="-1" jgcd="-1"/>
+		<rw id="5" sn="109" dj="4" sl="1" cxts="-1" czgl="0,1200" czsx="-1" jgcd="-1"/>
+		<rw id="935" sn="110" dj="4" sl="1" cxts="-1" czgl="0,700" czsx="-1" jgcd="-1"/>
+		<rw id="104" sn="111" dj="4" sl="1" cxts="-1" czgl="0,1000" czsx="-1" jgcd="-1"/>
+		<rw id="924" sn="112" dj="4" sl="1" cxts="-1" czgl="0,1000" czsx="-1" jgcd="-1"/>
+	</cj>
+	
+	<cj type="6">
+	<!-- 精金靶场 超级靶场 sn编号 121到132-->
+		<rw id="628" sn="121" dj="4" sl="1" cxts="-1" czgl="0,500" czsx="-1" jgcd="-1"/>
+		<rw id="369" sn="122" dj="4" sl="1" cxts="-1" czgl="0,500" czsx="-1" jgcd="-1"/>
+		<rw id="714" sn="123" dj="4" sl="1" cxts="-1" czgl="0,500" czsx="-1" jgcd="-1"/>
+		<rw id="940" sn="124" dj="4" sl="1" cxts="-1" czgl="0,500" czsx="-1" jgcd="-1"/>
+		<rw id="850" sn="125" dj="4" sl="1" cxts="-1" czgl="0,500" czsx="-1" jgcd="-1"/>
+		<rw id="387" sn="126" dj="4" sl="1" cxts="-1" czgl="0,1500" czsx="-1" jgcd="-1"/>
+		<rw id="625" sn="127" dj="4" sl="1" cxts="-1" czgl="0,1500" czsx="-1" jgcd="-1"/>
+		<rw id="11" sn="128" dj="4" sl="1" cxts="-1" czgl="0,1000" czsx="-1" jgcd="-1"/>
+		<rw id="638" sn="129" dj="4" sl="1" cxts="-1" czgl="0,1000" czsx="-1" jgcd="-1"/>
+		<rw id="708" sn="130" dj="4" sl="1" cxts="-1" czgl="0,1000" czsx="-1" jgcd="-1"/>
+		<rw id="368" sn="131" dj="4" sl="1" cxts="-1" czgl="0,1000" czsx="-1" jgcd="-1"/>
+		<rw id="804" sn="132" dj="4" sl="1" cxts="-1" czgl="0,500" czsx="-1" jgcd="-1"/>
+	</cj>
+	
+	<cj type="7">
+	<!-- 黑市靶场 超级靶场 sn编号 141到152-->
+		<rw id="6539" sn="141" dj="4" sl="1" cxts="-1" czgl="0,100" czsx="-1" jgcd="-1"/>
+		<rw id="6540" sn="142" dj="4" sl="1" cxts="-1" czgl="0,100" czsx="-1" jgcd="-1"/>
+		<rw id="6541" sn="143" dj="4" sl="1" cxts="-1" czgl="0,100" czsx="-1" jgcd="-1"/>
+		<rw id="6542" sn="144" dj="4" sl="1" cxts="-1" czgl="0,1" czsx="-1" jgcd="-1"/>
+		<rw id="6543" sn="145" dj="4" sl="1" cxts="-1" czgl="0,100" czsx="-1" jgcd="-1"/>
+		<rw id="31" sn="146" dj="4" sl="1" cxts="-1" czgl="0,1400" czsx="-1" jgcd="-1"/>
+		<rw id="413" sn="147" dj="4" sl="1" cxts="-1" czgl="0,1400" czsx="-1" jgcd="-1"/>
+		<rw id="635" sn="148" dj="4" sl="1" cxts="-1" czgl="0,1400" czsx="-1" jgcd="-1"/>
+		<rw id="715" sn="149" dj="4" sl="1" cxts="-1" czgl="0,1400" czsx="-1" jgcd="-1"/>
+		<rw id="947" sn="150" dj="4" sl="1" cxts="-1" czgl="0,1400" czsx="-1" jgcd="-1"/>
+		<rw id="374" sn="151" dj="4" sl="1" cxts="-1" czgl="0,1200" czsx="-1" jgcd="-1"/>
+		<rw id="720" sn="152" dj="4" sl="1" cxts="-1" czgl="0,1399" czsx="-1" jgcd="-1"/>
+	</cj>
+	
+	<dh> 
+	<!--id兑换物品ID
+	sn编号 61到76
+	sjfw时间范围，时间范围段内有配置则显示该配置，否则不显示，配置为24小时制  cxsjlx 持续时间类型  0天 1分钟
+	dj等级，等级分为1到4级。获得2到4级奖品浮出获得奖品特效（非自动抽奖，兑换）；获得1级奖品浮出绿字（非自动抽奖）。级别越高排在获奖清单的越前面。2到4级的获奖（抽奖，兑换）能够出现在中奖玩家区，级别越高播出优先级越高。
+	cd冷却时间，单位为天
+	ljs零件数
+	cxts持续天数，-1为永久-->	
+				
+		
+		<wp sjfw="2014-11-5 4:00:00,2017-8-3 4:00:00" id="24" sn="1" dj="3" cd="0" ljs="5" cxts="2" />
+		<wp sjfw="2014-11-5 4:00:00,2017-8-3 4:00:00" id="207" sn="2" dj="3" cd="0" ljs="10" cxts="4" />
+		<wp sjfw="2014-11-5 4:00:00,2017-8-3 4:00:00" id="616" sn="3" dj="3" cd="0" ljs="20" cxts="6" />
+		<wp sjfw="2014-11-5 4:00:00,2017-8-3 4:00:00" id="906" sn="4" dj="3" cd="0" ljs="30" cxts="8" />
+		<wp sjfw="2014-11-5 4:00:00,2017-8-3 4:00:00" id="212" sn="5" dj="3" cd="0" ljs="40" cxts="16" />
+		<wp sjfw="2014-11-5 4:00:00,2017-8-3 4:00:00" id="3509" sn="6" dj="3" cd="0" ljs="50" cxts="16" />
+		<wp sjfw="2014-11-5 4:00:00,2017-8-3 4:00:00" id="4835" sn="7" dj="3" cd="0" ljs="75" cxts="-1" />
+		
+	</dh>
+</reward>

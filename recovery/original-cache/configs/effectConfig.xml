@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<!-- 
+material 贴图名
+alpha 是否透贴
+fps 帧率
+loop 是否循环播放
+frame开始帧
+mWidth 贴图宽
+mHeight 贴图高
+uWidth 单个帧贴图宽
+uHeight 单个帧贴图高
+blendMode 混合模式 none normal add multiply screen erase
+-->
+<effect name="effect1" material="dianju_texiao001" alpha="1" fps="30" loop="1" frame="0" mWidth="256" mHeight="256" uWidth="128" uHeight="128"/>
+<effect name="effect2" material="shougezhe_bingwushi_texiao001" alpha="1" fps="30" loop="1" frame="0" mWidth="256" mHeight="256" uWidth="128" uHeight="128"/>
+<effect name="effect3" material="leidian1" alpha="1" fps="24" loop="1" frame="0" mWidth="256" mHeight="256" uWidth="256" uHeight="51" blendMode="add"/>
+<effect name="effect4" material="guangjian1" alpha="1" blendMode="add"/>
+<effect name="effect5" material="guangjian2" alpha="1" blendMode="add"/>
+<effect name="effect6" material="guangjian3" alpha="1" fps="10" loop="1" frame="0" mWidth="1024" mHeight="64" uWidth="256" uHeight="64" blendMode="add"/>
+<effect name="effect7" material="leidian2_1" alpha="1" fps="24" loop="1" frame="0" mWidth="512" mHeight="512" uWidth="256" uHeight="42" blendMode="add"/>
+<effect name="effect8" material="leidian2_2" alpha="1" fps="24" loop="1" frame="0" mWidth="512" mHeight="512" uWidth="256" uHeight="42" blendMode="add"/>
+<effect name="effect9" material="leidian2_3" alpha="1" fps="24" loop="1" frame="0" mWidth="512" mHeight="512" uWidth="256" uHeight="42" blendMode="add"/>
+<effect name="effect10" material="leidian3" alpha="1" fps="12" loop="1" frame="0" mWidth="512" mHeight="512" uWidth="102" uHeight="102" blendMode="add"/>
+<effect name="effect11" material="leidian4" alpha="1" fps="25" loop="1" frame="0" mWidth="512" mHeight="512" uWidth="102" uHeight="102" blendMode="add"/>
+<effect name="effect12" material="huoyan" alpha="0" fps="25" loop="1" frame="0" mWidth="256" mHeight="256" uWidth="51" uHeight="51" blendMode="add"/>
+<effect name="effect13" material="shuanglong" alpha="1" fps="16" loop="1" frame="0" mWidth="512" mHeight="512" uWidth="128" uHeight="128" blendMode="add"/>
+<effect name="effect14" material="saoguang" alpha="1" fps="25" loop="1" frame="0" mWidth="512" mHeight="512" uWidth="102" uHeight="102" blendMode="add"/>
+<effect name="effect15" material="leidian5" alpha="1" fps="25" loop="1" frame="0" mWidth="512" mHeight="512" uWidth="102" uHeight="102" blendMode="add"/>
+<effect name="effect16" material="leilong" alpha="1" fps="25" loop="1" frame="0" mWidth="512" mHeight="512" uWidth="102" uHeight="102" blendMode="add"/>
+<effect name="effect17" material="yanying" alpha="1" fps="25" loop="1" frame="0" mWidth="512" mHeight="512" uWidth="102" uHeight="102" blendMode="add"/>
+<effect name="effect18" material="shengdan" alpha="1" fps="1" loop="1" frame="0" mWidth="256" mHeight="256" uWidth="256" uHeight="256" blendMode="add"/>
+</root>

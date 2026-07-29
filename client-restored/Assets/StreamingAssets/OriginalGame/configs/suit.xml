@@ -1,0 +1,12 @@
+﻿<suits>
+<!--
+killIcon 专属击杀图标
+energySkill 充能技能
+weaponEffectsLimit　武器特效限制　套装件数
+characterEffectsLimit　人物特效限制　套装件数
+energySkillLimit　充能技能限制　套装件数
+-->
+	<suit id="1" killIcon="1" weaponEffectsLimit="2" characterEffectsLimit="3" energySkillLimit="4" energySkill="1">
+		<commoditys>480,481,483,667,234,851,967,49</commoditys>
+	</suit>
+</suits>

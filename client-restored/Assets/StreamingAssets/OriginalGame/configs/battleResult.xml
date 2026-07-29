@@ -1,0 +1,107 @@
+<battle_result>
+    <shuliangxishu value="23.2" />
+    <shijianxishu value="11.6" />
+    <shenglixishu value="116" />
+    <shibaixishu value="0" />
+    <teshuxishu value="0" />
+    <moshi value="1" />
+    <bpmoshi value="1.3" />
+    <c4xishu value="5.5" />
+    <lzmoshi value="1" />
+	<grzmoshi value="1" />
+    <beishaxishu value="-23.2" />
+    <youxiaoshanghai value="0.2" />
+    <zuidalianshaxishu value="4" />
+    <ziyoujiesuan value="0.3" />
+    <!-- 据点模式的系数 -->
+	<judianxishu value="5" />
+
+
+    <pve>
+		<!--
+		old pve parameter
+        <cl value="2.1"/>
+        <sl value="3.15"/>
+        <cb value="2.1"/>
+        <cm value="6.3"/>
+        <sm value="8.4"/>
+        <zdsj value="23.2"/>
+		<gold1 value="0.9" />
+		<gold2 value="1" />
+		<gold3 value="1.2" />
+		<exp1 value="0.9" />
+		<exp2 value="1" />
+		<exp3 value="1.2" />
+		-->
+		
+		<!--
+		以下参数来源于pve设计案
+		详情参考文档说明
+		
+		exp 基础经验
+		exp1 一人组队系数
+		exp2 两人组队系数
+		exp3 ...
+		exp4 ...
+		expvip vip系数
+		
+		jinbilevel 金币级别系数
+		jinbirank1 排名第一额外金币
+		jinbirank2 排名第二额外金币
+		jinbirank3 ...
+		jinbirank4 ...
+		jinbikill 击杀系数
+		jinbivip vip系数
+		
+		jinghe value 个数 gailv 概率
+		jingheshangxian 每日获得晶核上限
+		
+		star1 一星百分比
+		star2 两星百分比
+		star3 ...
+		-->
+		<!--<exp value="100" />  基础经验去看config.version\pvr\story.xls-->
+		<exp1 value="1" />
+		<exp2 value="1.2" />
+		<exp3 value="1.3" />
+		<exp4 value="1.4" />
+		<expvip value="0.2" />
+		<!-- 每天经验获取最大次数 -->
+	    <expMaxTimes value="32" />		
+		
+		<jinbilevel value="2" />
+		<jinbirank1 value="0" />
+		<jinbirank2 value="10" />
+		<jinbirank3 value="50" />
+		<jinbirank4 value="100" />
+		<jinbikill value="0.1" />
+		<jinbivip value="0.2" />
+		
+		<!-- 每天金币获取最大次数 -->
+	    <jinbiMaxTimes value="16" />		
+		
+		<jinghe value="1" gailv="100"/>
+		<jingheshangxian value="10"/>
+		<star1 value="30"/>
+		<star2 value="50"/>
+		<star3 value="100"/>
+		
+    </pve>
+    <shenghua>
+    <ganran>
+    	<human value="23.2"/>
+	<zombie_mom value="46.4"/>
+	<zdsj value="11.6"/>
+	<zombie_son value="23.2"/>
+    	</ganran>
+    <bianyi>
+    	<human value="1"/>
+	<zombie_mom value="1"/>
+	<zdsj value="15"/>
+	<zombie_son value="1"/>
+    	</bianyi>
+    	
+    
+    </shenghua>
+
+</battle_result>

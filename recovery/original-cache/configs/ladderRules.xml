@@ -1,0 +1,9 @@
+<rules>
+<!-- 7K7K p = 3, 360 p=4, baidu p=5, duowan p=6, 4399 p=7, 91wan p=8,fengyun p=9,2144 p=10,bilibili p=15,japan p=16-->
+	<rule name="pipei_ladder" url="1.jpg"/>
+	<rule name="jifen_ladder" url="2.jpg"/>
+	<rule name="duanwei_ladder" url="3.jpg"/>
+	<rule name="strong_ladder" url="4.jpg"/>
+	<rule name="level_ladder" url="5.jpg"/>
+	<rule name="base_score_ladder" url="6.jpg"/>	
+</rules>

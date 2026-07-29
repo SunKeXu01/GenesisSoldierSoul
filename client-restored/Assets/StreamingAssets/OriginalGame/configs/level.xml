@@ -1,0 +1,136 @@
+﻿<levels>
+    <!-- 列兵 -->
+    <level key="1" lExp="500"/>
+    <level key="2" lExp="1115"/>
+    
+        <!-- 三等兵 -->
+	<level key="3" lExp="1855"/>
+        <!-- 二等兵 -->
+	<level key="4" lExp="2730"/>
+        <!-- 一等兵 -->
+	<level key="5" lExp="3750"/>
+        <!-- 上等兵 -->
+	<level key="6" lExp="4925"/>
+	<level key="7" lExp="6265"/>
+	<level key="8" lExp="7780"/>
+	<level key="9" lExp="9480"/>
+    
+    <!-- 下士 -->
+	<level key="10" lExp="11375"/>
+	<level key="11" lExp="13475"/>
+	<level key="12" lExp="15790"/>
+	<level key="13" lExp="18330"/>
+	<level key="14" lExp="21105"/>
+	<level key="15" lExp="24125"/>
+    
+    <!-- 中士 -->
+	<level key="16" lExp="27400"/>
+	<level key="17" lExp="30940"/>
+	<level key="18" lExp="34755"/>
+	<level key="19" lExp="38855"/>
+	<level key="20" lExp="43250"/>
+	<level key="21" lExp="47950"/>
+    
+    <!-- 上士 -->
+	<level key="22" lExp="52965"/>
+	<level key="23" lExp="58305"/>
+	<level key="24" lExp="63980"/>
+	<level key="25" lExp="70000"/>
+	<level key="26" lExp="76375"/>
+	<level key="27" lExp="83115"/>
+    
+    <!-- 少尉 -->
+	<level key="28" lExp="90230"/>
+	<level key="29" lExp="97730"/>
+	<level key="30" lExp="105625"/>
+	<level key="31" lExp="113925"/>
+	<level key="32" lExp="122640"/>
+	<level key="33" lExp="131780"/>
+	<level key="34" lExp="141355"/>
+	<level key="35" lExp="151380"/>
+    
+    <!-- 中尉 -->
+	<level key="36" lExp="161860"/>
+	<level key="37" lExp="172805"/>
+	<level key="38" lExp="184225"/>
+	<level key="39" lExp="196130"/>
+	<level key="40" lExp="208530"/>
+	<level key="41" lExp="221435"/>
+	<level key="42" lExp="234855"/>
+	<level key="43" lExp="248800"/>
+    
+    <!-- 上尉 -->
+	<level key="44" lExp="263280"/>
+	<level key="45" lExp="278305"/>
+	<level key="46" lExp="293885"/>
+	<level key="47" lExp="310030"/>
+	<level key="48" lExp="326750"/>
+	<level key="49" lExp="344055"/>
+	<level key="50" lExp="361955"/>
+	<level key="51" lExp="380460"/>
+    
+    <!-- 少校 -->
+	<level key="52" lExp="399580"/>
+	<level key="53" lExp="419325"/>
+	<level key="54" lExp="439710"/>
+	<level key="55" lExp="460740"/>
+	<level key="56" lExp="482425"/>
+	<level key="57" lExp="504775"/>
+	<level key="58" lExp="527800"/>
+	<level key="59" lExp="551510"/>
+    
+    <!-- 中校 -->
+	<level key="60" lExp="575915"/>
+	<level key="61" lExp="601025"/>
+	<level key="62" lExp="626850"/>
+	<level key="63" lExp="653400"/>
+	<level key="64" lExp="680685"/>
+	<level key="65" lExp="708715"/>
+	<level key="66" lExp="737500"/>
+	<level key="67" lExp="767050"/>
+    
+    <!-- 上校 -->
+	<level key="68" lExp="797380"/>
+	<level key="69" lExp="828495"/>
+	<level key="70" lExp="860405"/>
+	<level key="71" lExp="893120"/>
+	<level key="72" lExp="926650"/>
+	<level key="73" lExp="961005"/>
+	<level key="74" lExp="996195"/>
+	<level key="75" lExp="1032230"/>
+    
+    <!-- 大校 -->
+	<level key="76" lExp="1069120"/>
+	<level key="77" lExp="1106875"/>
+	<level key="78" lExp="1145505"/>
+	<level key="79" lExp="1185020"/>
+	<level key="80" lExp="1225435"/>
+	<level key="81" lExp="1299575"/>
+    
+    <!-- 少将 -->
+	<level key="82" lExp="1375445"/>
+	<level key="83" lExp="1453065"/>
+	<level key="84" lExp="1532455"/>
+	<level key="85" lExp="1613640"/>
+	<level key="86" lExp="1696635"/>
+	<level key="87" lExp="1781460"/>
+    
+    <!-- 中将 -->
+	<level key="88" lExp="1868135"/>
+	<level key="89" lExp="1956680"/>
+	<level key="90" lExp="2047120"/>
+	<level key="91" lExp="2139470"/>
+	<level key="92" lExp="2233750"/>
+	<level key="93" lExp="2329980"/>
+    
+    <!-- 上将 -->
+	<level key="94" lExp="2428180"/>
+	<level key="95" lExp="2528375"/>
+	<level key="96" lExp="2630580"/>
+	<level key="97" lExp="2734815"/>
+	<level key="98" lExp="2841100"/>
+	<level key="99" lExp="2949455"/>
+    
+    <!-- 元帅 -->
+	<level key="100" lExp="3059905"/>
+</levels>

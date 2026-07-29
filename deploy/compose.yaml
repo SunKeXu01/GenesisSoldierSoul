@@ -1,0 +1,13 @@
+services:
+  game-server:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.server
+    restart: unless-stopped
+    environment:
+      PORT: "8080"
+      WEB_ROOT: "/app/public"
+      # 部署时替换成正式域名，多个域名用逗号分隔。
+      ALLOWED_ORIGINS: "https://game.example.com"
+    ports:
+      - "127.0.0.1:8080:8080"

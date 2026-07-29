@@ -1,0 +1,30 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+.DS_Store
+.idea/
+.vscode/
+
+# The earlier migration sandbox is kept locally for reference. The maintained
+# Unity project is client-restored/.
+client/
+
+# Unity generated directories. Assets, Packages and ProjectSettings are source.
+client-restored/Library/
+client-restored/Temp/
+client-restored/Obj/
+client-restored/Logs/
+client-restored/UserSettings/
+client-restored/Build/
+client-restored/Builds/
+
+# Local IDE and crash artifacts
+client-restored/.vs/
+client-restored/.vscode/
+client-restored/*.csproj
+client-restored/*.sln
+client-restored/*.user
+client-restored/sysinfo.txt

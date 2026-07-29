@@ -1,0 +1,11 @@
+<sue>
+	<meitiantousucishu value="5" />
+	<zhandoutousucishu value="2" />
+	
+	<chengfafenshu key="2,3,5" value="1,1,3" />
+	<buchangfenshu key="30" value="-1" />
+	<fengjinfenshu value="10000" />
+	<fengjinshijian key="1,2,3" value="3,5,999" />
+	
+	<fengjinliyou value="comp_rea1#comp_rea2#comp_rea3#comp_rea4#comp_rea5#comp_rea0" />
+</sue>

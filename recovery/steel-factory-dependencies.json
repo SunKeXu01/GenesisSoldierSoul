@@ -1,0 +1,1798 @@
+{
+  "source_assets": "/Users/Admin/Documents/创世兵魂/原程序恢复/炼钢厂的前夜/UnityProject/ExportedProject/Assets",
+  "root_asset": "Scenes/Scenelgc.unity",
+  "target_assets": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/client-restored/Assets",
+  "namespace": "RecoveredMaps/SteelFactory",
+  "asset_count": 443,
+  "reused_guid_count": 1,
+  "missing_guid_count": 2,
+  "conflict_count": 1,
+  "copied": [
+    {
+      "source": "AnimationClip/Take 001 (1).anim",
+      "target": "RecoveredMaps/SteelFactory/AnimationClip/Take 001 (1).anim"
+    },
+    {
+      "source": "AnimationClip/Take 001.anim",
+      "target": "RecoveredMaps/SteelFactory/AnimationClip/Take 001.anim"
+    },
+    {
+      "source": "Material/ppsh.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/ppsh.mat"
+    },
+    {
+      "source": "Material/rdmobj00Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj00Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj01Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj01Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj02Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj02Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj03Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj03Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj04Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj04Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj05Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj05Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj06Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj06Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj07Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj07Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj08Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj08Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj09Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj09Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj100Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj100Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj101Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj101Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj102Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj102Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj103Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj103Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj104Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj104Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj105Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj105Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj106Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj106Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj107Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj107Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj108Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj108Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj109Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj109Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj10Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj10Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj110Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj110Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj111Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj111Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj112Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj112Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj113Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj113Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj114Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj114Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj115Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj115Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj116Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj116Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj117Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj117Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj118Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj118Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj119Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj119Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj11Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj11Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj120Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj120Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj121Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj121Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj122Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj122Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj123Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj123Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj124Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj124Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj125Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj125Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj126Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj126Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj127Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj127Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj128Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj128Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj129Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj129Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj12Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj12Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj130Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj130Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj131Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj131Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj132Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj132Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj133Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj133Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj134Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj134Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj135Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj135Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj136Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj136Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj137Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj137Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj138Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj138Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj139Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj139Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj13Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj13Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj140Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj140Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj141Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj141Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj142Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj142Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj143Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj143Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj144Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj144Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj145Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj145Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj146Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj146Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj147Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj147Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj148Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj148Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj149Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj149Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj14Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj14Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj150Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj150Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj151Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj151Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj152Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj152Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj153Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj153Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj154Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj154Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj155Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj155Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj156Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj156Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj157Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj157Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj158Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj158Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj159Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj159Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj15Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj15Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj160Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj160Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj161Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj161Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj162Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj162Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj163Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj163Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj164Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj164Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj165Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj165Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj166Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj166Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj167Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj167Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj168Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj168Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj169Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj169Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj16Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj16Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj170Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj170Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj171Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj171Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj172Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj172Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj173Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj173Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj174Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj174Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj175Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj175Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj176Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj176Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj177Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj177Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj178Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj178Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj179Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj179Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj17Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj17Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj180Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj180Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj181Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj181Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj182Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj182Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj183Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj183Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj184Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj184Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj185Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj185Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj186Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj186Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj187Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj187Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj188Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj188Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj189Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj189Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj18Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj18Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj190Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj190Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj191Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj191Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj192Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj192Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj193Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj193Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj194Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj194Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj195Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj195Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj196Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj196Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj197Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj197Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj198Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj198Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj199Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj199Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj19Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj19Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj200Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj200Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj201Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj201Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj202Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj202Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj203Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj203Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj204Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj204Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj205Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj205Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj206Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj206Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj207Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj207Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj208Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj208Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj209Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj209Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj20Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj20Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj210Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj210Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj211Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj211Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj212Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj212Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj213Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj213Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj214Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj214Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj215Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj215Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj216Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj216Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj217Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj217Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj21Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj21Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj22Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj22Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj23Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj23Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj24Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj24Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj25Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj25Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj26Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj26Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj27Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj27Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj28Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj28Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj29Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj29Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj30Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj30Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj31Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj31Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj32Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj32Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj33Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj33Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj34Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj34Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj35Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj35Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj36Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj36Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj37Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj37Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj38Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj38Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj39Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj39Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj40Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj40Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj41Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj41Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj42Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj42Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj43Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj43Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj44Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj44Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj45Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj45Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj46Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj46Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj47Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj47Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj48Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj48Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj49Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj49Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj50Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj50Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj51Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj51Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj52Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj52Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj53Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj53Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj54Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj54Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj55Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj55Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj56Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj56Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj57Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj57Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj58Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj58Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj59Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj59Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj60Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj60Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj61Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj61Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj62Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj62Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj63Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj63Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj64Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj64Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj65Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj65Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj66Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj66Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj67Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj67Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj68Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj68Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj69Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj69Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj70Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj70Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj71Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj71Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj72Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj72Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj73Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj73Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj74Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj74Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj75Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj75Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj76Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj76Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj77Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj77Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj78Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj78Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj79Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj79Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj80Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj80Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj81Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj81Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj82Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj82Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj83Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj83Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj84Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj84Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj85Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj85Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj86Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj86Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj87Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj87Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj88Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj88Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj89Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj89Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj90Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj90Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj91Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj91Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj92Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj92Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj93Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj93Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj94Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj94Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj95Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj95Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj96Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj96Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj97Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj97Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj98Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj98Mat.mat"
+    },
+    {
+      "source": "Material/rdmobj99Mat.mat",
+      "target": "RecoveredMaps/SteelFactory/Material/rdmobj99Mat.mat"
+    },
+    {
+      "source": "Mesh/PPSH.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/PPSH.asset"
+    },
+    {
+      "source": "Mesh/rdmobj00.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj00.asset"
+    },
+    {
+      "source": "Mesh/rdmobj01.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj01.asset"
+    },
+    {
+      "source": "Mesh/rdmobj02.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj02.asset"
+    },
+    {
+      "source": "Mesh/rdmobj03.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj03.asset"
+    },
+    {
+      "source": "Mesh/rdmobj04.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj04.asset"
+    },
+    {
+      "source": "Mesh/rdmobj05.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj05.asset"
+    },
+    {
+      "source": "Mesh/rdmobj06.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj06.asset"
+    },
+    {
+      "source": "Mesh/rdmobj07.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj07.asset"
+    },
+    {
+      "source": "Mesh/rdmobj08.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj08.asset"
+    },
+    {
+      "source": "Mesh/rdmobj09.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj09.asset"
+    },
+    {
+      "source": "Mesh/rdmobj10.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj10.asset"
+    },
+    {
+      "source": "Mesh/rdmobj100.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj100.asset"
+    },
+    {
+      "source": "Mesh/rdmobj101.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj101.asset"
+    },
+    {
+      "source": "Mesh/rdmobj102.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj102.asset"
+    },
+    {
+      "source": "Mesh/rdmobj103.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj103.asset"
+    },
+    {
+      "source": "Mesh/rdmobj104.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj104.asset"
+    },
+    {
+      "source": "Mesh/rdmobj105.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj105.asset"
+    },
+    {
+      "source": "Mesh/rdmobj106.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj106.asset"
+    },
+    {
+      "source": "Mesh/rdmobj107.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj107.asset"
+    },
+    {
+      "source": "Mesh/rdmobj108.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj108.asset"
+    },
+    {
+      "source": "Mesh/rdmobj109.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj109.asset"
+    },
+    {
+      "source": "Mesh/rdmobj11.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj11.asset"
+    },
+    {
+      "source": "Mesh/rdmobj110.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj110.asset"
+    },
+    {
+      "source": "Mesh/rdmobj111.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj111.asset"
+    },
+    {
+      "source": "Mesh/rdmobj112.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj112.asset"
+    },
+    {
+      "source": "Mesh/rdmobj113.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj113.asset"
+    },
+    {
+      "source": "Mesh/rdmobj114.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj114.asset"
+    },
+    {
+      "source": "Mesh/rdmobj115.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj115.asset"
+    },
+    {
+      "source": "Mesh/rdmobj116.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj116.asset"
+    },
+    {
+      "source": "Mesh/rdmobj117.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj117.asset"
+    },
+    {
+      "source": "Mesh/rdmobj118.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj118.asset"
+    },
+    {
+      "source": "Mesh/rdmobj119.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj119.asset"
+    },
+    {
+      "source": "Mesh/rdmobj12.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj12.asset"
+    },
+    {
+      "source": "Mesh/rdmobj120.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj120.asset"
+    },
+    {
+      "source": "Mesh/rdmobj121.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj121.asset"
+    },
+    {
+      "source": "Mesh/rdmobj122.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj122.asset"
+    },
+    {
+      "source": "Mesh/rdmobj123.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj123.asset"
+    },
+    {
+      "source": "Mesh/rdmobj124.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj124.asset"
+    },
+    {
+      "source": "Mesh/rdmobj125.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj125.asset"
+    },
+    {
+      "source": "Mesh/rdmobj126.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj126.asset"
+    },
+    {
+      "source": "Mesh/rdmobj127.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj127.asset"
+    },
+    {
+      "source": "Mesh/rdmobj128.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj128.asset"
+    },
+    {
+      "source": "Mesh/rdmobj129.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj129.asset"
+    },
+    {
+      "source": "Mesh/rdmobj13.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj13.asset"
+    },
+    {
+      "source": "Mesh/rdmobj130.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj130.asset"
+    },
+    {
+      "source": "Mesh/rdmobj131.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj131.asset"
+    },
+    {
+      "source": "Mesh/rdmobj132.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj132.asset"
+    },
+    {
+      "source": "Mesh/rdmobj133.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj133.asset"
+    },
+    {
+      "source": "Mesh/rdmobj134.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj134.asset"
+    },
+    {
+      "source": "Mesh/rdmobj135.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj135.asset"
+    },
+    {
+      "source": "Mesh/rdmobj136.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj136.asset"
+    },
+    {
+      "source": "Mesh/rdmobj137.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj137.asset"
+    },
+    {
+      "source": "Mesh/rdmobj138.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj138.asset"
+    },
+    {
+      "source": "Mesh/rdmobj139.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj139.asset"
+    },
+    {
+      "source": "Mesh/rdmobj14.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj14.asset"
+    },
+    {
+      "source": "Mesh/rdmobj140.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj140.asset"
+    },
+    {
+      "source": "Mesh/rdmobj141.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj141.asset"
+    },
+    {
+      "source": "Mesh/rdmobj142.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj142.asset"
+    },
+    {
+      "source": "Mesh/rdmobj143.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj143.asset"
+    },
+    {
+      "source": "Mesh/rdmobj144.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj144.asset"
+    },
+    {
+      "source": "Mesh/rdmobj145.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj145.asset"
+    },
+    {
+      "source": "Mesh/rdmobj146.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj146.asset"
+    },
+    {
+      "source": "Mesh/rdmobj147.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj147.asset"
+    },
+    {
+      "source": "Mesh/rdmobj148.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj148.asset"
+    },
+    {
+      "source": "Mesh/rdmobj149.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj149.asset"
+    },
+    {
+      "source": "Mesh/rdmobj15.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj15.asset"
+    },
+    {
+      "source": "Mesh/rdmobj150.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj150.asset"
+    },
+    {
+      "source": "Mesh/rdmobj151.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj151.asset"
+    },
+    {
+      "source": "Mesh/rdmobj152.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj152.asset"
+    },
+    {
+      "source": "Mesh/rdmobj153.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj153.asset"
+    },
+    {
+      "source": "Mesh/rdmobj154.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj154.asset"
+    },
+    {
+      "source": "Mesh/rdmobj155.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj155.asset"
+    },
+    {
+      "source": "Mesh/rdmobj156.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj156.asset"
+    },
+    {
+      "source": "Mesh/rdmobj157.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj157.asset"
+    },
+    {
+      "source": "Mesh/rdmobj158.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj158.asset"
+    },
+    {
+      "source": "Mesh/rdmobj159.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj159.asset"
+    },
+    {
+      "source": "Mesh/rdmobj16.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj16.asset"
+    },
+    {
+      "source": "Mesh/rdmobj160.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj160.asset"
+    },
+    {
+      "source": "Mesh/rdmobj161.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj161.asset"
+    },
+    {
+      "source": "Mesh/rdmobj162.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj162.asset"
+    },
+    {
+      "source": "Mesh/rdmobj163.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj163.asset"
+    },
+    {
+      "source": "Mesh/rdmobj164.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj164.asset"
+    },
+    {
+      "source": "Mesh/rdmobj165.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj165.asset"
+    },
+    {
+      "source": "Mesh/rdmobj166.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj166.asset"
+    },
+    {
+      "source": "Mesh/rdmobj167.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj167.asset"
+    },
+    {
+      "source": "Mesh/rdmobj168.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj168.asset"
+    },
+    {
+      "source": "Mesh/rdmobj169.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj169.asset"
+    },
+    {
+      "source": "Mesh/rdmobj17.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj17.asset"
+    },
+    {
+      "source": "Mesh/rdmobj170.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj170.asset"
+    },
+    {
+      "source": "Mesh/rdmobj171.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj171.asset"
+    },
+    {
+      "source": "Mesh/rdmobj172.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj172.asset"
+    },
+    {
+      "source": "Mesh/rdmobj173.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj173.asset"
+    },
+    {
+      "source": "Mesh/rdmobj174.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj174.asset"
+    },
+    {
+      "source": "Mesh/rdmobj175.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj175.asset"
+    },
+    {
+      "source": "Mesh/rdmobj176.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj176.asset"
+    },
+    {
+      "source": "Mesh/rdmobj177.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj177.asset"
+    },
+    {
+      "source": "Mesh/rdmobj178.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj178.asset"
+    },
+    {
+      "source": "Mesh/rdmobj179.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj179.asset"
+    },
+    {
+      "source": "Mesh/rdmobj18.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj18.asset"
+    },
+    {
+      "source": "Mesh/rdmobj180.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj180.asset"
+    },
+    {
+      "source": "Mesh/rdmobj181.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj181.asset"
+    },
+    {
+      "source": "Mesh/rdmobj182.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj182.asset"
+    },
+    {
+      "source": "Mesh/rdmobj183.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj183.asset"
+    },
+    {
+      "source": "Mesh/rdmobj184.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj184.asset"
+    },
+    {
+      "source": "Mesh/rdmobj185.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj185.asset"
+    },
+    {
+      "source": "Mesh/rdmobj186.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj186.asset"
+    },
+    {
+      "source": "Mesh/rdmobj187.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj187.asset"
+    },
+    {
+      "source": "Mesh/rdmobj188.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj188.asset"
+    },
+    {
+      "source": "Mesh/rdmobj189.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj189.asset"
+    },
+    {
+      "source": "Mesh/rdmobj19.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj19.asset"
+    },
+    {
+      "source": "Mesh/rdmobj190.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj190.asset"
+    },
+    {
+      "source": "Mesh/rdmobj191.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj191.asset"
+    },
+    {
+      "source": "Mesh/rdmobj192.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj192.asset"
+    },
+    {
+      "source": "Mesh/rdmobj193.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj193.asset"
+    },
+    {
+      "source": "Mesh/rdmobj194.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj194.asset"
+    },
+    {
+      "source": "Mesh/rdmobj195.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj195.asset"
+    },
+    {
+      "source": "Mesh/rdmobj196.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj196.asset"
+    },
+    {
+      "source": "Mesh/rdmobj197.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj197.asset"
+    },
+    {
+      "source": "Mesh/rdmobj198.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj198.asset"
+    },
+    {
+      "source": "Mesh/rdmobj199.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj199.asset"
+    },
+    {
+      "source": "Mesh/rdmobj20.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj20.asset"
+    },
+    {
+      "source": "Mesh/rdmobj200.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj200.asset"
+    },
+    {
+      "source": "Mesh/rdmobj201.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj201.asset"
+    },
+    {
+      "source": "Mesh/rdmobj202.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj202.asset"
+    },
+    {
+      "source": "Mesh/rdmobj203.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj203.asset"
+    },
+    {
+      "source": "Mesh/rdmobj204.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj204.asset"
+    },
+    {
+      "source": "Mesh/rdmobj205.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj205.asset"
+    },
+    {
+      "source": "Mesh/rdmobj206.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj206.asset"
+    },
+    {
+      "source": "Mesh/rdmobj207.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj207.asset"
+    },
+    {
+      "source": "Mesh/rdmobj208.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj208.asset"
+    },
+    {
+      "source": "Mesh/rdmobj209.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj209.asset"
+    },
+    {
+      "source": "Mesh/rdmobj21.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj21.asset"
+    },
+    {
+      "source": "Mesh/rdmobj210.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj210.asset"
+    },
+    {
+      "source": "Mesh/rdmobj211.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj211.asset"
+    },
+    {
+      "source": "Mesh/rdmobj212.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj212.asset"
+    },
+    {
+      "source": "Mesh/rdmobj213.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj213.asset"
+    },
+    {
+      "source": "Mesh/rdmobj214.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj214.asset"
+    },
+    {
+      "source": "Mesh/rdmobj215.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj215.asset"
+    },
+    {
+      "source": "Mesh/rdmobj216.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj216.asset"
+    },
+    {
+      "source": "Mesh/rdmobj217.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj217.asset"
+    },
+    {
+      "source": "Mesh/rdmobj22.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj22.asset"
+    },
+    {
+      "source": "Mesh/rdmobj23.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj23.asset"
+    },
+    {
+      "source": "Mesh/rdmobj24.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj24.asset"
+    },
+    {
+      "source": "Mesh/rdmobj25.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj25.asset"
+    },
+    {
+      "source": "Mesh/rdmobj26.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj26.asset"
+    },
+    {
+      "source": "Mesh/rdmobj27.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj27.asset"
+    },
+    {
+      "source": "Mesh/rdmobj28.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj28.asset"
+    },
+    {
+      "source": "Mesh/rdmobj29.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj29.asset"
+    },
+    {
+      "source": "Mesh/rdmobj30.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj30.asset"
+    },
+    {
+      "source": "Mesh/rdmobj31.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj31.asset"
+    },
+    {
+      "source": "Mesh/rdmobj32.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj32.asset"
+    },
+    {
+      "source": "Mesh/rdmobj33.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj33.asset"
+    },
+    {
+      "source": "Mesh/rdmobj34.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj34.asset"
+    },
+    {
+      "source": "Mesh/rdmobj35.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj35.asset"
+    },
+    {
+      "source": "Mesh/rdmobj36.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj36.asset"
+    },
+    {
+      "source": "Mesh/rdmobj37.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj37.asset"
+    },
+    {
+      "source": "Mesh/rdmobj38.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj38.asset"
+    },
+    {
+      "source": "Mesh/rdmobj39.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj39.asset"
+    },
+    {
+      "source": "Mesh/rdmobj40.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj40.asset"
+    },
+    {
+      "source": "Mesh/rdmobj41.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj41.asset"
+    },
+    {
+      "source": "Mesh/rdmobj42.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj42.asset"
+    },
+    {
+      "source": "Mesh/rdmobj43.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj43.asset"
+    },
+    {
+      "source": "Mesh/rdmobj44.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj44.asset"
+    },
+    {
+      "source": "Mesh/rdmobj45.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj45.asset"
+    },
+    {
+      "source": "Mesh/rdmobj46.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj46.asset"
+    },
+    {
+      "source": "Mesh/rdmobj47.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj47.asset"
+    },
+    {
+      "source": "Mesh/rdmobj48.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj48.asset"
+    },
+    {
+      "source": "Mesh/rdmobj49.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj49.asset"
+    },
+    {
+      "source": "Mesh/rdmobj50.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj50.asset"
+    },
+    {
+      "source": "Mesh/rdmobj51.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj51.asset"
+    },
+    {
+      "source": "Mesh/rdmobj52.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj52.asset"
+    },
+    {
+      "source": "Mesh/rdmobj53.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj53.asset"
+    },
+    {
+      "source": "Mesh/rdmobj54.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj54.asset"
+    },
+    {
+      "source": "Mesh/rdmobj55.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj55.asset"
+    },
+    {
+      "source": "Mesh/rdmobj56.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj56.asset"
+    },
+    {
+      "source": "Mesh/rdmobj57.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj57.asset"
+    },
+    {
+      "source": "Mesh/rdmobj58.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj58.asset"
+    },
+    {
+      "source": "Mesh/rdmobj59.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj59.asset"
+    },
+    {
+      "source": "Mesh/rdmobj60.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj60.asset"
+    },
+    {
+      "source": "Mesh/rdmobj61.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj61.asset"
+    },
+    {
+      "source": "Mesh/rdmobj62.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj62.asset"
+    },
+    {
+      "source": "Mesh/rdmobj63.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj63.asset"
+    },
+    {
+      "source": "Mesh/rdmobj64.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj64.asset"
+    },
+    {
+      "source": "Mesh/rdmobj65.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj65.asset"
+    },
+    {
+      "source": "Mesh/rdmobj66.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj66.asset"
+    },
+    {
+      "source": "Mesh/rdmobj67.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj67.asset"
+    },
+    {
+      "source": "Mesh/rdmobj68.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj68.asset"
+    },
+    {
+      "source": "Mesh/rdmobj69.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj69.asset"
+    },
+    {
+      "source": "Mesh/rdmobj70.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj70.asset"
+    },
+    {
+      "source": "Mesh/rdmobj71.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj71.asset"
+    },
+    {
+      "source": "Mesh/rdmobj72.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj72.asset"
+    },
+    {
+      "source": "Mesh/rdmobj73.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj73.asset"
+    },
+    {
+      "source": "Mesh/rdmobj74.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj74.asset"
+    },
+    {
+      "source": "Mesh/rdmobj75.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj75.asset"
+    },
+    {
+      "source": "Mesh/rdmobj76.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj76.asset"
+    },
+    {
+      "source": "Mesh/rdmobj77.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj77.asset"
+    },
+    {
+      "source": "Mesh/rdmobj78.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj78.asset"
+    },
+    {
+      "source": "Mesh/rdmobj79.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj79.asset"
+    },
+    {
+      "source": "Mesh/rdmobj80.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj80.asset"
+    },
+    {
+      "source": "Mesh/rdmobj81.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj81.asset"
+    },
+    {
+      "source": "Mesh/rdmobj82.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj82.asset"
+    },
+    {
+      "source": "Mesh/rdmobj83.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj83.asset"
+    },
+    {
+      "source": "Mesh/rdmobj84.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj84.asset"
+    },
+    {
+      "source": "Mesh/rdmobj85.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj85.asset"
+    },
+    {
+      "source": "Mesh/rdmobj86.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj86.asset"
+    },
+    {
+      "source": "Mesh/rdmobj87.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj87.asset"
+    },
+    {
+      "source": "Mesh/rdmobj88.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj88.asset"
+    },
+    {
+      "source": "Mesh/rdmobj89.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj89.asset"
+    },
+    {
+      "source": "Mesh/rdmobj90.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj90.asset"
+    },
+    {
+      "source": "Mesh/rdmobj91.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj91.asset"
+    },
+    {
+      "source": "Mesh/rdmobj92.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj92.asset"
+    },
+    {
+      "source": "Mesh/rdmobj93.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj93.asset"
+    },
+    {
+      "source": "Mesh/rdmobj94.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj94.asset"
+    },
+    {
+      "source": "Mesh/rdmobj95.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj95.asset"
+    },
+    {
+      "source": "Mesh/rdmobj96.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj96.asset"
+    },
+    {
+      "source": "Mesh/rdmobj97.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj97.asset"
+    },
+    {
+      "source": "Mesh/rdmobj98.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj98.asset"
+    },
+    {
+      "source": "Mesh/rdmobj99.asset",
+      "target": "RecoveredMaps/SteelFactory/Mesh/rdmobj99.asset"
+    },
+    {
+      "source": "Scenes/Scenelgc/LightingData.asset",
+      "target": "RecoveredMaps/SteelFactory/Scenes/Scenelgc/LightingData.asset"
+    },
+    {
+      "source": "Scenes/Scenelgc.unity",
+      "target": "RecoveredMaps/SteelFactory/Scenes/Scenelgc.unity"
+    },
+    {
+      "source": "Texture2D/ppsh.png",
+      "target": "RecoveredMaps/SteelFactory/Texture2D/ppsh.png"
+    }
+  ],
+  "reused": {
+    "6158f98ce2641875c7ed285913faa064": "Scripts/Assembly-CSharp/MouseLook.cs"
+  },
+  "missing_guids": [
+    "0000000000000000e000000000000000",
+    "0000000000000000f000000000000000"
+  ],
+  "conflicts": [
+    {
+      "guid": "6158f98ce2641875c7ed285913faa064",
+      "source": "Scripts/Assembly-CSharp/MouseLook.cs",
+      "target": "Scripts/Assembly-CSharp/MouseLook.cs"
+    }
+  ]
+}

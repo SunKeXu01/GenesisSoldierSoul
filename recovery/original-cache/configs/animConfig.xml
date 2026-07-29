@@ -1,0 +1,5097 @@
+﻿<?xml version="1.0"?>
+<anims>
+  <anim shared="fpAnim1_mgAnim_fp" swf="akAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_akAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,60</kaiqiang>
+    <huanzidan>65,141</huanzidan>
+    <naqiang>145,175</naqiang>
+    <teshukaiqiang>200,237</teshukaiqiang>
+  </anim>
+  <anim shared="fpAnim1_akAnim_fp" swf="akAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_mgAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>180,194</kaiqiang>
+    <huanzidan>65,141</huanzidan>
+    <naqiang>145,175</naqiang>
+    <teshukaiqiang>200,237</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="handgunAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_handgunAnim_fp">
+    <daiji>240,248</daiji>
+    <paodong>250,274</paodong>
+    <kaiqiang>280,290</kaiqiang>
+    <huanzidan>295,372</huanzidan>
+    <naqiang>380,415</naqiang>
+  </anim>
+  <anim shared="" swf="meleeAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_meleeAnim_fp">
+    <daiji>420,428</daiji>
+    <paodong>430,455</paodong>
+    <kaiqiang>460,482</kaiqiang>
+    <teshukaiqiang>485,520</teshukaiqiang>
+    <naqiang>525,557</naqiang>
+  </anim>
+  <anim shared="" swf="gernadeAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_gernadeAnim_fp">
+    <daiji>560,568</daiji>
+    <paodong>570,595</paodong>
+    <zhunbeirenglei>600,623</zhunbeirenglei>
+    <renglei>630,643</renglei>
+    <naqiang>645,657</naqiang>
+  </anim>
+  <anim shared="fpAnim1_m4a1aAnim_fp" swf="m4a1Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_m4a1Anim_fp">
+    <daiji>660,668</daiji>
+    <paodong>670,694</paodong>
+    <kaiqiang>700,714</kaiqiang>
+    <huanzidan>720,812</huanzidan>
+    <naqiang>815,850</naqiang>
+    <teshukaiqiang>870,907</teshukaiqiang>
+  </anim>
+  <anim shared="fpAnim1_m4a1Anim_fp" swf="m4a1Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_m4a1aAnim_fp">
+    <daiji>660,668</daiji>
+    <paodong>670,694</paodong>
+    <kaiqiang>855,866</kaiqiang>
+    <huanzidan>720,812</huanzidan>
+    <naqiang>815,850</naqiang>
+    <teshukaiqiang>870,907</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="auga1Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_auga1Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,168</huanzidan>
+    <naqiang>180,212</naqiang>
+  </anim>
+  <anim shared="fpAnim1_sniperAnim2_fp,fpAnim1_sniperAnim3_fp" swf="sniperAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_sniperAnim_fp">
+    <daiji>1090,1098</daiji>
+    <paodong>1100,1125</paodong>
+    <kaiqiang>1130,1183</kaiqiang>
+    <huanzidan>1190,1264</huanzidan>
+    <naqiang>1270,1314</naqiang>
+  </anim>
+  <anim shared="fpAnim1_sniperAnim_fp,fpAnim1_sniperAnim3_fp" swf="sniperAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_sniperAnim2_fp">
+    <daiji>1090,1098</daiji>
+    <paodong>1100,1125</paodong>
+    <kaiqiang>1320,1367</kaiqiang>
+    <huanzidan>1190,1264</huanzidan>
+    <naqiang>1270,1314</naqiang>
+  </anim>
+  <anim shared="fpAnim1_sniperAnim_fp,fpAnim1_sniperAnim2_fp" swf="sniperAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_sniperAnim3_fp">
+    <daiji>1090,1098</daiji>
+    <paodong>1100,1125</paodong>
+    <kaiqiang>1370,1387</kaiqiang>
+    <huanzidan>1190,1264</huanzidan>
+    <naqiang>1270,1314</naqiang>
+  </anim>
+  <anim shared="" swf="AWM_king3Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_AWM_king3Anim_fp">
+    <daiji>1090,1098</daiji>
+    <paodong>1100,1125</paodong>
+    <kaiqiang>1130,1183</kaiqiang>
+    <huanzidan>1190,1264</huanzidan>
+    <naqiang>1270,1314</naqiang>
+  </anim>
+  <anim shared="" swf="p90Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_p90Anim_fp">
+    <daiji>1390,1398</daiji>
+    <paodong>1400,1424</paodong>
+    <kaiqiang>1430,1444</kaiqiang>
+    <huanzidan>1450,1532</huanzidan>
+    <naqiang>1540,1565</naqiang>
+  </anim>
+  <anim shared="" swf="m60Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_m60Anim_fp">
+    <daiji>1570,1578</daiji>
+    <paodong>1580,1604</paodong>
+    <kaiqiang>1610,1625</kaiqiang>
+    <huanzidan>1630,1726</huanzidan>
+    <naqiang>1730,1755</naqiang>
+  </anim>
+  <anim shared="" swf="mp7Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_mp7Anim_fp">
+    <daiji>1760,1768</daiji>
+    <paodong>1770,1794</paodong>
+    <kaiqiang>1800,1811</kaiqiang>
+    <huanzidan>1820,1878</huanzidan>
+    <naqiang>1880,1906</naqiang>
+  </anim>
+  <anim shared="" swf="c4Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_c4Anim_fp">
+    <daiji>1910,1918</daiji>
+    <paodong>1920,1944</paodong>
+    <kaiqiang>1950,2038</kaiqiang>
+    <naqiang>2040,2073</naqiang>
+  </anim>
+  <anim shared="fpAnim1_qbz95Anim_fp" swf="qbz95Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_famasAnim_fp">
+    <daiji>2080,2088</daiji>
+    <paodong>2090,2114</paodong>
+    <kaiqiang>2120,2134</kaiqiang>
+    <huanzidan>2260,2336</huanzidan>
+    <naqiang>2220,2251</naqiang>
+  </anim>
+  <anim shared="fpAnim1_famasAnim_fp" swf="qbz95Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_qbz95Anim_fp">
+    <daiji>2080,2088</daiji>
+    <paodong>2090,2114</paodong>
+    <kaiqiang>2120,2134</kaiqiang>
+    <huanzidan>2140,2216</huanzidan>
+    <naqiang>2220,2251</naqiang>
+  </anim>
+  <anim shared="" swf="jiatelinAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_jiatelinAnim_fp">
+    <daiji>2340,2348</daiji>
+    <paodong>2350,2374</paodong>
+    <yure>2380,2384</yure>
+    <zhuan>2386,2394</zhuan>
+    <kaiqiang>2396,2401</kaiqiang>
+    <huifu>2403,2413</huifu>
+    <huanzidan>2420,2476</huanzidan>
+    <naqiang>2480,2505</naqiang>
+  </anim>
+  <anim shared="" swf="mp5Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_mp5Anim_fp">
+    <daiji>2520,2528</daiji>
+    <paodong>2530,2554</paodong>
+    <kaiqiang>2560,2574</kaiqiang>
+    <huanzidan>2580,2633</huanzidan>
+    <naqiang>2640,2665</naqiang>
+  </anim>
+  <anim shared="" swf="sg552Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_sg552Anim_fp">
+    <daiji>2680,2688</daiji>
+    <paodong>2690,2714</paodong>
+    <kaiqiang>2720,2734</kaiqiang>
+    <huanzidan>2740,2826</huanzidan>
+    <naqiang>2838,2881</naqiang>
+  </anim>
+  <anim shared="" swf="sg552_lanseyaojiAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_sg552_lanseyaojiAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,137</huanzidan>
+    <naqiang>145,177</naqiang>
+  </anim>
+  <anim shared="" swf="xm1014Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_xm1014Anim_fp">
+    <daiji>2870,2878</daiji>
+    <paodong>2880,2904</paodong>
+    <kaiqiang>2910,2923</kaiqiang>
+    <kaishihuanzidan>2930,2940</kaishihuanzidan>
+    <xunhuanhuanzidan>2942,2961</xunhuanhuanzidan>
+    <jieshuhuanzidan>2963,2985</jieshuhuanzidan>
+    <naqiang>2990,3015</naqiang>
+  </anim>
+  <anim shared="" swf="xinxm1014Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_xinxm1014Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <kaishihuanzidan>60,70</kaishihuanzidan>
+    <xunhuanhuanzidan>72,91</xunhuanhuanzidan>
+    <jieshuhuanzidan>93,115</jieshuhuanzidan>
+    <naqiang>120,145</naqiang>
+  </anim>
+  <anim shared="" swf="xm1014_dulangAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_xm1014_dulangAnim_fp">
+    <daiji>2870,2878</daiji>
+    <paodong>2880,2904</paodong>
+    <kaiqiang>2910,2923</kaiqiang>
+    <kaishihuanzidan>2930,2940</kaishihuanzidan>
+    <xunhuanhuanzidan>2942,2961</xunhuanhuanzidan>
+    <jieshuhuanzidan>2963,2985</jieshuhuanzidan>
+    <naqiang>2990,3015</naqiang>
+  </anim>
+  <anim shared="" swf="rpkAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_rpkAnim_fp">
+    <daiji>3040,3048</daiji>
+    <paodong>3050,3074</paodong>
+    <kaiqiang>3080,3095</kaiqiang>
+    <huanzidan>3100,3171</huanzidan>
+    <naqiang>3180,3211</naqiang>
+  </anim>
+  <anim shared="" swf="mg3Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_mg3Anim_fp">
+    <daiji>3230,3238</daiji>
+    <paodong>3240,3264</paodong>
+    <kaiqiang>3270,3285</kaiqiang>
+    <huanzidan>3290,3387</huanzidan>
+    <naqiang>3390,3415</naqiang>
+  </anim>
+  <anim shared="" swf="m249Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_m249Anim_fp">
+    <daiji>3430,3438</daiji>
+    <paodong>3440,3464</paodong>
+    <kaiqiang>3470,3485</kaiqiang>
+    <huanzidan>3490,3612</huanzidan>
+    <naqiang>3620,3664</naqiang>
+  </anim>
+  <anim shared="" swf="axeAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_axeAnim_fp">
+    <daiji>3680,3688</daiji>
+    <paodong>3690,3715</paodong>
+    <kaiqiang>3720,3740</kaiqiang>
+    <teshukaiqiang>3750,3787</teshukaiqiang>
+    <naqiang>3790,3820</naqiang>
+  </anim>
+  <anim shared="" swf="niboerAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_niboerAnim_fp">
+    <daiji>3840,3848</daiji>
+    <paodong>3850,3875</paodong>
+    <kaiqiang>3880,3901</kaiqiang>
+    <teshukaiqiang>3910,3955</teshukaiqiang>
+    <naqiang>3960,3997</naqiang>
+  </anim>
+  <anim shared="" swf="doubleHandgunAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_doubleHandgunAnim_fp">
+    <daiji>4020,4028</daiji>
+    <paodong>4030,4054</paodong>
+    <kaiqiang>4060,4071</kaiqiang>
+    <teshukaiqiang>4075,4086</teshukaiqiang>
+    <huanzidan>4090,4173</huanzidan>
+    <naqiang>4180,4194</naqiang>
+  </anim>
+  <anim shared="" swf="an94Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_an94Anim_fp">
+    <daiji>4210,4218</daiji>
+    <paodong>4220,4244</paodong>
+    <kaiqiang>4250,4265</kaiqiang>
+    <huanzidan>4270,4341</huanzidan>
+    <naqiang>4350,4381</naqiang>
+  </anim>
+  <anim shared="" swf="malaijianAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_malaijianAnim_fp">
+    <daiji>4400,4408</daiji>
+    <paodong>4410,4435</paodong>
+    <kaiqiang>4440,4460</kaiqiang>
+    <teshukaiqiang>4470,4520</teshukaiqiang>
+    <naqiang>4530,4550</naqiang>
+  </anim>
+  <anim shared="" swf="chongciAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_chongciAnim_fp">
+    <daiji>4560,4568</daiji>
+    <paodong>4570,4594</paodong>
+    <kaiqiang>4600,4614</kaiqiang>
+    <huanzidan>4620,4710</huanzidan>
+    <naqiang>4720,4746</naqiang>
+    <teshukaiqiang>4750,4800</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="tuimopaoAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_tuimopaoAnim_fp">
+    <daiji>4820,4828</daiji>
+    <paodong>4830,4854</paodong>
+    <kaiqiang>4860,4874</kaiqiang>
+    <huanzidan>4880,4973</huanzidan>
+    <naqiang>4980,5015</naqiang>
+  </anim>
+  
+  <anim shared="" swf="batAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_batAnim_fp">
+    <daiji>5210,5218</daiji>
+    <paodong>5220,5245</paodong>
+    <kaiqiang>5250,5270</kaiqiang>
+    <teshukaiqiang>5280,5330</teshukaiqiang>
+    <naqiang>5340,5364</naqiang>
+  </anim>
+  <anim shared="" swf="" switcher="fpAnim1_switcher" value="fpAnim1_sglqAnim_fp">
+    <daiji>5380,5388</daiji>
+    <paodong>5390,5414</paodong>
+    <kaiqiang>5420,5433</kaiqiang>
+    <huanzidan>5440,5531</huanzidan>
+    <naqiang>5540,5567</naqiang>
+  </anim>
+  <anim shared="" swf="zuolunAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_zuolunAnim_fp">
+    <daiji>5580,5588</daiji>
+    <paodong>5590,5614</paodong>
+    <kaiqiang>5620,5630</kaiqiang>
+    <huanzidan>5640,5721</huanzidan>
+    <naqiang>5730,5761</naqiang>
+  </anim>
+  <anim shared="" swf="cs06Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_cs06Anim_fp">
+    <daiji>5780,5788</daiji>
+    <paodong>5790,5814</paodong>
+    <kaiqiang>5820,5834</kaiqiang>
+    <huanzidan>5840,5922</huanzidan>
+    <naqiang>5930,5955</naqiang>
+  </anim>
+  <anim shared="" swf="qichuiAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_qichuiAnim_fp">
+    <daiji>5970,5978</daiji>
+    <paodong>5980,6004</paodong>
+    <kaiqiang>6010,6024</kaiqiang>
+    <huanzidan>6030,6106</huanzidan>
+    <naqiang>6110,6141</naqiang>
+  </anim>
+  <anim shared="" swf="qbz81Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_qbz81Anim_fp">
+    <daiji>6160,6168</daiji>
+    <paodong>6170,6194</paodong>
+    <kaiqiang>6200,6220</kaiqiang>
+    <huanzidan>6225,6301</huanzidan>
+    <naqiang>6305,6335</naqiang>
+  </anim>
+  <anim shared="" swf="uzi1Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_uzi1Anim_fp">
+    <daiji>6350,6358</daiji>
+    <paodong>6360,6384</paodong>
+    <kaiqiang>6390,6404</kaiqiang>
+    <huanzidan>6410,6467</huanzidan>
+    <naqiang>6470,6495</naqiang>
+  </anim>
+  <anim shared="fpAnim1_rsassAnim_fp" swf="msrAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_msrAnim_fp">
+    <daiji>6500,6508</daiji>
+    <paodong>6510,6535</paodong>
+    <kaiqiang>6540,6593</kaiqiang>
+    <huanzidan>6600,6674</huanzidan>
+    <naqiang>6680,6724</naqiang>
+  </anim>
+  <anim shared="fpAnim1_msrAnim_fp" swf="msrAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_rsassAnim_fp">
+    <daiji>6500,6508</daiji>
+    <paodong>6510,6535</paodong>
+    <kaiqiang>6730,6747</kaiqiang>
+    <huanzidan>6600,6674</huanzidan>
+    <naqiang>6680,6724</naqiang>
+  </anim>
+  <anim shared="" swf="scarAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_scarAnim_fp">
+    <daiji>6980,6988</daiji>
+    <paodong>6990,7014</paodong>
+    <kaiqiang>7020,7035</kaiqiang>
+    <huanzidan>7040,7111</huanzidan>
+    <naqiang>7120,7151</naqiang>
+  </anim>
+  <anim shared="" swf="vectorAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_vectorAnim_fp">
+    <daiji>7170,7178</daiji>
+    <paodong>7180,7204</paodong>
+    <kaiqiang>7210,7224</kaiqiang>
+    <huanzidan>7230,7324</huanzidan>
+    <naqiang>7330,7362</naqiang>
+  </anim>
+  <anim shared="" swf="fn2000Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_fn2000Anim_fp">
+    <daiji>7380,7388</daiji>
+    <paodong>7390,7414</paodong>
+    <kaiqiang>7420,7434</kaiqiang>
+    <huanzidan>7440,7516</huanzidan>
+    <naqiang>7520,7551</naqiang>
+  </anim>
+  <anim shared="" swf="uziAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_uziAnim_fp">
+    <daiji>7570,7578</daiji>
+    <paodong>7580,7604</paodong>
+    <kaiqiang>7610,7621</kaiqiang>
+    <teshukaiqiang>7625,7636</teshukaiqiang>
+    <huanzidan>7640,7726</huanzidan>
+    <naqiang>7730,7749</naqiang>
+  </anim>
+  <anim shared="" swf="m1887Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_m1887Anim_fp">
+    <daiji>7770,7778</daiji>
+    <paodong>7780,7804</paodong>
+    <kaiqiang>7810,7841</kaiqiang>
+    <kaishihuanzidan>7850,7860</kaishihuanzidan>
+    <xunhuanhuanzidan>7862,7878</xunhuanhuanzidan>
+    <jieshuhuanzidan>7880,7897</jieshuhuanzidan>
+    <naqiang>7900,7931</naqiang>
+  </anim>  
+  <anim shared="" swf="gs_01Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_gs_01Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,176</huanzidan>
+    <naqiang>190,234</naqiang>
+  </anim>
+  <anim shared="" swf="gs_02Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_gs_02Anim_fp">
+    <daiji>2080,2088</daiji>
+    <paodong>2090,2114</paodong>
+    <kaiqiang>2120,2134</kaiqiang>
+    <huanzidan>2140,2226</huanzidan>
+    <naqiang>2230,2261</naqiang>
+  </anim>
+  <anim shared="" swf="shuangdao_yingxiongAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_shuangdao_yingxiongAnim_fp">
+		<daiji>100,130</daiji>
+		<paodong>140,164</paodong>
+		<kaiqiang>170,222</kaiqiang>
+		<teshukaiqiang>230,296</teshukaiqiang>
+		<naqiang>100,130</naqiang>
+		<qingji>170,222</qingji>
+		<zhongji>230,296</zhongji>
+  </anim>
+  <anim shared="" swf="huanyingxianfengAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_huanyingxianfengAnim_fp">
+    <daiji>6000,6008</daiji>
+    <paodong>6010,6035</paodong>
+    <kaiqiang>6040,6053</kaiqiang>
+    <huanzidan>6060,6139</huanzidan>
+    <naqiang>6150,6178</naqiang>
+  </anim>
+  <anim shared="" swf="tar21Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_tar21Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,136</huanzidan>
+    <naqiang>140,171</naqiang>
+  </anim>
+  <anim shared="" swf="NoWeaponAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_1">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,136</huanzidan>
+    <naqiang>140,171</naqiang>
+  </anim>
+  <anim shared="" swf="zhentong_hushiAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_zhentong_hushiAnim_fp">
+		<daiji>100,130</daiji>
+		<paodong>140,164</paodong>
+		<kaiqiang>170,222</kaiqiang>
+		<teshukaiqiang>230,296</teshukaiqiang>
+		<naqiang>100,130</naqiang>
+		<qingji>170,222</qingji>
+		<zhongji>230,296</zhongji>
+  </anim>
+  <anim shared="" swf="shuangdao_tufuAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_shuangdao_tufuAnim_fp">
+		<daiji>100,130</daiji>
+		<paodong>140,164</paodong>
+		<kaiqiang>170,222</kaiqiang>
+		<teshukaiqiang>230,296</teshukaiqiang>
+		<naqiang>100,130</naqiang>
+		<qingji>170,222</qingji>
+		<zhongji>230,296</zhongji>
+  </anim>
+  <anim shared="" swf="yaoji_hushiAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_yaoji_hushiAnim_fp">
+		<daiji>100,130</daiji>
+		<paodong>140,164</paodong>
+		<kaiqiang>170,222</kaiqiang>
+		<teshukaiqiang>230,296</teshukaiqiang>
+		<naqiang>100,130</naqiang>
+		<qingji>170,222</qingji>
+		<zhongji>230,296</zhongji>
+  </anim>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <anim shared="fpAnim2_mgAnim_fp" swf="akAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_akAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,60</kaiqiang>
+    <huanzidan>65,141</huanzidan>
+    <naqiang>145,175</naqiang>
+    <teshukaiqiang>200,237</teshukaiqiang>
+  </anim>
+  <anim shared="fpAnim2_akAnim_fp" swf="akAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_mgAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>180,194</kaiqiang>
+    <huanzidan>65,141</huanzidan>
+    <naqiang>145,175</naqiang>
+    <teshukaiqiang>200,237</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="handgunAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_handgunAnim_fp">
+    <daiji>240,248</daiji>
+    <paodong>250,274</paodong>
+    <kaiqiang>280,290</kaiqiang>
+    <huanzidan>295,372</huanzidan>
+    <naqiang>380,415</naqiang>
+  </anim>
+  <anim shared="" swf="meleeAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_meleeAnim_fp">
+    <daiji>420,428</daiji>
+    <paodong>430,455</paodong>
+    <kaiqiang>460,482</kaiqiang>
+    <teshukaiqiang>485,520</teshukaiqiang>
+    <naqiang>525,557</naqiang>
+  </anim>
+  <anim shared="" swf="gernadeAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_gernadeAnim_fp">
+    <daiji>560,568</daiji>
+    <paodong>570,595</paodong>
+    <zhunbeirenglei>600,623</zhunbeirenglei>
+    <renglei>630,643</renglei>
+    <naqiang>645,657</naqiang>
+  </anim>
+  <anim shared="fpAnim2_m4a1aAnim_fp" swf="m4a1Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_m4a1Anim_fp">
+    <daiji>660,668</daiji>
+    <paodong>670,694</paodong>
+    <kaiqiang>700,714</kaiqiang>
+    <huanzidan>720,812</huanzidan>
+    <naqiang>815,850</naqiang>
+    <teshukaiqiang>870,907</teshukaiqiang>
+  </anim>
+  <anim shared="fpAnim2_m4a1Anim_fp" swf="m4a1Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_m4a1aAnim_fp">
+    <daiji>660,668</daiji>
+    <paodong>670,694</paodong>
+    <kaiqiang>855,866</kaiqiang>
+    <huanzidan>720,812</huanzidan>
+    <naqiang>815,850</naqiang>
+    <teshukaiqiang>870,907</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="auga1Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_auga1Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,168</huanzidan>
+    <naqiang>180,212</naqiang>
+  </anim>
+  <anim shared="fpAnim2_sniperAnim2_fp,fpAnim2_sniperAnim3_fp" swf="sniperAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_sniperAnim_fp">
+    <daiji>1090,1098</daiji>
+    <paodong>1100,1125</paodong>
+    <kaiqiang>1130,1183</kaiqiang>
+    <huanzidan>1190,1264</huanzidan>
+    <naqiang>1270,1314</naqiang>
+  </anim>
+  <anim shared="" swf="AWM_king3Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_AWM_king3Anim_fp">
+    <daiji>1090,1098</daiji>
+    <paodong>1100,1125</paodong>
+    <kaiqiang>1130,1183</kaiqiang>
+    <huanzidan>1190,1264</huanzidan>
+    <naqiang>1270,1314</naqiang>
+  </anim>
+  <anim shared="fpAnim2_sniperAnim_fp,fpAnim2_sniperAnim3_fp" swf="sniperAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_sniperAnim2_fp">
+    <daiji>1090,1098</daiji>
+    <paodong>1100,1125</paodong>
+    <kaiqiang>1320,1367</kaiqiang>
+    <huanzidan>1190,1264</huanzidan>
+    <naqiang>1270,1314</naqiang>
+  </anim>
+  <anim shared="fpAnim2_sniperAnim_fp,fpAnim2_sniperAnim2_fp" swf="sniperAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_sniperAnim3_fp">
+    <daiji>1090,1098</daiji>
+    <paodong>1100,1125</paodong>
+    <kaiqiang>1370,1387</kaiqiang>
+    <huanzidan>1190,1264</huanzidan>
+    <naqiang>1270,1314</naqiang>
+  </anim>
+  <anim shared="" swf="p90Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_p90Anim_fp">
+    <daiji>1390,1398</daiji>
+    <paodong>1400,1424</paodong>
+    <kaiqiang>1430,1444</kaiqiang>
+    <huanzidan>1450,1532</huanzidan>
+    <naqiang>1540,1565</naqiang>
+  </anim>
+  <anim shared="" swf="m60Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_m60Anim_fp">
+    <daiji>1570,1578</daiji>
+    <paodong>1580,1604</paodong>
+    <kaiqiang>1610,1625</kaiqiang>
+    <huanzidan>1630,1726</huanzidan>
+    <naqiang>1730,1755</naqiang>
+  </anim>
+  <anim shared="" swf="mp7Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_mp7Anim_fp">
+    <daiji>1760,1768</daiji>
+    <paodong>1770,1794</paodong>
+    <kaiqiang>1800,1811</kaiqiang>
+    <huanzidan>1820,1878</huanzidan>
+    <naqiang>1880,1906</naqiang>
+  </anim>
+  <anim shared="" swf="c4Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_c4Anim_fp">
+    <daiji>1910,1918</daiji>
+    <paodong>1920,1944</paodong>
+    <kaiqiang>1950,2038</kaiqiang>
+    <naqiang>2040,2073</naqiang>
+  </anim>
+  <anim shared="fpAnim2_qbz95Anim_fp" swf="qbz95Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_famasAnim_fp">
+    <daiji>2080,2088</daiji>
+    <paodong>2090,2114</paodong>
+    <kaiqiang>2120,2134</kaiqiang>
+    <huanzidan>2260,2336</huanzidan>
+    <naqiang>2220,2251</naqiang>
+  </anim>
+  <anim shared="fpAnim2_famasAnim_fp" swf="qbz95Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_qbz95Anim_fp">
+    <daiji>2080,2088</daiji>
+    <paodong>2090,2114</paodong>
+    <kaiqiang>2120,2134</kaiqiang>
+    <huanzidan>2140,2216</huanzidan>
+    <naqiang>2220,2251</naqiang>
+  </anim>
+  <anim shared="" swf="jiatelinAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_jiatelinAnim_fp">
+    <daiji>2340,2348</daiji>
+    <paodong>2350,2374</paodong>
+    <yure>2380,2384</yure>
+    <zhuan>2386,2394</zhuan>
+    <kaiqiang>2396,2401</kaiqiang>
+    <huifu>2403,2413</huifu>
+    <huanzidan>2420,2476</huanzidan>
+    <naqiang>2480,2505</naqiang>
+  </anim>
+  <anim shared="" swf="mp5Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_mp5Anim_fp">
+    <daiji>2520,2528</daiji>
+    <paodong>2530,2554</paodong>
+    <kaiqiang>2560,2574</kaiqiang>
+    <huanzidan>2580,2633</huanzidan>
+    <naqiang>2640,2665</naqiang>
+  </anim>
+  <anim shared="" swf="sg552Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_sg552Anim_fp">
+    <daiji>2680,2688</daiji>
+    <paodong>2690,2714</paodong>
+    <kaiqiang>2720,2734</kaiqiang>
+    <huanzidan>2740,2826</huanzidan>
+    <naqiang>2838,2881</naqiang>
+  </anim>  
+  <anim shared="" swf="sg552_lanseyaojiAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_sg552_lanseyaojiAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,137</huanzidan>
+    <naqiang>145,177</naqiang>
+  </anim>
+  <anim shared="" swf="xm1014Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_xm1014Anim_fp">
+    <daiji>2870,2878</daiji>
+    <paodong>2880,2904</paodong>
+    <kaiqiang>2910,2923</kaiqiang>
+    <kaishihuanzidan>2930,2940</kaishihuanzidan>
+    <xunhuanhuanzidan>2942,2961</xunhuanhuanzidan>
+    <jieshuhuanzidan>2963,2985</jieshuhuanzidan>
+    <naqiang>2990,3015</naqiang>
+  </anim>
+  <anim shared="" swf="xinxm1014Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_xinxm1014Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <kaishihuanzidan>60,70</kaishihuanzidan>
+    <xunhuanhuanzidan>72,91</xunhuanhuanzidan>
+    <jieshuhuanzidan>93,115</jieshuhuanzidan>
+    <naqiang>120,145</naqiang>
+  </anim>
+  <anim shared="" swf="xm1014_dulangAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_xm1014_dulangAnim_fp">
+    <daiji>2870,2878</daiji>
+    <paodong>2880,2904</paodong>
+    <kaiqiang>2910,2923</kaiqiang>
+    <kaishihuanzidan>2930,2940</kaishihuanzidan>
+    <xunhuanhuanzidan>2942,2961</xunhuanhuanzidan>
+    <jieshuhuanzidan>2963,2985</jieshuhuanzidan>
+    <naqiang>2990,3015</naqiang>
+  </anim>
+  <anim shared="" swf="rpkAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_rpkAnim_fp">
+    <daiji>3040,3048</daiji>
+    <paodong>3050,3074</paodong>
+    <kaiqiang>3080,3095</kaiqiang>
+    <huanzidan>3100,3171</huanzidan>
+    <naqiang>3180,3211</naqiang>
+  </anim>
+  <anim shared="" swf="mg3Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_mg3Anim_fp">
+    <daiji>3230,3238</daiji>
+    <paodong>3240,3264</paodong>
+    <kaiqiang>3270,3285</kaiqiang>
+    <huanzidan>3290,3387</huanzidan>
+    <naqiang>3390,3415</naqiang>
+  </anim>
+  <anim shared="" swf="m249Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_m249Anim_fp">
+    <daiji>3430,3438</daiji>
+    <paodong>3440,3464</paodong>
+    <kaiqiang>3470,3485</kaiqiang>
+    <huanzidan>3490,3612</huanzidan>
+    <naqiang>3620,3664</naqiang>
+  </anim>
+  <anim shared="" swf="axeAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_axeAnim_fp">
+    <daiji>3680,3688</daiji>
+    <paodong>3690,3715</paodong>
+    <kaiqiang>3720,3740</kaiqiang>
+    <teshukaiqiang>3750,3787</teshukaiqiang>
+    <naqiang>3790,3820</naqiang>
+  </anim>
+  <anim shared="" swf="niboerAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_niboerAnim_fp">
+    <daiji>3840,3848</daiji>
+    <paodong>3850,3875</paodong>
+    <kaiqiang>3880,3901</kaiqiang>
+    <teshukaiqiang>3910,3955</teshukaiqiang>
+    <naqiang>3960,3997</naqiang>
+  </anim>
+  <anim shared="" swf="doubleHandgunAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_doubleHandgunAnim_fp">
+    <daiji>4020,4028</daiji>
+    <paodong>4030,4054</paodong>
+    <kaiqiang>4060,4071</kaiqiang>
+    <teshukaiqiang>4075,4086</teshukaiqiang>
+    <huanzidan>4090,4173</huanzidan>
+    <naqiang>4180,4194</naqiang>
+  </anim>
+  <anim shared="" swf="an94Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_an94Anim_fp">
+    <daiji>4210,4218</daiji>
+    <paodong>4220,4244</paodong>
+    <kaiqiang>4250,4265</kaiqiang>
+    <huanzidan>4270,4341</huanzidan>
+    <naqiang>4350,4381</naqiang>
+  </anim>
+  <anim shared="" swf="malaijianAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_malaijianAnim_fp">
+    <daiji>4400,4408</daiji>
+    <paodong>4410,4435</paodong>
+    <kaiqiang>4440,4460</kaiqiang>
+    <teshukaiqiang>4470,4520</teshukaiqiang>
+    <naqiang>4530,4550</naqiang>
+  </anim>
+  <anim shared="" swf="chongciAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_chongciAnim_fp">
+    <daiji>4560,4568</daiji>
+    <paodong>4570,4594</paodong>
+    <kaiqiang>4600,4614</kaiqiang>
+    <huanzidan>4620,4710</huanzidan>
+    <naqiang>4720,4746</naqiang>
+    <teshukaiqiang>4750,4800</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="tuimopaoAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_tuimopaoAnim_fp">
+    <daiji>4820,4828</daiji>
+    <paodong>4830,4854</paodong>
+    <kaiqiang>4860,4874</kaiqiang>
+    <huanzidan>4880,4973</huanzidan>
+    <naqiang>4980,5015</naqiang>
+  </anim>
+  
+  <anim shared="" swf="batAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_batAnim_fp">
+    <daiji>5210,5218</daiji>
+    <paodong>5220,5245</paodong>
+    <kaiqiang>5250,5270</kaiqiang>
+    <teshukaiqiang>5280,5330</teshukaiqiang>
+    <naqiang>5340,5364</naqiang>
+  </anim>
+  <anim shared="" swf="" switcher="fpAnim2_switcher" value="fpAnim2_sglqAnim_fp">
+    <daiji>5380,5388</daiji>
+    <paodong>5390,5414</paodong>
+    <kaiqiang>5420,5433</kaiqiang>
+    <huanzidan>5440,5531</huanzidan>
+    <naqiang>5540,5567</naqiang>
+  </anim>
+  <anim shared="" swf="zuolunAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_zuolunAnim_fp">
+    <daiji>5580,5588</daiji>
+    <paodong>5590,5614</paodong>
+    <kaiqiang>5620,5630</kaiqiang>
+    <huanzidan>5640,5721</huanzidan>
+    <naqiang>5730,5761</naqiang>
+  </anim>
+  <anim shared="" swf="cs06Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_cs06Anim_fp">
+    <daiji>5780,5788</daiji>
+    <paodong>5790,5814</paodong>
+    <kaiqiang>5820,5834</kaiqiang>
+    <huanzidan>5840,5922</huanzidan>
+    <naqiang>5930,5955</naqiang>
+  </anim>
+  <anim shared="" swf="qichuiAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_qichuiAnim_fp">
+    <daiji>5970,5978</daiji>
+    <paodong>5980,6004</paodong>
+    <kaiqiang>6010,6024</kaiqiang>
+    <huanzidan>6030,6106</huanzidan>
+    <naqiang>6110,6141</naqiang>
+  </anim>
+  <anim shared="" swf="qbz81Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_qbz81Anim_fp">
+    <daiji>6160,6168</daiji>
+    <paodong>6170,6194</paodong>
+    <kaiqiang>6200,6220</kaiqiang>
+    <huanzidan>6225,6301</huanzidan>
+    <naqiang>6305,6335</naqiang>
+  </anim>
+  <anim shared="" swf="uzi1Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_uzi1Anim_fp">
+    <daiji>6350,6358</daiji>
+    <paodong>6360,6384</paodong>
+    <kaiqiang>6390,6404</kaiqiang>
+    <huanzidan>6410,6467</huanzidan>
+    <naqiang>6470,6495</naqiang>
+  </anim>
+  <anim shared="fpAnim2_rsassAnim_fp" swf="msrAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_msrAnim_fp">
+    <daiji>6500,6508</daiji>
+    <paodong>6510,6535</paodong>
+    <kaiqiang>6540,6593</kaiqiang>
+    <huanzidan>6600,6674</huanzidan>
+    <naqiang>6680,6724</naqiang>
+  </anim>
+  <anim shared="fpAnim2_msrAnim_fp" swf="msrAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_rsassAnim_fp">
+    <daiji>6500,6508</daiji>
+    <paodong>6510,6535</paodong>
+    <kaiqiang>6730,6747</kaiqiang>
+    <huanzidan>6600,6674</huanzidan>
+    <naqiang>6680,6724</naqiang>
+  </anim>
+  <anim shared="" swf="scarAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_scarAnim_fp">
+    <daiji>6980,6988</daiji>
+    <paodong>6990,7014</paodong>
+    <kaiqiang>7020,7035</kaiqiang>
+    <huanzidan>7040,7111</huanzidan>
+    <naqiang>7120,7151</naqiang>
+  </anim>
+  <anim shared="" swf="vectorAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_vectorAnim_fp">
+    <daiji>7170,7178</daiji>
+    <paodong>7180,7204</paodong>
+    <kaiqiang>7210,7224</kaiqiang>
+    <huanzidan>7230,7324</huanzidan>
+    <naqiang>7330,7362</naqiang>
+  </anim>
+  <anim shared="" swf="fn2000Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_fn2000Anim_fp">
+    <daiji>7380,7388</daiji>
+    <paodong>7390,7414</paodong>
+    <kaiqiang>7420,7434</kaiqiang>
+    <huanzidan>7440,7516</huanzidan>
+    <naqiang>7520,7551</naqiang>
+  </anim>
+  <anim shared="" swf="uziAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_uziAnim_fp">
+    <daiji>7570,7578</daiji>
+    <paodong>7580,7604</paodong>
+    <kaiqiang>7610,7621</kaiqiang>
+    <teshukaiqiang>7625,7636</teshukaiqiang>
+    <huanzidan>7640,7726</huanzidan>
+    <naqiang>7730,7749</naqiang>
+  </anim>
+  <anim shared="" swf="m1887Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_m1887Anim_fp">
+    <daiji>7770,7778</daiji>
+    <paodong>7780,7804</paodong>
+    <kaiqiang>7810,7841</kaiqiang>
+    <kaishihuanzidan>7850,7860</kaishihuanzidan>
+    <xunhuanhuanzidan>7862,7878</xunhuanhuanzidan>
+    <jieshuhuanzidan>7880,7897</jieshuhuanzidan>
+    <naqiang>7900,7931</naqiang>
+  </anim>
+  <anim shared="" swf="gs_01Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_gs_01Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,176</huanzidan>
+    <naqiang>190,234</naqiang>
+  </anim>
+  <anim shared="" swf="gs_02Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_gs_02Anim_fp">
+    <daiji>2080,2088</daiji>
+    <paodong>2090,2114</paodong>
+    <kaiqiang>2120,2134</kaiqiang>
+    <huanzidan>2140,2226</huanzidan>
+    <naqiang>2230,2261</naqiang>
+  </anim>
+  <anim shared="" swf="shuangdao_yingxiongAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_shuangdao_yingxiongAnim_fp">
+		<daiji>100,130</daiji>
+		<paodong>140,164</paodong>
+		<kaiqiang>170,222</kaiqiang>
+		<teshukaiqiang>230,296</teshukaiqiang>
+		<naqiang>100,130</naqiang>
+		<qingji>170,222</qingji>
+		<zhongji>230,296</zhongji>
+  </anim>
+  <anim shared="" swf="huanyingxianfengAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_huanyingxianfengAnim_fp">
+    <daiji>6000,6008</daiji>
+    <paodong>6010,6035</paodong>
+    <kaiqiang>6040,6053</kaiqiang>
+    <huanzidan>6060,6139</huanzidan>
+    <naqiang>6150,6178</naqiang>
+  </anim>
+  <anim shared="" swf="tar21Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_tar21Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,136</huanzidan>
+    <naqiang>140,171</naqiang>
+  </anim>
+  <anim shared="" swf="NoWeaponAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_1">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,136</huanzidan>
+    <naqiang>140,171</naqiang>
+  </anim>
+  <anim shared="" swf="zhentong_hushiAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_zhentong_hushiAnim_fp">
+		<daiji>100,130</daiji>
+		<paodong>140,164</paodong>
+		<kaiqiang>170,222</kaiqiang>
+		<teshukaiqiang>230,296</teshukaiqiang>
+		<naqiang>100,130</naqiang>
+		<qingji>170,222</qingji>
+		<zhongji>230,296</zhongji>
+  </anim>
+  <anim shared="" swf="shuangdao_tufuAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_shuangdao_tufuAnim_fp">
+		<daiji>100,130</daiji>
+		<paodong>140,164</paodong>
+		<kaiqiang>170,222</kaiqiang>
+		<teshukaiqiang>230,296</teshukaiqiang>
+		<naqiang>100,130</naqiang>
+		<qingji>170,222</qingji>
+		<zhongji>230,296</zhongji>
+  </anim>
+  <anim shared="" swf="yaoji_hushiAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_yaoji_hushiAnim_fp">
+		<daiji>100,130</daiji>
+		<paodong>140,164</paodong>
+		<kaiqiang>170,222</kaiqiang>
+		<teshukaiqiang>230,296</teshukaiqiang>
+		<naqiang>100,130</naqiang>
+		<qingji>170,222</qingji>
+		<zhongji>230,296</zhongji>
+  </anim>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <anim swf="" switcher="tpLowAnim1_switcher" value="tpLowAnim1">
+    <zhanlidaiji>0,0</zhanlidaiji>
+    <zhanliqianzou>20,50</zhanliqianzou>
+    <zhanlihouzou>90,120</zhanlihouzou>
+    <zhanliqianpao>60,80</zhanliqianpao>
+    <zhanlihoupao>130,150</zhanlihoupao>
+    <zhanliyoupao>160,180</zhanliyoupao>
+    <zhanlizuopao>190,210</zhanlizuopao>
+    <zhanlidaoxiadunguodu>410,415</zhanlidaoxiadunguodu>
+    <xiadundaozhanliguodu>415,420</xiadundaozhanliguodu>
+    <xiadundaiji>220,220</xiadundaiji>
+    <xiadunqianzou>230,260</xiadunqianzou>
+    <xiadunhouzou>270,300</xiadunhouzou>
+    <xiadunhengzou>310,330</xiadunhengzou>
+    <tiao>370,381</tiao>
+    <baotousi>450,465</baotousi>
+    <qiansi>570,585</qiansi>
+    <housi>480,495</housi>
+    <zuosi>540,555</zuosi>
+    <yousi>510,525</yousi>
+  </anim>
+  <anim swf="" switcher="tpLowAnim1_switcher" value="tpLowAnim1_1">
+    <zhanlidaiji>1000,1040</zhanlidaiji>
+    <zhanliqianpao>1050,1082</zhanliqianpao>
+    <zhanlihoupao>1050,1082</zhanlihoupao>
+    <zhanliyoupao>1050,1082</zhanliyoupao>
+    <zhanlizuopao>1050,1082</zhanlizuopao>
+  </anim>
+  <anim swf="" switcher="tpLowAnim2_switcher" value="tpLowAnim2">
+    <zhanlidaiji>0,0</zhanlidaiji>
+    <zhanliqianzou>20,50</zhanliqianzou>
+    <zhanlihouzou>90,120</zhanlihouzou>
+    <zhanliqianpao>60,80</zhanliqianpao>
+    <zhanlihoupao>130,150</zhanlihoupao>
+    <zhanliyoupao>160,180</zhanliyoupao>
+    <zhanlizuopao>190,210</zhanlizuopao>
+    <zhanlidaoxiadunguodu>410,415</zhanlidaoxiadunguodu>
+    <xiadundaozhanliguodu>415,420</xiadundaozhanliguodu>
+    <xiadundaiji>220,220</xiadundaiji>
+    <xiadunqianzou>230,260</xiadunqianzou>
+    <xiadunhouzou>270,300</xiadunhouzou>
+    <xiadunhengzou>310,330</xiadunhengzou>
+    <tiao>370,381</tiao>
+    <baotousi>450,465</baotousi>
+    <qiansi>570,585</qiansi>
+    <housi>480,495</housi>
+    <zuosi>540,555</zuosi>
+    <yousi>510,525</yousi>
+  </anim>
+  <anim swf="" switcher="tpLowAnim2_switcher" value="tpLowAnim2_1">
+    <zhanlidaiji>1000,1040</zhanlidaiji>
+    <zhanliqianpao>1050,1082</zhanliqianpao>
+    <zhanlihoupao>1050,1082</zhanlihoupao>
+    <zhanliyoupao>1050,1082</zhanliyoupao>
+    <zhanlizuopao>1050,1082</zhanlizuopao>
+  </anim>
+  <anim shared="" swf="siwangAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_siwangAnim_tp">
+    <baotousi>450,465</baotousi>
+    <qiansi>570,585</qiansi>
+    <housi>480,495</housi>
+    <zuosi>540,555</zuosi>
+    <yousi>510,525</yousi>
+  </anim>
+  <anim shared="tpUpAnim1_uzi1Anim_tp" swf="handgunAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_handgunAnim_tp">
+    <daiji>151,155</daiji>
+    <kaiqiang>160,166</kaiqiang>
+    <beijizhong>170,178</beijizhong>
+    <pao>190,210</pao>
+    <huanzidan>220,271</huanzidan>
+    <xiadundaiji>280,280</xiadundaiji>
+    <xiadunkaiqiang>290,295</xiadunkaiqiang>
+  </anim>
+  <anim shared="tpUpAnim1_handgunAnim_tp" swf="handgunAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_uzi1Anim_tp">
+    <daiji>151,155</daiji>
+    <kaiqiang>200,202</kaiqiang>
+    <beijizhong>170,178</beijizhong>
+    <pao>190,210</pao>
+    <huanzidan>220,271</huanzidan>
+    <xiadundaiji>280,280</xiadundaiji>
+    <xiadunkaiqiang>205,207</xiadunkaiqiang>
+  </anim>
+  <anim shared="tpUpAnim1_ak47kingAnim_tp,tpUpAnim1_m4a1kingAnim_tp" swf="rifleAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_rifleAnim_tp">
+    <daiji>0,5</daiji>
+    <kaiqiang>10,12</kaiqiang>
+    <beijizhong>20,28</beijizhong>
+    <pao>60,80</pao>
+    <huanzidan>90,129</huanzidan>
+    <xiadundaiji>40,40</xiadundaiji>
+    <xiadunkaiqiang>50,52</xiadunkaiqiang>
+  </anim>
+  <anim shared="tpUpAnim1_rifleAnim_tp,tpUpAnim1_m4a1kingAnim_tp" swf="rifleAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_ak47kingAnim_tp">
+    <daiji>0,5</daiji>
+    <kaiqiang>10,12</kaiqiang>
+    <beijizhong>20,28</beijizhong>
+    <pao>60,80</pao>
+    <huanzidan>90,129</huanzidan>
+    <xiadundaiji>40,40</xiadundaiji>
+    <xiadunkaiqiang>50,52</xiadunkaiqiang>
+    <teshukaiqiang>180,202</teshukaiqiang>
+  </anim>
+  <anim shared="tpUpAnim1_rifleAnim_tp,tpUpAnim1_ak47kingAnim_tp" swf="rifleAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_m4a1kingAnim_tp">
+    <daiji>0,5</daiji>
+    <kaiqiang>10,12</kaiqiang>
+    <beijizhong>20,28</beijizhong>
+    <pao>60,80</pao>
+    <huanzidan>90,129</huanzidan>
+    <xiadundaiji>40,40</xiadundaiji>
+    <xiadunkaiqiang>50,52</xiadunkaiqiang>
+    <teshukaiqiang>140,165</teshukaiqiang>
+  </anim>
+<anim shared="" swf="m4a1_dulangAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_m4a1_dulangAnim_tp">
+    <daiji>0,5</daiji>
+    <kaiqiang>10,12</kaiqiang>
+    <beijizhong>20,28</beijizhong>
+    <pao>60,80</pao>
+    <huanzidan>90,129</huanzidan>
+    <xiadundaiji>40,40</xiadundaiji>
+    <xiadunkaiqiang>50,52</xiadunkaiqiang>
+    <teshukaiqiang>140,165</teshukaiqiang>
+  </anim>  
+  
+  <anim shared="" swf="meleeAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_meleeAnim_tp">
+    <daiji>600,605</daiji>
+    <kaiqiang>650,676</kaiqiang>
+    <teshukaiqiang>610,640</teshukaiqiang>
+    <beijizhong>680,688</beijizhong>
+    <pao>700,720</pao>
+    <xiadundaiji>690,695</xiadundaiji>
+  </anim>
+  <anim shared="" swf="gernadeAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_gernadeAnim_tp">
+    <daiji>720,725</daiji>
+    <kaiqiang>730,744</kaiqiang>
+    <beijizhong>780,788</beijizhong>
+    <pao>750,770</pao>
+    <xiadundaiji>800,800</xiadundaiji>
+  </anim>
+  <anim shared="" swf="augAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_augAnim_tp">
+    <daiji>980,985</daiji>
+    <kaiqiang>990,992</kaiqiang>
+    <beijizhong>1000,1008</beijizhong>
+    <pao>1020,1040</pao>
+    <huanzidan>1050,1094</huanzidan>
+    <xiadundaiji>1100,1100</xiadundaiji>
+    <xiadunkaiqiang>1110,1112</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="sniperAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_sniperAnim_tp">
+    <daiji>4145,4145</daiji>
+    <kaiqiang>4150,4155</kaiqiang>
+    <beijizhong>4160,4168</beijizhong>
+    <pao>4180,4200</pao>
+    <huanzidan>4210,4254</huanzidan>
+    <xiadundaiji>4260,4260</xiadundaiji>
+    <xiadunkaiqiang>4270,4275</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="AWM_king3Anim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_AWM_king3Anim_tp">
+    <daiji>365,365</daiji>
+    <kaiqiang>310,315</kaiqiang>
+    <beijizhong>320,328</beijizhong>
+    <pao>340,360</pao>
+    <huanzidan>370,414</huanzidan>
+    <xiadundaiji>420,425</xiadundaiji>
+    <xiadunkaiqiang>430,435</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="m60Anim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_m60Anim_tp">
+    <daiji>830,835</daiji>
+    <kaiqiang>840,842</kaiqiang>
+    <beijizhong>930,938</beijizhong>
+    <pao>850,870</pao>
+    <huanzidan>880,924</huanzidan>
+    <xiadundaiji>950,950</xiadundaiji>
+    <xiadunkaiqiang>960,962</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="c4Anim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_c4Anim_tp">
+    <daiji>1450,1455</daiji>
+    <beijizhong>1490,1498</beijizhong>
+    <pao>1460,1480</pao>
+  </anim>
+  <anim shared="" swf="famasAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_famasAnim_tp">
+    <daiji>1130,1135</daiji>
+    <kaiqiang>1140,1142</kaiqiang>
+    <beijizhong>1150,1158</beijizhong>
+    <pao>1170,1190</pao>
+    <huanzidan>1200,1244</huanzidan>
+    <xiadundaiji>1250,1250</xiadundaiji>
+    <xiadunkaiqiang>1260,1262</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="jiatelinAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_jiatelinAnim_tp">
+    <daiji>1550,1555</daiji>
+    <kaiqiang>1560,1562</kaiqiang>
+    <beijizhong>1570,1578</beijizhong>
+    <pao>1590,1610</pao>
+    <huanzidan>1620,1664</huanzidan>
+    <xiadundaiji>1670,1670</xiadundaiji>
+    <xiadunkaiqiang>1680,1682</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="niboerAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_niboerAnim_tp">
+    <daiji>2500,2505</daiji>
+    <kaiqiang>2510,2532</kaiqiang>
+    <teshukaiqiang>2540,2562</teshukaiqiang>
+    <beijizhong>2600,2617</beijizhong>
+    <pao>2570,2590</pao>
+    <xiadundaiji>2630,2635</xiadundaiji>
+  </anim>
+  <anim shared="tpUpAnim1_uziAnim_tp" swf="doubleHandgunAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_doubleHandgunAnim_tp">
+    <daiji>2100,2105</daiji>
+    <kaiqiang>2110,2118</kaiqiang>
+    <beijizhong>2120,2128</beijizhong>
+    <pao>2140,2160</pao>
+    <huanzidan>2170,2270</huanzidan>
+    <xiadundaiji>2280,2280</xiadundaiji>
+    <xiadunkaiqiang>2290,2298</xiadunkaiqiang>
+  </anim>
+  <anim shared="tpUpAnim1_doubleHandgunAnim_tp" swf="doubleHandgunAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_uziAnim_tp">
+    <daiji>2100,2105</daiji>
+    <kaiqiang>2310,2314</kaiqiang>
+    <beijizhong>2120,2128</beijizhong>
+    <pao>2140,2160</pao>
+    <huanzidan>2170,2270</huanzidan>
+    <xiadundaiji>2280,2280</xiadundaiji>
+    <xiadunkaiqiang>2320,2324</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="axeAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_axeAnim_tp">
+    <daiji>2350,2355</daiji>
+    <kaiqiang>2360,2375</kaiqiang>
+    <teshukaiqiang>2380,2397</teshukaiqiang>
+    <beijizhong>2430,2438</beijizhong>
+    <pao>2400,2420</pao>
+    <xiadundaiji>2440,2440</xiadundaiji>
+  </anim>
+  <anim shared="" swf="malaijianAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_malaijianAnim_tp">
+    <daiji>2800,2805</daiji>
+    <kaiqiang>2810,2825</kaiqiang>
+    <teshukaiqiang>2830,2847</teshukaiqiang>
+    <beijizhong>2880,2888</beijizhong>
+    <pao>2850,2870</pao>
+    <xiadundaiji>2890,2890</xiadundaiji>
+  </anim>
+  <anim shared="" swf="xm1014Anim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_xm1014Anim_tp">
+    <daiji>1300,1305</daiji>
+    <kaiqiang>1310,1315</kaiqiang>
+    <beijizhong>1320,1328</beijizhong>
+    <pao>1340,1360</pao>
+    <huanzidan>1370,1405</huanzidan>
+    <xiadundaiji>1410,1410</xiadundaiji>
+    <xiadunkaiqiang>1420,1422</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="tuimopaoAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_tuimopaoAnim_tp">
+    <daiji>1700,1705</daiji>
+    <kaiqiang>1710,1712</kaiqiang>
+    <beijizhong>1720,1728</beijizhong>
+    <pao>1740,1760</pao>
+    <huanzidan>1770,1814</huanzidan>
+    <xiadundaiji>1820,1820</xiadundaiji>
+    <xiadunkaiqiang>1830,1832</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="chongciAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_chongciAnim_tp">
+    <daiji>1900,1905</daiji>
+    <kaiqiang>1910,1912</kaiqiang>
+    <beijizhong>1920,1928</beijizhong>
+    <pao>1940,1960</pao>
+    <huanzidan>1970,2014</huanzidan>
+    <xiadundaiji>2050,2050</xiadundaiji>
+    <xiadunkaiqiang>2060,2062</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="batAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_batAnim_tp">
+    <daiji>2950,2955</daiji>
+    <kaiqiang>2990,3006</kaiqiang>
+    <teshukaiqiang>3010,3028</teshukaiqiang>
+    <beijizhong>3040,3048</beijizhong>
+    <pao>2960,2980</pao>
+    <xiadundaiji>3060,3060</xiadundaiji>
+  </anim>
+  <anim shared="" swf="vectorAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_vectorAnim_tp">
+    <daiji>3100,3105</daiji>
+    <kaiqiang>3110,3112</kaiqiang>
+    <beijizhong>3120,3128</beijizhong>
+    <pao>3140,3160</pao>
+    <huanzidan>3170,3214</huanzidan>
+    <xiadundaiji>3220,3220</xiadundaiji>
+    <xiadunkaiqiang>3230,3232</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="fn2000Anim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_fn2000Anim_tp">
+    <daiji>2650,2655</daiji>
+    <kaiqiang>2660,2662</kaiqiang>
+    <beijizhong>2670,2678</beijizhong>
+    <pao>2690,2710</pao>
+    <huanzidan>2720,2764</huanzidan>
+    <xiadundaiji>2770,2770</xiadundaiji>
+    <xiadunkaiqiang>2780,2782</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="sniperAnim2_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_sniperAnim2_tp">
+    <daiji>3300,3305</daiji>
+    <kaiqiang>3310,3315</kaiqiang>
+    <beijizhong>3320,3328</beijizhong>
+    <pao>3340,3360</pao>
+    <huanzidan>3370,3414</huanzidan>
+    <xiadundaiji>3420,3420</xiadundaiji>
+    <xiadunkaiqiang>3430,3435</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="m1887Anim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_m1887Anim_tp">
+    <daiji>3500,3505</daiji>
+    <kaiqiang>3510,3515</kaiqiang>
+    <beijizhong>3520,3528</beijizhong>
+    <pao>3540,3560</pao>
+    <huanzidan>3570,3605</huanzidan>
+    <xiadundaiji>3610,3610</xiadundaiji>
+    <xiadunkaiqiang>3620,3625</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="" switcher="tpUpAnim1_switcher" value="tpUpAnim1_AS50Anim_tp">
+    <daiji>3700,3700</daiji>
+    <kaiqiang>3710,3715</kaiqiang>
+    <beijizhong>3720,3728</beijizhong>
+    <pao>3740,3760</pao>
+    <huanzidan>3770,3814</huanzidan>
+    <xiadundaiji>3820,3825</xiadundaiji>
+    <xiadunkaiqiang>3830,3835</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="" switcher="tpUpAnim1_switcher" value="tpUpAnim1_M200Anim_tp">
+    <daiji>3900,3900</daiji>
+    <kaiqiang>3910,3915</kaiqiang>
+    <beijizhong>3920,3928</beijizhong>
+    <pao>3940,3960</pao>
+    <huanzidan>3970,4014</huanzidan>
+    <xiadundaiji>4020,4025</xiadundaiji>
+    <xiadunkaiqiang>4030,4035</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="" switcher="tpUpAnim1_switcher" value="tpUpAnim1_sg552Anim_tp">
+    <daiji>4300,4300</daiji>
+    <kaiqiang>4310,4312</kaiqiang>
+    <beijizhong>4320,4328</beijizhong>
+    <pao>4340,4350</pao>
+    <huanzidan>4370,4414</huanzidan>
+    <xiadundaiji>4420,4425</xiadundaiji>
+    <xiadunkaiqiang>4430,4432</xiadunkaiqiang>
+  </anim>  
+  <anim shared="" swf="sg552_lanseyaojiAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_sg552_lanseyaojiAnim_tp">
+    <daiji>4300,4300</daiji>
+    <kaiqiang>4310,4312</kaiqiang>
+    <beijizhong>4320,4328</beijizhong>
+    <pao>4340,4350</pao>
+    <huanzidan>4370,4414</huanzidan>
+    <xiadundaiji>4420,4425</xiadundaiji>
+    <xiadunkaiqiang>4430,4432</xiadunkaiqiang>
+  </anim>  
+  <anim shared="" swf="gs_01Anim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_gs_01Anim_tp">
+    <daiji>830,835</daiji>
+    <kaiqiang>840,842</kaiqiang>
+    <beijizhong>930,938</beijizhong>
+    <pao>850,870</pao>
+    <huanzidan>880,924</huanzidan>
+    <xiadundaiji>950,955</xiadundaiji>
+    <xiadunkaiqiang>960,962</xiadunkaiqiang>
+  </anim>  
+  <anim shared="" swf="gs_02Anim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_gs_02Anim_tp">
+    <daiji>4500,4505</daiji>
+    <kaiqiang>4510,4524</kaiqiang>
+    <beijizhong>4530,4547</beijizhong>
+    <pao>4550,4570</pao>
+    <huanzidan>4580,4627</huanzidan>
+    <xiadundaiji>4630,4635</xiadundaiji>
+    <xiadunkaiqiang>4640,4654</xiadunkaiqiang>
+  </anim>  
+  <anim shared="" swf="shuangdao_yingxiongAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_shuangdao_yingxiongAnim_tp">
+    <daiji>10,50</daiji>
+    <kaiqiang>450,503</kaiqiang>
+    <teshukaiqiang>510,562</teshukaiqiang>
+    <beijizhong>570,602</beijizhong>
+    <pao>60,84</pao>
+    <xiadundaiji>200,230</xiadundaiji>
+    <xiadunkaiqiang>450,503</xiadunkaiqiang>
+  </anim> 
+  <anim shared="" swf="huanyingxianfengAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_huanyingxianfengAnim_tp">
+    <daiji>4500,4505</daiji>
+    <kaiqiang>4510,4512</kaiqiang>
+    <huanzidan>4570,4640</huanzidan>
+    <beijizhong>4520,4528</beijizhong>
+    <pao>4540,4560</pao>
+    <xiadundaiji>4650,4655</xiadundaiji>
+    <xiadunkaiqiang>4660,4662</xiadunkaiqiang>
+  </anim> 
+  <anim shared="" swf="NoWeaponAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_1_NoWeaponAnim_tp">
+    <daiji>1000,1040</daiji>
+    <kaiqiang>4510,4512</kaiqiang>
+    <huanzidan>4570,4640</huanzidan>
+    <beijizhong>4520,4528</beijizhong>
+    <pao>1050,1082</pao>
+    <xiadundaiji>4650,4655</xiadundaiji>
+    <xiadunkaiqiang>4660,4662</xiadunkaiqiang>
+    <zou>1050,1082</zou>
+  </anim> 
+  <anim shared="" swf="zhentong_hushiAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_zhentong_hushiAnim_tp">
+    <daiji>32,64</daiji>
+		<zhanliqianzou>418,454</zhanliqianzou>
+		<zhanlihouzou>418,454</zhanlihouzou>
+		<zhanliqianpao>329,353</zhanliqianpao>
+		<zhanlihoupao>329,353</zhanlihoupao>
+		<zhanlizuopao>329,353</zhanlizuopao>
+		<zhanliyoupao>329,353</zhanliyoupao>
+		<xiadundaiji>32,64</xiadundaiji>
+		<xiadunqianzou>418,454</xiadunqianzou>
+		<xiadunhouzou>418,454</xiadunhouzou>
+		<xiadunzuozou>418,454</xiadunzuozou>
+		<xiadunyouzou>418,454</xiadunyouzou>
+		<tiao>32,64</tiao>
+		<qingji>101,185</qingji>
+		<kaiqiang>101,185</kaiqiang>
+		<zhongji>101,185</zhongji>
+		<beijizhong>190,235</beijizhong>
+		<baotousi>240,297</baotousi>
+		<qiansi>240,297</qiansi>
+		<housi>240,297</housi>
+		<zuosi>240,297</zuosi>
+		<yousi>240,297</yousi>
+  </anim> 
+  <anim shared="" swf="shuangdao_tufuAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_shuangdao_tufuAnim_tp">
+    <daiji>36,72</daiji>
+		<zhanliqianzou>714,754</zhanliqianzou>
+		<zhanlihouzou>714,754</zhanlihouzou>
+		<zhanliqianpao>835,867</zhanliqianpao>
+		<zhanlihoupao>835,867</zhanlihoupao>
+		<zhanlizuopao>835,867</zhanlizuopao>
+		<zhanliyoupao>835,867</zhanliyoupao>
+		<xiadundaiji>36,72</xiadundaiji>
+		<xiadunqianzou>714,754</xiadunqianzou>
+		<xiadunhouzou>714,754</xiadunhouzou>
+		<xiadunzuozou>714,754</xiadunzuozou>
+		<xiadunyouzou>714,754</xiadunyouzou>
+		<tiao>36,72</tiao>
+		<qingji>118,194</qingji>
+		<kaiqiang>118,194</kaiqiang>
+		<youqingji>118,194</youqingji>
+		<zuoqingji>212,285</zuoqingji>
+		<zhongji>292,473</zhongji>
+		<beijizhong>500,568</beijizhong>
+		<baotousi>580,665</baotousi>
+		<qiansi>580,665</qiansi>
+		<housi>580,665</housi>
+		<zuosi>580,665</zuosi>
+		<yousi>580,665</yousi>
+  </anim> 
+  <anim shared="" swf="yaoji_hushiAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_yaoji_hushiAnim_tp">
+    <daiji>10,40</daiji>
+		<zhanliqianzou>370,406</zhanliqianzou>
+		<zhanlihouzou>370,406</zhanlihouzou>
+		<zhanliqianpao>320,344</zhanliqianpao>
+		<zhanlihoupao>320,344</zhanlihoupao>
+		<zhanlizuopao>320,344</zhanlizuopao>
+		<zhanliyoupao>320,344</zhanliyoupao>
+		<xiadundaiji>10,40</xiadundaiji>
+		<xiadunqianzou>370,406</xiadunqianzou>
+		<xiadunhouzou>370,406</xiadunhouzou>
+		<xiadunzuozou>370,406</xiadunzuozou>
+		<xiadunyouzou>370,406</xiadunyouzou>
+		<tiao>10,40</tiao>
+		<qingji>120,194</qingji>
+		<kaiqiang>120,194</kaiqiang>
+		<zhongji>120,194</zhongji>
+		<beijizhong>60,101</beijizhong>
+		<baotousi>430,487</baotousi>
+		<qiansi>430,487</qiansi>
+		<housi>430,487</housi>
+		<zuosi>430,487</zuosi>
+		<yousi>430,487</yousi>
+  </anim> 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <anim shared="" swf="siwangAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_siwangAnim_tp">
+    <baotousi>450,465</baotousi>
+    <qiansi>570,585</qiansi>
+    <housi>480,495</housi>
+    <zuosi>540,555</zuosi>
+    <yousi>510,525</yousi>
+  </anim>
+  <anim shared="tpUpAnim2_uzi1Anim_tp" swf="handgunAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_handgunAnim_tp">
+    <daiji>151,156</daiji>
+    <kaiqiang>160,166</kaiqiang>
+    <beijizhong>170,178</beijizhong>
+    <pao>190,210</pao>
+    <huanzidan>220,271</huanzidan>
+    <xiadundaiji>280,280</xiadundaiji>
+    <xiadunkaiqiang>290,295</xiadunkaiqiang>
+  </anim>
+  <anim shared="tpUpAnim2_handgunAnim_tp" swf="handgunAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_uzi1Anim_tp">
+    <daiji>151,156</daiji>
+    <kaiqiang>200,202</kaiqiang>
+    <beijizhong>170,178</beijizhong>
+    <pao>190,210</pao>
+    <huanzidan>220,271</huanzidan>
+    <xiadundaiji>280,280</xiadundaiji>
+    <xiadunkaiqiang>205,207</xiadunkaiqiang>
+  </anim>
+  <anim shared="tpUpAnim2_ak47kingAnim_tp,tpUpAnim2_m4a1kingAnim_tp" swf="rifleAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_rifleAnim_tp">
+    <daiji>0,5</daiji>
+    <kaiqiang>10,12</kaiqiang>
+    <beijizhong>20,28</beijizhong>
+    <pao>60,80</pao>
+    <huanzidan>90,129</huanzidan>
+    <xiadundaiji>40,40</xiadundaiji>
+    <xiadunkaiqiang>50,52</xiadunkaiqiang>
+  </anim>
+  <anim shared="tpUpAnim2_rifleAnim_tp,tpUpAnim2_m4a1kingAnim_tp" swf="rifleAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_ak47kingAnim_tp">
+    <daiji>0,5</daiji>
+    <kaiqiang>10,12</kaiqiang>
+    <beijizhong>20,28</beijizhong>
+    <pao>60,80</pao>
+    <huanzidan>90,129</huanzidan>
+    <xiadundaiji>40,40</xiadundaiji>
+    <xiadunkaiqiang>50,52</xiadunkaiqiang>
+    <teshukaiqiang>180,202</teshukaiqiang>
+  </anim>
+  <anim shared="tpUpAnim2_rifleAnim_tp,tpUpAnim2_ak47kingAnim_tp" swf="rifleAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_m4a1kingAnim_tp">
+    <daiji>0,5</daiji>
+    <kaiqiang>10,12</kaiqiang>
+    <beijizhong>20,28</beijizhong>
+    <pao>60,80</pao>
+    <huanzidan>90,129</huanzidan>
+    <xiadundaiji>40,40</xiadundaiji>
+    <xiadunkaiqiang>50,52</xiadunkaiqiang>
+    <teshukaiqiang>140,165</teshukaiqiang>
+  </anim>
+
+ <anim shared="" swf="m4a1_dulangAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_m4a1_dulangAnim_tp">
+    <daiji>0,5</daiji>
+    <kaiqiang>10,12</kaiqiang>
+    <beijizhong>20,28</beijizhong>
+    <pao>60,80</pao>
+    <huanzidan>90,129</huanzidan>
+    <xiadundaiji>40,40</xiadundaiji>
+    <xiadunkaiqiang>50,52</xiadunkaiqiang>
+    <teshukaiqiang>140,165</teshukaiqiang>
+  </anim>  
+  
+  <anim shared="" swf="meleeAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_meleeAnim_tp">
+    <daiji>600,605</daiji>
+    <kaiqiang>650,676</kaiqiang>
+    <teshukaiqiang>610,640</teshukaiqiang>
+    <beijizhong>680,688</beijizhong>
+    <pao>700,720</pao>
+    <xiadundaiji>690,695</xiadundaiji>
+  </anim>
+  <anim shared="" swf="gernadeAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_gernadeAnim_tp">
+    <daiji>720,725</daiji>
+    <kaiqiang>730,744</kaiqiang>
+    <beijizhong>780,788</beijizhong>
+    <pao>750,770</pao>
+    <xiadundaiji>800,800</xiadundaiji>
+  </anim>
+  <anim shared="" swf="augAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_augAnim_tp">
+    <daiji>980,985</daiji>
+    <kaiqiang>990,992</kaiqiang>
+    <beijizhong>1000,1008</beijizhong>
+    <pao>1020,1040</pao>
+    <huanzidan>1050,1094</huanzidan>
+    <xiadundaiji>1100,1100</xiadundaiji>
+    <xiadunkaiqiang>1110,1112</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="sniperAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_sniperAnim_tp">
+    <daiji>4145,4145</daiji>
+    <kaiqiang>4150,4155</kaiqiang>
+    <beijizhong>4160,4168</beijizhong>
+    <pao>4180,4200</pao>
+    <huanzidan>4210,4254</huanzidan>
+    <xiadundaiji>4260,4260</xiadundaiji>
+    <xiadunkaiqiang>4270,4275</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="AWM_king3Anim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_AWM_king3Anim_tp">
+    <daiji>365,365</daiji>
+    <kaiqiang>310,315</kaiqiang>
+    <beijizhong>320,328</beijizhong>
+    <pao>340,360</pao>
+    <huanzidan>370,414</huanzidan>
+    <xiadundaiji>420,425</xiadundaiji>
+    <xiadunkaiqiang>430,435</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="m60Anim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_m60Anim_tp">
+    <daiji>830,835</daiji>
+    <kaiqiang>840,842</kaiqiang>
+    <beijizhong>930,938</beijizhong>
+    <pao>850,870</pao>
+    <huanzidan>880,924</huanzidan>
+    <xiadundaiji>950,950</xiadundaiji>
+    <xiadunkaiqiang>960,962</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="c4Anim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_c4Anim_tp">
+    <daiji>1450,1455</daiji>
+    <beijizhong>1490,1498</beijizhong>
+    <pao>1460,1480</pao>
+  </anim>
+  <anim shared="" swf="famasAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_famasAnim_tp">
+    <daiji>1130,1135</daiji>
+    <kaiqiang>1140,1142</kaiqiang>
+    <beijizhong>1150,1158</beijizhong>
+    <pao>1170,1190</pao>
+    <huanzidan>1200,1244</huanzidan>
+    <xiadundaiji>1250,1250</xiadundaiji>
+    <xiadunkaiqiang>1260,1262</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="jiatelinAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_jiatelinAnim_tp">
+    <daiji>1550,1555</daiji>
+    <kaiqiang>1560,1562</kaiqiang>
+    <beijizhong>1570,1578</beijizhong>
+    <pao>1590,1610</pao>
+    <huanzidan>1620,1664</huanzidan>
+    <xiadundaiji>1670,1670</xiadundaiji>
+    <xiadunkaiqiang>1680,1682</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="niboerAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_niboerAnim_tp">
+    <daiji>2500,2505</daiji>
+    <kaiqiang>2510,2532</kaiqiang>
+    <teshukaiqiang>2540,2562</teshukaiqiang>
+    <beijizhong>2600,2617</beijizhong>
+    <pao>2570,2590</pao>
+    <xiadundaiji>2630,2635</xiadundaiji>
+  </anim>
+  <anim shared="tpUpAnim2_uziAnim_tp" swf="doubleHandgunAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_doubleHandgunAnim_tp">
+    <daiji>2100,2105</daiji>
+    <kaiqiang>2110,2118</kaiqiang>
+    <beijizhong>2120,2128</beijizhong>
+    <pao>2140,2160</pao>
+    <huanzidan>2170,2270</huanzidan>
+    <xiadundaiji>2280,2280</xiadundaiji>
+    <xiadunkaiqiang>2290,2298</xiadunkaiqiang>
+  </anim>
+  <anim shared="tpUpAnim2_doubleHandgunAnim_tp" swf="doubleHandgunAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_uziAnim_tp">
+    <daiji>2100,2105</daiji>
+    <kaiqiang>2310,2314</kaiqiang>
+    <beijizhong>2120,2128</beijizhong>
+    <pao>2140,2160</pao>
+    <huanzidan>2170,2270</huanzidan>
+    <xiadundaiji>2280,2280</xiadundaiji>
+    <xiadunkaiqiang>2320,2324</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="axeAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_axeAnim_tp">
+    <daiji>2350,2355</daiji>
+    <kaiqiang>2360,2375</kaiqiang>
+    <teshukaiqiang>2380,2397</teshukaiqiang>
+    <beijizhong>2430,2438</beijizhong>
+    <pao>2400,2420</pao>
+    <xiadundaiji>2440,2440</xiadundaiji>
+  </anim>
+  <anim shared="" swf="malaijianAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_malaijianAnim_tp">
+    <daiji>2800,2805</daiji>
+    <kaiqiang>2810,2825</kaiqiang>
+    <teshukaiqiang>2830,2847</teshukaiqiang>
+    <beijizhong>2880,2888</beijizhong>
+    <pao>2850,2870</pao>
+    <xiadundaiji>2890,2890</xiadundaiji>
+  </anim>
+  <anim shared="" swf="xm1014Anim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_xm1014Anim_tp">
+    <daiji>1300,1305</daiji>
+    <kaiqiang>1310,1315</kaiqiang>
+    <beijizhong>1320,1328</beijizhong>
+    <pao>1340,1360</pao>
+    <huanzidan>1370,1405</huanzidan>
+    <xiadundaiji>1410,1410</xiadundaiji>
+    <xiadunkaiqiang>1420,1422</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="tuimopaoAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_tuimopaoAnim_tp">
+    <daiji>1700,1705</daiji>
+    <kaiqiang>1710,1712</kaiqiang>
+    <beijizhong>1720,1728</beijizhong>
+    <pao>1740,1760</pao>
+    <huanzidan>1770,1814</huanzidan>
+    <xiadundaiji>1820,1820</xiadundaiji>
+    <xiadunkaiqiang>1830,1832</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="chongciAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_chongciAnim_tp">
+    <daiji>1900,1905</daiji>
+    <kaiqiang>1910,1912</kaiqiang>
+    <beijizhong>1920,1928</beijizhong>
+    <pao>1940,1960</pao>
+    <huanzidan>1970,2014</huanzidan>
+    <xiadundaiji>2050,2050</xiadundaiji>
+    <xiadunkaiqiang>2060,2062</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="batAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_batAnim_tp">
+    <daiji>2950,2955</daiji>
+    <kaiqiang>2990,3006</kaiqiang>
+    <teshukaiqiang>3010,3028</teshukaiqiang>
+    <beijizhong>3040,3048</beijizhong>
+    <pao>2960,2980</pao>
+    <xiadundaiji>3060,3060</xiadundaiji>
+  </anim>
+  <anim shared="" swf="vectorAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_vectorAnim_tp">
+    <daiji>3100,3105</daiji>
+    <kaiqiang>3110,3112</kaiqiang>
+    <beijizhong>3120,3128</beijizhong>
+    <pao>3140,3160</pao>
+    <huanzidan>3170,3214</huanzidan>
+    <xiadundaiji>3220,3220</xiadundaiji>
+    <xiadunkaiqiang>3230,3232</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="fn2000Anim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_fn2000Anim_tp">
+    <daiji>2650,2655</daiji>
+    <kaiqiang>2660,2662</kaiqiang>
+    <beijizhong>2670,2678</beijizhong>
+    <pao>2690,2710</pao>
+    <huanzidan>2720,2764</huanzidan>
+    <xiadundaiji>2770,2770</xiadundaiji>
+    <xiadunkaiqiang>2780,2782</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="sniperAnim2_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_sniperAnim2_tp">
+    <daiji>3300,3305</daiji>
+    <kaiqiang>3310,3315</kaiqiang>
+    <beijizhong>3320,3328</beijizhong>
+    <pao>3340,3360</pao>
+    <huanzidan>3370,3414</huanzidan>
+    <xiadundaiji>3420,3420</xiadundaiji>
+    <xiadunkaiqiang>3430,3435</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="m1887Anim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_m1887Anim_tp">
+    <daiji>3500,3505</daiji>
+    <kaiqiang>3510,3515</kaiqiang>
+    <beijizhong>3520,3528</beijizhong>
+    <pao>3540,3560</pao>
+    <huanzidan>3570,3605</huanzidan>
+    <xiadundaiji>3610,3610</xiadundaiji>
+    <xiadunkaiqiang>3620,3625</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="" switcher="tpUpAnim2_switcher" value="tpUpAnim2_AS50Anim_tp">
+    <daiji>3700,3700</daiji>
+    <kaiqiang>3710,3715</kaiqiang>
+    <beijizhong>3720,3728</beijizhong>
+    <pao>3740,3760</pao>
+    <huanzidan>3770,3814</huanzidan>
+    <xiadundaiji>3820,3825</xiadundaiji>
+    <xiadunkaiqiang>3830,3835</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="" switcher="tpUpAnim2_switcher" value="tpUpAnim2_M200Anim_tp">
+    <daiji>3900,3900</daiji>
+    <kaiqiang>3910,3915</kaiqiang>
+    <beijizhong>3920,3928</beijizhong>
+    <pao>3940,3960</pao>
+    <huanzidan>3970,4014</huanzidan>
+    <xiadundaiji>4020,4025</xiadundaiji>
+    <xiadunkaiqiang>4030,4035</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="" switcher="tpUpAnim2_switcher" value="tpUpAnim2_sg552Anim_tp">
+    <daiji>4300,4300</daiji>
+    <kaiqiang>4310,4312</kaiqiang>
+    <beijizhong>4320,4328</beijizhong>
+    <pao>4340,4350</pao>
+    <huanzidan>4370,4414</huanzidan>
+    <xiadundaiji>4420,4425</xiadundaiji>
+    <xiadunkaiqiang>4430,4432</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="sg552_lanseyaojiAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_sg552_lanseyaojiAnim_tp">
+    <daiji>4300,4300</daiji>
+    <kaiqiang>4310,4312</kaiqiang>
+    <beijizhong>4320,4328</beijizhong>
+    <pao>4340,4350</pao>
+    <huanzidan>4370,4414</huanzidan>
+    <xiadundaiji>4420,4425</xiadundaiji>
+    <xiadunkaiqiang>4430,4432</xiadunkaiqiang>
+  </anim>  
+  <anim shared="" swf="gs_01Anim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_gs_01Anim_tp">
+    <daiji>830,835</daiji>
+    <kaiqiang>840,842</kaiqiang>
+    <beijizhong>930,938</beijizhong>
+    <pao>850,870</pao>
+    <huanzidan>880,924</huanzidan>
+    <xiadundaiji>950,955</xiadundaiji>
+    <xiadunkaiqiang>960,962</xiadunkaiqiang>
+  </anim>  
+  <anim shared="" swf="gs_02Anim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_gs_02Anim_tp">
+    <daiji>4500,4505</daiji>
+    <kaiqiang>4510,4524</kaiqiang>
+    <beijizhong>4530,4547</beijizhong>
+    <pao>4550,4570</pao>
+    <huanzidan>4580,4627</huanzidan>
+    <xiadundaiji>4630,4635</xiadundaiji>
+    <xiadunkaiqiang>4640,4654</xiadunkaiqiang>
+  </anim>  
+  <anim shared="" swf="shuangdao_yingxiongAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_shuangdao_yingxiongAnim_tp">
+    <daiji>10,50</daiji>
+    <kaiqiang>450,503</kaiqiang>
+    <teshukaiqiang>510,562</teshukaiqiang>
+    <beijizhong>570,602</beijizhong>
+    <pao>60,84</pao>
+    <xiadundaiji>200,230</xiadundaiji>
+    <xiadunkaiqiang>450,503</xiadunkaiqiang>
+  </anim> 
+  <anim shared="" swf="huanyingxianfengAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_huanyingxianfengAnim_tp">
+    <daiji>4500,4505</daiji>
+    <kaiqiang>4510,4512</kaiqiang>
+    <huanzidan>4570,4640</huanzidan>
+    <beijizhong>4520,4528</beijizhong>
+    <pao>4540,4560</pao>
+    <xiadundaiji>4650,4655</xiadundaiji>
+    <xiadunkaiqiang>4660,4662</xiadunkaiqiang>
+  </anim> 
+  <anim shared="" swf="NoWeaponAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_1_NoWeaponAnim_tp">
+    <daiji>1000,1040</daiji>
+    <kaiqiang>4510,4512</kaiqiang>
+    <huanzidan>4570,4640</huanzidan>
+    <beijizhong>4520,4528</beijizhong>
+    <pao>1050,1082</pao>
+    <xiadundaiji>4650,4655</xiadundaiji>
+    <xiadunkaiqiang>4660,4662</xiadunkaiqiang>
+    <zou>1050,1082</zou>
+  </anim> 
+  <anim shared="" swf="zhentong_hushiAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_zhentong_hushiAnim_tp">
+    <zhanlidaiji>32,64</zhanlidaiji>
+		<zhanliqianzou>418,454</zhanliqianzou>
+		<zhanlihouzou>418,454</zhanlihouzou>
+		<zhanliqianpao>329,353</zhanliqianpao>
+		<zhanlihoupao>329,353</zhanlihoupao>
+		<zhanlizuopao>329,353</zhanlizuopao>
+		<zhanliyoupao>329,353</zhanliyoupao>
+		<xiadundaiji>32,64</xiadundaiji>
+		<xiadunqianzou>418,454</xiadunqianzou>
+		<xiadunhouzou>418,454</xiadunhouzou>
+		<xiadunzuozou>418,454</xiadunzuozou>
+		<xiadunyouzou>418,454</xiadunyouzou>
+		<tiao>32,64</tiao>
+		<qingji>101,185</qingji>
+		<kaiqiang>101,185</kaiqiang>
+		<zhongji>101,185</zhongji>
+		<beijizhong>190,235</beijizhong>
+		<baotousi>240,297</baotousi>
+		<qiansi>240,297</qiansi>
+		<housi>240,297</housi>
+		<zuosi>240,297</zuosi>
+		<yousi>240,297</yousi>
+  </anim> 
+  <anim shared="" swf="shuangdao_tufuAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_shuangdao_tufuAnim_tp">
+    <zhanlidaiji>36,72</zhanlidaiji>
+		<zhanliqianzou>714,754</zhanliqianzou>
+		<zhanlihouzou>714,754</zhanlihouzou>
+		<zhanliqianpao>835,867</zhanliqianpao>
+		<zhanlihoupao>835,867</zhanlihoupao>
+		<zhanlizuopao>835,867</zhanlizuopao>
+		<zhanliyoupao>835,867</zhanliyoupao>
+		<xiadundaiji>36,72</xiadundaiji>
+		<xiadunqianzou>714,754</xiadunqianzou>
+		<xiadunhouzou>714,754</xiadunhouzou>
+		<xiadunzuozou>714,754</xiadunzuozou>
+		<xiadunyouzou>714,754</xiadunyouzou>
+		<tiao>36,72</tiao>
+		<qingji>118,194</qingji>
+		<kaiqiang>118,194</kaiqiang>
+		<youqingji>118,194</youqingji>
+		<zuoqingji>212,285</zuoqingji>
+		<zhongji>292,473</zhongji>
+		<beijizhong>500,568</beijizhong>
+		<baotousi>580,665</baotousi>
+		<qiansi>580,665</qiansi>
+		<housi>580,665</housi>
+		<zuosi>580,665</zuosi>
+		<yousi>580,665</yousi>
+  </anim> 
+  <anim shared="" swf="yaoji_hushiAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_yaoji_hushiAnim_tp">
+    <zhanlidaiji>10,40</zhanlidaiji>
+		<zhanliqianzou>370,406</zhanliqianzou>
+		<zhanlihouzou>370,406</zhanlihouzou>
+		<zhanliqianpao>320,344</zhanliqianpao>
+		<zhanlihoupao>320,344</zhanlihoupao>
+		<zhanlizuopao>320,344</zhanlizuopao>
+		<zhanliyoupao>320,344</zhanliyoupao>
+		<xiadundaiji>10,40</xiadundaiji>
+		<xiadunqianzou>370,406</xiadunqianzou>
+		<xiadunhouzou>370,406</xiadunhouzou>
+		<xiadunzuozou>370,406</xiadunzuozou>
+		<xiadunyouzou>370,406</xiadunyouzou>
+		<tiao>10,40</tiao>
+		<qingji>120,194</qingji>
+		<kaiqiang>120,194</kaiqiang>
+		<zhongji>120,194</zhongji>
+		<beijizhong>60,101</beijizhong>
+		<baotousi>430,487</baotousi>
+		<qiansi>430,487</qiansi>
+		<housi>430,487</housi>
+		<zuosi>430,487</zuosi>
+		<yousi>430,487</yousi>
+  </anim> 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <anim shared="mgAnim_fp" swf="akAnim_fp" switcher="weapon_switcher" value="akAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,60</kaiqiang>
+    <huanzidan>65,141</huanzidan>
+    <naqiang>145,175</naqiang>
+    <teshukaiqiang>200,237</teshukaiqiang>
+  </anim>
+  <anim shared="akAnim_fp" swf="akAnim_fp" switcher="weapon_switcher" value="mgAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>180,194</kaiqiang>
+    <huanzidan>65,141</huanzidan>
+    <naqiang>145,175</naqiang>
+    <teshukaiqiang>200,237</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="handgunAnim_fp" switcher="weapon_switcher" value="handgunAnim_fp">
+    <daiji>240,248</daiji>
+    <paodong>250,274</paodong>
+    <kaiqiang>280,290</kaiqiang>
+    <huanzidan>295,372</huanzidan>
+    <naqiang>380,415</naqiang>
+  </anim>
+  <anim shared="" swf="meleeAnim_fp" switcher="weapon_switcher" value="meleeAnim_fp">
+    <daiji>420,428</daiji>
+    <paodong>430,455</paodong>
+    <kaiqiang>460,482</kaiqiang>
+    <teshukaiqiang>485,520</teshukaiqiang>
+    <naqiang>525,557</naqiang>
+  </anim>
+  <anim shared="" swf="gernadeAnim_fp" switcher="weapon_switcher" value="gernadeAnim_fp">
+    <daiji>560,568</daiji>
+    <paodong>570,595</paodong>
+    <zhunbeirenglei>600,623</zhunbeirenglei>
+    <renglei>630,643</renglei>
+    <naqiang>645,657</naqiang>
+  </anim>
+  <anim shared="m4a1aAnim_fp" swf="m4a1Anim_fp" switcher="weapon_switcher" value="m4a1Anim_fp">
+    <daiji>660,668</daiji>
+    <paodong>670,694</paodong>
+    <kaiqiang>700,714</kaiqiang>
+    <huanzidan>720,812</huanzidan>
+    <naqiang>815,850</naqiang>
+    <teshukaiqiang>870,907</teshukaiqiang>
+  </anim>
+  <anim shared="m4a1Anim_fp" swf="m4a1Anim_fp" switcher="weapon_switcher" value="m4a1aAnim_fp">
+    <daiji>660,668</daiji>
+    <paodong>670,694</paodong>
+    <kaiqiang>855,866</kaiqiang>
+    <huanzidan>720,812</huanzidan>
+    <naqiang>815,850</naqiang>
+    <teshukaiqiang>870,907</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="auga1Anim_fp" switcher="weapon_switcher" value="auga1Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,168</huanzidan>
+    <naqiang>180,212</naqiang>
+  </anim>
+  <anim shared="sniperAnim2_fp,sniperAnim3_fp" swf="sniperAnim_fp" switcher="weapon_switcher" value="sniperAnim_fp">
+    <daiji>1090,1098</daiji>
+    <paodong>1100,1125</paodong>
+    <kaiqiang>1130,1183</kaiqiang>
+    <huanzidan>1190,1264</huanzidan>
+    <naqiang>1270,1314</naqiang>
+  </anim>
+   <anim shared="" swf="AWM_king3Anim_fp" switcher="weapon_switcher" value="AWM_king3Anim_fp">
+    <daiji>1090,1098</daiji>
+    <paodong>1100,1125</paodong>
+    <kaiqiang>1130,1183</kaiqiang>
+    <huanzidan>1190,1264</huanzidan>
+    <naqiang>1270,1314</naqiang>
+  </anim>
+  <anim shared="sniperAnim_fp,sniperAnim3_fp" swf="sniperAnim_fp" switcher="weapon_switcher" value="sniperAnim2_fp">
+    <daiji>1090,1098</daiji>
+    <paodong>1100,1125</paodong>
+    <kaiqiang>1320,1367</kaiqiang>
+    <huanzidan>1190,1264</huanzidan>
+    <naqiang>1270,1314</naqiang>
+  </anim>
+  <anim shared="sniperAnim_fp,sniperAnim2_fp" swf="sniperAnim_fp" switcher="weapon_switcher" value="sniperAnim3_fp">
+    <daiji>1090,1098</daiji>
+    <paodong>1100,1125</paodong>
+    <kaiqiang>1370,1387</kaiqiang>
+    <huanzidan>1190,1264</huanzidan>
+    <naqiang>1270,1314</naqiang>
+  </anim>
+  <anim shared="" swf="p90Anim_fp" switcher="weapon_switcher" value="p90Anim_fp">
+    <daiji>1390,1398</daiji>
+    <paodong>1400,1424</paodong>
+    <kaiqiang>1430,1444</kaiqiang>
+    <huanzidan>1450,1532</huanzidan>
+    <naqiang>1540,1565</naqiang>
+  </anim>
+  <anim shared="" swf="m60Anim_fp" switcher="weapon_switcher" value="m60Anim_fp">
+    <daiji>1570,1578</daiji>
+    <paodong>1580,1604</paodong>
+    <kaiqiang>1610,1625</kaiqiang>
+    <huanzidan>1630,1726</huanzidan>
+    <naqiang>1730,1755</naqiang>
+  </anim>
+  <anim shared="" swf="mp7Anim_fp" switcher="weapon_switcher" value="mp7Anim_fp">
+    <daiji>1760,1768</daiji>
+    <paodong>1770,1794</paodong>
+    <kaiqiang>1800,1811</kaiqiang>
+    <huanzidan>1820,1878</huanzidan>
+    <naqiang>1880,1906</naqiang>
+  </anim>
+  <anim shared="" swf="c4Anim_fp" switcher="weapon_switcher" value="c4Anim_fp">
+    <daiji>1910,1918</daiji>
+    <paodong>1920,1944</paodong>
+    <kaiqiang>1950,2038</kaiqiang>
+    <naqiang>2040,2073</naqiang>
+  </anim>
+  <anim shared="qbz95Anim_fp" swf="qbz95Anim_fp" switcher="weapon_switcher" value="famasAnim_fp">
+    <daiji>2080,2088</daiji>
+    <paodong>2090,2114</paodong>
+    <kaiqiang>2120,2134</kaiqiang>
+    <huanzidan>2260,2336</huanzidan>
+    <naqiang>2220,2251</naqiang>
+  </anim>
+  <anim shared="famasAnim_fp" swf="qbz95Anim_fp" switcher="weapon_switcher" value="qbz95Anim_fp">
+    <daiji>2080,2088</daiji>
+    <paodong>2090,2114</paodong>
+    <kaiqiang>2120,2134</kaiqiang>
+    <huanzidan>2140,2216</huanzidan>
+    <naqiang>2220,2251</naqiang>
+  </anim>
+  <anim shared="" swf="jiatelinAnim_fp" switcher="weapon_switcher" value="jiatelinAnim_fp">
+    <daiji>2340,2348</daiji>
+    <paodong>2350,2374</paodong>
+    <yure>2380,2384</yure>
+    <zhuan>2386,2394</zhuan>
+    <kaiqiang>2396,2401</kaiqiang>
+    <huifu>2403,2413</huifu>
+    <huanzidan>2420,2476</huanzidan>
+    <naqiang>2480,2505</naqiang>
+  </anim>
+  <anim shared="" swf="mp5Anim_fp" switcher="weapon_switcher" value="mp5Anim_fp">
+    <daiji>2520,2528</daiji>
+    <paodong>2530,2554</paodong>
+    <kaiqiang>2560,2574</kaiqiang>
+    <huanzidan>2580,2633</huanzidan>
+    <naqiang>2640,2665</naqiang>
+  </anim>
+  <anim shared="" swf="sg552Anim_fp" switcher="weapon_switcher" value="sg552Anim_fp">
+    <daiji>2680,2688</daiji>
+    <paodong>2690,2714</paodong>
+    <kaiqiang>2720,2734</kaiqiang>
+    <huanzidan>2740,2826</huanzidan>
+    <naqiang>2838,2881</naqiang>
+  </anim>
+  <anim shared="" swf="sg552_lanseyaojiAnim_fp" switcher="weapon_switcher" value="sg552_lanseyaojiAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,137</huanzidan>
+    <naqiang>145,177</naqiang>
+  </anim>
+  <anim shared="" swf="xm1014Anim_fp" switcher="weapon_switcher" value="xm1014Anim_fp">
+    <daiji>2870,2878</daiji>
+    <paodong>2880,2904</paodong>
+    <kaiqiang>2910,2923</kaiqiang>
+    <kaishihuanzidan>2930,2940</kaishihuanzidan>
+    <xunhuanhuanzidan>2942,2961</xunhuanhuanzidan>
+    <jieshuhuanzidan>2963,2985</jieshuhuanzidan>
+    <naqiang>2990,3015</naqiang>
+  </anim>
+  <anim shared="" swf="xinxm1014Anim_fp" switcher="weapon_switcher" value="xinxm1014Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <kaishihuanzidan>60,70</kaishihuanzidan>
+    <xunhuanhuanzidan>72,91</xunhuanhuanzidan>
+    <jieshuhuanzidan>93,115</jieshuhuanzidan>
+    <naqiang>120,145</naqiang>
+  </anim>
+  <anim shared="" swf="xm1014_dulangAnim_fp" switcher="weapon_switcher" value="xm1014_dulangAnim_fp">
+    <daiji>2870,2878</daiji>
+    <paodong>2880,2904</paodong>
+    <kaiqiang>2910,2923</kaiqiang>
+    <kaishihuanzidan>2930,2940</kaishihuanzidan>
+    <xunhuanhuanzidan>2942,2961</xunhuanhuanzidan>
+    <jieshuhuanzidan>2963,2985</jieshuhuanzidan>
+    <naqiang>2990,3015</naqiang>
+  </anim>
+  <anim shared="" swf="rpkAnim_fp" switcher="weapon_switcher" value="rpkAnim_fp">
+    <daiji>3040,3048</daiji>
+    <paodong>3050,3074</paodong>
+    <kaiqiang>3080,3095</kaiqiang>
+    <huanzidan>3100,3171</huanzidan>
+    <naqiang>3180,3211</naqiang>
+  </anim>
+  <anim shared="" swf="mg3Anim_fp" switcher="weapon_switcher" value="mg3Anim_fp">
+    <daiji>3230,3238</daiji>
+    <paodong>3240,3264</paodong>
+    <kaiqiang>3270,3285</kaiqiang>
+    <huanzidan>3290,3387</huanzidan>
+    <naqiang>3390,3415</naqiang>
+  </anim>
+  <anim shared="" swf="m249Anim_fp" switcher="weapon_switcher" value="m249Anim_fp">
+    <daiji>3430,3438</daiji>
+    <paodong>3440,3464</paodong>
+    <kaiqiang>3470,3485</kaiqiang>
+    <huanzidan>3490,3612</huanzidan>
+    <naqiang>3620,3664</naqiang>
+  </anim>
+  <anim shared="" swf="axeAnim_fp" switcher="weapon_switcher" value="axeAnim_fp">
+    <daiji>3680,3688</daiji>
+    <paodong>3690,3715</paodong>
+    <kaiqiang>3720,3740</kaiqiang>
+    <teshukaiqiang>3750,3787</teshukaiqiang>
+    <naqiang>3790,3820</naqiang>
+  </anim>
+  <anim shared="" swf="niboerAnim_fp" switcher="weapon_switcher" value="niboerAnim_fp">
+    <daiji>3840,3848</daiji>
+    <paodong>3850,3875</paodong>
+    <kaiqiang>3880,3901</kaiqiang>
+    <teshukaiqiang>3910,3955</teshukaiqiang>
+    <naqiang>3960,3997</naqiang>
+  </anim>
+  <anim shared="" swf="doubleHandgunAnim_fp" switcher="weapon_switcher" value="doubleHandgunAnim_fp">
+    <daiji>4020,4028</daiji>
+    <paodong>4030,4054</paodong>
+    <kaiqiang>4060,4071</kaiqiang>
+    <teshukaiqiang>4075,4086</teshukaiqiang>
+    <huanzidan>4090,4173</huanzidan>
+    <naqiang>4180,4194</naqiang>
+  </anim>
+  <anim shared="" swf="an94Anim_fp" switcher="weapon_switcher" value="an94Anim_fp">
+    <daiji>4210,4218</daiji>
+    <paodong>4220,4244</paodong>
+    <kaiqiang>4250,4265</kaiqiang>
+    <huanzidan>4270,4341</huanzidan>
+    <naqiang>4350,4381</naqiang>
+  </anim>
+  <anim shared="" swf="malaijianAnim_fp" switcher="weapon_switcher" value="malaijianAnim_fp">
+    <daiji>4400,4408</daiji>
+    <paodong>4410,4435</paodong>
+    <kaiqiang>4440,4460</kaiqiang>
+    <teshukaiqiang>4470,4520</teshukaiqiang>
+    <naqiang>4530,4550</naqiang>
+  </anim>
+  <anim shared="" swf="chongciAnim_fp" switcher="weapon_switcher" value="chongciAnim_fp">
+    <daiji>4560,4568</daiji>
+    <paodong>4570,4594</paodong>
+    <kaiqiang>4600,4614</kaiqiang>
+    <huanzidan>4620,4710</huanzidan>
+    <naqiang>4720,4746</naqiang>
+    <teshukaiqiang>4750,4800</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="tuimopaoAnim_fp" switcher="weapon_switcher" value="tuimopaoAnim_fp">
+    <daiji>4820,4828</daiji>
+    <paodong>4830,4854</paodong>
+    <kaiqiang>4860,4874</kaiqiang>
+    <huanzidan>4880,4973</huanzidan>
+    <naqiang>4980,5015</naqiang>
+  </anim>
+  
+  <anim shared="" swf="batAnim_fp" switcher="weapon_switcher" value="batAnim_fp">
+    <daiji>5210,5218</daiji>
+    <paodong>5220,5245</paodong>
+    <kaiqiang>5250,5270</kaiqiang>
+    <teshukaiqiang>5280,5330</teshukaiqiang>
+    <naqiang>5340,5364</naqiang>
+  </anim>
+  <anim swf="" value="sglqAnim_fp">
+    <daiji>5380,5388</daiji>
+    <paodong>5390,5414</paodong>
+    <kaiqiang>5420,5433</kaiqiang>
+    <huanzidan>5440,5531</huanzidan>
+    <naqiang>5540,5567</naqiang>
+  </anim>
+  <anim shared="" swf="zuolunAnim_fp" switcher="weapon_switcher" value="zuolunAnim_fp">
+    <daiji>5580,5588</daiji>
+    <paodong>5590,5614</paodong>
+    <kaiqiang>5620,5630</kaiqiang>
+    <huanzidan>5640,5721</huanzidan>
+    <naqiang>5730,5761</naqiang>
+  </anim>
+  <anim shared="" swf="cs06Anim_fp" switcher="weapon_switcher" value="cs06Anim_fp">
+    <daiji>5780,5788</daiji>
+    <paodong>5790,5814</paodong>
+    <kaiqiang>5820,5834</kaiqiang>
+    <huanzidan>5840,5922</huanzidan>
+    <naqiang>5930,5955</naqiang>
+  </anim>
+  <anim shared="" swf="qichuiAnim_fp" switcher="weapon_switcher" value="qichuiAnim_fp">
+    <daiji>5970,5978</daiji>
+    <paodong>5980,6004</paodong>
+    <kaiqiang>6010,6024</kaiqiang>
+    <huanzidan>6030,6106</huanzidan>
+    <naqiang>6110,6141</naqiang>
+  </anim>
+  <anim shared="" swf="qbz81Anim_fp" switcher="weapon_switcher" value="qbz81Anim_fp">
+    <daiji>6160,6168</daiji>
+    <paodong>6170,6194</paodong>
+    <kaiqiang>6200,6220</kaiqiang>
+    <huanzidan>6225,6301</huanzidan>
+    <naqiang>6305,6335</naqiang>
+  </anim>
+  <anim shared="" swf="uzi1Anim_fp" switcher="weapon_switcher" value="uzi1Anim_fp">
+    <daiji>6350,6358</daiji>
+    <paodong>6360,6384</paodong>
+    <kaiqiang>6390,6404</kaiqiang>
+    <huanzidan>6410,6467</huanzidan>
+    <naqiang>6470,6495</naqiang>
+  </anim>
+  <anim shared="rsassAnim_fp" swf="msrAnim_fp" switcher="weapon_switcher" value="msrAnim_fp">
+    <daiji>6500,6508</daiji>
+    <paodong>6510,6535</paodong>
+    <kaiqiang>6540,6593</kaiqiang>
+    <huanzidan>6600,6674</huanzidan>
+    <naqiang>6680,6724</naqiang>
+  </anim>
+  <anim shared="msrAnim_fp" swf="msrAnim_fp" switcher="weapon_switcher" value="rsassAnim_fp">
+    <daiji>6500,6508</daiji>
+    <paodong>6510,6535</paodong>
+    <kaiqiang>6730,6747</kaiqiang>
+    <huanzidan>6600,6674</huanzidan>
+    <naqiang>6680,6724</naqiang>
+  </anim>
+  <anim shared="" swf="scarAnim_fp" switcher="weapon_switcher" value="scarAnim_fp">
+    <daiji>6980,6988</daiji>
+    <paodong>6990,7014</paodong>
+    <kaiqiang>7020,7035</kaiqiang>
+    <huanzidan>7040,7111</huanzidan>
+    <naqiang>7120,7151</naqiang>
+  </anim>
+  <anim shared="" swf="vectorAnim_fp" switcher="weapon_switcher" value="vectorAnim_fp">
+    <daiji>7170,7178</daiji>
+    <paodong>7180,7204</paodong>
+    <kaiqiang>7210,7224</kaiqiang>
+    <huanzidan>7230,7324</huanzidan>
+    <naqiang>7330,7362</naqiang>
+  </anim>
+  <anim shared="" swf="fn2000Anim_fp" switcher="weapon_switcher" value="fn2000Anim_fp">
+    <daiji>7380,7388</daiji>
+    <paodong>7390,7414</paodong>
+    <kaiqiang>7420,7434</kaiqiang>
+    <huanzidan>7440,7516</huanzidan>
+    <naqiang>7520,7551</naqiang>
+  </anim>
+  <anim shared="" swf="uziAnim_fp" switcher="weapon_switcher" value="uziAnim_fp">
+    <daiji>7570,7578</daiji>
+    <paodong>7580,7604</paodong>
+    <kaiqiang>7610,7621</kaiqiang>
+    <teshukaiqiang>7625,7636</teshukaiqiang>
+    <huanzidan>7640,7726</huanzidan>
+    <naqiang>7730,7749</naqiang>
+  </anim>
+  <anim shared="" swf="m1887Anim_fp" switcher="weapon_switcher" value="m1887Anim_fp">
+    <daiji>7770,7778</daiji>
+    <paodong>7780,7804</paodong>
+    <kaiqiang>7810,7841</kaiqiang>
+    <kaishihuanzidan>7850,7860</kaishihuanzidan>
+    <xunhuanhuanzidan>7862,7878</xunhuanhuanzidan>
+    <jieshuhuanzidan>7880,7897</jieshuhuanzidan>
+    <naqiang>7900,7931</naqiang>
+  </anim>  
+  <anim shared="" swf="gs_01Anim_fp" switcher="weapon_switcher" value="gs_01Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,176</huanzidan>
+    <naqiang>190,234</naqiang>
+  </anim>
+  <anim shared="" swf="gs_02Anim_fp" switcher="weapon_switcher" value="gs_02Anim_fp">
+    <daiji>2080,2088</daiji>
+    <paodong>2090,2114</paodong>
+    <kaiqiang>2120,2134</kaiqiang>
+    <huanzidan>2140,2226</huanzidan>
+    <naqiang>2230,2261</naqiang>
+  </anim>
+  <anim shared="" swf="huanyingxianfengAnim_fp" switcher="weapon_switcher" value="huanyingxianfengAnim_fp">
+    <daiji>6000,6008</daiji>
+    <paodong>6010,6035</paodong>
+    <kaiqiang>6040,6053</kaiqiang>
+    <huanzidan>6060,6139</huanzidan>
+    <naqiang>6150,6178</naqiang>
+  </anim>
+  <anim shared="" swf="tar21Anim_fp" switcher="weapon_switcher" value="tar21Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,136</huanzidan>
+    <naqiang>140,171</naqiang>
+  </anim>
+  <anim shared="" swf="shuangdao_yingxiongAnim_fp" switcher="weapon_switcher" value="shuangdao_yingxiongAnim_fp">
+		<daiji>100,130</daiji>
+		<paodong>140,164</paodong>
+		<kaiqiang>170,222</kaiqiang>
+		<teshukaiqiang>230,296</teshukaiqiang>
+		<naqiang>100,130</naqiang>
+		<qingji>170,222</qingji>
+		<zhongji>230,296</zhongji>
+  </anim>
+  <anim shared="" swf="zhentong_hushiAnim_fp" switcher="weapon_switcher" value="zhentong_hushiAnim_fp">
+		<daiji>32,64</daiji>
+		<zhanliqianzou>418,454</zhanliqianzou>
+		<zhanlihouzou>418,454</zhanlihouzou>
+		<zhanliqianpao>329,353</zhanliqianpao>
+		<zhanlihoupao>329,353</zhanlihoupao>
+		<zhanlizuopao>329,353</zhanlizuopao>
+		<zhanliyoupao>329,353</zhanliyoupao>
+		<xiadundaiji>32,64</xiadundaiji>
+		<xiadunqianzou>418,454</xiadunqianzou>
+		<xiadunhouzou>418,454</xiadunhouzou>
+		<xiadunzuozou>418,454</xiadunzuozou>
+		<xiadunyouzou>418,454</xiadunyouzou>
+		<tiao>32,64</tiao>
+		<qingji>101,185</qingji>
+		<kaiqiang>101,185</kaiqiang>
+		<zhongji>101,185</zhongji>
+		<beijizhong>190,235</beijizhong>
+		<baotousi>240,297</baotousi>
+		<qiansi>240,297</qiansi>
+		<housi>240,297</housi>
+		<zuosi>240,297</zuosi>
+		<yousi>240,297</yousi>
+  </anim>
+  <anim shared="" swf="shuangdao_tufuAnim_fp" switcher="weapon_switcher" value="shuangdao_tufuAnim_fp">
+		<zhanlidaiji>36,72</zhanlidaiji>
+		<zhanliqianzou>714,754</zhanliqianzou>
+		<zhanlihouzou>714,754</zhanlihouzou>
+		<zhanliqianpao>835,867</zhanliqianpao>
+		<zhanlihoupao>835,867</zhanlihoupao>
+		<zhanlizuopao>835,867</zhanlizuopao>
+		<zhanliyoupao>835,867</zhanliyoupao>
+		<xiadundaiji>36,72</xiadundaiji>
+		<xiadunqianzou>714,754</xiadunqianzou>
+		<xiadunhouzou>714,754</xiadunhouzou>
+		<xiadunzuozou>714,754</xiadunzuozou>
+		<xiadunyouzou>714,754</xiadunyouzou>
+		<tiao>36,72</tiao>
+		<qingji>118,194</qingji>
+		<kaiqiang>118,194</kaiqiang>
+		<youqingji>118,194</youqingji>
+		<zuoqingji>212,285</zuoqingji>
+		<zhongji>292,473</zhongji>
+		<beijizhong>500,568</beijizhong>
+		<baotousi>580,665</baotousi>
+		<qiansi>580,665</qiansi>
+		<housi>580,665</housi>
+		<zuosi>580,665</zuosi>
+		<yousi>580,665</yousi>
+  </anim>
+  <anim shared="" swf="yaoji_hushiAnim_fp" switcher="weapon_switcher" value="yaoji_hushiAnim_fp">
+		<daiji>10,40</daiji>
+		<zhanliqianzou>370,406</zhanliqianzou>
+		<zhanlihouzou>370,406</zhanlihouzou>
+		<zhanliqianpao>320,344</zhanliqianpao>
+		<zhanlihoupao>320,344</zhanlihoupao>
+		<zhanlizuopao>320,344</zhanlizuopao>
+		<zhanliyoupao>320,344</zhanliyoupao>
+		<xiadundaiji>10,40</xiadundaiji>
+		<xiadunqianzou>370,406</xiadunqianzou>
+		<xiadunhouzou>370,406</xiadunhouzou>
+		<xiadunzuozou>370,406</xiadunzuozou>
+		<xiadunyouzou>370,406</xiadunyouzou>
+		<tiao>10,40</tiao>
+		<qingji>120,194</qingji>
+		<kaiqiang>120,194</kaiqiang>
+		<zhongji>120,194</zhongji>
+		<beijizhong>60,101</beijizhong>
+		<baotousi>430,487</baotousi>
+		<qiansi>430,487</qiansi>
+		<housi>430,487</housi>
+		<zuosi>430,487</zuosi>
+		<yousi>430,487</yousi>
+  </anim>
+  
+
+  
+  
+  <anim shared="" swf="m200Anim_fp" switcher="weapon_switcher" value="m200Anim_fp">
+    <daiji>6750,6758</daiji>
+    <paodong>6760,6785</paodong>
+    <kaiqiang>6790,6843</kaiqiang>
+     <huanzidan>6850,6924</huanzidan>
+    <naqiang>6930,6974</naqiang>
+  </anim>
+  <anim shared="" swf="m200Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_m200Anim_fp">
+  <daiji>6750,6758</daiji>
+    <paodong>6760,6785</paodong>
+    <kaiqiang>6790,6843</kaiqiang>
+     <huanzidan>6850,6924</huanzidan>
+    <naqiang>6930,6974</naqiang>
+  </anim>
+  <anim shared="" swf="m200Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_m200Anim_fp">
+   <daiji>6750,6758</daiji>
+    <paodong>6760,6785</paodong>
+    <kaiqiang>6790,6843</kaiqiang>
+     <huanzidan>6850,6924</huanzidan>
+    <naqiang>6930,6974</naqiang>
+  </anim>
+  
+  
+   <anim shared="" swf="maose_nulongAnim_fp" switcher="weapon_switcher" value="maose_nulongAnim_fp">
+    <daiji>240,248</daiji>
+    <paodong>250,274</paodong>
+    <kaiqiang>280,290</kaiqiang>
+     <huanzidan>295,375</huanzidan>
+    <naqiang>380,415</naqiang>
+  </anim>
+  <anim shared="" swf="maose_nulongAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_maose_nulongAnim_fp">
+   <daiji>240,248</daiji>
+    <paodong>250,274</paodong>
+    <kaiqiang>280,290</kaiqiang>
+     <huanzidan>295,375</huanzidan>
+    <naqiang>380,415</naqiang>
+  </anim>
+  <anim shared="" swf="maose_nulongAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_maose_nulongAnim_fp">
+   <daiji>240,248</daiji>
+    <paodong>250,274</paodong>
+    <kaiqiang>280,290</kaiqiang>
+     <huanzidan>295,375</huanzidan>
+    <naqiang>380,415</naqiang>
+  </anim>
+  <anim shared="" swf="maose_nulongAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_maose_nulongAnim_tp">
+     <daiji>151,155</daiji>
+    <kaiqiang>160,166</kaiqiang>
+    <beijizhong>170,178</beijizhong>
+    <pao>190,210</pao>
+    <huanzidan>220,271</huanzidan>
+    <xiadundaiji>280,285</xiadundaiji>
+    <xiadunkaiqiang>290,295</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="maose_nulongAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_maose_nulongAnim_tp">
+   <daiji>151,155</daiji>
+    <kaiqiang>160,166</kaiqiang>
+    <beijizhong>170,178</beijizhong>
+    <pao>190,210</pao>
+    <huanzidan>220,271</huanzidan>
+    <xiadundaiji>280,285</xiadundaiji>
+    <xiadunkaiqiang>290,295</xiadunkaiqiang>
+  </anim> 
+  <anim shared="" swf="auga1_nulongAnim_fp" switcher="weapon_switcher" value="auga1_nulongAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>11,34</paodong>
+    <kaiqiang>40,60</kaiqiang>
+    <huanzidan>65,140</huanzidan>
+    <naqiang>150,183</naqiang>
+	<teshukaiqiang>190,239</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="auga1_nulongAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_auga1_nulongAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>11,34</paodong>
+    <kaiqiang>40,60</kaiqiang>
+    <huanzidan>65,140</huanzidan>
+    <naqiang>150,183</naqiang>
+	<teshukaiqiang>190,239</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="auga1_nulongAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_auga1_nulongAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>11,34</paodong>
+    <kaiqiang>40,60</kaiqiang>
+    <huanzidan>65,140</huanzidan>
+    <naqiang>150,183</naqiang>
+	<teshukaiqiang>190,239</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="auga3Anim_fp" switcher="weapon_switcher" value="auga3Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>11,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,167</huanzidan>
+    <naqiang>170,201</naqiang>
+  </anim>
+  <anim shared="" swf="auga3Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_auga3Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>11,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,167</huanzidan>
+    <naqiang>170,201</naqiang>
+  </anim>
+  <anim shared="" swf="auga3Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_auga3Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>11,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,167</huanzidan>
+    <naqiang>170,201</naqiang>
+  </anim>
+  <anim shared="" swf="auga1_nulongAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_auga1_nulongAnim_tp">
+     <daiji>0,5</daiji>
+    <kaiqiang>10,12</kaiqiang>
+    <beijizhong>20,28</beijizhong>
+    <pao>40,60</pao>
+    <huanzidan>70,114</huanzidan>
+    <xiadundaiji>120,125</xiadundaiji>
+    <xiadunkaiqiang>130,132</xiadunkaiqiang>
+	<teshukaiqiang>140,188</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="auga1_nulongAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_auga1_nulongAnim_tp">
+    <daiji>0,5</daiji>
+    <kaiqiang>10,12</kaiqiang>
+    <beijizhong>20,28</beijizhong>
+    <pao>40,60</pao>
+    <huanzidan>70,114</huanzidan>
+    <xiadundaiji>120,125</xiadundaiji>
+    <xiadunkaiqiang>130,132</xiadunkaiqiang>
+	<teshukaiqiang>140,188</teshukaiqiang>
+  </anim>
+  
+  <anim shared="" swf="shouliudan_nulongAnim_fp" switcher="weapon_switcher" value="shouliudan_nulongAnim_fp">
+   <daiji>560,568</daiji>
+    <paodong>580,604</paodong>
+    <zhunbeirenglei>610,640</zhunbeirenglei>
+    <renglei>655,668</renglei>
+    <naqiang>670,683</naqiang>
+  </anim>
+  <anim shared="" swf="shouliudan_nulongAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_shouliudan_nulongAnim_fp">
+ <daiji>560,568</daiji>
+    <paodong>580,604</paodong>
+    <zhunbeirenglei>610,640</zhunbeirenglei>
+    <renglei>655,668</renglei>
+    <naqiang>670,683</naqiang>
+  </anim>
+  <anim shared="" swf="shouliudan_nulongAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_shouliudan_nulongAnim_fp">
+ <daiji>560,568</daiji>
+    <paodong>580,604</paodong>
+    <zhunbeirenglei>610,640</zhunbeirenglei>
+    <renglei>655,668</renglei>
+    <naqiang>670,683</naqiang>
+  </anim>
+  <anim shared="" swf="shouliudan_nulongAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_shouliudan_nulongAnim_tp">
+     <daiji>720,725</daiji>
+    <kaiqiang>730,761</kaiqiang>
+    <beijizhong>800,816</beijizhong>
+    <pao>775,795</pao>
+    <xiadundaiji>820,825</xiadundaiji>
+  </anim>
+  <anim shared="" swf="shouliudan_nulongAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_shouliudan_nulongAnim_tp">
+    <daiji>720,725</daiji>
+    <kaiqiang>730,761</kaiqiang>
+    <beijizhong>800,816</beijizhong>
+    <pao>775,795</pao>
+    <xiadundaiji>820,825</xiadundaiji>
+  </anim>
+  
+  <anim shared="" swf="dianjuAnim_fp" switcher="weapon_switcher" value="dianjuAnim_fp">
+   <daiji>6000,6060</daiji>
+    <paodong>6090,6114</paodong>
+    <kaiqiang>6130,6198</kaiqiang>
+    <teshukaiqiang>6210,6292</teshukaiqiang>
+    <naqiang>6310,6375</naqiang>
+  </anim>
+  <anim shared="" swf="dianjuAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_dianjuAnim_fp">
+ <daiji>6000,6060</daiji>
+    <paodong>6090,6114</paodong>
+    <kaiqiang>6130,6198</kaiqiang>
+    <teshukaiqiang>6210,6292</teshukaiqiang>
+    <naqiang>6310,6375</naqiang>
+  </anim>
+  <anim shared="" swf="dianjuAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_dianjuAnim_fp">
+ <daiji>6000,6060</daiji>
+    <paodong>6090,6114</paodong>
+    <kaiqiang>6130,6198</kaiqiang>
+    <teshukaiqiang>6210,6292</teshukaiqiang>
+    <naqiang>6310,6375</naqiang>
+  </anim>
+  <anim shared="" swf="dianjuAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_dianjuAnim_tp">
+     <daiji>720,725</daiji>
+    <kaiqiang>760,809</kaiqiang>
+    <teshukaiqiang>820,896</teshukaiqiang>
+    <beijizhong>914,927</beijizhong>
+    <pao>730,750</pao>
+    <xiadundaiji>934,939</xiadundaiji>
+  </anim>
+  <anim shared="" swf="dianjuAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_dianjuAnim_tp">
+    <daiji>720,725</daiji>
+    <kaiqiang>760,809</kaiqiang>
+    <teshukaiqiang>820,896</teshukaiqiang>
+    <beijizhong>914,927</beijizhong>
+    <pao>730,750</pao>
+    <xiadundaiji>934,939</xiadundaiji>
+  </anim>
+  <!--��-->
+  <anim shared="" swf="nu_zhuriAnim_fp" switcher="weapon_switcher" value="nu_zhuriAnim_fp">
+   <daiji>7960,7968</daiji>
+    <paodong>7970,7994</paodong>
+    <kaiqiang>8000,8053</kaiqiang>
+    <huanzidan>8060,8147</huanzidan>
+    <naqiang>8150,8189</naqiang>
+  </anim>
+  <anim shared="" swf="nu_zhuriAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_nu_zhuriAnim_fp">
+ <daiji>7960,7968</daiji>
+    <paodong>7970,7994</paodong>
+    <kaiqiang>8000,8053</kaiqiang>
+    <huanzidan>8060,8147</huanzidan>
+    <naqiang>8150,8189</naqiang>
+  </anim>
+  <anim shared="" swf="nu_zhuriAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_nu_zhuriAnim_fp">
+ <daiji>7960,7968</daiji>
+    <paodong>7970,7994</paodong>
+    <kaiqiang>8000,8053</kaiqiang>
+    <huanzidan>8060,8147</huanzidan>
+    <naqiang>8150,8189</naqiang>
+  </anim>
+  <anim shared="" swf="nu_zhuriAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_nu_zhuriAnim_tp">
+     <daiji>4700,4705</daiji>
+    <kaiqiang>4710,4715</kaiqiang>
+    <beijizhong>4720,4736</beijizhong>
+    <pao>4840,4860</pao>
+    <huanzidan>4740,4830</huanzidan>
+    <xiadundaiji>4870,4875</xiadundaiji>
+    <xiadunkaiqiang>4880,4885</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="nu_zhuriAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_nu_zhuriAnim_tp">
+    <daiji>4700,4705</daiji>
+    <kaiqiang>4710,4715</kaiqiang>
+    <beijizhong>4720,4736</beijizhong>
+    <pao>4840,4860</pao>
+    <huanzidan>4740,4830</huanzidan>
+    <xiadundaiji>4870,4875</xiadundaiji>
+    <xiadunkaiqiang>4880,4885</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="nu_yingAnim_fp" switcher="weapon_switcher" value="nu_yingAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,93</kaiqiang>
+    <huanzidan>100,187</huanzidan>
+    <naqiang>190,243</naqiang>
+  </anim>
+  <anim shared="" swf="nu_yingAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_nu_yingAnim_fp">
+ <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,93</kaiqiang>
+    <huanzidan>100,187</huanzidan>
+    <naqiang>190,243</naqiang>
+  </anim>
+  <anim shared="" swf="nu_yingAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_nu_yingAnim_fp">
+ <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,93</kaiqiang>
+    <huanzidan>100,187</huanzidan>
+    <naqiang>190,243</naqiang>
+  </anim>
+  <anim shared="" swf="m1941Anim_fp" switcher="weapon_switcher" value="m1941Anim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,218</naqiang>
+  </anim>
+  <anim shared="" swf="m1941Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_m1941Anim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,218</naqiang>
+  </anim>
+  <anim shared="" swf="m1941Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_m1941Anim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,218</naqiang>
+  </anim>
+  <anim shared="" swf="nu_yingAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_nu_yingAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>40,51</kaiqiang>
+    <beijizhong>11,27</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>120,210</huanzidan>
+    <xiadundaiji>95,95</xiadundaiji>
+    <xiadunkaiqiang>40,51</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="nu_yingAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_nu_yingAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>40,51</kaiqiang>
+    <beijizhong>11,27</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>120,210</huanzidan>
+    <xiadundaiji>95,95</xiadundaiji>
+    <xiadunkaiqiang>40,51</xiadunkaiqiang>
+  </anim>
+  <!--g36c����-->
+  <anim shared="" swf="g36c_yanlongAnim_fp" switcher="weapon_switcher" value="g36c_yanlongAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,60</kaiqiang>
+    <huanzidan>65,141</huanzidan>
+    <naqiang>145,189</naqiang>
+  </anim>
+  <anim shared="" swf="g36c_yanlongAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_g36c_yanlongAnim_fp">
+ <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,60</kaiqiang>
+    <huanzidan>65,141</huanzidan>
+    <naqiang>145,189</naqiang>
+  </anim>
+  <anim shared="" swf="g36c_yanlongAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_g36c_yanlongAnim_fp">
+ <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,60</kaiqiang>
+    <huanzidan>65,141</huanzidan>
+    <naqiang>145,189</naqiang>
+  </anim>
+  <anim shared="" swf="m1887_yanlongAnim_fp" switcher="weapon_switcher" value="m1887_yanlongAnim_fp">
+<daiji>7770,7778</daiji>
+<paodong>7780,7804</paodong>
+<kaiqiang>7810,7844</kaiqiang>
+<naqiang>7900,7931</naqiang>
+<kaishihuanzidan>7850,7860</kaishihuanzidan>
+<xunhuanhuanzidan>7862,7878</xunhuanhuanzidan>
+<jieshuhuanzidan>7880,7897</jieshuhuanzidan>
+</anim>
+<anim shared="" swf="m1887_yanlongAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_m1887_yanlongAnim_fp">
+<daiji>7770,7778</daiji>
+<paodong>7780,7804</paodong>
+<kaiqiang>7810,7844</kaiqiang>
+<naqiang>7900,7931</naqiang>
+<kaishihuanzidan>7850,7860</kaishihuanzidan>
+<xunhuanhuanzidan>7862,7878</xunhuanhuanzidan>
+<jieshuhuanzidan>7880,7897</jieshuhuanzidan>
+</anim>
+<anim shared="" swf="m1887_yanlongAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_m1887_yanlongAnim_fp">
+<daiji>7770,7778</daiji>
+<paodong>7780,7804</paodong>
+<kaiqiang>7810,7844</kaiqiang>
+<naqiang>7900,7931</naqiang>
+<kaishihuanzidan>7850,7860</kaishihuanzidan>
+<xunhuanhuanzidan>7862,7878</xunhuanhuanzidan>
+<jieshuhuanzidan>7880,7897</jieshuhuanzidan>
+</anim>
+  <anim shared="" swf="awm_king4Anim_fp" switcher="weapon_switcher" value="awm_king4Anim_fp">
+   <daiji>1090,1098</daiji>
+    <paodong>1100,1125</paodong>
+    <kaiqiang>1130,1185</kaiqiang>
+    <huanzidan>1190,1276</huanzidan>
+    <naqiang>1280,1326</naqiang>
+  </anim>
+  <anim shared="" swf="awm_king4Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_awm_king4Anim_fp">
+ <daiji>1090,1098</daiji>
+    <paodong>1100,1125</paodong>
+    <kaiqiang>1130,1185</kaiqiang>
+    <huanzidan>1190,1276</huanzidan>
+    <naqiang>1280,1326</naqiang>
+  </anim>
+  <anim shared="" swf="awm_king4Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_awm_king4Anim_fp">
+ <daiji>1090,1098</daiji>
+    <paodong>1100,1125</paodong>
+    <kaiqiang>1130,1185</kaiqiang>
+    <huanzidan>1190,1276</huanzidan>
+    <naqiang>1280,1326</naqiang>
+  </anim>
+  <anim shared="" swf="m4a1_king4Anim_fp" switcher="weapon_switcher" value="m4a1_king4Anim_fp">
+   <daiji>660,668</daiji>
+    <paodong>670,694</paodong>
+    <kaiqiang>700,714</kaiqiang>
+    <huanzidan>720,812</huanzidan>
+    <naqiang>820,857</naqiang>
+    <teshukaiqiang>860,897</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="m4a1_king4Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_m4a1_king4Anim_fp">
+ <daiji>660,668</daiji>
+    <paodong>670,694</paodong>
+    <kaiqiang>700,714</kaiqiang>
+    <huanzidan>720,812</huanzidan>
+    <naqiang>820,857</naqiang>
+    <teshukaiqiang>860,897</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="m4a1_king4Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_m4a1_king4Anim_fp">
+ <daiji>660,668</daiji>
+    <paodong>670,694</paodong>
+    <kaiqiang>700,714</kaiqiang>
+    <huanzidan>720,812</huanzidan>
+    <naqiang>820,857</naqiang>
+    <teshukaiqiang>860,897</teshukaiqiang>
+  </anim>
+  
+  
+  
+  
+  
+  
+  
+  <anim swf="" value="texiaoAnim1_tp">
+    <kaiqiang>2,4</kaiqiang>
+  </anim>
+  <anim swf="" value="ak47xilieBullet_fp">
+    <kaiqiang>30,48</kaiqiang>
+  </anim>
+  <anim swf="" value="an94xilieBullet_fp">
+    <kaiqiang>4250,4271</kaiqiang>
+  </anim>
+  <anim swf="" value="auga1xilieBullet_fp">
+    <kaiqiang>1030,1040</kaiqiang>
+  </anim>
+  <anim swf="" value="awmxilieBullet_fp">
+    <kaiqiang>1230,1270</kaiqiang>
+  </anim>
+  <anim swf="" value="barrettxilieBullet_fp">
+    <kaiqiang>1230,1270</kaiqiang>
+  </anim>
+  <anim swf="" value="famasxilieBullet_fp">
+    <kaiqiang>2185,2195</kaiqiang>
+  </anim>
+  <anim swf="" value="jiatelinxilieBullet_fp">
+    <kaiqiang>2447,2457</kaiqiang>
+  </anim>
+  <anim swf="" value="m4a1xilieBullet_fp">
+    <kaiqiang0>0,27</kaiqiang0>
+    <kaiqiang1>30,57</kaiqiang1>
+  </anim>
+  <anim swf="" value="m4a1axilieBullet_fp">
+    <kaiqiang0>0,27</kaiqiang0>
+    <kaiqiang1>30,57</kaiqiang1>
+  </anim>
+  <anim swf="" value="m16xilieBullet_fp">
+    <kaiqiang>900,910</kaiqiang>
+  </anim>
+  <anim swf="" value="m249xilieBullet_fp">
+    <kaiqiang>3425,3435</kaiqiang>
+  </anim>
+  <anim swf="" value="m60xilieBullet_fp">
+    <kaiqiang>1630,1648</kaiqiang>
+  </anim>
+  <anim swf="" value="m700xilieBullet_fp">
+    <kaiqiang>1380,1420</kaiqiang>
+  </anim>
+  <anim swf="" value="mg3xilieBullet_fp">
+    <kaiqiang>3225,3242</kaiqiang>
+  </anim>
+  <anim swf="" value="microgailxilieBullet_fp">
+    <kaiqiang>150,168</kaiqiang>
+  </anim>
+  <anim swf="" value="mp7xilieBullet_fp">
+    <kaiqiang>1830,1840</kaiqiang>
+  </anim>
+  <anim swf="" value="mp5xilieBullet_fp">
+    <kaiqiang>2730,2740</kaiqiang>
+  </anim>
+  <anim swf="" value="p90xilieBullet_fp">
+    <kaiqiang>1460,1470</kaiqiang>
+  </anim>
+  <anim swf="" value="qbu09xilieBullet_fp">
+    <kaiqiang>1230,1270</kaiqiang>
+  </anim>
+  <anim swf="" value="qbz95xilieBullet_fp">
+    <kaiqiang>2185,2195</kaiqiang>
+  </anim>
+  <anim swf="" value="rpkxilieBullet_fp">
+    <kaiqiang>3025,3043</kaiqiang>
+  </anim>
+  <anim swf="" value="sg552xilieBullet_fp">
+    <kaiqiang>2630,2640</kaiqiang>
+  </anim>
+<anim shared="" swf="m870Anim_fp" switcher="weapon_switcher" value="m870Anim_fp">
+<daiji>5030,5038</daiji>
+<paodong>5040,5065</paodong>
+<kaiqiang>5070,5108</kaiqiang>
+<naqiang>5170,5195</naqiang>
+<kaishihuanzidan>5110,5120</kaishihuanzidan>
+<xunhuanhuanzidan>5122,5141</xunhuanhuanzidan>
+<jieshuhuanzidan>5143,5165</jieshuhuanzidan>
+</anim>
+<anim shared="" swf="m870Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_m870Anim_fp">
+<daiji>5030,5038</daiji>
+<paodong>5040,5065</paodong>
+<kaiqiang>5070,5108</kaiqiang>
+<naqiang>5170,5195</naqiang>
+<kaishihuanzidan>5110,5120</kaishihuanzidan>
+<xunhuanhuanzidan>5122,5141</xunhuanhuanzidan>
+<jieshuhuanzidan>5143,5165</jieshuhuanzidan>
+</anim>
+<anim shared="" swf="m870Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_m870Anim_fp">
+<daiji>5030,5038</daiji>
+<paodong>5040,5065</paodong>
+<kaiqiang>5070,5108</kaiqiang>
+<naqiang>5170,5195</naqiang>
+<kaishihuanzidan>5110,5120</kaishihuanzidan>
+<xunhuanhuanzidan>5122,5141</xunhuanhuanzidan>
+<jieshuhuanzidan>5143,5165</jieshuhuanzidan>
+</anim>
+
+<anim shared="" swf="xm1014_king4Anim_fp" switcher="weapon_switcher" value="xm1014_king4Anim_fp">
+<daiji>2870,2878</daiji>
+<paodong>2880,2904</paodong>
+<kaiqiang>2910,2923</kaiqiang>
+<naqiang>3000,3043</naqiang>
+<kaishihuanzidan>2930,2950</kaishihuanzidan>
+<xunhuanhuanzidan>2952,2967</xunhuanhuanzidan>
+<jieshuhuanzidan>2969,2989</jieshuhuanzidan>
+</anim>
+<anim shared="" swf="xm1014_king4Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_xm1014_king4Anim_fp">
+<daiji>2870,2878</daiji>
+<paodong>2880,2904</paodong>
+<kaiqiang>2910,2923</kaiqiang>
+<naqiang>3000,3043</naqiang>
+<kaishihuanzidan>2930,2950</kaishihuanzidan>
+<xunhuanhuanzidan>2952,2967</xunhuanhuanzidan>
+<jieshuhuanzidan>2969,2989</jieshuhuanzidan>
+</anim>
+<anim shared="" swf="xm1014_king4Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_xm1014_king4Anim_fp">
+<daiji>2870,2878</daiji>
+<paodong>2880,2904</paodong>
+<kaiqiang>2910,2923</kaiqiang>
+<naqiang>3000,3043</naqiang>
+<kaishihuanzidan>2930,2950</kaishihuanzidan>
+<xunhuanhuanzidan>2952,2967</xunhuanhuanzidan>
+<jieshuhuanzidan>2969,2989</jieshuhuanzidan>
+</anim>
+
+
+<anim shared="" swf="banzhuanAnim_fp" switcher="weapon_switcher" value="banzhuanAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>11,35</paodong>
+    <kaiqiang>40,69</kaiqiang>
+    <teshukaiqiang>74,142</teshukaiqiang>
+    <naqiang>151,204</naqiang>
+  </anim>
+  <anim shared="" swf="banzhuanAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_banzhuanAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>11,35</paodong>
+    <kaiqiang>40,69</kaiqiang>
+    <teshukaiqiang>74,142</teshukaiqiang>
+    <naqiang>151,204</naqiang>
+  </anim>
+
+<anim shared="" swf="banzhuanAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_banzhuanAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>11,35</paodong>
+    <kaiqiang>40,69</kaiqiang>
+    <teshukaiqiang>74,142</teshukaiqiang>
+    <naqiang>151,204</naqiang>
+  </anim>
+  
+  <anim shared="" swf="banzhuanAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_banzhuanAnim_tp">
+    <daiji>0,5</daiji>
+    <kaiqiang>92,127</kaiqiang>
+    <teshukaiqiang>134,173</teshukaiqiang>
+    <beijizhong>11,27</beijizhong>
+    <pao>36,60</pao>
+    <xiadundaiji>75,79</xiadundaiji>
+  </anim>
+  <anim shared="" swf="banzhuanAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_banzhuanAnim_tp">
+    <daiji>0,5</daiji>
+    <kaiqiang>92,127</kaiqiang>
+    <teshukaiqiang>134,173</teshukaiqiang>
+    <beijizhong>11,27</beijizhong>
+    <pao>36,60</pao>
+    <xiadundaiji>75,79</xiadundaiji>
+  </anim>  
+   <anim shared="" swf="shenpanAnim_fp" switcher="weapon_switcher" value="shenpanAnim_fp">
+   <daiji>6350,6358</daiji>
+    <paodong>6360,6384</paodong>
+    <kaiqiang>6390,6404</kaiqiang>
+    <huanzidan>6410,6495</huanzidan>
+    <naqiang>6500,6533</naqiang>
+  </anim>
+  <anim shared="" swf="shenpanAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_shenpanAnim_fp">
+ <daiji>6350,6358</daiji>
+    <paodong>6360,6384</paodong>
+    <kaiqiang>6390,6404</kaiqiang>
+    <huanzidan>6410,6495</huanzidan>
+    <naqiang>6500,6533</naqiang>
+  </anim>
+  <anim shared="" swf="shenpanAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_shenpanAnim_fp">
+ <daiji>6350,6358</daiji>
+    <paodong>6360,6384</paodong>
+    <kaiqiang>6390,6404</kaiqiang>
+    <huanzidan>6410,6495</huanzidan>
+    <naqiang>6500,6533</naqiang>
+  </anim>
+  <anim shared="" swf="shenpanAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_shenpanAnim_tp">
+     <daiji>1130,1135</daiji>
+    <kaiqiang>1140,1142</kaiqiang>
+    <beijizhong>1150,1158</beijizhong>
+    <pao>1170,1190</pao>
+    <huanzidan>1200,1244</huanzidan>
+    <xiadundaiji>1250,1255</xiadundaiji>
+    <xiadunkaiqiang>1260,1262</xiadunkaiqiang>	
+  </anim>
+  <anim shared="" swf="shenpanAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_shenpanAnim_tp">
+    <daiji>1130,1135</daiji>
+    <kaiqiang>1140,1142</kaiqiang>
+    <beijizhong>1150,1158</beijizhong>
+    <pao>1170,1190</pao>
+    <huanzidan>1200,1244</huanzidan>
+    <xiadundaiji>1250,1255</xiadundaiji>
+    <xiadunkaiqiang>1260,1262</xiadunkaiqiang>
+  </anim>  
+  <anim shared="" swf="huimieAnim_fp" switcher="weapon_switcher" value="huimieAnim_fp">
+   <daiji>7570,7578</daiji>
+    <paodong>7580,7604</paodong>
+    <kaiqiang>7610,7621</kaiqiang>
+    <teshukaiqiang>7625,7636</teshukaiqiang>
+    <huanzidan>7640,7736</huanzidan>
+    <naqiang>7740,7795</naqiang>
+  </anim>
+  <anim shared="" swf="huimieAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_huimieAnim_fp">
+ <daiji>7570,7578</daiji>
+    <paodong>7580,7604</paodong>
+    <kaiqiang>7610,7621</kaiqiang>
+    <teshukaiqiang>7625,7636</teshukaiqiang>
+    <huanzidan>7640,7736</huanzidan>
+    <naqiang>7740,7795</naqiang>
+  </anim>
+  <anim shared="" swf="huimieAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_huimieAnim_fp">
+ <daiji>7570,7578</daiji>
+    <paodong>7580,7604</paodong>
+    <kaiqiang>7610,7621</kaiqiang>
+    <teshukaiqiang>7625,7636</teshukaiqiang>
+    <huanzidan>7640,7736</huanzidan>
+    <naqiang>7740,7795</naqiang>
+  </anim>
+  <anim shared="" swf="huimieAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_huimieAnim_tp">
+     <daiji>720,720</daiji>
+    <kaiqiang>806,829</kaiqiang>
+    <beijizhong>761,780</beijizhong>
+    <pao>730,754</pao>
+    <huanzidan>836,901</huanzidan>
+    <xiadundaiji>791,791</xiadundaiji>
+    <xiadunkaiqiang>806,829</xiadunkaiqiang>	
+  </anim>
+  <anim shared="" swf="huimieAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_huimieAnim_tp">
+    <daiji>720,720</daiji>
+    <kaiqiang>806,829</kaiqiang>
+    <beijizhong>761,780</beijizhong>
+    <pao>730,754</pao>
+    <huanzidan>836,901</huanzidan>
+    <xiadundaiji>791,791</xiadundaiji>
+    <xiadunkaiqiang>806,829</xiadunkaiqiang>
+  </anim>
+  
+  <anim shared="" swf="canbaoAnim_fp" switcher="weapon_switcher" value="canbaoAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>11,35</paodong>
+    <kaiqiang>38,61</kaiqiang>
+    <huanzidan>64,155</huanzidan>
+    <naqiang>158,219</naqiang>
+  </anim>
+  <anim shared="" swf="canbaoAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_canbaoAnim_fp">
+ <daiji>0,8</daiji>
+    <paodong>11,35</paodong>
+    <kaiqiang>38,61</kaiqiang>
+    <huanzidan>64,155</huanzidan>
+    <naqiang>158,219</naqiang>
+  </anim>
+  <anim shared="" swf="canbaoAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_canbaoAnim_fp">
+ <daiji>0,8</daiji>
+    <paodong>11,35</paodong>
+    <kaiqiang>38,61</kaiqiang>
+    <huanzidan>64,155</huanzidan>
+    <naqiang>158,219</naqiang>
+  </anim>
+  <anim shared="" swf="canbaoAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_canbaoAnim_tp">
+     <daiji>0,5</daiji>
+    <kaiqiang>38,50</kaiqiang>
+    <beijizhong>11,27</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>133,223</huanzidan>
+    <xiadundaiji>106,110</xiadundaiji>
+    <xiadunkaiqiang>38,50</xiadunkaiqiang>	
+  </anim>
+  <anim shared="" swf="canbaoAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_canbaoAnim_tp">
+     <daiji>0,5</daiji>
+    <kaiqiang>38,50</kaiqiang>
+    <beijizhong>11,27</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>133,223</huanzidan>
+    <xiadundaiji>106,110</xiadundaiji>
+    <xiadunkaiqiang>38,50</xiadunkaiqiang>	
+  </anim>
+  
+  <anim shared="" swf="shuangzizuo_duopoAnim_fp" switcher="weapon_switcher" value="shuangzizuo_duopoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>11,35</paodong>
+    <zuoqingji>40,80</zuoqingji>
+    <youqingji>85,125</youqingji>
+    <teshukaiqiang>130,202</teshukaiqiang>
+    <naqiang>201,258</naqiang>
+  </anim>
+  <anim shared="" swf="shuangzizuo_duopoAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_shuangzizuo_duopoAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>11,35</paodong>
+    <zuoqingji>40,80</zuoqingji>
+    <youqingji>85,125</youqingji>
+    <teshukaiqiang>130,202</teshukaiqiang>
+    <naqiang>201,258</naqiang>
+  </anim>
+
+<anim shared="" swf="shuangzizuo_duopoAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_shuangzizuo_duopoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>11,35</paodong>
+    <zuoqingji>40,80</zuoqingji>
+    <youqingji>85,125</youqingji>
+    <teshukaiqiang>130,202</teshukaiqiang>
+    <naqiang>201,258</naqiang>
+  </anim>
+  
+  <anim shared="" swf="shuangzizuo_duopoAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_shuangzizuo_duopoAnim_tp">
+    <daiji>0,5</daiji>
+    <zuoqingji>90,126</zuoqingji>
+    <youqingji>130,166</youqingji>
+    <teshukaiqiang>170,219</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>75,79</xiadundaiji>
+  </anim>
+  <anim shared="" swf="shuangzizuo_duopoAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_shuangzizuo_duopoAnim_tp">
+    <daiji>0,5</daiji>
+    <zuoqingji>90,126</zuoqingji>
+    <youqingji>130,166</youqingji>
+    <teshukaiqiang>170,219</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>75,79</xiadundaiji>
+  </anim>
+    <anim shared="" swf="jiaoyueAnim_fp" switcher="weapon_switcher" value="jiaoyueAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>11,35</paodong>
+    <zuoqingji>40,80</zuoqingji>
+    <youqingji>85,125</youqingji>
+    <teshukaiqiang>130,196</teshukaiqiang>
+    <naqiang>210,250</naqiang>
+  </anim>
+  <anim shared="" swf="jiaoyueAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_jiaoyueAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>11,35</paodong>
+    <zuoqingji>40,80</zuoqingji>
+    <youqingji>85,125</youqingji>
+    <teshukaiqiang>130,196</teshukaiqiang>
+    <naqiang>210,250</naqiang>
+  </anim>
+
+<anim shared="" swf="jiaoyueAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_jiaoyueAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>11,35</paodong>
+    <zuoqingji>40,80</zuoqingji>
+    <youqingji>85,125</youqingji>
+    <teshukaiqiang>130,196</teshukaiqiang>
+    <naqiang>210,250</naqiang>
+  </anim>
+  
+  <anim shared="" swf="jiaoyueAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_jiaoyueAnim_tp">
+    <daiji>0,5</daiji>
+    <zuoqingji>90,126</zuoqingji>
+    <youqingji>130,166</youqingji>
+    <teshukaiqiang>170,219</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>75,79</xiadundaiji>
+  </anim>
+  <anim shared="" swf="jiaoyueAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_jiaoyueAnim_tp">
+    <daiji>0,5</daiji>
+    <zuoqingji>90,126</zuoqingji>
+    <youqingji>130,166</youqingji>
+    <teshukaiqiang>170,219</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>75,79</xiadundaiji>
+  </anim>
+  
+  <anim shared="" swf="jumushuixi2Anim_fp" switcher="weapon_switcher" value="jumushuixi2Anim_fp">
+    <daiji>6350,6358</daiji>
+    <paodong>6360,6384</paodong>
+    <kaiqiang>6390,6404</kaiqiang>
+     <huanzidan>6410,6467</huanzidan>
+    <naqiang>6470,6495</naqiang>
+  </anim>
+  <anim shared="" swf="jumushuixi2Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_jumushuixi2Anim_fp">
+  <daiji>6350,6358</daiji>
+    <paodong>6360,6384</paodong>
+    <kaiqiang>6390,6404</kaiqiang>
+     <huanzidan>6410,6467</huanzidan>
+    <naqiang>6470,6495</naqiang>
+  </anim>
+  <anim shared="" swf="jumushuixi2Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_jumushuixi2Anim_fp">
+   <daiji>6350,6358</daiji>
+    <paodong>6360,6384</paodong>
+    <kaiqiang>6390,6404</kaiqiang>
+     <huanzidan>6410,6467</huanzidan>
+    <naqiang>6470,6495</naqiang>
+  </anim>
+  
+  <anim shared="" swf="juxiezuo_lieguAnim_fp" switcher="weapon_switcher" value="juxiezuo_lieguAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,75</kaiqiang>    
+    <teshukaiqiang>78,131</teshukaiqiang>
+    <naqiang>135,202</naqiang>
+  </anim>
+  <anim shared="" swf="juxiezuo_lieguAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_juxiezuo_lieguAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,75</kaiqiang>    
+    <teshukaiqiang>78,131</teshukaiqiang>
+    <naqiang>135,202</naqiang>
+  </anim>
+
+<anim shared="" swf="juxiezuo_lieguAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_juxiezuo_lieguAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,75</kaiqiang>    
+    <teshukaiqiang>78,131</teshukaiqiang>
+    <naqiang>135,202</naqiang>
+  </anim>
+  
+  <anim shared="" swf="juxiezuo_lieguAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_juxiezuo_lieguAnim_tp">
+    <daiji>0,5</daiji>
+     <kaiqiang>90,124</kaiqiang>
+    <teshukaiqiang>130,168</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>70,74</xiadundaiji>
+  </anim>
+  <anim shared="" swf="juxiezuo_lieguAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_juxiezuo_lieguAnim_tp">
+    <daiji>0,5</daiji>
+     <kaiqiang>90,124</kaiqiang>
+    <teshukaiqiang>130,168</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>70,74</xiadundaiji>
+  </anim>
+  
+  <anim shared="" swf="wushidaoAnim_fp" switcher="weapon_switcher" value="wushidaoAnim_fp">
+    <daiji>420,428</daiji>
+    <paodong>430,454</paodong>
+    <kaiqiang>460,487</kaiqiang>
+    <teshukaiqiang>490,527</teshukaiqiang>
+    <naqiang>530,562</naqiang>
+  </anim>
+  <anim shared="" swf="wushidaoAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_wushidaoAnim_fp">
+   <daiji>420,428</daiji>
+    <paodong>430,454</paodong>
+    <kaiqiang>460,487</kaiqiang>
+    <teshukaiqiang>490,527</teshukaiqiang>
+    <naqiang>530,562</naqiang>
+  </anim>
+
+<anim shared="" swf="wushidaoAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_wushidaoAnim_fp">
+   <daiji>420,428</daiji>
+    <paodong>430,454</paodong>
+    <kaiqiang>460,487</kaiqiang>
+    <teshukaiqiang>490,527</teshukaiqiang>
+    <naqiang>530,562</naqiang>
+  </anim>
+  
+  <anim shared="" swf="wushidaoAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_wushidaoAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>90,124</kaiqiang>
+    <teshukaiqiang>130,168</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>0,0</xiadundaiji>
+  </anim>
+  <anim shared="" swf="wushidaoAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_wushidaoAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>90,124</kaiqiang>
+    <teshukaiqiang>130,168</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>0,0</xiadundaiji>
+  </anim>
+  <anim shared="" swf="aa12_yanlongAnim_fp" switcher="weapon_switcher" value="aa12_yanlongAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,60</kaiqiang>
+    <huanzidan>65,155</huanzidan>
+    <naqiang>165,223</naqiang>
+  </anim>
+  <anim shared="" swf="aa12_yanlongAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_aa12_yanlongAnim_fp">
+ <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,60</kaiqiang>
+    <huanzidan>65,155</huanzidan>
+    <naqiang>165,223</naqiang>
+  </anim>
+  <anim shared="" swf="aa12_yanlongAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_aa12_yanlongAnim_fp">
+<daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,60</kaiqiang>
+    <huanzidan>65,155</huanzidan>
+    <naqiang>165,223</naqiang>
+  </anim>
+  
+  <anim shared="" swf="shoulei_leishenzhichuiAnim_fp" switcher="weapon_switcher" value="shoulei_leishenzhichuiAnim_fp">
+    <daiji>560,568</daiji>
+    <paodong>570,595</paodong>
+    <zhunbeirenglei>600,623</zhunbeirenglei>
+    <renglei>630,643</renglei>
+    <naqiang>645,657</naqiang>
+  </anim>
+<anim shared="" swf="shoulei_leishenzhichuiAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_shoulei_leishenzhichuiAnim_fp">
+   <daiji>560,568</daiji>
+    <paodong>570,595</paodong>
+    <zhunbeirenglei>600,623</zhunbeirenglei>
+    <renglei>630,643</renglei>
+    <naqiang>645,657</naqiang>
+  </anim>
+  <anim shared="" swf="shoulei_leishenzhichuiAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_shoulei_leishenzhichuiAnim_fp">
+    <daiji>560,568</daiji>
+    <paodong>570,595</paodong>
+    <zhunbeirenglei>600,623</zhunbeirenglei>
+    <renglei>630,643</renglei>
+    <naqiang>645,657</naqiang>
+  </anim>  
+  <anim shared="" swf="leisheAnim_fp" switcher="weapon_switcher" value="leisheAnim_fp">
+    <daiji>240,248</daiji>
+    <paodong>250,274</paodong>
+    <kaiqiang>280,290</kaiqiang>
+     <huanzidan>295,372</huanzidan>
+    <naqiang>380,415</naqiang>
+  </anim>
+  <anim shared="" swf="leisheAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_leisheAnim_fp">
+   <daiji>240,248</daiji>
+    <paodong>250,274</paodong>
+    <kaiqiang>280,290</kaiqiang>
+     <huanzidan>295,372</huanzidan>
+    <naqiang>380,415</naqiang>
+  </anim>
+  <anim shared="" swf="leisheAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_leisheAnim_fp">
+   <daiji>240,248</daiji>
+    <paodong>250,274</paodong>
+    <kaiqiang>280,290</kaiqiang>
+     <huanzidan>295,372</huanzidan>
+    <naqiang>380,415</naqiang>
+  </anim>
+  <anim shared="" swf="shizizuo_suihunAnim_fp" switcher="weapon_switcher" value="shizizuo_suihunAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>11,35</paodong>
+    <zuoqingji>40,87</zuoqingji>
+    <youqingji>100,161</youqingji>
+    <teshukaiqiang>170,239</teshukaiqiang>
+    <naqiang>250,307</naqiang>
+  </anim>
+  <anim shared="" swf="shizizuo_suihunAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_shizizuo_suihunAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>11,35</paodong>
+    <zuoqingji>40,87</zuoqingji>
+    <youqingji>100,161</youqingji>
+    <teshukaiqiang>170,239</teshukaiqiang>
+    <naqiang>250,307</naqiang>
+  </anim>
+
+<anim shared="" swf="shizizuo_suihunAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_shizizuo_suihunAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>11,35</paodong>
+    <zuoqingji>40,87</zuoqingji>
+    <youqingji>100,161</youqingji>
+    <teshukaiqiang>170,239</teshukaiqiang>
+    <naqiang>250,307</naqiang>
+  </anim>
+  
+  <anim shared="" swf="shizizuo_suihunAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_shizizuo_suihunAnim_tp">
+    <daiji>720,725</daiji>
+    <zuoqingji>730,772</zuoqingji>
+    <youqingji>780,733</youqingji>
+    <teshukaiqiang>840,892</teshukaiqiang>
+    <beijizhong>925,941</beijizhong>
+    <pao>900,920</pao>
+    <xiadundaiji>945,950</xiadundaiji>
+  </anim>
+  <anim shared="" swf="shizizuo_suihunAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_shizizuo_suihunAnim_tp">
+    <daiji>720,725</daiji>
+    <zuoqingji>730,772</zuoqingji>
+    <youqingji>780,733</youqingji>
+    <teshukaiqiang>840,892</teshukaiqiang>
+    <beijizhong>925,941</beijizhong>
+    <pao>900,920</pao>
+    <xiadundaiji>945,950</xiadundaiji>
+  </anim>
+  
+  <anim shared="" swf="baozhakuwuAnim_fp" switcher="weapon_switcher" value="baozhakuwuAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <zhunbeirenglei>40,48</zhunbeirenglei>
+    <renglei>57,71</renglei>
+    <naqiang>74,94</naqiang>
+  </anim>
+<anim shared="" swf="baozhakuwuAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_baozhakuwuAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <zhunbeirenglei>40,48</zhunbeirenglei>
+    <renglei>57,71</renglei>
+    <naqiang>74,94</naqiang>
+  </anim>
+  <anim shared="" swf="baozhakuwuAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_baozhakuwuAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <zhunbeirenglei>40,48</zhunbeirenglei>
+    <renglei>57,71</renglei>
+    <naqiang>74,94</naqiang>
+  </anim> 
+  
+  <anim shared="" swf="baozhakuwuAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_baozhakuwuAnim_tp">
+    <daiji>0,5</daiji>
+    <kaiqiang>90,127</kaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>75,79</xiadundaiji>
+  </anim>
+  <anim shared="" swf="baozhakuwuAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_baozhakuwuAnim_tp">
+    <daiji>0,5</daiji>
+    <kaiqiang>90,127</kaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>75,79</xiadundaiji>
+  </anim>
+  
+  
+  <anim shared="" swf="shougezhe_bingwushiAnim_fp" switcher="weapon_switcher" value="shougezhe_bingwushiAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,60</kaiqiang>
+    <huanzidan>70,161</huanzidan>
+    <naqiang>170,235</naqiang>
+    <teshukaiqiang>240,310</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="shougezhe_bingwushiAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_shougezhe_bingwushiAnim_fp">
+ <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,60</kaiqiang>
+    <huanzidan>70,161</huanzidan>
+    <naqiang>170,235</naqiang>
+    <teshukaiqiang>240,310</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="shougezhe_bingwushiAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_shougezhe_bingwushiAnim_fp">
+ <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,60</kaiqiang>
+    <huanzidan>70,161</huanzidan>
+    <naqiang>170,235</naqiang>
+    <teshukaiqiang>240,310</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="shougezhe_bingwushiAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_shougezhe_bingwushiAnim_tp">
+     <daiji>0,0</daiji>
+    <kaiqiang>40,46</kaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>110,200</huanzidan>
+    <xiadundaiji>100,100</xiadundaiji>
+    <xiadunkaiqiang>40,46</xiadunkaiqiang>
+    <teshukaiqiang>210,278</teshukaiqiang>	
+  </anim>
+  <anim shared="" swf="shougezhe_bingwushiAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_shougezhe_bingwushiAnim_tp">
+     <daiji>0,0</daiji>
+    <kaiqiang>40,46</kaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>110,200</huanzidan>
+    <xiadundaiji>100,100</xiadundaiji>
+    <xiadunkaiqiang>40,46</xiadunkaiqiang>
+    <teshukaiqiang>210,278</teshukaiqiang>	
+  </anim>
+  
+  <anim shared="" swf="dajizheAnim_fp" switcher="weapon_switcher" value="dajizheAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <kaishihuanzidan>60,74</kaishihuanzidan>
+    <xunhuanhuanzidan>80,95</xunhuanhuanzidan>
+    <jieshuhuanzidan>100,130</jieshuhuanzidan>
+    <naqiang>140,198</naqiang>
+  </anim>
+  <anim shared="" swf="dajizheAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_dajizheAnim_fp">
+ <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <kaishihuanzidan>60,74</kaishihuanzidan>
+    <xunhuanhuanzidan>80,95</xunhuanhuanzidan>
+    <jieshuhuanzidan>100,130</jieshuhuanzidan>
+    <naqiang>140,198</naqiang>
+  </anim>
+  <anim shared="" swf="dajizheAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_dajizheAnim_fp">
+ <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <kaishihuanzidan>60,74</kaishihuanzidan>
+    <xunhuanhuanzidan>80,95</xunhuanhuanzidan>
+    <jieshuhuanzidan>100,130</jieshuhuanzidan>
+    <naqiang>140,198</naqiang>
+  </anim>
+  <anim shared="" swf="dajizheAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_dajizheAnim_tp">
+     <daiji>980,985</daiji>
+    <kaiqiang>990,992</kaiqiang>
+    <beijizhong>1000,1008</beijizhong>
+    <pao>1020,1040</pao>
+    <huanzidan>1060,1074</huanzidan>
+    <xiadundaiji>1100,1105</xiadundaiji>
+    <xiadunkaiqiang>1110,1112</xiadunkaiqiang>    
+  </anim>
+  <anim shared="" swf="dajizheAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_dajizheAnim_tp">
+     <daiji>980,985</daiji>
+    <kaiqiang>990,992</kaiqiang>
+    <beijizhong>1000,1008</beijizhong>
+    <pao>1020,1040</pao>
+    <huanzidan>1060,1074</huanzidan>
+    <xiadundaiji>1100,1105</xiadundaiji>
+    <xiadunkaiqiang>1110,1112</xiadunkaiqiang>	
+  </anim>
+  
+  <anim shared="" swf="huijinshizheAnim_fp" switcher="weapon_switcher" value="huijinshizheAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,53</kaiqiang>
+    <teshukaiqiang>55,68</teshukaiqiang>
+    <huanzidan>70,176</huanzidan>
+    <naqiang>180,210</naqiang>
+  </anim>
+  <anim shared="" swf="huijinshizheAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_huijinshizheAnim_fp">
+ <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,53</kaiqiang>
+    <teshukaiqiang>55,68</teshukaiqiang>
+    <huanzidan>70,176</huanzidan>
+    <naqiang>180,210</naqiang>
+  </anim>
+  <anim shared="" swf="huijinshizheAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_huijinshizheAnim_fp">
+	 <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,53</kaiqiang>
+    <teshukaiqiang>55,68</teshukaiqiang>
+    <huanzidan>70,176</huanzidan>
+    <naqiang>180,210</naqiang>
+  </anim>
+  <anim shared="" swf="huijinshizheAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_huijinshizheAnim_tp">
+     <daiji>720,720</daiji>
+    <kaiqiang>800,805</kaiqiang>
+    <teshukaiqiang>810,815</teshukaiqiang>
+    <beijizhong>760,779</beijizhong>
+    <pao>730,754</pao>
+    <huanzidan>820,885</huanzidan>
+    <xiadundaiji>790,790</xiadundaiji>   
+  </anim>
+  <anim shared="" swf="huijinshizheAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_huijinshizheAnim_tp">
+     <daiji>720,720</daiji>
+    <kaiqiang>800,805</kaiqiang>
+    <teshukaiqiang>810,815</teshukaiqiang>
+    <beijizhong>760,779</beijizhong>
+    <pao>730,754</pao>
+    <huanzidan>820,885</huanzidan>
+    <xiadundaiji>790,790</xiadundaiji>	
+  </anim>
+  
+  <anim shared="" swf="cangyingpaiAnim_fp" switcher="weapon_switcher" value="cangyingpaiAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,75</kaiqiang>
+    <teshukaiqiang>80,125</teshukaiqiang>
+    <naqiang>130,165</naqiang>
+  </anim>
+  <anim shared="" swf="cangyingpaiAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_cangyingpaiAnim_fp">
+ <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,75</kaiqiang>
+    <teshukaiqiang>80,125</teshukaiqiang>
+    <naqiang>130,165</naqiang>
+  </anim>
+  <anim shared="" swf="cangyingpaiAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_cangyingpaiAnim_fp">
+	 <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,75</kaiqiang>
+    <teshukaiqiang>80,125</teshukaiqiang>
+    <naqiang>130,165</naqiang>
+  </anim>
+  <anim shared="" swf="cangyingpaiAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_cangyingpaiAnim_tp">
+     <daiji>0,0</daiji>
+    <kaiqiang>90,120</kaiqiang>
+    <teshukaiqiang>130,170</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>70,70</xiadundaiji>   
+  </anim>
+  <anim shared="" swf="cangyingpaiAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_cangyingpaiAnim_tp">
+     <daiji>0,0</daiji>
+    <kaiqiang>90,120</kaiqiang>
+    <teshukaiqiang>130,170</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>70,70</xiadundaiji>  
+  </anim>
+  
+  <anim shared="" swf="spas12Anim_fp" switcher="weapon_switcher" value="spas12Anim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,71</kaiqiang>
+    <kaishihuanzidan>80,98</kaishihuanzidan>
+    <xunhuanhuanzidan>100,115</xunhuanhuanzidan>
+    <jieshuhuanzidan>120,145</jieshuhuanzidan>
+    <naqiang>150,192</naqiang>
+  </anim>
+  <anim shared="" swf="spas12Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_spas12Anim_fp">
+ <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,71</kaiqiang>
+    <kaishihuanzidan>80,98</kaishihuanzidan>
+    <xunhuanhuanzidan>100,115</xunhuanhuanzidan>
+    <jieshuhuanzidan>120,145</jieshuhuanzidan>
+    <naqiang>150,192</naqiang>
+  </anim>
+  <anim shared="" swf="spas12Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_spas12Anim_fp">
+ <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,71</kaiqiang>
+    <kaishihuanzidan>80,98</kaishihuanzidan>
+    <xunhuanhuanzidan>100,115</xunhuanhuanzidan>
+    <jieshuhuanzidan>120,145</jieshuhuanzidan>
+    <naqiang>150,192</naqiang>
+  </anim>
+  <anim shared="" swf="spas12Anim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_spas12Anim_tp">
+     <daiji>1300,1300</daiji>
+    <kaiqiang>1310,1315</kaiqiang>
+    <beijizhong>1320,1328</beijizhong>
+    <pao>1340,1360</pao>
+    <huanzidan>1370,1383</huanzidan>
+    <xiadundaiji>1390,1395</xiadundaiji>
+    <xiadunkaiqiang>1400,1402</xiadunkaiqiang>	
+  </anim>
+  <anim shared="" swf="spas12Anim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_spas12Anim_tp">
+    <daiji>1300,1300</daiji>
+    <kaiqiang>1310,1315</kaiqiang>
+    <beijizhong>1320,1328</beijizhong>
+    <pao>1340,1360</pao>
+    <huanzidan>1370,1383</huanzidan>
+    <xiadundaiji>1390,1395</xiadundaiji>
+    <xiadunkaiqiang>1400,1402</xiadunkaiqiang>
+  </anim>
+<anim shared="" swf="quanrenAnim_fp" switcher="weapon_switcher" value="quanrenAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <zuoqingji>80,116</zuoqingji>
+    <youqingji>40,76</youqingji>
+    <teshukaiqiang>120,160</teshukaiqiang>
+    <naqiang>170,207</naqiang>
+  </anim>
+  <anim shared="" swf="quanrenAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_quanrenAnim_fp">
+ <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <zuoqingji>80,116</zuoqingji>
+    <youqingji>40,76</youqingji>
+    <teshukaiqiang>120,160</teshukaiqiang>
+    <naqiang>170,207</naqiang>
+  </anim>
+  <anim shared="" swf="quanrenAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_quanrenAnim_fp">
+	 <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <zuoqingji>80,116</zuoqingji>
+    <youqingji>40,76</youqingji>
+    <teshukaiqiang>120,160</teshukaiqiang>
+    <naqiang>170,207</naqiang>
+  </anim>
+  <anim shared="" swf="quanrenAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_quanrenAnim_tp">
+    <daiji>0,0</daiji>
+    <zuoqingji>130,161</zuoqingji>
+    <youqingji>90,125</youqingji>
+    <teshukaiqiang>170,210</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>75,75</xiadundaiji>  
+  </anim>
+  <anim shared="" swf="quanrenAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_quanrenAnim_tp">
+     <daiji>0,0</daiji>
+    <zuoqingji>130,161</zuoqingji>
+    <youqingji>90,125</youqingji>
+    <teshukaiqiang>170,210</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>75,75</xiadundaiji>   
+  </anim> 
+  <anim shared="" swf="tangmuxun_huangjinAnim_fp" switcher="weapon_switcher" value="tangmuxun_huangjinAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,131</huanzidan>
+    <naqiang>140,171</naqiang>
+  </anim>
+  <anim shared="" swf="tangmuxun_huangjinAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_tangmuxun_huangjinAnim_fp">
+ <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,131</huanzidan>
+    <naqiang>140,171</naqiang>
+  </anim>
+  <anim shared="" swf="tangmuxun_huangjinAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_tangmuxun_huangjinAnim_fp">
+<daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,131</huanzidan>
+    <naqiang>140,171</naqiang>
+  </anim>
+  <anim shared="" swf="tangmuxun_huangjinAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_tangmuxun_huangjinAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>10,12</kaiqiang>    
+    <beijizhong>20,28</beijizhong>
+    <pao>40,60</pao>
+    <huanzidan>70,114</huanzidan>
+    <xiadundaiji>120,120</xiadundaiji>  
+    <xiadunkaiqiang>130,132</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="tangmuxun_huangjinAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_tangmuxun_huangjinAnim_tp">
+     <daiji>0,0</daiji>
+    <kaiqiang>10,12</kaiqiang>    
+    <beijizhong>20,28</beijizhong>
+    <pao>40,60</pao>
+    <huanzidan>70,114</huanzidan>
+    <xiadundaiji>120,120</xiadundaiji>  
+    <xiadunkaiqiang>130,132</xiadunkaiqiang>   
+  </anim>
+<anim shared="" swf="chunvzuo_mingyouAnim_fp" switcher="weapon_switcher" value="chunvzuo_mingyouAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+   <kaiqiang>40,62</kaiqiang>
+    <teshukaiqiang>70,110</teshukaiqiang>
+    <naqiang>120,144</naqiang>
+  </anim>
+  <anim shared="" swf="chunvzuo_mingyouAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_chunvzuo_mingyouAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+   <kaiqiang>40,62</kaiqiang>
+    <teshukaiqiang>70,110</teshukaiqiang>
+    <naqiang>120,144</naqiang>
+  </anim>
+
+<anim shared="" swf="chunvzuo_mingyouAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_chunvzuo_mingyouAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+   <kaiqiang>40,62</kaiqiang>
+    <teshukaiqiang>70,110</teshukaiqiang>
+    <naqiang>120,144</naqiang>
+  </anim>
+  
+  <anim shared="" swf="chunvzuo_mingyouAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_chunvzuo_mingyouAnim_tp">
+    <daiji>720,720</daiji>
+    <kaiqiang>730,761</kaiqiang>
+    <teshukaiqiang>770,808</teshukaiqiang>
+    <beijizhong>845,861</beijizhong>
+    <pao>820,840</pao>
+    <xiadundaiji>865,865</xiadundaiji>
+  </anim>
+  <anim shared="" swf="chunvzuo_mingyouAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_chunvzuo_mingyouAnim_tp">
+    <daiji>720,720</daiji>
+    <kaiqiang>730,761</kaiqiang>
+    <teshukaiqiang>770,808</teshukaiqiang>
+    <beijizhong>845,861</beijizhong>
+    <pao>820,840</pao>
+    <xiadundaiji>865,865</xiadundaiji>
+  </anim>
+<anim shared="" swf="tianpingzuo_hanlingAnim_fp" switcher="weapon_switcher" value="tianpingzuo_hanlingAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <zuoqingji>80,116</zuoqingji>
+    <youqingji>40,76</youqingji>
+    <teshukaiqiang>120,160</teshukaiqiang>
+    <naqiang>170,219</naqiang>
+  </anim>
+  <anim shared="" swf="tianpingzuo_hanlingAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_tianpingzuo_hanlingAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <zuoqingji>80,116</zuoqingji>
+    <youqingji>40,76</youqingji>
+    <teshukaiqiang>120,160</teshukaiqiang>
+    <naqiang>170,219</naqiang>
+  </anim>
+
+<anim shared="" swf="tianpingzuo_hanlingAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_tianpingzuo_hanlingAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <zuoqingji>80,116</zuoqingji>
+    <youqingji>40,76</youqingji>
+    <teshukaiqiang>120,160</teshukaiqiang>
+    <naqiang>170,219</naqiang>
+  </anim>
+  
+  <anim shared="" swf="tianpingzuo_hanlingAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_tianpingzuo_hanlingAnim_tp">
+    <daiji>0,0</daiji>
+    <zuoqingji>90,126</zuoqingji>
+    <youqingji>130,162</youqingji>
+    <teshukaiqiang>170,210</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>75,75</xiadundaiji>
+  </anim>
+  <anim shared="" swf="tianpingzuo_hanlingAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_tianpingzuo_hanlingAnim_tp">
+    <daiji>0,0</daiji>
+    <zuoqingji>90,126</zuoqingji>
+    <youqingji>130,162</youqingji>
+    <teshukaiqiang>170,210</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>75,75</xiadundaiji>
+  </anim>
+  <anim shared="" swf="xiuluozhirenAnim_fp" switcher="weapon_switcher" value="xiuluozhirenAnim_fp">
+    <daiji>420,428</daiji>
+    <paodong>430,454</paodong>
+    <kaiqiang>460,486</kaiqiang>
+    <teshukaiqiang>490,540</teshukaiqiang>
+    <naqiang>550,587</naqiang>
+  </anim>
+  
+  <anim shared="" swf="xiuluozhirenAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_xiuluozhirenAnim_fp">
+   <daiji>420,428</daiji>
+    <paodong>430,454</paodong>
+    <kaiqiang>460,486</kaiqiang>
+    <teshukaiqiang>490,540</teshukaiqiang>
+    <naqiang>550,587</naqiang>
+  </anim>
+
+<anim shared="" swf="xiuluozhirenAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_xiuluozhirenAnim_fp">
+    <daiji>420,428</daiji>
+    <paodong>430,454</paodong>
+    <kaiqiang>460,486</kaiqiang>
+    <teshukaiqiang>490,540</teshukaiqiang>
+    <naqiang>550,587</naqiang>
+  </anim>
+  
+  <anim shared="" swf="xiuluozhirenAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_xiuluozhirenAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>10,31</kaiqiang>
+    <teshukaiqiang>40,74</teshukaiqiang>
+    <beijizhong>110,126</beijizhong>
+    <pao>80,100</pao>
+    <xiadundaiji>140,140</xiadundaiji>
+  </anim>
+  <anim shared="" swf="xiuluozhirenAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_xiuluozhirenAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>10,31</kaiqiang>
+    <teshukaiqiang>40,74</teshukaiqiang>
+    <beijizhong>110,126</beijizhong>
+    <pao>80,100</pao>
+    <xiadundaiji>140,140</xiadundaiji>
+  </anim>
+  <anim shared="" swf="xiuluoyishanAnim_fp" switcher="weapon_switcher" value="xiuluoyishanAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,93</kaiqiang>
+    <huanzidan>100,187</huanzidan>
+    <naqiang>190,240</naqiang>
+  </anim>
+  <anim shared="" swf="xiuluoyishanAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_xiuluoyishanAnim_fp">
+ <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,93</kaiqiang>
+    <huanzidan>100,187</huanzidan>
+    <naqiang>190,240</naqiang>
+  </anim>
+  <anim shared="" swf="xiuluoyishanAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_xiuluoyishanAnim_fp">
+<daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,93</kaiqiang>
+    <huanzidan>100,187</huanzidan>
+    <naqiang>190,240</naqiang>
+  </anim>
+  <anim shared="" swf="xiuluoyishanAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_xiuluoyishanAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>40,52</kaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>120,214</huanzidan>
+    <xiadundaiji>100,100</xiadundaiji>
+  </anim>
+  <anim shared="" swf="xiuluoyishanAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_xiuluoyishanAnim_tp">
+     <daiji>0,0</daiji>
+    <kaiqiang>40,52</kaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>120,214</huanzidan>
+    <xiadundaiji>100,100</xiadundaiji>
+  </anim>
+<anim shared="" swf="xiuluoshitianAnim_fp" switcher="weapon_switcher" value="xiuluoshitianAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,218</naqiang>
+  </anim>
+  <anim shared="" swf="xiuluoshitianAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_xiuluoshitianAnim_fp">
+  <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,218</naqiang>
+  </anim>
+  <anim shared="" swf="xiuluoshitianAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_xiuluoshitianAnim_fp">
+ <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,218</naqiang>
+  </anim>  
+   <!--- -->
+   <anim shared="" swf="xiuluozhinuAnim_fp" switcher="weapon_switcher" value="xiuluozhinuAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <yure>40,56</yure>
+    <zhuan>40,56</zhuan>
+    <kaiqiangyou1>70,86</kaiqiangyou1>
+    <kaiqiangzuo1>90,106</kaiqiangzuo1>
+    <kaiqiangyou2>110,126</kaiqiangyou2>
+    <kaiqiangzuo2>130,146</kaiqiangzuo2>
+    <naqiang>160,190</naqiang>
+  </anim>
+  <anim shared="" swf="xiuluozhinuAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_xiuluozhinuAnim_fp">
+<daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <yure>40,56</yure>
+    <zhuan>40,56</zhuan>
+    <kaiqiangyou1>70,86</kaiqiangyou1>
+    <kaiqiangzuo1>90,106</kaiqiangzuo1>
+    <kaiqiangyou2>110,126</kaiqiangyou2>
+    <kaiqiangzuo2>130,146</kaiqiangzuo2>
+    <naqiang>160,190</naqiang>
+  </anim>
+  <anim shared="" swf="xiuluozhinuAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_xiuluozhinuAnim_fp">
+<daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <yure>40,56</yure>
+    <zhuan>40,56</zhuan>
+    <kaiqiangyou1>70,86</kaiqiangyou1>
+    <kaiqiangzuo1>90,106</kaiqiangzuo1>
+    <kaiqiangyou2>110,126</kaiqiangyou2>
+    <kaiqiangzuo2>130,146</kaiqiangzuo2>
+    <naqiang>160,190</naqiang>
+  </anim>
+  <anim shared="" swf="xiuluozhinuAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_xiuluozhinuAnim_tp">
+    <daiji>720,720</daiji>
+    <kaiqiangyou1>800,805</kaiqiangyou1>
+    <kaiqiangzuo1>810,815</kaiqiangzuo1>
+    <kaiqiangyou2>800,805</kaiqiangyou2>
+    <kaiqiangzuo2>810,815</kaiqiangzuo2>
+    <beijizhong>760,779</beijizhong>
+    <pao>730,754</pao>
+    <xiadundaiji>790,790</xiadundaiji>
+  </anim>
+  <anim shared="" swf="xiuluozhinuAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_xiuluozhinuAnim_tp">
+     <daiji>720,720</daiji>
+    <kaiqiangyou1>800,805</kaiqiangyou1>
+    <kaiqiangzuo1>810,815</kaiqiangzuo1>
+    <kaiqiangyou2>800,805</kaiqiangyou2>
+    <kaiqiangzuo2>810,815</kaiqiangzuo2>
+    <beijizhong>760,779</beijizhong>
+    <pao>730,754</pao>
+    <xiadundaiji>790,790</xiadundaiji>
+  </anim>
+  <anim shared="" swf="xiuluoshuangziAnim_fp" switcher="weapon_switcher" value="xiuluoshuangziAnim_fp">
+   <daiji>4020,4028</daiji>
+    <paodong>4030,4054</paodong>
+    <kaiqiang>4075,4086</kaiqiang>
+    <teshukaiqiang>4060,4071</teshukaiqiang>
+    <huanzidan>4090,4173</huanzidan>
+    <naqiang>4180,4194</naqiang>
+  </anim>
+  <anim shared="" swf="xiuluoshuangziAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_xiuluoshuangziAnim_fp">
+ <daiji>4020,4028</daiji>
+    <paodong>4030,4054</paodong>
+    <kaiqiang>4075,4086</kaiqiang>
+    <teshukaiqiang>4060,4071</teshukaiqiang>
+    <huanzidan>4090,4173</huanzidan>
+    <naqiang>4180,4194</naqiang>
+  </anim>
+  <anim shared="" swf="xiuluoshuangziAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_xiuluoshuangziAnim_fp">
+<daiji>4020,4028</daiji>
+    <paodong>4030,4054</paodong>
+    <kaiqiang>4075,4086</kaiqiang>
+    <teshukaiqiang>4060,4071</teshukaiqiang>
+    <huanzidan>4090,4173</huanzidan>
+    <naqiang>4180,4194</naqiang>
+  </anim>
+  
+  <anim shared="" swf="jingubangAnim_fp" switcher="weapon_switcher" value="jingubangAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,66</kaiqiang>
+    <teshukaiqiang>80,130</teshukaiqiang>
+    <naqiang>140,172</naqiang>
+  </anim>
+  
+  <anim shared="" swf="jingubangAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_jingubangAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,66</kaiqiang>
+    <teshukaiqiang>80,130</teshukaiqiang>
+    <naqiang>140,172</naqiang>
+  </anim>
+
+<anim shared="" swf="jingubangAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_jingubangAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,66</kaiqiang>
+    <teshukaiqiang>80,130</teshukaiqiang>
+    <naqiang>140,172</naqiang>
+  </anim>
+  
+  <anim shared="" swf="jingubangAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_jingubangAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>90,120</kaiqiang>
+    <teshukaiqiang>130,170</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>70,70</xiadundaiji>
+  </anim>
+  <anim shared="" swf="jingubangAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_jingubangAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>90,120</kaiqiang>
+    <teshukaiqiang>130,170</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>70,70</xiadundaiji>
+  </anim>
+  <anim shared="" swf="lingfengAnim_fp" switcher="weapon_switcher" value="lingfengAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,80</kaiqiang>
+    <teshukaiqiang>90,130</teshukaiqiang>
+    <naqiang>135,180</naqiang>
+  </anim>
+  
+  <anim shared="" swf="lingfengAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_lingfengAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,80</kaiqiang>
+    <teshukaiqiang>90,130</teshukaiqiang>
+    <naqiang>135,180</naqiang>
+  </anim>
+
+  <anim shared="" swf="lingfengAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_lingfengAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,80</kaiqiang>
+    <teshukaiqiang>90,130</teshukaiqiang>
+    <naqiang>135,180</naqiang>
+  </anim>
+  <anim shared="" swf="lingfengAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_lingfengAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>90,130</kaiqiang>
+    <teshukaiqiang>140,180</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>70,70</xiadundaiji>
+  </anim>
+  <anim shared="" swf="lingfengAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_lingfengAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>90,130</kaiqiang>
+    <teshukaiqiang>140,180</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>70,70</xiadundaiji>
+  </anim>
+  <anim shared="" swf="tushenAnim_fp" switcher="weapon_switcher" value="tushenAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,96</kaiqiang>
+    <teshukaiqiang>100,163</teshukaiqiang>
+    <naqiang>170,212</naqiang>
+  </anim>
+  
+  <anim shared="" swf="tushenAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_tushenAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,96</kaiqiang>
+    <teshukaiqiang>100,163</teshukaiqiang>
+    <naqiang>170,212</naqiang>
+  </anim>
+
+  <anim shared="" swf="tushenAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_tushenAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,96</kaiqiang>
+    <teshukaiqiang>100,163</teshukaiqiang>
+    <naqiang>170,212</naqiang>
+  </anim>
+  <anim shared="" swf="tushenAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_tushenAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>90,124</kaiqiang>
+    <teshukaiqiang>130,170</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>70,70</xiadundaiji>
+  </anim>
+  <anim shared="" swf="tushenAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_tushenAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>90,124</kaiqiang>
+    <teshukaiqiang>130,170</teshukaiqiang>
+    <beijizhong>10,26</beijizhong>
+    <pao>35,59</pao>
+    <xiadundaiji>70,70</xiadundaiji>
+  </anim>
+  <anim shared="" swf="zb26Anim_fp" switcher="weapon_switcher" value="zb26Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,208</naqiang>
+  </anim>
+  <anim shared="" swf="zb26Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_zb26Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,208</naqiang>
+  </anim>
+  <anim shared="" swf="zb26Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_zb26Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,208</naqiang>
+  </anim>
+  <anim shared="" swf="zb26Anim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_zb26Anim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>40,50</kaiqiang>
+    <beijizhong>11,27</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>110,200</huanzidan>
+    <xiadundaiji>100,100</xiadundaiji>
+  </anim>
+  <anim shared="" swf="zb26Anim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_zb26Anim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>40,50</kaiqiang>
+    <beijizhong>11,27</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>110,200</huanzidan>
+    <xiadundaiji>100,100</xiadundaiji>
+  </anim>
+  <anim shared="" swf="ladder_akAnim_fp" switcher="weapon_switcher" value="ladder_akAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,210</naqiang>
+	<teshukaiqiang>220,257</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="ladder_akAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_ladder_akAnim_fp">
+  <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,210</naqiang>
+	<teshukaiqiang>220,257</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="ladder_akAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_ladder_akAnim_fp">
+ <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,210</naqiang>
+	<teshukaiqiang>220,257</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="tianxingzheAnim_fp" switcher="weapon_switcher" value="tianxingzheAnim_fp">
+  <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,89</kaiqiang>
+    <teshukaiqiang>95,150</teshukaiqiang>
+    <naqiang>160,204</naqiang>
+  </anim>
+  <anim shared="" swf="tianxingzheAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_tianxingzheAnim_fp">
+  <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,89</kaiqiang>
+    <teshukaiqiang>95,150</teshukaiqiang>
+    <naqiang>160,204</naqiang>
+  </anim>
+  <anim shared="" swf="tianxingzheAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_tianxingzheAnim_fp">
+  <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,89</kaiqiang>
+    <teshukaiqiang>95,150</teshukaiqiang>
+    <naqiang>160,204</naqiang>
+  </anim>
+   <anim shared="" swf="sanim1Anim_fp" switcher="weapon_switcher" value="sanim1Anim_fp">
+    <cunhuan>0,58</cunhuan>
+  </anim>
+  <!--saiga-12动作-->
+  <anim shared="" swf="saiga_12Anim_fp" switcher="weapon_switcher" value="saiga_12Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>11,35</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,155</huanzidan>
+    <naqiang>165,223</naqiang>
+  </anim>
+  <anim shared="" swf="saiga_12Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_saiga_12Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>11,35</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,155</huanzidan>
+    <naqiang>165,223</naqiang>
+  </anim>
+  <anim shared="" swf="saiga_12Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_saiga_12Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>11,35</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,155</huanzidan>
+    <naqiang>165,223</naqiang>
+  </anim>
+  <anim shared="" swf="saiga_12Anim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_saiga_12Anim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>40,50</kaiqiang>
+    <beijizhong>11,27</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>110,200</huanzidan>
+    <xiadundaiji>100,100</xiadundaiji>
+  </anim>
+  <anim shared="" swf="saiga_12Anim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_saiga_12Anim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>40,50</kaiqiang>
+    <beijizhong>11,27</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>110,200</huanzidan>
+    <xiadundaiji>100,100</xiadundaiji>
+  </anim>
+  
+  
+  <!--水瓶座动作-->
+  <anim shared="" swf="shuipingzuoAnim_fp" switcher="weapon_switcher" value="shuipingzuoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,208</naqiang>
+  </anim>
+  <anim shared="" swf="shuipingzuoAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_shuipingzuoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,208</naqiang>
+  </anim>
+  <anim shared="" swf="shuipingzuoAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_shuipingzuoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,208</naqiang>
+  </anim>
+
+  <!--双鱼座动作-->
+  <anim shared="" swf="shuangyuzuoAnim_fp" switcher="weapon_switcher" value="shuangyuzuoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,51</kaiqiang>
+    <teshukaiqiang>55,66</teshukaiqiang>
+    <huanzidan>70,160</huanzidan>
+    <naqiang>170,214</naqiang>
+  </anim>
+  <anim shared="" swf="shuangyuzuoAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_shuangyuzuoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,51</kaiqiang>
+    <teshukaiqiang>55,66</teshukaiqiang>
+    <huanzidan>70,160</huanzidan>
+    <naqiang>170,214</naqiang>
+  </anim>
+  <anim shared="" swf="shuangyuzuoAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_shuangyuzuoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,51</kaiqiang>
+    <teshukaiqiang>55,66</teshukaiqiang>
+    <huanzidan>70,160</huanzidan>
+    <naqiang>170,214</naqiang>
+  </anim>
+  <anim shared="" swf="shuangyuzuoAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_shuangyuzuoAnim_tp">
+    <daiji>720,720</daiji>
+    <kaiqiang>806,829</kaiqiang>
+    <beijizhong>760,779</beijizhong>
+    <pao>730,754</pao>
+    <huanzidan>835,900</huanzidan>
+    <xiadundaiji>790,790</xiadundaiji>
+    <xiadunkaiqiang>806,829</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="shuangyuzuoAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_shuangyuzuoAnim_tp">
+    <daiji>720,720</daiji>
+    <kaiqiang>806,829</kaiqiang>
+    <beijizhong>760,779</beijizhong>
+    <pao>730,754</pao>
+    <huanzidan>835,900</huanzidan>
+    <xiadundaiji>790,790</xiadundaiji>
+    <xiadunkaiqiang>806,829</xiadunkaiqiang>
+  </anim>  
+  <!--新版AWM第一人称动作-->
+  <anim shared="" swf="xinawmAnim_fp" switcher="weapon_switcher" value="xinawmAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,97</kaiqiang>
+    <huanzidan>100,186</huanzidan>
+    <naqiang>190,238</naqiang>
+  </anim>
+  <anim shared="" swf="xinawmAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_xinawmAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,97</kaiqiang>
+    <huanzidan>100,186</huanzidan>
+    <naqiang>190,238</naqiang>
+  </anim>
+  <anim shared="" swf="xinawmAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_xinawmAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,97</kaiqiang>
+    <huanzidan>100,186</huanzidan>
+    <naqiang>190,238</naqiang>
+  </anim>
+  <anim shared="" swf="youmoAnim_fp" switcher="weapon_switcher" value="youmoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,73</kaiqiang>
+    <teshukaiqiang>80,130</teshukaiqiang>
+    <naqiang>140,172</naqiang>
+  </anim>
+  
+  <anim shared="" swf="youmoAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_youmoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,73</kaiqiang>
+    <teshukaiqiang>80,130</teshukaiqiang>
+    <naqiang>140,172</naqiang>
+  </anim>
+
+  <anim shared="" swf="youmoAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_youmoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,73</kaiqiang>
+    <teshukaiqiang>80,130</teshukaiqiang>
+    <naqiang>140,172</naqiang>
+  </anim>
+  <anim shared="" swf="youmoAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_youmoAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>80,122</kaiqiang>
+    <teshukaiqiang>130,174</teshukaiqiang>
+    <beijizhong>60,76</beijizhong>
+    <pao>10,34</pao>
+    <xiadundaiji>40,40</xiadundaiji>
+  </anim>
+  <anim shared="" swf="youmoAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_youmoAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>80,122</kaiqiang>
+    <teshukaiqiang>130,174</teshukaiqiang>
+    <beijizhong>60,76</beijizhong>
+    <pao>10,34</pao>
+    <xiadundaiji>40,40</xiadundaiji>
+  </anim>
+  
+  <!--m14ebr动作-->
+  <anim shared="" swf="m14ebrAnim_fp" switcher="weapon_switcher" value="m14ebrAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,206</naqiang>
+  </anim>
+  <anim shared="" swf="m14ebrAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_m14ebrAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,206</naqiang>
+  </anim>
+  <anim shared="" swf="m14ebrAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_m14ebrAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,206</naqiang>
+  </anim>
+  <!--三昧真火动作-->
+  <anim shared="" swf="sanmeizhenhuoAnim_fp" switcher="weapon_switcher" value="sanmeizhenhuoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,182</huanzidan>
+    <naqiang>190,234</naqiang>
+  </anim>
+  <anim shared="" swf="sanmeizhenhuoAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_sanmeizhenhuoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,182</huanzidan>
+    <naqiang>190,234</naqiang>
+  </anim>
+  <anim shared="" swf="sanmeizhenhuoAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_sanmeizhenhuoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,182</huanzidan>
+    <naqiang>190,234</naqiang>
+  </anim>
+  <!--白虎沙鹰动作-->
+  <anim shared="" swf="baihushayingAnim_fp" switcher="weapon_switcher" value="baihushayingAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,50</kaiqiang>
+    <huanzidan>60,158</huanzidan>
+    <naqiang>170,206</naqiang>
+  </anim>
+  <anim shared="" swf="baihushayingAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_baihushayingAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,50</kaiqiang>
+    <huanzidan>60,158</huanzidan>
+    <naqiang>170,206</naqiang>
+  </anim>
+  <anim shared="" swf="baihushayingAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_baihushayingAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,50</kaiqiang>
+    <huanzidan>60,158</huanzidan>
+    <naqiang>170,206</naqiang>
+  </anim>
+  
+  <!--青龙USP动作-->
+  <anim shared="" swf="qinglonguspAnim_fp" switcher="weapon_switcher" value="qinglonguspAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,50</kaiqiang>
+    <huanzidan>55,132</huanzidan>
+    <naqiang>140,172</naqiang>
+  </anim>
+  <anim shared="" swf="qinglonguspAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_qinglonguspAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,50</kaiqiang>
+    <huanzidan>55,132</huanzidan>
+    <naqiang>140,172</naqiang>
+  </anim>
+  <anim shared="" swf="qinglonguspAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_qinglonguspAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,50</kaiqiang>
+    <huanzidan>55,132</huanzidan>
+    <naqiang>140,172</naqiang>
+  </anim>
+   <!--白羊座动作-->
+   <anim shared="" swf="baiyangzuoAnim_fp" switcher="weapon_switcher" value="baiyangzuoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>20,44</paodong>
+    <kaiqiang>50,69</kaiqiang>
+    <huanzidan>80,162</huanzidan>
+    <naqiang>170,221</naqiang>
+  </anim>
+  <anim shared="" swf="baiyangzuoAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_baiyangzuoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>20,44</paodong>
+    <kaiqiang>50,69</kaiqiang>
+    <huanzidan>80,162</huanzidan>
+    <naqiang>170,221</naqiang>
+  </anim>
+  <anim shared="" swf="baiyangzuoAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_baiyangzuoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>20,44</paodong>
+    <kaiqiang>50,69</kaiqiang>
+    <huanzidan>80,162</huanzidan>
+    <naqiang>170,221</naqiang>
+  </anim>
+  <anim shared="" swf="baiyangzuoAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_baiyangzuoAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>38,50</kaiqiang>
+    <beijizhong>11,27</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>130,218</huanzidan>
+    <xiadundaiji>106,106</xiadundaiji>
+  </anim>
+  <anim shared="" swf="baiyangzuoAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_baiyangzuoAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>38,50</kaiqiang>
+    <beijizhong>11,27</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>130,218</huanzidan>
+    <xiadundaiji>106,106</xiadundaiji>
+  </anim>
+  
+  <!--王者-赤沙之蝎动作-->
+   <anim shared="" swf="wangzhe_chishazhixieAnim_fp" switcher="weapon_switcher" value="wangzhe_chishazhixieAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,51</kaiqiang>
+	<teshukaiqiang>55,66</teshukaiqiang>
+    <huanzidan>70,152</huanzidan>
+    <naqiang>160,204</naqiang>
+  </anim>
+  <anim shared="" swf="wangzhe_chishazhixieAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_wangzhe_chishazhixieAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,51</kaiqiang>
+	<teshukaiqiang>55,66</teshukaiqiang>
+    <huanzidan>70,152</huanzidan>
+    <naqiang>160,204</naqiang>
+  </anim>
+  <anim shared="" swf="wangzhe_chishazhixieAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_wangzhe_chishazhixieAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,51</kaiqiang>
+	<teshukaiqiang>55,66</teshukaiqiang>
+    <huanzidan>70,152</huanzidan>
+    <naqiang>160,204</naqiang>
+  </anim>
+  
+  <!--蝎式武器动作-->
+   <anim shared="" swf="xieshiAnim_fp" switcher="weapon_switcher" value="xieshiAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,119</huanzidan>
+    <naqiang>130,160</naqiang>
+  </anim>
+  <anim shared="" swf="xieshiAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_xieshiAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,119</huanzidan>
+    <naqiang>130,160</naqiang>
+  </anim>
+  <anim shared="" swf="xieshiAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_xieshiAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,119</huanzidan>
+    <naqiang>130,160</naqiang>
+  </anim>
+  <!--双鱼座-雷霆第一人称动作-->
+  <anim shared="" swf="shuangyuzuo_leitingAnim_fp" switcher="weapon_switcher" value="shuangyuzuo_leitingAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,75</kaiqiang>    
+    <teshukaiqiang>78,131</teshukaiqiang>
+    <naqiang>135,202</naqiang>
+  </anim>
+  <anim shared="" swf="shuangyuzuo_leitingAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_shuangyuzuo_leitingAnim_fp">
+   <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,75</kaiqiang>    
+    <teshukaiqiang>78,131</teshukaiqiang>
+    <naqiang>135,202</naqiang>
+  </anim>
+
+<anim shared="" swf="shuangyuzuo_leitingAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_shuangyuzuo_leitingAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,75</kaiqiang>    
+    <teshukaiqiang>78,131</teshukaiqiang>
+    <naqiang>135,202</naqiang>
+  </anim>
+  <!--CZ75-虚空之遗第一人称动作-->
+  <anim shared="" swf="cz75_xukongzhiyiAnim_fp" switcher="weapon_switcher" value="cz75_xukongzhiyiAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,50</kaiqiang>
+    <huanzidan>55,132</huanzidan>
+    <naqiang>140,172</naqiang>
+  </anim>
+  <anim shared="" swf="cz75_xukongzhiyiAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_cz75_xukongzhiyiAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,50</kaiqiang>
+    <huanzidan>55,132</huanzidan>
+    <naqiang>140,172</naqiang>
+  </anim>
+  <anim shared="" swf="cz75_xukongzhiyiAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_cz75_xukongzhiyiAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,50</kaiqiang>
+    <huanzidan>55,132</huanzidan>
+    <naqiang>140,172</naqiang>
+  </anim>
+  <!--金牛座第一人称动作-->
+  <anim shared="" swf="jinniuzuoAnim_fp" switcher="weapon_switcher" value="jinniuzuoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,182</huanzidan>
+    <naqiang>190,234</naqiang>
+  </anim>
+  <anim shared="" swf="jinniuzuoAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_jinniuzuoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,182</huanzidan>
+    <naqiang>190,234</naqiang>
+  </anim>
+  <anim shared="" swf="jinniuzuoAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_jinniuzuoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,182</huanzidan>
+    <naqiang>190,234</naqiang>
+  </anim>
+  <!--金牛座第三人称动作-->
+  <anim shared="" swf="jinniuzuoAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_jinniuzuoAnim_tp">
+    <daiji>830,835</daiji>
+    <kaiqiang>840,842</kaiqiang>
+    <beijizhong>930,938</beijizhong>
+    <pao>850,870</pao>
+    <huanzidan>880,924</huanzidan>
+    <xiadundaiji>950,950</xiadundaiji>
+    <xiadunkaiqiang>960,962</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="jinniuzuoAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_jinniuzuoAnim_tp">
+    <daiji>830,835</daiji>
+    <kaiqiang>840,842</kaiqiang>
+    <beijizhong>930,938</beijizhong>
+    <pao>850,870</pao>
+    <huanzidan>880,924</huanzidan>
+    <xiadundaiji>950,950</xiadundaiji>
+    <xiadunkaiqiang>960,962</xiadunkaiqiang>
+  </anim>
+  <!--王者USP-雷电第一人称动作-->
+  <anim shared="" swf="wangzheuspAnim_fp" switcher="weapon_switcher" value="wangzheuspAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,50</kaiqiang>
+    <huanzidan>55,132</huanzidan>
+    <naqiang>140,172</naqiang>
+  </anim>
+  <anim shared="" swf="wangzheuspAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_wangzheuspAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,50</kaiqiang>
+    <huanzidan>55,132</huanzidan>
+    <naqiang>140,172</naqiang>
+  </anim>
+  <anim shared="" swf="wangzheuspAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_wangzheuspAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,50</kaiqiang>
+    <huanzidan>55,132</huanzidan>
+    <naqiang>140,172</naqiang>
+  </anim>
+  <!--香蕉枪第一人称动作-->
+  <anim shared="" swf="xiangjiaoAnim_fp" switcher="weapon_switcher" value="xiangjiaoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,51</kaiqiang>
+	<teshukaiqiang>55,66</teshukaiqiang>
+    <huanzidan>70,147</huanzidan>
+    <naqiang>150,190</naqiang>
+  </anim>
+  <anim shared="" swf="xiangjiaoAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_xiangjiaoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,51</kaiqiang>
+	<teshukaiqiang>55,66</teshukaiqiang>
+    <huanzidan>70,147</huanzidan>
+    <naqiang>150,190</naqiang>
+  </anim>
+  <anim shared="" swf="xiangjiaoAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_xiangjiaoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,51</kaiqiang>
+	<teshukaiqiang>55,66</teshukaiqiang>
+    <huanzidan>70,147</huanzidan>
+    <naqiang>150,190</naqiang>
+  </anim>
+  <!--AK风影第一人称动作-->
+  <anim shared="" swf="ak_fengyingAnim_fp" switcher="weapon_switcher" value="ak_fengyingAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>35,60</kaiqiang>
+	<teshukaiqiang>230,267</teshukaiqiang>
+    <huanzidan>65,155</huanzidan>
+    <naqiang>165,223</naqiang>
+  </anim>
+  <anim shared="" swf="ak_fengyingAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_ak_fengyingAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,51</kaiqiang>
+	<teshukaiqiang>55,66</teshukaiqiang>
+    <huanzidan>70,147</huanzidan>
+    <naqiang>150,190</naqiang>
+  </anim>
+  <anim shared="" swf="ak_fengyingAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_ak_fengyingAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,51</kaiqiang>
+	<teshukaiqiang>55,66</teshukaiqiang>
+    <huanzidan>70,147</huanzidan>
+    <naqiang>150,190</naqiang>
+  </anim>
+  <!--火凤凰AK第一人称动作-->
+  <anim shared="" swf="fenghuang_akAnim_fp" switcher="weapon_switcher" value="fenghuang_akAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,60</kaiqiang>
+	<teshukaiqiang>230,267</teshukaiqiang>
+    <huanzidan>65,155</huanzidan>
+    <naqiang>160,218</naqiang>
+  </anim>
+  <anim shared="" swf="fenghuang_akAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_fenghuang_akAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,60</kaiqiang>
+	<teshukaiqiang>230,267</teshukaiqiang>
+    <huanzidan>65,155</huanzidan>
+    <naqiang>160,218</naqiang>
+  </anim>
+  <anim shared="" swf="fenghuang_akAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_fenghuang_akAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,60</kaiqiang>
+	<teshukaiqiang>230,267</teshukaiqiang>
+    <huanzidan>65,155</huanzidan>
+    <naqiang>160,218</naqiang>
+  </anim>
+  
+  <!--火凤凰AWM第一人称动作-->
+  <anim shared="" swf="fenghuang_awmAnim_fp" switcher="weapon_switcher" value="fenghuang_awmAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,97</kaiqiang>
+    <huanzidan>100,186</huanzidan>
+    <naqiang>190,238</naqiang>
+  </anim>
+  <anim shared="" swf="fenghuang_awmAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_fenghuang_awmAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,97</kaiqiang>
+    <huanzidan>100,186</huanzidan>
+    <naqiang>190,238</naqiang>
+  </anim>
+  <anim shared="" swf="fenghuang_awmAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_fenghuang_awmAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,97</kaiqiang>
+    <huanzidan>100,186</huanzidan>
+    <naqiang>190,238</naqiang>
+  </anim>
+  <!--AR15第一人称动作-->
+  <anim shared="" swf="ar15Anim_fp" switcher="weapon_switcher" value="ar15Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,144</huanzidan>
+    <naqiang>150,192</naqiang>
+	<teshukaiqiang>200,237</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="ar15Anim_fp" switcher="fpAnim1_switcher" value="fpAnim1_ar15Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,144</huanzidan>
+    <naqiang>150,192</naqiang>
+	<teshukaiqiang>200,237</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="ar15Anim_fp" switcher="fpAnim2_switcher" value="fpAnim2_ar15Anim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,144</huanzidan>
+    <naqiang>150,192</naqiang>
+	<teshukaiqiang>200,237</teshukaiqiang>
+  </anim>
+  <!--AR15第三人称动作-->
+  <anim shared="" swf="ar15Anim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_ar15Anim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>40,50</kaiqiang>
+    <beijizhong>11,26</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>100,190</huanzidan>
+    <xiadundaiji>90,90</xiadundaiji>
+	<teshukaiqiang>200,245</teshukaiqiang>
+  </anim>
+  <anim shared="" swf="ar15Anim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_ar15Anim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>40,50</kaiqiang>
+    <beijizhong>11,26</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>100,190</huanzidan>
+    <xiadundaiji>90,90</xiadundaiji>
+	<teshukaiqiang>200,245</teshukaiqiang>
+  </anim>
+  <!--粉笔枪第一人称动作-->
+  <anim shared="" swf="fenbiqiangAnim_fp" switcher="weapon_switcher" value="fenbiqiangAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>12,36</paodong>
+    <kaiqiang>39,57</kaiqiang>
+    <huanzidan>60,147</huanzidan>
+    <naqiang>150,187</naqiang>
+  </anim>
+  <anim shared="" swf="fenbiqiangAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_fenbiqiangAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>12,36</paodong>
+    <kaiqiang>39,57</kaiqiang>
+    <huanzidan>60,147</huanzidan>
+    <naqiang>150,187</naqiang>
+  </anim>
+  <anim shared="" swf="fenbiqiangAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_fenbiqiangAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>12,36</paodong>
+    <kaiqiang>39,57</kaiqiang>
+    <huanzidan>60,147</huanzidan>
+    <naqiang>150,187</naqiang>
+  </anim>
+  <!--粉笔枪第三人称动作-->
+  <anim shared="" swf="fenbiqiangAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_fenbiqiangAnim_tp">
+    <daiji>0,5</daiji>
+    <kaiqiang>38,50</kaiqiang>
+    <beijizhong>11,27</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>133,214</huanzidan>
+    <xiadundaiji>106,110</xiadundaiji>
+	<xiadunkaiqiang>38,50</xiadunkaiqiang>
+  </anim>
+  <anim shared="" swf="fenbiqiangAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_fenbiqiangAnim_tp">
+    <daiji>0,5</daiji>
+    <kaiqiang>38,50</kaiqiang>
+    <beijizhong>11,27</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>133,214</huanzidan>
+    <xiadundaiji>106,110</xiadundaiji>
+	<xiadunkaiqiang>38,50</xiadunkaiqiang>
+  </anim>
+  
+  <!--金牛座-拳套第一人称动作-->
+  <anim shared="" swf="jinniuzuo_quantaoAnim_fp" switcher="weapon_switcher" value="jinniuzuo_quantaoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <zuoqingji>80,116</zuoqingji>
+    <youqingji>40,76</youqingji>
+    <teshukaiqiang>120,160</teshukaiqiang>
+    <naqiang>165,207</naqiang>
+  </anim>
+  <anim shared="" swf="jinniuzuo_quantaoAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_jinniuzuo_quantaoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <zuoqingji>80,116</zuoqingji>
+    <youqingji>40,76</youqingji>
+    <teshukaiqiang>120,160</teshukaiqiang>
+    <naqiang>165,207</naqiang>
+  </anim>
+
+  <anim shared="" swf="jinniuzuo_quantaoAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_jinniuzuo_quantaoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <zuoqingji>80,116</zuoqingji>
+    <youqingji>40,76</youqingji>
+    <teshukaiqiang>120,160</teshukaiqiang>
+    <naqiang>165,207</naqiang>
+  </anim>
+  <!--天梯RPK第一人称动作-->
+  <anim shared="" swf="tiantirpkAnim_fp" switcher="weapon_switcher" value="tiantirpkAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,150</huanzidan>
+    <naqiang>160,198</naqiang>
+  </anim>
+  <anim shared="" swf="tiantirpkAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_tiantirpkAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong> 
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,150</huanzidan>
+    <naqiang>160,198</naqiang>
+  </anim>
+  <anim shared="" swf="tiantirpkAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_tiantirpkAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,150</huanzidan>
+    <naqiang>160,198</naqiang>
+  </anim>
+  <!--TAR-虚空之遗第一人称动作-->
+  <anim shared="" swf="tar_xukongzhiyiAnim_fp" switcher="weapon_switcher" value="tar_xukongzhiyiAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,130</huanzidan>
+    <naqiang>140,168</naqiang>
+  </anim>
+  <anim shared="" swf="tar_xukongzhiyiAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_tar_xukongzhiyiAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,130</huanzidan>
+    <naqiang>140,168</naqiang>
+  </anim>
+  <anim shared="" swf="tar_xukongzhiyiAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_tar_xukongzhiyiAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,55</kaiqiang>
+    <huanzidan>60,130</huanzidan>
+    <naqiang>140,168</naqiang>
+  </anim>
+  <!--MG3-虚空之遗第一人称动作-->
+  <anim shared="" swf="mg3_xukongzhiyiAnim_fp" switcher="weapon_switcher" value="mg3_xukongzhiyiAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,182</huanzidan>
+    <naqiang>190,234</naqiang>
+  </anim>
+  <anim shared="" swf="mg3_xukongzhiyiAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_mg3_xukongzhiyiAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,182</huanzidan>
+    <naqiang>190,234</naqiang>
+  </anim>
+  <anim shared="" swf="mg3_xukongzhiyiAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_mg3_xukongzhiyiAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,182</huanzidan>
+    <naqiang>190,234</naqiang>
+  </anim>
+  <!--处女座第一人称动作-->
+  <anim shared="" swf="chunvzuoAnim_fp" switcher="weapon_switcher" value="chunvzuoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,146</huanzidan>
+    <naqiang>150,202</naqiang>
+  </anim>
+  <anim shared="" swf="chunvzuoAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_chunvzuoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,146</huanzidan>
+    <naqiang>150,202</naqiang>
+  </anim>
+  <anim shared="" swf="chunvzuoAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_chunvzuoAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,56</kaiqiang>
+    <huanzidan>60,146</huanzidan>
+    <naqiang>150,202</naqiang>
+  </anim>
+  <!--处女座第三人称动作-->
+  <anim shared="" swf="chunvzuoAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_chunvzuoAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>38,50</kaiqiang>
+    <beijizhong>11,27</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>133,223</huanzidan>
+    <xiadundaiji>106,106</xiadundaiji>
+  </anim>
+  <anim shared="" swf="chunvzuoAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_chunvzuoAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>38,50</kaiqiang>
+    <beijizhong>11,27</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>133,223</huanzidan>
+    <xiadundaiji>106,106</xiadundaiji>
+  </anim>
+  <!--天秤座第一人称动作-->
+  <anim shared="" swf="gilboaAnim_fp" switcher="weapon_switcher" value="gilboaAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,198</naqiang>
+  </anim>
+  <anim shared="" swf="gilboaAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_gilboaAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,198</naqiang>
+  </anim>
+  <anim shared="" swf="gilboaAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_gilboaAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,151</huanzidan>
+    <naqiang>160,198</naqiang>
+  </anim>
+  <!--天秤座第三人称动作-->
+  <anim shared="" swf="gilboaAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_gilboaAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>40,50</kaiqiang>
+    <beijizhong>11,26</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>100,190</huanzidan>
+    <xiadundaiji>90,90</xiadundaiji>
+  </anim>
+  <anim shared="" swf="gilboaAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_gilboaAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>40,50</kaiqiang>
+    <beijizhong>11,26</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>100,190</huanzidan>
+    <xiadundaiji>90,90</xiadundaiji>
+  </anim>
+  <!--EPIC-死神第一人称动作-->
+  <anim shared="" swf="epicAnim_fp" switcher="weapon_switcher" value="epicAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,131</huanzidan>
+    <naqiang>140,171</naqiang>
+  </anim>
+  <anim shared="" swf="epicAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_epicAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,131</huanzidan>
+    <naqiang>140,171</naqiang>
+  </anim>
+  <anim shared="" swf="epicAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_epicAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,131</huanzidan>
+    <naqiang>140,171</naqiang>
+  </anim>
+  <!--EPIC-死神第三人称动作-->
+  <anim shared="" swf="epicAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_epicAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>40,50</kaiqiang>
+    <beijizhong>11,26</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>110,200</huanzidan>
+    <xiadundaiji>100,100</xiadundaiji>
+  </anim>
+  <anim shared="" swf="epicAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_epicAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>40,50</kaiqiang>
+    <beijizhong>11,26</beijizhong>
+    <pao>60,84</pao>
+    <huanzidan>110,200</huanzidan>
+    <xiadundaiji>100,100</xiadundaiji>
+  </anim>
+  <!--修罗之怒噩梦第一人称动作-->
+  <anim shared="" swf="xiuluozhinu_emengAnim_fp" switcher="weapon_switcher" value="xiuluozhinu_emengAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <yure>40,56</yure>
+    <zhuan>40,56</zhuan>
+    <kaiqiangyou1>70,86</kaiqiangyou1>
+    <kaiqiangzuo1>90,106</kaiqiangzuo1>
+    <kaiqiangyou2>110,126</kaiqiangyou2>
+    <kaiqiangzuo2>130,146</kaiqiangzuo2>
+    <naqiang>160,190</naqiang>
+	<huanzidan>160,190</huanzidan>
+  </anim>
+  <anim shared="" swf="xiuluozhinu_emengAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_xiuluozhinu_emengAnim_fp">
+<daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <yure>40,56</yure>
+    <zhuan>40,56</zhuan>
+    <kaiqiangyou1>70,86</kaiqiangyou1>
+    <kaiqiangzuo1>90,106</kaiqiangzuo1>
+    <kaiqiangyou2>110,126</kaiqiangyou2>
+    <kaiqiangzuo2>130,146</kaiqiangzuo2>
+    <naqiang>160,190</naqiang>
+	<huanzidan>160,190</huanzidan>
+  </anim>
+  <anim shared="" swf="xiuluozhinu_emengAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_xiuluozhinu_emengAnim_fp">
+<daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <yure>40,56</yure>
+    <zhuan>40,56</zhuan>
+    <kaiqiangyou1>70,86</kaiqiangyou1>
+    <kaiqiangzuo1>90,106</kaiqiangzuo1>
+    <kaiqiangyou2>110,126</kaiqiangyou2>
+    <kaiqiangzuo2>130,146</kaiqiangzuo2>
+    <naqiang>160,190</naqiang>
+	<huanzidan>160,190</huanzidan>
+  </anim>
+  <!--修罗之怒噩梦第三人称动作-->
+  <anim shared="" swf="xiuluozhinu_emengAnim_tp" switcher="tpUpAnim1_switcher" value="tpUpAnim1_xiuluozhinu_emengAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>380,385</kaiqiang>
+    <yure>390,395</yure>
+    <beijizhong>360,376</beijizhong>
+    <pao>20,44</pao>
+    <xiadundaiji>180,180</xiadundaiji>
+  </anim>
+  <anim shared="" swf="xiuluozhinu_emengAnim_tp" switcher="tpUpAnim2_switcher" value="tpUpAnim2_xiuluozhinu_emengAnim_tp">
+    <daiji>0,0</daiji>
+    <kaiqiang>380,385</kaiqiang>
+    <yure>390,395</yure>
+    <beijizhong>360,376</beijizhong>
+    <pao>20,44</pao>
+    <xiadundaiji>180,180</xiadundaiji>
+  </anim>
+  <!--毛瑟第一人称动作-->
+  <anim shared="" swf="maoseAnim_fp" switcher="weapon_switcher" value="maoseAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,150</huanzidan>
+    <naqiang>160,195</naqiang>
+  </anim>
+  <anim shared="" swf="maoseAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_maoseAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,150</huanzidan>
+    <naqiang>160,195</naqiang>
+  </anim>
+  <anim shared="" swf="maoseAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_maoseAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,150</huanzidan>
+    <naqiang>160,195</naqiang>
+  </anim>
+  <!--P90-虚空之遗第一人称动作-->
+  <anim shared="" swf="p90_xukongzhiyiAnim_fp" switcher="weapon_switcher" value="p90_xukongzhiyiAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,159</huanzidan>
+    <naqiang>170,200</naqiang>
+  </anim>
+  <anim shared="" swf="p90_xukongzhiyiAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_p90_xukongzhiyiAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,159</huanzidan>
+    <naqiang>170,200</naqiang>
+  </anim>
+  <anim shared="" swf="p90_xukongzhiyiAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_p90_xukongzhiyiAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,159</huanzidan>
+    <naqiang>170,200</naqiang>
+  </anim>
+  <!--scar-朱雀第一人称动作-->
+  <anim shared="" swf="scar_zhuqueAnim_fp" switcher="weapon_switcher" value="scar_zhuqueAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,139</huanzidan>
+    <naqiang>150,181</naqiang>
+  </anim>
+  <anim shared="" swf="scar_zhuqueAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_scar_zhuqueAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,139</huanzidan>
+    <naqiang>150,181</naqiang>
+  </anim>
+  <anim shared="" swf="scar_zhuqueAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_scar_zhuqueAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,54</kaiqiang>
+    <huanzidan>60,139</huanzidan>
+    <naqiang>150,181</naqiang>
+  </anim> 
+  <!--柯尔特-朱雀第一人称动作动作-->
+  <anim shared="" swf="keerte_zhuqueAnim_fp" switcher="weapon_switcher" value="keerte_zhuqueAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,51</kaiqiang>
+    <teshukaiqiang>55,66</teshukaiqiang>
+    <huanzidan>70,153</huanzidan>
+    <naqiang>160,177</naqiang>
+  </anim>
+  <anim shared="" swf="keerte_zhuqueAnim_fp" switcher="fpAnim1_switcher" value="fpAnim1_keerte_zhuqueAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,51</kaiqiang>
+    <teshukaiqiang>55,66</teshukaiqiang>
+    <huanzidan>70,153</huanzidan>
+    <naqiang>160,177</naqiang>
+  </anim>
+  <anim shared="" swf="keerte_zhuqueAnim_fp" switcher="fpAnim2_switcher" value="fpAnim2_keerte_zhuqueAnim_fp">
+    <daiji>0,8</daiji>
+    <paodong>10,34</paodong>
+    <kaiqiang>40,51</kaiqiang>
+    <teshukaiqiang>55,66</teshukaiqiang>
+    <huanzidan>70,153</huanzidan>
+    <naqiang>160,177</naqiang>
+  </anim>
+</anims>

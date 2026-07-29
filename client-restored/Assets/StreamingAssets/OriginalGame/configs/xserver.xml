@@ -1,0 +1,275 @@
+<!--默认版本-->
+<xserver>
+	<vars max_xserver_num_per_server = "16" max_server_num_per_match_server = "64"/>
+	<modes>
+		<mode type = "online_mode" battle_xserver_ids = "0,1,2,3,4,5,6">
+			<channel id = "0" mxs = "*:1935" txs1 = "*:1910" txs2 = "*:1911" txs3 = "*:1912"/>
+			<channel id = "1" mxs = "*:1935" txs1 = "*:1913" txs2 = "*:1914" txs3 = "*:1915"/>
+			<channel id = "2" mxs = "*:1935" txs1 = "*:1916" txs2 = "*:1917" txs3 = "*:1918"/>
+			<channel id = "3" mxs = "*:1935" txs1 = "*:1919" txs2 = "*:1920" txs3 = "*:1921"/>
+						
+			<channel id = "4" mxs = "*:1935" txs1 = "*:1901" txs2 = "*:1902" txs3 = "*:1903"/>
+			<channel id = "5" mxs = "*:1935" txs1 = "*:1904" txs2 = "*:1905" txs3 = "*:1906"/>
+			<channel id = "6" mxs = "*:1935" txs1 = "*:1907" txs2 = "*:1908" txs3 = "*:1909"/>
+		</mode>
+		<mode type = "zheng.ma" battle_xserver_ids = "0">
+			<channel id = "0" mxs = "10.0.12.23:1935" txs1 = "10.0.12.23:1901" txs2 = "10.0.10.199:1902" txs3 = "10.0.10.199:1903"/>
+		</mode>
+		<mode type = "154" battle_xserver_ids = "0">
+			<channel id = "0" mxs = "10.0.10.197:1685" txs1 = "10.0.10.199:1901" txs2 = "10.0.10.199:1902" txs3 = "10.0.10.199:1903"/>
+		</mode>
+		<mode type = "he.qiang" battle_xserver_ids = "0">
+            <channel id = "0" mxs = "10.0.12.84:1935" txs1 = "10.0.12.84:1919" txs2 = "10.0.10.199:1902" txs3 = "10.0.10.199:1903"/>
+		</mode>
+		<mode type = "chen.fei" battle_xserver_ids = "0">
+			<channel id = "0" mxs = "10.0.10.197:1655" txs1 = "10.0.10.197:1919" txs2 = "10.0.10.199:1902" txs3 = "10.0.10.199:1903"/>
+		</mode>
+		<mode type = "liangbin.hu" battle_xserver_ids = "0">
+			<channel id = "0" mxs = "10.0.12.78:1935" txs1 = "10.0.12.78:1901" txs2 = "10.0.10.199:1902" txs3 = "10.0.10.199:1903"/>
+		</mode>
+		<mode type = "xiaofeng.sun" battle_xserver_ids = "0">
+			<channel id = "0" mxs = "10.0.10.197:1935" txs1 = "10.0.10.199:1901" txs2 = "10.0.10.199:1902" txs3 = "10.0.10.199:1903"/>
+		</mode>
+		<mode type = "xiangyu.xuan" battle_xserver_ids = "0">
+			<channel id = "0" mxs = "10.0.12.81:1935" txs1 = "10.0.12.81:1901" txs2 = "10.0.12.81:1901" txs3 = "10.0.12.81:1901"/>
+		</mode>
+		<mode type = "no_battle_server_local">
+		</mode>
+		<mode type = "pengfei.hu" battle_xserver_ids = "0">			
+			<channel id = "0" mxs = "10.0.10.197:1735" txs1 = "10.0.10.199:1901" txs2 = "10.0.10.199:1902" txs3 = "10.0.10.199:1903"/>
+		</mode>
+		<mode type = "yipeng.ma" battle_xserver_ids = "0">			
+			<channel id = "2" mxs = "10.0.12.197:1835" txs1 = "10.0.10.199:1901" txs2 = "10.0.10.199:1902" txs3 = "10.0.10.199:1903"/>
+		</mode>
+		<mode type = "junwei.zhang" battle_xserver_ids = "0">			
+			<channel id = "2" mxs = "10.0.10.197:1935" txs1 = "10.0.10.199:1901" txs2 = "10.0.10.199:1902" txs3 = "10.0.10.199:1903"/>
+		</mode>
+        <mode type = "ning.ye" battle_xserver_ids = "0">			
+			<channel id = "0" mxs = "10.0.12.62:1615" txs1 = "10.0.12.62:1901" txs2 = "10.0.10.199:1902" txs3 = "10.0.10.199:1903"/>
+		</mode>	
+		<mode type = "kaiwu.wang" battle_xserver_ids = "0">			
+			<channel id = "0" mxs = "10.0.12.16:1935" txs1 = "10.0.12.16:1901" txs2 = "10.0.10.199:1902" txs3 = "10.0.10.199:1903"/>
+		</mode>	
+		<mode type = "huichuan.wang" battle_xserver_ids = "0">			
+			<channel id = "0" mxs = "10.0.12.160:1935" txs1 = "10.0.12.160:1901" txs2 = "10.0.10.199:1902" txs3 = "10.0.10.199:1903"/>
+		</mode>		
+		<mode type = "bingdong.he" battle_xserver_ids = "0">			
+			<channel id = "0" mxs = "10.0.12.17:1935" txs1 = "10.0.12.17:1910" txs2 = "10.0.10.199:1902" txs3 = "10.0.10.199:1903"/>
+		</mode>			
+			<mode type = "shusheng.sun" battle_xserver_ids = "0">			
+			<channel id = "0" mxs = "10.0.12.150:1935" txs1 = "10.0.12.150:1910" txs2 = "10.0.10.199:1902" txs3 = "10.0.10.199:1903"/>
+		</mode>		
+	</modes>
+
+	
+	<servers>
+		<!-- server_id 为平台号 show为跨服是否显示昵称的前缀 state_server_id 和battle_server_id 必须连续 -->
+	
+		<match_server uri = "10.0.12.30">
+			<server uri = "10.0.12.30" state_server_id = "1" battle_server_id = "1" mode_type = "yipeng.ma" name = "电二-" show = "true" server_id = "1" default_num = "0"/>
+			<server uri = "10.0.12.26" state_server_id = "2" battle_server_id = "-1" mode_type = "no_battle_server_local" name = "电三-" show = "true" server_id = "1" default_num = "0"/>
+            <server uri = "10.0.12.38" state_server_id = "3" battle_server_id = "-1" mode_type = "no_battle_server_local" server_id = "1" default_num = "0"/>
+			<server uri = "10.0.12.86" state_server_id = "4" battle_server_id = "-1" mode_type = "no_battle_server_local" server_id = "1" default_num = "0"/>
+		</match_server>
+		
+		<match_server uri = "10.0.12.23">
+			<server uri = "10.0.12.23" state_server_id = "1" battle_server_id = "1" mode_type = "zheng.ma" server_id = "1" default_num = "0"/>
+			<!--<server uri = "10.0.10.199" state_server_id = "3" battle_server_id = "3" mode_type = "online_mode" server_id = "3"/>-->
+		</match_server>
+		
+		<match_server uri = "10.0.10.154">
+			<server uri = "10.0.10.154" state_server_id = "1" battle_server_id = "1" mode_type = "154" server_id = "1" default_num = "0"/>
+		</match_server>
+		
+		<match_server uri = "10.0.12.84">
+			<server uri = "10.0.12.84" state_server_id = "1" battle_server_id = "1" mode_type = "he.qiang" server_id = "1" default_num = "0"/>
+		</match_server>
+		
+		<match_server uri = "10.0.12.59">
+			<server uri = "10.0.12.59" state_server_id = "1" battle_server_id = "1" mode_type = "chen.fei" server_id = "1" default_num = "0"/>
+		</match_server>
+		
+		<match_server uri = "10.0.12.78">
+			<server uri = "10.0.12.78" state_server_id = "1" battle_server_id = "1" mode_type = "liangbin.hu" server_id = "1" default_num = "0"/>
+		</match_server>
+		
+		<match_server uri = "10.0.12.43">
+			<server uri = "10.0.12.43" state_server_id = "1" battle_server_id = "1" mode_type = "xiaofeng.sun" server_id = "1" default_num = "0"/>
+		</match_server>
+
+		<match_server uri = "10.0.12.81">
+			<server uri = "10.0.12.81" state_server_id = "1" battle_server_id = "1" mode_type = "xiangyu.xuan" server_id = "1" default_num = "0"/>
+		</match_server>
+		
+		<match_server uri = "10.0.12.19">
+			<server uri = "10.0.12.19" state_server_id = "1" battle_server_id = "1" mode_type = "pengfei.hu" server_id = "1" default_num = "0"/>
+		</match_server> 
+		
+		<match_server uri = "10.0.12.137">
+			<server uri = "10.0.12.137" state_server_id = "1" battle_server_id = "1" mode_type = "junwei.zhang" server_id = "1" default_num = "0"/>
+		</match_server> 
+		
+		<match_server uri = "127.0.0.1">
+			<server uri = "127.0.0.1" state_server_id = "1" battle_server_id = "1" mode_type = "online_mode" server_id = "1" default_num = "0"/>
+		</match_server>
+		
+		<match_server uri = "10.0.12.62">
+			<server uri = "10.0.12.62" state_server_id = "1" battle_server_id = "1" mode_type = "ning.ye" server_id = "1" default_num = "0"/>
+		</match_server>
+		<match_server uri = "10.0.12.16">
+			<server uri = "10.0.12.16" state_server_id = "1" battle_server_id = "1" mode_type = "kaiwu.wang" server_id = "1" default_num = "0"/>
+		</match_server>
+		<match_server uri = "10.0.12.160">
+			<server uri = "10.0.12.160" state_server_id = "1" battle_server_id = "1" mode_type = "huichuan.wang" server_id = "1" default_num = "0"/>
+		</match_server>
+
+		<match_server uri = "10.0.12.17">
+			<server uri = "10.0.12.17" state_server_id = "1" battle_server_id = "1" mode_type = "bingdong.he" server_id = "1" default_num = "0"/>
+		</match_server>
+
+			<match_server uri = "10.0.12.150">
+			<server uri = "10.0.12.150" state_server_id = "1" battle_server_id = "1" mode_type = "shusheng.sun" server_id = "1" default_num = "0"/>
+		</match_server>
+
+		
+		<match_server uri = "fps11.sdhb.ppweb.com.cn">
+			<server uri = "fps11.sdhb.ppweb.com.cn" state_server_id = "1" battle_server_id = "1" mode_type = "online_mode" name = "测试服-" show = "true" server_id = "1" default_num = "0"/>
+		</match_server>
+		
+		<match_server uri = "fps6.uc.ppweb.com.cn">
+			<server uri = "fps6.uc.ppweb.com.cn" state_server_id = "1" battle_server_id = "1" mode_type = "online_mode" name = "测三" show = "true" server_id = "1" default_num = "0"/>
+			<!--
+			<server uri = "59.108.99.181" state_server_id = "2" battle_server_id = "2" mode_type = "online_mode" name = "测一" show = "true" server_id = "1"/>
+			<server uri = "59.108.99.178" state_server_id = "3" battle_server_id = "3" mode_type = "online_mode" name = "测二" show = "true" server_id = "2"/>
+			-->
+		</match_server>
+		
+		
+		<match_server uri = "fps17.uc.ppweb.com.cn">
+	    <!--matchhost in 4399联通5区  fps1.ln.ppweb.com.cn 包括4399的联通+电信+双线-->
+			<!--4399双线1区-->
+			<server uri = "fps4.uc.ppweb.com.cn" state_server_id = "1" battle_server_id = "1" mode_type = "online_mode" name = "双一-" show = "true" server_id = "3" default_num = "0"/>
+			<!--4399双线2区-->
+			<server uri = "fps2.uc.ppweb.com.cn" state_server_id = "2" battle_server_id = "2" mode_type = "online_mode" name = "双二-" show = "true" server_id = "10" default_num = "0"/>
+			<!--4399双线3区-->
+			<server uri = "fps3.uc.ppweb.com.cn" state_server_id = "3" battle_server_id = "3" mode_type = "online_mode" name = "双三-" show = "true" server_id = "18" default_num = "0"/>
+			<!--4399联通1区-->
+			<server uri = "fps21.uc.ppweb.com.cn" state_server_id = "4" battle_server_id = "4" mode_type = "online_mode" name = "联一-" show = "true" server_id = "2" default_num = "0"/>
+			<!--4399联通2区-->
+			<server uri = "fps22.uc.ppweb.com.cn" state_server_id = "5" battle_server_id = "5" mode_type = "online_mode" name = "联二-" show = "true" server_id = "5" default_num = "0"/>
+			<!--4399联通3区-->
+			<server uri = "fps15.uc.ppweb.com.cn" state_server_id = "6" battle_server_id = "6" mode_type = "online_mode" name = "联三-" show = "true" server_id = "7" default_num = "0"/>
+			<!--4399联通4区-->
+			<server uri = "fps16.uc.ppweb.com.cn" state_server_id = "7" battle_server_id = "7" mode_type = "online_mode" name = "联四-" show = "true" server_id = "11" default_num = "0"/>
+			<!--4399联通5区-->
+			<server uri = "fps17.uc.ppweb.com.cn" state_server_id = "8" battle_server_id = "8" mode_type = "online_mode" name = "联五-" show = "true" server_id = "12" default_num = "300"/>
+			<!--4399联通6区-->
+			<server uri = "fps18.uc.ppweb.com.cn" state_server_id = "9" battle_server_id = "9" mode_type = "online_mode" name = "联六-" show = "true" server_id = "15" default_num = "0"/>
+			<!--4399联通7区-->
+			<server uri = "fps23.uc.ppweb.com.cn" state_server_id = "10" battle_server_id = "10" mode_type = "online_mode" name = "联七-" show = "true" server_id = "20" default_num = "0"/>
+			<!--4399联通8区-->
+			<server uri = "fps24.uc.ppweb.com.cn" state_server_id = "11" battle_server_id = "11" mode_type = "online_mode" name = "联八-" show = "true" server_id = "22" default_num = "0"/>
+			<!--4399联通9区-->
+			<server uri = "fps25.uc.ppweb.com.cn" state_server_id = "12" battle_server_id = "12" mode_type = "online_mode" name = "联九-" show = "true" server_id = "25" default_num = "0"/>
+			<!--4399电信1区-->
+			<server uri = "fps2.bd.ppweb.com.cn" state_server_id = "13" battle_server_id = "13" mode_type = "online_mode" name = "电一-" show = "true" server_id = "1" default_num = "0"/>
+			<!--4399电信2区-->
+			<server uri = "fps4.hy.ppweb.com.cn" state_server_id = "14" battle_server_id = "14" mode_type = "online_mode" name = "电二-" show = "true" server_id = "4" default_num = "0"/>
+			<!--4399电信3区-->
+			<server uri = "fps5.hy.ppweb.com.cn" state_server_id = "15" battle_server_id = "15" mode_type = "online_mode" name = "电三-" show = "true" server_id = "6" default_num = "0"/>
+			<!--4399电信4区-->
+			<server uri = "fps9.hy.ppweb.com.cn" state_server_id = "16" battle_server_id = "16" mode_type = "online_mode" name = "电四-" show = "true" server_id = "8" default_num = "0"/>
+			<!--4399电信5区-->
+			<server uri = "fps11.hy.ppweb.com.cn" state_server_id = "17" battle_server_id = "17" mode_type = "online_mode" name = "电五-" show = "true" server_id = "9" default_num = "0"/>
+			<!--4399电信6区-->
+			<server uri = "fps13.hy.ppweb.com.cn" state_server_id = "18" battle_server_id = "18" mode_type = "online_mode" name = "电六-" show = "true" server_id = "13" default_num = "0"/>
+			<!--4399电信7区-->
+			<server uri = "fps15.hy.ppweb.com.cn" state_server_id = "19" battle_server_id = "19" mode_type = "online_mode" name = "电七-" show = "true" server_id = "14" default_num = "0"/>
+			<!--4399电信8区-->
+			<server uri = "fps17.hy.ppweb.com.cn" state_server_id = "20" battle_server_id = "20" mode_type = "online_mode" name = "电八-" show = "true" server_id = "16" default_num = "0"/>
+			<!--4399电信9区-->
+			<server uri = "fps7.hy.ppweb.com.cn" state_server_id = "21" battle_server_id = "21" mode_type = "online_mode" name = "电九-" show = "true" server_id = "17" default_num = "0"/>
+			<!--4399电信10区-->
+			<server uri = "fps1.hy.ppweb.com.cn" state_server_id = "22" battle_server_id = "22" mode_type = "online_mode" name = "电十-" show = "true" server_id = "19" default_num = "0"/>
+			<!--4399电信11区-->
+			<server uri = "fps20.hy.ppweb.com.cn" state_server_id = "23" battle_server_id = "23" mode_type = "online_mode" name = "电十一-" show = "true" server_id = "21" default_num = "0"/>
+			<!--4399电信12区-->
+			<server uri = "fps21.hy.ppweb.com.cn" state_server_id = "24" battle_server_id = "24" mode_type = "online_mode" name = "电十二-" show = "true" server_id = "23" default_num = "0"/>
+			<!--4399电信13区-->
+			<server uri = "fps23.hy.ppweb.com.cn" state_server_id = "25" battle_server_id = "25" mode_type = "online_mode" name = "电十三-" show = "true" server_id = "24" default_num = "0"/>
+			<!--4399电信14区-->
+			<server uri = "fps19.hy.ppweb.com.cn" state_server_id = "26" battle_server_id = "26" mode_type = "online_mode" name = "电十四-" show = "true" server_id = "26" default_num = "0"/>
+
+			<!--风云直播双线1区-->
+			<server uri = "fps11.uc.ppweb.com.cn" state_server_id = "27" battle_server_id = "27" mode_type = "online_mode" name = "电 一" show = "false" server_id = "1" default_num = "0"/>	
+
+			<!--7k7k双线8区-->
+			<server uri = "fps14.uc.ppweb.com.cn" state_server_id = "28" battle_server_id = "28" mode_type = "online_mode" name = "双八-" show = "true" server_id = "39" default_num = "0"/>
+			<!--7k7k合服双线1区-->
+			<server uri = "fps1.uc.ppweb.com.cn" state_server_id = "29" battle_server_id = "29" mode_type = "online_mode" name = "双一-" show = "true" server_id = "1" default_num = "50"/>
+			<!--7k7k双线5区-->
+			<server uri = "fps8.uc.ppweb.com.cn" state_server_id = "30" battle_server_id = "30" mode_type = "online_mode" name = "双五-" show = "true" server_id = "32" default_num = "50"/>
+			<!--7k7k电信1区-->
+			<server uri = "fps6.hy.ppweb.com.cn" state_server_id = "31" battle_server_id = "31" mode_type = "online_mode" name = "电一-" show = "true" server_id = "3" default_num = "50"/>
+			<!--7k7k电信12区-->
+			<server uri = "fps12.hy.ppweb.com.cn" state_server_id = "32" battle_server_id = "32" mode_type = "online_mode" name = "电十二-" show = "true" server_id = "19" default_num = "50"/>	
+			<!--7k7k电信15区-->
+			<server uri = "fps2.hy.ppweb.com.cn" state_server_id = "33" battle_server_id = "33" mode_type = "online_mode" name = "电十五-" show = "true" server_id = "22" default_num = "50"/>
+			<!--7k7k电信18区-->
+			<server uri = "fps14.hy.ppweb.com.cn" state_server_id = "34" battle_server_id = "34" mode_type = "online_mode" name = "电十八-" show = "true" server_id = "25" default_num = "50"/>
+			<!--7k7k电信21区-->
+			<server uri = "fps0.hy.ppweb.com.cn" state_server_id = "35" battle_server_id = "35" mode_type = "online_mode" name = "电二十一-" show = "true" server_id = "28" default_num = "50"/>	
+			<!--7k7k电信22区-->
+			<server uri = "fps16.hy.ppweb.com.cn" state_server_id = "36" battle_server_id = "36" mode_type = "online_mode" name = "电二十二-" show = "true" server_id = "29" default_num = "50"/>
+			<!--7k7k联通1区-->
+			<server uri = "fps26.uc.ppweb.com.cn" state_server_id = "37" battle_server_id = "37" mode_type = "online_mode" name = "联一-" show = "true" server_id = "5" default_num = "50"/>
+			<!--2144联通1区-->
+			<server uri = "fps19.uc.ppweb.com.cn" state_server_id = "38" battle_server_id = "38" mode_type = "online_mode" name = "联一-" show = "false" server_id = "2" default_num = "0"/>
+
+
+			<!--7k7k电信6区-->
+			<server uri = "fps8.hy.ppweb.com.cn" state_server_id = "39" battle_server_id = "39" mode_type = "online_mode" name = "电六-" show = "true" server_id = "11" default_num = "50"/>
+			<!--7k7k电信7区-->
+			<server uri = "fps10.hy.ppweb.com.cn" state_server_id = "40" battle_server_id = "40" mode_type = "online_mode" name = "电七-" show = "true" server_id = "12" default_num = "50"/>
+			<!--7k7k电信23区-->
+			<server uri = "fps18.hy.ppweb.com.cn" state_server_id = "41" battle_server_id = "41" mode_type = "online_mode" name = "电二十三-" show = "true" server_id = "30" default_num = "50"/>
+			<!--7k7k电信24区-->
+			<server uri = "fps22.hy.ppweb.com.cn" state_server_id = "42" battle_server_id = "42" mode_type = "online_mode" name = "电二十四-" show = "true" server_id = "31" default_num = "50"/>
+			<!--7k7k双线6区-->
+			<server uri = "fps9.uc.ppweb.com.cn" state_server_id = "43" battle_server_id = "43" mode_type = "online_mode" name = "双六-" show = "true" server_id = "33" default_num = "0"/>
+			<!--7k7k电信25区-->
+			<server uri = "fps24.hy.ppweb.com.cn" state_server_id = "44" battle_server_id = "44" mode_type = "online_mode" name = "电二十五-" show = "true" server_id = "34" default_num = "50"/>
+			<!--7k7k电信26区-->
+			<server uri = "fps25.hy.ppweb.com.cn" state_server_id = "45" battle_server_id = "45" mode_type = "online_mode" name = "电二十六-" show = "true" server_id = "35" default_num = "50"/>
+			<!--7k7k电信27区-->
+			<server uri = "fps26.hy.ppweb.com.cn" state_server_id = "46" battle_server_id = "46" mode_type = "online_mode" name = "电二十七-" show = "true" server_id = "36" default_num = "50"/>
+			<!--7k7k电信28区-->
+			<server uri = "fps27.hy.ppweb.com.cn" state_server_id = "47" battle_server_id = "47" mode_type = "online_mode" name = "电二十八-" show = "true" server_id = "37" default_num = "50"/>
+			<!--7k7k双线7区-->
+			<server uri = "fps13.uc.ppweb.com.cn" state_server_id = "48" battle_server_id = "48" mode_type = "online_mode" name = "双七-" show = "true" server_id = "38" default_num = "0"/>
+			<!--2144电信1区-->
+			<server uri = "fps5.uc.ppweb.com.cn" state_server_id = "49" battle_server_id = "49" mode_type = "online_mode" name = "电一-" show = "false" server_id = "1" default_num = "0"/>
+			<!-- KUGOU 1区-->
+			<server uri = "fps10.uc.ppweb.com.cn" state_server_id = "50" battle_server_id = "50" mode_type = "online_mode" name = "酷狗1-" show = "true" server_id = "1" default_num = "0"/>
+			<!-- 腾讯双线1区 -->
+			<server uri = "fps7.uc.ppweb.com.cn" state_server_id = "51" battle_server_id = "51" mode_type = "online_mode" name = "T1-" show = "false" server_id = "3" default_num = "0"/>
+			<!-- 铁血双线1区 -->
+			<server uri = "fps12.uc.ppweb.com.cn" state_server_id = "52" battle_server_id = "52" mode_type = "online_mode" name = "铁血1-" show = "false" server_id = "1" default_num = "50"/>
+			<!--360wan双线1区-->
+			<server uri = "fps0.uc.ppweb.com.cn" state_server_id = "53" battle_server_id = "53" mode_type = "online_mode" name = "S1-" show = "true" server_id = "1" default_num = "0"/>
+			<!-- 迅雷1区 -->
+			<server uri = "fps27.uc.ppweb.com.cn" state_server_id = "54" battle_server_id = "54" mode_type = "online_mode" name = "X1-" show = "false" server_id = "1" default_num = "0"/>
+		</match_server>
+		
+
+		
+		
+		
+		
+    <match_server uri = "fps0.br.csbh.elexapp.com">
+		<!--matchhost in elex巴西2区 fps1.br.csbh.elexapp.com-->
+            <!-- elex巴西1区-->
+            <server uri = "fps0.br.csbh.elexapp.com" state_server_id = "1" battle_server_id = "1" mode_type = "online_mode" name = "S2-" show = "true" server_id = "51" default_num = "0"/>
+    </match_server>
+	</servers>
+</xserver>

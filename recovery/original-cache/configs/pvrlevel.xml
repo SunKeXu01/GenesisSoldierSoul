@@ -1,0 +1,22 @@
+﻿<levels>
+    <level key="1" lExp="50"/>
+    <level key="2" lExp="200"/>
+	<level key="3" lExp="450"/>
+	<level key="4" lExp="800"/>
+	<level key="5" lExp="1500"/>
+	<level key="6" lExp="2100"/>
+	<level key="7" lExp="2800"/>
+	<level key="8" lExp="8000"/>
+	<level key="9" lExp="9900"/>
+	<level key="10" lExp="12000"/>
+	<level key="11" lExp="15033"/>
+	<level key="12" lExp="18400"/>
+	<level key="13" lExp="22100"/>
+	<level key="14" lExp="26133"/>
+	<level key="15" lExp="45750"/>
+	<level key="16" lExp="52800"/>
+	<level key="17" lExp="60350"/>
+	<level key="18" lExp="68400"/>
+	<level key="19" lExp="76950"/>
+	<level key="20" lExp="86000"/>
+</levels>

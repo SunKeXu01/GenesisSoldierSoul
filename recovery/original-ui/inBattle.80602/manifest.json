@@ -1,0 +1,200 @@
+{
+  "source": "/Users/Admin/Documents/创世兵魂/_解压资源/创世兵魂素材/创世兵魂/inBattle.80602.swf",
+  "bitmapCount": 23,
+  "errors": 0,
+  "bitmaps": [
+    {
+      "characterId": 1,
+      "tagCode": 36,
+      "width": 33,
+      "height": 33,
+      "file": "bitmap-00001.png"
+    },
+    {
+      "characterId": 2,
+      "tagCode": 35,
+      "width": 64,
+      "height": 53,
+      "file": "bitmap-00002.png"
+    },
+    {
+      "characterId": 3,
+      "tagCode": 35,
+      "width": 880,
+      "height": 121,
+      "file": "bitmap-00003.png"
+    },
+    {
+      "characterId": 4,
+      "tagCode": 36,
+      "width": 822,
+      "height": 289,
+      "file": "bitmap-00004.png"
+    },
+    {
+      "characterId": 6,
+      "tagCode": 36,
+      "width": 283,
+      "height": 110,
+      "file": "bitmap-00006.png"
+    },
+    {
+      "characterId": 15,
+      "tagCode": 36,
+      "width": 32,
+      "height": 41,
+      "file": "bitmap-00015.png"
+    },
+    {
+      "characterId": 22,
+      "tagCode": 36,
+      "width": 154,
+      "height": 31,
+      "file": "bitmap-00022.png"
+    },
+    {
+      "characterId": 25,
+      "tagCode": 36,
+      "width": 154,
+      "height": 31,
+      "file": "bitmap-00025.png"
+    },
+    {
+      "characterId": 27,
+      "tagCode": 36,
+      "width": 152,
+      "height": 28,
+      "file": "bitmap-00027.png"
+    },
+    {
+      "characterId": 29,
+      "tagCode": 36,
+      "width": 25,
+      "height": 25,
+      "file": "bitmap-00029.png"
+    },
+    {
+      "characterId": 33,
+      "tagCode": 36,
+      "width": 336,
+      "height": 37,
+      "file": "bitmap-00033.png"
+    },
+    {
+      "characterId": 36,
+      "tagCode": 36,
+      "width": 338,
+      "height": 40,
+      "file": "bitmap-00036.png"
+    },
+    {
+      "characterId": 38,
+      "tagCode": 36,
+      "width": 339,
+      "height": 40,
+      "file": "bitmap-00038.png"
+    },
+    {
+      "characterId": 44,
+      "tagCode": 35,
+      "width": 361,
+      "height": 217,
+      "file": "bitmap-00044.png"
+    },
+    {
+      "characterId": 47,
+      "tagCode": 35,
+      "width": 247,
+      "height": 32,
+      "file": "bitmap-00047.png"
+    },
+    {
+      "characterId": 50,
+      "tagCode": 35,
+      "width": 247,
+      "height": 32,
+      "file": "bitmap-00050.png"
+    },
+    {
+      "characterId": 61,
+      "tagCode": 35,
+      "width": 83,
+      "height": 24,
+      "file": "bitmap-00061.png"
+    },
+    {
+      "characterId": 64,
+      "tagCode": 35,
+      "width": 83,
+      "height": 24,
+      "file": "bitmap-00064.png"
+    },
+    {
+      "characterId": 66,
+      "tagCode": 35,
+      "width": 83,
+      "height": 24,
+      "file": "bitmap-00066.png"
+    },
+    {
+      "characterId": 69,
+      "tagCode": 36,
+      "width": 171,
+      "height": 25,
+      "file": "bitmap-00069.png"
+    },
+    {
+      "characterId": 71,
+      "tagCode": 36,
+      "width": 23,
+      "height": 21,
+      "file": "bitmap-00071.png"
+    },
+    {
+      "characterId": 74,
+      "tagCode": 36,
+      "width": 23,
+      "height": 21,
+      "file": "bitmap-00074.png"
+    },
+    {
+      "characterId": 76,
+      "tagCode": 36,
+      "width": 23,
+      "height": 21,
+      "file": "bitmap-00076.png"
+    }
+  ],
+  "exportedSymbols": [
+    {
+      "characterId": 81,
+      "name": "ui.ComplaintView",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 53,
+      "name": "ui.EscView2",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 43,
+      "name": "ui.battle.PackageView",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 3,
+      "name": "ui.font.Font_83_red",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 2,
+      "name": "ui.battle.singleAce",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 1,
+      "name": "ui.evil.roleUse",
+      "sourceTag": "SymbolClass"
+    }
+  ]
+}

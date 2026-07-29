@@ -1,0 +1,114 @@
+<!-- tp=1为战斗场数 tp=2为击杀数 tp=3为战斗时常 tp=4在线时间 tp=5天梯连胜场次 tp=6累计充值GS tp=7新用户 tp=8老用户 -->
+<!-- 不需要某个条件的情况下配置tol=0 -->
+<!-- needwin 战斗是否要求胜利 needsequence是否要求连胜 1要求，0不要求-->
+<!-- id不可重复使用 -->
+<!-- <activity_time begin 开始时间、end结束时间 -->
+<!-- <x\y\坐标找洪娜-->
+<!-- battlezone天梯1，自由2，比赛4，军团5，闯关6； battlemode、battlemap查看对应id；   没有限制的填-1-->
+<!-- showFlag 显示   0=无限制 1=新用户可见  2=老用户可见-->
+
+<activity>
+
+		<battle_activity id="42" plat="-1" needwin="0" needsequence="0" perday="1" name="zhandousonghali" url="7k7k/27.jpg" goWhere="free">
+		<activity_time begin="2017-1-17 00:00:00" end="2017-2-15 23:59:59"></activity_time>
+		<battlezone zone="2"></battlezone>
+		<battlemode mode="14"></battlemode>
+		<battlemap map="81"></battlemap>	
+		<rewards >		
+			<reward tp="1" id="1" tol="10" x="343" y="448" weaponid="3027:1:10000:1:0"></reward>		
+		</rewards>
+	</battle_activity>	
+
+
+<!--充值送角色-->	
+	<!--<battle_activity id="12" plat="-1" needwin="0" needsequence="0" perday="1" name="meirichongzhisongjiaose" url="7k7k/4.jpg" goWhere="charge">
+		<activity_time begin="2016-11-29 00:00:00" end="2016-12-7 23:59:59"></activity_time>
+		<battlezone zone="-1"></battlezone>
+		<battlemode mode="-1"></battlemode>
+		<battlemap map="-1"></battlemap>	
+		<rewards >		
+			<reward tp="6" id="1" tol="1" x="306" y="486" weaponid="5105:1:10000:-1:0"></reward>	
+		</rewards>
+	</battle_activity>	-->
+<!--【官网】充值返利-->	
+	<battle_activity id="37" plat="-1" needwin="0" needsequence="0" perday="0" name="guanfangfuli1" url="7k7k/24.jpg" goWhere="charge">
+		<activity_time begin="2016-1-3 00:00:00" end="2017-1-11 23:59:59"></activity_time>
+		<battlezone zone="-1"></battlezone>
+		<battlemode mode="-1"></battlemode>
+		<battlemap map="-1"></battlemap>	
+		<rewards >		
+			<reward tp="6" id="1" tol="1000" x="515" y="436" weaponid="4524:1:10000:-1:0"></reward>	
+		</rewards>
+	</battle_activity>	
+<!--【官网】每日王武免费送-->		
+	<battle_activity id="34" plat="-1" needwin="0" needsequence="0" perday="1" name="zhandoulingfuli33" url="7k7k/25.jpg" goWhere="free">
+		<activity_time begin="2016-12-27 00:00:00" end="2017-1-31 23:59:59"></activity_time>
+		<battlezone zone="-1"></battlezone>
+		<battlemode mode="-1"></battlemode>
+		<battlemap map="-1"></battlemap>	
+		<rewards >		
+			<reward tp="3" id="1" tol="1800" x="90" y="487" weaponid="5091:1:10000:1:0"></reward>
+			<reward tp="3" id="2" tol="3600" x="317" y="487" weaponid="5092:1:10000:1:0"></reward>
+			<reward tp="3" id="3" tol="5400" x="545" y="487" weaponid="5093:1:10000:-1:0"></reward>		
+		</rewards>
+	</battle_activity>			
+<!--【官网】免费领黑金战魂-->	
+	<battle_activity id="38" plat="-1" needwin="0" needsequence="0" perday="0" name="heijinzhanhunlibao1" url="7k7k/34.jpg" goWhere="charge">
+		<activity_time begin="2016-1-10 00:00:00" end="2017-1-18 23:59:59"></activity_time>
+		<battlezone zone="-1"></battlezone>
+		<battlemode mode="-1"></battlemode>
+		<battlemap map="-1"></battlemap>	
+		<rewards >		
+			<reward tp="6" id="1" tol="4000" x="326" y="460" weaponid="5108:1:10000:-1:0"></reward>	
+		</rewards>
+	</battle_activity>		
+<!--GS免费领-->		
+	<battle_activity id="40" plat="-1" needwin="0" needsequence="0" perday="1" name="zhoumolingGS" url="7k7k/14.jpg" goWhere="free">
+		<activity_time begin="2017-1-17 00:00:00" end="2017-2-28 23:59:59"></activity_time>
+		<battlezone zone="-1"></battlezone>
+		<battlemode mode="-1"></battlemode>
+		<battlemap map="-1"></battlemap>	
+		<rewards >		
+			<reward tp="3" id="1" tol="600" x="59" y="334" weaponid="4929:1:10000:1:0"></reward>
+			<reward tp="3" id="2" tol="1200" x="59" y="517" weaponid="4927:1:10000:1:0"></reward>
+			<reward tp="3" id="3" tol="2400" x="566" y="334" weaponid="4928:1:10000:-1:0"></reward>	
+			<reward tp="3" id="4" tol="3600" x="566" y="517" weaponid="5111:1:10000:-1:0"></reward>				
+		</rewards>
+	</battle_activity>		
+<!--每日在线领取武器箱-->			
+    <battle_activity id="41" plat="-1" needwin="0" needsequence="0" perday="1" name="meirizaixianlingwuqi" url="7k7k/17.jpg" goWhere="free">
+		<activity_time begin="2017-1-17 00:00:00" end="2017-2-28 23:59:59"></activity_time>
+		<battlezone zone="-1"></battlezone>
+		<battlemode mode="-1"></battlemode>
+		<battlemap map="-1"></battlemap>	
+		<rewards >		
+			<reward tp="4" id="1" tol="600" x="63" y="200" weaponid="5141:1:10000:1:0"></reward>
+			<reward tp="4" id="2" tol="1200" x="63" y="281" weaponid="5142:1:10000:1:0"></reward>
+			<reward tp="4" id="3" tol="1800" x="63" y="363" weaponid="4991:1:10000:1:0"></reward>	
+			<reward tp="4" id="4" tol="3600" x="63" y="441" weaponid="4993:1:10000:1:0"></reward>				
+		</rewards>
+	</battle_activity>
+ <!--每日击杀-->		
+	<battle_activity id="39" plat="-1" needwin="0" needsequence="0" perday="1" name="fengkuangjisha" url="7k7k/33.jpg" goWhere="free" collect="1">
+		<activity_time begin="2017-1-17 00:00:00" end="2017-2-15 23:59:59"></activity_time>
+		<battlezone zone="1"></battlezone>
+		<battlemode mode="-1"></battlemode>
+		<battlemap map="-1"></battlemap>
+		<rewards >		
+			<reward tp="2" id="1" tol="120" x="411" y="429" tx="57" ty="439" px="43" py="160" proTp="1" weaponid="5123:1:10000:1:0"></reward>
+		</rewards>
+	</battle_activity> 		
+ <!--春节爆竹-->		
+	<battle_activity id="43" plat="-1" needwin="0" needsequence="0" perday="1" name="xinchunbaozhu" url="7k7k/35.jpg" goWhere="free" collect="1">
+		<activity_time begin="2017-1-20 00:00:00" end="2017-2-15 23:59:59"></activity_time>
+		<battlezone zone="2"></battlezone>
+		<battlemode mode="-1"></battlemode>
+		<battlemap map="-1"></battlemap>
+		<rewards >		
+			<reward tp="1" id="1" tol="20" x="422" y="472" tx="57" ty="439" px="90" py="135" proTp="2" weaponid="5151:1:10000:1:0"></reward>
+		</rewards>
+	</battle_activity> 		
+	
+</activity>
+
+

@@ -1,0 +1,222 @@
+{
+  "source_assets": "/Users/Admin/Documents/创世兵魂/原程序恢复/新工地/UnityProject/ExportedProject/Assets",
+  "root_asset": "gd.unity",
+  "target_assets": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/client-restored/Assets",
+  "namespace": "RecoveredMaps/NewConstructionSite",
+  "asset_count": 49,
+  "reused_guid_count": 1,
+  "missing_guid_count": 2,
+  "conflict_count": 1,
+  "copied": [
+    {
+      "source": "Avatar/GenMarine_Animations2Avatar.asset",
+      "target": "RecoveredMaps/NewConstructionSite/Avatar/GenMarine_Animations2Avatar.asset"
+    },
+    {
+      "source": "Avatar/GenMarine_ModelnSkinningAvatar.asset",
+      "target": "RecoveredMaps/NewConstructionSite/Avatar/GenMarine_ModelnSkinningAvatar.asset"
+    },
+    {
+      "source": "Avatar/Soldier_Animations_humanoidAvatar.asset",
+      "target": "RecoveredMaps/NewConstructionSite/Avatar/Soldier_Animations_humanoidAvatar.asset"
+    },
+    {
+      "source": "Material/1564120415374.mat",
+      "target": "RecoveredMaps/NewConstructionSite/Material/1564120415374.mat"
+    },
+    {
+      "source": "Material/20190726152551.mat",
+      "target": "RecoveredMaps/NewConstructionSite/Material/20190726152551.mat"
+    },
+    {
+      "source": "Material/20190726152724.mat",
+      "target": "RecoveredMaps/NewConstructionSite/Material/20190726152724.mat"
+    },
+    {
+      "source": "Material/20190726162747.mat",
+      "target": "RecoveredMaps/NewConstructionSite/Material/20190726162747.mat"
+    },
+    {
+      "source": "Material/20190726162850.mat",
+      "target": "RecoveredMaps/NewConstructionSite/Material/20190726162850.mat"
+    },
+    {
+      "source": "Material/225575.mat",
+      "target": "RecoveredMaps/NewConstructionSite/Material/225575.mat"
+    },
+    {
+      "source": "Material/Assaultrifle.mat",
+      "target": "RecoveredMaps/NewConstructionSite/Material/Assaultrifle.mat"
+    },
+    {
+      "source": "Material/Bullet Texture.mat",
+      "target": "RecoveredMaps/NewConstructionSite/Material/Bullet Texture.mat"
+    },
+    {
+      "source": "Material/Genmarineglass.mat",
+      "target": "RecoveredMaps/NewConstructionSite/Material/Genmarineglass.mat"
+    },
+    {
+      "source": "Material/MarineDiffmap.mat",
+      "target": "RecoveredMaps/NewConstructionSite/Material/MarineDiffmap.mat"
+    },
+    {
+      "source": "Material/RifleSmap.mat",
+      "target": "RecoveredMaps/NewConstructionSite/Material/RifleSmap.mat"
+    },
+    {
+      "source": "Material/bullet_texture.mat",
+      "target": "RecoveredMaps/NewConstructionSite/Material/bullet_texture.mat"
+    },
+    {
+      "source": "Material/gun.mat",
+      "target": "RecoveredMaps/NewConstructionSite/Material/gun.mat"
+    },
+    {
+      "source": "Material/hero_color.mat",
+      "target": "RecoveredMaps/NewConstructionSite/Material/hero_color.mat"
+    },
+    {
+      "source": "Material/地下的杆子.mat",
+      "target": "RecoveredMaps/NewConstructionSite/Material/地下的杆子.mat"
+    },
+    {
+      "source": "Material/屋顶.mat",
+      "target": "RecoveredMaps/NewConstructionSite/Material/屋顶.mat"
+    },
+    {
+      "source": "Mesh/AssaultrifleSig.asset",
+      "target": "RecoveredMaps/NewConstructionSite/Mesh/AssaultrifleSig.asset"
+    },
+    {
+      "source": "Mesh/AssaultrifleSig_0.asset",
+      "target": "RecoveredMaps/NewConstructionSite/Mesh/AssaultrifleSig_0.asset"
+    },
+    {
+      "source": "Mesh/Bullet.asset",
+      "target": "RecoveredMaps/NewConstructionSite/Mesh/Bullet.asset"
+    },
+    {
+      "source": "Mesh/Gen-marine.asset",
+      "target": "RecoveredMaps/NewConstructionSite/Mesh/Gen-marine.asset"
+    },
+    {
+      "source": "Mesh/Gen_marine.asset",
+      "target": "RecoveredMaps/NewConstructionSite/Mesh/Gen_marine.asset"
+    },
+    {
+      "source": "Mesh/Shell.asset",
+      "target": "RecoveredMaps/NewConstructionSite/Mesh/Shell.asset"
+    },
+    {
+      "source": "Mesh/clipsig.asset",
+      "target": "RecoveredMaps/NewConstructionSite/Mesh/clipsig.asset"
+    },
+    {
+      "source": "Mesh/clipsig_0.asset",
+      "target": "RecoveredMaps/NewConstructionSite/Mesh/clipsig_0.asset"
+    },
+    {
+      "source": "Mesh/hero.asset",
+      "target": "RecoveredMaps/NewConstructionSite/Mesh/hero.asset"
+    },
+    {
+      "source": "Mesh/m_16.asset",
+      "target": "RecoveredMaps/NewConstructionSite/Mesh/m_16.asset"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/Bullet.cs",
+      "target": "RecoveredMaps/NewConstructionSite/Scripts/Assembly-CSharp/Bullet.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/Player.cs",
+      "target": "RecoveredMaps/NewConstructionSite/Scripts/Assembly-CSharp/Player.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/QuitGame.cs",
+      "target": "RecoveredMaps/NewConstructionSite/Scripts/Assembly-CSharp/QuitGame.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/Shoot.cs",
+      "target": "RecoveredMaps/NewConstructionSite/Scripts/Assembly-CSharp/Shoot.cs"
+    },
+    {
+      "source": "Scripts/Assembly-CSharp/Tank.cs",
+      "target": "RecoveredMaps/NewConstructionSite/Scripts/Assembly-CSharp/Tank.cs"
+    },
+    {
+      "source": "Texture2D/1564120415374.png",
+      "target": "RecoveredMaps/NewConstructionSite/Texture2D/1564120415374.png"
+    },
+    {
+      "source": "Texture2D/20190726152551.png",
+      "target": "RecoveredMaps/NewConstructionSite/Texture2D/20190726152551.png"
+    },
+    {
+      "source": "Texture2D/20190726152724.png",
+      "target": "RecoveredMaps/NewConstructionSite/Texture2D/20190726152724.png"
+    },
+    {
+      "source": "Texture2D/20190726162747.png",
+      "target": "RecoveredMaps/NewConstructionSite/Texture2D/20190726162747.png"
+    },
+    {
+      "source": "Texture2D/20190726162850.png",
+      "target": "RecoveredMaps/NewConstructionSite/Texture2D/20190726162850.png"
+    },
+    {
+      "source": "Texture2D/225575.png",
+      "target": "RecoveredMaps/NewConstructionSite/Texture2D/225575.png"
+    },
+    {
+      "source": "Texture2D/MarineDiffmap.png",
+      "target": "RecoveredMaps/NewConstructionSite/Texture2D/MarineDiffmap.png"
+    },
+    {
+      "source": "Texture2D/RifleDiff.png",
+      "target": "RecoveredMaps/NewConstructionSite/Texture2D/RifleDiff.png"
+    },
+    {
+      "source": "Texture2D/RifleSmap.png",
+      "target": "RecoveredMaps/NewConstructionSite/Texture2D/RifleSmap.png"
+    },
+    {
+      "source": "Texture2D/bullet_texture.png",
+      "target": "RecoveredMaps/NewConstructionSite/Texture2D/bullet_texture.png"
+    },
+    {
+      "source": "Texture2D/hero_color.png",
+      "target": "RecoveredMaps/NewConstructionSite/Texture2D/hero_color.png"
+    },
+    {
+      "source": "Texture2D/地下的杆子.png",
+      "target": "RecoveredMaps/NewConstructionSite/Texture2D/地下的杆子.png"
+    },
+    {
+      "source": "Texture2D/屋顶.png",
+      "target": "RecoveredMaps/NewConstructionSite/Texture2D/屋顶.png"
+    },
+    {
+      "source": "gd/LightingData.asset",
+      "target": "RecoveredMaps/NewConstructionSite/gd/LightingData.asset"
+    },
+    {
+      "source": "gd.unity",
+      "target": "RecoveredMaps/NewConstructionSite/gd.unity"
+    }
+  ],
+  "reused": {
+    "6158f98ce2641875c7ed285913faa064": "Scripts/Assembly-CSharp/MouseLook.cs"
+  },
+  "missing_guids": [
+    "0000000000000000e000000000000000",
+    "0000000000000000f000000000000000"
+  ],
+  "conflicts": [
+    {
+      "guid": "6158f98ce2641875c7ed285913faa064",
+      "source": "Scripts/Assembly-CSharp/MouseLook.cs",
+      "target": "Scripts/Assembly-CSharp/MouseLook.cs"
+    }
+  ]
+}

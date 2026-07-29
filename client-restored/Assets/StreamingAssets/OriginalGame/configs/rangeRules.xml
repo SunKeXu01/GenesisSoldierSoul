@@ -1,0 +1,64 @@
+<rules>
+<!-- 7K7K p = 3, 360 p=4, baidu p=5, duowan p=6, 4399 p=7, 91wan p=8,fengyun p=9,2144 p=10,bilibili p=15,japan p=16-->
+	<rule p="3" name="what_range" url="7k7k/1.jpg"/>
+	<rule p="3" name="how_range" url="7k7k/2.jpg"/>
+	<rule p="3" name="use_range" url="7k7k/3.jpg"/>
+	<rule p="3" name="why_range" url="7k7k/4.jpg"/>
+
+	
+	<rule p="4" name="what_range" url="360/1.jpg"/>
+	<rule p="4" name="how_range" url="360/2.jpg"/>
+	<rule p="4" name="use_range" url="360/3.jpg"/>
+	<rule p="4" name="why_range" url="360/4.jpg"/>
+	
+	<rule p="5" name="what_range" url="baidu/1.jpg"/>
+	<rule p="5" name="how_range" url="baidu/2.jpg"/>
+	<rule p="5" name="use_range" url="baidu/3.jpg"/>
+	<rule p="5" name="why_range" url="baidu/4.jpg"/>
+	
+	<rule p="6" name="what_range" url="duowan/1.jpg"/>
+	<rule p="6" name="how_range" url="duowan/2.jpg"/>
+	<rule p="6" name="use_range" url="duowan/3.jpg"/>
+	<rule p="6" name="why_range" url="duowan/4.jpg"/>
+	
+	<rule p="7" name="what_range" url="4399/1.jpg"/>
+	<rule p="7" name="how_range" url="4399/2.jpg"/>
+	<rule p="7" name="use_range" url="4399/3.jpg"/>
+	<rule p="7" name="why_range" url="4399/4.jpg"/>
+	
+	<rule p="8" name="what_range" url="91wan/1.jpg"/>
+	<rule p="8" name="how_range" url="91wan/2.jpg"/>
+	<rule p="8" name="use_range" url="91wan/3.jpg"/>
+	<rule p="8" name="why_range" url="91wan/4.jpg"/>
+	
+	
+	<rule p="9" name="what_range" url="fengyunzhibo/1.jpg"/>
+	<rule p="9" name="how_range" url="fengyunzhibo/2.jpg"/>
+	<rule p="9" name="use_range" url="fengyunzhibo/3.jpg"/>
+	<rule p="9" name="why_range" url="fengyunzhibo/4.jpg"/>
+	
+	<rule p="10" name="what_range" url="2144/1.jpg"/>
+	<rule p="10" name="how_range" url="2144/2.jpg"/>
+	<rule p="10" name="use_range" url="2144/3.jpg"/>
+	<rule p="10" name="why_range" url="2144/4.jpg"/>
+	
+	<rule p="12" name="what_range" url="tw/1.jpg"/>
+	<rule p="12" name="how_range" url="tw/2.jpg"/>
+	<rule p="12" name="use_range" url="tw/3.jpg"/>
+	<rule p="12" name="why_range" url="tw/4.jpg"/>
+	
+	<rule p="15" name="what_range" url="bilibili/1.jpg"/>
+	<rule p="15" name="how_range" url="bilibili/2.jpg"/>
+	<rule p="15" name="use_range" url="bilibili/3.jpg"/>
+	<rule p="15" name="why_range" url="bilibili/4.jpg"/>
+	
+	<rule p="16" name="what_range" url="japan/1.jpg"/>
+	<rule p="16" name="how_range" url="japan/2.jpg"/>
+	<rule p="16" name="use_range" url="japan/3.jpg"/>
+	<rule p="16" name="why_range" url="japan/4.jpg"/>
+
+	<rule p="24" name="what_range" url="vietnam/1.jpg"/>
+	<rule p="24" name="how_range" url="vietnam/2.jpg"/>
+	<rule p="24" name="use_range" url="vietnam/3.jpg"/>
+	<rule p="24" name="why_range" url="vietnam/4.jpg"/>	
+</rules>

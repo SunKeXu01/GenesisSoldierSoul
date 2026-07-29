@@ -1,0 +1,32 @@
+﻿<?xml version="1.0"?>
+<skeleton>
+	<Bone>Bip001 R Forearm</Bone>
+	<Bone>Bip001 R UpperArm</Bone>
+	<Bone>Bip001 R Clavicle</Bone>
+	<Bone>Bip001 Pelvis</Bone>
+	<Bone>Bip001 Spine2</Bone>
+	<Bone>Bip001 Spine3</Bone>
+	<Bone>Bip001 L Clavicle</Bone>
+	<Bone>Bip001 L UpperArm</Bone>
+	<Bone>Bip001 L Forearm</Bone>
+	<Bone>Bip001 L Hand</Bone>
+	<Bone>Bip001 R Hand</Bone>
+	<Bone>Bip001 Neck</Bone>
+	<Bone>Bip001 Head</Bone>
+	<Bone>Bip001</Bone>
+	<Bone>Bip001 Spine</Bone>
+	<Bone>Bip001 Spine1</Bone>
+	<Bone>Bip001 L Finger0</Bone>
+	<Bone>Bip001 L Finger1</Bone>
+	<Bone>Bip001 L Finger2</Bone>
+	<Bone>Bip001 R Finger0</Bone>
+	<Bone>Bip001 R Finger1</Bone>
+	<Bone>Bip001 R Finger2</Bone>
+	<Bone>Bip001 Spine4</Bone>
+	<Bone>Bip001 R Finger21</Bone>
+	<Bone>Bip001 R Finger11</Bone>
+	<Bone>Bip001 R Finger01</Bone>
+	<Bone>Bip001 L Finger01</Bone>
+	<Bone>Bip001 L Finger11</Bone>
+	<Bone>Bip001 L Finger21</Bone>
+</skeleton>	

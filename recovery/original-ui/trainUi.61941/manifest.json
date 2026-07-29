@@ -1,0 +1,287 @@
+{
+  "source": "/Users/Admin/Documents/创世兵魂/_解压资源/创世兵魂素材/创世兵魂/trainUi.61941.swf",
+  "bitmapCount": 39,
+  "errors": 0,
+  "bitmaps": [
+    {
+      "characterId": 1,
+      "tagCode": 35,
+      "width": 108,
+      "height": 103,
+      "file": "bitmap-00001.png"
+    },
+    {
+      "characterId": 5,
+      "tagCode": 35,
+      "width": 106,
+      "height": 108,
+      "file": "bitmap-00005.png"
+    },
+    {
+      "characterId": 9,
+      "tagCode": 35,
+      "width": 107,
+      "height": 108,
+      "file": "bitmap-00009.png"
+    },
+    {
+      "characterId": 13,
+      "tagCode": 36,
+      "width": 23,
+      "height": 33,
+      "file": "bitmap-00013.png"
+    },
+    {
+      "characterId": 14,
+      "tagCode": 35,
+      "width": 82,
+      "height": 76,
+      "file": "bitmap-00014.png"
+    },
+    {
+      "characterId": 17,
+      "tagCode": 35,
+      "width": 82,
+      "height": 76,
+      "file": "bitmap-00017.png"
+    },
+    {
+      "characterId": 23,
+      "tagCode": 36,
+      "width": 23,
+      "height": 33,
+      "file": "bitmap-00023.png"
+    },
+    {
+      "characterId": 24,
+      "tagCode": 35,
+      "width": 102,
+      "height": 97,
+      "file": "bitmap-00024.png"
+    },
+    {
+      "characterId": 27,
+      "tagCode": 36,
+      "width": 24,
+      "height": 33,
+      "file": "bitmap-00027.png"
+    },
+    {
+      "characterId": 33,
+      "tagCode": 36,
+      "width": 24,
+      "height": 33,
+      "file": "bitmap-00033.png"
+    },
+    {
+      "characterId": 36,
+      "tagCode": 36,
+      "width": 23,
+      "height": 33,
+      "file": "bitmap-00036.png"
+    },
+    {
+      "characterId": 41,
+      "tagCode": 36,
+      "width": 23,
+      "height": 33,
+      "file": "bitmap-00041.png"
+    },
+    {
+      "characterId": 44,
+      "tagCode": 36,
+      "width": 26,
+      "height": 33,
+      "file": "bitmap-00044.png"
+    },
+    {
+      "characterId": 49,
+      "tagCode": 36,
+      "width": 26,
+      "height": 33,
+      "file": "bitmap-00049.png"
+    },
+    {
+      "characterId": 52,
+      "tagCode": 36,
+      "width": 30,
+      "height": 33,
+      "file": "bitmap-00052.png"
+    },
+    {
+      "characterId": 57,
+      "tagCode": 36,
+      "width": 30,
+      "height": 33,
+      "file": "bitmap-00057.png"
+    },
+    {
+      "characterId": 60,
+      "tagCode": 36,
+      "width": 28,
+      "height": 33,
+      "file": "bitmap-00060.png"
+    },
+    {
+      "characterId": 65,
+      "tagCode": 36,
+      "width": 28,
+      "height": 33,
+      "file": "bitmap-00065.png"
+    },
+    {
+      "characterId": 68,
+      "tagCode": 36,
+      "width": 52,
+      "height": 33,
+      "file": "bitmap-00068.png"
+    },
+    {
+      "characterId": 69,
+      "tagCode": 35,
+      "width": 122,
+      "height": 76,
+      "file": "bitmap-00069.png"
+    },
+    {
+      "characterId": 72,
+      "tagCode": 35,
+      "width": 122,
+      "height": 76,
+      "file": "bitmap-00072.png"
+    },
+    {
+      "characterId": 77,
+      "tagCode": 35,
+      "width": 142,
+      "height": 98,
+      "file": "bitmap-00077.png"
+    },
+    {
+      "characterId": 80,
+      "tagCode": 36,
+      "width": 24,
+      "height": 33,
+      "file": "bitmap-00080.png"
+    },
+    {
+      "characterId": 85,
+      "tagCode": 36,
+      "width": 24,
+      "height": 33,
+      "file": "bitmap-00085.png"
+    },
+    {
+      "characterId": 88,
+      "tagCode": 35,
+      "width": 152,
+      "height": 76,
+      "file": "bitmap-00088.png"
+    },
+    {
+      "characterId": 90,
+      "tagCode": 36,
+      "width": 76,
+      "height": 34,
+      "file": "bitmap-00090.png"
+    },
+    {
+      "characterId": 92,
+      "tagCode": 35,
+      "width": 152,
+      "height": 76,
+      "file": "bitmap-00092.png"
+    },
+    {
+      "characterId": 97,
+      "tagCode": 36,
+      "width": 76,
+      "height": 34,
+      "file": "bitmap-00097.png"
+    },
+    {
+      "characterId": 98,
+      "tagCode": 35,
+      "width": 172,
+      "height": 98,
+      "file": "bitmap-00098.png"
+    },
+    {
+      "characterId": 101,
+      "tagCode": 35,
+      "width": 372,
+      "height": 74,
+      "file": "bitmap-00101.png"
+    },
+    {
+      "characterId": 104,
+      "tagCode": 35,
+      "width": 372,
+      "height": 74,
+      "file": "bitmap-00104.png"
+    },
+    {
+      "characterId": 107,
+      "tagCode": 35,
+      "width": 392,
+      "height": 97,
+      "file": "bitmap-00107.png"
+    },
+    {
+      "characterId": 110,
+      "tagCode": 36,
+      "width": 39,
+      "height": 33,
+      "file": "bitmap-00110.png"
+    },
+    {
+      "characterId": 115,
+      "tagCode": 36,
+      "width": 39,
+      "height": 33,
+      "file": "bitmap-00115.png"
+    },
+    {
+      "characterId": 118,
+      "tagCode": 35,
+      "width": 106,
+      "height": 165,
+      "file": "bitmap-00118.png"
+    },
+    {
+      "characterId": 120,
+      "tagCode": 35,
+      "width": 73,
+      "height": 43,
+      "file": "bitmap-00120.png"
+    },
+    {
+      "characterId": 124,
+      "tagCode": 36,
+      "width": 49,
+      "height": 59,
+      "file": "bitmap-00124.png"
+    },
+    {
+      "characterId": 128,
+      "tagCode": 36,
+      "width": 24,
+      "height": 33,
+      "file": "bitmap-00128.png"
+    },
+    {
+      "characterId": 133,
+      "tagCode": 36,
+      "width": 24,
+      "height": 33,
+      "file": "bitmap-00133.png"
+    }
+  ],
+  "exportedSymbols": [
+    {
+      "characterId": 136,
+      "name": "ui.TrainUI",
+      "sourceTag": "SymbolClass"
+    }
+  ]
+}

@@ -1,0 +1,3552 @@
+﻿<room>
+	<common bothTimes="2 3 7 10" invincibleTime="3" balanceDiff="2" />
+	<maps>
+		<map key="polartown" id="3" size="13000" height="5000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xue"></skybox>
+			<models weight="140"
+				values="collider ground_00 ground_01 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 chuanqiang_00" />
+			<materials weight="5038"
+				values="ground_00 ground_00_l ground_01 ground_01_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l chuanqiang_00 chuanqiang_00_l" />
+			<radarmap points="-0.02440987411129853 -0.00010377908050436038 137.3254740987983 -0.0003556961297042712 0.025148654779063133 131.30461540031177"/>
+			<bombpoints points="-3723 3986 20 -4602 -3147 -220" radius="500" removeRadius="100" iconHeight="300"/>
+			<teambattle>				
+				<team1>-3860,1870,-493,90</team1>
+				<team1>-3766,1428,-493,90</team1>
+				<team1>-3436,1408,-493,90</team1>
+				<team1>-3351,1906,-493,90</team1>
+				<team1>-2936,1963,-493,90</team1>
+				<team1>-2969,1444,-493,90</team1>
+				<team1>-3288,707,-493,90</team1>
+				<team1>-2978,741,-493,90</team1>
+				<team2>4894,-1972,83,-90</team2>
+				<team2>4513,-1972,83,-90</team2>
+				<team2>4894,-1622,83,-90</team2>
+				<team2>4513,-1622,83,-90</team2>
+				<team2>4894,-1257,83,-90</team2>
+				<team2>4513,-1257,83,-90</team2>
+				<team2>4894,-906,83,-90</team2>
+				<team2>4513,-906,83,-90</team2>
+			</teambattle>
+			<personpoint>
+				<team>-3603,2663,-205,140</team>
+				<team>-4438,-1054,-425,110</team>
+				<team>-2860,-2420,-225,270</team>
+				<team>-1749,-3583,-225,270</team>
+				<team>-4740,-2915,-222,360</team>
+				<team>-570,-4785,-164,180</team>
+				<team>1060,-3044,-166,40</team>
+				<team>4040,-4881,83,180</team>
+				<team>3366,-1889,83,90</team>
+				<team>3365,-301,-254,90</team>
+				<team>3468,2453,-254,270</team>
+				<team>1385,2700,-254,60</team>
+				<team>-427,2473,-254,90</team>
+				<team>1900,3724,-254,270</team>
+				<team>272,5426,-87,40</team>
+				<team>-2478,5416,-139,345</team>
+				<team>-5139,3775,76,105</team>
+				<team>-4425,1789,17,110</team>
+				<team>-2441,2072,17,90</team>
+				<team>-913,-1663,-479,290</team>
+				<team>1734,-816,-254,160</team>
+			</personpoint>
+			<bgcolor color="0.78 0.886 0.96"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xaaccee,1,200,1260.91,-2035.02,3644.95</omni>
+				<!-->point>200,1200,0x6ea3eb,-2450,1155,0,0.6</point> <point>200,1200,0xf5b2b2,-333,-2298,200,0.5</point> 
+					<point>200,1000,0xb2f5cb,2076,2185,200,0.5</point> <point>500,3000,0xf6f7d0,146,-4106,100,0.2</point> 
+					<point>200,1000,0x66a7e0,5688,-1082,402,0.3</point -->
+			</lights>
+		</map>
+		<map key="pyramid" id="1" size="15000" height="3000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+			<models weight="96"
+				values="collider ground_00 wall_00 wall_01 wall_02 wall_03 wall_04 chuanqiang_00 other_00 other_01 other_02" />
+			<materials weight="4777"
+				values="ground_00 ground_00_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l chuanqiang_00 chuanqiang_00_l other_00 other_00_l other_01 other_01_l other_02 other_02_l" />
+			<radarmap points="-0.029677993403963987 0.0006539875695607891 49.927678020850095 -0.00000837256954296524 0.03702717883060372 165.98786080549033"/>
+			<teambattle>
+				<team1>-469,3823,0,0</team1>
+				<team1>-504,4172,0,0</team1>
+				<team1>-20,3740,0,0</team1>
+				<team1>37,4075,0,0</team1>
+				<team1>397,3776,0,0</team1>
+				<team1>408,4064,0,0</team1>
+				<team1>1135,4015,0,0</team1>
+				<team1>1135,3660,0,0</team1>
+				<team2>870,-4361,0,180</team2>
+				<team2>870,-4716,0,180</team2>
+				<team2>468,-4600,0,180</team2>
+				<team2>479,-4312,0,180</team2>
+				<team2>59,-4636,0,180</team2>
+				<team2>116,-4301,0,180</team2>
+				<team2>-703,-4452,0,180</team2>
+				<team2>-589,-4071,0,180</team2>
+			</teambattle>
+			<bgcolor color="0.749 0.765 0.812"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,-1738.44,3797.43,5189.74</omni>
+				<!--point>200,1000,0xaaadac,156,1752,200,1</point -->
+			</lights>
+		</map>
+		<map key="bianmaocheng" id="5" size="10000" height="3000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+			<models weight="47"
+				values="collider ground_00 ground_01 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 other_00 chuanqiang_00" />
+			<materials weight="1211"
+				values="ground_00 ground_00_l ground_01 ground_01_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l other_00 other_00_l chuanqiang_00 chuanqiang_00_l" />
+			<radarmap points="-4.0932e-002 -1.5114e-004 1.2155e+002 6.8599e-004 4.1659e-002 1.3229e+002"/>
+			<teambattle>
+				<team1>695,3525,5,0</team1>
+				<team1>426,3525,5,0</team1>
+				<team1>135,3525,5,0</team1>
+				<team1>-133,3525,5,0</team1>
+				<team1>695,3878,5,0</team1>
+				<team1>426,3878,5,0</team1>
+				<team1>135,3878,5,0</team1>
+				<team1>-133,3878,5,0</team1>
+				<team2>-712,-3415,5,180</team2>
+				<team2>-442,-3415,5,180</team2>
+				<team2>-152,-3415,5,180</team2>
+				<team2>117,-3415,5,180</team2>
+				<team2>-712,-3833,5,180</team2>
+				<team2>-442,-3833,5,180</team2>
+				<team2>-152,-3833,5,180</team2>
+				<team2>117,-3833,5,180</team2>
+			</teambattle>
+			<bgcolor color="0.71 0.741 0.831"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xaaccee,1,200,-851.81,822.32,3709.83</omni>
+			</lights>
+		</map>
+		<map key="bigbianmaocheng" id="51" size="20000" height="6000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_nianye"></skybox>
+			<models weight="72"
+				values="collider ground_00 ground_01 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 other_00 other_01_t chuanqiang_00" />
+			<materials weight="1349"
+				values="ground_00 ground_00_l ground_01 ground_01_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l other_00 other_00_l other_01_t other_01_t_l chuanqiang_00 chuanqiang_00_l" />
+			<radarmap points="-0.043065872013441746 0.00031716850540211826 116.63567747372402 -0.00038638956638384694 0.0404183350557626 256.93618466367855"/>
+			<teambattle>
+				<team1>1162,5736,6,0</team1>
+				<team1>871,5762,6,0</team1>
+				<team1>526,5753,6,0</team1>
+				<team1>180,5770,6,0</team1>
+				<team1>-238,5175,6,0</team1>
+				<team1>-176,5449,6,0</team1>
+				<team1>160,5395,6,0</team1>
+				<team1>574,5407,6,0</team1>
+				<team2>-1055,-5901,6,180</team2>
+				<team2>-703,-5935,6,180</team2>
+				<team2>-275,-5952,6,180</team2>
+				<team2>162,-5940,6,180</team2>
+				<team2>156,-5623,6,180</team2>
+				<team2>-281,-5426,6,180</team2>
+				<team2>-648,-5432,6,180</team2>
+				<team2>-1119,-5317,6,180</team2>
+			</teambattle>
+			<personpoint>
+				<team>969,5654,6,0</team>
+				<team>450,5654,6,0</team>
+				<team>0,5654,6,0</team>
+				<team>2573,2612,121,0</team>
+				<team>100,3081,1,0</team>
+				<team>1516,2525,1,0</team>
+				<team>982,1350,1,0</team>
+				<team>-306,653,1,0</team>
+				<team>-1542,-373,1,90</team>
+				<team>-2300,1299,225,0</team>
+				<team>1422,220,1,270</team>
+				<team>196,-952,1,180</team>
+				<team>-759,-1515,1,180</team>
+				<team>-1650,-2558,1,180</team>
+				<team>126,-3014,1,180</team>
+				<team>-1088,-5569,6,180</team>
+				<team>-500,-5569,6,180</team>
+				<team>57,-5569,6,180</team>
+				<team>2257,-1707,225,180</team>
+				<team>-2564,-2685,121,180</team>
+			</personpoint>
+			<bgcolor color="0.71 0.741 0.831"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xaaccee,1,200,-851.81,822.32,3709.83</omni>
+			</lights>
+		</map>
+		<map key="heisechengzhen" id="6" size="16000" height="3500" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+			<models weight="155"
+				values="collider ground_00 ground_01 ground_02 ground_03 ground_04 ground_05 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08 wall_09 wall_10 wall_11 other_00 other_01 other_02 chuanqiang_00" />
+			<materials weight="4541"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l ground_04 ground_04_l ground_05 ground_05_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l wall_09 wall_09_l wall_10 wall_10_l wall_11 wall_11_l other_00 other_00_l other_01 other_01_l other_02 other_02_l chuanqiang_00 chuanqiang_00_l" />
+			<radarmap points="-0.030138649395240427 0.00006401198450978489 189.7419884106615 -0.0002561368746450717 0.03036809913488714 194.53545156188238"/>
+			<bombpoints points="3118 4981 370 -3395 5534 75" radius="500" removeRadius="100" iconHeight="300"/>
+			<teambattle>
+				<team1>-1220,5248,81,0</team1>
+				<team1>-1264,5792,81,0</team1>
+				<team1>-691,5269,81,0</team1>
+				<team1>-716,5829,81,0</team1>
+				<team1>556,3837,-256,0</team1>
+				<team1>554,3443,-256,0</team1>
+				<team1>895,3838,-256,0</team1>
+				<team1>896,3437,-256,0</team1>
+				<team2>-876,-4853,519,180</team2>
+				<team2>-1316,-4451,519,180</team2>
+				<team2>-1907,-4461,519,180</team2>
+				<team2>-1470,-4924,519,180</team2>
+				<team2>-1501,-5447,519,180</team2>
+				<team2>-2057,-5473,519,180</team2>
+				<team2>-2014,-4925,519,180</team2>
+				<team2>-2500,-4960,519,180</team2>
+			</teambattle>
+			<personpoint>
+				<team>2703,240,231,10</team>
+				<team>2515,5747,388,300</team>
+				<team>-1098,1600,98,10</team>
+				<team>4995,5405,401,350</team>
+				<team>380,-1232,77,180</team>
+				<team>6028,-318,316,300</team>
+				<team>3279,-2528,297,160</team>
+				<team>1935,-2106,268,170</team>
+				<team>-1654,-6179,544,190</team>
+				<team>-6153,-604,79,170</team>
+				<team>-4510,574,79,254</team>
+				<team>2376,2193,363,290</team>
+				<team>-4955,6144,104,90</team>
+				<team>-5086,2952,-79,170</team>
+				<team>-2855,1984,544,255</team>
+				<team>6247,2412,252,260</team>
+				<team>-4565,-1361,91,20</team>
+				<team>-5459,-2848,43,70</team>
+				<team>-2443,-3537,515,30</team>
+				<team>-584,-4000,246,140</team>
+				<team>-593,6364,93,40</team>
+				<team>973,4138,-252,310</team>
+			</personpoint>
+			<bgcolor color="0.6 0.761 0.839"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xaaccee,1,200,1618.03,-2625.92,4832.76</omni>
+			</lights>
+		</map>
+		<map key="liangangchang" id="4" size="6000" height="5000" splitRenderMesh="1" splitCollisionMesh="0">
+			<models weight="84"
+				values="collider ground_00 ground_01 ground_02 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 other_00 other_01 other_02 other_03 other_04 other_05 other_06_t" />
+			<materials weight="2897"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l other_05 other_05_l other_06_t other_06_t_l" />
+			<radarmap points="-4.8451e-002 2.0852e-004 1.2696e+002 -1.6214e-004 4.8168e-002 1.1956e+002"/>
+			<teambattle>
+				<team1>-523,1943,0,0</team1>
+				<team1>-523,1619,0,0</team1>
+				<team1>-7,1706,0,0</team1>
+				<team1>54,2059,0,0</team1>
+				<team1>360,1943,0,0</team1>
+				<team1>646,2059,0,0</team1>
+				<team1>312,1554,0,0</team1>
+				<team1>733,1678,0,0</team1>
+				<team2>733,-2039,0,180</team2>
+				<team2>646,-1658,0,180</team2>
+				<team2>360,-1774,0,180</team2>
+				<team2>312,-2163,0,180</team2>
+				<team2>-7,-2011,0,180</team2>
+				<team2>53,-1658,0,180</team2>
+				<team2>-523,-2098,0,180</team2>
+				<team2>-523,-1774,0,180</team2>
+			</teambattle>
+			<bgcolor color="0 0 0"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0x997755,1,200,0,0,0</omni>
+			</lights>
+		</map>
+		<map key="gongdi" id="2" size="6000" height="5000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+			<models weight="16"
+				values="collider ground_00 wall_00 wall_01 wall_02 wall_03" />
+			<materials weight="2013"
+				values="ground_00 ground_00_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l" />
+			<radarmap points="-0.09513427101864728 -0.0005266274991507675 150.48310551403497 0.00008661972011278092 0.09509737430803178 186.8296968438118"/>
+			<teambattle>
+				<team1>1043,-1735,-148,180</team1>
+				<team1>961,-1373,-148,180</team1>
+				<team1>585,-1608,-148,180</team1>
+				<team1>430,-1224,-148,180</team1>
+				<team1>-465,-1373,-148,180</team1>
+				<team1>-575,-1673,-148,180</team1>
+				<team1>-945,-1608,-148,180</team1>
+				<team1>-807,-1336,-148,180</team1>
+				<team2>-945,1254,-148,0</team2>
+				<team2>-791,1525,-148,0</team2>
+				<team2>-465,1489,-148,0</team2>
+				<team2>-663,1126,-148,0</team2>
+				<team2>585,1637,-148,0</team2>
+				<team2>585,1254,-148,0</team2>
+				<team2>961,1489,-148,0</team2>
+				<team2>1043,1126,-148,0</team2>
+			</teambattle>
+			<bgcolor color="0.561 0.6 0.608"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0x557799,1,200,1310.56,-1003.23,3262.02</omni>
+			</lights>
+		</map>
+		<map key="shamoyi" id="7" size="18000" height="2000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+			<models weight="131"
+				values="collider ground_00 ground_01 ground_02 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08 wall_09 wall_10 other_00 other_01 other_02" />
+			<materials weight="3168"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l wall_09 wall_09_l wall_10 wall_10_l other_00 other_00_l other_01 other_01_l other_02 other_02_l" />
+			<radarmap points="-0.031234412158754384 -0.00009449919678594219 134.22897975171537 -0.0002283908413098758 0.03151654560541997 240.1418791952217"/>
+			<teambattle>		
+				<team1>-1560,-6069,-614,-180</team1>
+				<team1>-1934,-6069,-614,-180</team1>
+				<team1>-1932,-6444,-614,-180</team1>
+				<team1>-1558,-6444,-614,-180</team1>
+				<team1>-2529,-6339,-574,-180</team1>
+				<team1>-2972,-6339,-574,-180</team1>
+				<team1>-2972,-6785,-574,-180</team1>
+				<team1>-2529,-6785,-574,-180</team1>
+				<team2>-2972,6289,-574,0</team2>
+				<team2>-2972,6735,-574,0</team2>
+				<team2>-2529,6289,-574,0</team2>
+				<team2>-2529,6735,-574,0</team2>
+				<team2>-1935,6042,-614,0</team2>
+				<team2>-1937,6417,-614,0</team2>
+				<team2>-1552,6042,-614,0</team2>
+				<team2>-1554,6417,-614,0</team2>
+			</teambattle>
+			<personpoint>
+				<team>-1689,6609,-626,0</team>
+				<team>-1689,5609,-626,90</team>
+				<team>-493,5862,-477,0</team>
+				<team>63,5541,-626,0</team>
+				<team>-626,3672,-210,0</team>
+				<team>-2730,309,-360,90</team>
+				<team>-507,2434,-82,180</team>
+				<team>30,930,-82,0</team>
+				<team>30,-880,-82,180</team>
+				<team>689,-2394,-82,0</team>
+				<team>-627,-3691,-210,180</team>
+				<team>168,-5380,-626,180</team>
+				<team>-466,-5855,-477,180</team>
+				<team>-1643,-6996,-626,180</team>
+				<team>-1643,-6129,-626,180</team>
+				<team>-2665,-2979,-360,90</team>
+				<team>-2729,-1250,-626,180</team>
+				<team>-2729,1325,-626,0</team>
+				<team>2802,1306,-626,0</team>
+				<team>2777,-1273,-626,180</team>
+			</personpoint>
+			<bgcolor color="0.71 0.741 0.831"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.3</directional>
+				<directional>1,1,-2,0xdbdfcc,0.3</directional>
+				<omni>0xeeccaa,1,200,-6491.15,922.94,7505.52</omni>
+			</lights>
+		</map>
+		<map key="xinshouyindao" id="8" size="15000" height="2000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+			<models weight="48"
+				values="ground_00 ground_01 ground_02 ground_03 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08 wall_09 other_00 other_01_t other_02 other_03" />
+			<materials weight="4628"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l wall_09 wall_09_l other_00 other_00_l other_01_t other_01_t_l other_02 other_02_l other_03 other_03_l" />
+			<radarmap points="-3.1417e-002 6.9717e-006 8.4990e+001 8.5870e-006 3.3260e-002 1.3806e+002"/>
+			<teambattle>
+				<team1>-2200,-828,-225,0</team1>
+				<team2>-2200,-828,-225,0</team2>
+			</teambattle>
+			<bgcolor color="0.749 0.765 0.812"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,2271.16,-5029.73,9477.62</omni>
+			</lights>
+		</map>
+		<map key="doushouchang" id="9" size="14000" height="4100" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+			<models weight="79"
+				values="collider ground_00 ground_01 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 other_00 other_01 other_02" />
+			<materials weight="2151"
+				values="ground_00 ground_00_l ground_01 ground_01_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l other_00 other_00_l other_01 other_01_l other_02 other_02_l" />
+			<radarmap points="-0.03658245912741293 -0.000013471679280773944 178.91895793729495 -0.00032797177666319625 0.036264125866342554 153.4053046946126"/>
+			<teambattle>
+				<team1>1603,2313,162,-90</team1>
+				<team1>1934,1904,162,-90</team1>
+				<team1>2095,1412,162,-90</team1>
+				<team1>2182,707,162,-90</team1>
+				<team1>2043,93,162,-90</team1>
+				<team1>4281,436,568,-90</team1>
+				<team1>3815,-1357,568,-90</team1>
+				<team1>2144,-3029,568,-90</team1>
+				
+				<team2>-2173,1904,162,90</team2>
+				<team2>-2335,1283,162,90</team2>
+				<team2>-2421,707,162,90</team2>
+				<team2>-2282,93,162,90</team2>
+				<team2>-1901,-552,162,90</team2>
+				<team2>-4270,656,568,90</team2>
+				<team2>-3656,-1403,568,90</team2>
+				<team2>-2185,-3076,568,90</team2>
+			</teambattle>
+			<bgcolor color="0.561 0.6 0.608"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,-4437,5531,8035</omni>
+			</lights>
+		</map>
+		<map key="huangwuzhidi" id="10" size="10000" height="2800" splitRenderMesh="0" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+			<models weight="103"
+				values="chuanqiang_00 dianzhui_00 ground_00 ground_01 other_00 other_01 wall_00 wall_01 wall_02" />
+			<materials weight="2876"
+				values="chuanqiang_00 chuanqiang_00_l dianzhui_00 dianzhui_00_l ground_00 ground_00_l ground_01 ground_01_l other_00 other_00_l other_01 other_01_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l" />
+			<radarmap points="-0.04585021819119481 -0.0006484769129081438 125.8444001308703 -0.003345713526240138 0.04275226888325353 179.96192786050278"/>
+			<teambattle>
+				<team1>858,-3771,-930,180</team1>
+				<team1>715,-3490,-930,180</team1>
+				<team1>248,-3760,-930,180</team1>
+				<team1>124,-3510,-930,180</team1>
+				<team1>-365,-3443,-930,180</team1>
+				<team1>-488,-3735,-930,180</team1>
+				<team1>-1018,-3726,-930,180</team1>
+				<team1>-921,-3396,-930,180</team1>
+				<team2>-1018,3460,-930,0</team2>
+				<team2>-921,3790,-930,0</team2>
+				<team2>-488,3451,-930,0</team2>
+				<team2>-365,3743,-930,0</team2>
+				<team2>124,3676,-930,0</team2>
+				<team2>248,3426,-930,0</team2>
+				<team2>715,3696,-930,0</team2>
+				<team2>1032,3464,-930,0</team2>
+			</teambattle>
+			<personpoint>
+				<team>636,3640,-936,0</team>
+				<team>0,3640,-936,0</team>
+				<team>-562,3640,-936,0</team>
+				<team>-2200,2791,-614,0</team>
+				<team>-2512,1340,-614,0</team>
+				<team>-2512,-1216,-614,180</team>
+				<team>-2200,-2639,-614,180</team>
+				<team>-829,-3598,-936,180</team>
+				<team>0,-3598,-936,180</team>
+				<team>544,-3598,-936,180</team>
+				<team>2161,-2629,-614,180</team>
+				<team>2498,-1185,-614,180</team>
+				<team>2498,1165,-614,0</team>
+				<team>2171,2660,-614,0</team>
+				<team>-708,-2215,-1291,180</team>
+				<team>1203,-2252,-1261,180</team>
+				<team>1828,-1700,-1261,180</team>
+				<team>739,2359,-1296,0</team>
+				<team>-1190,2215,-1261,0</team>
+				<team>-1788,1749,-1261,0</team>
+			</personpoint>
+			<bgcolor color="0.569 0.584 0.58"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0x997755,1,200,-1803.64,-2998.8,3342.12</omni>
+			</lights>
+		</map>
+		<map key="wanshengjie" id="59" size="10000" height="2800" splitRenderMesh="0" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+			<models weight="103"
+				values="chuanqiang_00 dianzhui_00 ground_00 ground_01 other_00 other_01 wall_00 wall_01 wall_02" />
+			<materials weight="2876"
+				values="chuanqiang_00 chuanqiang_00_l dianzhui_00 dianzhui_00_l ground_00 ground_00_l ground_01 ground_01_l other_00 other_00_l other_01 other_01_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l" />
+			<radarmap points="-3.1417e-002 6.9717e-006 8.4990e+001 8.5870e-006 3.3260e-002 1.3806e+002"/>
+			<teambattle>
+				<team1>858,-3771,-930,180</team1>
+				<team1>715,-3490,-930,180</team1>
+				<team1>248,-3760,-930,180</team1>
+				<team1>124,-3510,-930,180</team1>
+				<team1>-365,-3443,-930,180</team1>
+				<team1>-488,-3735,-930,180</team1>
+				<team1>-1018,-3726,-930,180</team1>
+				<team1>-921,-3396,-930,180</team1>
+				<team2>-1018,3460,-930,0</team2>
+				<team2>-921,3790,-930,0</team2>
+				<team2>-488,3451,-930,0</team2>
+				<team2>-365,3743,-930,0</team2>
+				<team2>124,3676,-930,0</team2>
+				<team2>248,3426,-930,0</team2>
+				<team2>715,3696,-930,0</team2>
+				<team2>1032,3464,-930,0</team2>
+			</teambattle>
+			<bgcolor color="0.569 0.584 0.58"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0x997755,1,200,-1803.64,-2998.8,3342.12</omni>
+			</lights>
+		</map>
+		<map key="hanbingyaosai" id="11" size="8500" height="2500" splitRenderMesh="0" splitCollisionMesh="0">
+			<skybox key="skybox_xue"></skybox>
+			<models weight="62"
+				values="collider chuanqiang_00 ground_00 ground_01 ground_02 ground_03 ground_04 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08 other_01" />
+			<materials weight="4025"
+				values="chuanqiang_00 chuanqiang_00_l ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l ground_04 ground_04_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l other_01 other_01_l" />
+			<radarmap points="-0.055394933652393986 -0.00026541485495665425 124.62573239356045 0.00030862236501423123 0.05578825509557148 225.21333593559646"/>
+			<teambattle>
+				<team1>-30,-3912,360,180</team1>
+				<team1>-382,-3976,360,180</team1>
+				<team1>-588,-3976,360,180</team1>
+				<team1>-954,-3976,360,180</team1>
+				<team1>-1442,-3976,360,180</team1>
+				<team1>-1211,-3498,360,180</team1>
+				<team1>-501,-3483,360,180</team1>
+				<team1>0,-3478,360,180</team1>
+				<team2>6,3364,360,0</team2>
+				<team2>-372,3380,360,0</team2>
+				<team2>-1018,3366,360,0</team2>
+				<team2>-1274,3770,360,0</team2>
+				<team2>-720,3770,360,0</team2>
+				<team2>-328,3770,360,0</team2>
+				<team2>90,3770,360,0</team2>
+				<team2>-495,3331,360,0</team2>
+			</teambattle>
+			<bgcolor color="0.78 0.886 0.96"/>
+			<lights>
+				<ambient>0xccd4df,0.6</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xaaccee,1,200,-2661.83,-3468.27,3143.38</omni>
+			</lights>
+		</map>
+        <map key="shandiyi" id="12" size="13000" height="4000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_black"></skybox>
+			<models weight="82"
+                values="ground_00 ground_01 ground_02 ground_03 ground_04 ground_05 other_00 other_01_t other_02_t other_03_t other_04" />
+            <materials weight="4029"
+                values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l ground_04 ground_04_l ground_05 ground_05_l other_00 other_00_l other_01_t other_01_t_l other_02_t other_02_t_l other_03_t other_03_t_l other_04 other_04_l skybox_top skybox_left skybox_right skybox_front skybox_back" />
+			<radarmap points="-3.1417e-002 6.9717e-006 8.4990e+001 8.5870e-006 3.3260e-002 1.3806e+002"/>
+            <teambattle>
+                <team1>-4339,1441,165,180</team1>
+                <team1>-4143,1125,165,180</team1>
+                <team1>-4453,944,165,180</team1>
+                <team1>-4097,698,165,180</team1>
+                <team1>-4504,523,165,180</team1>
+                <team1>-4162,325,165,180</team1>
+                <team1>-4486,194,165,180</team1>
+                <team1>-4246,-113,165,180</team1>
+                <team2>5179,-1890,165,0</team2>
+                <team2>4940,-1582,165,0</team2>
+                <team2>5263,-1452,165,0</team2>
+                <team2>4922,-1254,165,0</team2>
+                <team2>5329,-1079,165,0</team2>
+                <team2>4972,-833,165,0</team2>
+                <team2>5282,-651,165,0</team2>
+                <team2>5087,-335,165,0</team2>
+            </teambattle>
+			<bgcolor color="0.78 0.886 0.96"/>
+            <lights>
+                <ambient>0xccd4df,0.4</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+                <directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,0,0,0</omni>
+            </lights>
+        </map>
+		<map key="yijishalu" id="13" size="15000" height="3500" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+            <models weight="54"
+                values="ground_00 other_01 other_02 other_03 other_04 other_05 other_06 wall_00_t wall_01 wall_02 wall_03 wall_04" />
+            <materials weight="2584"
+                values="ground_00 ground_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l other_05 other_05_l other_06 other_06_l wall_00_t wall_00_t_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l" />
+			<radarmap points="-3.1417e-002 6.9717e-006 8.4990e+001 8.5870e-006 3.3260e-002 1.3806e+002"/>
+            <teambattle>
+                <team1>-1354,-342,0,0</team1>
+                <team1>-306,278,0,90</team1>
+				<team1>154,-322,0,180</team1>
+                <team1>1139,-158,0,270</team1>
+                <team2>154,-322,0,180</team2>
+                <team2>1139,-158,0,270</team2>
+				<team2>-1354,-342,0,0</team2>
+                <team2>-306,278,0,90</team2>
+            </teambattle>
+			<bgcolor color="0.749 0.765 0.812"/>
+            <lights>
+                <ambient>0xccd4df,0.5</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+                <directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0x557799,1,200,0,0,0</omni>
+            </lights>
+        </map>
+		
+		<!-- 辐射街区 -->
+		<map key="jidifeixu" id="14" size="12000" height="4000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_black"></skybox>
+            <models weight="110"
+                values="chuanqiang_00 ground_00 other_00 other_01 other_02 other_03 other_04 other_05 other_06 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08" />
+            <materials weight="2310"
+                values="chuanqiang_00 chuanqiang_00_l ground_00 ground_00_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l other_05 other_05_l other_06 other_06_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l" />
+			<radarmap points="-0.03477919458489349 0.0002495939165239694 171.65402956463612 0.00012038289224238292 0.03473580077926852 184.92854775112332"/>
+            <teambattle>
+                <team1>-1170,-3023,36,500</team1>
+                <team1>-1477,-1968,42,477</team1>
+	        	<team1>1513,614,43,652</team1>
+                <team1>1605,-482,45,639</team1>
+                <team1>1126,-1879,34,567</team1>
+
+                <team1>-1501,-2772,43,496</team1>
+                <team1>-1507,-1714,43,504</team1>
+	        	<team1>-1562,-862,44,457</team1>
+                <team1>-1529,385,43,451</team1>
+                <team1>-1517,2729,43,451</team1>
+                <team2>-593,2193,35,276</team2>
+                <team2>752,2309,23,330</team2>
+                <team2>621,1544,310,303</team2>
+                <team2>1078,600,33,282</team2>
+                <team2>1098,-408,33,274</team2>
+
+                <team2>820,-1254,25,230</team2>
+                <team2>-880,197,27,99</team2>
+                <team2>1139,-753,35,-104</team2>
+                <team2>-468,-935,15,133</team2>
+                <team2>-504,1601,16,-19</team2>
+            </teambattle>
+			<bgcolor color="0.215 0.38 0.569"/>
+            <lights>
+                <ambient>0xccd4df,0.5</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.3</directional>
+                <directional>1,1,-2,0xdbdfcc,0.3</directional>
+				<omni>0x557799,1,200,0,0,0</omni>
+            </lights>
+        </map>
+		
+		<map key="mothership" id="15" size="15000" height="4000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_haiyang"></skybox>
+            <models weight="158"
+                values="collider chuanqiang_00 chuanqiang_01 ground_00 ground_01 ground_02 ground_03 ground_04_t other_00 other_01 other_02 other_03 other_04 other_05 other_06 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05_t wall_06" />
+            <materials weight="5307"
+                values="chuanqiang_00 chuanqiang_00_l chuanqiang_01 chuanqiang_01_l ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l ground_04_t ground_04_t_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l other_05 other_05_l other_06 other_06_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05_t wall_05_t_l wall_06 wall_06_l" />
+			<radarmap points="-0.039180112321732276 -0.0003438528088643224 271.73060486035433 -0.0009854080117258524 0.03913550333472879 175.02299170739366"/>
+			<bombpoints points="-6384 2272 250 84 3625 250" radius="500" removeRadius="100" iconHeight="300"/>
+            <teambattle>
+                <team1>-5838,4458,255,90</team1>
+				<team1>-6134,4458,255,90</team1>
+				<team1>-6435,4458,255,90</team1>
+				<team1>-6731,4458,255,90</team1>
+				<team1>-5838,4768,255,90</team1>
+				<team1>-6134,4768,255,90</team1>
+				<team1>-6435,4768,255,90</team1>
+				<team1>-6731,4768,255,90</team1>
+				<team2>6197,-2889,255,-90</team2>
+				<team2>6493,-2889,255,-90</team2>
+				<team2>6493,-3246,255,-90</team2>
+				<team2>6197,-3246,255,-90</team2>
+				<team2>6493,-3592,255,-90</team2>
+				<team2>6197,-3592,255,-90</team2>
+				<team2>6493,-3949,255,-90</team2>
+				<team2>6197,-3949,255,-90</team2>
+            </teambattle>
+			<personpoint>
+				<team>-6134,4458,233,89</team>
+				<team>-6798,2675,233,-313</team>
+				<team>-4653,1705,233,-95</team>
+				<team>-5582,-394,233,16</team>
+				<team>-5160,-2828,233,158</team>
+				<team>-2040,-3425,233,-418</team>
+				<team>-836,-4317,233,-185</team>
+				<team>-1598,-1006,233,-328</team>
+				<team>-2078,5036,233,48</team>
+				<team>470,3678,233,260</team>
+				<team>1915,2877,233,648</team>
+				<team>-1611,1756,233,24</team>
+				<team>5564,-4151,233,154</team>
+				<team>5567,-2056,233,126</team>
+				<team>6267,2890,233,277</team>
+			<!-- 	<team>-2478,5416,-139,345</team>
+				<team>-5139,3775,76,105</team>
+				<team>-4425,1789,17,110</team>
+				<team>-2441,2072,17,90</team>
+				<team>-913,-1663,-479,290</team>
+				<team>1734,-816,-254,160</team> -->
+			</personpoint>
+			<bgcolor color="0.749 0.765 0.812"/>
+            <lights>
+                <ambient>0xccd4df,0.4</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+                <directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0x557799,1,200,-996.53,-1520.2,6824.68</omni>
+            </lights>
+			<sounds>
+				<ambient>seawave1.mp3, 0.5</ambient><!-->sound track url, volume<-->
+				<ambient>seawave2.mp3, 0.5</ambient><!-->sound track url, volume<-->
+			</sounds>
+        </map>
+		
+		<!-- 地下宫殿 -->
+		<map key="evilpyramid" id="16" size="9000" height="4000" splitRenderMesh="1" splitCollisionMesh="0">   
+			<skybox key="skybox_duoyunqingtian"></skybox>
+            <models weight="117"
+                values="chuanqiang_00 chuanqiang_01 chuanqiang_02_t ground_00 ground_01 ground_02 ground_03 other_00 other_01 other_03 other_04 wuxing_00_t wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07" />
+            <materials weight="4306"
+                values="chuanqiang_00 chuanqiang_00_l chuanqiang_01 chuanqiang_01_l chuanqiang_02_t chuanqiang_02_t_l ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l other_00 other_00_l other_01 other_01_l other_03 other_03_l other_04 other_04_l wuxing_00_t wuxing_00_t_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l" />
+			<radarmap points="-0.047513590018821965 -0.001111338233197315 177.24133885999217 0.00095052747924995945 0.04560219310181158 178.61920942894818"/>
+            <teambattle>
+                <team1>2567,-2234,-377,180</team1>
+                <team1>2552,-914,-386,200</team1>
+		<team1>2734,577,-386,320</team1>
+                <team1>1231,-2224,-388,290</team1>
+                <team1>-519,-1938,-388,0</team1>
+                <team1>-2874,-1808,-515,0</team1>
+		<team1>-1392,-1363,-388,70</team1>
+                <team1>871,-1363,-388,180</team1>
+		<team1>71,-965,-363,180</team1>
+		<team1>-2227,-302,-515,210</team1>
+		<team2>-3825,-177,-504,0</team2>
+		<team2>-609,-2555,195,0</team2>
+		<team2>937,-760,-393,0</team2>
+		<team2>2898,-1573,68,0</team2>
+		<team2>2947,3120,-17,0</team2>
+		<team2>1222,2634,-383,0</team2>
+		<team2>-1512,454,-387,0</team2>
+	        <team2>-1791,3576,-348,0</team2>
+		<team2>-2535,-2414,-522,0</team2>
+		<team2>-1324,-760,-393,0</team2>
+            </teambattle>
+			<bgcolor color="0.749 0.765 0.812"/>
+            <lights>
+                <ambient>0xccd4df,0.3</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.3</directional>
+                <directional>1,1,-2,0xdbdfcc,0.3</directional>
+				<omni>0x557799,1,200,0,0,0</omni>
+            </lights>
+        </map>
+	
+		<map key="twotowers" id="17" size="15000" height="30000" splitRenderMesh="0" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+            <models weight="96"
+                values="collider ground_00 other_00 other_01 other_02 other_03 other_04 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08 wall_09 wall_10 wall_11" />
+            <materials weight="4716"
+                values="ground_00 ground_00_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l wall_09 wall_09_l wall_10 wall_10_l wall_11 wall_11_l" />
+			<radarmap points="-0.03821156890922745 -0.0010955510418657476 286.2913182190468 0.0016665987893392565 0.03973568019833206 159.12726329264024"/>
+            <teambattle>
+                <team1>5274,3340,-12280,-90</team1>
+				<team1>5274,1004,-12280,-90</team1>
+				<team1>5274,285,-12280,-90</team1>
+				<team1>5264,-448,-12280,-90</team1>
+				<team1>4423,-1622,-12300,-90</team1>
+				<team1>4179,-2360,-12300,-90</team1>
+				<team1>5043,-2778,-12290,-90</team1>
+				<team1>5031,-3797,-12285,-90</team1>
+				<team2>-3720,-2950,-12235,90</team2>
+				<team2>-3575,-581,-12255,90</team2>
+				<team2>-3575,156,-12265,90</team2>
+				<team2>-3575,895,-12280,90</team2>
+				<team2>-2495,2044,-12295,90</team2>
+				<team2>-2495,2811,-12285,90</team2>
+				<team2>-3880,3197,-12280,90</team2>
+				<team2>-3659,-2462,-12240,90</team2>
+            </teambattle>
+			<bgcolor color="0.561 0.6 0.608"/>
+            <lights>
+                <ambient>0xccd4df,0.5</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+                <directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,3015.42,-3192.77,5586.39</omni>
+            </lights>
+        </map>
+		
+		<map key="nengyuanzhan" id="18" size="14000" height="4000" splitRenderMesh="0" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+            <models weight="155"
+                values="collider chuanqiang_00 chuanqiang_01_t ground_00 ground_01 ground_02 ground_03 other_00 other_01 other_02_t other_03 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08 wall_09 wall_10" />
+            <materials weight="3696"
+                values="chuanqiang_00 chuanqiang_00_l chuanqiang_01_t chuanqiang_01_t_l ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l other_00 other_00_l other_01 other_01_l other_02_t other_02_t_l other_03 other_03_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l wall_09 wall_09_l wall_10 wall_10_l" />
+			<radarmap points="-0.037729309344944555 -0.0001167316691786975 241.99673819970485 0.00008438272465997728 0.03863985239343734 274.72120929552034"/>
+			<bombpoints points="3670 -1637 475 -796 4742 600" radius="500" removeRadius="100" iconHeight="300"/>
+            <teambattle>
+                <team1>4892,2155,302,-90</team1>
+                <team1>4892,2491,302,-90</team1>
+				<team1>4892,2811,302,-90</team1>
+                <team1>4892,3124,302,-90</team1>
+                <team1>5167,2155,302,-90</team1>
+                <team1>5167,2491,302,-90</team1>
+				<team1>5167,2811,302,-90</team1>
+                <team1>5167,3124,302,-90</team1>
+				<team2>-5242,-627,-190,90</team2>
+				<team2>-5242,-940,-190,90</team2>
+				<team2>-5242,-1260,-190,90</team2>
+				<team2>-5242,-1597,-190,90</team2>
+				<team2>-5558,-1356,-175,90</team2>
+				<team2>-5558,-1035,-175,90</team2>
+				<team2>-5558,-722,-175,90</team2>
+				<team2>-5861,-1035,-175,90</team2>
+            </teambattle>
+            <personpoint>
+				<team>-911,-2496,656,-367</team>
+				<team>2961,1054,469,127</team>
+				<team>2179,348,469,52</team>
+				<team>2848,-2928,461,210</team>
+				<team>5494,1484,469,238</team>
+				<team>-1828,-584,144,-640</team>
+				<team>-2376,-2474,656,-1006</team>
+				<team>4150,-4197,325,479</team>
+				<team>-631,-4788,368,516</team>
+				<team>-1220,5397,591,-340</team>
+				<team>1705,3949,480,-128</team>
+				<team>-861,2612,480,65</team>
+				<team>-2461,-336,57,371</team>
+				<team>-6127,-582,-204,-296</team>
+				<team>-5302,-4675,53,103</team>
+				<team>-3479,-3086,207,90</team>
+				<team>-499,-2275,244,1</team>
+				<team>-2272,-4425,658,139</team>
+			</personpoint>
+			<bgcolor color="0.71 0.741 0.831"/>
+            <lights>
+                <ambient>0xccd4df,0.3</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.3</directional>
+                <directional>1,1,-2,0xdbdfcc,0.3</directional>
+				<omni>0x557799,1,200,233.94,-3284.78,6165.61</omni>
+            </lights>
+        </map>
+		
+		<map key="huochezhan" id="19" size="12000" height="4100" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+			<models weight="117"
+				values="collider ground_00 ground_01 ground_02 ground_03 ladder_00_t other_00 other_01_t other_02 other_03 other_04 other_05 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08 wall_09 wall_10" />
+			<materials weight="3895"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l ladder_00_t ladder_00_t_l other_00 other_00_l other_01_t other_01_t_l other_02 other_02_l other_03 other_03_l other_04 other_04_l other_05 other_05_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l wall_09 wall_09_l wall_10 wall_10_l" />
+			<radarmap points="-0.04047422559427593 0.00045832507724754125 173.40120526041326 0.0005805528826338628 0.041199616256216716 171.55289873221736"/>
+			<bombpoints points="2108 -435 -381 -940 -3038 -684" radius="500" removeRadius="100" iconHeight="300"/>
+			<teambattle>
+				<team1>2762,-3479,-620,-180</team1>
+				<team1>2762,-3166,-620,-180</team1>
+				<team1>2762,-2852,-620,-180</team1>
+				<team1>2762,-2533,-620,-180</team1>
+				<team1>3079,-3479,-620,-180</team1>
+				<team1>3079,-3166,-620,-180</team1>
+				<team1>3079,-2852,-620,-180</team1>
+				<team1>3079,-2533,-620,-180</team1>
+				<team2>-4580,3767,-370,0</team2>
+				<team2>-4580,3448,-370,0</team2>
+				<team2>-4580,3134,-370,0</team2>
+				<team2>-4580,2821,-370,0</team2>
+				<team2>-4897,3767,-370,0</team2>
+				<team2>-4897,3448,-370,0</team2>
+				<team2>-4897,3134,-370,0</team2>
+				<team2>-4897,2821,-370,0</team2>
+			</teambattle>
+			<bgcolor color="0.561 0.6 0.608"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,118.52,-2988.48,6813.91</omni>
+			</lights>
+		</map>
+		
+		<map key="yanjiusuo" id="20" size="5000" height="2000" splitRenderMesh="0" splitCollisionMesh="0">
+			<skybox key="skybox_black"></skybox>
+			<models weight="100"
+				values="ground_00 ground_01 ground_02 other_00 other_01 other_02 other_03 other_04 other_05_t other_06_t wall_00 wall_01 wall_02 wall_03 wall_04" />
+			<materials weight="2190"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l other_05_t other_05_t_l other_06_t other_06_t_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l" />
+			<radarmap points="-0.10643186026038286 -0.0008873764545248215 206.81230075285228 -0.004336776838893226 0.10711823164141016 159.95180470720442"/>
+			<teambattle>
+				<team1>1196,637,-190,-90</team1>
+				<team1>1549,3,-190,-90</team1>
+				<team1>1196,-613,-190,-90</team1>
+				<team2>-1201,637,-190,90</team2>
+				<team2>-1545,3,-190,90</team2>
+				<team2>-1201,-613,-190,90</team2>
+			</teambattle>
+			<bgcolor color="0 0 0"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0x557799,1,200,0,0,0</omni>
+			</lights>
+		</map>
+		
+		<map key="bianjingshaosuo" id="21" size="9000" height="5000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+			<models weight="55"
+				values="chuanqiang_00 chuanqiang_01 ground_00 ground_01 ground_02 ground_03 ladder_00_t wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06_t" />
+			<materials weight="3342"
+				values="chuanqiang_00 chuanqiang_00_l chuanqiang_01 chuanqiang_01_l ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l ladder_00_t ladder_00_t_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06_t wall_06_t_l" />
+			<radarmap points="-0.06415462221031347 0.0005677543275897892 243.33442817391605 -0.00021367256516103492 0.06375947105364976 92.72446232510606"/>
+			<teambattle>
+				<team1>-1600,810,98,90</team1>
+				<team1>-1600,-550,98,90</team1>
+				<team1>-3585,-800,285,90</team1>
+				<team1>-2200,80,98,90</team1>
+				<team1>-2200,108,98,90</team1>
+				<team1>-3585,-600,285,90</team1>
+				<team1>-3650,-700,285,90</team1>
+				<team1>-2280,-10,98,90</team1>
+				<team2>1600,-810,98,-90</team2>
+				<team2>1600,550,98,-90</team2>
+				<team2>3585,600,285,-90</team2>
+				<team2>2200,108,98,-90</team2>
+				<team2>2200,-80,98,-90</team2>
+				<team2>3585,800,285,-90</team2>
+				<team2>3650,700,285,-90</team2>
+				<team2>2280,10,98,-90</team2>
+			</teambattle>
+			<bgcolor color="0 0 0"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,1891.9,-1182.97,3744.74</omni>
+			</lights>
+		</map>
+		
+		<map key="saichechang" id="22" size="12000" height="3000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+			<models weight="133"
+				values="collider ground_00 ground_01 ground_02 ground_03 ground_04 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05_t wall_06 wall_07 wall_08 other_00 other_01 other_02 other_03 other_04 other_05" />
+			<materials weight="3229"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l ground_04 ground_04_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05_t wall_05_t_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l other_05 other_05_l" />
+			<radarmap points="-0.03882975030241415 0.00002384008106687974 183.6543484259889 -0.00020655930808737217 0.038510270579850105 134.8614146318024"/>
+			<teambattle>
+				<team1>790,3152,-115,0</team1>
+				<team1>790,3346,-115,0</team1>
+				<team1>522,3346,-115,0</team1>
+				<team1>261,3346,-115,0</team1>
+				<team1>-7,3346,-115,0</team1>
+				<team1>-268,3346,-115,0</team1>
+				<team1>-537,3346,-115,0</team1>
+				<team1>-268,3168,-115,0</team1>
+				<team2>790,-3340,-115,180</team2>
+				<team2>522,-3340,-115,180</team2>
+				<team2>261,-3340,-115,180</team2>
+				<team2>-7,-3340,-115,180</team2>
+				<team2>-268,-3340,-115,180</team2>
+				<team2>-537,-3340,-115,180</team2>
+				<team2>-268,-3141,-115,180</team2>
+				<team2>790,-3141,-115,180</team2>
+			</teambattle>
+			<bgcolor color="0 0 0"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,973.35,-257.62,3187.82</omni>
+			</lights>
+		</map>
+		
+		<map key="juweihui" id="23" size="12000" height="3000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+			<models weight="133"
+				values="collider ground_00 ground_01 ground_02 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08 wall_09 other_00 other_01 other_02 other_03 other_04" />
+			<materials weight="3229"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l wall_09 wall_09_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l" />
+			<radarmap points="-0.0565561618633809 0 218.92612424711666 0.001041795085260532 0.057422407695412424 220.26192783329986"/>
+			<teambattle>
+				<team1>138,2682,29,0</team1>
+				<team1>293,2682,29,0</team1>
+				<team1>448,2682,29,0</team1>
+				<team1>-82,2530,29,0</team1>
+				<team1>72,2530,29,0</team1>
+				<team1>212,2530,29,0</team1>
+				<team1>365,2530,29,0</team1>
+				<team1>513,2530,29,0</team1>
+				<team2>-138,-2682,29,180</team2>
+				<team2>-293,-2682,29,180</team2>
+				<team2>-448,-2682,29,180</team2>
+				<team2>82,-2530,29,180</team2>
+				<team2>-72,-2530,29,180</team2>
+				<team2>-212,-2530,29,180</team2>
+				<team2>-365,-2530,29,180</team2>
+				<team2>-513,-2530,29,180</team2>
+			</teambattle>
+			<bgcolor color="0 0 0"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,-964.6595,2274.2185,3738.996</omni>
+			</lights>
+		</map>
+		<map key="zuqiuchang" id="24" size="8000" height="3000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_black"></skybox>
+			<models weight="133"
+				values="collider ground_00 ground_01 other_00 other_01_t wall_00_t wall_01" />
+			<materials weight="3229"
+				values="ground_00 ground_00_l ground_01 ground_01_l other_00 other_00_l other_01_t other_01_t_l wall_00_t wall_00_t_l wall_01 wall_01_l" />
+			<radarmap points="-0.054259184491895526 0 156.1314874532836 0 0.060852399887368104 201.13009388631346"/>
+			<teambattle>
+				<team1>-2818,-1905,102,90</team1>
+				<team1>-2570,-1192,102,90</team1>
+				<team1>-2501,-541,102,90</team1>
+				<team1>-1862,973,102,90</team1>
+				<team1>-1859,1699,102,90</team1>
+				<team1>-1829,2115,102,90</team1>
+				<team1>-2190,-2180,102,90</team1>
+				<team1>-2040,-1594,102,90</team1>
+				<team2>2631,-1676,102,-90</team2>
+				<team2>2596,-2208,102,-90</team2>
+				<team2>2428,-597,102,-90</team2>
+				<team2>2451,405,102,-90</team2>
+				<team2>2578,1335,102,-90</team2>
+				<team2>2651,1975,102,-90</team2>
+				<team2>2162,1198,102,-90</team2>
+				<team2>1529,507,102,-90</team2>
+			</teambattle>
+			<bgcolor color="0 0 0"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,160,-184,251</omni>
+			</lights>
+		</map>
+		<!--神秘基地-->
+		<map key="xunlianjidi" id="25" size="11000" height="2000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_black"></skybox>
+			<models weight="100"
+				values="collider chuanqiang_00_t chuanqiang_01_t dianzhui_00 ground_00 ground_01 ground_02 ground_03 other_00 other_01 other_02 other_03 other_04 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08" />
+			<materials weight="2190"
+				values="chuanqiang_00_t chuanqiang_00_t_l chuanqiang_01_t chuanqiang_01_t_l dianzhui_00 dianzhui_00_l ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l skybox_back skybox_front skybox_left skybox_right skybox_top" />
+			<radarmap points="-0.04170312854433818 -0.00004893442979293711 211.16752340139436 0.00017695927039259392 0.0419301549085346 173.33948631566236"/>
+			<bombpoints points="160 -3135 2 -3438 2587 2" radius="500" removeRadius="100" iconHeight="300"/>
+			<teambattle>
+				<team1>-3800,-2350,-175,-90</team1>
+				<team1>-3650,-2350,-175,-90</team1>
+				<team1>-3500,-2350,-175,-90</team1>
+				<team1>-3350,-2350,-175,-90</team1>
+				<team1>-3800,-2350,-175,-90</team1>
+				<team1>-3650,-2350,-175,-90</team1>
+				<team1>-3500,-2350,-175,-90</team1>
+				<team1>-3350,-2350,-175,-90</team1>
+				<team2>4100,1825,35,-90</team2>
+				<team2>4100,1675,35,-90</team2>
+				<team2>4100,1525,35,-90</team2>
+				<team2>4100,1375,35,-90</team2>
+				<team2>4300,1825,35,-90</team2>
+				<team2>4300,1675,35,-90</team2>
+				<team2>4300,1525,35,-90</team2>
+				<team2>4300,1375,35,-90</team2>
+			</teambattle>
+			<personpoint>
+				<team>-2710,-3222,-221,-316</team>
+				<team>-830,-3827,1,-161</team>
+				<team>413,-3528,1,-121</team>
+				<team>1646,-2694,1,-120</team>
+				<team>2420,-1418,1,-60</team>
+				<team>2983,-1982,-260,188</team>
+				<team>-1944,-1925,-221,230</team>
+				<team>-2527,-477,-127,164</team>
+				<team>-1655,-742,1,154</team>
+				<team>1198,-1409,1,-6</team>
+				<team>-421,2569,1,299</team>
+				<team>-2291,1460,1,209</team>
+				<team>-3823,3808,1,390</team>
+				<team>2348,-182,1,560</team>
+				<team>2474,3447,-257,358</team>
+			<!-- 	<team>-2478,5416,-139,345</team>
+				<team>-5139,3775,76,105</team>
+				<team>-4425,1789,17,110</team>
+				<team>-2441,2072,17,90</team>
+				<team>-913,-1663,-479,290</team>
+				<team>1734,-816,-254,160</team> -->
+			</personpoint>
+			<bgcolor color="0 0 0"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0x557799,1,200,-964.6595,2274.2185,3738.993</omni>
+			</lights>
+		</map>
+		
+		<map key="zousicangku" id="26" size="11000" height="2000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_black"></skybox>
+			<models weight="100"
+				values="collider ground_00 ground_01 ground_02 ground_03 ground_04 ground_05 other_00 other_01_t other_02 other_03 other_04 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06" />
+			<materials weight="2190"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l ground_04 ground_04_l ground_05 ground_05_l other_00 other_00_l other_01_t other_01_t_l other_02 other_02_l other_03 other_03_l other_04 other_04_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l skybox_back skybox_front skybox_left skybox_right skybox_top" />
+			<radarmap points="-0.04464365835832717 -0.000028587362545499182 239.4230351889992 -0.00005784971245859706 0.04477997800899594 237.68813379396738"/>
+			<bombpoints points="-3680 3328 28 -2678 -3915 -434" radius="500" removeRadius="100" iconHeight="300"/>
+			<teambattle>				
+				<team1>-2609,2838,-104,-90</team1>
+				<team1>-3498,1702,-104,-90</team1>
+				<team1>-3659,1387,-104,-90</team1>
+				<team1>-3483,3244,27,-90</team1>
+				<team1>-3658,3482,27,-90</team1>
+				<team1>-3966,3599,27,-90</team1>
+				<team1>-4154,3342,27,-90</team1>
+				<team1>-3986,3095,27,-90</team1>	
+				
+				<team2>3791,-1435,28,-90</team2>
+				<team2>3520,-1435,28,-90</team2>
+				<team2>3216,-1435,28,-90</team2>
+				<team2>3216,-1816,28,-90</team2>
+				<team2>3520,-1816,28,-90</team2>
+				<team2>3791,-1816,28,-90</team2>
+				<team2>3216,-2178,28,-90</team2>
+				<team2>3216,-2559,28,-90</team2>		
+			</teambattle>
+			<personpoint>
+				<team>-4370,3825,28,0</team>
+				<team>-5106,1049,17,30</team>
+				<team>-4046,597,-103,-10</team>
+				<team>-4615,-1267,-112,180</team>
+				<team>-4211,-2028,-112,180</team>
+				<team>-4528,-3468,-105,93</team>
+				<team>-4009,-4344,-105,-236</team>
+				<team>-2948,-2965,-437,128</team>
+				<team>-1824,-4938,-439,117</team>
+				<team>124,-4937,-306,-225</team>
+				<team>-2364,-819,-405,180</team>
+				<team>-609,-250,78,408</team>
+				<team>1144,-3262,-29,498</team>
+				<team>-2236,4116,-108,-328</team>
+				<team>94,4754,-106,-444</team>
+				<team>1083,4298,-106,-373</team>
+				<team>3157,2865,-105,-460</team>
+				<team>4475,1234,-105,-354</team>
+				<team>4526,-956,-106,-540</team>
+				<team>2944,-3057,650,-557</team>
+			</personpoint>
+			<bgcolor color="0 0 0"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0x557799,1,200,898.786,-2555.92,6322.13</omni>
+			</lights>
+		</map>
+		
+		<map key="xibumeiying" id="27" size="10000" height="2500" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_yintian"></skybox>
+			<models weight="100"
+				values="collider ground_00 ground_01 other_00 other_01 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06" />
+			<materials weight="2190"
+				values="ground_00 ground_00_l ground_01 ground_01_l other_00 other_00_l other_01 other_01_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l" />
+			<radarmap points="-0.0734190198433535 0.000623750117426318 273.1409252215953 0.00004814305255377163 0.07303664662944627 277.5375872869866"/>
+			<bombpoints points="-3680 3328 28 -2678 -3915 -434" radius="500" removeRadius="100" iconHeight="300"/>
+			<teambattle>
+				<team1>653,-336,44,-90</team1>	
+				<team1>1187,1786,44,-358</team1>	
+				<team1>666,307,44,-453</team1>	
+				<team1>756,-1208,44,-324</team1>	
+				<team1>-170,-1936,44,-459</team1>	
+				<team1>-1172,-809,44,-450</team1>	
+				<team1>-2866,-2351,44,-587</team1>	
+				<team1>-2978,-707,55,-628</team1>	
+				<team1>2759,418,44,-438</team1>	
+				<team1>1643,-613,55,-426</team1>	
+				
+				<team2>-288,2039,55,-470</team2>	
+				<team2>-316,1456,44,-552</team2>	
+				<team2>-78,-259,158,-633</team2>	
+				<team2>1365,-150,44,-214</team2>	
+				<team2>-1254,1540,44,-50</team2>	
+				<team2>-1902,-708,44,14</team2>	
+				<team2>2514,-332,55,-126</team2>	
+				<team2>945,-1392,44,-94</team2>	
+				<team2>-1379,-2332,424,-577</team2>	
+				<team2>-1860,1515,176,-720</team2>	
+			</teambattle>
+			<bgcolor color="0 0 0"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0x557799,1,200,-1965,-1587.383,4027.136</omni>
+			</lights>
+		</map>
+		
+		<map key="pyramid2" id="28" size="12000" height="3000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+			<models weight="96"
+				values="ground_00 ground_01 ground_02 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06" />
+			<materials weight="4777"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l" />
+			<radarmap points="-0.032081081565584015 -0.0003332668177721444 52.02254307987505 -0.000009487027251954548 0.029893248202426847 141.70795086214363"/>
+			<teambattle>
+				<team1>-1394,-4901,435,-192</team1>
+				<team1>-1374,-4435,435,-247</team1>
+				<team1>-937,-4457,435,-220</team1>
+				<team1>-904,-4934,432,-195</team1>
+				<team1>131,-4462,435,-116</team1>
+				<team1>146,-4884,435,-146</team1>
+				<team1>341,-4811,435,-215</team1>
+				<team1>241,-5206,435,-210</team1>
+				<team2>1198,4626,435,-418</team2>
+				<team2>1174,5062,435,-399</team2>
+				<team2>-246,4468,435,-304</team2>
+				<team2>-371,5035,435,-336</team2>
+				<team2>-1428,5262,435,-332</team2>
+				<team2>-1241,4903,435,-332</team2>
+				<team2>-1727,4869,435,-312</team2>
+				<team2>-604,4672,435,-417</team2>
+			</teambattle>
+			<bgcolor color="0.749 0.765 0.812"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,1785.146,-1683.3985,3738.993</omni>
+				<!--point>200,1000,0xaaadac,156,1752,200,1</point -->
+			</lights>
+		</map>
+		
+		
+		<map key="shulimicheng" id="29" size="10000" height="3000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_ye"></skybox>
+			<models weight="96"
+				values="collider ground_00 other_00 other_01_t other_02_t other_03 other_04 other_05 wall_00 wall_01 wall_02 wall_03" />
+			<materials weight="4777"
+				values="ground_00 ground_00_l other_00 other_00_l other_01_t other_01_t_l other_02_t other_02_t_l other_03 other_03_l other_04 other_04_l other_05 other_05_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l" />
+			<radarmap points="-0.0625932201357095 0.00003839574948117243 202.78207118932167 -0.00020014752536476183 0.06297428818672443 205.32869737283306"/>
+			<sign>
+				<item key="a">1205,-1182,700</item>		
+				<item key="d">-1187,-1135,700</item>
+				<item key="c">-1092,1005,700</item>		
+				<item key="b">1287,1079,700</item>
+			</sign>
+			<teambattle>
+				<team1>-187,-686,432,-1211</team1>
+				<team1>360,-588,432,-1310</team1>
+				<team1>-187,-686,432,-1211</team1>
+				<team1>360,-588,432,-1310</team1>
+				<team2>383,607,432,-1397</team2>
+				<team2>-276,474,432,-1127</team2>
+				<team2>383,607,432,-1397</team2>
+				<team2>-276,474,432,-1127</team2>
+			</teambattle>
+			<bgcolor color="0.749 0.765 0.812"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,2273,964.5,3739</omni>
+				<!--point>200,1000,0xaaadac,156,1752,200,1</point -->
+			</lights>
+			<supplys>
+					<supply type="hp">2007,1941,35</supply>
+					<supply type="weapon">1930,1941,35</supply>
+					<supply type="level">1860,1941,35</supply>
+			</supplys>
+		</map>
+		
+		<map key="chonghai" id="56" size="10000" height="3000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_ye"></skybox>
+			<models weight="96"
+				values="collider ground_00 other_00 other_01_t other_02_t other_03 other_04 other_05 wall_00 wall_01 wall_02 wall_03" />
+			<materials weight="4777"
+				values="ground_00 ground_00_l other_00 other_00_l other_01_t other_01_t_l other_02_t other_02_t_l other_03 other_03_l other_04 other_04_l other_05 other_05_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l" />
+			<radarmap points="-0.0625932201357095 0.00003839574948117243 202.78207118932167 -0.00020014752536476183 0.06297428818672443 205.32869737283306"/>
+			<teambattle>
+				<team1>-3000,3000,36,45</team1>
+				<team1>-2700,3000,36,45</team1>
+				<team1>-2400,3000,36,45</team1>
+				<team1>-3000,2700,36,45</team1>
+				<team1>-3000,2400,36,45</team1>
+				<team1>-2700,2400,36,45</team1>
+				<team1>-2700,2700,36,45</team1>
+				<team1>-2400,2700,36,45</team1>
+				<team2>3000,-3000,36,225</team2>
+				<team2>2700,-3000,36,225</team2>
+				<team2>2400,-3000,36,225</team2>
+				<team2>3000,-2700,36,225</team2>
+				<team2>3000,-2400,36,225</team2>
+				<team2>2700,-2400,36,225</team2>
+				<team2>2700,-2700,36,225</team2>
+				<team2>2400,-2700,36,225</team2>
+			</teambattle>
+			<bgcolor color="0.749 0.765 0.812"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,2273,964.5,3739</omni>
+				<!--point>200,1000,0xaaadac,156,1752,200,1</point -->
+			</lights>
+		</map>
+		
+		<map key="baizhuanhuilang" id="30" size="15000" height="3000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+			<models weight="96"
+				values="collider ground_00 ground_01 other_00 other_01 other_02 other_03_t wall_00 wall_01 wall_02 wall_03 wall_04" />
+			<materials weight="4777"
+				values="ground_00 ground_00_l ground_01 ground_01_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03_t other_03_t_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l" />
+			<radarmap points="-0.029677993403963987 0.0006539875695607891 49.927678020850095 -0.00000837256954296524 0.03702717883060372 165.98786080549033"/>
+			<teambattle>
+				<team1>-5134,685,2,-1985</team1>
+				<team1>-5121,-874,2,-2156</team1>
+				<team1>0,2889,2,-1211</team1>
+				<team1>0,2889,2,-1310</team1>
+				<team2>-4621,-563,2,-2070</team2>
+				<team2>-4674,667,2,-2085</team2>
+				<team2>0,2889,2,-1397</team2>
+				<team2>0,2889,2,-1127</team2>
+			</teambattle>
+			<bgcolor color="0.749 0.765 0.812"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,2274.218.6595,3738.962</omni>
+				<!--point>200,1000,0xaaadac,156,1752,200,1</point -->
+			</lights>
+			<supplys>
+					<supply type="hp">2007,1941,35</supply>
+					<supply type="weapon">1930,1941,35</supply>
+					<supply type="level">1860,1941,35</supply>
+			</supplys>
+		</map>
+		
+		<map key="youlechang" id="31" size="12000" height="6000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_ye"></skybox>
+			<models weight="96"
+				values="collider ground_01 ground_02 ground_03 ground_04 other_01 other_02 other_03 other_04 other_05 wall_00 wall_01 wall_02 wall_03 wall_04" />
+			<materials weight="4777"
+				values="ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l ground_04 ground_04_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l other_05 other_05_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l" />
+			<radarmap points="-0.04712172595826801 -0.00008539200365839843 215.738269835448 0.00004678352076706097 0.04714414144268901 222.59334197943252"/>
+			<teambattle>
+				<team1>1531,-1284,19,-1890</team1>
+				<team1>679,-1300,19,-1888</team1>
+				<team1>-231,-1333,19,-1888</team1>
+				<team1>1611,479,19,-2160</team1>
+				<team1>-570,944,195,-2515</team1>
+				<team1>-2163,806,195,-2433</team1>
+				<team1>-1740,-1325,19,-2347</team1>
+				<team1>-1487,-404,109,-2382</team1>
+				<team2>884,1723,19,-2486</team2>
+				<team2>140,1766,19,-2527</team2>
+				<team2>96,2528,19,-2512</team2>
+				<team2>2134,1931,19,-1800</team2>
+				<team2>3015,800,19,-1809</team2>
+				<team2>3084,-1541,120,-1888</team2>
+				<team2>1410,-2539,120,-1965</team2>
+				<team2>2684,-3611,121,-1574</team2>
+			</teambattle>
+			<bgcolor color="0.749 0.765 0.812"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,102.783,680.4485,3940.7475</omni>
+				<!--point>200,1000,0xaaadac,156,1752,200,1</point -->
+			</lights>
+		</map>
+	
+	<map key="polartown_pve" id="32" size="13000" height="5000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xue"></skybox>
+			<models weight="140"
+				values="collider ground_00 ground_01 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 chuanqiang_00" />
+			<materials weight="5038"
+				values="ground_00 ground_00_l ground_01 ground_01_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l chuanqiang_00 chuanqiang_00_l" />
+			<radarmap points="-0.02440987411129853 -0.00010377908050436038 137.3254740987983 -0.0003556961297042712 0.025148654779063133 131.30461540031177"/>
+			<bombpoints points="-3723 3986 20 -4602 -3147 -220" radius="500" removeRadius="100" iconHeight="300"/>
+			<!-- 测试： 指引区域 point:x y z radius 这里是用于小地图的指针的指向，要为玩家指出一条路径来-->
+			<guidePoints>
+				<item>-2927,4274,-254,500</item>		
+				<item>1549,5243,-87,500</item>				
+			</guidePoints>			
+			<teambattle>				
+				<team1>-3860,1870,-493,90</team1>
+				<team1>-3766,1428,-493,90</team1>
+				<team1>-3436,1408,-493,90</team1>
+				<team1>-3351,1906,-493,90</team1>
+				<team1>-2936,1963,-493,90</team1>
+				<team1>-2969,1444,-493,90</team1>
+				<team1>-3288,707,-493,90</team1>
+				<team1>-2978,741,-493,90</team1>
+				<team2>4894,-1972,83,-90</team2>
+				<team2>4513,-1972,83,-90</team2>
+				<team2>4894,-1622,83,-90</team2>
+				<team2>4513,-1622,83,-90</team2>
+				<team2>4894,-1257,83,-90</team2>
+				<team2>4513,-1257,83,-90</team2>
+				<team2>4894,-906,83,-90</team2>
+				<team2>4513,-906,83,-90</team2>
+			</teambattle>
+			<personpoint>
+				<team>-3603,2663,-205,140</team>
+				<team>-4438,-1054,-425,110</team>
+				<team>-2860,-2420,-225,270</team>
+				<team>-1749,-3583,-225,270</team>
+				<team>-4740,-2915,-222,360</team>
+				<team>-570,-4785,-164,180</team>
+				<team>1060,-3044,-166,40</team>
+				<team>4040,-4881,83,180</team>
+				<team>3366,-1889,83,90</team>
+				<team>3365,-301,-254,90</team>
+				<team>3468,2453,-254,270</team>
+				<team>1385,2700,-254,60</team>
+				<team>-427,2473,-254,90</team>
+				<team>1900,3724,-254,270</team>
+				<team>272,5426,-87,40</team>
+				<team>-2478,5416,-139,345</team>
+				<team>-5139,3775,76,105</team>
+				<team>-4425,1789,17,110</team>
+				<team>-2441,2072,17,90</team>
+				<team>-913,-1663,-479,290</team>
+				<team>1734,-816,-254,160</team>
+			</personpoint>
+			<bgcolor color="0.78 0.886 0.96"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xaaccee,1,200,1260.91,-2035.02,3644.95</omni>
+				<!-->point>200,1200,0x6ea3eb,-2450,1155,0,0.6</point> <point>200,1200,0xf5b2b2,-333,-2298,200,0.5</point> 
+					<point>200,1000,0xb2f5cb,2076,2185,200,0.5</point> <point>500,3000,0xf6f7d0,146,-4106,100,0.2</point> 
+					<point>200,1000,0x66a7e0,5688,-1082,402,0.3</point -->
+			</lights>
+			<interactionPoints>
+				<item id="1" area="281,3962,-254,0,0,0,500" operable="false" defState="0">
+					<state id="0">
+						<action type="addObj" id="1" collider="door_00" model="door_1"/>
+					</state>
+					<state id="1">
+						<action type="delObj" id="1"/>
+					</state>
+				</item>
+				<item id="2" area="1613,2458,-254,0,0,0,500" operable="false" defState="0">
+					<state id="0">
+						<action type="addObj" id="1" collider="door_01" model="door_luzhang"/>
+					</state>
+					<state id="1">
+						<action type="delObj" id="1"/>
+					</state>
+				</item>
+				<item id="3" area="-1350,-4382,-167,0,0,0,500" operable="false" defState="0">
+					<state id="0">
+						<action type="addObj" id="1" collider="door_02" model="door_shitou"/>
+					</state>
+					<state id="1">
+						<action type="delObj" id="1"/>
+					</state>
+				</item>
+				<item id="4" area="-3107,-2610,-229,0,0,0,500" operable="false" defState="0">
+					<state id="0">
+						<action type="addObj" id="1" collider="door_03" model="door_3"/>
+					</state>
+					<state id="1">
+						<action type="delObj" id="1"/>
+					</state>
+				</item>
+			</interactionPoints>
+		</map>
+		<map key="huangjiadoushouchang" id="33" size="13000" height="5000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+			<models weight="140"
+				values="collider ground_00 wall_00 other_00 other_01_t" />
+			<materials weight="5038"
+				values="ground_00 ground_00_l wall_00 wall_00_l other_00 other_00_l other_01_t other_01_t_l" />
+			<radarmap points="-0.029462198323894902 0.0000918228641831985 156.56171592783895 -0.00008144948078811495 0.030438880505696955 166.65486749515958"/>
+			<teambattle>				
+				<team1>-507,408,23,-1253</team1>
+				<team1>-581,-668,23,-1257</team1>
+				<team1>-507,408,23,-1253</team1>
+				<team1>-581,-668,23,-1257</team1>
+				<team1>-507,408,23,-1253</team1>
+				<team1>-581,-668,23,-1257</team1>
+				<team1>-507,408,23,-1253</team1>
+				<team1>-581,-668,23,-1257</team1>
+				<team2>460,437,23,-1258</team2>
+				<team2>477,-675,23,-1257</team2>
+				<team2>460,437,23,-1258</team2>
+				<team2>477,-675,23,-1257</team2>
+				<team2>460,437,23,-1258</team2>
+				<team2>477,-675,23,-1257</team2>
+				<team2>460,437,23,-1258</team2>
+				<team2>477,-675,23,-1257</team2>
+			</teambattle>
+			<bgcolor color="0.78 0.886 0.96"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xaaccee,1,200,1260.91,-2035.02,3644.95</omni>
+				<!-->point>200,1200,0x6ea3eb,-2450,1155,0,0.6</point> <point>200,1200,0xf5b2b2,-333,-2298,200,0.5</point> 
+					<point>200,1000,0xb2f5cb,2076,2185,200,0.5</point> <point>500,3000,0xf6f7d0,146,-4106,100,0.2</point> 
+					<point>200,1000,0x66a7e0,5688,-1082,402,0.3</point -->
+			</lights>
+		</map>
+		
+		<map key="xiuluodoujichang" id="57" size="13000" height="5000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+			<models weight="140"
+				values="collider ground_00 wall_00 other_00 other_01_t" />
+			<materials weight="5038"
+				values="ground_00 ground_00_l wall_00 wall_00_l other_00 other_00_l other_01_t other_01_t_l" />
+			<radarmap points="-0.029462198323894902 0.0000918228641831985 156.56171592783895 -0.00008144948078811495 0.030438880505696955 166.65486749515958"/>
+			<teambattle>				
+				<team1>-4500,500,-60,90</team1>
+				<team1>-4500,0,-60,90</team1>
+				<team1>-4500,-500,-60,90</team1>
+				<team1>-4500,-1000,-60,90</team1>
+				<team1>-4900,500,-60,90</team1>
+				<team1>-4900,0,-60,90</team1>
+				<team1>-4900,-500,-60,90</team1>
+				<team1>-4900,-1000,-60,90</team1>
+				<team2>4300,0,-60,270</team2>
+				<team2>4300,200,-60,270</team2>
+				<team2>4300,400,-60,270</team2>
+				<team2>4300,600,-60,270</team2>
+				<team2>4600,0,-60,270</team2>
+				<team2>4600,200,-60,270</team2>
+				<team2>4600,400,-60,270</team2>
+				<team2>4600,600,-60,270</team2>
+			</teambattle>
+			<bgcolor color="0.78 0.886 0.96"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xaaccee,1,200,1260.91,-2035.02,3644.95</omni>
+				<!-->point>200,1200,0x6ea3eb,-2450,1155,0,0.6</point> <point>200,1200,0xf5b2b2,-333,-2298,200,0.5</point> 
+					<point>200,1000,0xb2f5cb,2076,2185,200,0.5</point> <point>500,3000,0xf6f7d0,146,-4106,100,0.2</point> 
+					<point>200,1000,0x66a7e0,5688,-1082,402,0.3</point -->
+			</lights>
+		</map>
+		
+		<map key="zuqiuchang_pve" id="34" size="8000" height="3000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_black"></skybox>
+			<models weight="133"
+				values="collider ground_00 other_00 other_01 wall_00_t wall_01 wall_02 wall_03" />
+			<materials weight="3229"
+				values="ground_00 ground_00_l other_00 other_00_l other_01 other_01_l wall_00_t wall_00_t_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l" />
+			<radarmap points="-0.054259184491895526 0 156.1314874532836 0 0.060852399887368104 201.13009388631346"/>
+				
+			<!-- 这里用来配置一个标记的位置，在游戏场景中会悬浮一个指示标 -->
+			<sign>
+				<item key="a">-2700,-850,1000</item>		
+				<item key="b">-2650,800,1000</item>
+				<item key="c">2650,800,1000</item>		
+				<item key="d">2700,-800,1000</item>
+			</sign>
+			<teambattle>
+				<team1>-134,-1686,105,146</team1>
+				<team1>191,-1582,105,-226</team1>
+				<team1>-198,-557,105,-128</team1>
+				<team1>349,-531,105,-233</team1>
+				<team1>-134,-1686,105,146</team1>
+				<team1>191,-1582,105,-226</team1>
+				<team1>-198,-557,105,-128</team1>
+				<team1>349,-531,105,-233</team1>
+				
+				<team2>-58,1092,105,-51</team2>
+				<team2>335,793,105,-323</team2>
+				<team2>20,1880,105,-318</team2>
+				<team2>-261,1633,105,-400</team2>
+				<team2>-58,1092,105,-51</team2>
+				<team2>335,793,105,-323</team2>
+				<team2>20,1880,105,-318</team2>
+				<team2>-261,1633,105,-400</team2>
+			</teambattle>
+			<bgcolor color="0 0 0"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,160,-184,251</omni>
+			</lights>
+		</map>
+		<map key="liangangchang_pve" id="35" size="8000" height="5000" splitRenderMesh="1" splitCollisionMesh="0">
+			<models weight="84"
+				values="collider ground_00 ground_01 ground_02 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 other_00 other_01 other_02 other_03 other_04 other_05 other_06_t" />
+			<materials weight="2897"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l other_05 other_05_l other_06_t other_06_t_l" />
+			<radarmap points="-4.8451e-002 2.0852e-004 1.2696e+002 -1.6214e-004 4.8168e-002 1.1956e+002"/>
+			<sign>
+				<item key="a">-2668,2174,500</item>		
+				<item key="b">1918,-1881,500</item>
+				<item key="c">-2555,-2393,500</item>		
+				<item key="d">2205,-2439,500</item>
+				<item key="e">-2005,1631,500</item>		
+				<item key="f">2434,2180,500</item>
+			</sign>
+			<teambattle>
+				<team1>326,1535,1,-456</team1>
+				<team1>21,2138,1,-74</team1>
+				<team1>-495,1997,1,54</team1>
+				<team1>-498,1419,1,52</team1>
+				<team1>326,1535,1,-456</team1>
+				<team1>21,2138,1,-74</team1>
+				<team1>-495,1997,1,54</team1>
+				<team1>-498,1419,1,52</team1>
+				<team2>-1374,-124,0,-451</team2>
+				<team2>110,1862,0,63</team2>
+				<team2>360,-1774,0,180</team2>
+				<team2>312,-2163,0,180</team2>
+				<team2>-7,-2011,0,180</team2>
+				<team2>53,-1658,0,180</team2>
+				<team2>-523,-2098,0,180</team2>
+				<team2>-523,-1774,0,180</team2>
+			</teambattle>
+			<bgcolor color="0 0 0"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0x997755,1,200,0,0,0</omni>
+			</lights>
+			<interactionPoints>
+				<item id="1" area="1851.117,937.696,95.125,0,0,0" operable="false" defState="0">
+					<state id="0">
+						<action type="addObj" id="1" collider="door_01" model="door_2"/>
+					</state>
+					<state id="1">
+						<action type="delObj" id="1"/>
+					</state>
+				</item>
+				<item id="2" area="1244.227,-1621.555,99.169,0,0,-90" operable="false" defState="0">
+					<state id="0">
+						<action type="addObj" id="1" collider="door_02" model="door_2"/>
+					</state>
+					<state id="1">
+						<action type="delObj" id="1"/>
+					</state>
+				</item>
+				<item id="3" area="-1293.496,-2476.965,97.202,0,0,-90" operable="false" defState="0">
+					<state id="0">
+						<action type="addObj" id="1" collider="door_03" model="door_2"/>
+					</state>
+					<state id="1">
+						<action type="delObj" id="1"/>
+					</state>
+				</item>
+				<item id="4" area="1244.227,-2433.637,99.169,0,0,-90" operable="false" defState="0">
+					<state id="0">
+						<action type="addObj" id="1" collider="door_04" model="door_2"/>
+					</state>
+					<state id="1">
+						<action type="delObj" id="1"/>
+					</state>
+				</item>
+				<item id="5" area="-1292.219,-1612.951,97.061,0,0,-90" operable="false" defState="0">
+					<state id="0">
+						<action type="addObj" id="1" collider="door_05" model="door_2"/>
+					</state>
+					<state id="1">
+						<action type="delObj" id="1"/>
+					</state>
+				</item>
+				<item id="6" area=" -1292.219,1359.874,97.577,0,0,-90" operable="false" defState="0">
+					<state id="0">
+						<action type="addObj" id="1" collider="door_06" model="door_2"/>
+					</state>
+					<state id="1">
+						<action type="delObj" id="1"/>
+					</state>
+				</item>
+				<item id="7" area="1249.005,2213.544,96.647,0,0,-90" operable="false" defState="0">
+					<state id="0">
+						<action type="addObj" id="1" collider="door_07" model="door_2"/>
+					</state>
+					<state id="1">
+						<action type="delObj" id="1"/>
+					</state>
+				</item>			
+			</interactionPoints>
+		</map>
+		<map key="juweihui_pve" id="36" size="12000" height="3000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+			<models weight="133"
+				values="collider ground_00 ground_01 ground_02 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08 wall_09 other_00 other_01 other_02 other_03 other_04" />
+			<materials weight="3229"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l wall_09 wall_09_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l" />
+			<radarmap points="-0.0565561618633809 0 218.92612424711666 0.001041795085260532 0.057422407695412424 220.26192783329986"/>
+			<teambattle>
+				<team1>408,2772,2,-61</team1>
+				<team1>145,2545,2,-70</team1>
+				<team1>-245,2875,2,-17</team1>
+				<team1>-491,2706,2,-18</team1>
+				<team1>408,2772,2,-61</team1>
+				<team1>145,2545,2,-70</team1>
+				<team1>-245,2875,2,-17</team1>
+				<team1>-491,2706,2,-18</team1>
+				<team2>19,-206,2,121</team2>
+				<team2>-196,147,2,294</team2>
+				<team2>-448,-2682,29,180</team2>
+				<team2>82,-2530,29,180</team2>
+				<team2>-72,-2530,29,180</team2>
+				<team2>-212,-2530,29,180</team2>
+				<team2>-365,-2530,29,180</team2>
+				<team2>-513,-2530,29,180</team2>
+			</teambattle>
+			<bgcolor color="0 0 0"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,-964.6595,2274.2185,3738.996</omni>
+			</lights>
+		</map>
+		<map key="hanbingyaosai_pve" id="37" size="8500" height="2500" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xue"></skybox>
+			<models weight="62"
+				values="collider chuanqiang_00 ground_00 ground_01 ground_02 ground_03 ground_04 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08 other_01" />
+			<materials weight="4025"
+				values="chuanqiang_00 chuanqiang_00_l ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l ground_04 ground_04_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l other_01 other_01_l" />
+			<radarmap points="-0.046686033065968614 -0.0000201841906899994 112.68301183376357 -0.0014677602328516466 0.04539495557274844 179.45275868847676"/>
+			<teambattle>
+				<team1>-603,-2493,240,-183</team1>
+				<team1>-908,-2454,240,-201</team1>
+				<team1>69,-2415,240,-175</team1>
+				<team1>-226,2508,240,-177</team1>
+				<team1>-603,-2493,240,-183</team1>
+				<team1>-908,-2454,240,-201</team1>
+				<team1>69,-2415,240,-175</team1>
+				<team1>-226,2508,240,-177</team1>
+				<team2>-105,936,-25,1215</team2>
+				<team2>-105,936,-25,1215</team2>
+				<team2>-105,936,-25,1215</team2>
+				<team2>-105,936,-25,1215</team2>
+				<team2>-105,936,-25,1215</team2>
+				<team2>-105,936,-25,1215</team2>
+				<team2>-105,936,-25,1215</team2>
+				<team2>-105,936,-25,1215</team2>
+			</teambattle>
+			<bgcolor color="0.78 0.886 0.96"/>
+			<lights>
+				<ambient>0xccd4df,0.6</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xaaccee,1,200,-2661.83,-3468.27,3143.38</omni>
+			</lights>
+		</map>
+		<!-- 赛车场 PVE-->
+		<map key="saichechang_pve" id="38" size="12000" height="3000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+			<models weight="133"
+				values="collider ground_00 ground_01 ground_02 ground_03 ground_04 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05_t wall_06 wall_07 wall_08 other_00 other_01 other_02 other_03 other_04 other_05" />
+			<materials weight="3229"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l ground_04 ground_04_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05_t wall_05_t_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l other_05 other_05_l" />
+			<radarmap points="-0.08257512313241122 0 378.1996044806646 0 0.08247239102221864 301.8753672552401"/>
+			<sign>
+				<item key="a">4223,151,500</item>		
+				<item key="b">2886,-1802,500</item>
+				<item key="c">156,-1975,500</item>		
+				<item key="d">-3048,-1592,500</item>
+				<item key="e">-4052,42,500</item>		
+				<item key="f">120,761,500</item>
+				<item key="g">130,2087,500</item>
+			</sign>
+			<teambattle>
+				<team1>181,100,-190,360</team1>
+				<team1>181,100,-190,360</team1>
+				<team1>181,100,-190,360</team1>
+				<team1>181,100,-190,360</team1>
+				<team1>181,100,-190,360</team1>
+				<team1>181,100,-190,360</team1>
+				<team1>181,100,-190,360</team1>
+				<team1>181,100,-190,360</team1>
+				<team2>181,100,-190,360</team2>
+				<team2>181,100,-190,360</team2>
+				<team2>181,100,-190,360</team2>
+				<team2>181,100,-190,360</team2>
+				<team2>181,100,-190,360</team2>
+				<team2>181,100,-190,360</team2>
+				<team2>181,100,-190,360</team2>
+				<team2>181,100,-190,360</team2>
+			</teambattle>
+			<bgcolor color="0 0 0"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,973.35,-257.62,3187.82</omni>
+			</lights>
+		</map>
+		<map key="doushouchang_pve" id="39" size="14000" height="4100" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+			<models weight="79"
+				values="ground_00 ground_01 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 other_00 other_01 other_02" />
+			<materials weight="2151"
+				values="ground_00 ground_00_l ground_01 ground_01_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l other_00 other_00_l other_01 other_01_l other_02 other_02_l" />
+			<radarmap points="-0.02826455624646693 0 186 0 0.033151904997525974 158.18852053438894"/>
+			<teambattle>
+				<team1>-305,31,23,-90</team1>
+				<team1>-305,31,23,-90</team1>
+				<team1>-305,31,23,-90</team1>
+				<team1>-305,31,23,-90</team1>
+				<team1>-305,31,23,-90</team1>
+				<team1>-305,31,23,-90</team1>
+				<team1>-305,31,23,-90</team1>
+				<team1>-305,31,23,-90</team1>
+				
+				<!-- <team2>-2173,1904,162,90</team2>
+				<team2>-2335,1283,162,90</team2>
+				<team2>-2421,707,162,90</team2>
+				<team2>-2282,93,162,90</team2>
+				<team2>-1901,-552,162,90</team2>
+				<team2>-4270,656,568,90</team2>
+				<team2>-3656,-1403,568,90</team2>
+				<team2>-2185,-3076,568,90</team2> -->
+			</teambattle>
+			<bgcolor color="0.561 0.6 0.608"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,-4437,5531,8035</omni>
+			</lights>
+		</map>
+	    <!-- 荒芜之地 -->
+		<map key="huangwuzhidi_pve" id="40" size="10000" height="2800" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+			<models weight="103"
+				values="chuanqiang_00 dianzhui_00 ground_00 ground_01 other_00 other_01 wall_00 wall_01 wall_02" />
+			<materials weight="2876"
+				values="chuanqiang_00 chuanqiang_00_l dianzhui_00 dianzhui_00_l ground_00 ground_00_l ground_01 ground_01_l other_00 other_00_l other_01 other_01_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l" />
+			<radarmap points="-3.1417e-002 6.9717e-006 8.4990e+001 8.5870e-006 3.3260e-002 1.3806e+002"/>
+			<teambattle>
+				<team1>-862,-3460,-936,180</team1>
+				<team1>-862,-3529,-936,180</team1>
+				<team1>438,-3495,-936,180</team1>
+				<team1>1115,-3503,-939,180</team1>
+				<team1>-591,-3881,-936,180</team1>
+				<team1>-79,-3925,-936,180</team1>
+				<team1>432,-3948,-936,180</team1>
+				<team1>1051,-3891,-936,180</team1>
+				<team2>943,3504,-936,360</team2>
+				<team2>230,3494,-936,360</team2>
+				<team2>-364,3510,-936,360</team2>
+				<team2>-933,3537,-936,360</team2>
+				<team2>770,3855,-936,360</team2>
+				<team2>299,3863,-936,360</team2>
+				<team2>-266,3924,-936,360</team2>
+				<team2>-968,3875,-936,360</team2>
+			</teambattle>
+			<bgcolor color="0.569 0.584 0.58"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0x997755,1,200,-1803.64,-2998.8,3342.12</omni>
+			</lights>
+		</map>
+		<map key="twotowers_pve" id="41" size="15000" height="30000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+            <models weight="96"
+                values="ground_00 other_00 other_01 other_02 other_03 other_04 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08 wall_09 wall_10 wall_11" />
+            <materials weight="4716"
+                values="ground_00 ground_00_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l wall_09 wall_09_l wall_10 wall_10_l wall_11 wall_11_l" />
+			<radarmap points="-0.03821156890922745 -0.0010955510418657476 286.2913182190468 0.0016665987893392565 0.03973568019833206 159.12726329264024"/>
+            <teambattle>
+                <team1>5274,3340,-12280,-90</team1>
+				<team1>5274,1004,-12280,-90</team1>
+				<team1>5274,285,-12280,-90</team1>
+				<team1>5264,-448,-12280,-90</team1>
+				<team1>4423,-1622,-12300,-90</team1>
+				<team1>4179,-2360,-12300,-90</team1>
+				<team1>5043,-2778,-12290,-90</team1>
+				<team1>5031,-3797,-12285,-90</team1>
+				<team2>-3720,-2950,-12235,90</team2>
+				<team2>-3575,-581,-12255,90</team2>
+				<team2>-3575,156,-12265,90</team2>
+				<team2>-3575,895,-12280,90</team2>
+				<team2>-2495,2044,-12295,90</team2>
+				<team2>-2495,2811,-12285,90</team2>
+				<team2>-3880,3197,-12280,90</team2>
+				<team2>-3659,-2462,-12240,90</team2>
+            </teambattle>
+			<bgcolor color="0.561 0.6 0.608"/>
+            <lights>
+                <ambient>0xccd4df,0.5</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+                <directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,3015.42,-3192.77,5586.39</omni>
+            </lights>
+        </map>
+       
+	   <!--黑暗码头-->
+    <map key="heianmatou" id="42" size="9000" height="6000" splitRenderMesh="1" splitCollisionMesh="0">    
+			<skybox key="skybox_xiyang"></skybox>
+            <models weight="96"
+                values="collider ground_00 ground_01 ground_02 other_00 other_01 other_02 other_03 other_04 other_05 wall_00 wall_01" />
+            <materials weight="4716"
+                values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l other_05 other_05_l wall_00 wall_00_l wall_01 wall_01_l" />
+			<radarmap points="-0.07865954343797298 0.000588457936308759 249.31369261545976 0 0.07834876346265994 211.11803604689294"/>
+            <teambattle>
+                
+				<team1>-3057,-912,-308,90</team1>
+				<team1>-3051,-533,-308,90</team1>
+				<team1>-3057,-200,-308,90</team1>
+				<team1>-3057,412,-308,90</team1>
+				<team1>-2185,666,-308,90</team1>
+				<team1>-2451,-104,-308,90</team1>
+				<team1>-2422,-764,-308,90</team1>
+				<team1>-2276,-1066,-308,90</team1>
+				<team2>3063,-1091,-308,-90</team2>  
+				<team2>3063,-575,-308,-90</team2>
+				<team2>3063,-56,-308,-90</team2>
+				<team2>3063,462,-308,-90</team2>   
+				<team2>2302,350,-308,-90</team2>
+				<team2>2316,-110,-308,-90</team2>   
+				<team2>2421,-727,-308,-90</team2>
+				<team2>2279,-1238,-308,-90</team2>
+            </teambattle>
+			<personpoint>
+				<team>-2864,326,-308,90</team>
+				<team>-2864,-814,-308,90</team>
+				<team>-2453,-2267,-308,90</team>
+				<team>-934,-1204,-308,90</team>
+				<team>-1606,-732,-308,90</team>
+				<team>-818,621,-308,90</team>
+				<team>-1159,2366,-308,90</team>
+				<team>1388,2251,-308,270</team>
+				<team>807,1131,-308,270</team>
+				<team>2233,997,-308,270</team>
+				<team>2915,238,-308,270</team>
+				<team>2796,-977,-308,270</team>
+				<team>2135,-2014,-308,270</team>
+				<team>1024,-2180,-308,270</team>
+				<team>840,-606,-308,270</team>
+				<team>1711,470,-308,270</team>
+				<team>-21,542,-319,0</team>
+				<team>-18,-866,-319,180</team>
+				<team>-364,-2396,308,90</team>
+				<team>-335,2270,308,90</team>
+			</personpoint>
+			<bgcolor color="0.561 0.6 0.608"/>
+            <lights>
+                <ambient>0xccd4df,0.5</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+                <directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,139.49125,1427.66975,4409.372</omni>
+            </lights>
+    </map>
+    
+    <map key="chengtiezhan" id="43" size="15000" height="4000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+			<models weight="96"
+				values="collider ground_00 ground_01 other_00 other_01 other_02 other_03 other_04 other_05 other_06_t wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07" />
+			<materials weight="4777"
+				values="ground_00 ground_00_l ground_01 ground_01_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l other_05 other_05_l other_06_t other_06_t_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l" />
+			<radarmap points="-0.034090205905673694 0.0004380664732672356 339.5450906566262 -0.00023532780373269823 0.0351306255430151 166.0192019780511"/>
+			<bombpoints points="391 -4156 0 -4007 1102 184" radius="500" removeRadius="100" iconHeight="250"/>
+			<teambattle>
+				<team1>-3798,-854,180,107</team1>
+				<team1>-4327,-1152,180,142</team1>
+				<team1>-3448,-1153,180,115</team1>
+				<team1>-4114,-1616,180,119</team1>
+				<team1>-3146,-1827,180,94</team1>
+				<team1>-3272,-2043,180,117</team1>
+				<team1>-4077,-1521,180,137</team1>
+				<team1>-3787,-2013,180,107</team1>
+				<team2>6882,-74,180,-413</team2>
+				<team2>7109,59,180,-413</team2>
+				<team2>6816,356,180,-461</team2>
+				<team2>6857,1203,180,-431</team2>
+				<team2>6828,1602,180,-482</team2>
+				<team2>7183,1379,180,-482</team2>
+				<team2>7190,276,180,-461</team2>
+				<team2>7170,1332,180,-431</team2>
+			</teambattle>
+			<bgcolor color="0.749 0.765 0.812"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,2274.218,6595,3738.962</omni>
+				<!--point>200,1000,0xaaadac,156,1752,200,1</point -->
+			</lights>
+		</map>
+		<map key="zhandiyiyuan" id="44" size="17000" height="1050" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+            <models weight="96"
+                values="collider ground_00 ground_01 ground_02 other_00 other_01 wall_00 wall_01 wall_02 wall_03" />
+            <materials weight="4716"
+                values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l other_00 other_00_l other_01 other_01_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l" />
+			<radarmap points="-0.0346699291671573 -0.000024532174751606077 177.90774919452093 0.00004825576146275773 0.03487637539756451 289.3393699174163"/>
+            <teambattle>
+                <team1>3300,-7555,-205,175</team1>  
+				<team1>3040,-7431,-205,174</team1>  
+				<team1>2555,-7397,-205,174</team1>  
+				<team1>2900,-7510,-205,179</team1>  
+				<team1>2793,-6486,-205,178</team1>  
+				<team1>3233,-6489,-205,179</team1>   
+				<team1>2776,-7372,-205,169</team1>  
+				<team1>3502,-6802,-204,177</team1>  
+				<team2>-5254,-1220,-202,-165</team2>  
+				<team2>-5678,-1220,-202,-182</team2>  
+				<team2>-6285,-1220,-202,-182</team2>  
+				<team2>-6854,-1220,-202,-184</team2>  
+				<team2>-6884,-730,-202,-186</team2>  
+				<team2>-6040,-1022,-202,-178</team2>  
+				<team2>-5644,-1012,-202,-181</team2>  
+				<team2>-6329,-515,-202,-181</team2>
+            </teambattle>
+			<bgcolor color="0.561 0.6 0.608"/>
+            <lights>
+                <ambient>0xccd4df,0.5</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+                <directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,3264.108,4477.6542,-6905.2942</omni>
+            </lights>
+    </map>
+	
+	<map key="yexiyingdi" id="45" size="15000" height="15000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xue"></skybox>
+			<models weight="96"
+				values="collider ground_00 ground_01 ground_02 ladder_00 other_00 other_01 other_02 wall_00 wall_01 wall_02 wall_03" />
+			<materials weight="4777"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ladder_00 ladder_00_l other_00 other_00_l other_01 other_01_l other_02 other_02_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l" />
+			<radarmap points="-0.03628803373012049 0.00038359442140944305 237.5189007231367 0.00017738931026898788 0.036479537908662554 165.09579029514248"/>
+			<bombpoints points="-4068 4296 62 5972 1460 -361" radius="500" removeRadius="100" iconHeight="250"/>
+			<teambattle>
+				<team1>4638,5130,-361,0</team1>
+				<team1>4156,5125,-361,0</team1>
+				<team1>3638,5126,-361,0</team1>
+				<team1>5960,4558,-361,0</team1>
+				<team1>5402,4571,-361,0</team1>
+				<team1>4814,4605,-361,0</team1>
+				<team1>4172,4673,-361,0</team1>
+				<team1>3623,4704,-361,0</team1>
+				<team2>-2053,-4216,62,537</team2>
+				<team2>-1593,-4242,62,537</team2>
+				<team2>-1011,-4215,62,537</team2>
+				<team2>-2076,-3490,62,540</team2>
+				<team2>-2177,-3636,62,540</team2>
+				<team2>-1583,-3546,62,540</team2>
+				<team2>-1073,-3715,62,182</team2>
+				<team2>-464,-3523,62,540</team2>
+			</teambattle>
+			<personpoint>
+				<team>6422,4935,-361,-45</team>
+				<team>6429,2847,-361,-90</team>
+				<team>3809,3168,-361,20</team>
+				<team>5981,2097,-361,328</team>
+				<team>5251,-240,-361,647</team>
+				<team>4642,-2152,-361,960</team>
+				<team>3326,-2152,-361,819</team>
+				<team>2035,-986,-361,804</team>
+				<team>578,-756,62,860</team>
+				<team>-334,-4421,62,586</team>
+				<team>-1073,-2599,62,245</team>
+				<team>-2728,-1309,62,8</team>
+				<team>-4331,791,62,-333</team>
+				<team>-3500,3041,62,-644</team>
+				<team>-1677,2032,472,-890</team>
+				<team>-3868,4266,62,90</team>
+				<team>3535,5249,-361,60</team>
+				<team>2931,2367,62,-92</team>
+				<team>2940,4264,763,-379</team>
+				<team>-45,3713,62,-624</team>
+			</personpoint>
+			<bgcolor color="0.749 0.765 0.812"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,-1087.5564,701.0791,2667.9288</omni>
+				
+			</lights>
+		</map>
+	<!-- 辐射街区_pve -->
+		<map key="jidifeixu_pve" id="46" size="12000" height="4000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_black"></skybox>
+            <models weight="110"
+                values="chuanqiang_00 ground_00 other_00 other_01 other_02 other_03 other_04 other_05 other_06 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08" />
+            <materials weight="2310"
+                values="chuanqiang_00 chuanqiang_00_l ground_00 ground_00_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l other_05 other_05_l other_06 other_06_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l" />
+			<radarmap points="-0.024660401728054157 0.00025163675232708325 139.02193470805682 0.0005210884959693582 0.02448447868881664 138.99267358482163"/>
+            <teambattle>
+                <team1>-1170,-3023,36,500</team1>
+                <team1>-1477,-1968,42,477</team1>
+	        	<team1>1513,614,43,652</team1>
+                <team1>1605,-482,45,639</team1>
+                <team1>1126,-1879,34,567</team1>
+
+                <team1>-1501,-2772,43,496</team1>
+                <team1>-1507,-1714,43,504</team1>
+	        	<team1>-1562,-862,44,457</team1>
+                <team1>-1529,385,43,451</team1>
+                <team1>-1517,2729,43,451</team1>
+                <team2>-593,2193,35,276</team2>
+                <team2>752,2309,23,330</team2>
+                <team2>621,1544,310,303</team2>
+                <team2>1078,600,33,282</team2>
+                <team2>1098,-408,33,274</team2>
+
+                <team2>820,-1254,25,230</team2>
+                <team2>-880,197,27,99</team2>
+                <team2>1139,-753,35,-104</team2>
+                <team2>-468,-935,15,133</team2>
+                <team2>-504,1601,16,-19</team2>
+            </teambattle>
+			<bgcolor color="0.215 0.38 0.569"/>
+            <lights>
+                <ambient>0xccd4df,0.5</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.3</directional>
+                <directional>1,1,-2,0xdbdfcc,0.3</directional>
+				<omni>0x557799,1,200,0,0,0</omni>
+            </lights>
+        </map>
+		<!-- 沙漠 -->
+	<map key="shamo" id="47" size="45000" height="2000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+            <models weight="96"
+                values="collider ground_00 other_00 other_01 wall_00 wall_01 wall_02 wall_03" />
+            <materials weight="4716"
+                values="ground_00 ground_00_l other_00 other_00_l other_01 other_01_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l" />
+			<radarmap points="-0.023276051614033427 -0.000051019972631410315 192.36696528633396 0.0002851843680905524 0.023530670079556167 157.92379379545017"/>
+			<bombpoints points="1702 5567 342 7263 1175 642" radius="500" removeRadius="100" iconHeight="300"/>
+            <teambattle>
+                <team1>7955,-2239,642,270</team1>  
+				<team1>7881,-1705,642,270</team1>  
+				<team1>7886,-1203,642,270</team1>  
+				<team1>7826,-593,642,270</team1>  
+				<team1>7246,-597,642,270</team1>  
+				<team1>7258,-1332,642,270</team1>  
+				<team1>7391,-2108,642,270</team1>  
+				<team1>7458,-2515,642,270</team1> 
+				
+				<team2>-5530,3218,-17,-0</team2>  
+				<team2>-6151,3216,-17,2</team2>  
+				<team2>-6770,3191,-17,1</team2>  
+				<team2>-7332,3134,-17,1</team2>  
+				<team2>-7344,3750,-17,-359</team2>  
+				<team2>-6957,3748,-17,-361</team2>  
+				<team2>-6478,3769,-17,-356</team2>  
+				<team2>-7309,4284,-17,-357</team2>
+            </teambattle>
+			<bgcolor color="0.561 0.6 0.608"/>
+            <lights>
+                <ambient>0xccd4df,0.5</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+                <directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,1208.396,-778.9767778,-2954.476444</omni>
+            </lights>
+    </map>
+	<!--远洋货轮-->
+	<map key="yuanyanghuolun" id="48" size="20000" height="2000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_haiyang"></skybox>
+            <models weight="96"
+                values="collider ground_00 ground_01 ground_02 ground_03 other_00 other_01 other_02 other_03_t wall_00 wall_01 wall_02 wall_03" />
+            <materials weight="4716"
+                values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03_t other_03_t_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l" />
+			<radarmap points="-0.02960823806218342 0.00045821276846341643 208.834231969254 -0.0002414992514603469 0.02951610101154656 108.41400976206155"/>
+            <teambattle>
+                <team1>-4932,253,356,-267</team1>  
+				<team1>-5536,279,356,-268</team1>  
+				<team1>-5524,-143,356,-268</team1>  
+				<team1>-4904,-125,356,-268</team1>  
+				<team1>-4869,-601,356,-173</team1>  
+				<team1>-5617,-428,356,-281</team1>   
+				<team1>-5230,-1133,356,-266</team1>  
+				<team1>-5802,-1798,356,-267</team1>  
+				<team2>5754,-469,356,268</team2>  
+				<team2>5189,-449,356,268</team2>  
+				<team2>5794,-9,356,265</team2>  
+				<team2>5159,32,356,266</team2>  
+				<team2>5070,547,356,274</team2>  
+				<team2>5678,569,356,270</team2>  
+				<team2>5641,1121,356,270</team2>  
+				<team2>4999,1121,356,270</team2>
+            </teambattle>
+			<bgcolor color="0.561 0.6 0.608"/>
+            <lights>
+                <ambient>0xccd4df,0.5</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+                <directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,1092.6771,-941.0261,1053.0353</omni>
+            </lights>
+    </map>
+	
+	<map key="jidixiaozhen_shenghua" id="49" size="13000" height="5000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+			<models weight="140"
+				values="collider ground_00 ground_01 ground_02 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 chuanqiang_00" />
+			<materials weight="5038"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l chuanqiang_00 chuanqiang_00_l" />
+			<radarmap points="-0.02440987411129853 -0.00010377908050436038 137.3254740987983 -0.0003556961297042712 0.025148654779063133 131.30461540031177"/>
+			<bombpoints points="-3723 3986 20 -4602 -3147 -220" radius="500" removeRadius="100" iconHeight="300"/>
+			<teambattle>				
+				<team1>-3603,2663,-205,140</team1>
+				<team1>-4438,-1054,-425,110</team1>
+				<team1>-2860,-2420,-225,270</team1>
+				<team1>-1749,-3583,-225,270</team1>
+				<team1>-4740,-2915,-222,360</team1>
+				<team1>-570,-4785,-164,180</team1>
+				<team1>1060,-3044,-166,40</team1>
+				<team1>4040,-4881,83,180</team1>
+				<team2>3366,-1889,83,90</team2>
+				<team2>3365,-301,-254,90</team2>
+				<team2>3468,2453,-254,270</team2>
+				<team2>1385,2700,-254,60</team2>
+				<team2>-427,2473,-254,90</team2>
+				<team2>1900,3724,-254,270</team2>
+				<team2>272,5426,-87,40</team2>
+				<team2>-2478,5416,-139,345</team2>
+			</teambattle>
+			<bgcolor color="0.78 0.886 0.96"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xaaccee,1,200,1260.91,-2035.02,3644.95</omni>
+				<!-->point>200,1200,0x6ea3eb,-2450,1155,0,0.6</point> <point>200,1200,0xf5b2b2,-333,-2298,200,0.5</point> 
+					<point>200,1000,0xb2f5cb,2076,2185,200,0.5</point> <point>500,3000,0xf6f7d0,146,-4106,100,0.2</point> 
+					<point>200,1000,0x66a7e0,5688,-1082,402,0.3</point -->
+			</lights>
+		</map>
+
+		<map key="nengyuanzhan_shenghua" id="50" size="14000" height="4000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+            <models weight="155"
+                values="chuanqiang_00 chuanqiang_01_t ground_00 ground_01 ground_02 ground_03 other_00 other_01 other_02_t other_03 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08 wall_09 wall_10" />
+            <materials weight="3696"
+                values="chuanqiang_00 chuanqiang_00_l chuanqiang_01_t chuanqiang_01_t_l ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l other_00 other_00_l other_01 other_01_l other_02_t other_02_t_l other_03 other_03_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l wall_09 wall_09_l wall_10 wall_10_l" />
+			<radarmap points="-0.037729309344944555 -0.0001167316691786975 241.99673819970485 0.00008438272465997728 0.03863985239343734 274.72120929552034"/>
+			<bombpoints points="3670 -1637 475 -796 4742 600" radius="500" removeRadius="100" iconHeight="300"/>
+            <teambattle>
+				<team1>-911,-2496,656,-367</team1>
+				<team1>2961,1054,469,127</team1>
+				<team1>2179,348,469,52</team1>
+				<team1>2848,-2928,461,210</team1>
+				<team1>5494,1484,469,238</team1>
+				<team1>-1828,-584,144,-640</team1>
+				<team1>-2376,-2474,656,-1006</team1>
+				<team1>4150,-4197,325,479</team1>
+				<team1>-631,-4788,368,516</team1>
+				<team2>-1220,5397,591,-340</team2>
+				<team2>1705,3949,480,-128</team2>
+				<team2>-861,2612,480,65</team2>
+				<team2>-2461,-336,57,371</team2>
+				<team2>-6127,-582,-204,-296</team2>
+				<team2>-5302,-4675,53,103</team2>
+				<team2>-3479,-3086,207,90</team2>
+				<team2>-499,-2275,244,1</team2>
+				<team2>-2272,-4425,658,139</team2>
+            </teambattle>
+			<bgcolor color="0.71 0.741 0.831"/>
+            <lights>
+                <ambient>0xccd4df,0.3</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.3</directional>
+                <directional>1,1,-2,0xdbdfcc,0.3</directional>
+				<omni>0x557799,1,200,233.94,-3284.78,6165.61</omni>
+            </lights>
+        </map>	
+		<!--PVE夜袭营地-->
+	    <map key="yexiyingdi_pve" id="52" size="15000" height="15000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xue"></skybox>
+			<models weight="96"
+				values="collider ground_00 ground_01 ground_02 ladder_00 other_00 other_01 other_02 wall_00 wall_01 wall_02 wall_03" />
+			<materials weight="4777"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ladder_00 ladder_00_l other_00 other_00_l other_01 other_01_l other_02 other_02_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l" />
+			<radarmap points="-0.03628803373012049 0.00038359442140944305 237.5189007231367 0.00017738931026898788 0.036479537908662554 165.09579029514248"/>
+			<bombpoints points="-4068 4296 62 5972 1460 -361" radius="500" removeRadius="100" iconHeight="250"/>
+			<teambattle>
+				<team1>1400,1500,62,180</team1>
+				<team1>800,1500,62,180</team1>
+				<team1>800,1700,62,180</team1>
+				<team1>1400,1700,62,180</team1>
+				<team1>1200,1500,62,180</team1>
+				<team1>1000,1500,62,180</team1>
+				<team1>1200,1700,62,180</team1>
+				<team1>1000,1700,62,180</team1>
+				
+				<team2>1400,1500,62,180</team2>
+				<team2>800,1500,62,180</team2>
+				<team2>800,1700,62,180</team2>
+				<team2>1400,1700,62,180</team2>
+				<team2>1200,1500,62,180</team2>
+				<team2>1000,1500,62,180</team2>
+				<team2>1200,1700,62,180</team2>
+				<team2>1000,1700,62,180</team2>
+			</teambattle>
+			<bgcolor color="0.749 0.765 0.812"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,-1087.5564,701.0791,2667.9288</omni>
+				
+			</lights>
+		</map>
+		<!--新年大院-->
+		<map key="dayuan" id="53" size="10000" height="15000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_nianye"></skybox>
+			<models weight="16"
+				values="collider ground_00 ground_01 other_00 other_01 wall_00" />
+			<materials weight="2013"
+				values="ground_00 ground_00_l ground_01 ground_01_l other_00 other_00_l other_01 other_01_l wall_00 wall_00_l" />
+			<radarmap points="-0.049928894481852774 0.0007986975746037129 192.3655171020241 -0.0011092663951064933 0.04672140324151026 190.73771463397418"/>
+			<teambattle>
+				<team1>-1943,-2762,-1,180</team1>
+				<team1>-1292,-2704,-1,180</team1>
+				<team1>-2029,-3320,-1,180</team1>
+				<team1>-1332,-3455,-1,180</team1>
+				<team1>1241,-3137,-1,180</team1>
+				<team1>1933,-3065,-1,180</team1>
+				<team1>1149,-3737,-1,180</team1>
+				<team1>1874,-3896,-1,180</team1>
+				<team2>2004,3196,-1,0</team2>
+				<team2>1418,3145,-1,0</team2>
+				<team2>1927,3651,-1,0</team2>
+				<team2>1395,3653,-1,0</team2>
+				<team2>-1252,3145,-1,0</team2>
+				<team2>-2069,3246,-1,0</team2>
+				<team2>-2069,3670,-1,0</team2>
+				<team2>-1342,3780,-1,0</team2>
+			</teambattle>
+			<bgcolor color="0.561 0.6 0.608"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0x557799,1,200,1310.56,-1003.23,3262.02</omni>
+			</lights>
+		</map>	
+		<!--MC-古镇-->
+        <map key="guzhen" id="54" size="10000" height="5000" splitRenderMesh="1" splitCollisionMesh="0">
+		    <skybox key="skybox_duoyunqingtian"></skybox>
+			<models weight="84"
+				values="collider ground_00 wall_00 wall_01" />
+			<materials weight="2897"
+				values="ground_00 ground_00_l wall_00 wall_00_l wall_01 wall_01_l" />
+			<radarmap points="-0.05840265260105441 -0.0000752985546019337 206.90118879974625 -0.00009189870361911486 0.05897622016486369 172.6056665608334"/>
+			<teambattle>
+				<team1>-2300,-800,0,90</team1>
+				<team1>-2300,-1600,0,90</team1>
+			    <team1>-3000,-1600,0,90</team1>
+				<team1>-3000,-800,0,90</team1>
+				<team1>-2300,800,0,90</team1>
+				<team1>-2300,1600,0,90</team1>
+			    <team1>-3000,1600,0,90</team1>
+				<team1>-3000,800,0,90</team1>
+				<team2>2300,800,0,270</team2>
+				<team2>2300,1600,0,270</team2>
+			    <team2>3000,1600,0,270</team2>
+				<team2>3000,800,0,270</team2>
+				<team2>2300,-800,0,270</team2>
+				<team2>2300,-1600,0,270</team2>
+			    <team2>3000,-1600,0,270</team2>
+				<team2>3000,-800,0,270</team2>
+			</teambattle>
+			<bgcolor color="0 0 0"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0x997755,1,200,264.9,-178.2,486.6</omni>
+			</lights>
+		</map>
+		<!--古镇-->
+		<map key="mc_guzhen" id="58" size="10000" height="5000" splitRenderMesh="1" splitCollisionMesh="0">
+		    <skybox key="skybox_duoyunqingtian"></skybox>
+			<models weight="84"
+				values="collider ground_00 wall_00 wall_01" />
+			<materials weight="2897"
+				values="ground_00 ground_00_l wall_00 wall_00_l wall_01 wall_01_l" />
+			<radarmap points="-0.05840265260105441 -0.0000752985546019337 206.90118879974625 -0.00009189870361911486 0.05897622016486369 172.6056665608334"/>
+			<teambattle>
+				<team1>-2300,-800,0,90</team1>
+				<team1>-2300,-1600,0,90</team1>
+			    <team1>-3000,-1600,0,90</team1>
+				<team1>-3000,-800,0,90</team1>
+				<team1>-2300,800,0,90</team1>
+				<team1>-2300,1600,0,90</team1>
+			    <team1>-3000,1600,0,90</team1>
+				<team1>-3000,800,0,90</team1>
+				<team2>2300,800,0,270</team2>
+				<team2>2300,1600,0,270</team2>
+			    <team2>3000,1600,0,270</team2>
+				<team2>3000,800,0,270</team2>
+				<team2>2300,-800,0,270</team2>
+				<team2>2300,-1600,0,270</team2>
+			    <team2>3000,-1600,0,270</team2>
+				<team2>3000,-800,0,270</team2>
+			</teambattle>
+			<bgcolor color="0 0 0"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0x997755,1,200,264.9,-178.2,486.6</omni>
+			</lights>
+		</map>
+		<!--文化街区-->
+	<map key="wenhuajiequ" id="55" size="20000" height="5000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_nianye"></skybox>
+            <models weight="96"
+                values="collider ground_00 ground_01 ground_02 ground_03 other_00 other_01 other_02 other_03 other_04 other_05_t wall_00 wall_01 wall_02" />
+            <materials weight="4716"
+                values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l other_05_t other_05_t_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l" />
+			<radarmap points="-0.032428393318577185 -0.00018718632292545766 198.8816414009977 -0.0005094436474358713 0.03389240549291144 106.67770686413564"/>
+            <teambattle>
+                <team1>-5650,-450,100,90</team1>  
+				<team1>-5650,-200,100,90</team1>  
+				<team1>-5650,50,100,90</team1>  
+				<team1>-5650,300,100,90</team1>  
+				<team1>-4800,-800,-2,90</team1>  
+				<team1>-4800,-400,-2,90</team1>   
+				<team1>-4800,0,-2,90</team1>  
+				<team1>-4800,400,-2,90</team1>  
+			    <team2>5500,-700,-2,270</team2>  
+				<team2>5500,-300,-2,270</team2>  
+				<team2>5500,100,-2,270</team2>  
+				<team2>5500,500,-2,270</team2>  
+				<team2>5000,-700,-2,270</team2>  
+				<team2>5000,-300,-2,270</team2>   
+				<team2>5000,100,-2,270</team2>  
+				<team2>5000,500,-2,270</team2> 			
+            </teambattle>
+			<bgcolor color="0.561 0.6 0.608"/>
+            <lights>
+                <ambient>0xccd4df,0.5</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+                <directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,1092.6771,-941.0261,1053.0353</omni>
+            </lights>
+		</map>
+		<!--搏击训练馆-->
+	<map key="fightclub" id="60" size="14000" height="4000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_nianye"></skybox>
+            <models weight="96"
+                values="collider ground_00 ground_01 other_00 other_01 other_02 other_03 other_04_t other_05_t wall_00 wall_01" />
+            <materials weight="4716"
+                values="ground_00 ground_00_l ground_01 ground_01_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04_t other_04_t_l other_05_t other_05_t_l wall_00 wall_00_l wall_01 wall_01_l" />
+			<radarmap points="-0.047244101170445675 0.00034131550923499664 143.03985971448358 0.00006966134265897655 0.046984665138276954 266.3195850958318"/>
+            <teambattle>
+				<team1>-655,5492,0,0</team1>
+				<team1>-9,5492,0,0</team1>
+				<team1>434,5492,0,0</team1>
+				<team1>946,5492,0,0</team1>
+				<team1>-400,6022,0,0</team1>
+				<team1>-60,6022,0,0</team1>
+				<team1>400,6022,0,0</team1>
+				<team1>817,6022,0,0</team1>
+				<team1>1200,6022,0,0</team1>
+				<team2>863,-4827,0,-180</team2>
+				<team2>427,-4827,0,-180</team2>
+				<team2>-254,-4827,0,-180</team2>
+				<team2>-758,-4827,0,-180</team2>
+				<team2>-685,-5299,0,-180</team2>
+				<team2>-226,-5299,0,-180</team2>
+				<team2>306,-5299,0,-180</team2>
+				<team2>820,-5299,0,-180</team2>
+				<team2>1200,-5299,0,-180</team2>
+            </teambattle>
+			<bgcolor color="0.71 0.741 0.831"/>
+            <lights>
+                <ambient>0xccd4df,0.3</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.3</directional>
+                <directional>1,1,-2,0xdbdfcc,0.3</directional>
+				<omni>0x997755,1,200,0,0,0</omni>
+            </lights>
+        </map>	
+		<!--CS仓库-->
+	<map key="csassault" id="61" size="14000" height="4000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_nianye"></skybox>
+            <models weight="96"
+                values="collider ladder_00_t other_01 other_02 other_03_t wall_00 wall_01 wall_02 wall_03 wall_04 wall_05" />
+            <materials weight="4716"
+                values="ladder_00_t ladder_00_t_l other_01 other_01_l other_02 other_02_l other_03_t other_03_t_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l" />
+			<radarmap points="-0.040354239826664993 0.0003213186612862711 142.90728707247538 -0.0005894434710196418 0.043721360562305044 234.89247177039636"/>
+            <teambattle>
+				<team1>2752,-3011,41,-149</team1>
+				<team1>2723,-2232,0,-86</team1>
+				<team1>2287,-2957,41,-156</team1>
+				<team1>2301,-2257,0,240</team1>
+				<team1>2604,-2563,0,268</team1>
+				<team1>3204,-2538,0,267</team1>
+				<team1>2587,-2081,0,272</team1>
+				<team1>2796,-2418,0,249</team1>
+				<team2>-1249,2799,816,-267</team2>
+				<team2>-664,3283,816,-301</team2>
+				<team2>-649,2861,816,-227</team2>
+				<team2>-46,2663,816,-220</team2>
+				<team2>-148,3351,816,-322</team2>
+				<team2>18,3848,816,-309</team2>
+				<team2>20,2964,816,-231</team2>
+				<team2>858,3848,816,-32</team2>
+            </teambattle>
+			<bgcolor color="0.71 0.741 0.831"/>
+            <lights>
+                <ambient>0xccd4df,0.3</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.3</directional>
+                <directional>1,1,-2,0xdbdfcc,0.3</directional>
+				<omni>0xeeccaa,1,200,1092.6771,-941.0261,1053.0353</omni>
+            </lights>
+        </map>			
+		<!--地下拳馆-->
+	<map key="dixiaquanguan" id="62" size="14000" height="4000" splitRenderMesh="0" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+            <models weight="96"
+                values="collider ground_00 ground_01 ground_02 other_00 other_01 other_02 other_03 other_04_t other_05_t other_06 other_07_t wall_00" />
+            <materials weight="4716"
+                values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04_t other_04_t_l other_05_t other_05_t_l other_06 other_06_l other_07_t other_07_t_l wall_00 wall_00_l" />
+			<radarmap points="-0.054059140662634765 0.00009505671886053587 214.1363748351009 -0.00012939103166610387 0.054168482252635375 239.320126741738"/>
+            <teambattle>
+				<team1>1525,4133,-225,0</team1>
+				<team1>992,4133,-225,0</team1>
+				<team1>417,4133,-225,0</team1>
+				<team1>-420,4133,-225,0</team1>
+				<team1>-960,4133,-225,0</team1>
+				<team1>-1558,4133,-225,0</team1>
+				<team1>-1436,3820,-692,0</team1>
+				<team1>1455,3820,-692,0</team1>
+			    <team2>-1556,-4055,-225,180</team2>
+				<team2>-1011,-4055,-225,180</team2>
+				<team2>-470,-4055,-225,180</team2>
+				<team2>437,-4055,-225,180</team2>
+				<team2>1008,-4055,-225,180</team2>
+				<team2>1617,-4055,-225,180</team2>
+				<team2>1445,-3700,-691,180</team2>
+				<team2>-1441,-3740,-676,180</team2>
+            </teambattle>
+			<bgcolor color="0.71 0.741 0.831"/>
+            <lights>
+                <ambient>0xccd4df,0.3</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.3</directional>
+                <directional>1,1,-2,0xdbdfcc,0.3</directional>
+				<omni>0xeeccaa,1,200,1092.6771,-941.0261,1053.0353</omni>
+            </lights>
+        </map>				
+		<!--沙漠堡垒-->
+	<map key="shamobaolei" id="63" size="14000" height="4000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+            <models weight="96"
+                values="collider ground_00 other_00_t other_01 other_02 other_03 other_04 ladder_00_t" />
+            <materials weight="4716"
+                values="ground_00 ground_00_l ladder_00_t ladder_00_t_l other_00_t other_00_t_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l" />
+			<radarmap points="-0.06697189791204665 0.001516570316755449 279.49496163842656 0.00031567502112922854 0.06600542040899705 160.0101287361245"/>
+			<bombpoints points="-2636 1672 130 3312 3427 -98" radius="300" removeRadius="100" iconHeight="250"/>
+            <teambattle>
+				<team1>669,3654,-141,0</team1>
+				<team1>250,3654,-141,0</team1>
+				<team1>-240,3654,-141,0</team1>
+				<team1>-626,3654,-141,0</team1>
+				<team1>669,4033,-141,0</team1>
+				<team1>250,4033,-141,0</team1>
+				<team1>-240,4033,-141,0</team1>
+				<team1>-626,4033,-141,0</team1>
+				<team2>-46,-1119,-125,-180</team2>
+				<team2>250,-1119,-125,-180</team2>
+				<team2>550,-1119,-125,-180</team2>
+				<team2>878,-1119,-125,-180</team2>
+				<team2>-46,-1758,-125,-180</team2>
+				<team2>250,-1758,-125,-180</team2>
+				<team2>550,-1758,-125,-180</team2>
+				<team2>878,-1758,-125,-180</team2>
+            </teambattle>
+			<bgcolor color="0.71 0.741 0.831"/>
+            <lights>
+                <ambient>0xccd4df,0.3</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.3</directional>
+                <directional>1,1,-2,0xdbdfcc,0.3</directional>
+				<omni>0xeeccaa,1,200,1092.6771,-941.0261,1053.0353</omni>
+            </lights>
+        </map>	
+		<!--激战教室-->
+	<map key="classroom" id="65" size="14000" height="4000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+            <models weight="96"
+                values="collider ground_00 other_00 other_01 other_02 other_03 other_04 wall_00 wall_01 wall_02" />
+            <materials weight="4716"
+                values="ground_00 ground_00_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03 other_03_l other_04 other_04_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l" />
+			<radarmap points="-0.07351247848192204 -0.000030215186420811403 190.10246670920262 0 0.07351815898526937 259.67557636736274"/>
+            <teambattle>
+				<team1>-941,-3225,-356,180</team1>
+				<team1>-721,-3225,-356,180</team1>
+				<team1>-501,-3225,-356,180</team1>
+				<team1>-291,-3225,-356,180</team1>
+				<team1>-81,-3225,-356,180</team1>
+				<team1>131,-3225,-356,180</team1>
+				<team1>341,-3225,-356,180</team1>
+				<team1>530,-3225,-356,180</team1>
+				<team2>-874,3226,-473,0</team2>
+				<team2>-638,3226,-473,0</team2>
+				<team2>-405,3226,-473,0</team2>
+				<team2>-172,3226,-473,0</team2>
+				<team2>61,3226,-473,0</team2>
+				<team2>294,3226,-473,0</team2>
+				<team2>527,3226,-473,0</team2>
+				<team2>760,3226,-473,0</team2>
+            </teambattle>
+			<bgcolor color="0.71 0.741 0.831"/>
+            <lights>
+                <ambient>0xccd4df,0.3</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.3</directional>
+                <directional>1,1,-2,0xdbdfcc,0.3</directional>
+				<omni>0xeeccaa,1,200,1092.6771,-941.0261,1053.0353</omni>
+            </lights>
+        </map>
+		<!--麻将江湖-->
+	<map key="majiangjianghu" id="66" size="14000" height="4000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+            <models weight="96"
+                values="collider ground_00 other_00 other_01" />
+            <materials weight="4716"
+                values="ground_00 ground_00_l other_00 other_00_l other_01 other_01_l" />
+			<radarmap points="-0.06407919442325495 -0.0001473579597671494 236.31147401801755 -0.0003435148057762679 0.06427957027247762 231.07666003207248"/>
+            <teambattle>
+				<team1>-976,-3260,-317,180</team1>
+				<team1>-679,-3260,-317,180</team1>
+				<team1>-382,-3260,-317,180</team1>
+				<team1>-85,-3260,-317,180</team1>
+				<team1>212,-3260,-317,180</team1>
+				<team1>509,-3260,-317,180</team1>
+				<team1>806,-3260,-317,180</team1>
+				<team1>1103,-3260,-317,180</team1>
+				<team2>-1220,3418,-317,0</team2>
+				<team2>-922,3418,-317,0</team2>
+				<team2>-624,3418,-317,0</team2>
+				<team2>-326,3418,-317,0</team2>
+				<team2>-28,3418,-317,0</team2>
+				<team2>270,3418,-317,0</team2>
+				<team2>568,3418,-317,0</team2>
+				<team2>867,3418,-317,0</team2>
+            </teambattle>
+			<bgcolor color="0.71 0.741 0.831"/>
+            <lights>
+                <ambient>0xccd4df,0.3</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.3</directional>
+                <directional>1,1,-2,0xdbdfcc,0.3</directional>
+				<omni>0xeeccaa,1,200,1092.6771,-941.0261,1053.0353</omni>
+            </lights>
+        </map>	
+		<!--后花园-->
+	<map key="houhuayuan" id="67" size="20000" height="4000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+            <models weight="96"
+                values="collider ground_00 ground_01 ground_02 ground_03 ground_04 ground_05 ground_06 other_00 other_01 wall_00 wall_01 wall_02 wall_03" />
+            <materials weight="4716"
+                values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l ground_04 ground_04_l ground_05 ground_05_l ground_06 ground_06_l other_00 other_00_l other_01 other_01_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l" />
+			<radarmap points="-0.03502409895017568 0.00002073797780112091 292.7144882360259 0.0000010464701628737126 0.03483996122596543 230.09847360363983"/>
+            <teambattle>
+				<team1>-209,-4211,-539,180</team1>
+				<team1>148,-4211,-539,180</team1>
+				<team1>505,-4211,-539,180</team1>
+				<team1>862,-4211,-539,180</team1>
+				<team1>1242,-4211,-539,180</team1>
+				<team1>1599,-4211,-539,180</team1>
+				<team1>1956,-4211,-539,180</team1>
+				<team1>2313,-4211,-539,180</team1>
+				<team2>2782,3377,-635,0</team2>
+				<team2>-296,3377,-635,0</team2>
+				<team2>2306,4287,-635,0</team2>
+				<team2>1860,4287,-635,0</team2>
+				<team2>1455,4287,-635,0</team2>
+				<team2>1030,4287,-635,0</team2>
+				<team2>605,4287,-635,0</team2>
+				<team2>180,4287,-635,0</team2>
+            </teambattle>
+			<personpoint>
+				<team>1283,4421,-635,0</team>
+				<team>1283,2975,-635,0</team>
+				<team>2820,2975,-635,0</team>
+				<team>-298,2975,-635,0</team>
+				<team>-2312,2427,-635,0</team>
+				<team>4884,2427,-635,0</team>
+				<team>6835,-2557,-635,180</team>
+				<team>4855,-2557,-635,180</team>
+				<team>1202,-3311,-539,180</team>
+				<team>1202,-1251,-539,180</team>
+				<team>-2484,-2557,-635,180</team>
+				<team>-4349,-2557,-635,180</team>
+				<team>-2834,-5798,-492,180</team>
+				<team>-988,-4111,-534,180</team>
+				<team>3475,-4111,-534,180</team>
+				<team>5357,-5798,-492,180</team>
+				<team>2383,-5209,-539,180</team>
+				<team>110,-5209,-539,180</team>
+				<team>2045,-2224,-11,90</team>
+				<team>450,-2224,-11,270</team>
+			</personpoint>
+			<bgcolor color="0.71 0.741 0.831"/>
+            <lights>
+                <ambient>0xccd4df,0.3</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.3</directional>
+                <directional>1,1,-2,0xdbdfcc,0.3</directional>
+				<omni>0xeeccaa,1,200,1092.6771,-941.0261,1053.0353</omni>
+            </lights>
+        </map>
+	<map key="yexiyingdijudian" id="68" size="15000" height="15000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xue"></skybox>
+			<models weight="96"
+				values="collider ground_00 ground_01 ground_02 ladder_00 other_00 other_01 other_02 wall_00 wall_01 wall_02 wall_03" />
+			<materials weight="4777"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ladder_00 ladder_00_l other_00 other_00_l other_01 other_01_l other_02 other_02_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l" />
+			<radarmap points="-0.03628803373012049 0.00038359442140944305 237.5189007231367 0.00017738931026898788 0.036479537908662554 165.09579029514248"/>
+			<bombpoints points="-4068 4296 62 5972 1460 -361" radius="500" removeRadius="100" iconHeight="250"/>
+			<teambattle>
+				<team1>4638,5130,-361,0</team1>
+				<team1>4156,5125,-361,0</team1>
+				<team1>3638,5126,-361,0</team1>
+				<team1>5960,4558,-361,0</team1>
+				<team1>5402,4571,-361,0</team1>
+				<team1>4814,4605,-361,0</team1>
+				<team1>4172,4673,-361,0</team1>
+				<team1>3623,4704,-361,0</team1>
+				<team2>-2053,-4216,62,537</team2>
+				<team2>-1593,-4242,62,537</team2>
+				<team2>-1011,-4215,62,537</team2>
+				<team2>-2076,-3490,62,540</team2>
+				<team2>-2177,-3636,62,540</team2>
+				<team2>-1583,-3546,62,540</team2>
+				<team2>-1073,-3715,62,182</team2>
+				<team2>-464,-3523,62,540</team2>
+			</teambattle>
+			<personpoint>
+				<team>6422,4935,-361,-45</team>
+				<team>6429,2847,-361,-90</team>
+				<team>3809,3168,-361,20</team>
+				<team>5981,2097,-361,328</team>
+				<team>5251,-240,-361,647</team>
+				<team>4642,-2152,-361,960</team>
+				<team>3326,-2152,-361,819</team>
+				<team>2035,-986,-361,804</team>
+				<team>578,-756,62,860</team>
+				<team>-334,-4421,62,586</team>
+				<team>-1073,-2599,62,245</team>
+				<team>-2728,-1309,62,8</team>
+				<team>-4331,791,62,-333</team>
+				<team>-3500,3041,62,-644</team>
+				<team>-1677,2032,472,-890</team>
+				<team>-3868,4266,62,90</team>
+				<team>3535,5249,-361,60</team>
+				<team>2931,2367,62,-92</team>
+				<team>2940,4264,763,-379</team>
+				<team>-45,3713,62,-624</team>
+			</personpoint>
+			<bgcolor color="0.749 0.765 0.812"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,-1087.5564,701.0791,2667.9288</omni>
+				
+			</lights>
+		</map>
+	<map key="polartownjudian" id="69" size="13000" height="5000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xue"></skybox>
+			<models weight="140"
+				values="collider ground_00 ground_01 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 chuanqiang_00" />
+			<materials weight="5038"
+				values="ground_00 ground_00_l ground_01 ground_01_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l chuanqiang_00 chuanqiang_00_l" />
+			<radarmap points="-0.02440987411129853 -0.00010377908050436038 137.3254740987983 -0.0003556961297042712 0.025148654779063133 131.30461540031177"/>
+			<bombpoints points="-3723 3986 20 -4602 -3147 -220" radius="500" removeRadius="100" iconHeight="300"/>
+			<teambattle>				
+				<team1>-3860,1870,-493,90</team1>
+				<team1>-3766,1428,-493,90</team1>
+				<team1>-3436,1408,-493,90</team1>
+				<team1>-3351,1906,-493,90</team1>
+				<team1>-2936,1963,-493,90</team1>
+				<team1>-2969,1444,-493,90</team1>
+				<team1>-3288,707,-493,90</team1>
+				<team1>-2978,741,-493,90</team1>
+				<team2>4894,-1972,83,-90</team2>
+				<team2>4513,-1972,83,-90</team2>
+				<team2>4894,-1622,83,-90</team2>
+				<team2>4513,-1622,83,-90</team2>
+				<team2>4894,-1257,83,-90</team2>
+				<team2>4513,-1257,83,-90</team2>
+				<team2>4894,-906,83,-90</team2>
+				<team2>4513,-906,83,-90</team2>
+			</teambattle>
+			<personpoint>
+				<team>-3603,2663,-205,140</team>
+				<team>-4438,-1054,-425,110</team>
+				<team>-2860,-2420,-225,270</team>
+				<team>-1749,-3583,-225,270</team>
+				<team>-4740,-2915,-222,360</team>
+				<team>-570,-4785,-164,180</team>
+				<team>1060,-3044,-166,40</team>
+				<team>4040,-4881,83,180</team>
+				<team>3366,-1889,83,90</team>
+				<team>3365,-301,-254,90</team>
+				<team>3468,2453,-254,270</team>
+				<team>1385,2700,-254,60</team>
+				<team>-427,2473,-254,90</team>
+				<team>1900,3724,-254,270</team>
+				<team>272,5426,-87,40</team>
+				<team>-2478,5416,-139,345</team>
+				<team>-5139,3775,76,105</team>
+				<team>-4425,1789,17,110</team>
+				<team>-2441,2072,17,90</team>
+				<team>-913,-1663,-479,290</team>
+				<team>1734,-816,-254,160</team>
+			</personpoint>
+			<bgcolor color="0.78 0.886 0.96"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xaaccee,1,200,1260.91,-2035.02,3644.95</omni>
+				<!-->point>200,1200,0x6ea3eb,-2450,1155,0,0.6</point> <point>200,1200,0xf5b2b2,-333,-2298,200,0.5</point> 
+					<point>200,1000,0xb2f5cb,2076,2185,200,0.5</point> <point>500,3000,0xf6f7d0,146,-4106,100,0.2</point> 
+					<point>200,1000,0x66a7e0,5688,-1082,402,0.3</point -->
+			</lights>
+		</map>
+	<map key="yexiyingdijudian2" id="70" size="15000" height="15000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xue"></skybox>
+			<models weight="96"
+				values="collider ground_00 ground_01 ground_02 ladder_00 other_00 other_01 other_02 wall_00 wall_01 wall_02 wall_03" />
+			<materials weight="4777"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ladder_00 ladder_00_l other_00 other_00_l other_01 other_01_l other_02 other_02_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l" />
+			<radarmap points="-0.03628803373012049 0.00038359442140944305 237.5189007231367 0.00017738931026898788 0.036479537908662554 165.09579029514248"/>
+			<bombpoints points="-4068 4296 62 5972 1460 -361" radius="500" removeRadius="100" iconHeight="250"/>
+			<teambattle>
+				<team1>4638,5130,-361,0</team1>
+				<team1>4156,5125,-361,0</team1>
+				<team1>3638,5126,-361,0</team1>
+				<team1>5960,4558,-361,0</team1>
+				<team1>5402,4571,-361,0</team1>
+				<team1>4814,4605,-361,0</team1>
+				<team1>4172,4673,-361,0</team1>
+				<team1>3623,4704,-361,0</team1>
+				<team2>-2053,-4216,62,537</team2>
+				<team2>-1593,-4242,62,537</team2>
+				<team2>-1011,-4215,62,537</team2>
+				<team2>-2076,-3490,62,540</team2>
+				<team2>-2177,-3636,62,540</team2>
+				<team2>-1583,-3546,62,540</team2>
+				<team2>-1073,-3715,62,182</team2>
+				<team2>-464,-3523,62,540</team2>
+			</teambattle>
+			<personpoint>
+				<team>6422,4935,-361,-45</team>
+				<team>6429,2847,-361,-90</team>
+				<team>3809,3168,-361,20</team>
+				<team>5981,2097,-361,328</team>
+				<team>5251,-240,-361,647</team>
+				<team>4642,-2152,-361,960</team>
+				<team>3326,-2152,-361,819</team>
+				<team>2035,-986,-361,804</team>
+				<team>578,-756,62,860</team>
+				<team>-334,-4421,62,586</team>
+				<team>-1073,-2599,62,245</team>
+				<team>-2728,-1309,62,8</team>
+				<team>-4331,791,62,-333</team>
+				<team>-3500,3041,62,-644</team>
+				<team>-1677,2032,472,-890</team>
+				<team>-3868,4266,62,90</team>
+				<team>3535,5249,-361,60</team>
+				<team>2931,2367,62,-92</team>
+				<team>2940,4264,763,-379</team>
+				<team>-45,3713,62,-624</team>
+			</personpoint>
+			<bgcolor color="0.749 0.765 0.812"/>
+			<lights>
+				<ambient>0xccd4df,0.4</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,-1087.5564,701.0791,2667.9288</omni>
+				
+			</lights>
+		</map>
+		<!--MC丛林-->
+	<map key="mcconglin" id="71" size="30000" height="50000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+			<models weight="140"
+				values="collider ground_00 other_00 other_01 other_02_t wall_00 wall_01" />
+			<materials weight="5038"
+				values="ground_00 ground_00_l other_00 other_00_l other_01 other_01_l other_02_t other_02_t_l wall_00 wall_00_l wall_01 wall_01_l" />
+			<radarmap points="-0.053290026280267716 -0.0001547255569446451 201.35943599443075 -0.0004008257132482657 0.053040216294660325 267.91305161225847"/>
+			<bombpoints points="-2911 -1916 494 -2494 2093 494" radius="500" removeRadius="100" iconHeight="300"/>
+			<teambattle>				
+				<team1>-3123,2666,494,90</team1>
+				<team1>-3123,2366,494,90</team1>
+				<team1>-3123,2066,494,90</team1>
+				<team1>-3123,1766,494,90</team1>
+				<team1>-3465,2666,494,90</team1>
+				<team1>-3465,2366,494,90</team1>
+				<team1>-3465,2066,494,90</team1>
+				<team1>-3465,1766,494,90</team1>
+				<team2>2780,-1000,494,270</team2>
+				<team2>2780,-700,494,270</team2>
+				<team2>2780,-400,494,270</team2>
+				<team2>2780,-100,494,270</team2>
+				<team2>2780,200,494,270</team2>
+				<team2>2780,500,494,270</team2>
+				<team2>2780,800,494,270</team2>
+				<team2>2780,1100,494,270</team2>
+			</teambattle>
+			<bgcolor color="0.78 0.886 0.96"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xaaccee,1,200,1260.91,-2035.02,3644.95</omni>
+			</lights>
+		</map>
+		<!--星际迷航-->
+	<map key="xingjimihang" id="72" size="30000" height="50000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+			<models weight="140"
+				values="collider ground_00 ground_01 other_00 other_01 other_02 other_03_t wall_00 wall_01 wall_02" />
+			<materials weight="5038"
+				values="ground_00 ground_00_l ground_01 ground_01_l other_00 other_00_l other_01 other_01_l other_02 other_02_l other_03_t other_03_t_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l" />
+			<radarmap points="-0.05076156467612037 -0.00025038820980008273 227.57614150627086 0.00006433912156744446 0.05106142251005485 247.15530452130508"/>
+			<teambattle>				
+				<team1>-4526,-761,5,90</team1>
+				<team1>-4526,-438,5,90</team1>
+				<team1>-4526,-115,5,90</team1>
+				<team1>-5083,-761,5,90</team1>
+				<team1>-5083,-438,5,90</team1>
+				<team1>-5083,-115,5,90</team1>
+				<team1>-4804,-600,5,90</team1>
+				<team1>-4804,-276,5,90</team1>
+				<team2>4238,1083,0,-86</team2>
+				<team2>3944,2208,0,-63</team2>
+				<team2>3417,2450,0,-37</team2>
+				<team2>2968,2462,0,-21</team2>
+				<team2>4305,1063,0,-101</team2>
+				<team2>4158,644,0,-118</team2>
+				<team2>3824,323,0,-145</team2>
+				<team2>3192,105,0,-140</team2>
+			</teambattle>
+			<bgcolor color="0.78 0.886 0.96"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0x997755,1,200,0,0,0</omni>
+			</lights>
+		</map>
+		<!--废弃车间-->
+	<map key="feiqichejian" id="73" size="30000" height="50000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_yintian"></skybox>
+			<models weight="140"
+				values="collider ground_01 ground_02 ground_03 ground_04 ladder_00 other_01 other_02 other_03_t other_04 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07" />
+			<materials weight="5038"
+				values="ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l ground_04 ground_04_l ladder_00 ladder_00_l other_01 other_01_l other_02 other_02_l other_03_t other_03_t_l other_04 other_04_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l" />
+			<radarmap points="-0.0475359439155024 0.00006426643964278542 294.4706627627947 0.00015561671172091852 0.047552949053710464 195.39309619273786"/>
+			<bombpoints points="-1963 -3515 2 -2526 2669 57" radius="500" removeRadius="100" iconHeight="300"/>
+			<teambattle>				
+				<team1>-4527,510,-94,0</team1>
+				<team1>-4810,510,-94,0</team1>
+				<team1>-5093,510,-94,0</team1>
+				<team1>-4527,0,-94,0</team1>
+				<team1>-4810,0,-94,0</team1>
+				<team1>-5093,0,-94,0</team1>
+				<team1>-4810,1000,-94,0</team1>
+				<team1>-5093,1000,-94,0</team1>
+				<team2>4144,-1571,-94,270</team2>
+				<team2>4144,-1200,-94,270</team2>
+				<team2>4144,-828,-94,270</team2>
+				<team2>4144,-453,-94,270</team2>
+				<team2>4583,-1571,-94,270</team2>
+				<team2>4583,-1200,-94,270</team2>
+				<team2>4583,-828,-94,270</team2>
+				<team2>4583,-453,-94,270</team2>
+			</teambattle>
+			<personpoint>
+				<team>-4732,617,-94,0</team>
+				<team>-4935,-1455,-94,180</team>
+				<team>-2918,-1676,-94,270</team>
+				<team>-3045,-2533,283,90</team>
+				<team>-3329,-2425,-94,270</team>
+				<team>-1976,-3567,2,180</team>
+				<team>-900,-3826,-94,90</team>
+				<team>-1623,-1647,-94,0</team>
+				<team>-149,-1708,-94,90</team>
+				<team>1026,-2738,-94,270</team>
+				<team>2392,-2161,-94,0</team>
+				<team>3883,-421,-94,0</team>
+				<team>2386,653,-94,0</team>
+				<team>173,3312,86,270</team>
+				<team>-1065,1871,57,180</team>
+				<team>-2610,2428,57,0</team>
+				<team>-3399,1492,57,90</team>
+				<team>-2523,851,56,0</team>
+				<team>-776,316,-94,0</team>
+				<team>35,1995,86,270</team>
+			</personpoint>
+			<bgcolor color="0.78 0.886 0.96"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xaaccee,1,200,1260.91,-2035.02,3644.95</omni>
+			</lights>
+		</map>
+		<!--江南小镇-->
+	<map key="jiangnanxiaozhen" id="74" size="30000" height="50000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+			<models weight="140"
+				values="collider ground_00 ground_01 ground_02 ground_03 ladder_00_t other_00 other_01 other_02  wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06" />
+			<materials weight="5038"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l ladder_00_t ladder_00_t_l other_00 other_00_l other_01 other_01_l other_02 other_02_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l" />
+			<radarmap points="-0.0801087466518181 -0.0019199743962017312 277.39315599895247 -0.000009829840263142101 0.07935130113389077 296.43376664391576"/>
+			<teambattle>				
+				<team1>2266,2856,120,270</team1>
+				<team1>2000,2856,120,270</team1>
+				<team1>1730,2856,120,270</team1>
+				<team1>1025,2856,120,90</team1>
+				<team1>576,2856,120,90</team1>
+				<team1>800,2856,120,90</team1>
+				<team1>1701,4426,120,0</team1>
+				<team1>1200,4426,120,0</team1>
+				<team2>436,-3383,120,180</team2>
+				<team2>236,-3383,120,180</team2>
+				<team2>36,-3383,120,180</team2>
+				<team2>-236,-3383,120,180</team2>
+				<team2>-436,-3383,120,180</team2>
+				<team2>-636,-3383,120,180</team2>
+				<team2>-836,-3383,120,180</team2>
+				<team2>-1236,-3383,120,180</team2>
+			</teambattle>
+			<bgcolor color="0.78 0.886 0.96"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xaaccee,1,200,1260.91,-2035.02,3644.95</omni>
+			</lights>
+		</map>
+		<!--飓风营救-->
+	<map key="jufengyingjiu" id="75" size="30000" height="50000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+			<models weight="140"
+				values="collider ground_00 ladder_00_t other_00 wall_00 wall_01 wall_02 wall_03" />
+			<materials weight="5038"
+				values="ground_00 ground_00_l ladder_00_t ladder_00_t_l other_00 other_00_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l" />
+			<radarmap points="-0.10045783954675237 0.00032768400909673987 230.69605621144896 -0.0006361228874147015 0.10031287379772671 244.84526515254913"/>
+			<teambattle>				
+				<team1>-1200,1500,0,0</team1>
+				<team1>-800,1500,0,0</team1>
+				<team1>-400,1500,0,0</team1>
+				<team1>400,1500,0,0</team1>
+				<team1>800,1500,0,0</team1>
+				<team1>1200,1500,0,0</team1>
+				<team1>-500,2050,157,0</team1>
+				<team1>500,2050,157,0</team1>
+				<team2>-1200,-1500,0,180</team2>
+				<team2>-800,-1500,0,180</team2>
+				<team2>-400,-1500,0,180</team2>
+				<team2>400,-1500,0,180</team2>
+				<team2>800,-1500,0,180</team2>
+				<team2>1200,-1500,0,180</team2>
+				<team2>500,-2050,157,180</team2>
+				<team2>-500,-2050,157,180</team2>
+			</teambattle>
+			<bgcolor color="0.78 0.886 0.96"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xaaccee,1,200,1260.91,-2035.02,3644.95</omni>
+			</lights>
+		</map>
+		<!--圣诞迷城-->
+	<map key="shengdanmicheng" id="76" size="30000" height="50000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xue"></skybox>
+			<models weight="140"
+				values="collider ground_00 ground_01 ground_02 ground_03 ground_05 ground_06 ground_07 other_00_t other_01_t other_02 other_03 other_04 other_05 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08 wall_09 wall_10" />
+			<materials weight="5038"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l ground_05 ground_05_l ground_06 ground_06_l ground_07 ground_07_l other_00_t other_00_t_l other_01_t other_01_t_l other_02 other_02_l other_03 other_03_l other_04 other_04_l other_05 other_05_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l wall_09 wall_09_l wall_10 wall_10_l" />
+			<radarmap points="-0.053235112064421955 -0.00004959726516016907 237.85320118562313 0.00007707528776550828 0.05287357387896736 309.34766675443404"/>
+			<bombpoints points="2069 3698 63 -3041 3615 126" radius="500" removeRadius="100" iconHeight="300"/>
+			<teambattle>				
+				<team1>-3725,3435,152,0</team1>
+				<team1>-3327,3410,152,0</team1>
+				<team1>-2921,3450,125,0</team1>
+				<team1>-2555,3489,78,0</team1>
+				<team1>-2194,3480,73,0</team1>
+				<team1>-3817,4022,156,0</team1>
+				<team1>-3460,4030,143,0</team1>
+				<team1>-2969,4041,130,0</team1>
+				<team2>660,-3944,-331,180</team2>
+				<team2>1060,-3944,-331,180</team2>
+				<team2>1460,-3944,-331,180</team2>
+				<team2>1860,-3944,-331,180</team2>
+				<team2>2260,-3944,-331,180</team2>
+				<team2>2660,-3944,-331,180</team2>
+				<team2>1460,-3490,-331,180</team2>
+				<team2>2260,-3490,-331,180</team2>
+			</teambattle>
+			<bgcolor color="0.78 0.886 0.96"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xaaccee,1,200,1260.91,-2035.02,3644.95</omni>
+			</lights>
+		</map>
+		<!--西部牧场-->
+	<map key="xibumuchang" id="77" size="30000" height="50000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_duoyunqingtian"></skybox>
+			<models weight="140"
+				values="collider ground_00 ground_01 ground_02 other_00 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08 wall_09" />
+			<materials weight="5038"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l other_00 other_00_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l wall_09 wall_09_l" />
+			<radarmap points="-0.04686649162504422 0.00024418839969026846 245.7463961122207 0.00018156602645492858 0.0454922197331208 243.12992857482246"/>
+			<bombpoints points="3315 -3797 89 -3405 57 4" radius="500" removeRadius="100" iconHeight="300"/>
+			<teambattle>				
+				<team1>-1994,-4207,4,180</team1>
+				<team1>-1994,-3800,4,180</team1>
+				<team1>-1994,-3400,4,180</team1>
+				<team1>-2394,-3700,4,180</team1>
+				<team1>-2794,-3700,4,180</team1>
+				<team1>-2794,-4050,4,180</team1>
+				<team1>-2434,-4133,88,180</team1>
+				<team1>-2794,-3335,4,180</team1>
+				<team2>1913,5624,4,0</team2>
+				<team2>1513,5624,4,0</team2>
+				<team2>1136,5583,4,0</team2>
+				<team2>1913,5224,4,0</team2>
+				<team2>1513,5224,4,0</team2>
+				<team2>1136,5224,4,0</team2>
+				<team2>2625,5297,4,0</team2>
+				<team2>2625,4897,4,0</team2>
+			</teambattle>
+			<bgcolor color="0.78 0.886 0.96"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xaaccee,1,200,1260.91,-2035.02,3644.95</omni>
+			</lights>
+		</map>
+		<!--极地小镇夺旗1-->
+		<map key="polartownduoqi1" id="78" size="13000" height="5000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xue"></skybox>
+			<models weight="140"
+				values="collider ground_00 ground_01 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 chuanqiang_00" />
+			<materials weight="5038"
+				values="ground_00 ground_00_l ground_01 ground_01_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l chuanqiang_00 chuanqiang_00_l" />
+			<radarmap points="-0.02440987411129853 -0.00010377908050436038 137.3254740987983 -0.0003556961297042712 0.025148654779063133 131.30461540031177"/>
+			<teambattle>				
+				<team1>-3860,1870,-493,90</team1>
+				<team1>-3766,1428,-493,90</team1>
+				<team1>-3436,1408,-493,90</team1>
+				<team1>-3351,1906,-493,90</team1>
+				<team1>-2936,1963,-493,90</team1>
+				<team1>-2969,1444,-493,90</team1>
+				<team1>-3288,707,-493,90</team1>
+				<team1>-2978,741,-493,90</team1>
+				<team2>4367,1724,-254,270</team2>
+				<team2>4367,1424,-254,270</team2>
+				<team2>4367,1124,-254,270</team2>
+				<team2>4767,1124,-254,270</team2>
+				<team2>4767,1424,-254,270</team2>
+				<team2>4767,1724,-254,270</team2>
+				<team2>4057,278,-254,0</team2>
+				<team2>4057,678,-254,180</team2>
+			</teambattle>
+			<bgcolor color="0.78 0.886 0.96"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xaaccee,1,200,1260.91,-2035.02,3644.95</omni>
+			</lights>
+		</map>
+		<!--沙暴之城夺旗1-->
+		<map key="shamoyiduoqi1" id="79" size="18000" height="2000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+			<models weight="131"
+				values="collider ground_00 ground_01 ground_02 ladder_00_t other_00 other_01 other_02 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08 wall_09 wall_10" />
+			<materials weight="3168"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ladder_00_t ladder_00_t_l other_00 other_00_l other_01 other_01_l other_02 other_02_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l wall_09 wall_09_l wall_10 wall_10_l" />
+			<radarmap points="-0.031234412158754384 -0.00009449919678594219 134.22897975171537 -0.0002283908413098758 0.03151654560541997 240.1418791952217"/>
+			<teambattle>		
+				<team1>-1560,-6069,-614,-180</team1>
+				<team1>-1934,-6069,-614,-180</team1>
+				<team1>-1932,-6444,-614,-180</team1>
+				<team1>-1558,-6444,-614,-180</team1>
+				<team1>-2529,-6339,-574,-180</team1>
+				<team1>-2972,-6339,-574,-180</team1>
+				<team1>-2972,-6785,-574,-180</team1>
+				<team1>-2529,-6785,-574,-180</team1>
+				<team2>-2972,6289,-574,0</team2>
+				<team2>-2972,6735,-574,0</team2>
+				<team2>-2529,6289,-574,0</team2>
+				<team2>-2529,6735,-574,0</team2>
+				<team2>-1935,6042,-614,0</team2>
+				<team2>-1937,6417,-614,0</team2>
+				<team2>-1552,6042,-614,0</team2>
+				<team2>-1554,6417,-614,0</team2>
+			</teambattle>
+			<bgcolor color="0.71 0.741 0.831"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.3</directional>
+				<directional>1,1,-2,0xdbdfcc,0.3</directional>
+				<omni>0xeeccaa,1,200,-6491.15,922.94,7505.52</omni>
+			</lights>
+		</map>
+		<!--火车站夺旗1-->		
+		<map key="huochezhanduoqi1" id="80" size="12000" height="4100" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+			<models weight="117"
+				values="collider ground_00 ground_01 ground_02 ground_03 other_00 other_01_t other_02 other_03 other_04 other_05 wall_00 wall_01 wall_02 wall_03 wall_04 wall_05 wall_06 wall_07 wall_08 wall_09 wall_10" />
+			<materials weight="3895"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l other_00 other_00_l other_01_t other_01_t_l other_02 other_02_l other_03 other_03_l other_04 other_04_l other_05 other_05_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l wall_04 wall_04_l wall_05 wall_05_l wall_06 wall_06_l wall_07 wall_07_l wall_08 wall_08_l wall_09 wall_09_l wall_10 wall_10_l" />
+			<radarmap points="-0.04047422559427593 0.00045832507724754125 173.40120526041326 0.0005805528826338628 0.041199616256216716 171.55289873221736"/>
+			<bombpoints points="2108 -435 -381 -940 -3038 -684" radius="500" removeRadius="100" iconHeight="300"/>
+			<teambattle>
+				<team1>2762,-3479,-620,-180</team1>
+				<team1>2762,-3166,-620,-180</team1>
+				<team1>2762,-2852,-620,-180</team1>
+				<team1>2762,-2533,-620,-180</team1>
+				<team1>3079,-3479,-620,-180</team1>
+				<team1>3079,-3166,-620,-180</team1>
+				<team1>3079,-2852,-620,-180</team1>
+				<team1>3079,-2533,-620,-180</team1>
+				<team2>-4580,3767,-370,0</team2>
+				<team2>-4580,3448,-370,0</team2>
+				<team2>-4580,3134,-370,0</team2>
+				<team2>-4580,2821,-370,0</team2>
+				<team2>-4897,3767,-370,0</team2>
+				<team2>-4897,3448,-370,0</team2>
+				<team2>-4897,3134,-370,0</team2>
+				<team2>-4897,2821,-370,0</team2>
+			</teambattle>
+			<bgcolor color="0.561 0.6 0.608"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,118.52,-2988.48,6813.91</omni>
+			</lights>
+		</map>
+		<!--马戏团-->		
+		<map key="maxituan" id="81" size="12000" height="4100" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_nianye"></skybox>
+			<models weight="117"
+				values="collider ground_00 ground_01 ground_02 ground_03 other_00 other_01_t other_02 other_03 other_04_t other_05 wall_00 wall_01 wall_02 wall_03" />
+			<materials weight="3895"
+				values="ground_00 ground_00_l ground_01 ground_01_l ground_02 ground_02_l ground_03 ground_03_l other_00 other_00_l other_01_t other_01_t_l other_02 other_02_l other_03 other_03_l other_04_t other_04_t_l other_05 other_05_l wall_00 wall_00_l wall_01 wall_01_l wall_02 wall_02_l wall_03 wall_03_l" />
+			<radarmap points="-0.07656520104703923 0.00002739087993694936 206.16786321719425 0.00027714688820507246 0.0766336947887044 242.8715987886738"/>
+			<bombpoints points="2108 -435 -381 -940 -3038 -684" radius="500" removeRadius="100" iconHeight="300"/>
+			<teambattle>
+				<team1>-2404,14,43,90</team1>
+				<team1>-1180,-1991,70,160</team1>
+				<team1>1313,-1960,43,230</team1>
+				<team1>-732,2198,70,17</team1>
+				<team1>874,1239,100,44</team1>
+				<team1>1202,-869,100,320</team1>
+				<team1>-850,-1298,100,240</team1>
+				<team1>810,639,103,0</team1>
+				<team1>-795,-831,103,180</team1>
+				<team1>799,-15,103,270</team1>
+				<team2>-2122,-1159,70,120</team2>
+				<team2>26,-2383,43,180</team2>
+				<team2>2167,-984,70,240</team2>
+				<team2>11,1405,100,0</team2>
+				<team2>1534,-63,100,270</team2>
+				<team2>-74,-1508,100,180</team2>
+				<team2>-1464,-42,100,0</team2>
+				<team2>741,-828,103,180</team2>
+				<team2>-795,769,103,0</team2>
+				<team2>-778,-3,103,90</team2>
+			</teambattle>
+			<bgcolor color="0.561 0.6 0.608"/>
+			<lights>
+				<ambient>0xccd4df,0.5</ambient>
+				<directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+				<directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,118.52,-2988.48,6813.91</omni>
+			</lights>
+		</map>	
+
+		
+	<!--测试用图-->
+	<map key="test" id="1000" size="20000" height="2000" splitRenderMesh="1" splitCollisionMesh="0">
+			<skybox key="skybox_xiyang"></skybox>
+            <models weight="96"
+                values="ground_00" />
+            <materials weight="4716"
+                values="ground_00 ground_00_l" />
+			<radarmap points="-0.0346699291671573 -0.000024532174751606077 177.90774919452093 0.00004825576146275773 0.03487637539756451 289.3393699174163"/>
+            <teambattle>
+                <team1>5343,252,354,175</team1>  
+				<team1>5343,252,354,175</team1>  
+				<team1>5343,252,354,175</team1>  
+				<team1>5343,252,354,175</team1>  
+				<team1>5343,252,354,175</team1>  
+				<team1>5343,252,354,175</team1>   
+				<team1>5343,252,354,175</team1>  
+				<team1>5343,252,354,175</team1>  
+				<team2>5343,252,354,175</team2>  
+				<team2>5343,252,354,175</team2>  
+				<team2>5343,252,354,175</team2>  
+				<team2>5343,252,354,175</team2>  
+				<team2>5343,252,354,175</team2>  
+				<team2>5343,252,354,175</team2>  
+				<team2>5343,252,354,175</team2>  
+				<team2>5343,252,354,175</team2>
+            </teambattle>
+			<bgcolor color="0.561 0.6 0.608"/>
+            <lights>
+                <ambient>0xccd4df,0.5</ambient>
+                <directional>-1,-1,-2,0xdbdfcc,0.2</directional>
+                <directional>1,1,-2,0xdbdfcc,0.2</directional>
+				<omni>0xeeccaa,1,200,1087.5564,-701.0791,-2667.9288</omni>
+            </lights>
+    </map>
+	
+	</maps>
+	
+	<modes>
+	    <mode key="duikang" id="0"
+			maps="xibumuchang jufengyingjiu shengdanmicheng jiangnanxiaozhen feiqichejian xingjimihang mcconglin houhuayuan majiangjianghu classroom shamobaolei dixiaquanguan csassault fightclub wenhuajiequ xiuluodoujichang chonghai mc_guzhen guzhen bigbianmaocheng yuanyanghuolun shamo yexiyingdi zhandiyiyuan saichechang shamoyi heisechengzhen heianmatou pyramid2 bianjingshaosuo huochezhan gongdi polartown liangangchang mothership"
+			playerNums="12 10 8 4 2">
+			<rule key="kill" times="12" kills="100 60 80 120 150 200" />
+			<rule key="time" times="7 5 9 11" />
+
+			<!-- 战斗开始X秒后，不允许被快速匹配选中-->
+			<time limit="180" />
+		</mode>
+		<mode key="daozhan" id="1"
+			maps="polartown pyramid2 zuqiuchang doushouchang gongdi liangangchang"
+			playerNums="12 10 8 4 2">
+			<rule key="kill" times="12" kills="80 60 100 120" />
+			<rule key="time" times="7 5 9 11" />
+			<time limit="180" />
+		</mode>
+		<mode key="baopo" id="2" maps="xibumuchang shengdanmicheng feiqichejian mcconglin shamobaolei shamo yexiyingdi chengtiezhan xunlianjidi heisechengzhen zousicangku huochezhan nengyuanzhan polartown mothership heisechengzhen" playerNums="12 10 8 4 2">
+			<rule key="round" times="3" rounds="9 7 11 13" />
+			<time limit="180" />
+		</mode>
+		<!-- all the pvr-->
+		<mode key="buguai" id="31" maps="polartown_pve" playerNums="4">
+			<rule key="time" times="15" />
+			<time limit="180" />
+		</mode>
+		<mode key="shuaguai" id="32" maps="huangjiadoushouchang liangangchang_pve saichechang_pve jidifeixu_pve" playerNums="4">
+			<rule key="time" times="20" />
+			<time limit="180" />
+		</mode>
+		<mode key="buguaishouqiang" id="33" maps="juweihui_pve" playerNums="4">
+			<rule key="time" times="15" />
+			<rule key="weapon" id="1" />
+			<time limit="180" />
+		</mode>
+		<mode key="shuaguailost" id="34" maps="shulimicheng" playerNums="4">
+			<rule key="time" times="15" />
+			<rule key="lost" num="10"/>
+			<time limit="180" />
+		</mode>
+		<mode key="shuaguaishouhu" id="36" maps="zuqiuchang_pve yexiyingdi_pve" playerNums="4">
+			<rule key="time" times="20" />
+			<rule key="protect" id="33"/>
+			<time limit="180" />
+		</mode>
+		<mode key="shuaguaiju" id="35" maps="hanbingyaosai_pve" playerNums="4">
+			<rule key="time" times="15" />
+			<rule key="weapon" id="602"/>
+			<time limit="180" />
+		</mode>
+		<!-- all the pvr-->
+		<mode key="juzhan" id="3" maps="dixiaquanguan wanshengjie zhandiyiyuan zuqiuchang shamoyi bianjingshaosuo twotowers huangwuzhidi polartown liangangchang"
+			playerNums="12 10 8 4 2">
+			<rule key="kill" times="12" kills="80 60 120 150 200" />
+			<rule key="time" times="9 5 7 11" />
+			<time limit="180" />
+		</mode>
+		<mode key="leizhan" id="4" maps="twotowers gongdi bianjingshaosuo heianmatou hanbingyaosai" playerNums="12 10 8 4 2">
+			<rule key="kill" times="12" kills="80 60 120 150" />
+			<rule key="time" times="9 5 7 11" />
+			<time limit="180" />
+		</mode>
+		<mode key="gerenjingji" id="5" maps="feiqichejian houhuayuan yexiyingdi zousicangku nengyuanzhan xunlianjidi heisechengzhen mothership polartown" playerNums="12 10 8 4"> 
+            <rule key="kill" times="12" kills="40 60"/> 
+            <rule key="time" times="9 5 7 11"/> 
+			<time limit="180" />
+        </mode>
+		<mode key="gerenjingji_juji" id="9" maps="mothership polartown" playerNums="12 10 8 4" ref=""> 
+            <rule key="kill" times="12" kills="40 60"/> 
+            <rule key="time" times="9 5 7 11"/> 
+			<time limit="180" />
+        </mode>
+		<mode key="gerenjingji_shouqiang" id="10" maps="feiqichejian houhuayuan nengyuanzhan xunlianjidi mothership polartown" playerNums="12 10 8 4" ref=""> 
+            <rule key="kill" times="12" kills="40 60"/> 
+            <rule key="time" times="9 5 7 11"/>
+            <time limit="180" />			
+        </mode>
+		<!--roles type 1 ghost 2 ghost 3 mother 5 hero   ghostwp   母体武器motherwp  英雄武器herowp -->
+		<mode key="evilVariability" id="14" maps="maxituan nengyuanzhan_shenghua jidixiaozhen_shenghua youlechang xibumeiying jidifeixu" playerNums="12 10 8 4 2" ghost="3006:9-10 3027:0 3002:10-13 3007:0 3009:0 3010:0" mother="3005:0" hero="3008:0" herowp="3008:927">
+			<rule key="round" times="3" rounds="13 11 7 9 15" />
+			<time limit="180" />
+		</mode>
+		<mode key="shenghua" id="8" maps="evilpyramid youlechang jidifeixu" playerNums="12 10 8 4 2" ghost="3001:7-11 3002:7-11" mother="3004:0">
+			<rule key="round" times="3" rounds="13 11 7 9 15" />
+			<time limit="180" />
+		</mode>
+		
+		<mode key="sishen" id="15" maps="jidifeixu" playerNums="12 10 8 4 2" ghost="3001:9 3002:0" mother="3002:0">
+			<rule key="round" times="3" rounds="13 11 7 9 15" />
+			<time limit="180" />
+		</mode>
+		<!--
+		<mode key="shengcun" id="6" maps="twotowers_pve huangwuzhidi_pve doushouchang_pve saichechang_pve polartown_pve zuqiuchang_pve liangangchang_pve juweihui_pve hanbingyaosai_pve huangjiadoushouchang pyramid2 shulimicheng baizhuanhuilang yijishalu" playerNums="4">
+			<rule key="PSEasy" rounds="10" />
+			<rule key="PSNormal" rounds="13" />
+			<rule key="PSHard" rounds="15" />
+		</mode> -->
+		
+		<mode key="shouqiangzhan" id="7"
+			maps="doushouchang pyramid2 heianmatou shamoyi gongdi polartown liangangchang"
+			playerNums="12 10 8 4 2">
+			<rule key="kill" times="12" kills="60 80 100 120" />
+			<rule key="time" times="9 5 7 11" />
+			<time limit="180" />
+		</mode>
+	
+		<mode key="shuangrenzhan" id="11"
+			maps="dayuan doushouchang zuqiuchang liangangchang gongdi yanjiusuo"
+			playerNums="4 2">
+			<rule key="kill" times="12" kills="40 10 20 60" />
+			<rule key="time" times="11 5 7 9" />
+			<time limit="180" />
+		</mode>
+		<mode key="shuangrenzhan_shouqiang" id="12"
+			maps="liangangchang gongdi yanjiusuo"
+			playerNums="4 2">
+			<rule key="kill" times="12" kills="40 10 20 60" />
+			<rule key="time" times="11 5 7 9" />
+			<time limit="180" />
+		</mode>
+		<mode key="shuangrenzhan_dao" id="13"
+			maps="liangangchang gongdi yanjiusuo"
+			playerNums="4 2">
+			<rule key="kill" times="12" kills="40 10 20 60" />
+			<rule key="time" times="11 5 7 9" />
+			<time limit="180" />
+		</mode>
+		<mode key="qiangwangzhiwang" id="18" maps="feiqichejian houhuayuan yexiyingdi zousicangku nengyuanzhan xunlianjidi heisechengzhen mothership polartown" playerNums="12 10 8 4"> 
+			<rule key="kill" times="12" kills="41 80 100 120" />
+            <rule key="skill" times="30" kills="305:10:Rifle 602:8:Sniper 706:5:MachineGun 203:5:SubMachineGun 101:5:Shotgun 1:5:Pistol 801:2:Grenade 901:1:Melee"/> 
+			<time limit="180" />
+    </mode>
+		
+		<mode key="huihezhan" id="20"
+			maps="gongdi yanjiusuo"
+			playerNums="4 2">
+			<rule key="kill" times="12" kills="10 20 40 60" />
+			<rule key="time" times="5 7 9" />
+			<time limit="180" />
+		</mode>
+		
+		<mode key="yuleduikang" id="21"
+			maps="heisechengzhen polartown"
+			playerNums="12 10 8 4 2">
+			<rule key="kill" times="12" kills="120 60 80 100 200" />
+			<rule key="time" times="9 5 7 11" />
+			<time limit="180" />
+		</mode>
+		<mode key="fengkuangdaoju" id="22"
+			maps="heisechengzhen polartown"
+			playerNums="12 10 8 4 2" hero="3008:0" herowp="3008:933">
+			<rule key="kill" times="12" kills="120 60 80 100 200" />
+			<rule key="time" times="9 5 7 11" />
+			<time limit="180" />
+		</mode>
+		<mode key="tuanduijudian" id="23"
+			maps="polartownjudian yexiyingdijudian"
+			playerNums="12 10 8 4 2">
+			<rule key="score" times="15" score="500 300 700 900 1200" />
+			<rule key="time" times="10 5 8 15 20" />
+
+			<time limit="180" />
+		</mode>
+		<mode key="zhanzhenghongliu" id="24"
+			maps="yexiyingdijudian2 heisechengzhen"
+			playerNums="12 10 8 4 2">
+			<rule key="score" times="15" score="1200 800 1600 2000" />
+			<rule key="time" times="10 5 8 15" />
+
+			<time limit="180" />
+		</mode>
+		<mode key="emengzhiwang" id="26"
+			maps="heianmatou shamoyi bigbianmaocheng huangwuzhidi"
+			playerNums="12 10 8 4 2" hero="3026:0" herowp="3026:734">
+			<rule key="score" times="15" score="120 80 160 200" />
+			<rule key="time" times="10 5 8 15" />
+			<time limit="180" />
+		</mode>
+		<mode key="gudanyingxiong" id="25"
+			maps="polartownduoqi1 shamoyiduoqi1 huochezhanduoqi1 heianmatou"
+			playerNums="12 10 8 4 2" hero="3026:0" herowp="3026:734">
+			<rule key="score" times="15" score="500 100 700 900 1200" />
+			<rule key="time" times="10 5 8 15" />
+			<time limit="180" />
+		</mode>
+	</modes>
+	<schemamaps>
+		<schemamap key="duikangzhandou" ref="duikang daozhan juzhan leizhan shouqiangzhan" id="9" showInFree="1">
+		</schemamap>
+		
+		<schemamap key="yuleduikangzhandou" ref="yuleduikang" id="19" showInFree="1">
+		</schemamap> 
+		<schemamap key="fengkuangdaojuzhandou" ref="fengkuangdaoju" id="20" showInFree="1">
+		</schemamap>
+		<schemamap key="gerenjingjizhandou" ref="gerenjingji gerenjingji_juji gerenjingji_shouqiang" id="10" showInFree="1">
+		</schemamap>
+		<schemamap key="pkzhandou" ref="shuangrenzhan shuangrenzhan_shouqiang shuangrenzhan_dao" id="15" showInFree="1">
+		</schemamap>
+		<schemamap key="qiangwangzhiwangzhandou" ref="qiangwangzhiwang" id="18" showInFree="1">
+		</schemamap>
+		<schemamap key="baopozhandou" ref="baopo" id="11" showInFree="1">
+		</schemamap>
+		<schemamap key="pveshenghua" ref="shenghua" id="13" showInFree="1">
+		</schemamap>
+		<!--<schemamap key="pveshengcun" ref="shengcun" id="14">
+		</schemamap>-->
+		<schemamap key="pvebianyi" ref="evilVariability" id="16" showInFree="1">
+		</schemamap>
+		<schemamap key="jujizhandou" ref="juzhan" id="3" showInFree="0">
+		</schemamap>
+			<schemamap key="tuanduijudianzhandou" ref="tuanduijudian" id="23" showInFree="1">
+		</schemamap> 
+			<schemamap key="zhanzhenghongliuzhandou" ref="zhanzhenghongliu" id="24" showInFree="1">
+		</schemamap> 
+			<schemamap key="emengzhiwangzhandou" ref="emengzhiwang" id="26" showInFree="1">
+		</schemamap> 
+		<schemamap key="gudanyingxiongzhandou" ref="gudanyingxiong" id="25" showInFree="1">
+		</schemamap> 
+	</schemamaps>
+	<pves>
+		<Difficulty id="1" map="yijishalu" rounds="10" preparetime="15" aiID ="1" bonus="900:5000 1200:3000 1500:1000 " level="easy" round="201 202 203 204 205 206 207 208 209 210"/>
+		<Difficulty id="2" map="yijishalu" rounds="13" preparetime="15" aiID ="1" bonus="1200:10000 1500:7000 1800:3000 " level="normal" round="101 102 103 104 105 106 107 108 109 110 111 112 113"/>
+		<Difficulty id="3" map="yijishalu" rounds="15" preparetime="15" aiID ="1" bonus="1500:15000 1800:10000 2100:5000 " level="hard" round="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15"/>
+	</pves>
+	<skyboxes>
+		<skybox key="skybox_duoyunqingtian" value="skybox_top skybox_left skybox_right skybox_front skybox_back">
+			
+		</skybox>
+		<skybox key="skybox_xiyang" value="skybox_top skybox_left skybox_right skybox_front skybox_back">
+			
+		</skybox>
+		<skybox key="skybox_xue" value="skybox_top skybox_left skybox_right skybox_front skybox_back">
+			
+		</skybox>
+		<skybox key="skybox_haiyang" value="skybox_top skybox_left skybox_right skybox_front skybox_back">
+			
+		</skybox>
+		<skybox key="skybox_yintian" value="skybox_top skybox_left skybox_right skybox_front skybox_back">
+			
+		</skybox>
+		<skybox key="skybox_ye" value="skybox_top skybox_left skybox_right skybox_front skybox_back">
+			
+		</skybox>
+		<skybox key="skybox_nianye" value="skybox_top skybox_left skybox_right skybox_front skybox_back">
+			
+		</skybox>
+		<skybox key="skybox_black" value="skybox_top skybox_left skybox_right skybox_front skybox_back">
+			
+		</skybox>
+	</skyboxes>
+</room>

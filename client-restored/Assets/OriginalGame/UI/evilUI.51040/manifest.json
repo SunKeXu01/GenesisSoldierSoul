@@ -1,0 +1,69 @@
+{
+  "source": "/Users/Admin/Documents/创世兵魂/_解压资源/创世兵魂素材/创世兵魂/evilUI.51040.swf",
+  "bitmapCount": 5,
+  "errors": 0,
+  "bitmaps": [
+    {
+      "characterId": 1,
+      "tagCode": 35,
+      "width": 663,
+      "height": 283,
+      "file": "bitmap-00001.png"
+    },
+    {
+      "characterId": 2,
+      "tagCode": 35,
+      "width": 663,
+      "height": 283,
+      "file": "bitmap-00002.png"
+    },
+    {
+      "characterId": 3,
+      "tagCode": 36,
+      "width": 449,
+      "height": 25,
+      "file": "bitmap-00003.png"
+    },
+    {
+      "characterId": 4,
+      "tagCode": 36,
+      "width": 331,
+      "height": 25,
+      "file": "bitmap-00004.png"
+    },
+    {
+      "characterId": 5,
+      "tagCode": 36,
+      "width": 331,
+      "height": 25,
+      "file": "bitmap-00005.png"
+    }
+  ],
+  "exportedSymbols": [
+    {
+      "characterId": 5,
+      "name": "ui.evil.roomItemBg1",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 4,
+      "name": "ui.evil.roomItemBg2",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 3,
+      "name": "ui.evil.resultItemBg",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 2,
+      "name": "ui.evil.channelBg",
+      "sourceTag": "SymbolClass"
+    },
+    {
+      "characterId": 1,
+      "name": "ui.free.channelBg",
+      "sourceTag": "SymbolClass"
+    }
+  ]
+}

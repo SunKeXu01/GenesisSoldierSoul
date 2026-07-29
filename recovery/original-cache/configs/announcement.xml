@@ -1,0 +1,11 @@
+<announcement>
+    <gun_init v="2552" />
+    <gun_free v="5138" />
+    <gun_evil v="5143" />
+    <map v="jidifeixu"/>
+	<quick_map v="81"/>
+	<quick_mod v="11"/>
+	<tutorial_map v="58"/>
+	<tutorial_mod v="1"/>
+	<inviteCodeShowInPlatforms v="1,9"/>
+</announcement>
