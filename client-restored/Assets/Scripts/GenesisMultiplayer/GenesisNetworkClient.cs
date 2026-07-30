@@ -278,6 +278,10 @@ namespace GenesisSoldierSoul.Multiplayer
                 jump = Input.GetKey(KeyCode.Space),
                 yaw = yaw,
                 pitch = pitch,
+                position = SerializableVector3.From(
+                    localPlayer == null
+                        ? Vector3.zero
+                        : localPlayer.position - worldOrigin),
             };
             Send(JsonUtility.ToJson(input));
         }
@@ -519,6 +523,7 @@ namespace GenesisSoldierSoul.Multiplayer
         public bool jump;
         public float yaw;
         public float pitch;
+        public SerializableVector3 position;
     }
 
     [Serializable]
