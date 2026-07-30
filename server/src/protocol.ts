@@ -18,6 +18,7 @@ export type InputMessage = {
   jump: boolean;
   yaw: number;
   pitch: number;
+  position?: Vector3;
 };
 
 export type ShootMessage = {
@@ -127,7 +128,8 @@ export function parseClientMessage(raw: string): ClientMessage | undefined {
     finite(candidate.moveZ) &&
     (candidate.jump === undefined || typeof candidate.jump === "boolean") &&
     finite(candidate.yaw) &&
-    finite(candidate.pitch)
+    finite(candidate.pitch) &&
+    (candidate.position === undefined || vector3(candidate.position))
   ) {
     return {
       type: "input",
@@ -137,6 +139,10 @@ export function parseClientMessage(raw: string): ClientMessage | undefined {
       jump: candidate.jump === true,
       yaw: candidate.yaw,
       pitch: Math.max(-89, Math.min(89, candidate.pitch)),
+      position:
+        candidate.position === undefined
+          ? undefined
+          : candidate.position,
     };
   }
 

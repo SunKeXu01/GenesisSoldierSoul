@@ -115,7 +115,65 @@ describe("GameRoom", () => {
     if (snapshot.type !== "snapshot") return;
     expect(
       snapshot.players.find((candidate) => candidate.id === player.id)!.position
-        .y,
+      .y,
     ).toBeGreaterThan(player.position.y);
+  });
+
+  it("accepts collision-resolved client movement without simulating through walls", () => {
+    const room = new GameRoom("pyramid");
+    const player = room.addPlayer("玩家一");
+    room.applyInput(
+      player.id,
+      {
+        type: "input",
+        sequence: 1,
+        moveX: 0,
+        moveZ: 1,
+        jump: false,
+        yaw: 0,
+        pitch: 0,
+        position: {
+          x: player.position.x,
+          y: player.position.y,
+          z: player.position.z + 0.2,
+        },
+      },
+      1_000,
+    );
+
+    const snapshot = room.tick(1_050);
+    expect(snapshot.type).toBe("snapshot");
+    if (snapshot.type !== "snapshot") return;
+    const updated = snapshot.players.find((item) => item.id === player.id)!;
+    expect(updated.position.z).toBeCloseTo(player.position.z + 0.2);
+  });
+
+  it("clamps impossible client position jumps", () => {
+    const room = new GameRoom("pyramid");
+    const player = room.addPlayer("玩家一");
+    room.applyInput(
+      player.id,
+      {
+        type: "input",
+        sequence: 1,
+        moveX: 0,
+        moveZ: 0,
+        jump: false,
+        yaw: 0,
+        pitch: 0,
+        position: {
+          x: player.position.x + 100,
+          y: player.position.y,
+          z: player.position.z,
+        },
+      },
+      1_000,
+    );
+
+    const snapshot = room.tick(1_050);
+    expect(snapshot.type).toBe("snapshot");
+    if (snapshot.type !== "snapshot") return;
+    const updated = snapshot.players.find((item) => item.id === player.id)!;
+    expect(updated.position.x - player.position.x).toBeLessThan(0.5);
   });
 });

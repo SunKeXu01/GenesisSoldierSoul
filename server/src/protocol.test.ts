@@ -25,6 +25,21 @@ describe("parseClientMessage", () => {
         }),
       ),
     ).toMatchObject({ moveX: 1, moveZ: -1, pitch: 89 });
+
+    expect(
+      parseClientMessage(
+        JSON.stringify({
+          type: "input",
+          sequence: 3,
+          moveX: 0,
+          moveZ: 1,
+          jump: false,
+          yaw: 0,
+          pitch: 0,
+          position: { x: 1, y: 2, z: 3 },
+        }),
+      ),
+    ).toMatchObject({ position: { x: 1, y: 2, z: 3 } });
   });
 
   it("rejects malformed and oversized fields", () => {

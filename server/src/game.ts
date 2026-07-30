@@ -23,6 +23,8 @@ const KNIFE_INTERVAL_MS = 500;
 const RESPAWN_DELAY_MS = 3000;
 const ROUND_DURATION_MS = 3 * 60 * 1000;
 const SCORE_LIMIT = 10;
+const CLIENT_POSITION_GRACE = 0.08;
+const CLIENT_POSITION_SPEED_TOLERANCE = 1.75;
 
 type Player = PlayerSnapshot & {
   moveX: number;
@@ -32,6 +34,8 @@ type Player = PlayerSnapshot & {
   groundY: number;
   lastShotAt: number;
   respawnAt: number;
+  usesClientPosition: boolean;
+  lastClientPositionAt: number;
 };
 
 type MapConfig = {
@@ -97,6 +101,8 @@ export class GameRoom {
       groundY: 0,
       lastShotAt: 0,
       respawnAt: 0,
+      usesClientPosition: false,
+      lastClientPositionAt: 0,
     };
     player.groundY = player.position.y;
     this.players.set(id, player);
@@ -107,7 +113,7 @@ export class GameRoom {
     this.players.delete(id);
   }
 
-  applyInput(id: string, input: InputMessage): void {
+  applyInput(id: string, input: InputMessage, now = Date.now()): void {
     const player = this.players.get(id);
     if (!player || !player.alive) return;
     if (input.sequence <= player.lastInputSequence) return;
@@ -117,6 +123,36 @@ export class GameRoom {
     player.jumpRequested = input.jump;
     player.yaw = normalizeDegrees(input.yaw);
     player.pitch = input.pitch;
+    if (input.position) {
+      const elapsedMs =
+        player.lastClientPositionAt > 0
+          ? clamp(now - player.lastClientPositionAt, 1, 250)
+          : 1000 / TICK_RATE;
+      const maxDistance =
+        MOVE_SPEED *
+          (elapsedMs / 1000) *
+          CLIENT_POSITION_SPEED_TOLERANCE +
+        CLIENT_POSITION_GRACE;
+      const deltaX = input.position.x - player.position.x;
+      const deltaZ = input.position.z - player.position.z;
+      const distance = Math.hypot(deltaX, deltaZ);
+      const scale =
+        distance > maxDistance && distance > 0
+          ? maxDistance / distance
+          : 1;
+      player.position.x = clamp(
+        player.position.x + deltaX * scale,
+        this.map.minX,
+        this.map.maxX,
+      );
+      player.position.z = clamp(
+        player.position.z + deltaZ * scale,
+        this.map.minZ,
+        this.map.maxZ,
+      );
+      player.usesClientPosition = true;
+      player.lastClientPositionAt = now;
+    }
   }
 
   shoot(id: string, message: ShootMessage, now: number): ServerMessage[] {
@@ -206,23 +242,25 @@ export class GameRoom {
         continue;
       }
 
-      const length = Math.hypot(player.moveX, player.moveZ);
-      const scale = length > 1 ? 1 / length : 1;
-      const yaw = (player.yaw * Math.PI) / 180;
-      const localX = player.moveX * scale;
-      const localZ = player.moveZ * scale;
-      const worldX = localX * Math.cos(yaw) + localZ * Math.sin(yaw);
-      const worldZ = -localX * Math.sin(yaw) + localZ * Math.cos(yaw);
-      player.position.x = clamp(
-        player.position.x + worldX * MOVE_SPEED * dt,
-        this.map.minX,
-        this.map.maxX,
-      );
-      player.position.z = clamp(
-        player.position.z + worldZ * MOVE_SPEED * dt,
-        this.map.minZ,
-        this.map.maxZ,
-      );
+      if (!player.usesClientPosition) {
+        const length = Math.hypot(player.moveX, player.moveZ);
+        const scale = length > 1 ? 1 / length : 1;
+        const yaw = (player.yaw * Math.PI) / 180;
+        const localX = player.moveX * scale;
+        const localZ = player.moveZ * scale;
+        const worldX = localX * Math.cos(yaw) + localZ * Math.sin(yaw);
+        const worldZ = -localX * Math.sin(yaw) + localZ * Math.cos(yaw);
+        player.position.x = clamp(
+          player.position.x + worldX * MOVE_SPEED * dt,
+          this.map.minX,
+          this.map.maxX,
+        );
+        player.position.z = clamp(
+          player.position.z + worldZ * MOVE_SPEED * dt,
+          this.map.minZ,
+          this.map.maxZ,
+        );
+      }
       if (
         player.jumpRequested &&
         player.position.y <= player.groundY + 0.01

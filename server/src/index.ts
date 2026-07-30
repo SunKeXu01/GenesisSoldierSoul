@@ -121,7 +121,7 @@ websocketServer.on("connection", (socket) => {
     const session = sessions.get(socket);
     if (!session || message.type === "join") return;
     if (message.type === "input") {
-      session.room.applyInput(session.playerId, message);
+      session.room.applyInput(session.playerId, message, now);
       return;
     }
     for (const event of session.room.shoot(
