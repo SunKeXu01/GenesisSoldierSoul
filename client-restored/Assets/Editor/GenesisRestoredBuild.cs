@@ -33,6 +33,7 @@ public static class GenesisRestoredBuild
         const string outputDirectory = "Assets/PlayableMaps";
         Directory.CreateDirectory(outputDirectory);
         CreateRemotePlayerPrefab();
+        CreateCombatResourcePrefabs();
 
         foreach (var recovered in RecoveredMapScenes)
         {
@@ -115,6 +116,40 @@ public static class GenesisRestoredBuild
         PrefabUtility.SaveAsPrefabAsset(clone, prefabPath);
         UnityEngine.Object.DestroyImmediate(clone);
         Debug.Log("Created original-resource remote player prefab: " + prefabPath);
+    }
+
+    [MenuItem("Genesis/Create Combat Resource Prefabs")]
+    public static void CreateCombatResourcePrefabs()
+    {
+        const string prefabDirectory = "Assets/Resources/OriginalGame";
+        Directory.CreateDirectory(prefabDirectory);
+        CopyRuntimePrefab(
+            "Assets/RecoveredMaps/JunePyramid/GameObject/Pistol.prefab",
+            prefabDirectory + "/Pistol.prefab");
+        CopyRuntimePrefab(
+            "Assets/RecoveredMaps/JunePyramid/GameObject/PistolMuzzleFlash.prefab",
+            prefabDirectory + "/PistolMuzzleFlash.prefab");
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+    }
+
+    private static void CopyRuntimePrefab(string sourcePath, string destinationPath)
+    {
+        if (AssetDatabase.LoadAssetAtPath<GameObject>(destinationPath) != null)
+            return;
+        if (AssetDatabase.LoadAssetAtPath<GameObject>(sourcePath) == null)
+        {
+            Debug.LogWarning("Recovered combat prefab was not found: " + sourcePath);
+            return;
+        }
+        if (!AssetDatabase.CopyAsset(sourcePath, destinationPath))
+        {
+            Debug.LogError(
+                "Failed to copy recovered combat prefab to Resources: "
+                + sourcePath);
+            return;
+        }
+        Debug.Log("Created recovered combat resource prefab: " + destinationPath);
     }
 
     [MenuItem("Genesis/Audit Original Scene Buttons")]
@@ -254,6 +289,91 @@ public static class GenesisRestoredBuild
 
         var auditDirectory = Path.GetFullPath(Path.Combine(Application.dataPath, "../../recovery"));
         var auditPath = Path.Combine(auditDirectory, "playable-map-visibility.txt");
+        File.WriteAllText(auditPath, output.ToString());
+        Debug.Log(output.ToString());
+    }
+
+    [MenuItem("Genesis/Audit Pyramid Gameplay")]
+    public static void AuditPyramidGameplay()
+    {
+        const string scenePath = "Assets/PlayableMaps/Pyramid.unity";
+        const string pistolPath =
+            "Assets/RecoveredMaps/JunePyramid/GameObject/Pistol.prefab";
+        var scene = EditorSceneManager.OpenScene(scenePath, OpenSceneMode.Single);
+        var output = new StringBuilder();
+        foreach (var root in scene.GetRootGameObjects()
+                     .Where(root => root.name == "First Person Player"
+                                    || root.GetComponent<Canvas>() != null))
+        {
+            output.AppendLine(
+                $"ROOT {root.name} active={root.activeSelf} path={HierarchyPath(root.transform)}");
+            foreach (var transform in root.GetComponentsInChildren<Transform>(true))
+            {
+                var components = string.Join(
+                    ";",
+                    transform.GetComponents<Component>()
+                        .Where(component => component != null)
+                        .Select(component => component.GetType().Name));
+                var text = transform.GetComponent<Text>();
+                var image = transform.GetComponent<Image>();
+                var rawImage = transform.GetComponent<RawImage>();
+                output.Append("  ")
+                    .Append(HierarchyPath(transform))
+                    .Append(" activeSelf=").Append(transform.gameObject.activeSelf)
+                    .Append(" active=").Append(transform.gameObject.activeInHierarchy)
+                    .Append(" components=").Append(components);
+                if (text != null)
+                    output.Append(" text=").Append(Csv(text.text));
+                if (image != null && image.sprite != null)
+                    output.Append(" sprite=").Append(image.sprite.name);
+                if (rawImage != null && rawImage.texture != null)
+                    output.Append(" texture=").Append(rawImage.texture.name);
+                output.AppendLine();
+            }
+        }
+
+        var pistol = AssetDatabase.LoadAssetAtPath<GameObject>(pistolPath);
+        if (pistol != null)
+        {
+            var instance = UnityEngine.Object.Instantiate(pistol);
+            var renderers = instance.GetComponentsInChildren<Renderer>(true);
+            if (renderers.Length > 0)
+            {
+                var bounds = renderers[0].bounds;
+                foreach (var renderer in renderers.Skip(1))
+                    bounds.Encapsulate(renderer.bounds);
+                output.AppendLine(
+                    $"PISTOL renderers={renderers.Length} bounds={bounds}");
+            }
+            UnityEngine.Object.DestroyImmediate(instance);
+        }
+
+        const string sourceScenePath =
+            "Assets/RecoveredMaps/JunePyramid/金字塔/Scenep.unity";
+        var sourceScene = EditorSceneManager.OpenScene(
+            sourceScenePath, OpenSceneMode.Single);
+        var sourcePlayer = sourceScene.GetRootGameObjects()
+            .FirstOrDefault(root => root.name == "test_one");
+        if (sourcePlayer != null)
+        {
+            output.AppendLine("SOURCE_PLAYER test_one");
+            foreach (var transform in sourcePlayer.GetComponentsInChildren<Transform>(true))
+            {
+                output.Append("  ")
+                    .Append(HierarchyPath(transform))
+                    .Append(" active=").Append(transform.gameObject.activeInHierarchy)
+                    .Append(" localPosition=").Append(transform.localPosition)
+                    .Append(" components=")
+                    .AppendLine(string.Join(
+                        ";",
+                        transform.GetComponents<Component>()
+                            .Where(component => component != null)
+                            .Select(component => component.GetType().Name)));
+            }
+        }
+
+        var auditDirectory = Path.GetFullPath(Path.Combine(Application.dataPath, "../../recovery"));
+        var auditPath = Path.Combine(auditDirectory, "pyramid-gameplay-audit.txt");
         File.WriteAllText(auditPath, output.ToString());
         Debug.Log(output.ToString());
     }

@@ -59,6 +59,13 @@ namespace GenesisSoldierSoul.Multiplayer
                 camera == null ? null : camera.transform,
                 remotePrefab,
                 scene.name.ToLowerInvariant());
+
+            if (scene.name == "Pyramid"
+                && player.GetComponent<GenesisMatchController>() == null)
+            {
+                var match = player.gameObject.AddComponent<GenesisMatchController>();
+                match.Configure(player.transform, camera, client);
+            }
         }
     }
 }

@@ -41,7 +41,7 @@ describe("GameRoom", () => {
         {
           type: "shoot",
           sequence: 1,
-          weapon: "rifle",
+          weapon: "pistol",
           direction: { x: 0, y: 0, z: 0 },
         },
         Date.now(),
@@ -49,7 +49,7 @@ describe("GameRoom", () => {
     ).toEqual([]);
   });
 
-  it("applies authoritative rifle damage, death, and respawn", () => {
+  it("applies authoritative pistol damage, death, and respawn", () => {
     const room = new GameRoom("test");
     const shooter = room.addPlayer("玩家一");
     const target = room.addPlayer("玩家二");
@@ -62,29 +62,29 @@ describe("GameRoom", () => {
 
     room.shoot(
       shooter.id,
-      { type: "shoot", sequence: 1, weapon: "rifle", direction },
+      { type: "shoot", sequence: 1, weapon: "pistol", direction },
       start,
     );
     room.shoot(
       shooter.id,
-      { type: "shoot", sequence: 2, weapon: "rifle", direction },
-      start + 111,
+      { type: "shoot", sequence: 2, weapon: "pistol", direction },
+      start + 250,
     );
     const events = room.shoot(
       shooter.id,
-      { type: "shoot", sequence: 3, weapon: "rifle", direction },
-      start + 222,
+      { type: "shoot", sequence: 3, weapon: "pistol", direction },
+      start + 500,
     );
 
     expect(events.some((event) => event.type === "death")).toBe(true);
-    const deadSnapshot = room.tick(start + 223);
+    const deadSnapshot = room.tick(start + 501);
     expect(deadSnapshot.type).toBe("snapshot");
     if (deadSnapshot.type !== "snapshot") return;
     expect(
       deadSnapshot.players.find((player) => player.id === target.id)?.alive,
     ).toBe(false);
 
-    const respawnedSnapshot = room.tick(start + 3_223);
+    const respawnedSnapshot = room.tick(start + 3_501);
     expect(respawnedSnapshot.type).toBe("snapshot");
     if (respawnedSnapshot.type !== "snapshot") return;
     const respawned = respawnedSnapshot.players.find(

@@ -24,7 +24,7 @@ export type ShootMessage = {
   type: "shoot";
   sequence: number;
   direction: Vector3;
-  weapon: "rifle";
+  weapon: "pistol" | "knife";
 };
 
 export type ClientMessage = JoinMessage | InputMessage | ShootMessage;
@@ -55,6 +55,8 @@ export type ServerMessage =
       tick: number;
       serverTime: number;
       players: PlayerSnapshot[];
+      roundState: "playing" | "ended";
+      roundEndsAt: number;
     }
   | {
       type: "hit";
@@ -141,13 +143,13 @@ export function parseClientMessage(raw: string): ClientMessage | undefined {
   if (
     candidate.type === "shoot" &&
     Number.isInteger(candidate.sequence) &&
-    candidate.weapon === "rifle" &&
+    (candidate.weapon === "pistol" || candidate.weapon === "knife") &&
     vector3(candidate.direction)
   ) {
     return {
       type: "shoot",
       sequence: candidate.sequence as number,
-      weapon: "rifle",
+      weapon: candidate.weapon,
       direction: candidate.direction,
     };
   }
