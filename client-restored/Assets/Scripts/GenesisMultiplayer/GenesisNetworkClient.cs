@@ -7,6 +7,8 @@ namespace GenesisSoldierSoul.Multiplayer
 {
     public sealed class GenesisNetworkClient : MonoBehaviour
     {
+        private static string sessionPlayerName;
+
         [Header("连接")]
         [SerializeField] private string serverUrl = "";
         [SerializeField] private string room = "public";
@@ -24,18 +26,26 @@ namespace GenesisSoldierSoul.Multiplayer
 
         private readonly Dictionary<string, RemotePlayerView> remotes =
             new Dictionary<string, RemotePlayerView>();
+        private readonly Dictionary<string, string> playerNames =
+            new Dictionary<string, string>();
         private int socketId;
         private int sequence;
         private float nextInputAt;
+        private float nextRosterAt;
+        private float reconnectAt;
         private string localPlayerId;
         private bool connected;
+        private bool destroying;
         private Vector3 authoritativePosition;
         private bool hasAuthoritativePosition;
         private Vector3 worldOrigin;
+        private long localRespawnAt;
 
         public event Action<bool> ConnectionChanged;
         public event Action<GenesisLocalState> LocalStateChanged;
         public event Action<bool> HitConfirmed;
+        public event Action<GenesisPlayerState[]> RosterChanged;
+        public event Action<string, string> PlayerKilled;
 
         public bool IsConnected
         {
@@ -64,6 +74,14 @@ namespace GenesisSoldierSoul.Multiplayer
             {
                 viewCamera = Camera.main.transform;
             }
+
+            if (playerName == "新兵")
+            {
+                if (string.IsNullOrEmpty(sessionPlayerName))
+                    sessionPlayerName =
+                        "PLAYER" + UnityEngine.Random.Range(1000, 10000);
+                playerName = sessionPlayerName;
+            }
         }
 
         public void Configure(
@@ -88,6 +106,13 @@ namespace GenesisSoldierSoul.Multiplayer
         {
             if (!connected || string.IsNullOrEmpty(localPlayerId))
             {
+                if (!destroying
+                    && reconnectAt > 0f
+                    && Time.unscaledTime >= reconnectAt)
+                {
+                    reconnectAt = 0f;
+                    Connect();
+                }
                 return;
             }
 
@@ -118,6 +143,7 @@ namespace GenesisSoldierSoul.Multiplayer
 
         private void OnDestroy()
         {
+            destroying = true;
 #if UNITY_WEBGL && !UNITY_EDITOR
             if (socketId != 0)
             {
@@ -140,11 +166,12 @@ namespace GenesisSoldierSoul.Multiplayer
         {
             int.TryParse(id, out socketId);
             connected = true;
+            reconnectAt = 0f;
             JoinMessage join = new JoinMessage
             {
                 type = "join",
                 name = string.IsNullOrWhiteSpace(playerName)
-                    ? "新兵"
+                    ? "PLAYER"
                     : playerName.Trim(),
                 room = room,
             };
@@ -185,7 +212,13 @@ namespace GenesisSoldierSoul.Multiplayer
             if (envelope.type == "death")
             {
                 DeathMessage death = JsonUtility.FromJson<DeathMessage>(json);
-                Debug.Log("击杀：" + death.killerId + " -> " + death.victimId);
+                if (death.victimId == localPlayerId)
+                    localRespawnAt = death.respawnAt;
+                string killerName = ResolvePlayerName(death.killerId);
+                string victimName = ResolvePlayerName(death.victimId);
+                if (PlayerKilled != null)
+                    PlayerKilled(killerName, victimName);
+                Debug.Log("击杀：" + killerName + " -> " + victimName);
             }
         }
 
@@ -193,9 +226,15 @@ namespace GenesisSoldierSoul.Multiplayer
         {
             connected = false;
             localPlayerId = null;
+            socketId = 0;
+            hasAuthoritativePosition = false;
+            ClearRemotePlayers();
+            if (!destroying)
+                reconnectAt = Time.unscaledTime + 2f;
             if (ConnectionChanged != null)
                 ConnectionChanged(false);
-            Debug.LogWarning("对战服务器连接已关闭：" + reason);
+            Debug.LogWarning(
+                "对战服务器连接已关闭：" + reason + "，2 秒后自动重连。");
         }
 
         public void OnSocketError(string reason)
@@ -247,10 +286,15 @@ namespace GenesisSoldierSoul.Multiplayer
             HashSet<string> seen = new HashSet<string>();
             foreach (PlayerSnapshot player in snapshot.players)
             {
+                playerNames[player.id] = string.IsNullOrWhiteSpace(player.name)
+                    ? "PLAYER"
+                    : player.name;
                 if (player.id == localPlayerId)
                 {
                     authoritativePosition = ToWorld(player.position);
                     hasAuthoritativePosition = true;
+                    if (player.alive)
+                        localRespawnAt = 0;
                     if (LocalStateChanged != null)
                     {
                         LocalStateChanged(new GenesisLocalState
@@ -262,6 +306,7 @@ namespace GenesisSoldierSoul.Multiplayer
                             roundState = snapshot.roundState,
                             roundEndsAt = snapshot.roundEndsAt,
                             serverTime = snapshot.serverTime,
+                            respawnAt = localRespawnAt,
                         });
                     }
                     continue;
@@ -304,7 +349,45 @@ namespace GenesisSoldierSoul.Multiplayer
             foreach (string id in removed)
             {
                 remotes.Remove(id);
+                playerNames.Remove(id);
             }
+
+            if (RosterChanged != null && Time.unscaledTime >= nextRosterAt)
+            {
+                nextRosterAt = Time.unscaledTime + 0.25f;
+                GenesisPlayerState[] roster =
+                    new GenesisPlayerState[snapshot.players.Length];
+                for (int index = 0; index < snapshot.players.Length; index++)
+                {
+                    PlayerSnapshot player = snapshot.players[index];
+                    roster[index] = new GenesisPlayerState
+                    {
+                        name = playerNames[player.id],
+                        kills = player.kills,
+                        deaths = player.deaths,
+                        alive = player.alive,
+                        isLocal = player.id == localPlayerId,
+                    };
+                }
+                RosterChanged(roster);
+            }
+        }
+
+        private string ResolvePlayerName(string id)
+        {
+            string name;
+            return !string.IsNullOrEmpty(id)
+                && playerNames.TryGetValue(id, out name)
+                    ? name
+                    : "PLAYER";
+        }
+
+        private void ClearRemotePlayers()
+        {
+            foreach (RemotePlayerView remote in remotes.Values)
+                Destroy(remote.Transform.gameObject);
+            remotes.Clear();
+            playerNames.Clear();
         }
 
         private void Send(string json)
@@ -492,5 +575,15 @@ namespace GenesisSoldierSoul.Multiplayer
         public string roundState;
         public long roundEndsAt;
         public long serverTime;
+        public long respawnAt;
+    }
+
+    public struct GenesisPlayerState
+    {
+        public string name;
+        public int kills;
+        public int deaths;
+        public bool alive;
+        public bool isLocal;
     }
 }

@@ -7,6 +7,16 @@ namespace GenesisSoldierSoul.Multiplayer
     internal sealed class GenesisMultiplayerBootstrap : MonoBehaviour
     {
         private const string RemotePlayerResource = "OriginalGame/RemotePlayer";
+        private static readonly string[] PlayableMapScenes =
+        {
+            "Pyramid",
+            "NewConstructionSite",
+            "ClassicConstructionSite",
+            "SteelFactory",
+            "BiochemicalTown",
+            "RadiationDistrict",
+            "IceFireMaze",
+        };
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Install()
@@ -60,12 +70,39 @@ namespace GenesisSoldierSoul.Multiplayer
                 remotePrefab,
                 scene.name.ToLowerInvariant());
 
-            if (scene.name == "Pyramid"
+            if (IsPlayableMap(scene.name)
                 && player.GetComponent<GenesisMatchController>() == null)
             {
                 var match = player.gameObject.AddComponent<GenesisMatchController>();
                 match.Configure(player.transform, camera, client);
             }
+        }
+
+        public static bool IsPlayableMap(string sceneName)
+        {
+            return System.Array.IndexOf(PlayableMapScenes, sceneName) >= 0;
+        }
+
+        public static string GetDisplayName(string sceneName)
+        {
+            switch (sceneName)
+            {
+                case "Pyramid": return "PYRAMID";
+                case "NewConstructionSite": return "NEW CONSTRUCTION";
+                case "ClassicConstructionSite": return "CLASSIC CONSTRUCTION";
+                case "SteelFactory": return "STEEL FACTORY";
+                case "BiochemicalTown": return "BIOCHEMICAL TOWN";
+                case "RadiationDistrict": return "RADIATION DISTRICT";
+                case "IceFireMaze": return "ICE AND FIRE";
+                default: return sceneName;
+            }
+        }
+
+        public static string GetNextPlayableMap(string sceneName)
+        {
+            var index = System.Array.IndexOf(PlayableMapScenes, sceneName);
+            return PlayableMapScenes[(index + 1 + PlayableMapScenes.Length)
+                % PlayableMapScenes.Length];
         }
     }
 }

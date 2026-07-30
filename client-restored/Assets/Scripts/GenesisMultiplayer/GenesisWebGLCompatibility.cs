@@ -77,7 +77,7 @@ namespace GenesisSoldierSoul.Multiplayer
                         "[GenesisWebGL] 已接通原版训练模式按钮和恢复地图。");
                 }
             }
-            else if (activeScene.name == "Pyramid")
+            else if (GenesisMultiplayerBootstrap.IsPlayableMap(activeScene.name))
             {
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;

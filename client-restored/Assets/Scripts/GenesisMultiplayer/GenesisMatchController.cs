@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Text;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -40,6 +42,9 @@ namespace GenesisSoldierSoul.Multiplayer
         private Text scoreText;
         private Text statusText;
         private Text controlsText;
+        private Text mapText;
+        private Text scoreboardText;
+        private Text killFeedText;
         private int magazine = MagazineSize;
         private int reserve = StartingReserve;
         private int health = 100;
@@ -57,6 +62,11 @@ namespace GenesisSoldierSoul.Multiplayer
         private float browserPitch;
         private Vector3 previousBrowserMousePosition;
         private bool hasBrowserMousePosition;
+        private long respawnAt;
+        private long lastServerTime;
+        private float serverStateReceivedAt;
+        private float killFeedUntil;
+        private string nextMapScene;
 
 #if UNITY_WEBGL && !UNITY_EDITOR
         [DllImport("__Internal")]
@@ -135,6 +145,8 @@ namespace GenesisSoldierSoul.Multiplayer
             network.ConnectionChanged -= OnConnectionChanged;
             network.LocalStateChanged -= OnLocalStateChanged;
             network.HitConfirmed -= OnHitConfirmed;
+            network.RosterChanged -= OnRosterChanged;
+            network.PlayerKilled -= OnPlayerKilled;
         }
 
         private void Update()
@@ -164,7 +176,7 @@ namespace GenesisSoldierSoul.Multiplayer
                 FinishRound();
             if (roundOver && returnAt > 0f && Time.unscaledTime >= returnAt)
             {
-                SceneManager.LoadScene("Ziyou1");
+                SceneManager.LoadScene(nextMapScene);
                 return;
             }
 
@@ -194,6 +206,10 @@ namespace GenesisSoldierSoul.Multiplayer
                 crosshair.color = Time.unscaledTime < hitMarkerUntil
                     ? new Color(1f, 0.2f, 0.1f, 1f)
                     : Color.white;
+            if (scoreboardText != null)
+                scoreboardText.gameObject.SetActive(Input.GetKey(KeyCode.Tab));
+            if (killFeedText != null && Time.unscaledTime >= killFeedUntil)
+                killFeedText.text = string.Empty;
             UpdateHud();
         }
 
@@ -257,14 +273,32 @@ namespace GenesisSoldierSoul.Multiplayer
             controlsText = CreateText(
                 canvas.transform, "GenesisControls", new Vector2(0f, 18f),
                 new Vector2(520f, 28f), 15, TextAnchor.MiddleCenter);
+            mapText = CreateText(
+                canvas.transform, "GenesisMap", new Vector2(24f, -215f),
+                new Vector2(320f, 34f), 18, TextAnchor.MiddleLeft);
+            scoreboardText = CreateText(
+                canvas.transform, "GenesisScoreboard", Vector2.zero,
+                new Vector2(560f, 520f), 22, TextAnchor.MiddleCenter);
+            killFeedText = CreateText(
+                canvas.transform, "GenesisKillFeed", new Vector2(-24f, -80f),
+                new Vector2(440f, 150f), 18, TextAnchor.UpperRight);
 
             SetAnchor(healthText.rectTransform, new Vector2(0f, 0f));
             SetAnchor(ammoText.rectTransform, new Vector2(1f, 0f));
             SetAnchor(scoreText.rectTransform, new Vector2(0.5f, 1f));
             SetAnchor(statusText.rectTransform, new Vector2(0.5f, 0.5f));
             SetAnchor(controlsText.rectTransform, new Vector2(0.5f, 0f));
-            controlsText.text = "1 手枪   3 匕首   R 换弹   WASD 移动   ESC 返回大厅";
+            SetAnchor(mapText.rectTransform, new Vector2(0f, 1f));
+            SetAnchor(scoreboardText.rectTransform, new Vector2(0.5f, 0.5f));
+            SetAnchor(killFeedText.rectTransform, new Vector2(1f, 1f));
+            controlsText.text =
+                "1 PISTOL   3 KNIFE   R RELOAD   TAB SCORE   WASD MOVE   ESC LOBBY";
             controlsText.color = new Color(0.88f, 0.9f, 0.82f, 0.9f);
+            mapText.text = "MAP  "
+                + GenesisMultiplayerBootstrap.GetDisplayName(
+                    SceneManager.GetActiveScene().name);
+            mapText.color = new Color(0.85f, 0.9f, 0.72f, 0.95f);
+            scoreboardText.gameObject.SetActive(false);
         }
 
         private static Text CreateText(
@@ -343,6 +377,8 @@ namespace GenesisSoldierSoul.Multiplayer
             network.ConnectionChanged += OnConnectionChanged;
             network.LocalStateChanged += OnLocalStateChanged;
             network.HitConfirmed += OnHitConfirmed;
+            network.RosterChanged += OnRosterChanged;
+            network.PlayerKilled += OnPlayerKilled;
         }
 
         private void SetWeapon(bool usePistol, bool playSound)
@@ -430,6 +466,9 @@ namespace GenesisSoldierSoul.Multiplayer
             kills = state.kills;
             deaths = state.deaths;
             alive = state.alive;
+            respawnAt = state.respawnAt;
+            lastServerTime = state.serverTime;
+            serverStateReceivedAt = Time.unscaledTime;
             if (state.roundEndsAt > state.serverTime)
                 roundSeconds = (state.roundEndsAt - state.serverTime) / 1000f;
             if (state.roundState == "ended" && !roundOver)
@@ -459,6 +498,53 @@ namespace GenesisSoldierSoul.Multiplayer
             hitMarkerUntil = Time.unscaledTime + 0.16f;
             if (weaponAudio != null && hitAudio != null)
                 weaponAudio.PlayOneShot(hitAudio, 0.45f);
+        }
+
+        private void OnRosterChanged(GenesisPlayerState[] roster)
+        {
+            if (scoreboardText == null || roster == null)
+                return;
+            if (mapText != null)
+            {
+                mapText.text = "MAP  "
+                    + GenesisMultiplayerBootstrap.GetDisplayName(
+                        SceneManager.GetActiveScene().name)
+                    + "    ONLINE " + roster.Length;
+            }
+            Array.Sort(roster, delegate(
+                GenesisPlayerState left,
+                GenesisPlayerState right)
+            {
+                int killOrder = right.kills.CompareTo(left.kills);
+                return killOrder != 0
+                    ? killOrder
+                    : left.deaths.CompareTo(right.deaths);
+            });
+            var output = new StringBuilder();
+            output.AppendLine("FREE FOR ALL");
+            output.AppendLine();
+            output.AppendLine("PLAYER                       KILLS  DEATHS");
+            foreach (GenesisPlayerState entry in roster)
+            {
+                string marker = entry.isLocal ? "▶ " : "   ";
+                string state = entry.alive ? string.Empty : " [DEAD]";
+                output.Append(marker)
+                    .Append((entry.name + state).PadRight(24))
+                    .Append(entry.kills.ToString().PadLeft(4))
+                    .Append("    ")
+                    .AppendLine(entry.deaths.ToString().PadLeft(4));
+            }
+            output.AppendLine();
+            output.Append("RELEASE TAB TO RETURN");
+            scoreboardText.text = output.ToString();
+        }
+
+        private void OnPlayerKilled(string killerName, string victimName)
+        {
+            if (killFeedText == null)
+                return;
+            killFeedText.text = killerName + "  >  " + victimName;
+            killFeedUntil = Time.unscaledTime + 4f;
         }
 
         private void SetPlayerControl(bool enabled)
@@ -521,33 +607,40 @@ namespace GenesisSoldierSoul.Multiplayer
             if (knifeOverlay != null)
                 knifeOverlay.gameObject.SetActive(false);
             returnAt = Time.unscaledTime + 8f;
+            nextMapScene = GenesisMultiplayerBootstrap.GetNextPlayableMap(
+                SceneManager.GetActiveScene().name);
         }
 
         private void UpdateHud()
         {
             if (healthText == null)
                 return;
-            healthText.text = "生命 " + health;
+            healthText.text = "HP " + health;
             ammoText.text = pistolSelected
-                ? (reloading ? "换弹中" : magazine + " / " + reserve)
-                : "匕首";
+                ? (reloading ? "RELOADING" : magazine + " / " + reserve)
+                : "KNIFE";
             var minutes = Mathf.FloorToInt(roundSeconds / 60f);
             var seconds = Mathf.FloorToInt(roundSeconds % 60f);
             scoreText.text = string.Format(
-                "雷霆战警  {0} : {1}  烈火联盟     {2:00}:{3:00}",
+                "K/D  {0} : {1}       {2:00}:{3:00}",
                 kills, deaths, minutes, seconds);
 
             if (roundOver)
             {
-                statusText.text = "本局结束\n即将返回大厅";
+                statusText.text = "ROUND OVER\nNEXT: "
+                    + GenesisMultiplayerBootstrap.GetDisplayName(nextMapScene);
             }
             else if (!alive)
             {
-                statusText.text = "已阵亡\n等待复活";
+                var estimatedServerTime = lastServerTime
+                    + (long)((Time.unscaledTime - serverStateReceivedAt) * 1000f);
+                var respawnSeconds = Mathf.Max(
+                    0, Mathf.CeilToInt((respawnAt - estimatedServerTime) / 1000f));
+                statusText.text = "YOU DIED\nRESPAWN " + respawnSeconds + "s";
             }
             else if (network != null && !network.IsConnected)
             {
-                statusText.text = "正在连接对战服务器…";
+                statusText.text = "CONNECTING...";
             }
             else
             {
