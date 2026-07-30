@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -53,6 +54,17 @@ namespace GenesisSoldierSoul.Multiplayer
         private float hitMarkerUntil;
         private float roundSeconds = 180f;
         private float returnAt;
+        private float browserPitch;
+        private Vector3 previousBrowserMousePosition;
+        private bool hasBrowserMousePosition;
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+        [DllImport("__Internal")]
+        private static extern float GenesisConsumeMouseDeltaX();
+
+        [DllImport("__Internal")]
+        private static extern float GenesisConsumeMouseDeltaY();
+#endif
 
         public void Configure(
             Transform playerTransform,
@@ -84,6 +96,23 @@ namespace GenesisSoldierSoul.Multiplayer
             mouseLook = viewCamera == null
                 ? null
                 : viewCamera.GetComponent<MouseLook>();
+            if (viewCamera != null)
+            {
+                browserPitch = NormalizeAngle(viewCamera.transform.localEulerAngles.x);
+                Rigidbody cameraBody = viewCamera.GetComponent<Rigidbody>();
+                if (cameraBody != null)
+                {
+                    // A dynamic rigidbody on a child camera receives tiny physics
+                    // corrections while the player controller moves, which appears
+                    // as first-person vertical shaking.
+                    cameraBody.isKinematic = true;
+                    cameraBody.detectCollisions = false;
+                    cameraBody.velocity = Vector3.zero;
+                    cameraBody.angularVelocity = Vector3.zero;
+                }
+            }
+            previousBrowserMousePosition = Input.mousePosition;
+            hasBrowserMousePosition = true;
 
             DisableRecoveredConflicts();
             FindRecoveredHud();
@@ -141,6 +170,7 @@ namespace GenesisSoldierSoul.Multiplayer
 
             if (!roundOver && alive)
             {
+                UpdateBrowserMouseLook();
                 if (Input.GetKeyDown(KeyCode.Alpha1))
                     SetWeapon(true, true);
                 if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -438,7 +468,48 @@ namespace GenesisSoldierSoul.Multiplayer
             if (jumping != null)
                 jumping.enabled = enabled;
             if (mouseLook != null)
+#if UNITY_WEBGL && !UNITY_EDITOR
+                mouseLook.enabled = false;
+#else
                 mouseLook.enabled = enabled;
+#endif
+        }
+
+        private void UpdateBrowserMouseLook()
+        {
+#if UNITY_WEBGL && !UNITY_EDITOR
+            if (viewCamera == null || player == null)
+                return;
+            var mouseX = GenesisConsumeMouseDeltaX();
+            var mouseY = GenesisConsumeMouseDeltaY();
+            var mousePosition = Input.mousePosition;
+            if (Mathf.Approximately(mouseX, 0f)
+                && Mathf.Approximately(mouseY, 0f)
+                && hasBrowserMousePosition)
+            {
+                mouseX = mousePosition.x - previousBrowserMousePosition.x;
+                mouseY = mousePosition.y - previousBrowserMousePosition.y;
+            }
+            previousBrowserMousePosition = mousePosition;
+            hasBrowserMousePosition = true;
+            if (Mathf.Approximately(mouseX, 0f)
+                && Mathf.Approximately(mouseY, 0f))
+                return;
+
+            const float sensitivity = 0.13f;
+            browserPitch = Mathf.Clamp(
+                browserPitch - mouseY * sensitivity, -90f, 90f);
+            viewCamera.transform.localRotation =
+                Quaternion.Euler(browserPitch, 0f, 0f);
+            player.Rotate(Vector3.up * mouseX * sensitivity);
+            if (mouseLook != null && mouseLook.Leida != null)
+                mouseLook.Leida.Rotate(Vector3.forward * mouseX * sensitivity);
+#endif
+        }
+
+        private static float NormalizeAngle(float angle)
+        {
+            return angle > 180f ? angle - 360f : angle;
         }
 
         private void FinishRound()

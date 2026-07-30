@@ -99,9 +99,14 @@ namespace GenesisSoldierSoul.Multiplayer
 
             if (hasAuthoritativePosition && localPlayer != null)
             {
+                // The recovered CharacterController owns gravity, grounding and
+                // jumping. Reapplying the server's simulated Y position here
+                // makes both systems fight every frame and causes vertical jitter.
+                Vector3 horizontalAuthority = authoritativePosition;
+                horizontalAuthority.y = localPlayer.position.y;
                 localPlayer.position = Vector3.Lerp(
                     localPlayer.position,
-                    authoritativePosition,
+                    horizontalAuthority,
                     1f - Mathf.Exp(-reconciliationSpeed * Time.deltaTime));
             }
 
