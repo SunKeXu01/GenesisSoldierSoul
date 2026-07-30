@@ -103,6 +103,20 @@ namespace GenesisSoldierSoul.Multiplayer
 
             movement = player.GetComponent<PlayerMovement>();
             jumping = player.GetComponent<Music1>();
+            CharacterController playerController =
+                player.GetComponent<CharacterController>();
+            if (playerController != null)
+            {
+                // The recovered controller used radius 0.2 and skin width 0.2.
+                // With the archived 0.5 player scale that capsule was too narrow
+                // for map seams and its skin was as wide as the capsule itself.
+                playerController.radius = Mathf.Max(
+                    playerController.radius, 0.6f);
+                playerController.skinWidth = Mathf.Min(
+                    0.06f, playerController.radius * 0.1f);
+                playerController.minMoveDistance = 0f;
+                playerController.enableOverlapRecovery = true;
+            }
             mouseLook = viewCamera == null
                 ? null
                 : viewCamera.GetComponent<MouseLook>();

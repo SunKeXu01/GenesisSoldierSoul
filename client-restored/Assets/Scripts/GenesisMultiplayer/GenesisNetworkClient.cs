@@ -40,6 +40,9 @@ namespace GenesisSoldierSoul.Multiplayer
         private bool hasAuthoritativePosition;
         private Vector3 worldOrigin;
         private long localRespawnAt;
+        private CharacterController localController;
+        private bool hasLocalAliveState;
+        private bool localWasAlive;
 
         public event Action<bool> ConnectionChanged;
         public event Action<GenesisLocalState> LocalStateChanged;
@@ -69,6 +72,7 @@ namespace GenesisSoldierSoul.Multiplayer
             {
                 localPlayer = transform;
             }
+            localController = localPlayer.GetComponent<CharacterController>();
 
             if (viewCamera == null && Camera.main != null)
             {
@@ -95,6 +99,9 @@ namespace GenesisSoldierSoul.Multiplayer
             remotePlayerPrefab = opponentPrefab;
             room = string.IsNullOrWhiteSpace(roomId) ? "public" : roomId;
             worldOrigin = player == null ? Vector3.zero : player.position;
+            localController = player == null
+                ? null
+                : player.GetComponent<CharacterController>();
         }
 
         private void Start()
@@ -129,10 +136,24 @@ namespace GenesisSoldierSoul.Multiplayer
                 // makes both systems fight every frame and causes vertical jitter.
                 Vector3 horizontalAuthority = authoritativePosition;
                 horizontalAuthority.y = localPlayer.position.y;
-                localPlayer.position = Vector3.Lerp(
-                    localPlayer.position,
-                    horizontalAuthority,
-                    1f - Mathf.Exp(-reconciliationSpeed * Time.deltaTime));
+                Vector3 correction = horizontalAuthority - localPlayer.position;
+                correction.y = 0f;
+                float factor =
+                    1f - Mathf.Exp(-reconciliationSpeed * Time.deltaTime);
+                Vector3 collisionAwareStep = correction * factor;
+                collisionAwareStep = Vector3.ClampMagnitude(
+                    collisionAwareStep, 0.35f);
+                if (localController != null && localController.enabled)
+                {
+                    // CharacterController.Move performs a swept collision test.
+                    // Directly assigning Transform.position bypasses walls and was
+                    // the cause of players being pulled through recovered geometry.
+                    localController.Move(collisionAwareStep);
+                }
+                else
+                {
+                    localPlayer.position += collisionAwareStep;
+                }
             }
 
             foreach (RemotePlayerView remote in remotes.Values)
@@ -291,10 +312,18 @@ namespace GenesisSoldierSoul.Multiplayer
                     : player.name;
                 if (player.id == localPlayerId)
                 {
-                    authoritativePosition = ToWorld(player.position);
+                    Vector3 snapshotPosition = ToWorld(player.position);
+                    bool respawned = hasLocalAliveState
+                        && !localWasAlive
+                        && player.alive;
+                    if (!hasAuthoritativePosition || respawned)
+                        TeleportLocalPlayer(snapshotPosition);
+                    authoritativePosition = snapshotPosition;
                     hasAuthoritativePosition = true;
                     if (player.alive)
                         localRespawnAt = 0;
+                    localWasAlive = player.alive;
+                    hasLocalAliveState = true;
                     if (LocalStateChanged != null)
                     {
                         LocalStateChanged(new GenesisLocalState
@@ -380,6 +409,19 @@ namespace GenesisSoldierSoul.Multiplayer
                 && playerNames.TryGetValue(id, out name)
                     ? name
                     : "PLAYER";
+        }
+
+        private void TeleportLocalPlayer(Vector3 position)
+        {
+            if (localPlayer == null)
+                return;
+            bool controllerWasEnabled =
+                localController != null && localController.enabled;
+            if (controllerWasEnabled)
+                localController.enabled = false;
+            localPlayer.position = position;
+            if (controllerWasEnabled)
+                localController.enabled = true;
         }
 
         private void ClearRemotePlayers()
