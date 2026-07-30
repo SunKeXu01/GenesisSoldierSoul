@@ -51,6 +51,12 @@ const MAP_CONFIGS: Record<string, MapConfig> = {
   scenejd: mapAround({ x: 817.6, y: 578.7, z: 499.74 }, 120, 12),
   scenep: mapAround({ x: 206.66, y: 438.227, z: 110.617 }, 120, 12),
   pyramid: mapAround({ x: 0, y: 0, z: 0 }, 40, 2),
+  newconstructionsite: mapAround({ x: 0, y: 0, z: 0 }, 16, 2),
+  classicconstructionsite: mapAround({ x: 0, y: 0, z: 0 }, 40, 2),
+  steelfactory: mapAround({ x: 0, y: 0, z: 0 }, 40, 2),
+  biochemicaltown: mapAround({ x: 0, y: 0, z: 0 }, 40, 2),
+  radiationdistrict: mapAround({ x: 0, y: 0, z: 0 }, 40, 2),
+  icefiremaze: mapAround({ x: 0, y: 0, z: 0 }, 40, 2),
   scene3: mapAround({ x: 0.464, y: 1.32, z: -62.5 }, 80, 10),
   ghost: mapAround({ x: 9.769, y: 2.18, z: 48.351 }, 70, 8),
 };
