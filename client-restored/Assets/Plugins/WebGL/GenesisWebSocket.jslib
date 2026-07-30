@@ -1,4 +1,98 @@
 mergeInto(LibraryManager.library, {
+  GenesisEnterGameplayMode: function () {
+    var canvas = Module.canvas;
+    if (!canvas) {
+      return;
+    }
+
+    window.__genesisGameplayMode = true;
+    window.__genesisMouseDeltaX = 0;
+    window.__genesisMouseDeltaY = 0;
+    canvas.style.cursor = "none";
+
+    if (!window.__genesisPointerLockInstalled) {
+      window.__genesisPointerLockInstalled = true;
+      document.addEventListener("mousemove", function (event) {
+        if (!window.__genesisGameplayMode) {
+          return;
+        }
+        window.__genesisMouseDeltaX +=
+          event.movementX || event.mozMovementX || event.webkitMovementX || 0;
+        window.__genesisMouseDeltaY +=
+          event.movementY || event.mozMovementY || event.webkitMovementY || 0;
+      });
+      canvas.addEventListener("mousedown", function () {
+        if (!window.__genesisGameplayMode) {
+          return;
+        }
+        canvas.style.cursor = "none";
+        var requestPointerLock =
+          canvas.requestPointerLock ||
+          canvas.mozRequestPointerLock ||
+          canvas.webkitRequestPointerLock;
+        if (requestPointerLock && document.pointerLockElement !== canvas) {
+          requestPointerLock.call(canvas);
+        }
+      });
+    }
+
+    var requestPointerLock =
+      canvas.requestPointerLock ||
+      canvas.mozRequestPointerLock ||
+      canvas.webkitRequestPointerLock;
+    var requestFullscreen =
+      canvas.requestFullscreen ||
+      canvas.webkitRequestFullscreen ||
+      canvas.mozRequestFullScreen;
+
+    if (requestFullscreen && !document.fullscreenElement) {
+      var fullscreenResult = requestFullscreen.call(canvas);
+      if (requestPointerLock) {
+        requestPointerLock.call(canvas);
+      }
+      if (fullscreenResult && fullscreenResult.then) {
+        fullscreenResult.then(function () {
+          if (requestPointerLock && document.pointerLockElement !== canvas) {
+            requestPointerLock.call(canvas);
+          }
+        }).catch(function () {
+          if (requestPointerLock && document.pointerLockElement !== canvas) {
+            requestPointerLock.call(canvas);
+          }
+        });
+      }
+    } else if (requestPointerLock) {
+      requestPointerLock.call(canvas);
+    }
+  },
+
+  GenesisConsumeMouseDeltaX: function () {
+    var value = window.__genesisMouseDeltaX || 0;
+    window.__genesisMouseDeltaX = 0;
+    return value;
+  },
+
+  GenesisConsumeMouseDeltaY: function () {
+    var value = window.__genesisMouseDeltaY || 0;
+    window.__genesisMouseDeltaY = 0;
+    return value;
+  },
+
+  GenesisExitGameplayMode: function () {
+    window.__genesisGameplayMode = false;
+    window.__genesisMouseDeltaX = 0;
+    window.__genesisMouseDeltaY = 0;
+    if (Module.canvas) {
+      Module.canvas.style.cursor = "default";
+    }
+    if (document.exitPointerLock && document.pointerLockElement) {
+      document.exitPointerLock();
+    }
+    if (document.exitFullscreen && document.fullscreenElement) {
+      document.exitFullscreen();
+    }
+  },
+
   GenesisSocketConnect: function (urlPointer, gameObjectPointer) {
     if (!window.__genesisSockets) {
       window.__genesisSockets = { nextId: 1, sockets: {} };
