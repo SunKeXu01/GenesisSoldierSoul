@@ -1,0 +1,32 @@
+ROOT First Person Player active=False path=First Person Player
+  First Person Player activeSelf=False active=False components=Transform;CharacterController;Music1;Music;PlayerMovement;Tab;Sound2;Stop;Test4
+  First Person Player/Main Camera activeSelf=True active=False components=Transform;Camera;Rigidbody;MouseLook;Skybox
+  First Person Player/GroundCheak activeSelf=True active=False components=Transform
+  First Person Player/Audio Source activeSelf=False active=False components=Transform;AudioSource;AudioListener
+ROOT Canvas active=True path=Canvas
+  Canvas activeSelf=True active=True components=RectTransform;Canvas
+  Canvas/RawImage activeSelf=True active=True components=RectTransform;CanvasRenderer;RawImage texture=准星
+  Canvas/RawImage 3 activeSelf=True active=True components=RectTransform;CanvasRenderer;RawImage texture=小刀lei
+  Canvas/Canvas activeSelf=False active=False components=RectTransform;Canvas;CanvasScaler;GraphicRaycaster
+  Canvas/Canvas/RawImage activeSelf=True active=False components=RectTransform;CanvasRenderer;RawImage texture=lei
+  Canvas/RawImage 4 activeSelf=True active=True components=RectTransform;CanvasRenderer;RawImage texture=大厅
+  Canvas/RawImage 4/RawImage 5 activeSelf=True active=True components=RectTransform;CanvasRenderer;RawImage texture=载入工地
+  Canvas/RawImage 4/RawImage 5/Text activeSelf=True active=True components=RectTransform;CanvasRenderer;Text text="0%"
+  Canvas/RawImage 4/RawImage 5/Image activeSelf=True active=True components=RectTransform;CanvasRenderer;Image;test1 sprite=进度条
+ROOT Canvas active=False path=Canvas
+  Canvas activeSelf=False active=False components=RectTransform;Canvas;CanvasScaler;GraphicRaycaster
+  Canvas/RawImage activeSelf=True active=False components=RectTransform;CanvasRenderer;RawImage texture=雷达
+  Canvas/RawImage 1 activeSelf=True active=False components=RectTransform;CanvasRenderer;RawImage texture=比分
+  Canvas/RawImage 2 activeSelf=True active=False components=RectTransform;CanvasRenderer;RawImage texture=雷达1
+ROOT Canvas active=False path=Canvas
+  Canvas activeSelf=False active=False components=RectTransform;Canvas;CanvasScaler;GraphicRaycaster
+  Canvas/RawImage activeSelf=True active=False components=RectTransform;CanvasRenderer;RawImage texture=退出
+  Canvas/123 activeSelf=True active=False components=RectTransform;CanvasRenderer;Image;Button;ButtonSound sprite=UISprite
+  Canvas/Button0 activeSelf=True active=False components=RectTransform;CanvasRenderer;Image;Button;ButtonSound;JiXu2 sprite=UISprite
+  Canvas/Button . activeSelf=True active=False components=RectTransform;CanvasRenderer;Image;Button;ButtonSound;FanjianGDdao sprite=UISprite
+PISTOL renderers=1 bounds=Center: (131.47, 104.08, -93.43), Extents: (0.09, 0.13, 0.61)
+SOURCE_PLAYER test_one
+  test_one active=True localPosition=(188.50, 438.71, 143.78) components=Transform;CharacterController
+  test_one/FPSCamera active=True localPosition=(0.00, 0.00, 0.00) components=Transform;AudioListener;Camera
+  test_one/FPSCamera/1Pistol active=True localPosition=(0.00, 0.00, 0.00) components=Transform;AudioSource
+  test_one/FPSCamera/WeaponCamera active=True localPosition=(0.00, 0.00, 0.00) components=Transform;Camera

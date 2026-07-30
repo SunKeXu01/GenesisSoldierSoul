@@ -33,6 +33,15 @@ namespace GenesisSoldierSoul.Multiplayer
         private bool hasAuthoritativePosition;
         private Vector3 worldOrigin;
 
+        public event Action<bool> ConnectionChanged;
+        public event Action<GenesisLocalState> LocalStateChanged;
+        public event Action<bool> HitConfirmed;
+
+        public bool IsConnected
+        {
+            get { return connected && !string.IsNullOrEmpty(localPlayerId); }
+        }
+
 #if UNITY_WEBGL && !UNITY_EDITOR
         [DllImport("__Internal")]
         private static extern int GenesisSocketConnect(string url, string gameObjectName);
@@ -86,11 +95,6 @@ namespace GenesisSoldierSoul.Multiplayer
             {
                 nextInputAt = Time.unscaledTime + 1f / inputRate;
                 SendInput();
-            }
-
-            if (Input.GetMouseButtonDown(0) && viewCamera != null)
-            {
-                SendShoot(viewCamera.forward);
             }
 
             if (hasAuthoritativePosition && localPlayer != null)
@@ -154,12 +158,22 @@ namespace GenesisSoldierSoul.Multiplayer
             {
                 WelcomeMessage welcome = JsonUtility.FromJson<WelcomeMessage>(json);
                 localPlayerId = welcome.id;
+                if (ConnectionChanged != null)
+                    ConnectionChanged(true);
                 return;
             }
 
             if (envelope.type == "snapshot")
             {
                 ApplySnapshot(JsonUtility.FromJson<SnapshotMessage>(json));
+                return;
+            }
+
+            if (envelope.type == "hit")
+            {
+                HitMessage hit = JsonUtility.FromJson<HitMessage>(json);
+                if (HitConfirmed != null)
+                    HitConfirmed(hit.shooterId == localPlayerId);
                 return;
             }
 
@@ -174,6 +188,8 @@ namespace GenesisSoldierSoul.Multiplayer
         {
             connected = false;
             localPlayerId = null;
+            if (ConnectionChanged != null)
+                ConnectionChanged(false);
             Debug.LogWarning("对战服务器连接已关闭：" + reason);
         }
 
@@ -201,16 +217,19 @@ namespace GenesisSoldierSoul.Multiplayer
             Send(JsonUtility.ToJson(input));
         }
 
-        private void SendShoot(Vector3 direction)
+        public bool RequestShoot(string weapon)
         {
+            if (!IsConnected || viewCamera == null)
+                return false;
             ShootMessage shoot = new ShootMessage
             {
                 type = "shoot",
                 sequence = ++sequence,
-                weapon = "rifle",
-                direction = SerializableVector3.From(direction.normalized),
+                weapon = weapon == "knife" ? "knife" : "pistol",
+                direction = SerializableVector3.From(viewCamera.forward.normalized),
             };
             Send(JsonUtility.ToJson(shoot));
+            return true;
         }
 
         private void ApplySnapshot(SnapshotMessage snapshot)
@@ -227,6 +246,19 @@ namespace GenesisSoldierSoul.Multiplayer
                 {
                     authoritativePosition = ToWorld(player.position);
                     hasAuthoritativePosition = true;
+                    if (LocalStateChanged != null)
+                    {
+                        LocalStateChanged(new GenesisLocalState
+                        {
+                            health = player.health,
+                            kills = player.kills,
+                            deaths = player.deaths,
+                            alive = player.alive,
+                            roundState = snapshot.roundState,
+                            roundEndsAt = snapshot.roundEndsAt,
+                            serverTime = snapshot.serverTime,
+                        });
+                    }
                     continue;
                 }
 
@@ -385,6 +417,18 @@ namespace GenesisSoldierSoul.Multiplayer
         public int tick;
         public long serverTime;
         public PlayerSnapshot[] players;
+        public string roundState;
+        public long roundEndsAt;
+    }
+
+    [Serializable]
+    internal sealed class HitMessage
+    {
+        public string type;
+        public string shooterId;
+        public string targetId;
+        public int damage;
+        public int targetHealth;
     }
 
     [Serializable]
@@ -432,5 +476,16 @@ namespace GenesisSoldierSoul.Multiplayer
                 z = value.z,
             };
         }
+    }
+
+    public struct GenesisLocalState
+    {
+        public int health;
+        public int kills;
+        public int deaths;
+        public bool alive;
+        public string roundState;
+        public long roundEndsAt;
+        public long serverTime;
     }
 }

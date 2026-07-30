@@ -9,15 +9,20 @@ import type {
 
 export const TICK_RATE = 20;
 const MAX_PLAYERS = 16;
-const MOVE_SPEED = 7;
+const MOVE_SPEED = 4;
 const JUMP_SPEED = 7;
 const GRAVITY = 20;
 const PLAYER_RADIUS = 0.55;
 const EYE_HEIGHT = 1.55;
-const RIFLE_DAMAGE = 34;
-const RIFLE_RANGE = 120;
-const RIFLE_INTERVAL_MS = 110;
+const PISTOL_DAMAGE = 34;
+const PISTOL_RANGE = 90;
+const PISTOL_INTERVAL_MS = 250;
+const KNIFE_DAMAGE = 50;
+const KNIFE_RANGE = 2.2;
+const KNIFE_INTERVAL_MS = 500;
 const RESPAWN_DELAY_MS = 3000;
+const ROUND_DURATION_MS = 3 * 60 * 1000;
+const SCORE_LIMIT = 10;
 
 type Player = PlayerSnapshot & {
   moveX: number;
@@ -41,6 +46,7 @@ const MAP_CONFIGS: Record<string, MapConfig> = {
   scenegd: mapAround({ x: 990.28, y: 296.87, z: 1599.81 }, 120, 12),
   scenejd: mapAround({ x: 817.6, y: 578.7, z: 499.74 }, 120, 12),
   scenep: mapAround({ x: 206.66, y: 438.227, z: 110.617 }, 120, 12),
+  pyramid: mapAround({ x: 0, y: 0, z: 0 }, 40, 2),
   scene3: mapAround({ x: 0.464, y: 1.32, z: -62.5 }, 80, 10),
   ghost: mapAround({ x: 9.769, y: 2.18, z: 48.351 }, 70, 8),
 };
@@ -53,10 +59,13 @@ export class GameRoom {
   private spawnCursor = 0;
   private readonly players = new Map<string, Player>();
   private readonly map: MapConfig;
+  private readonly roundEndsAt: number;
+  private roundState: "playing" | "ended" = "playing";
 
-  constructor(id: string) {
+  constructor(id: string, now = Date.now(), roundDurationMs = ROUND_DURATION_MS) {
     this.id = id;
     this.map = MAP_CONFIGS[id.toLowerCase()] ?? DEFAULT_MAP;
+    this.roundEndsAt = now + roundDurationMs;
   }
 
   get size(): number {
@@ -112,12 +121,16 @@ export class GameRoom {
 
   shoot(id: string, message: ShootMessage, now: number): ServerMessage[] {
     const shooter = this.players.get(id);
-    if (!shooter || !shooter.alive) return [];
-    if (now - shooter.lastShotAt < RIFLE_INTERVAL_MS) return [];
+    if (!shooter || !shooter.alive || this.roundState !== "playing") return [];
+    const interval =
+      message.weapon === "knife" ? KNIFE_INTERVAL_MS : PISTOL_INTERVAL_MS;
+    if (now - shooter.lastShotAt < interval) return [];
 
     const direction = normalize(message.direction);
     if (!direction) return [];
     shooter.lastShotAt = now;
+    const range = message.weapon === "knife" ? KNIFE_RANGE : PISTOL_RANGE;
+    const damage = message.weapon === "knife" ? KNIFE_DAMAGE : PISTOL_DAMAGE;
 
     const origin = {
       x: shooter.position.x,
@@ -126,7 +139,7 @@ export class GameRoom {
     };
 
     let bestTarget: Player | undefined;
-    let bestDistance = RIFLE_RANGE;
+    let bestDistance = range;
     for (const candidate of this.players.values()) {
       if (candidate.id === id || !candidate.alive) continue;
       const center = {
@@ -147,13 +160,13 @@ export class GameRoom {
     }
 
     if (!bestTarget) return [];
-    bestTarget.health = Math.max(0, bestTarget.health - RIFLE_DAMAGE);
+    bestTarget.health = Math.max(0, bestTarget.health - damage);
     const messages: ServerMessage[] = [
       {
         type: "hit",
         shooterId: shooter.id,
         targetId: bestTarget.id,
-        damage: RIFLE_DAMAGE,
+        damage,
         targetHealth: bestTarget.health,
       },
     ];
@@ -171,6 +184,7 @@ export class GameRoom {
         victimId: bestTarget.id,
         respawnAt: bestTarget.respawnAt,
       });
+      if (shooter.kills >= SCORE_LIMIT) this.roundState = "ended";
     }
 
     return messages;
@@ -179,8 +193,14 @@ export class GameRoom {
   tick(now: number): ServerMessage {
     this.tickNumber += 1;
     const dt = 1 / TICK_RATE;
+    if (now >= this.roundEndsAt) this.roundState = "ended";
 
     for (const player of this.players.values()) {
+      if (this.roundState === "ended") {
+        player.moveX = 0;
+        player.moveZ = 0;
+        continue;
+      }
       if (!player.alive) {
         if (player.respawnAt <= now) this.respawn(player);
         continue;
@@ -225,6 +245,8 @@ export class GameRoom {
       players: [...this.players.values()].map((player) =>
         this.snapshot(player),
       ),
+      roundState: this.roundState,
+      roundEndsAt: this.roundEndsAt,
     };
   }
 
