@@ -86,6 +86,58 @@ public static class GenesisRestoredBuild
         AssetDatabase.Refresh();
     }
 
+    [MenuItem("Genesis/Validate Playable Recovered Maps")]
+    public static void ValidatePlayableRecoveredMaps()
+    {
+        var failures = new List<string>();
+        foreach (var map in RecoveredMapScenes.Keys)
+        {
+            var scenePath = "Assets/PlayableMaps/" + map + ".unity";
+            if (!File.Exists(scenePath))
+            {
+                failures.Add(map + ": scene file is missing");
+                continue;
+            }
+
+            var scene = EditorSceneManager.OpenScene(scenePath, OpenSceneMode.Single);
+            var roots = scene.GetRootGameObjects();
+            var player = roots.FirstOrDefault(root =>
+                root.name == "First Person Player");
+            var rendererCount = roots.Sum(root =>
+                root.GetComponentsInChildren<Renderer>(true).Length);
+            var colliderCount = roots.Sum(root =>
+                root.GetComponentsInChildren<Collider>(true).Length);
+            var canvasCount = roots.Sum(root =>
+                root.GetComponentsInChildren<Canvas>(true).Length);
+
+            if (player == null)
+                failures.Add(map + ": First Person Player is missing");
+            else
+            {
+                if (player.GetComponentInChildren<CharacterController>(true) == null)
+                    failures.Add(map + ": CharacterController is missing");
+                if (player.GetComponentInChildren<Camera>(true) == null)
+                    failures.Add(map + ": first-person camera is missing");
+            }
+            if (rendererCount == 0)
+                failures.Add(map + ": no recovered renderers");
+            if (colliderCount == 0)
+                failures.Add(map + ": no recovered colliders");
+            if (canvasCount == 0)
+                failures.Add(map + ": combat HUD canvas is missing");
+
+            Debug.Log(string.Format(
+                "[GenesisMapValidation] {0}: renderers={1}, colliders={2}, canvases={3}",
+                map, rendererCount, colliderCount, canvasCount));
+        }
+
+        if (failures.Count > 0)
+            throw new Exception(
+                "Playable map validation failed:\n" + string.Join("\n", failures));
+        Debug.Log(
+            "[GenesisMapValidation] All recovered playable maps passed validation.");
+    }
+
     private static void CreateRemotePlayerPrefab()
     {
         const string sourcePath =
