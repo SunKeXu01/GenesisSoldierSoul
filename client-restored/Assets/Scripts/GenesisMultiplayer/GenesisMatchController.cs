@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Text;
 using System.Runtime.InteropServices;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -138,6 +139,7 @@ namespace GenesisSoldierSoul.Multiplayer
             previousBrowserMousePosition = Input.mousePosition;
             hasBrowserMousePosition = true;
 
+            EnsureRecoveredMapVisibility();
             DisableRecoveredConflicts();
             FindRecoveredHud();
             CreateDynamicHudText();
@@ -150,6 +152,30 @@ namespace GenesisSoldierSoul.Multiplayer
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             Debug.Log("[GenesisMatch] 金字塔单图对战闭环已初始化。");
+        }
+
+        private static void EnsureRecoveredMapVisibility()
+        {
+            var activeLights = FindObjectsOfType<Light>()
+                .Any(light => light.enabled && light.gameObject.activeInHierarchy);
+            if (activeLights)
+                return;
+
+            // Some recovered maps only referenced baked lighting data that was
+            // absent from the archive. Preserve their original materials and
+            // geometry, but provide neutral runtime illumination so the assets
+            // remain visible in WebGL.
+            RenderSettings.ambientMode =
+                UnityEngine.Rendering.AmbientMode.Flat;
+            RenderSettings.ambientLight = new Color(0.48f, 0.48f, 0.48f);
+
+            var lightObject = new GameObject("Recovered Map Visibility Light");
+            var recoveredLight = lightObject.AddComponent<Light>();
+            recoveredLight.type = LightType.Directional;
+            recoveredLight.color = Color.white;
+            recoveredLight.intensity = 1.05f;
+            recoveredLight.shadows = LightShadows.Soft;
+            lightObject.transform.rotation = Quaternion.Euler(48f, -32f, 0f);
         }
 
         private void OnDestroy()

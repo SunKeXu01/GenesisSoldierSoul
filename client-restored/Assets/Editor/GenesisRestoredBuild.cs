@@ -51,12 +51,38 @@ public static class GenesisRestoredBuild
             var mapScene = EditorSceneManager.OpenScene(recovered.Value, OpenSceneMode.Additive);
             var existingPlayer = mapScene.GetRootGameObjects()
                 .FirstOrDefault(IsExistingPlayerRoot);
+            var mapBounds = CalculateVisibleBounds(mapScene);
             var spawnPosition = existingPlayer == null
                 ? new Vector3(0f, 2f, 0f)
                 : existingPlayer.transform.position + Vector3.up;
             var spawnRotation = existingPlayer == null
                 ? Quaternion.identity
                 : Quaternion.Euler(0f, existingPlayer.transform.eulerAngles.y, 0f);
+            if (mapBounds.HasValue
+                && !ContainsWithMargin(
+                    mapBounds.Value, spawnPosition, 2f))
+            {
+                RaycastHit hit;
+                var bounds = mapBounds.Value;
+                var rayOrigin = new Vector3(
+                    bounds.center.x,
+                    bounds.max.y + 20f,
+                    bounds.center.z);
+                if (mapScene.GetPhysicsScene().Raycast(
+                        rayOrigin,
+                        Vector3.down,
+                        out hit,
+                        bounds.size.y + 40f,
+                        ~0,
+                        QueryTriggerInteraction.Ignore))
+                {
+                    spawnPosition = hit.point + Vector3.up * 1.2f;
+                    spawnRotation = Quaternion.identity;
+                    Debug.Log(
+                        $"Repaired out-of-bounds spawn for {recovered.Key}: " +
+                        spawnPosition);
+                }
+            }
 
             foreach (var root in mapScene.GetRootGameObjects().Where(IsOldGameplayRoot).ToArray())
                 UnityEngine.Object.DestroyImmediate(root);
@@ -168,6 +194,29 @@ public static class GenesisRestoredBuild
         PrefabUtility.SaveAsPrefabAsset(clone, prefabPath);
         UnityEngine.Object.DestroyImmediate(clone);
         Debug.Log("Created original-resource remote player prefab: " + prefabPath);
+    }
+
+    [MenuItem("Genesis/Audit Remote Player Prefab")]
+    public static void AuditRemotePlayerPrefab()
+    {
+        const string prefabPath = "Assets/Resources/OriginalGame/RemotePlayer.prefab";
+        var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+        if (prefab == null)
+            throw new Exception("Remote player prefab is missing: " + prefabPath);
+
+        var instance = UnityEngine.Object.Instantiate(prefab);
+        instance.transform.position = Vector3.zero;
+        instance.transform.rotation = Quaternion.identity;
+        var renderers = instance.GetComponentsInChildren<Renderer>(true);
+        if (renderers.Length == 0)
+            throw new Exception("Remote player prefab contains no renderers.");
+        var bounds = renderers[0].bounds;
+        foreach (var renderer in renderers.Skip(1))
+            bounds.Encapsulate(renderer.bounds);
+        Debug.Log(string.Format(
+            "[GenesisRemotePlayerAudit] renderers={0}, center={1}, size={2}, rootScale={3}",
+            renderers.Length, bounds.center, bounds.size, instance.transform.localScale));
+        UnityEngine.Object.DestroyImmediate(instance);
     }
 
     [MenuItem("Genesis/Create Combat Resource Prefabs")]
@@ -300,44 +349,54 @@ public static class GenesisRestoredBuild
     [MenuItem("Genesis/Audit Playable Map Visibility")]
     public static void AuditPlayableMapVisibility()
     {
-        const string scenePath = "Assets/PlayableMaps/NewConstructionSite.unity";
-        var scene = EditorSceneManager.OpenScene(scenePath, OpenSceneMode.Single);
         var output = new StringBuilder();
-        var renderers = scene.GetRootGameObjects()
-            .SelectMany(root => root.GetComponentsInChildren<Renderer>(true))
-            .ToArray();
-        var enabledRenderers = renderers
-            .Where(renderer => renderer.enabled && renderer.gameObject.activeInHierarchy)
-            .ToArray();
-        if (enabledRenderers.Length > 0)
+        foreach (var mapName in RecoveredMapScenes.Keys)
         {
-            var bounds = enabledRenderers[0].bounds;
-            foreach (var renderer in enabledRenderers.Skip(1))
-                bounds.Encapsulate(renderer.bounds);
-            output.AppendLine(
-                $"Renderers={renderers.Length} enabled={enabledRenderers.Length} bounds={bounds}");
-        }
+            var scenePath = "Assets/PlayableMaps/" + mapName + ".unity";
+            var scene = EditorSceneManager.OpenScene(
+                scenePath, OpenSceneMode.Single);
+            output.AppendLine("MAP " + mapName);
+            var renderers = scene.GetRootGameObjects()
+                .SelectMany(root => root.GetComponentsInChildren<Renderer>(true))
+                .ToArray();
+            var enabledRenderers = renderers
+                .Where(renderer =>
+                    renderer.enabled && renderer.gameObject.activeInHierarchy)
+                .ToArray();
+            if (enabledRenderers.Length > 0)
+            {
+                var bounds = enabledRenderers[0].bounds;
+                foreach (var renderer in enabledRenderers.Skip(1))
+                    bounds.Encapsulate(renderer.bounds);
+                output.AppendLine(
+                    $"Renderers={renderers.Length} enabled={enabledRenderers.Length} bounds={bounds}");
+            }
 
-        foreach (var camera in scene.GetRootGameObjects()
-                     .SelectMany(root => root.GetComponentsInChildren<Camera>(true)))
-        {
-            output.AppendLine(
-                $"Camera {HierarchyPath(camera.transform)} active={camera.gameObject.activeInHierarchy} " +
-                $"enabled={camera.enabled} position={camera.transform.position} rotation={camera.transform.eulerAngles} " +
-                $"clear={camera.clearFlags} mask={camera.cullingMask} near={camera.nearClipPlane} far={camera.farClipPlane}");
-        }
+            foreach (var camera in scene.GetRootGameObjects()
+                         .SelectMany(root =>
+                             root.GetComponentsInChildren<Camera>(true)))
+            {
+                output.AppendLine(
+                    $"Camera {HierarchyPath(camera.transform)} active={camera.gameObject.activeInHierarchy} " +
+                    $"enabled={camera.enabled} position={camera.transform.position} rotation={camera.transform.eulerAngles} " +
+                    $"clear={camera.clearFlags} mask={camera.cullingMask} near={camera.nearClipPlane} far={camera.farClipPlane}");
+            }
 
-        foreach (var light in scene.GetRootGameObjects()
-                     .SelectMany(root => root.GetComponentsInChildren<Light>(true)))
-        {
-            output.AppendLine(
-                $"Light {HierarchyPath(light.transform)} active={light.gameObject.activeInHierarchy} " +
-                $"enabled={light.enabled} type={light.type} intensity={light.intensity}");
-        }
+            foreach (var light in scene.GetRootGameObjects()
+                         .SelectMany(root =>
+                             root.GetComponentsInChildren<Light>(true)))
+            {
+                output.AppendLine(
+                    $"Light {HierarchyPath(light.transform)} active={light.gameObject.activeInHierarchy} " +
+                    $"enabled={light.enabled} type={light.type} intensity={light.intensity}");
+            }
 
-        foreach (var root in scene.GetRootGameObjects()
-                     .Where(root => root.name.Contains("Player")))
-            output.AppendLine($"Player {root.name} position={root.transform.position}");
+            foreach (var root in scene.GetRootGameObjects()
+                         .Where(root => root.name.Contains("Player")))
+                output.AppendLine(
+                    $"Player {root.name} active={root.activeSelf} " +
+                    $"position={root.transform.position} rotation={root.transform.eulerAngles}");
+        }
 
         var auditDirectory = Path.GetFullPath(Path.Combine(Application.dataPath, "../../recovery"));
         var auditPath = Path.Combine(auditDirectory, "playable-map-visibility.txt");
@@ -497,6 +556,32 @@ public static class GenesisRestoredBuild
                || root.name == "EventSystem"
                || root.name == "Audio Source"
                || root.name == "Canvas";
+    }
+
+    private static Bounds? CalculateVisibleBounds(Scene scene)
+    {
+        var renderers = scene.GetRootGameObjects()
+            .Where(root => !IsExistingPlayerRoot(root))
+            .SelectMany(root => root.GetComponentsInChildren<Renderer>(true))
+            .Where(renderer =>
+                renderer.enabled && renderer.gameObject.activeInHierarchy)
+            .ToArray();
+        if (renderers.Length == 0)
+            return null;
+
+        var bounds = renderers[0].bounds;
+        foreach (var renderer in renderers.Skip(1))
+            bounds.Encapsulate(renderer.bounds);
+        return bounds;
+    }
+
+    private static bool ContainsWithMargin(
+        Bounds bounds,
+        Vector3 position,
+        float margin)
+    {
+        bounds.Expand(margin * 2f);
+        return bounds.Contains(position);
     }
 
     private static bool IsExistingPlayerRoot(GameObject root)

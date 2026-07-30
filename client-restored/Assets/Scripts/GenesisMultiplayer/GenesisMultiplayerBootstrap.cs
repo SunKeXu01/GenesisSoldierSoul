@@ -10,12 +10,6 @@ namespace GenesisSoldierSoul.Multiplayer
         private static readonly string[] PlayableMapScenes =
         {
             "Pyramid",
-            "NewConstructionSite",
-            "ClassicConstructionSite",
-            "SteelFactory",
-            "BiochemicalTown",
-            "RadiationDistrict",
-            "IceFireMaze",
         };
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -60,6 +54,10 @@ namespace GenesisSoldierSoul.Multiplayer
 
             if (player == null || player.GetComponent<GenesisNetworkClient>() != null)
                 yield break;
+
+            // Several archived scenes stored the recovered gameplay rig disabled
+            // and relied on now-missing loading code to enable it.
+            player.gameObject.SetActive(true);
 
             var camera = player.GetComponentInChildren<Camera>(true);
             var remotePrefab = Resources.Load<GameObject>(RemotePlayerResource);

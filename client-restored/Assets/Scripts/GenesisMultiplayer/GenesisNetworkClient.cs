@@ -40,6 +40,7 @@ namespace GenesisSoldierSoul.Multiplayer
         private bool hasAuthoritativePosition;
         private Vector3 worldOrigin;
         private long localRespawnAt;
+        private float localNetworkY;
         private CharacterController localController;
         private bool hasLocalAliveState;
         private bool localWasAlive;
@@ -154,6 +155,19 @@ namespace GenesisSoldierSoul.Multiplayer
                 {
                     localPlayer.position += collisionAwareStep;
                 }
+            }
+
+            if (localPlayer != null && hasAuthoritativePosition)
+            {
+                // Archived scenes spawn the controller slightly above the map
+                // and let gravity settle it. Derive the origin from the actual
+                // local root and its server-relative height; the archived Ground
+                // layers are incomplete, so CharacterController.isGrounded is
+                // not a reliable calibration gate in every recovered scene.
+                worldOrigin.y = Mathf.MoveTowards(
+                    worldOrigin.y,
+                    localPlayer.position.y - localNetworkY,
+                    Time.deltaTime * 6f);
             }
 
             foreach (RemotePlayerView remote in remotes.Values)
@@ -316,6 +330,7 @@ namespace GenesisSoldierSoul.Multiplayer
                     : player.name;
                 if (player.id == localPlayerId)
                 {
+                    localNetworkY = player.position.y;
                     Vector3 snapshotPosition = ToWorld(player.position);
                     bool respawned = hasLocalAliveState
                         && !localWasAlive
@@ -354,12 +369,16 @@ namespace GenesisSoldierSoul.Multiplayer
                         continue;
                     }
 
-                    GameObject instance = Instantiate(
-                        remotePlayerPrefab,
+                    var anchor = new GameObject("Remote_" + player.name);
+                    anchor.transform.SetPositionAndRotation(
                         ToWorld(player.position),
                         Quaternion.Euler(0f, player.yaw, 0f));
-                    instance.name = "Remote_" + player.name;
-                    remote = new RemotePlayerView(instance.transform);
+                    GameObject instance = Instantiate(
+                        remotePlayerPrefab, anchor.transform);
+                    instance.name = "RecoveredCharacter";
+                    NormalizeRemotePresentation(
+                        instance.transform, anchor.transform);
+                    remote = new RemotePlayerView(anchor.transform);
                     remotes.Add(player.id, remote);
                 }
 
@@ -434,6 +453,33 @@ namespace GenesisSoldierSoul.Multiplayer
                 Destroy(remote.Transform.gameObject);
             remotes.Clear();
             playerNames.Clear();
+        }
+
+        private static void NormalizeRemotePresentation(
+            Transform presentation,
+            Transform anchor)
+        {
+            Renderer[] renderers =
+                presentation.GetComponentsInChildren<Renderer>(true);
+            if (renderers.Length == 0)
+                return;
+
+            Bounds bounds = renderers[0].bounds;
+            for (int index = 1; index < renderers.Length; index++)
+                bounds.Encapsulate(renderers[index].bounds);
+            if (bounds.size.y > 0.01f)
+            {
+                const float targetHeight = 1.9f;
+                presentation.localScale *= targetHeight / bounds.size.y;
+            }
+
+            bounds = renderers[0].bounds;
+            for (int index = 1; index < renderers.Length; index++)
+                bounds.Encapsulate(renderers[index].bounds);
+            // Network positions represent the local controller's body center.
+            // Centering the recovered mesh on an independent anchor prevents its
+            // archived 3.16 m bounds and offset pivot from floating above players.
+            presentation.position += anchor.position - bounds.center;
         }
 
         private void Send(string json)
