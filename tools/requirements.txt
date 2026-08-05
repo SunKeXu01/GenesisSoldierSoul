@@ -1,1 +1,2 @@
 Pillow==11.3.0
+UnityPy==1.25.2

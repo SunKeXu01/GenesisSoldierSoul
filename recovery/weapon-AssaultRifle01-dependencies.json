@@ -1,0 +1,36 @@
+{
+  "source_assets": "/Users/Admin/Documents/创世兵魂/原程序恢复/单机怀旧创世兵魂V1.2.1/UnityProject/ExportedProject/Assets",
+  "root_asset": "GameObject/AssaultRifle01.prefab",
+  "target_assets": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/client-restored/Assets",
+  "namespace": "RecoveredWeaponClosures/AssaultRifle01",
+  "asset_count": 1,
+  "reused_guid_count": 16,
+  "missing_guid_count": 0,
+  "conflict_count": 0,
+  "copied": [
+    {
+      "source": "GameObject/AssaultRifle01.prefab",
+      "target": "RecoveredWeaponClosures/AssaultRifle01/GameObject/AssaultRifle01.prefab"
+    }
+  ],
+  "reused": {
+    "0aed91fbf4128b84fb2ecf1c4a1ec1c0": "Resources/OriginalGame/FirstPerson/Animations/Idle02_0.anim",
+    "a1bf2632d27372948a134cd891f37b58": "Resources/OriginalGame/FirstPerson/Meshes/Trigger.asset",
+    "d1387f989e4bc3f47a69b2d05218eaae": "Resources/OriginalGame/FirstPerson/Animations/Idle03_0.anim",
+    "35fb6780bc1e18149a0600e0c223565c": "Resources/OriginalGame/FirstPerson/Materials/AssaultRifle01.mat",
+    "66cc141ebb6f5ec44815f6a5d5b52880": "Resources/OriginalGame/FirstPerson/Meshes/Mantel.asset",
+    "73aaaa52f543ec84d8b48f345391c8be": "Resources/OriginalGame/FirstPerson/Animations/Idle01_0.anim",
+    "1c13629c22b2df54c82bcacf30be97f3": "Resources/OriginalGame/FirstPerson/AssaultRifle01.prefab",
+    "a20bd7f3462f00643b26269506c06ce6": "Resources/OriginalGame/FirstPerson/Meshes/Main.asset",
+    "da7fa9359de3f7043a6ba1a6d2bf4e19": "Resources/OriginalGame/FirstPerson/Animations/Idle04_0.anim",
+    "b813ba8099ee26640bcd550eaedbcbce": "Resources/OriginalGame/FirstPerson/Animations/Reload.anim",
+    "86fd34c9b55f07840842ffda9be8c0a7": "Resources/OriginalGame/FirstPerson/Meshes/Left.asset",
+    "6d1ce747809e27a49a6cf521a64d240b": "Resources/OriginalGame/FirstPerson/Animations/ReloadEmpty.anim",
+    "f45106b66e35b8041803fb32afb70e6b": "Resources/OriginalGame/FirstPerson/Materials/MA_Arm.mat",
+    "08a5b2439bbee034bbd149e90d36fdbc": "Resources/OriginalGame/FirstPerson/Meshes/Clip_0.asset",
+    "ba2f71359c951e14ebd23444fa77267e": "Resources/OriginalGame/FirstPerson/Meshes/Right.asset",
+    "aa94a6e04f1ea76419ffec5c4252b0be": "Resources/OriginalGame/FirstPerson/Animations/Fire.anim"
+  },
+  "missing_guids": [],
+  "conflicts": []
+}

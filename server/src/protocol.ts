@@ -8,6 +8,7 @@ export type JoinMessage = {
   type: "join";
   name: string;
   room?: string;
+  map?: string;
 };
 
 export type InputMessage = {
@@ -25,10 +26,45 @@ export type ShootMessage = {
   type: "shoot";
   sequence: number;
   direction: Vector3;
-  weapon: "pistol" | "knife";
+  weapon:
+    | "rifle"
+    | "m4a1"
+    | "m16"
+    | "ak74m"
+    | "shotgun01"
+    | "awp"
+    | "pistol"
+    | "knife";
 };
 
-export type ClientMessage = JoinMessage | InputMessage | ShootMessage;
+export type GrenadeMessage = {
+  type: "grenade";
+  sequence: number;
+  direction: Vector3;
+};
+
+export type WeaponActionMessage = {
+  type: "action";
+  sequence: number;
+  weapon:
+    | "rifle"
+    | "m4a1"
+    | "m16"
+    | "ak74m"
+    | "shotgun01"
+    | "awp"
+    | "pistol"
+    | "knife"
+    | "grenade";
+  action: "equip" | "reload";
+};
+
+export type ClientMessage =
+  | JoinMessage
+  | InputMessage
+  | ShootMessage
+  | GrenadeMessage
+  | WeaponActionMessage;
 
 export type PlayerSnapshot = {
   id: string;
@@ -40,6 +76,7 @@ export type PlayerSnapshot = {
   kills: number;
   deaths: number;
   alive: boolean;
+  protectedUntil: number;
   lastInputSequence: number;
 };
 
@@ -65,12 +102,36 @@ export type ServerMessage =
       targetId: string;
       damage: number;
       targetHealth: number;
+      weapon: ShootMessage["weapon"] | "grenade";
+      headshot?: boolean;
     }
   | {
       type: "death";
       killerId: string;
       victimId: string;
       respawnAt: number;
+    }
+  | {
+      type: "grenade";
+      grenadeId: string;
+      throwerId: string;
+      position: Vector3;
+      velocity: Vector3;
+      explodesAt: number;
+    }
+  | {
+      type: "explosion";
+      grenadeId: string;
+      throwerId: string;
+      position: Vector3;
+      radius: number;
+    }
+  | {
+      type: "action";
+      playerId: string;
+      sequence: number;
+      weapon: WeaponActionMessage["weapon"];
+      action: "equip" | "reload" | "fire" | "throw";
     }
   | {
       type: "error";
@@ -111,12 +172,19 @@ export function parseClientMessage(raw: string): ClientMessage | undefined {
     ) {
       return undefined;
     }
+    if (candidate.map !== undefined && !boundedString(candidate.map, 32)) {
+      return undefined;
+    }
     return {
       type: "join",
       name: candidate.name.trim(),
       room:
         typeof candidate.room === "string"
           ? candidate.room.trim().toLowerCase()
+          : undefined,
+      map:
+        typeof candidate.map === "string"
+          ? candidate.map.trim().toLowerCase()
           : undefined,
     };
   }
@@ -149,7 +217,14 @@ export function parseClientMessage(raw: string): ClientMessage | undefined {
   if (
     candidate.type === "shoot" &&
     Number.isInteger(candidate.sequence) &&
-    (candidate.weapon === "pistol" || candidate.weapon === "knife") &&
+    (candidate.weapon === "rifle" ||
+      candidate.weapon === "m4a1" ||
+      candidate.weapon === "m16" ||
+      candidate.weapon === "ak74m" ||
+      candidate.weapon === "shotgun01" ||
+      candidate.weapon === "awp" ||
+      candidate.weapon === "pistol" ||
+      candidate.weapon === "knife") &&
     vector3(candidate.direction)
   ) {
     return {
@@ -157,6 +232,40 @@ export function parseClientMessage(raw: string): ClientMessage | undefined {
       sequence: candidate.sequence as number,
       weapon: candidate.weapon,
       direction: candidate.direction,
+    };
+  }
+
+  if (
+    candidate.type === "grenade" &&
+    Number.isInteger(candidate.sequence) &&
+    vector3(candidate.direction)
+  ) {
+    return {
+      type: "grenade",
+      sequence: candidate.sequence as number,
+      direction: candidate.direction,
+    };
+  }
+
+  if (
+    candidate.type === "action" &&
+    Number.isInteger(candidate.sequence) &&
+    (candidate.weapon === "rifle" ||
+      candidate.weapon === "m4a1" ||
+      candidate.weapon === "m16" ||
+      candidate.weapon === "ak74m" ||
+      candidate.weapon === "shotgun01" ||
+      candidate.weapon === "awp" ||
+      candidate.weapon === "pistol" ||
+      candidate.weapon === "knife" ||
+      candidate.weapon === "grenade") &&
+    (candidate.action === "equip" || candidate.action === "reload")
+  ) {
+    return {
+      type: "action",
+      sequence: candidate.sequence as number,
+      weapon: candidate.weapon,
+      action: candidate.action,
     };
   }
 

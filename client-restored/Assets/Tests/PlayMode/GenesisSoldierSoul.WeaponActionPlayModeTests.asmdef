@@ -1,0 +1,9 @@
+{
+  "name": "GenesisSoldierSoul.WeaponActionPlayModeTests",
+  "references": [
+    "GenesisSoldierSoul.WeaponActions"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

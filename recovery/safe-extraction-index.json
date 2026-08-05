@@ -1,0 +1,66 @@
+{
+  "workspace": "/Users/Admin/Documents/创世兵魂",
+  "output": "/Users/Admin/Documents/创世兵魂/_安全解压资源",
+  "extract": true,
+  "summary": {
+    "already_extracted": 2
+  },
+  "archives": [
+    {
+      "archive": "_解压资源/创世兵魂武器/武器/m4a1（带枪花）/m4a1.unitypackage",
+      "bytes": 8476474,
+      "status": "already_extracted",
+      "members": 50,
+      "sha256": "5fbe8c99a37a73423e8252d78b1046ddc23ba41cf7809102f55672ff310496a0",
+      "destination": "_安全解压资源/_解压资源__创世兵魂武器__武器__m4a1_带枪花___m4a1.unitypackage__5fbe8c99a37a",
+      "materialized": {
+        "assets": 10,
+        "categories": {
+          "model": 1,
+          "texture": 5,
+          "unity": 4
+        },
+        "paths": [
+          "Assets/Modern Weapons Pack/M4A1/Textures/M4A1 Sopmod Body Diffuse.tga",
+          "Assets/Modern Weapons Pack/M4A1/Textures/M4A1 Sopmod Iron Sight Diffuse.tga",
+          "Assets/Modern Weapons Pack/M4A1/FBX/Materials/M4A1 Sopmod Magazine Diffuse.mat",
+          "Assets/Modern Weapons Pack/M4A1/FBX/Materials/M4A1 Sopmod Iron Sight Diffuse.mat",
+          "Assets/Modern Weapons Pack/M4A1/FBX/Materials/M4A1 Sopmod Body Diffuse.mat",
+          "Assets/Modern Weapons Pack/M4A1/Textures/M4A1 Sopmod Iron Sight NRM.png",
+          "Assets/Modern Weapons Pack/M4A1/FBX/Materials/M4A1_Sopmod_Body.mat",
+          "Assets/Modern Weapons Pack/M4A1/Textures/M4A1 Sopmod Body NRM.png",
+          "Assets/Modern Weapons Pack/M4A1/Textures/M4A1 Sopmod Magazine Diffuse.tga",
+          "Assets/Modern Weapons Pack/M4A1/FBX/M4A1 Sopmod.fbx"
+        ]
+      }
+    },
+    {
+      "archive": "_解压资源/创世兵魂武器/武器/m4a1（带枪花）/枪花.unitypackage",
+      "bytes": 92695,
+      "status": "already_extracted",
+      "members": 43,
+      "sha256": "641fe5a4b0fbbcd558db0ca702f8dbf324b1f9806d1af403686a9e84ba069afe",
+      "destination": "_安全解压资源/_解压资源__创世兵魂武器__武器__m4a1_带枪花___枪花.unitypackage__641fe5a4b0fb",
+      "materialized": {
+        "assets": 9,
+        "categories": {
+          "model": 1,
+          "source": 1,
+          "texture": 3,
+          "unity": 4
+        },
+        "paths": [
+          "Assets/JMO Assets/WarFX/Desktop/Textures/MuzzleFlashes/WFX_T_MF Side RIFLE1 A8.png",
+          "Assets/JMO Assets/WarFX/Shaders/WFX_S Particle Add A8.shader",
+          "Assets/JMO Assets/WarFX/Desktop/Materials/MuzzleFlashes/WFX_M_MF Sparks RIFLE1.mat",
+          "Assets/JMO Assets/WarFX/Desktop/Materials/MuzzleFlashes/WFX_M_MF Glow.mat",
+          "Assets/JMO Assets/WarFX/Desktop/Textures/MuzzleFlashes/WFX_T_MF Sparks RIFLE1 A8.tga",
+          "Assets/JMO Assets/WarFX/Mesh/Plane1x1.FBX",
+          "Assets/JMO Assets/WarFX/_Effects/MuzzleFlashes/4Planes/WFX_MF 4P RIFLE1.prefab",
+          "Assets/JMO Assets/WarFX/Desktop/Materials/MuzzleFlashes/WFX_M_MF Side RIFLE1.mat",
+          "Assets/JMO Assets/WarFX/Desktop/Textures/Misc/WFX_T_GlowCircle A8.png"
+        ]
+      }
+    }
+  ]
+}

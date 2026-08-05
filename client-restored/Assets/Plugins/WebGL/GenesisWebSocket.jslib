@@ -10,8 +10,8 @@ mergeInto(LibraryManager.library, {
     window.__genesisMouseDeltaY = 0;
     canvas.style.cursor = "none";
 
-    if (!window.__genesisPointerLockInstalled) {
-      window.__genesisPointerLockInstalled = true;
+    if (!window.__genesisMouseTrackingInstalled) {
+      window.__genesisMouseTrackingInstalled = true;
       document.addEventListener("mousemove", function (event) {
         if (!window.__genesisGameplayMode) {
           return;
@@ -26,43 +26,7 @@ mergeInto(LibraryManager.library, {
           return;
         }
         canvas.style.cursor = "none";
-        var requestPointerLock =
-          canvas.requestPointerLock ||
-          canvas.mozRequestPointerLock ||
-          canvas.webkitRequestPointerLock;
-        if (requestPointerLock && document.pointerLockElement !== canvas) {
-          requestPointerLock.call(canvas);
-        }
       });
-    }
-
-    var requestPointerLock =
-      canvas.requestPointerLock ||
-      canvas.mozRequestPointerLock ||
-      canvas.webkitRequestPointerLock;
-    var requestFullscreen =
-      canvas.requestFullscreen ||
-      canvas.webkitRequestFullscreen ||
-      canvas.mozRequestFullScreen;
-
-    if (requestFullscreen && !document.fullscreenElement) {
-      var fullscreenResult = requestFullscreen.call(canvas);
-      if (requestPointerLock) {
-        requestPointerLock.call(canvas);
-      }
-      if (fullscreenResult && fullscreenResult.then) {
-        fullscreenResult.then(function () {
-          if (requestPointerLock && document.pointerLockElement !== canvas) {
-            requestPointerLock.call(canvas);
-          }
-        }).catch(function () {
-          if (requestPointerLock && document.pointerLockElement !== canvas) {
-            requestPointerLock.call(canvas);
-          }
-        });
-      }
-    } else if (requestPointerLock) {
-      requestPointerLock.call(canvas);
     }
   },
 
@@ -84,12 +48,6 @@ mergeInto(LibraryManager.library, {
     window.__genesisMouseDeltaY = 0;
     if (Module.canvas) {
       Module.canvas.style.cursor = "default";
-    }
-    if (document.exitPointerLock && document.pointerLockElement) {
-      document.exitPointerLock();
-    }
-    if (document.exitFullscreen && document.fullscreenElement) {
-      document.exitFullscreen();
     }
   },
 

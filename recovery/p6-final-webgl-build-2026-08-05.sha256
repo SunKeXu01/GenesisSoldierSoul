@@ -1,0 +1,8 @@
+0c2485b2d42ab75309a9c158a301ab01d2517faca9279035b14f728d6000eb3a  Build/WebGL.data
+5f66c4f17d2cca53c2b4fa86a2b8c1a07f0577a0835d6a449d19dcf913fcc590  Build/WebGL.framework.js
+c0b225d624e41656b7790ffcf716c8c986087a938d30e61d28996373b646544a  Build/WebGL.loader.js
+97d2116d17168021cf371493663f2b4ccacdc9e5c67134ec579532b329caa54f  Build/WebGL.wasm
+b734071e64499fcb16af5992611f7a85919f4fe8f3e34a614f44ca9671e0dcd0  index.html
+
+# SHA-256 over the sorted complete-tree SHA-256 listing:
+3072e9f7ae9af8b64de8082e518c709485bd3f3037dd8b833b1ad97e30750a96  complete-tree-listing

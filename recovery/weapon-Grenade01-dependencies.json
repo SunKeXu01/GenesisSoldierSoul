@@ -1,0 +1,51 @@
+{
+  "source_assets": "/Users/Admin/Documents/创世兵魂/原程序恢复/单机怀旧创世兵魂V1.2.1/UnityProject/ExportedProject/Assets",
+  "root_asset": "GameObject/Grenade01.prefab",
+  "target_assets": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/client-restored/Assets",
+  "namespace": "RecoveredWeaponClosures/Grenade01",
+  "asset_count": 7,
+  "reused_guid_count": 7,
+  "missing_guid_count": 0,
+  "conflict_count": 0,
+  "copied": [
+    {
+      "source": "GameObject/Grenade01.prefab",
+      "target": "RecoveredWeaponClosures/Grenade01/GameObject/Grenade01.prefab"
+    },
+    {
+      "source": "Material/MA_Grenade01.mat",
+      "target": "RecoveredWeaponClosures/Grenade01/Material/MA_Grenade01.mat"
+    },
+    {
+      "source": "Mesh/GrenadeMesh.asset",
+      "target": "RecoveredWeaponClosures/Grenade01/Mesh/GrenadeMesh.asset"
+    },
+    {
+      "source": "Mesh/RingMesh.asset",
+      "target": "RecoveredWeaponClosures/Grenade01/Mesh/RingMesh.asset"
+    },
+    {
+      "source": "Mesh/SprintMesh.asset",
+      "target": "RecoveredWeaponClosures/Grenade01/Mesh/SprintMesh.asset"
+    },
+    {
+      "source": "Texture2D/DI_Grenade01.png",
+      "target": "RecoveredWeaponClosures/Grenade01/Texture2D/DI_Grenade01.png"
+    },
+    {
+      "source": "Texture2D/NM_Grenade01.png",
+      "target": "RecoveredWeaponClosures/Grenade01/Texture2D/NM_Grenade01.png"
+    }
+  ],
+  "reused": {
+    "89f94abebd9411d46b9b919628dd138b": "Resources/OriginalGame/FirstPerson/Animations/Idle04_1.anim",
+    "f7b63446f1597d949905c47e36e9e3f3": "Resources/OriginalGame/FirstPerson/Animations/Throw.anim",
+    "f45106b66e35b8041803fb32afb70e6b": "Resources/OriginalGame/FirstPerson/Materials/MA_Arm.mat",
+    "0c7a559fcc62e3d4bbe881c57b6b8c46": "Resources/OriginalGame/FirstPerson/Animations/Idle03_1.anim",
+    "44015412f3f9204419f6b61d76dba3fc": "Resources/OriginalGame/FirstPerson/Meshes/Right_0.asset",
+    "a586b5e50d4c2e34491fe26a37c80c8c": "Resources/OriginalGame/FirstPerson/Animations/Idle02_1.anim",
+    "00289a8df3c395744b2de9418288db0e": "Resources/OriginalGame/FirstPerson/Animations/Idle01_1.anim"
+  },
+  "missing_guids": [],
+  "conflicts": []
+}

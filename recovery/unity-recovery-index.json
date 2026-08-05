@@ -1,0 +1,699 @@
+{
+  "workspace": "/Users/Admin/Documents/创世兵魂",
+  "player_count": 12,
+  "export_count": 9,
+  "players": [
+    {
+      "data_dir": "_解压资源/六月单机（更新金字塔）/Test_Data",
+      "unity_version": null,
+      "architecture": "Mono",
+      "assembly_csharp": "_解压资源/六月单机（更新金字塔）/Test_Data/Managed/Assembly-CSharp.dll",
+      "size_bytes": 547634460,
+      "sharedassets_count": 13,
+      "level_count": 13,
+      "resource_stream_count": 26,
+      "has_resources_assets": true,
+      "exported_project": "原程序恢复/六月单机更新金字塔/UnityProject/ExportedProject",
+      "export_counts": {
+        "GameObject": 41,
+        "Mesh": 2435,
+        "Material": 2379,
+        "Texture2D": 415,
+        "AnimationClip": 7,
+        "AnimatorController": 1,
+        "AudioClip": 97,
+        "TextAsset": 19,
+        "Scenes": 51,
+        "Scripts": 197
+      },
+      "weapon_prefabs": [
+        {
+          "path": "GameObject/MachinegunBulletDust.prefab",
+          "name": "MachinegunBulletDust",
+          "socket_signals": [],
+          "sha256": "54b36acfea0410a27ea8d19c4ac692d098287126a533517f4200afce7827f097"
+        },
+        {
+          "path": "GameObject/MachinegunBulletImpact.prefab",
+          "name": "MachinegunBulletImpact",
+          "socket_signals": [],
+          "sha256": "13c8fa83ffddd226b146c63cf4a44ebd544a3bfe9e6047699d075db15eead4a4"
+        },
+        {
+          "path": "GameObject/MachinegunBulletSpark.prefab",
+          "name": "MachinegunBulletSpark",
+          "socket_signals": [],
+          "sha256": "1a615e7267b4840bc9bc0e33b1e7ae521d67d93ebc081a542e94ac803f796249"
+        },
+        {
+          "path": "GameObject/Pistol.prefab",
+          "name": "Pistol",
+          "socket_signals": [
+            "Muzzle"
+          ],
+          "sha256": "c457f675b83d78e1b129a4c2189c2e4e5dec7ec8b6aa76a34a6b7914706d8b04"
+        },
+        {
+          "path": "GameObject/PistolBullet.prefab",
+          "name": "PistolBullet",
+          "socket_signals": [],
+          "sha256": "f03c61daee9e937481535c1b6551348c2c83935777e0b32303bc4fb9b536a76f"
+        },
+        {
+          "path": "GameObject/PistolBulletDebris.prefab",
+          "name": "PistolBulletDebris",
+          "socket_signals": [],
+          "sha256": "9722654b6943e64c2eeeca2f5af54d24168184bed8658665c4db6c52b6d9ce40"
+        },
+        {
+          "path": "GameObject/PistolBulletDust.prefab",
+          "name": "PistolBulletDust",
+          "socket_signals": [],
+          "sha256": "3a63b83fda7d9cfa698f4026e23cc1f16d922f4ad823ea8fa5a0d1c1d7423abd"
+        },
+        {
+          "path": "GameObject/PistolBulletImpact.prefab",
+          "name": "PistolBulletImpact",
+          "socket_signals": [],
+          "sha256": "abe0c5b2785f8e8d14227d748affb95f36d7d9c00a365df44a211c541903062f"
+        },
+        {
+          "path": "GameObject/PistolBulletSpark.prefab",
+          "name": "PistolBulletSpark",
+          "socket_signals": [],
+          "sha256": "1a2f72a27b9fd964b1a1d5a43b3134586ed7f53e1c4b9322660ee69f1c0d00ea"
+        },
+        {
+          "path": "GameObject/PistolMuzzleFlash.prefab",
+          "name": "PistolMuzzleFlash",
+          "socket_signals": [],
+          "sha256": "84a64c3bde0084842d1095aff5d7eaee723cb1f3c87ed6d8bfb2849e65a93c12"
+        },
+        {
+          "path": "GameObject/PistolShell.prefab",
+          "name": "PistolShell",
+          "socket_signals": [],
+          "sha256": "6bfbf2a37873ebe49870ea206ba8b5f21fc373ce9532f28d5be3cf6bea5da4f3"
+        },
+        {
+          "path": "GameObject/ShotgunPelletRock1.prefab",
+          "name": "ShotgunPelletRock1",
+          "socket_signals": [],
+          "sha256": "fa85279941b34340bb66a651c414db6399bdad50cf465655cb6182abf859878f"
+        }
+      ],
+      "weapon_animation_clips": [
+        "AnimationClip/run.anim"
+      ]
+    },
+    {
+      "data_dir": "_解压资源/创世：遗迹杀戮/创世：遗迹杀戮/Relic Killing_Data",
+      "unity_version": null,
+      "architecture": "Mono",
+      "assembly_csharp": "_解压资源/创世：遗迹杀戮/创世：遗迹杀戮/Relic Killing_Data/Managed/Assembly-CSharp.dll",
+      "size_bytes": 460185240,
+      "sharedassets_count": 3,
+      "level_count": 2,
+      "resource_stream_count": 0,
+      "has_resources_assets": true,
+      "exported_project": null,
+      "export_counts": null,
+      "weapon_prefabs": [],
+      "weapon_animation_clips": []
+    },
+    {
+      "data_dir": "_解压资源/单机怀旧创世兵魂V1.2.1/Test_Data",
+      "unity_version": null,
+      "architecture": "Mono",
+      "assembly_csharp": "_解压资源/单机怀旧创世兵魂V1.2.1/Test_Data/Managed/Assembly-CSharp.dll",
+      "size_bytes": 593651028,
+      "sharedassets_count": 13,
+      "level_count": 13,
+      "resource_stream_count": 26,
+      "has_resources_assets": true,
+      "exported_project": "原程序恢复/单机怀旧创世兵魂V1.2.1/UnityProject/ExportedProject",
+      "export_counts": {
+        "GameObject": 59,
+        "Mesh": 2447,
+        "Material": 2354,
+        "Texture2D": 391,
+        "AnimationClip": 71,
+        "AnimatorController": 2,
+        "AudioClip": 114,
+        "TextAsset": 63,
+        "Scenes": 51,
+        "Scripts": 196
+      },
+      "weapon_prefabs": [
+        {
+          "path": "GameObject/AssaultRifle01.prefab",
+          "name": "AssaultRifle01",
+          "socket_signals": [
+            "Clip",
+            "Main",
+            "Muzzle",
+            "RightHand",
+            "Trigger",
+            "WeaponMainLocator"
+          ],
+          "sha256": "79dbcec9ee0bc1d33f5b913f536b15fef799dd15baf4d34217b2b00505b03c98"
+        },
+        {
+          "path": "GameObject/Grenade01.prefab",
+          "name": "Grenade01",
+          "socket_signals": [
+            "WeaponMainLocator"
+          ],
+          "sha256": "2a297edc325d41309b3fad188c3742f69e5d6eb143f31e02217b01c36312331a"
+        },
+        {
+          "path": "GameObject/GrenadeExplosion.prefab",
+          "name": "GrenadeExplosion",
+          "socket_signals": [],
+          "sha256": "54b5689c0bfc507cf6be8097cdfb6c53d59168e3602750bb5cb82b7e3659ca33"
+        },
+        {
+          "path": "GameObject/GrenadeLive.prefab",
+          "name": "GrenadeLive",
+          "socket_signals": [],
+          "sha256": "81d81162b039927fcfe972bfb5290ed37a8cdff1233c9128845d1f0cae94f185"
+        },
+        {
+          "path": "GameObject/Knife01.prefab",
+          "name": "Knife01",
+          "socket_signals": [
+            "WeaponMainLocator"
+          ],
+          "sha256": "25c6b7f5889da2713a0cb9e02eddc086ce90d191474ddd2fb0cc3c7c695361f6"
+        },
+        {
+          "path": "GameObject/KnifeAttack.prefab",
+          "name": "KnifeAttack",
+          "socket_signals": [],
+          "sha256": "f1978afc8514dbbfb9169c2852ad3befb34e73429ce7537c00db7e560969bc4a"
+        },
+        {
+          "path": "GameObject/MachinegunBullet.prefab",
+          "name": "MachinegunBullet",
+          "socket_signals": [],
+          "sha256": "8e46f8c811513d85d6b1a78ffa3a55da39c300b38eadc73300b83646fb4ff666"
+        },
+        {
+          "path": "GameObject/MachinegunBulletDust.prefab",
+          "name": "MachinegunBulletDust",
+          "socket_signals": [],
+          "sha256": "54b36acfea0410a27ea8d19c4ac692d098287126a533517f4200afce7827f097"
+        },
+        {
+          "path": "GameObject/MachinegunBulletImpact.prefab",
+          "name": "MachinegunBulletImpact",
+          "socket_signals": [],
+          "sha256": "13c8fa83ffddd226b146c63cf4a44ebd544a3bfe9e6047699d075db15eead4a4"
+        },
+        {
+          "path": "GameObject/MachinegunBulletSpark.prefab",
+          "name": "MachinegunBulletSpark",
+          "socket_signals": [],
+          "sha256": "1a615e7267b4840bc9bc0e33b1e7ae521d67d93ebc081a542e94ac803f796249"
+        },
+        {
+          "path": "GameObject/MachinegunMuzzleFlash.prefab",
+          "name": "MachinegunMuzzleFlash",
+          "socket_signals": [],
+          "sha256": "6195f3470490923737c630d9efe0e6336ff676bf322ef11811ca9e0e8f692a9c"
+        },
+        {
+          "path": "GameObject/MuzzleFlashPistol01.prefab",
+          "name": "MuzzleFlashPistol01",
+          "socket_signals": [],
+          "sha256": "2f9eb8c0bb56fd491bad96f60008b64d078bc7e6d6a179d67c62b0ab29a0a93f"
+        },
+        {
+          "path": "GameObject/MuzzleFlashShotgun.prefab",
+          "name": "MuzzleFlashShotgun",
+          "socket_signals": [],
+          "sha256": "44167af03e2f6351256a26e8b17444d9c4a0334121c07c14a093027d87e291eb"
+        },
+        {
+          "path": "GameObject/Pistol.prefab",
+          "name": "Pistol",
+          "socket_signals": [
+            "Muzzle"
+          ],
+          "sha256": "0e0665cae367241440b3485fa498ab7d92fde23a7a4c768b48755a380eeb8236"
+        },
+        {
+          "path": "GameObject/Pistol01.prefab",
+          "name": "Pistol01",
+          "socket_signals": [
+            "FireLocator",
+            "RightHand"
+          ],
+          "sha256": "7d3b61106083d1a82b4aa2274b535820337b91cb6d582529e25a57dd9c98d5f8"
+        },
+        {
+          "path": "GameObject/PistolBullet.prefab",
+          "name": "PistolBullet",
+          "socket_signals": [],
+          "sha256": "fbd580d3bd594739fb8cf9849f3056aaf82b81f43532cd52a422fa5e487c5d52"
+        },
+        {
+          "path": "GameObject/PistolBulletDebris.prefab",
+          "name": "PistolBulletDebris",
+          "socket_signals": [],
+          "sha256": "9722654b6943e64c2eeeca2f5af54d24168184bed8658665c4db6c52b6d9ce40"
+        },
+        {
+          "path": "GameObject/PistolBulletDust.prefab",
+          "name": "PistolBulletDust",
+          "socket_signals": [],
+          "sha256": "3a63b83fda7d9cfa698f4026e23cc1f16d922f4ad823ea8fa5a0d1c1d7423abd"
+        },
+        {
+          "path": "GameObject/PistolBulletImpact.prefab",
+          "name": "PistolBulletImpact",
+          "socket_signals": [],
+          "sha256": "abe0c5b2785f8e8d14227d748affb95f36d7d9c00a365df44a211c541903062f"
+        },
+        {
+          "path": "GameObject/PistolBulletSpark.prefab",
+          "name": "PistolBulletSpark",
+          "socket_signals": [],
+          "sha256": "1a2f72a27b9fd964b1a1d5a43b3134586ed7f53e1c4b9322660ee69f1c0d00ea"
+        },
+        {
+          "path": "GameObject/PistolMuzzleFlash.prefab",
+          "name": "PistolMuzzleFlash",
+          "socket_signals": [],
+          "sha256": "332d1328a36f4f4eb4d989c451808c093a677d4b9500836cdc21adb22a00bc2c"
+        },
+        {
+          "path": "GameObject/PistolShell.prefab",
+          "name": "PistolShell",
+          "socket_signals": [],
+          "sha256": "75a5dfc70831b0f81050f3dbfda9b63f4a557cfa36100ed24c4bd3e3b083b231"
+        },
+        {
+          "path": "GameObject/Shotgun01.prefab",
+          "name": "Shotgun01",
+          "socket_signals": [
+            "WeaponMainLocator"
+          ],
+          "sha256": "6e369cd22d7bd8d124eae00ab518302a6f1530f8448cbfa5575478f770ed9b28"
+        },
+        {
+          "path": "GameObject/ShotgunPellet.prefab",
+          "name": "ShotgunPellet",
+          "socket_signals": [],
+          "sha256": "f07d4c5b95c0a37e02eb815c2a6e3665ba96c89ba7c31a07fa326aa185c30381"
+        },
+        {
+          "path": "GameObject/ShotgunPelletRock1.prefab",
+          "name": "ShotgunPelletRock1",
+          "socket_signals": [],
+          "sha256": "f9ce3f3d14ddd0e514f4350264bbff3deef8b8edd78cbe3b9fd46868c9823b7d"
+        },
+        {
+          "path": "GameObject/ShotgunShellUsed.prefab",
+          "name": "ShotgunShellUsed",
+          "socket_signals": [],
+          "sha256": "a6d3b56542c6a1052389c2f0c4de28682122947e7826ce441ad9c55d36ff3250"
+        }
+      ],
+      "weapon_animation_clips": [
+        "AnimationClip/AimDown.anim",
+        "AnimationClip/AimStraight.anim",
+        "AnimationClip/AimStraightAssault_Down.anim",
+        "AnimationClip/AimStraightAssault_Straight.anim",
+        "AnimationClip/AimStraightAssault_Up.anim",
+        "AnimationClip/AimStraightCrouch.anim",
+        "AnimationClip/AimStraightCrouch_0.anim",
+        "AnimationClip/AimUp.anim",
+        "AnimationClip/CrouchIdleOneHand.anim",
+        "AnimationClip/Fire.anim",
+        "AnimationClip/Fire01.anim",
+        "AnimationClip/FireEmpty.anim",
+        "AnimationClip/Fire_0.anim",
+        "AnimationClip/Idle.anim",
+        "AnimationClip/Idle01.anim",
+        "AnimationClip/Idle01_0.anim",
+        "AnimationClip/Idle01_1.anim",
+        "AnimationClip/Idle01_2.anim",
+        "AnimationClip/Idle02.anim",
+        "AnimationClip/Idle02_0.anim",
+        "AnimationClip/Idle02_1.anim",
+        "AnimationClip/Idle02_2.anim",
+        "AnimationClip/Idle03.anim",
+        "AnimationClip/Idle03_0.anim",
+        "AnimationClip/Idle03_1.anim",
+        "AnimationClip/Idle03_2.anim",
+        "AnimationClip/Idle04.anim",
+        "AnimationClip/Idle04_0.anim",
+        "AnimationClip/Idle04_1.anim",
+        "AnimationClip/Idle04_2.anim",
+        "AnimationClip/MeleeIdle.anim",
+        "AnimationClip/Reload.anim",
+        "AnimationClip/Reload01.anim",
+        "AnimationClip/Reload02.anim",
+        "AnimationClip/ReloadEmpty.anim",
+        "AnimationClip/ReloadEmpty_0.anim",
+        "AnimationClip/ReloadOneHand.anim",
+        "AnimationClip/ReloadTwoHand.anim",
+        "AnimationClip/Run.anim",
+        "AnimationClip/RunBackwardOneHand.anim",
+        "AnimationClip/RunLeft.anim",
+        "AnimationClip/RunStrafeLeftOneHand.anim",
+        "AnimationClip/RunStrafeRightOneHand.anim",
+        "AnimationClip/StandIdleOneHand.anim",
+        "AnimationClip/StandardReload.anim",
+        "AnimationClip/WalkBackwardOneHand.anim",
+        "AnimationClip/WalkForward.anim",
+        "AnimationClip/WalkFwdTurnLeft.anim",
+        "AnimationClip/WalkFwdTurnRight.anim",
+        "AnimationClip/WalkStrafeLeftOneHand.anim",
+        "AnimationClip/WalkStrafeRightOneHand.anim",
+        "AnimationClip/Wield.anim",
+        "AnimationClip/run_0.anim"
+      ]
+    },
+    {
+      "data_dir": "_解压资源/新工地/新版工地_Data",
+      "unity_version": "2019.1.4f1",
+      "architecture": "Mono",
+      "assembly_csharp": "_解压资源/新工地/新版工地_Data/Managed/Assembly-CSharp.dll",
+      "size_bytes": 30083430,
+      "sharedassets_count": 1,
+      "level_count": 1,
+      "resource_stream_count": 1,
+      "has_resources_assets": false,
+      "exported_project": "原程序恢复/新工地/UnityProject/ExportedProject",
+      "export_counts": {
+        "GameObject": 0,
+        "Mesh": 10,
+        "Material": 16,
+        "Texture2D": 13,
+        "AnimationClip": 0,
+        "AnimatorController": 0,
+        "AudioClip": 0,
+        "TextAsset": 0,
+        "Scenes": 0,
+        "Scripts": 7
+      },
+      "weapon_prefabs": [],
+      "weapon_animation_clips": []
+    },
+    {
+      "data_dir": "_解压资源/旧工地重现-天梯王者归来/梦幻兵魂号_Data",
+      "unity_version": "2019.1.4f1",
+      "architecture": "Mono",
+      "assembly_csharp": "_解压资源/旧工地重现-天梯王者归来/梦幻兵魂号_Data/Managed/Assembly-CSharp.dll",
+      "size_bytes": 170877541,
+      "sharedassets_count": 7,
+      "level_count": 7,
+      "resource_stream_count": 8,
+      "has_resources_assets": true,
+      "exported_project": "原程序恢复/旧工地重现天梯王者归来/UnityProject/ExportedProject",
+      "export_counts": {
+        "GameObject": 0,
+        "Mesh": 113,
+        "Material": 92,
+        "Texture2D": 208,
+        "AnimationClip": 1,
+        "AnimatorController": 0,
+        "AudioClip": 1,
+        "TextAsset": 0,
+        "Scenes": 15,
+        "Scripts": 24
+      },
+      "weapon_prefabs": [],
+      "weapon_animation_clips": []
+    },
+    {
+      "data_dir": "_解压资源/炼钢厂的前夜/梦幻兵魂号_Data",
+      "unity_version": "2019.1.4f1",
+      "architecture": "Mono",
+      "assembly_csharp": "_解压资源/炼钢厂的前夜/梦幻兵魂号_Data/Managed/Assembly-CSharp.dll",
+      "size_bytes": 175399558,
+      "sharedassets_count": 9,
+      "level_count": 9,
+      "resource_stream_count": 9,
+      "has_resources_assets": true,
+      "exported_project": "原程序恢复/炼钢厂的前夜/UnityProject/ExportedProject",
+      "export_counts": {
+        "GameObject": 0,
+        "Mesh": 332,
+        "Material": 311,
+        "Texture2D": 210,
+        "AnimationClip": 3,
+        "AnimatorController": 0,
+        "AudioClip": 1,
+        "TextAsset": 0,
+        "Scenes": 19,
+        "Scripts": 25
+      },
+      "weapon_prefabs": [],
+      "weapon_animation_clips": []
+    },
+    {
+      "data_dir": "_解压资源/生化小镇电脑版/CSBH_Data",
+      "unity_version": null,
+      "architecture": "Mono",
+      "assembly_csharp": "_解压资源/生化小镇电脑版/CSBH_Data/Managed/Assembly-CSharp.dll",
+      "size_bytes": 231423141,
+      "sharedassets_count": 3,
+      "level_count": 3,
+      "resource_stream_count": 6,
+      "has_resources_assets": true,
+      "exported_project": "原程序恢复/生化小镇电脑版/UnityProject/ExportedProject",
+      "export_counts": {
+        "GameObject": 3,
+        "Mesh": 176,
+        "Material": 28,
+        "Texture2D": 39,
+        "AnimationClip": 7,
+        "AnimatorController": 1,
+        "AudioClip": 10,
+        "TextAsset": 0,
+        "Scenes": 47,
+        "Scripts": 14
+      },
+      "weapon_prefabs": [],
+      "weapon_animation_clips": [
+        "AnimationClip/run.anim"
+      ]
+    },
+    {
+      "data_dir": "_解压资源/界面怀旧版（十一月更）/界面怀旧版（十一月更）/CSBH.11.1_Data",
+      "unity_version": null,
+      "architecture": "Mono",
+      "assembly_csharp": "_解压资源/界面怀旧版（十一月更）/界面怀旧版（十一月更）/CSBH.11.1_Data/Managed/Assembly-CSharp.dll",
+      "size_bytes": 315564625,
+      "sharedassets_count": 33,
+      "level_count": 32,
+      "resource_stream_count": 0,
+      "has_resources_assets": true,
+      "exported_project": "原程序恢复/界面怀旧版十一月/UnityProject/ExportedProject",
+      "export_counts": {
+        "GameObject": 0,
+        "Mesh": 10,
+        "Material": 225,
+        "Texture2D": 151,
+        "AnimationClip": 0,
+        "AnimatorController": 0,
+        "AudioClip": 0,
+        "TextAsset": 0,
+        "Scenes": 99,
+        "Scripts": 81
+      },
+      "weapon_prefabs": [],
+      "weapon_animation_clips": []
+    },
+    {
+      "data_dir": "_解压资源/离别作/Test_Data",
+      "unity_version": null,
+      "architecture": "Mono",
+      "assembly_csharp": "_解压资源/离别作/Test_Data/Managed/Assembly-CSharp.dll",
+      "size_bytes": 573843561,
+      "sharedassets_count": 15,
+      "level_count": 15,
+      "resource_stream_count": 29,
+      "has_resources_assets": true,
+      "exported_project": "原程序恢复/离别作/UnityProject/ExportedProject",
+      "export_counts": {
+        "GameObject": 41,
+        "Mesh": 2459,
+        "Material": 2403,
+        "Texture2D": 440,
+        "AnimationClip": 7,
+        "AnimatorController": 1,
+        "AudioClip": 97,
+        "TextAsset": 19,
+        "Scenes": 54,
+        "Scripts": 198
+      },
+      "weapon_prefabs": [
+        {
+          "path": "GameObject/MachinegunBulletDust.prefab",
+          "name": "MachinegunBulletDust",
+          "socket_signals": [],
+          "sha256": "54b36acfea0410a27ea8d19c4ac692d098287126a533517f4200afce7827f097"
+        },
+        {
+          "path": "GameObject/MachinegunBulletImpact.prefab",
+          "name": "MachinegunBulletImpact",
+          "socket_signals": [],
+          "sha256": "13c8fa83ffddd226b146c63cf4a44ebd544a3bfe9e6047699d075db15eead4a4"
+        },
+        {
+          "path": "GameObject/MachinegunBulletSpark.prefab",
+          "name": "MachinegunBulletSpark",
+          "socket_signals": [],
+          "sha256": "1a615e7267b4840bc9bc0e33b1e7ae521d67d93ebc081a542e94ac803f796249"
+        },
+        {
+          "path": "GameObject/Pistol.prefab",
+          "name": "Pistol",
+          "socket_signals": [
+            "Muzzle"
+          ],
+          "sha256": "f8d678d7a2061927f39a07f33c2feee738d992267c9b96bd5fa9fd91658be163"
+        },
+        {
+          "path": "GameObject/PistolBullet.prefab",
+          "name": "PistolBullet",
+          "socket_signals": [],
+          "sha256": "220d1ff263d1b6328dab5bebf4095819ef84d4bb3a37726cfefbcfb686d6d3e5"
+        },
+        {
+          "path": "GameObject/PistolBulletDebris.prefab",
+          "name": "PistolBulletDebris",
+          "socket_signals": [],
+          "sha256": "9722654b6943e64c2eeeca2f5af54d24168184bed8658665c4db6c52b6d9ce40"
+        },
+        {
+          "path": "GameObject/PistolBulletDust.prefab",
+          "name": "PistolBulletDust",
+          "socket_signals": [],
+          "sha256": "3a63b83fda7d9cfa698f4026e23cc1f16d922f4ad823ea8fa5a0d1c1d7423abd"
+        },
+        {
+          "path": "GameObject/PistolBulletImpact.prefab",
+          "name": "PistolBulletImpact",
+          "socket_signals": [],
+          "sha256": "abe0c5b2785f8e8d14227d748affb95f36d7d9c00a365df44a211c541903062f"
+        },
+        {
+          "path": "GameObject/PistolBulletSpark.prefab",
+          "name": "PistolBulletSpark",
+          "socket_signals": [],
+          "sha256": "1a2f72a27b9fd964b1a1d5a43b3134586ed7f53e1c4b9322660ee69f1c0d00ea"
+        },
+        {
+          "path": "GameObject/PistolMuzzleFlash.prefab",
+          "name": "PistolMuzzleFlash",
+          "socket_signals": [],
+          "sha256": "000bbef6c1e4c1b7b79270853bd36dfac84583dafecab2fb3f84e70f616ccb38"
+        },
+        {
+          "path": "GameObject/PistolShell.prefab",
+          "name": "PistolShell",
+          "socket_signals": [],
+          "sha256": "38125ae1707f19fb4a97711b75f08602de59d0b8657724913fa05b052742ed87"
+        },
+        {
+          "path": "GameObject/ShotgunPelletRock1.prefab",
+          "name": "ShotgunPelletRock1",
+          "socket_signals": [],
+          "sha256": "19796311802892bd11fc0ef80ea9d66199ff625b6cf246886e1e7104cac25b3b"
+        }
+      ],
+      "weapon_animation_clips": [
+        "AnimationClip/run.anim"
+      ]
+    },
+    {
+      "data_dir": "_解压资源/致敬辉煌的曾经/梦幻兵魂号_Data",
+      "unity_version": "2019.1.4f1",
+      "architecture": "Mono",
+      "assembly_csharp": "_解压资源/致敬辉煌的曾经/梦幻兵魂号_Data/Managed/Assembly-CSharp.dll",
+      "size_bytes": 133736465,
+      "sharedassets_count": 5,
+      "level_count": 5,
+      "resource_stream_count": 6,
+      "has_resources_assets": true,
+      "exported_project": null,
+      "export_counts": null,
+      "weapon_prefabs": [],
+      "weapon_animation_clips": []
+    },
+    {
+      "data_dir": "_解压资源/迷宫-冰与火之歌/梦幻兵魂号_Data",
+      "unity_version": "2019.1.4f1",
+      "architecture": "Mono",
+      "assembly_csharp": "_解压资源/迷宫-冰与火之歌/梦幻兵魂号_Data/Managed/Assembly-CSharp.dll",
+      "size_bytes": 277336133,
+      "sharedassets_count": 7,
+      "level_count": 7,
+      "resource_stream_count": 8,
+      "has_resources_assets": true,
+      "exported_project": "原程序恢复/迷宫冰与火之歌/UnityProject/ExportedProject",
+      "export_counts": {
+        "GameObject": 0,
+        "Mesh": 622,
+        "Material": 299,
+        "Texture2D": 335,
+        "AnimationClip": 0,
+        "AnimatorController": 0,
+        "AudioClip": 0,
+        "TextAsset": 0,
+        "Scenes": 15,
+        "Scripts": 17
+      },
+      "weapon_prefabs": [],
+      "weapon_animation_clips": []
+    },
+    {
+      "data_dir": "_解压资源/退魔炮测/腿摸跑/新建文件夹/9.14_Data",
+      "unity_version": null,
+      "architecture": "Mono",
+      "assembly_csharp": "_解压资源/退魔炮测/腿摸跑/新建文件夹/9.14_Data/Managed/Assembly-CSharp.dll",
+      "size_bytes": 49621154,
+      "sharedassets_count": 1,
+      "level_count": 0,
+      "resource_stream_count": 0,
+      "has_resources_assets": true,
+      "exported_project": null,
+      "export_counts": null,
+      "weapon_prefabs": [],
+      "weapon_animation_clips": []
+    }
+  ],
+  "weapon_prefab_name_frequency": {
+    "AssaultRifle01": 1,
+    "Grenade01": 1,
+    "GrenadeExplosion": 1,
+    "GrenadeLive": 1,
+    "Knife01": 1,
+    "KnifeAttack": 1,
+    "MachinegunBullet": 1,
+    "MachinegunBulletDust": 3,
+    "MachinegunBulletImpact": 3,
+    "MachinegunBulletSpark": 3,
+    "MachinegunMuzzleFlash": 1,
+    "MuzzleFlashPistol01": 1,
+    "MuzzleFlashShotgun": 1,
+    "Pistol": 3,
+    "Pistol01": 1,
+    "PistolBullet": 3,
+    "PistolBulletDebris": 3,
+    "PistolBulletDust": 3,
+    "PistolBulletImpact": 3,
+    "PistolBulletSpark": 3,
+    "PistolMuzzleFlash": 3,
+    "PistolShell": 3,
+    "Shotgun01": 1,
+    "ShotgunPellet": 1,
+    "ShotgunPelletRock1": 3,
+    "ShotgunShellUsed": 1
+  }
+}

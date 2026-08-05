@@ -4,12 +4,18 @@ using UnityEngine.SceneManagement;
 
 namespace GenesisSoldierSoul.Multiplayer
 {
-    internal sealed class GenesisMultiplayerBootstrap : MonoBehaviour
+    public sealed class GenesisMultiplayerBootstrap : MonoBehaviour
     {
         private const string RemotePlayerResource = "OriginalGame/RemotePlayer";
         private static readonly string[] PlayableMapScenes =
         {
             "Pyramid",
+            "NewConstructionSite",
+            "BiochemicalTown",
+            "ClassicConstructionSite",
+            "SteelFactory",
+            "IceFireMaze",
+            "RadiationDistrict",
         };
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -61,18 +67,32 @@ namespace GenesisSoldierSoul.Multiplayer
 
             var camera = player.GetComponentInChildren<Camera>(true);
             var remotePrefab = Resources.Load<GameObject>(RemotePlayerResource);
-            var client = player.gameObject.AddComponent<GenesisNetworkClient>();
-            client.Configure(
-                player.transform,
-                camera == null ? null : camera.transform,
-                remotePrefab,
-                scene.name.ToLowerInvariant());
+            GenesisNetworkClient client = null;
+            if (!GenesisLobbySession.IsTraining)
+            {
+                client = player.gameObject.AddComponent<GenesisNetworkClient>();
+                var networkRoom = GenesisLobbySession.HasRoom
+                    ? GenesisLobbySession.RoomId
+                    : scene.name.ToLowerInvariant();
+                client.Configure(
+                    player.transform,
+                    camera == null ? null : camera.transform,
+                    remotePrefab,
+                    networkRoom,
+                    scene.name.ToLowerInvariant());
+            }
 
             if (IsPlayableMap(scene.name)
                 && player.GetComponent<GenesisMatchController>() == null)
             {
                 var match = player.gameObject.AddComponent<GenesisMatchController>();
                 match.Configure(player.transform, camera, client);
+                if (GenesisLobbySession.IsTraining)
+                {
+                    var training =
+                        player.gameObject.AddComponent<GenesisTrainingArena>();
+                    training.Configure(player.transform, remotePrefab, match);
+                }
             }
         }
 

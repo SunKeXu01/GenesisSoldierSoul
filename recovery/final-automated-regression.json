@@ -1,0 +1,17 @@
+{
+    "generatedAtUtc": "2026-08-05T08:52:18.9633670Z",
+    "unityVersion": "2022.3.62f3c1",
+    "passed": true,
+    "completedGates": [
+        "formal weapon resources, viewmodel roles, poses and anchors",
+        "third-person locomotion, jump, combat bones and props",
+        "seven-map strict recovery readiness",
+        "seven-map unified acceptance matrix",
+        "seven-map build publication gate",
+        "seven-map non-negative BoxCollider scales",
+        "seven-map playable audio inventory",
+        "third-person action reset, death/respawn and weapon props",
+        "create-room map selector and confirmation layout"
+    ],
+    "failure": ""
+}

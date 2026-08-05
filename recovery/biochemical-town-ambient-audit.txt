@@ -1,0 +1,12 @@
+map=BiochemicalTown
+profile=TownNight
+clip=GeneratedTownNight
+samples=176400
+frequency=22050
+length=8.000
+rms=0.016648
+seamDelta=0.000009
+loop=True
+playOnAwake=False
+spatialBlend=0.0
+failures=none

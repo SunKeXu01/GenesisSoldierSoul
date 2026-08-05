@@ -1,0 +1,300 @@
+{
+    "generatedAtUtc": "2026-08-05T08:52:25.4465420Z",
+    "unityVersion": "2022.3.62f3c1",
+    "weaponCount": 10,
+    "passedCount": 9,
+    "runtimeRequiredCount": 6,
+    "runtimePassedCount": 6,
+    "weapons": [
+        {
+            "name": "AssaultRifle01",
+            "prefabPath": "Assets/Resources/OriginalGame/FirstPerson/AssaultRifle01.prefab",
+            "loaded": true,
+            "requiredForRuntime": true,
+            "passed": true,
+            "rendererCount": 6,
+            "materialCount": 6,
+            "missingMaterialCount": 0,
+            "textureCount": 4,
+            "materialsWithTextureCount": 6,
+            "texturedMaterialCoverage": 1.0,
+            "clipCount": 7,
+            "clips": [
+                "Fire",
+                "Idle01",
+                "Idle02",
+                "Idle03",
+                "Idle04",
+                "Reload",
+                "ReloadEmpty"
+            ],
+            "requiredAnchors": [
+                "WeaponMainLocator",
+                "Main",
+                "Muzzle",
+                "RightHand"
+            ],
+            "missingAnchors": []
+        },
+        {
+            "name": "M4A1Viewmodel",
+            "prefabPath": "Assets/Resources/OriginalGame/FirstPerson/M4A1Viewmodel.prefab",
+            "loaded": true,
+            "requiredForRuntime": true,
+            "passed": true,
+            "rendererCount": 10,
+            "materialCount": 11,
+            "missingMaterialCount": 0,
+            "textureCount": 9,
+            "materialsWithTextureCount": 10,
+            "texturedMaterialCoverage": 0.9090909361839294,
+            "clipCount": 7,
+            "clips": [
+                "Fire",
+                "Idle01",
+                "Idle02",
+                "Idle03",
+                "Idle04",
+                "Reload",
+                "ReloadEmpty"
+            ],
+            "requiredAnchors": [
+                "WeaponMainLocator",
+                "Recovered_M4A1_Sopmod",
+                "Muzzle",
+                "RightHand"
+            ],
+            "missingAnchors": []
+        },
+        {
+            "name": "M16ViewmodelCandidate",
+            "prefabPath": "Assets/Resources/OriginalGame/FirstPerson/M16ViewmodelCandidate.prefab",
+            "loaded": true,
+            "requiredForRuntime": false,
+            "passed": true,
+            "rendererCount": 127,
+            "materialCount": 239,
+            "missingMaterialCount": 0,
+            "textureCount": 7,
+            "materialsWithTextureCount": 239,
+            "texturedMaterialCoverage": 1.0,
+            "clipCount": 7,
+            "clips": [
+                "Fire",
+                "Idle01",
+                "Idle02",
+                "Idle03",
+                "Idle04",
+                "Reload",
+                "ReloadEmpty"
+            ],
+            "requiredAnchors": [
+                "WeaponMainLocator",
+                "Recovered_M16_Candidate",
+                "Muzzle",
+                "RightHand"
+            ],
+            "missingAnchors": []
+        },
+        {
+            "name": "AK74MViewmodelCandidate",
+            "prefabPath": "Assets/Resources/OriginalGame/FirstPerson/AK74MViewmodelCandidate.prefab",
+            "loaded": true,
+            "requiredForRuntime": false,
+            "passed": true,
+            "rendererCount": 13,
+            "materialCount": 13,
+            "missingMaterialCount": 0,
+            "textureCount": 4,
+            "materialsWithTextureCount": 13,
+            "texturedMaterialCoverage": 1.0,
+            "clipCount": 7,
+            "clips": [
+                "Fire",
+                "Idle01",
+                "Idle02",
+                "Idle03",
+                "Idle04",
+                "Reload",
+                "ReloadEmpty"
+            ],
+            "requiredAnchors": [
+                "WeaponMainLocator",
+                "Recovered_AK74M_Candidate",
+                "Muzzle",
+                "RightHand"
+            ],
+            "missingAnchors": []
+        },
+        {
+            "name": "AWPViewmodelCandidate",
+            "prefabPath": "Assets/Resources/OriginalGame/FirstPerson/AWPViewmodelCandidate.prefab",
+            "loaded": true,
+            "requiredForRuntime": false,
+            "passed": true,
+            "rendererCount": 9,
+            "materialCount": 9,
+            "missingMaterialCount": 0,
+            "textureCount": 4,
+            "materialsWithTextureCount": 9,
+            "texturedMaterialCoverage": 1.0,
+            "clipCount": 7,
+            "clips": [
+                "Fire",
+                "Idle01",
+                "Idle02",
+                "Idle03",
+                "Idle04",
+                "Reload",
+                "ReloadEmpty"
+            ],
+            "requiredAnchors": [
+                "WeaponMainLocator",
+                "Recovered_AWP_Candidate",
+                "Muzzle",
+                "RightHand"
+            ],
+            "missingAnchors": []
+        },
+        {
+            "name": "Pistol01",
+            "prefabPath": "Assets/Resources/OriginalGame/FirstPerson/Pistol/Pistol01.prefab",
+            "loaded": true,
+            "requiredForRuntime": true,
+            "passed": true,
+            "rendererCount": 12,
+            "materialCount": 12,
+            "missingMaterialCount": 0,
+            "textureCount": 4,
+            "materialsWithTextureCount": 12,
+            "texturedMaterialCoverage": 1.0,
+            "clipCount": 10,
+            "clips": [
+                "Fire",
+                "FireEmpty",
+                "Idle01",
+                "Idle02",
+                "Idle03",
+                "Idle04",
+                "Out of Ammo",
+                "ReloadEmpty",
+                "StandardReload",
+                "Wield"
+            ],
+            "requiredAnchors": [
+                "FireLocator",
+                "MainMesh",
+                "RightHand"
+            ],
+            "missingAnchors": []
+        },
+        {
+            "name": "M9Viewmodel",
+            "prefabPath": "Assets/Resources/OriginalGame/FirstPerson/M9Viewmodel.prefab",
+            "loaded": true,
+            "requiredForRuntime": true,
+            "passed": true,
+            "rendererCount": 17,
+            "materialCount": 17,
+            "missingMaterialCount": 0,
+            "textureCount": 5,
+            "materialsWithTextureCount": 17,
+            "texturedMaterialCoverage": 1.0,
+            "clipCount": 10,
+            "clips": [
+                "Fire",
+                "FireEmpty",
+                "Idle01",
+                "Idle02",
+                "Idle03",
+                "Idle04",
+                "Out of Ammo",
+                "ReloadEmpty",
+                "StandardReload",
+                "Wield"
+            ],
+            "requiredAnchors": [
+                "FireLocator",
+                "Recovered_M9_Candidate",
+                "RightHand"
+            ],
+            "missingAnchors": []
+        },
+        {
+            "name": "Knife01",
+            "prefabPath": "Assets/Resources/OriginalGame/FirstPerson/Knife/Knife01.prefab",
+            "loaded": true,
+            "requiredForRuntime": false,
+            "passed": false,
+            "rendererCount": 2,
+            "materialCount": 2,
+            "missingMaterialCount": 0,
+            "textureCount": 4,
+            "materialsWithTextureCount": 2,
+            "texturedMaterialCoverage": 1.0,
+            "clipCount": 0,
+            "clips": [],
+            "requiredAnchors": [
+                "WeaponMainLocator"
+            ],
+            "missingAnchors": []
+        },
+        {
+            "name": "Shotgun01",
+            "prefabPath": "Assets/Resources/OriginalGame/FirstPerson/RecoveredClosures/Shotgun01/GameObject/Shotgun01.prefab",
+            "loaded": true,
+            "requiredForRuntime": true,
+            "passed": true,
+            "rendererCount": 7,
+            "materialCount": 8,
+            "missingMaterialCount": 0,
+            "textureCount": 4,
+            "materialsWithTextureCount": 8,
+            "texturedMaterialCoverage": 1.0,
+            "clipCount": 7,
+            "clips": [
+                "Fire01",
+                "Idle01",
+                "Idle02",
+                "Idle03",
+                "Idle04",
+                "Reload01",
+                "Reload02"
+            ],
+            "requiredAnchors": [
+                "WeaponMainLocator",
+                "ReloadLocator",
+                "WeaponMainMesh"
+            ],
+            "missingAnchors": []
+        },
+        {
+            "name": "Grenade01",
+            "prefabPath": "Assets/Resources/OriginalGame/FirstPerson/RecoveredClosures/Grenade01/GameObject/Grenade01.prefab",
+            "loaded": true,
+            "requiredForRuntime": true,
+            "passed": true,
+            "rendererCount": 4,
+            "materialCount": 4,
+            "missingMaterialCount": 0,
+            "textureCount": 4,
+            "materialsWithTextureCount": 4,
+            "texturedMaterialCoverage": 1.0,
+            "clipCount": 5,
+            "clips": [
+                "Idle01",
+                "Idle02",
+                "Idle03",
+                "Idle04",
+                "Throw"
+            ],
+            "requiredAnchors": [
+                "WeaponMainLocator",
+                "GrenadeMesh",
+                "RingMesh",
+                "SprintMesh"
+            ],
+            "missingAnchors": []
+        }
+    ]
+}

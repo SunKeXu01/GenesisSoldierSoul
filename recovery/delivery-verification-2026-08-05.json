@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-08-05T16:18:00+08:00",
+  "entrypoint": "tools/verify_delivery.sh --full",
+  "toolchain": {
+    "unity": "2022.3.62f3c1",
+    "node": "24.16.0",
+    "pnpm": "11.9.0",
+    "python": "3.12.13"
+  },
+  "results": {
+    "typescriptBuild": "passed",
+    "serverTests": { "passed": 30, "failed": 0 },
+    "pythonToolTests": { "passed": 38, "failed": 0 },
+    "unityEditMode": { "passed": 65, "failed": 0 },
+    "unityPlayMode": { "passed": 6, "failed": 0 },
+    "unityFinalRegressionGates": { "passed": 9, "failed": 0 },
+    "diagnosticWebglBuild": "success"
+  },
+  "webgl": {
+    "files": 77,
+    "bytes": 360379681,
+    "completeTreeManifestSha256": "26a3c49520479f352d8805b993249b7580f5339b46ae2a72d1f7f78227c0a471",
+    "manifest": "delivery-webgl-complete-tree-2026-08-05.sha256"
+  },
+  "rawOutputSha256": {
+    "server-build.log": "64eee81c14f1ff86a0b42e14c5240c623c1aaf23a2d9e805f20a8d4bec379ace",
+    "server-test.log": "4d69a79afb9ca574fdca0db029283d1f8b89ed222a340a7057dedf5cf3d65d32",
+    "python-tools-test.log": "c58c5bf02fa028b72ae9c76b78b21d899fb7d52ebc82b26dcbd622de5d767e1c",
+    "unity-editmode.xml": "7552d5f782202d4a6eae0a018b336de5755f330a735cbdcc4be4a93c0a0c1764",
+    "unity-playmode.xml": "12e7caf038edc968804c3d48b3bd4bdd5317233bc9fd2328d3b6c4be9729d3b0",
+    "unity-final-regression.log": "e33bb7eb495d806f1aed9c5c8c3609d4611d5c0c4894df3e53fffbbd30160b67",
+    "unity-webgl-build.log": "84d4b967ab877c583e5e0b0504cd443c9b8e831aa5436b6bb7fc3667f129d47f"
+  }
+}

@@ -1,12 +1,23 @@
 node_modules/
 dist/
 coverage/
+artifacts/
+.venv/
+__pycache__/
+*.py[cod]
 .env
 .env.*
 !.env.example
 .DS_Store
 .idea/
 .vscode/
+
+# .NET tool build outputs
+tools/UnrealAssetAudit/bin/
+tools/UnrealAssetAudit/obj/
+
+# Local command-line build logs. Curated acceptance logs live under recovery/.
+/*.log
 
 # The earlier migration sandbox is kept locally for reference. The maintained
 # Unity project is client-restored/.
@@ -28,3 +39,19 @@ client-restored/*.csproj
 client-restored/*.sln
 client-restored/*.user
 client-restored/sysinfo.txt
+client-restored/mono_crash.*.json
+
+# Large reproducible recovery/build evidence stays local. Curated Markdown and
+# machine-readable summaries at recovery/ root are staged explicitly.
+recovery/special-formats/
+recovery/windows-unity-object-exports/
+recovery/android-mono-metadata/
+recovery/windows-mono-metadata/
+recovery/webgl-*/
+recovery/third-person-prop-preview/
+recovery/*.log
+recovery/*.xml
+recovery/*.png
+recovery/private-rez-recovery.json
+recovery/private-rez-media-conversions.json
+recovery/private-rez-model-conversions.json

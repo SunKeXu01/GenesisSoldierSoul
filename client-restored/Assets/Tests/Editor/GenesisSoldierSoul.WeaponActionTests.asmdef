@@ -1,0 +1,14 @@
+{
+  "name": "GenesisSoldierSoul.WeaponActionTests",
+  "references": [
+    "GenesisSoldierSoul.WeaponActions",
+    "GenesisSoldierSoul.Settings",
+    "GenesisSoldierSoul.Catalog"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}

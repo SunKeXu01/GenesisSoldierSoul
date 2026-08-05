@@ -1,11 +1,24 @@
 import { createReadStream, statSync } from "node:fs";
-import { createServer, type ServerResponse } from "node:http";
+import {
+  createServer,
+  type IncomingMessage,
+  type ServerResponse,
+} from "node:http";
 import { extname, resolve, sep } from "node:path";
 import { WebSocket, WebSocketServer } from "ws";
 import { GameRoom, TICK_RATE } from "./game.js";
+import {
+  LobbyRegistry,
+  normalizeMap,
+  sanitizeRoomId,
+} from "./lobby.js";
 import { parseClientMessage, type ServerMessage } from "./protocol.js";
 
 const port = readPort(process.env.PORT, 8080);
+const roundDurationMs = readPositiveInteger(
+  process.env.ROUND_DURATION_MS,
+  3 * 60 * 1000,
+);
 const webRoot = process.env.WEB_ROOT
   ? resolve(process.env.WEB_ROOT)
   : undefined;
@@ -16,12 +29,18 @@ const allowedOrigins = new Set(
     .filter(Boolean),
 );
 const rooms = new Map<string, GameRoom>();
+const lobby = new LobbyRegistry();
 const sessions = new Map<
   WebSocket,
-  { room: GameRoom; playerId: string }
+  {
+    room: GameRoom;
+    playerId: string;
+    matchKey: string;
+    lobbyRoomId: string;
+  }
 >();
 
-const httpServer = createServer((request, response) => {
+const httpServer = createServer(async (request, response) => {
   if (request.url === "/health") {
     response.writeHead(200, { "content-type": "application/json" });
     response.end(
@@ -32,6 +51,43 @@ const httpServer = createServer((request, response) => {
         uptime: process.uptime(),
       }),
     );
+    return;
+  }
+
+  if (request.url === "/api/rooms" && request.method === "GET") {
+    sendJson(response, 200, {
+      rooms: lobby.list(lobbyPlayerCounts()),
+    });
+    return;
+  }
+
+  if (request.url === "/api/rooms" && request.method === "POST") {
+    try {
+      const body = await readJsonBody(request, 4 * 1024);
+      if (!body || typeof body !== "object") {
+        sendJson(response, 400, { error: "invalid_body" });
+        return;
+      }
+      const candidate = body as Record<string, unknown>;
+      if (typeof candidate.name !== "string") {
+        sendJson(response, 400, { error: "invalid_room_name" });
+        return;
+      }
+      const room = lobby.create(
+        candidate.name,
+        typeof candidate.map === "string" ? candidate.map : undefined,
+      );
+      sendJson(response, 201, { room: { ...room, players: 0 } });
+    } catch (error) {
+      const code = error instanceof Error ? error.message : "invalid_body";
+      sendJson(response, code === "room_limit" ? 503 : 400, { error: code });
+    }
+    return;
+  }
+
+  if (request.url === "/api/rooms") {
+    response.writeHead(405, { allow: "GET, POST" });
+    response.end();
     return;
   }
 
@@ -96,22 +152,38 @@ websocketServer.on("connection", (socket) => {
         return;
       }
 
-      const roomId = sanitizeRoom(message.room ?? "public");
-      const room = rooms.get(roomId) ?? new GameRoom(roomId);
-      rooms.set(roomId, room);
+      const lobbyRoomId = sanitizeRoomId(message.room ?? "public") || "public";
+      const listedRoom = lobby.get(lobbyRoomId);
+      const listedPlayers = lobbyPlayerCounts().get(lobbyRoomId) ?? 0;
+      if (listedRoom && listedPlayers >= listedRoom.maxPlayers) {
+        socket.close(4003, "room_full");
+        return;
+      }
+
+      const mapId = normalizeMap(message.map ?? listedRoom?.map ?? lobbyRoomId);
+      const matchKey = `${lobbyRoomId}:${mapId}`;
+      const room =
+        rooms.get(matchKey) ??
+        new GameRoom(matchKey, Date.now(), roundDurationMs, mapId);
+      rooms.set(matchKey, room);
       if (room.full) {
         socket.close(4003, "room_full");
         return;
       }
 
-      const player = room.addPlayer(message.name);
-      sessions.set(socket, { room, playerId: player.id });
+      const player = room.addPlayer(message.name, now);
+      sessions.set(socket, {
+        room,
+        playerId: player.id,
+        matchKey,
+        lobbyRoomId,
+      });
       joined = true;
       clearTimeout(joinTimeout);
       send(socket, {
         type: "welcome",
         id: player.id,
-        room: room.id,
+        room: lobbyRoomId,
         tickRate: TICK_RATE,
         serverTime: Date.now(),
       });
@@ -122,6 +194,26 @@ websocketServer.on("connection", (socket) => {
     if (!session || message.type === "join") return;
     if (message.type === "input") {
       session.room.applyInput(session.playerId, message, now);
+      return;
+    }
+    if (message.type === "grenade") {
+      for (const event of session.room.throwGrenade(
+        session.playerId,
+        message,
+        now,
+      )) {
+        broadcastRoom(session.room, event);
+      }
+      return;
+    }
+    if (message.type === "action") {
+      for (const event of session.room.playerAction(
+        session.playerId,
+        message,
+        now,
+      )) {
+        broadcastRoom(session.room, event);
+      }
       return;
     }
     for (const event of session.room.shoot(
@@ -139,7 +231,7 @@ websocketServer.on("connection", (socket) => {
     if (!session) return;
     session.room.removePlayer(session.playerId);
     sessions.delete(socket);
-    if (session.room.size === 0) rooms.delete(session.room.id);
+    if (session.room.size === 0) rooms.delete(session.matchKey);
   });
 });
 
@@ -147,6 +239,9 @@ const tickTimer = setInterval(() => {
   const now = Date.now();
   for (const room of rooms.values()) {
     broadcastRoom(room, room.tick(now));
+    for (const event of room.drainEvents(now)) {
+      broadcastRoom(room, event);
+    }
   }
 }, 1000 / TICK_RATE);
 
@@ -178,9 +273,58 @@ function broadcastRoom(room: GameRoom, message: ServerMessage): void {
   }
 }
 
-function sanitizeRoom(value: string): string {
-  const room = value.replace(/[^a-z0-9_-]/g, "").slice(0, 24);
-  return room || "public";
+function lobbyPlayerCounts(): Map<string, number> {
+  const counts = new Map<string, number>();
+  for (const session of sessions.values()) {
+    counts.set(
+      session.lobbyRoomId,
+      (counts.get(session.lobbyRoomId) ?? 0) + 1,
+    );
+  }
+  return counts;
+}
+
+function sendJson(
+  response: ServerResponse,
+  status: number,
+  body: unknown,
+): void {
+  response.writeHead(status, {
+    "content-type": "application/json; charset=utf-8",
+    "cache-control": "no-store",
+  });
+  response.end(JSON.stringify(body));
+}
+
+function readJsonBody(
+  request: IncomingMessage,
+  maxBytes: number,
+): Promise<unknown> {
+  return new Promise((resolveBody, rejectBody) => {
+    const chunks: Buffer[] = [];
+    let size = 0;
+    let tooLarge = false;
+    request.on("data", (chunk: Buffer) => {
+      size += chunk.length;
+      if (size > maxBytes) {
+        tooLarge = true;
+        return;
+      }
+      chunks.push(chunk);
+    });
+    request.on("end", () => {
+      if (tooLarge) {
+        rejectBody(new Error("body_too_large"));
+        return;
+      }
+      try {
+        resolveBody(JSON.parse(Buffer.concat(chunks).toString("utf8")));
+      } catch {
+        rejectBody(new Error("invalid_json"));
+      }
+    });
+    request.on("error", rejectBody);
+  });
 }
 
 function readPort(value: string | undefined, fallback: number): number {
@@ -188,6 +332,14 @@ function readPort(value: string | undefined, fallback: number): number {
   return Number.isInteger(parsed) && parsed > 0 && parsed <= 65535
     ? parsed
     : fallback;
+}
+
+function readPositiveInteger(
+  value: string | undefined,
+  fallback: number,
+): number {
+  const parsed = Number(value);
+  return Number.isSafeInteger(parsed) && parsed > 0 ? parsed : fallback;
 }
 
 function rawDataToString(

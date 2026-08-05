@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using GenesisSoldierSoul.WeaponActions;
 using UnityEngine;
 
 namespace GenesisSoldierSoul.Multiplayer
@@ -12,6 +13,7 @@ namespace GenesisSoldierSoul.Multiplayer
         [Header("连接")]
         [SerializeField] private string serverUrl = "";
         [SerializeField] private string room = "public";
+        [SerializeField] private string map = "pyramid";
         [SerializeField] private string playerName = "新兵";
 
         [Header("原程序对象")]
@@ -47,9 +49,11 @@ namespace GenesisSoldierSoul.Multiplayer
 
         public event Action<bool> ConnectionChanged;
         public event Action<GenesisLocalState> LocalStateChanged;
-        public event Action<bool> HitConfirmed;
+        public event Action<GenesisHitState> HitConfirmed;
         public event Action<GenesisPlayerState[]> RosterChanged;
         public event Action<string, string> PlayerKilled;
+        public event Action<GenesisGrenadeState> GrenadeThrown;
+        public event Action<GenesisExplosionState> GrenadeExploded;
 
         public bool IsConnected
         {
@@ -93,12 +97,14 @@ namespace GenesisSoldierSoul.Multiplayer
             Transform player,
             Transform cameraTransform,
             GameObject opponentPrefab,
-            string roomId)
+            string roomId,
+            string mapId)
         {
             localPlayer = player;
             viewCamera = cameraTransform;
             remotePlayerPrefab = opponentPrefab;
             room = string.IsNullOrWhiteSpace(roomId) ? "public" : roomId;
+            map = string.IsNullOrWhiteSpace(mapId) ? "pyramid" : mapId;
             worldOrigin = player == null ? Vector3.zero : player.position;
             localController = player == null
                 ? null
@@ -176,6 +182,12 @@ namespace GenesisSoldierSoul.Multiplayer
             }
         }
 
+        private void LateUpdate()
+        {
+            foreach (RemotePlayerView remote in remotes.Values)
+                remote.ApplyPresentation();
+        }
+
         private void OnDestroy()
         {
             destroying = true;
@@ -209,6 +221,7 @@ namespace GenesisSoldierSoul.Multiplayer
                     ? "PLAYER"
                     : playerName.Trim(),
                 room = room,
+                map = map,
             };
             Send(JsonUtility.ToJson(join));
         }
@@ -239,8 +252,30 @@ namespace GenesisSoldierSoul.Multiplayer
             if (envelope.type == "hit")
             {
                 HitMessage hit = JsonUtility.FromJson<HitMessage>(json);
+                RemotePlayerView hitRemote;
+                var hitPosition = localPlayer == null
+                    ? Vector3.zero
+                    : localPlayer.position + Vector3.up * 1.1f;
+                if (hit.targetId != localPlayerId
+                    && remotes.TryGetValue(hit.targetId, out hitRemote))
+                {
+                    hitRemote.PlayHit();
+                    hitPosition = hitRemote.Transform.position
+                        + Vector3.up * (hit.headshot ? 1.55f : 1.05f);
+                }
                 if (HitConfirmed != null)
-                    HitConfirmed(hit.shooterId == localPlayerId);
+                {
+                    HitConfirmed(new GenesisHitState
+                    {
+                        wasLocalShooter = hit.shooterId == localPlayerId,
+                        wasLocalTarget = hit.targetId == localPlayerId,
+                        damage = hit.damage,
+                        targetHealth = hit.targetHealth,
+                        weapon = hit.weapon,
+                        headshot = hit.headshot,
+                        position = hitPosition,
+                    });
+                }
                 return;
             }
 
@@ -249,11 +284,64 @@ namespace GenesisSoldierSoul.Multiplayer
                 DeathMessage death = JsonUtility.FromJson<DeathMessage>(json);
                 if (death.victimId == localPlayerId)
                     localRespawnAt = death.respawnAt;
+                RemotePlayerView deadRemote;
+                if (death.victimId != localPlayerId
+                    && remotes.TryGetValue(death.victimId, out deadRemote))
+                    deadRemote.PlayDeath();
                 string killerName = ResolvePlayerName(death.killerId);
                 string victimName = ResolvePlayerName(death.victimId);
                 if (PlayerKilled != null)
                     PlayerKilled(killerName, victimName);
                 Debug.Log("击杀：" + killerName + " -> " + victimName);
+                return;
+            }
+
+            if (envelope.type == "grenade")
+            {
+                GrenadeEvent grenade = JsonUtility.FromJson<GrenadeEvent>(json);
+                if (GrenadeThrown != null)
+                {
+                    GrenadeThrown(new GenesisGrenadeState
+                    {
+                        id = grenade.grenadeId,
+                        throwerId = grenade.throwerId,
+                        isLocalThrow = grenade.throwerId == localPlayerId,
+                        position = ToWorld(grenade.position),
+                        velocity = grenade.velocity.ToVector3(),
+                        explodesAt = grenade.explodesAt,
+                    });
+                }
+                return;
+            }
+
+            if (envelope.type == "explosion")
+            {
+                ExplosionEvent explosion =
+                    JsonUtility.FromJson<ExplosionEvent>(json);
+                if (GrenadeExploded != null)
+                {
+                    GrenadeExploded(new GenesisExplosionState
+                    {
+                        id = explosion.grenadeId,
+                        throwerId = explosion.throwerId,
+                        position = ToWorld(explosion.position),
+                        radius = explosion.radius,
+                    });
+                }
+                return;
+            }
+
+            if (envelope.type == "action")
+            {
+                CombatActionEvent action =
+                    JsonUtility.FromJson<CombatActionEvent>(json);
+                RemotePlayerView remote;
+                if (action.playerId != localPlayerId
+                    && remotes.TryGetValue(action.playerId, out remote))
+                {
+                    remote.PlayAction(
+                        action.sequence, action.weapon, action.action);
+                }
             }
         }
 
@@ -300,18 +388,68 @@ namespace GenesisSoldierSoul.Multiplayer
             Send(JsonUtility.ToJson(input));
         }
 
-        public bool RequestShoot(string weapon)
+        public bool RequestShoot(string weapon, Vector3 direction)
         {
             if (!IsConnected || viewCamera == null)
+                return false;
+            GenesisCombatActionCommand semantic;
+            if (!GenesisCombatActionSemantics.TryCreate(
+                    weapon, "fire", out semantic)
+                || semantic.Kind == GenesisCombatActionKind.Throw)
                 return false;
             ShootMessage shoot = new ShootMessage
             {
                 type = "shoot",
                 sequence = ++sequence,
-                weapon = weapon == "knife" ? "knife" : "pistol",
-                direction = SerializableVector3.From(viewCamera.forward.normalized),
+                weapon = semantic.Weapon == "rifle"
+                    ? "m4a1"
+                    : semantic.Weapon,
+                direction = SerializableVector3.From(direction.normalized),
             };
             Send(JsonUtility.ToJson(shoot));
+            return true;
+        }
+
+        public bool RequestShoot(string weapon)
+        {
+            return RequestShoot(weapon, viewCamera == null
+                ? Vector3.forward
+                : viewCamera.forward);
+        }
+
+        public bool RequestGrenade()
+        {
+            if (!IsConnected || viewCamera == null)
+                return false;
+            GrenadeRequest grenade = new GrenadeRequest
+            {
+                type = "grenade",
+                sequence = ++sequence,
+                direction = SerializableVector3.From(
+                    viewCamera.forward.normalized),
+            };
+            Send(JsonUtility.ToJson(grenade));
+            return true;
+        }
+
+        public bool RequestAction(string weapon, string action)
+        {
+            if (!IsConnected)
+                return false;
+            GenesisCombatActionCommand semantic;
+            if (!GenesisCombatActionSemantics.TryCreate(
+                    weapon, action, out semantic)
+                || (semantic.Kind != GenesisCombatActionKind.Equip
+                    && semantic.Kind != GenesisCombatActionKind.Reload))
+                return false;
+            WeaponActionRequest request = new WeaponActionRequest
+            {
+                type = "action",
+                sequence = ++sequence,
+                weapon = semantic.Weapon,
+                action = semantic.WireAction,
+            };
+            Send(JsonUtility.ToJson(request));
             return true;
         }
 
@@ -355,6 +493,7 @@ namespace GenesisSoldierSoul.Multiplayer
                             roundEndsAt = snapshot.roundEndsAt,
                             serverTime = snapshot.serverTime,
                             respawnAt = localRespawnAt,
+                            protectedUntil = player.protectedUntil,
                         });
                     }
                     continue;
@@ -378,7 +517,8 @@ namespace GenesisSoldierSoul.Multiplayer
                     instance.name = "RecoveredCharacter";
                     NormalizeRemotePresentation(
                         instance.transform, anchor.transform);
-                    remote = new RemotePlayerView(anchor.transform);
+                    remote = new RemotePlayerView(
+                        anchor.transform, instance.transform);
                     remotes.Add(player.id, remote);
                 }
 
@@ -415,6 +555,8 @@ namespace GenesisSoldierSoul.Multiplayer
                     roster[index] = new GenesisPlayerState
                     {
                         name = playerNames[player.id],
+                        position = ToWorld(player.position),
+                        yaw = player.yaw,
                         kills = player.kills,
                         deaths = player.deaths,
                         alive = player.alive,
@@ -459,6 +601,7 @@ namespace GenesisSoldierSoul.Multiplayer
             Transform presentation,
             Transform anchor)
         {
+            const float targetHeight = 1.9f;
             Renderer[] renderers =
                 presentation.GetComponentsInChildren<Renderer>(true);
             if (renderers.Length == 0)
@@ -469,17 +612,22 @@ namespace GenesisSoldierSoul.Multiplayer
                 bounds.Encapsulate(renderers[index].bounds);
             if (bounds.size.y > 0.01f)
             {
-                const float targetHeight = 1.9f;
                 presentation.localScale *= targetHeight / bounds.size.y;
             }
 
             bounds = renderers[0].bounds;
             for (int index = 1; index < renderers.Length; index++)
                 bounds.Encapsulate(renderers[index].bounds);
-            // Network positions represent the local controller's body center.
-            // Centering the recovered mesh on an independent anchor prevents its
-            // archived 3.16 m bounds and offset pivot from floating above players.
-            presentation.position += anchor.position - bounds.center;
+            // Network positions come from the first-person controller's feet.
+            // Put the recovered mesh's feet on that anchor. Centering the mesh
+            // directly on the anchor buried almost the whole remote player below
+            // the terrain in real two-client WebGL matches.
+            // Instantiate(prefab, parent) preserves the prefab's saved world
+            // position, so explicitly move the normalized feet to the network
+            // anchor. The non-zero-anchor editor audit guards this behavior.
+            presentation.position +=
+                anchor.position + Vector3.up * (targetHeight * 0.5f)
+                - bounds.center;
         }
 
         private void Send(string json)
@@ -506,15 +654,62 @@ namespace GenesisSoldierSoul.Multiplayer
     internal sealed class RemotePlayerView
     {
         public readonly Transform Transform;
+        private readonly Transform visual;
+        private readonly Transform leftThigh;
+        private readonly Transform rightThigh;
+        private readonly Transform leftUpperArm;
+        private readonly Transform rightUpperArm;
+        private readonly Quaternion leftThighRest;
+        private readonly Quaternion rightThighRest;
+        private readonly Quaternion leftArmRest;
+        private readonly Quaternion rightArmRest;
+        private readonly Vector3 visualRestPosition;
+        private readonly Animator animator;
         private Vector3 targetPosition;
         private Quaternion targetRotation;
+        private Vector3 previousTargetPosition;
+        private float moveBlend;
+        private Vector2 localMoveDirection;
+        private float gaitPhase;
+        private float airborneUntil;
+        private int lastActionSequence;
+        private readonly GenesisThirdPersonActionDriver actionDriver;
         private bool visible = true;
 
-        public RemotePlayerView(Transform transform)
+        public RemotePlayerView(Transform transform, Transform presentation)
         {
             Transform = transform;
+            visual = presentation;
             targetPosition = transform.position;
+            previousTargetPosition = targetPosition;
             targetRotation = transform.rotation;
+            visualRestPosition = visual == null
+                ? Vector3.zero
+                : visual.localPosition;
+            leftThigh = FindDeepChild(visual, "Marine_L_Thigh");
+            rightThigh = FindDeepChild(visual, "Marine_R_Thigh");
+            leftUpperArm = FindDeepChild(visual, "Marine_L_UpperArm");
+            rightUpperArm = FindDeepChild(visual, "Marine_R_UpperArm");
+            animator = visual == null
+                ? null
+                : visual.GetComponentInChildren<Animator>(true);
+            var recoveredController = Resources.Load<RuntimeAnimatorController>(
+                "OriginalGame/Character/RemotePlayer");
+            if (animator != null && recoveredController != null)
+            {
+                animator.runtimeAnimatorController = recoveredController;
+                animator.applyRootMotion = false;
+                animator.cullingMode = AnimatorCullingMode.AlwaysAnimate;
+                animator.SetBool("Grounded", true);
+                animator.SetFloat("Speed", 0f);
+                animator.SetFloat("MoveX", 0f);
+                animator.SetFloat("MoveZ", 0f);
+            }
+            leftThighRest = GetLocalRotation(leftThigh);
+            rightThighRest = GetLocalRotation(rightThigh);
+            leftArmRest = GetLocalRotation(leftUpperArm);
+            rightArmRest = GetLocalRotation(rightUpperArm);
+            actionDriver = new GenesisThirdPersonActionDriver(visual);
         }
 
         public void SetTarget(
@@ -522,26 +717,156 @@ namespace GenesisSoldierSoul.Multiplayer
             Quaternion rotation,
             bool shouldBeVisible)
         {
+            var horizontalDelta = new Vector3(
+                position.x - previousTargetPosition.x,
+                0f,
+                position.z - previousTargetPosition.z);
+            var snapshotDistance = horizontalDelta.magnitude;
+            moveBlend = Mathf.Clamp01(
+                Mathf.Lerp(moveBlend, snapshotDistance * 9f, 0.55f));
+            if (snapshotDistance > 0.001f)
+            {
+                localMoveDirection = GenesisDirectionalLocomotion.LocalBlend(
+                    rotation, horizontalDelta, 1f);
+            }
+            else
+            {
+                localMoveDirection = Vector2.MoveTowards(
+                    localMoveDirection, Vector2.zero, 0.18f);
+            }
+            if (Mathf.Abs(position.y - previousTargetPosition.y) > 0.035f)
+                airborneUntil = Time.time + 0.22f;
+            previousTargetPosition = position;
             targetPosition = position;
             targetRotation = rotation;
             if (visible != shouldBeVisible)
             {
                 visible = shouldBeVisible;
-                Transform.gameObject.SetActive(visible);
+                if (visible)
+                {
+                    Transform.gameObject.SetActive(true);
+                    actionDriver.Respawn();
+                    if (animator != null)
+                    {
+                        animator.enabled = true;
+                        animator.Rebind();
+                        animator.Update(0f);
+                    }
+                }
+                else
+                {
+                    actionDriver.PlayDeath();
+                }
             }
         }
 
         public void Update(float speed, float deltaTime)
         {
             float factor = 1f - Mathf.Exp(-speed * deltaTime);
-            Transform.position = Vector3.Lerp(
+            Vector3 smoothedPosition = Vector3.Lerp(
                 Transform.position,
                 targetPosition,
                 factor);
+            // Horizontal snapshots benefit from interpolation, but smoothing the
+            // short authoritative jump arc could leave the remote presentation
+            // visually grounded before the next y=0 snapshot arrived. Apply the
+            // authoritative vertical coordinate directly so observers see the
+            // same airborne state that the server simulates.
+            smoothedPosition.y = targetPosition.y;
+            Transform.position = smoothedPosition;
             Transform.rotation = Quaternion.Slerp(
                 Transform.rotation,
                 targetRotation,
                 factor);
+            moveBlend = Mathf.MoveTowards(moveBlend, 0f, deltaTime * 1.4f);
+            gaitPhase += deltaTime * Mathf.Lerp(4f, 10.5f, moveBlend);
+            if (animator != null && animator.runtimeAnimatorController != null
+                && actionDriver.Alive)
+            {
+                animator.SetFloat("Speed", moveBlend);
+                animator.SetFloat(
+                    "MoveX", localMoveDirection.x * moveBlend, 0.12f, deltaTime);
+                animator.SetFloat(
+                    "MoveZ", localMoveDirection.y * moveBlend, 0.12f, deltaTime);
+                animator.SetBool("Grounded", Time.time >= airborneUntil);
+            }
+            else
+            {
+                ApplyGait();
+            }
+        }
+
+        public void ApplyPresentation()
+        {
+            actionDriver.Apply();
+        }
+
+        public void PlayAction(int actionSequence, string weapon, string action)
+        {
+            if (actionSequence <= lastActionSequence)
+                return;
+            GenesisCombatActionCommand semantic;
+            if (!GenesisCombatActionSemantics.TryCreate(
+                    weapon, action, out semantic))
+                return;
+            lastActionSequence = actionSequence;
+            actionDriver.PlayAction(semantic);
+        }
+
+        public void PlayHit()
+        {
+            actionDriver.PlayHit();
+        }
+
+        public void PlayDeath()
+        {
+            visible = false;
+            actionDriver.PlayDeath();
+        }
+
+        private void ApplyGait()
+        {
+            var stride = Mathf.Sin(gaitPhase) * 28f * moveBlend;
+            if (leftThigh != null)
+                leftThigh.localRotation = leftThighRest
+                    * Quaternion.AngleAxis(stride, Vector3.forward);
+            if (rightThigh != null)
+                rightThigh.localRotation = rightThighRest
+                    * Quaternion.AngleAxis(-stride, Vector3.forward);
+            if (leftUpperArm != null)
+                leftUpperArm.localRotation = leftArmRest
+                    * Quaternion.AngleAxis(-stride * 0.45f, Vector3.forward);
+            if (rightUpperArm != null)
+                rightUpperArm.localRotation = rightArmRest
+                    * Quaternion.AngleAxis(stride * 0.45f, Vector3.forward);
+            if (visual != null)
+            {
+                visual.localPosition = visualRestPosition
+                    + Vector3.up
+                    * Mathf.Abs(Mathf.Sin(gaitPhase * 2f))
+                    * 0.025f
+                    * moveBlend;
+            }
+        }
+
+        private static Quaternion GetLocalRotation(Transform target)
+        {
+            return target == null ? Quaternion.identity : target.localRotation;
+        }
+
+        private static Transform FindDeepChild(Transform parent, string name)
+        {
+            if (parent == null)
+                return null;
+            foreach (Transform child in parent)
+            {
+                if (child.name == name)
+                    return child;
+                var nested = FindDeepChild(child, name);
+                if (nested != null)
+                    return nested;
+            }
+            return null;
         }
     }
 
@@ -557,6 +882,7 @@ namespace GenesisSoldierSoul.Multiplayer
         public string type;
         public string name;
         public string room;
+        public string map;
     }
 
     [Serializable]
@@ -578,6 +904,14 @@ namespace GenesisSoldierSoul.Multiplayer
         public string type;
         public int sequence;
         public string weapon;
+        public SerializableVector3 direction;
+    }
+
+    [Serializable]
+    internal sealed class GrenadeRequest
+    {
+        public string type;
+        public int sequence;
         public SerializableVector3 direction;
     }
 
@@ -610,6 +944,8 @@ namespace GenesisSoldierSoul.Multiplayer
         public string targetId;
         public int damage;
         public int targetHealth;
+        public string weapon;
+        public bool headshot;
     }
 
     [Serializable]
@@ -619,6 +955,46 @@ namespace GenesisSoldierSoul.Multiplayer
         public string killerId;
         public string victimId;
         public long respawnAt;
+    }
+
+    [Serializable]
+    internal sealed class GrenadeEvent
+    {
+        public string type;
+        public string grenadeId;
+        public string throwerId;
+        public SerializableVector3 position;
+        public SerializableVector3 velocity;
+        public long explodesAt;
+    }
+
+    [Serializable]
+    internal sealed class ExplosionEvent
+    {
+        public string type;
+        public string grenadeId;
+        public string throwerId;
+        public SerializableVector3 position;
+        public float radius;
+    }
+
+    [Serializable]
+    internal sealed class CombatActionEvent
+    {
+        public string type;
+        public string playerId;
+        public int sequence;
+        public string weapon;
+        public string action;
+    }
+
+    [Serializable]
+    internal sealed class WeaponActionRequest
+    {
+        public string type;
+        public int sequence;
+        public string weapon;
+        public string action;
     }
 
     [Serializable]
@@ -633,6 +1009,7 @@ namespace GenesisSoldierSoul.Multiplayer
         public int kills;
         public int deaths;
         public bool alive;
+        public long protectedUntil;
         public int lastInputSequence;
     }
 
@@ -669,14 +1046,46 @@ namespace GenesisSoldierSoul.Multiplayer
         public long roundEndsAt;
         public long serverTime;
         public long respawnAt;
+        public long protectedUntil;
+    }
+
+    public struct GenesisHitState
+    {
+        public bool wasLocalShooter;
+        public bool wasLocalTarget;
+        public int damage;
+        public int targetHealth;
+        public string weapon;
+        public bool headshot;
+        public Vector3 position;
     }
 
     public struct GenesisPlayerState
     {
         public string name;
+        public Vector3 position;
+        public float yaw;
         public int kills;
         public int deaths;
         public bool alive;
         public bool isLocal;
+    }
+
+    public struct GenesisGrenadeState
+    {
+        public string id;
+        public string throwerId;
+        public bool isLocalThrow;
+        public Vector3 position;
+        public Vector3 velocity;
+        public long explodesAt;
+    }
+
+    public struct GenesisExplosionState
+    {
+        public string id;
+        public string throwerId;
+        public Vector3 position;
+        public float radius;
     }
 }

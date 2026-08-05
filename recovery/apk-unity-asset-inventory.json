@@ -1,0 +1,560 @@
+{
+  "generated_at_utc": "2026-08-03T09:28:49.749189+00:00",
+  "unitypy_version": "1.25.2",
+  "assets": [
+    {
+      "file": "/Users/Admin/Documents/创世兵魂/_安全解压资源/base.apk.1__c90fbfd89f75/_materialized-unity-data/sharedassets0.assets",
+      "bytes": 7729368,
+      "objects": 79,
+      "types": {
+        "AnimationClip": 1,
+        "AudioClip": 3,
+        "Material": 1,
+        "MonoScript": 66,
+        "PreloadData": 1,
+        "Shader": 1,
+        "Sprite": 3,
+        "Texture2D": 3
+      },
+      "named_objects": {
+        "AnimationClip": 1,
+        "AudioClip": 3,
+        "Material": 1,
+        "Sprite": 3,
+        "Texture2D": 3
+      },
+      "weapon_candidates": [],
+      "read_errors": []
+    },
+    {
+      "file": "/Users/Admin/Documents/创世兵魂/_安全解压资源/base.apk.1__c90fbfd89f75/_materialized-unity-data/sharedassets1.assets",
+      "bytes": 13823832,
+      "objects": 86,
+      "types": {
+        "AnimationClip": 2,
+        "AnimatorController": 1,
+        "AudioClip": 30,
+        "Material": 11,
+        "PreloadData": 1,
+        "Shader": 4,
+        "Sprite": 8,
+        "Texture2D": 29
+      },
+      "named_objects": {
+        "AnimationClip": 2,
+        "AnimatorController": 1,
+        "AudioClip": 30,
+        "Material": 11,
+        "Sprite": 8,
+        "Texture2D": 29
+      },
+      "weapon_candidates": [],
+      "read_errors": []
+    },
+    {
+      "file": "/Users/Admin/Documents/创世兵魂/_安全解压资源/base.apk.1__c90fbfd89f75/_materialized-unity-data/sharedassets2.assets",
+      "bytes": 9471304,
+      "objects": 31,
+      "types": {
+        "Material": 14,
+        "Mesh": 3,
+        "PreloadData": 1,
+        "Shader": 3,
+        "Texture2D": 10
+      },
+      "named_objects": {
+        "Material": 14,
+        "Mesh": 3,
+        "Texture2D": 10
+      },
+      "weapon_candidates": [],
+      "read_errors": []
+    },
+    {
+      "file": "/Users/Admin/Documents/创世兵魂/_安全解压资源/base.apk.1__c90fbfd89f75/_materialized-unity-data/sharedassets3.assets",
+      "bytes": 25592176,
+      "objects": 31,
+      "types": {
+        "Avatar": 1,
+        "Material": 5,
+        "Mesh": 14,
+        "PreloadData": 1,
+        "Texture2D": 10
+      },
+      "named_objects": {
+        "Material": 5,
+        "Mesh": 14,
+        "Texture2D": 10
+      },
+      "weapon_candidates": [],
+      "read_errors": []
+    },
+    {
+      "file": "/Users/Admin/Documents/创世兵魂/_安全解压资源/base.apk.1__c90fbfd89f75/_materialized-unity-data/sharedassets4.assets",
+      "bytes": 87530452,
+      "objects": 114,
+      "types": {
+        "AnimationClip": 2,
+        "AudioClip": 2,
+        "Material": 66,
+        "PreloadData": 1,
+        "Shader": 2,
+        "Texture2D": 41
+      },
+      "named_objects": {
+        "AnimationClip": 2,
+        "AudioClip": 2,
+        "Material": 66,
+        "Texture2D": 41
+      },
+      "weapon_candidates": [],
+      "read_errors": []
+    },
+    {
+      "file": "/Users/Admin/Documents/创世兵魂/_安全解压资源/base.apk.1__c90fbfd89f75/_materialized-unity-data/sharedassets5.assets",
+      "bytes": 36261580,
+      "objects": 82,
+      "types": {
+        "Material": 18,
+        "Mesh": 24,
+        "PreloadData": 1,
+        "Shader": 3,
+        "Texture2D": 36
+      },
+      "named_objects": {
+        "Material": 18,
+        "Mesh": 24,
+        "Texture2D": 36
+      },
+      "weapon_candidates": [],
+      "read_errors": []
+    },
+    {
+      "file": "/Users/Admin/Documents/创世兵魂/_安全解压资源/兵魂回忆录.apk.1__57cb40fcff6a/_materialized-unity-data/sharedassets0.assets",
+      "bytes": 39798248,
+      "objects": 38,
+      "types": {
+        "AudioClip": 3,
+        "Material": 1,
+        "PreloadData": 1,
+        "Shader": 1,
+        "Sprite": 16,
+        "Texture2D": 16
+      },
+      "named_objects": {
+        "AudioClip": 3,
+        "Material": 1,
+        "Sprite": 16,
+        "Texture2D": 16
+      },
+      "weapon_candidates": [
+        {
+          "type": "Texture2D",
+          "name": "rifle 步枪_爱给网_aigei_com",
+          "path_id": 7
+        },
+        {
+          "type": "Texture2D",
+          "name": "武器",
+          "path_id": 10
+        },
+        {
+          "type": "Sprite",
+          "name": "rifle 步枪_爱给网_aigei_com",
+          "path_id": 27
+        },
+        {
+          "type": "Sprite",
+          "name": "武器",
+          "path_id": 30
+        }
+      ],
+      "read_errors": []
+    },
+    {
+      "file": "/Users/Admin/Documents/创世兵魂/_安全解压资源/兵魂回忆录.apk.1__57cb40fcff6a/_materialized-unity-data/sharedassets1.assets",
+      "bytes": 2231128,
+      "objects": 7,
+      "types": {
+        "PreloadData": 1,
+        "Sprite": 3,
+        "Texture2D": 3
+      },
+      "named_objects": {
+        "Sprite": 3,
+        "Texture2D": 3
+      },
+      "weapon_candidates": [],
+      "read_errors": []
+    },
+    {
+      "file": "/Users/Admin/Documents/创世兵魂/_安全解压资源/兵魂回忆录.apk.1__57cb40fcff6a/_materialized-unity-data/sharedassets2.assets",
+      "bytes": 83479733,
+      "objects": 238,
+      "types": {
+        "AudioClip": 1,
+        "PreloadData": 1,
+        "Sprite": 117,
+        "Texture2D": 117,
+        "VideoClip": 2
+      },
+      "named_objects": {
+        "AudioClip": 1,
+        "Sprite": 117,
+        "Texture2D": 117
+      },
+      "weapon_candidates": [],
+      "read_errors": []
+    },
+    {
+      "file": "/Users/Admin/Documents/创世兵魂/_安全解压资源/兵魂回忆录.apk.1__57cb40fcff6a/_materialized-unity-data/sharedassets3.assets",
+      "bytes": 1875696,
+      "objects": 7,
+      "types": {
+        "PreloadData": 1,
+        "Sprite": 3,
+        "Texture2D": 3
+      },
+      "named_objects": {
+        "Sprite": 3,
+        "Texture2D": 3
+      },
+      "weapon_candidates": [],
+      "read_errors": []
+    },
+    {
+      "file": "/Users/Admin/Documents/创世兵魂/_安全解压资源/兵魂回忆录.apk.1__57cb40fcff6a/_materialized-unity-data/sharedassets4.assets",
+      "bytes": 105069524,
+      "objects": 618,
+      "types": {
+        "AudioClip": 3,
+        "Material": 89,
+        "Mesh": 462,
+        "PreloadData": 1,
+        "Shader": 7,
+        "Sprite": 13,
+        "Texture2D": 43
+      },
+      "named_objects": {
+        "AudioClip": 3,
+        "Material": 89,
+        "Mesh": 462,
+        "Sprite": 13,
+        "Texture2D": 43
+      },
+      "weapon_candidates": [
+        {
+          "type": "Texture2D",
+          "name": "CS-枪支-913yeskycs23_爱给网_aigei_com",
+          "path_id": 133
+        },
+        {
+          "type": "Sprite",
+          "name": "CS-枪支-913yeskycs23_爱给网_aigei_com",
+          "path_id": 618
+        }
+      ],
+      "read_errors": []
+    },
+    {
+      "file": "/Users/Admin/Documents/创世兵魂/_安全解压资源/兵魂回忆录.apk.1__57cb40fcff6a/_materialized-unity-data/sharedassets5.assets",
+      "bytes": 2816100,
+      "objects": 5,
+      "types": {
+        "PreloadData": 1,
+        "Sprite": 2,
+        "Texture2D": 2
+      },
+      "named_objects": {
+        "Sprite": 2,
+        "Texture2D": 2
+      },
+      "weapon_candidates": [],
+      "read_errors": []
+    },
+    {
+      "file": "/Users/Admin/Documents/创世兵魂/_安全解压资源/兵魂回忆录.apk.1__57cb40fcff6a/_materialized-unity-data/sharedassets6.assets",
+      "bytes": 13850964,
+      "objects": 23,
+      "types": {
+        "AudioClip": 1,
+        "Avatar": 1,
+        "Material": 9,
+        "Mesh": 5,
+        "PreloadData": 1,
+        "Sprite": 1,
+        "Texture2D": 5
+      },
+      "named_objects": {
+        "AudioClip": 1,
+        "Material": 9,
+        "Mesh": 5,
+        "Sprite": 1,
+        "Texture2D": 5
+      },
+      "weapon_candidates": [],
+      "read_errors": []
+    },
+    {
+      "file": "/Users/Admin/Documents/创世兵魂/_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/_materialized-unity-data/level0",
+      "bytes": 1584292,
+      "objects": 7597,
+      "types": {
+        "Animation": 2,
+        "Animator": 4,
+        "AudioListener": 1,
+        "AudioSource": 8,
+        "Camera": 1,
+        "Canvas": 1,
+        "CanvasGroup": 1,
+        "CanvasRenderer": 1392,
+        "Cubemap": 1,
+        "FlareLayer": 1,
+        "GUILayer": 1,
+        "GameObject": 1536,
+        "Light": 1,
+        "LightProbes": 1,
+        "LightmapSettings": 1,
+        "MonoBehaviour": 3106,
+        "RectTransform": 1531,
+        "RenderSettings": 1,
+        "SpriteRenderer": 2,
+        "Transform": 5
+      },
+      "named_objects": {
+        "GameObject": 1536
+      },
+      "weapon_candidates": [
+        {
+          "type": "GameObject",
+          "name": "切换主武器",
+          "path_id": 40
+        },
+        {
+          "type": "GameObject",
+          "name": "切换投掷武器",
+          "path_id": 72
+        },
+        {
+          "type": "GameObject",
+          "name": "切换副武器",
+          "path_id": 521
+        },
+        {
+          "type": "GameObject",
+          "name": "武器选择",
+          "path_id": 747
+        },
+        {
+          "type": "GameObject",
+          "name": "武器选择",
+          "path_id": 782
+        },
+        {
+          "type": "GameObject",
+          "name": "狙击镜移动速度",
+          "path_id": 1159
+        },
+        {
+          "type": "GameObject",
+          "name": "丢弃武器",
+          "path_id": 1197
+        },
+        {
+          "type": "GameObject",
+          "name": "切换近身武器",
+          "path_id": 1326
+        },
+        {
+          "type": "GameObject",
+          "name": "武器选择",
+          "path_id": 1359
+        },
+        {
+          "type": "GameObject",
+          "name": "武器选择",
+          "path_id": 1419
+        },
+        {
+          "type": "GameObject",
+          "name": "切换武器",
+          "path_id": 1482
+        },
+        {
+          "type": "GameObject",
+          "name": "武器背包",
+          "path_id": 1518
+        }
+      ],
+      "read_errors": []
+    },
+    {
+      "file": "/Users/Admin/Documents/创世兵魂/_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/_materialized-unity-data/sharedassets0.assets",
+      "bytes": 277113744,
+      "objects": 378,
+      "types": {
+        "AnimationClip": 1,
+        "AnimatorController": 1,
+        "Font": 7,
+        "Material": 8,
+        "MonoScript": 111,
+        "PreloadData": 1,
+        "Shader": 1,
+        "Sprite": 125,
+        "Texture2D": 123
+      },
+      "named_objects": {
+        "AnimationClip": 1,
+        "AnimatorController": 1,
+        "Material": 8,
+        "Sprite": 125,
+        "Texture2D": 123
+      },
+      "weapon_candidates": [],
+      "read_errors": []
+    },
+    {
+      "file": "/Users/Admin/Documents/创世兵魂/_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/_materialized-unity-data/sharedassets1.assets",
+      "bytes": 101576312,
+      "objects": 568,
+      "types": {
+        "Animation": 1,
+        "AnimationClip": 8,
+        "AnimatorController": 4,
+        "AudioClip": 3,
+        "CanvasRenderer": 4,
+        "Font": 2,
+        "GameObject": 4,
+        "Material": 2,
+        "MonoBehaviour": 9,
+        "PreloadData": 1,
+        "RectTransform": 4,
+        "Sprite": 262,
+        "Texture2D": 264
+      },
+      "named_objects": {
+        "AnimationClip": 8,
+        "AnimatorController": 4,
+        "AudioClip": 3,
+        "GameObject": 4,
+        "Material": 2,
+        "Sprite": 262,
+        "Texture2D": 264
+      },
+      "weapon_candidates": [],
+      "read_errors": []
+    },
+    {
+      "file": "/Users/Admin/Documents/创世兵魂/_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/_materialized-unity-data/sharedassets2.assets",
+      "bytes": 24341392,
+      "objects": 589,
+      "types": {
+        "AnimationClip": 29,
+        "Animator": 4,
+        "AnimatorController": 7,
+        "AudioClip": 19,
+        "AudioSource": 7,
+        "Avatar": 2,
+        "BoxCollider": 9,
+        "CanvasRenderer": 10,
+        "Cubemap": 1,
+        "Font": 3,
+        "GameObject": 85,
+        "LightProbes": 1,
+        "Material": 31,
+        "Mesh": 41,
+        "MeshFilter": 25,
+        "MeshRenderer": 25,
+        "MonoBehaviour": 43,
+        "NavMeshData": 1,
+        "ParticleSystem": 11,
+        "ParticleSystemRenderer": 11,
+        "PhysicMaterial": 1,
+        "PreloadData": 1,
+        "Projector": 1,
+        "RectTransform": 10,
+        "RenderTexture": 1,
+        "Rigidbody": 5,
+        "Shader": 13,
+        "SphereCollider": 2,
+        "Sprite": 29,
+        "Texture2D": 82,
+        "TrailRenderer": 4,
+        "Transform": 75
+      },
+      "named_objects": {
+        "AnimationClip": 29,
+        "AnimatorController": 7,
+        "AudioClip": 19,
+        "GameObject": 85,
+        "Material": 31,
+        "Mesh": 41,
+        "Sprite": 29,
+        "Texture2D": 82
+      },
+      "weapon_candidates": [
+        {
+          "type": "Material",
+          "name": "圣诞手雷",
+          "path_id": 23
+        },
+        {
+          "type": "Texture2D",
+          "name": "ak47_sd.28568",
+          "path_id": 44
+        },
+        {
+          "type": "Texture2D",
+          "name": "圣诞手雷",
+          "path_id": 61
+        },
+        {
+          "type": "Texture2D",
+          "name": "ak47_paozhang.28568",
+          "path_id": 82
+        },
+        {
+          "type": "AudioClip",
+          "name": "Fireinthehole_Grenade",
+          "path_id": 203
+        },
+        {
+          "type": "AudioClip",
+          "name": "rifle",
+          "path_id": 204
+        },
+        {
+          "type": "AudioClip",
+          "name": "Fireinthehole_Grenade",
+          "path_id": 212
+        },
+        {
+          "type": "Sprite",
+          "name": "ak47_sd.28568",
+          "path_id": 235
+        },
+        {
+          "type": "Sprite",
+          "name": "ak47_paozhang.28568",
+          "path_id": 248
+        },
+        {
+          "type": "GameObject",
+          "name": "Weapon",
+          "path_id": 267
+        },
+        {
+          "type": "GameObject",
+          "name": "All_Weapon",
+          "path_id": 276
+        },
+        {
+          "type": "GameObject",
+          "name": "Weapon",
+          "path_id": 336
+        }
+      ],
+      "read_errors": []
+    }
+  ]
+}

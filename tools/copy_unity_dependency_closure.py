@@ -19,6 +19,10 @@ from pathlib import Path
 GUID_RE = re.compile(rb"guid:\s*([0-9a-fA-F]{32})")
 META_GUID_RE = re.compile(rb"^guid:\s*([0-9a-fA-F]{32})\s*$", re.MULTILINE)
 TEXT_LIMIT = 64 * 1024 * 1024
+BUILTIN_GUIDS = {
+    "0000000000000000e000000000000000",
+    "0000000000000000f000000000000000",
+}
 
 
 def sha256(path: Path) -> str:
@@ -111,6 +115,8 @@ def main() -> int:
             continue
         visited.add(asset)
         for guid in referenced_guids(asset):
+            if guid in BUILTIN_GUIDS:
+                continue
             source_dep = source_index.get(guid)
             if source_dep is None:
                 # Unity built-ins and package references are expected here.

@@ -1,0 +1,25 @@
+{
+  "generatedAtLocal": "2026-08-05T13:51:00+08:00",
+  "url": "http://127.0.0.1:8080/",
+  "scope": "single-tab short-flow sample; not a claim that all longer multi-tab sessions contain zero browser-internal errors",
+  "flow": [
+    "launch",
+    "enter lobby",
+    "enter Free For All channel 1",
+    "open create-room dialog",
+    "create Pyramid room",
+    "spawn with MAP PYRAMID and ONLINE 1"
+  ],
+  "warningCount": 0,
+  "errorCount": 0,
+  "entries": [],
+  "broaderDualBrowserResult": {
+    "applicationErrorClasses": {
+      "unityException": 0,
+      "asset404": 0,
+      "shaderMissing": 0,
+      "webSocketProtocol": 0
+    },
+    "browserAutomationLayer": "Chromium UnknownError remains in longer dual-tab automation sessions; see webgl-final-dual-evidence/latest-browser-problems.json"
+  }
+}

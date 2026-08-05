@@ -1,0 +1,45 @@
+{
+  "source_assets": "/Users/Admin/Documents/创世兵魂/原程序恢复/单机怀旧创世兵魂V1.2.1/UnityProject/ExportedProject/Assets",
+  "root_asset": "GameObject/Pistol01.prefab",
+  "target_assets": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/client-restored/Assets",
+  "namespace": "RecoveredWeaponClosures/Pistol01",
+  "asset_count": 1,
+  "reused_guid_count": 25,
+  "missing_guid_count": 0,
+  "conflict_count": 0,
+  "copied": [
+    {
+      "source": "GameObject/Pistol01.prefab",
+      "target": "RecoveredWeaponClosures/Pistol01/GameObject/Pistol01.prefab"
+    }
+  ],
+  "reused": {
+    "394d450982c57cb40994f695b330cd94": "Resources/OriginalGame/FirstPerson/Animations/Wield.anim",
+    "6135158298664f640b6f992df6f2299f": "Resources/OriginalGame/FirstPerson/Animations/Idle03_2.anim",
+    "7d2024813d4715f4694babd548a9310a": "Resources/OriginalGame/FirstPerson/Animations/ReloadEmpty_0.anim",
+    "94962060abd56f24882163e71aba719b": "Resources/OriginalGame/FirstPerson/Meshes/Left_1.asset",
+    "6879c895cec1b15448c2c9767b1836a1": "Resources/OriginalGame/FirstPerson/Animations/FireEmpty.anim",
+    "89aba672a96e0b746aecf3c3ee272f09": "Resources/OriginalGame/FirstPerson/Meshes/ReloadMesh.asset",
+    "ad1b76406907f0842a8801ab4f502abb": "Resources/OriginalGame/FirstPerson/Meshes/TopPartMesh.asset",
+    "00e6c650a71891746b800106de051389": "Resources/OriginalGame/FirstPerson/Meshes/HammerMesh.asset",
+    "ac1bcd96028607c4aa1d4b06cf04d787": "Resources/OriginalGame/FirstPerson/Animations/Out of Ammo.anim",
+    "9f23b81d48e4a2c40a922457db069f1e": "Resources/OriginalGame/FirstPerson/Animations/StandardReload.anim",
+    "9f7fd2cb50e38fd4598225ee2a51beb8": "Resources/OriginalGame/FirstPerson/Meshes/ClipMesh.asset",
+    "84ad14b2cbf91af499fb129bb484e091": "Resources/OriginalGame/FirstPerson/Meshes/Right_2.asset",
+    "f45106b66e35b8041803fb32afb70e6b": "Resources/OriginalGame/FirstPerson/Materials/MA_Arm.mat",
+    "54ec1de661112774784938b0c84a97f1": "Resources/OriginalGame/FirstPerson/Meshes/TriggerMesh.asset",
+    "261f32025fc4cad4d96b67c60685a91c": "Resources/OriginalGame/FirstPerson/Pistol/Pistol01.prefab",
+    "c67b01cf9d1165c4d81939296ef07e75": "Resources/OriginalGame/FirstPerson/Meshes/RightSwitchMesh.asset",
+    "70452486f4410074baa86d2f1ec1fea0": "Resources/OriginalGame/FirstPerson/Meshes/LeftSwitchMesh.asset",
+    "6be2ce72f4fa47e49ba9942a311fea37": "Resources/OriginalGame/FirstPerson/Animations/Idle02_2.anim",
+    "dadfff1ba2fd81f43857df03b5f08bf4": "Resources/OriginalGame/FirstPerson/Meshes/FireMesh.asset",
+    "13319e2b2119f9e4eb186b861aa10594": "Resources/OriginalGame/FirstPerson/Animations/Idle04_2.anim",
+    "f4ea4f613dcb4084dbc10fc0e20436da": "Resources/OriginalGame/FirstPerson/Animations/Fire_0.anim",
+    "29c396f696f06db4fb5df47c640b7646": "Resources/OriginalGame/FirstPerson/Meshes/ClipSpawnMesh.asset",
+    "615851756b4cf69489efce027c34105d": "Resources/OriginalGame/FirstPerson/Meshes/MainMesh.asset",
+    "c83af82e6d2a4254d8c9f8f46db6dd13": "Resources/OriginalGame/FirstPerson/Animations/Idle01_2.anim",
+    "f3ed7926bd6444948a9dad58bb17784b": "Resources/OriginalGame/FirstPerson/Materials/MA_Pistol01.mat"
+  },
+  "missing_guids": [],
+  "conflicts": []
+}

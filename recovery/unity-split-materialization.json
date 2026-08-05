@@ -1,0 +1,189 @@
+{
+  "generated_at_utc": "2026-08-03T09:36:06.602019+00:00",
+  "root": "/Users/Admin/Documents/创世兵魂/_安全解压资源",
+  "summary": {
+    "already_materialized": 18
+  },
+  "files": [
+    {
+      "archive": "base.apk.1",
+      "archive_sha256": "c90fbfd89f75a174d90c2071fa26495a106e694c273762417da3bcb7f6cd6b55",
+      "split_base": "sharedassets0.assets",
+      "chunks": 8,
+      "output": "base.apk.1__c90fbfd89f75/_materialized-unity-data/sharedassets0.assets",
+      "status": "already_materialized",
+      "bytes": 7729368,
+      "sha256": "c688a3b21e0f6aed1cc89eca318b7bf907a02b02b41f6f34476f48794c4af2eb"
+    },
+    {
+      "archive": "base.apk.1",
+      "archive_sha256": "c90fbfd89f75a174d90c2071fa26495a106e694c273762417da3bcb7f6cd6b55",
+      "split_base": "sharedassets0.resource",
+      "chunks": 7,
+      "output": "base.apk.1__c90fbfd89f75/_materialized-unity-data/sharedassets0.resource",
+      "status": "already_materialized",
+      "bytes": 6577408,
+      "sha256": "c7b849558778fb3d352457e9895138d6f980e5fa136d11124cfa97b9d55fc6e8"
+    },
+    {
+      "archive": "base.apk.1",
+      "archive_sha256": "c90fbfd89f75a174d90c2071fa26495a106e694c273762417da3bcb7f6cd6b55",
+      "split_base": "sharedassets1.assets",
+      "chunks": 14,
+      "output": "base.apk.1__c90fbfd89f75/_materialized-unity-data/sharedassets1.assets",
+      "status": "already_materialized",
+      "bytes": 13823832,
+      "sha256": "12ddddc1bc94d97e9aa8f8653fcbe14335fec476d932ade288c70f24d8d63495"
+    },
+    {
+      "archive": "base.apk.1",
+      "archive_sha256": "c90fbfd89f75a174d90c2071fa26495a106e694c273762417da3bcb7f6cd6b55",
+      "split_base": "sharedassets2.assets",
+      "chunks": 10,
+      "output": "base.apk.1__c90fbfd89f75/_materialized-unity-data/sharedassets2.assets",
+      "status": "already_materialized",
+      "bytes": 9471304,
+      "sha256": "a2c107aa795020396b9695b3d62c8962f0720a478bff42ce97c6ae7b3cba95d5"
+    },
+    {
+      "archive": "base.apk.1",
+      "archive_sha256": "c90fbfd89f75a174d90c2071fa26495a106e694c273762417da3bcb7f6cd6b55",
+      "split_base": "sharedassets3.assets",
+      "chunks": 25,
+      "output": "base.apk.1__c90fbfd89f75/_materialized-unity-data/sharedassets3.assets",
+      "status": "already_materialized",
+      "bytes": 25592176,
+      "sha256": "374618b0a0b861b921ca3213e0f5e187e59cb28b14e4849b69811856c3059a00"
+    },
+    {
+      "archive": "base.apk.1",
+      "archive_sha256": "c90fbfd89f75a174d90c2071fa26495a106e694c273762417da3bcb7f6cd6b55",
+      "split_base": "sharedassets4.assets",
+      "chunks": 84,
+      "output": "base.apk.1__c90fbfd89f75/_materialized-unity-data/sharedassets4.assets",
+      "status": "already_materialized",
+      "bytes": 87530452,
+      "sha256": "3997417b7aa4f36c5823d41be42a7d115af161785707532eef0117630f580f0c"
+    },
+    {
+      "archive": "base.apk.1",
+      "archive_sha256": "c90fbfd89f75a174d90c2071fa26495a106e694c273762417da3bcb7f6cd6b55",
+      "split_base": "sharedassets5.assets",
+      "chunks": 35,
+      "output": "base.apk.1__c90fbfd89f75/_materialized-unity-data/sharedassets5.assets",
+      "status": "already_materialized",
+      "bytes": 36261580,
+      "sha256": "30073944c0ec52065f5c15c280d945a9a603bd803ebfffdc8361cfd9f83a8e77"
+    },
+    {
+      "archive": "兵魂回忆录.apk.1",
+      "archive_sha256": "57cb40fcff6a17a914c33255b25b1134d07b38244c3bba0efd69e835fd2a7e14",
+      "split_base": "sharedassets0.assets",
+      "chunks": 38,
+      "output": "兵魂回忆录.apk.1__57cb40fcff6a/_materialized-unity-data/sharedassets0.assets",
+      "status": "already_materialized",
+      "bytes": 39798248,
+      "sha256": "02060373e6d51e68a760d8a4c5fb64612758292ff4c0f7b05cf1857761e3307d"
+    },
+    {
+      "archive": "兵魂回忆录.apk.1",
+      "archive_sha256": "57cb40fcff6a17a914c33255b25b1134d07b38244c3bba0efd69e835fd2a7e14",
+      "split_base": "sharedassets1.assets",
+      "chunks": 3,
+      "output": "兵魂回忆录.apk.1__57cb40fcff6a/_materialized-unity-data/sharedassets1.assets",
+      "status": "already_materialized",
+      "bytes": 2231128,
+      "sha256": "95c01f01151b3797b9b743636d75b3ae5d66707ccc9bfb85ded232d8c6ec11af"
+    },
+    {
+      "archive": "兵魂回忆录.apk.1",
+      "archive_sha256": "57cb40fcff6a17a914c33255b25b1134d07b38244c3bba0efd69e835fd2a7e14",
+      "split_base": "sharedassets2.assets",
+      "chunks": 80,
+      "output": "兵魂回忆录.apk.1__57cb40fcff6a/_materialized-unity-data/sharedassets2.assets",
+      "status": "already_materialized",
+      "bytes": 83479733,
+      "sha256": "a41ce4a6cde696c4623b09a5a9b0611675bda79c007faf40b12efbb8ba129c9c"
+    },
+    {
+      "archive": "兵魂回忆录.apk.1",
+      "archive_sha256": "57cb40fcff6a17a914c33255b25b1134d07b38244c3bba0efd69e835fd2a7e14",
+      "split_base": "sharedassets3.assets",
+      "chunks": 2,
+      "output": "兵魂回忆录.apk.1__57cb40fcff6a/_materialized-unity-data/sharedassets3.assets",
+      "status": "already_materialized",
+      "bytes": 1875696,
+      "sha256": "bf54ea777e64451b6e2311b1115cfb80fa9e4de8eb7345c4e28ea6d0e3907048"
+    },
+    {
+      "archive": "兵魂回忆录.apk.1",
+      "archive_sha256": "57cb40fcff6a17a914c33255b25b1134d07b38244c3bba0efd69e835fd2a7e14",
+      "split_base": "sharedassets4.assets",
+      "chunks": 101,
+      "output": "兵魂回忆录.apk.1__57cb40fcff6a/_materialized-unity-data/sharedassets4.assets",
+      "status": "already_materialized",
+      "bytes": 105069524,
+      "sha256": "4338702cb5c7c2e4c2ea6d161c374d8f77572e6e7d84ab41942f1b63e364c541"
+    },
+    {
+      "archive": "兵魂回忆录.apk.1",
+      "archive_sha256": "57cb40fcff6a17a914c33255b25b1134d07b38244c3bba0efd69e835fd2a7e14",
+      "split_base": "sharedassets5.assets",
+      "chunks": 3,
+      "output": "兵魂回忆录.apk.1__57cb40fcff6a/_materialized-unity-data/sharedassets5.assets",
+      "status": "already_materialized",
+      "bytes": 2816100,
+      "sha256": "19895aee4a8a3b4aa627a34c20a871b552e8a74c6c980e5e8d06e508f2872884"
+    },
+    {
+      "archive": "兵魂回忆录.apk.1",
+      "archive_sha256": "57cb40fcff6a17a914c33255b25b1134d07b38244c3bba0efd69e835fd2a7e14",
+      "split_base": "sharedassets6.assets",
+      "chunks": 14,
+      "output": "兵魂回忆录.apk.1__57cb40fcff6a/_materialized-unity-data/sharedassets6.assets",
+      "status": "already_materialized",
+      "bytes": 13850964,
+      "sha256": "7584be92f3c2983b17067c6fef466dd01d3b22a568781e7b4b2e71afc6f398eb"
+    },
+    {
+      "archive": "遗迹杀戮(1).apk.1",
+      "archive_sha256": "c9745db1614ead6401bdfb74328f1147f898dd080942749ce7d77b635329a5a2",
+      "split_base": "level0",
+      "chunks": 2,
+      "output": "遗迹杀戮_1_.apk.1__c9745db1614e/_materialized-unity-data/level0",
+      "status": "already_materialized",
+      "bytes": 1584292,
+      "sha256": "284ce910f0124af52b83345b2e61fccd13658d847768101c8246e9cdbfeae6bb"
+    },
+    {
+      "archive": "遗迹杀戮(1).apk.1",
+      "archive_sha256": "c9745db1614ead6401bdfb74328f1147f898dd080942749ce7d77b635329a5a2",
+      "split_base": "sharedassets0.assets",
+      "chunks": 265,
+      "output": "遗迹杀戮_1_.apk.1__c9745db1614e/_materialized-unity-data/sharedassets0.assets",
+      "status": "already_materialized",
+      "bytes": 277113744,
+      "sha256": "3a9e885f6e2df6d1b857698ea714f04ff4a3bc9e8d756d63423d8390fe3b6347"
+    },
+    {
+      "archive": "遗迹杀戮(1).apk.1",
+      "archive_sha256": "c9745db1614ead6401bdfb74328f1147f898dd080942749ce7d77b635329a5a2",
+      "split_base": "sharedassets1.assets",
+      "chunks": 97,
+      "output": "遗迹杀戮_1_.apk.1__c9745db1614e/_materialized-unity-data/sharedassets1.assets",
+      "status": "already_materialized",
+      "bytes": 101576312,
+      "sha256": "b44337131f0df3d544703d21e2ab18da887cefb1f5eae0693ebc0288409bb43e"
+    },
+    {
+      "archive": "遗迹杀戮(1).apk.1",
+      "archive_sha256": "c9745db1614ead6401bdfb74328f1147f898dd080942749ce7d77b635329a5a2",
+      "split_base": "sharedassets2.assets",
+      "chunks": 24,
+      "output": "遗迹杀戮_1_.apk.1__c9745db1614e/_materialized-unity-data/sharedassets2.assets",
+      "status": "already_materialized",
+      "bytes": 24341392,
+      "sha256": "3bea6caccee644e8ea00d61257e3de14c0665ec13207e9181c2e3612b885df29"
+    }
+  ]
+}

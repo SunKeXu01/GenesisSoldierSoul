@@ -1,0 +1,6175 @@
+{
+  "generated_at_utc": "2026-08-04T06:06:03.900169+00:00",
+  "tool": "tools/convert_recovered_media.py",
+  "tool_version": "1",
+  "toolchain": {
+    "blender": "Blender 5.2.0 LTS",
+    "afconvert": "/usr/bin/afconvert",
+    "pillow": "11.3.0"
+  },
+  "parameters": {
+    "model_roots": [
+      "_解压资源"
+    ],
+    "legacy_3ds_intermediate": "bounded 3DS triangle mesh parser to OBJ",
+    "audio_roots": [
+      "_解压资源/创世兵魂素材",
+      "CF2.0"
+    ],
+    "output": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/special-formats/media"
+  },
+  "summary": {
+    "model_to_glb": 15,
+    "model_to_glb_failed": 0,
+    "texture_to_png": 8,
+    "texture_to_png_failed": 0,
+    "audio_to_wav": 188,
+    "audio_to_wav_failed": 0,
+    "output_bytes": 152644477
+  },
+  "records": [
+    {
+      "kind": "model_to_glb",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂武器/武器/AK74m/AK-74M.FBX",
+          "role": "source",
+          "bytes": 276352,
+          "sha256": "461632356cea8e430ae171068e0d01db254506131d730ae28debb91cd26d0084"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "models/解压资源__创世兵魂武器__武器__AK74m__AK-74M.FBX__461632356cea/AK-74M.glb",
+          "bytes": 300236,
+          "sha256": "4ec66aad2986f1c284b0cd4e3409bae962657f788a0124e27a47abfe29491d7a",
+          "format": "glb",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "GLB",
+        "export_apply": true,
+        "export_yup": true
+      },
+      "conversion_details": null,
+      "status": "converted"
+    },
+    {
+      "kind": "model_to_glb",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂武器/武器/AN94/1.3ds",
+          "role": "source",
+          "bytes": 50626,
+          "sha256": "5d9b93c0be1a74e2ef137bbec069f33811887ab2dd9c379013944fd4482bb810"
+        },
+        {
+          "path": "_解压资源/创世兵魂武器/武器/AN94/an94.bmp",
+          "role": "dependency",
+          "bytes": 263222,
+          "sha256": "2120eb194519933e778aa41c3aa903bf1e9aec2524202a84795842fb7a6005c3"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "models/解压资源__创世兵魂武器__武器__AN94__1.3ds__5d9b93c0be1a/1.glb",
+          "bytes": 113468,
+          "sha256": "6f1c021a0dd283209e68f2098c416d67ed37d8245aff391f0c990d850fef164e",
+          "format": "glb",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "GLB",
+        "export_apply": true,
+        "export_yup": true
+      },
+      "conversion_details": null,
+      "status": "converted"
+    },
+    {
+      "kind": "model_to_glb",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂武器/武器/AWP/awp.obj",
+          "role": "source",
+          "bytes": 1603181,
+          "sha256": "1d3a7a011f1c41d6c122cb6dc7a1574037ef1cdd09bfa9532ee5213472189945"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "models/解压资源__创世兵魂武器__武器__AWP__awp.obj__1d3a7a011f1c/awp.glb",
+          "bytes": 801312,
+          "sha256": "62d007b7a55566cecaba5baa6ba0b68f7b09950ae9e3c5605536abe1f8097036",
+          "format": "glb",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "GLB",
+        "export_apply": true,
+        "export_yup": true
+      },
+      "conversion_details": null,
+      "status": "converted"
+    },
+    {
+      "kind": "model_to_glb",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂武器/武器/M16突击步枪/m16突击步枪.fbx",
+          "role": "source",
+          "bytes": 4020704,
+          "sha256": "3a089b6a2d0153cfa60c8caeb25bb183e320df56ca79e616c79d3259b48e8291"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "models/解压资源__创世兵魂武器__武器__M16突击步枪__m16突击步枪.fbx__3a089b6a2d01/m16突击步枪.glb",
+          "bytes": 3640452,
+          "sha256": "b3c1c3d946a77146d6c831a34a811c7ed9a399c6cf2d30a11d06f9cf5a7fca56",
+          "format": "glb",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "GLB",
+        "export_apply": true,
+        "export_yup": true
+      },
+      "conversion_details": null,
+      "status": "converted"
+    },
+    {
+      "kind": "model_to_glb",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂武器/武器/M9手枪/M9.3DS",
+          "role": "source",
+          "bytes": 149779,
+          "sha256": "820e59c9c04ca92852e20193d52ac77f853c75680f3c48f5384185354a2e7e79"
+        },
+        {
+          "path": "_解压资源/创世兵魂武器/武器/M9手枪/M9.png",
+          "role": "dependency",
+          "bytes": 1494276,
+          "sha256": "10ba58ef5f8bf3344d53abd6b1c9bb4e8d867f1760226c75a4ecac9507806e64"
+        },
+        {
+          "path": "_解压资源/创世兵魂武器/武器/M9手枪/m9.jpg",
+          "role": "dependency",
+          "bytes": 1244048,
+          "sha256": "966473649bdb6577460c511888aeb063643f176b28b5c381bb1fa7fae458997f"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "models/解压资源__创世兵魂武器__武器__M9手枪__M9.3DS__820e59c9c04c/M9.glb",
+          "bytes": 342776,
+          "sha256": "68fa70aa6226a732fef3662fc9c6db5f85a5a3055128e29ceeb3a4f4e1afeccd",
+          "format": "glb",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "GLB",
+        "export_apply": true,
+        "export_yup": true
+      },
+      "conversion_details": null,
+      "status": "converted"
+    },
+    {
+      "kind": "model_to_glb",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂武器/武器/M9手枪/M9.obj",
+          "role": "source",
+          "bytes": 378661,
+          "sha256": "1d0b14eda485732b95ca5ffdd082e5debea6c1d8803a6f427cf29fab6f3e155b"
+        },
+        {
+          "path": "_解压资源/创世兵魂武器/武器/M9手枪/M9.png",
+          "role": "dependency",
+          "bytes": 1494276,
+          "sha256": "10ba58ef5f8bf3344d53abd6b1c9bb4e8d867f1760226c75a4ecac9507806e64"
+        },
+        {
+          "path": "_解压资源/创世兵魂武器/武器/M9手枪/m9.jpg",
+          "role": "dependency",
+          "bytes": 1244048,
+          "sha256": "966473649bdb6577460c511888aeb063643f176b28b5c381bb1fa7fae458997f"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "models/解压资源__创世兵魂武器__武器__M9手枪__M9.obj__1d0b14eda485/M9.glb",
+          "bytes": 335796,
+          "sha256": "d9e7881596df520224cdc178d1cae3efca4120ec445ab44940ca764d11efaa88",
+          "format": "glb",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "GLB",
+        "export_apply": true,
+        "export_yup": true
+      },
+      "conversion_details": null,
+      "status": "converted"
+    },
+    {
+      "kind": "model_to_glb",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂武器/武器/m249_saw/m249_saw.3ds",
+          "role": "source",
+          "bytes": 44044,
+          "sha256": "b60aac12f59e1c5634d8dde7984dcfd84c1165608940440e0587466d78e6b424"
+        },
+        {
+          "path": "_解压资源/创世兵魂武器/武器/m249_saw/m249.jpg",
+          "role": "dependency",
+          "bytes": 74419,
+          "sha256": "e684d068edbd2a0632e5ba5cac1549d69b24ce119ca40156da23c254830b06b0"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "models/解压资源__创世兵魂武器__武器__m249_saw__m249_saw.3ds__b60aac12f59e/m249_saw.glb",
+          "bytes": 84460,
+          "sha256": "53947d3dbe7367eb7adeb7bb47f58034aace90d8b38f7b517d49fdc8cfa0cdb0",
+          "format": "glb",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "GLB",
+        "export_apply": true,
+        "export_yup": true
+      },
+      "conversion_details": null,
+      "status": "converted"
+    },
+    {
+      "kind": "model_to_glb",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂武器/武器/手斧/cf.3ds",
+          "role": "source",
+          "bytes": 52444,
+          "sha256": "966aacddcccec106aa673510c85b6d1138ce9dddae3c28d87a598097fdcdaa2d"
+        },
+        {
+          "path": "_解压资源/创世兵魂武器/武器/手斧/401e6fb1.bmp",
+          "role": "dependency",
+          "bytes": 263222,
+          "sha256": "ffdc79127b3a71f21341360bae3c1ec583acaad636805a42acf4c16f1b6ead48"
+        },
+        {
+          "path": "_解压资源/创世兵魂武器/武器/手斧/TT截图未命名.jpg",
+          "role": "dependency",
+          "bytes": 9661,
+          "sha256": "fe1c78dc18c32005a465aa7ab2745fab5bbb58a942809c25eff17970d876ff87"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "models/解压资源__创世兵魂武器__武器__手斧__cf.3ds__966aacddccce/cf.glb",
+          "bytes": 200912,
+          "sha256": "0df65eb003878c0e186fea8d4718c596defe329fb2647ffc129c8d6f43d48486",
+          "format": "glb",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "GLB",
+        "export_apply": true,
+        "export_yup": true
+      },
+      "conversion_details": null,
+      "status": "converted"
+    },
+    {
+      "kind": "model_to_glb",
+      "inputs": [
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/建筑工地/1.obj",
+          "role": "source",
+          "bytes": 180454,
+          "sha256": "ae92674202a3681d248908f3b2f7a230843aea221f117c21cfce23382c3d0ac6"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "models/解压资源__地图模型__地图模型__素材__建筑工地__1.obj__ae92674202a3/1.glb",
+          "bytes": 54512,
+          "sha256": "b64e8b4131a76754213e36149c2aa1f22738486be6b338dae88726c66e544134",
+          "format": "glb",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "GLB",
+        "export_apply": true,
+        "export_yup": true
+      },
+      "conversion_details": null,
+      "status": "converted"
+    },
+    {
+      "kind": "model_to_glb",
+      "inputs": [
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/极地小镇/沙漠灰.obj",
+          "role": "source",
+          "bytes": 3186356,
+          "sha256": "55a141119f7ab65e49f37bc57f3c59db130c0ed1f19142d9acc3e2bf4ff871d4"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/极地小镇/-0sandrock2.png",
+          "role": "dependency",
+          "bytes": 66292,
+          "sha256": "930f1f3857df6ec74105f0b4ded8f5e32a284ac46ed0500ab7de3b7c37c1a8a2"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/极地小镇/-1sandrock2.png",
+          "role": "dependency",
+          "bytes": 73977,
+          "sha256": "2373f03a5567333154d16f147e9dca01e7eeb5a2ef470e36650b2e0e0b7c902b"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/极地小镇/-2sandrock2.png",
+          "role": "dependency",
+          "bytes": 82430,
+          "sha256": "11b97ec001c1e859dc8bd0d670139f9f8772e0d5be772466fbfcc5e4c4d3affd"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/极地小镇/cssandwallbta.png",
+          "role": "dependency",
+          "bytes": 99981,
+          "sha256": "81be31182d0ec0506d57517e5371579272a95cba35bf46e7a3f465359c361e69"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/极地小镇/cssandwallbtb.png",
+          "role": "dependency",
+          "bytes": 99966,
+          "sha256": "813e0ae54719df9776feacf1c123791d07d10532113a595acbba3bceea839fe5"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/极地小镇/cssandwalldj1.png",
+          "role": "dependency",
+          "bytes": 198947,
+          "sha256": "d8480c3191de0312a90a12c450e82974f049f545a15aec736a99a58b852a7af8"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/极地小镇/cssandwallgh1a.png",
+          "role": "dependency",
+          "bytes": 80891,
+          "sha256": "eaccc78cdd678fdc37a58fb664e180d9485216126ace053e9688e412953e22c2"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/极地小镇/cssandwallgh1b.png",
+          "role": "dependency",
+          "bytes": 76593,
+          "sha256": "4f7c5cb26da9fced3d39abefae07cfd6414ebed66dbf954602100eb2da51ccb8"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/极地小镇/djcredit1.png",
+          "role": "dependency",
+          "bytes": 15182,
+          "sha256": "a5e9c127392b2ed6b9a6b87c7a0d45e37508e46d2682686b2c99c1d42710b5f3"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/极地小镇/djcredit2.png",
+          "role": "dependency",
+          "bytes": 7311,
+          "sha256": "8afa139f23870d822348e82a98f0d3cdb90bdb31d33abff222675a09d47929b1"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/极地小镇/sandccrete2.png",
+          "role": "dependency",
+          "bytes": 161604,
+          "sha256": "e92f9f7847fc91d8af835cc78342237fe312022195a645a9502a9a852cd875f7"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/极地小镇/sandwlldoorbta.png",
+          "role": "dependency",
+          "bytes": 148527,
+          "sha256": "f0e1c4caaf7d04158a8655d671ea9337ac498ddeea2b2442d19ed7dd6387d517"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/极地小镇/sandwlldoorbtb.png",
+          "role": "dependency",
+          "bytes": 147920,
+          "sha256": "a49f61b2d11204707de1f88c0532a853b7db97e1ed846e6761d4f28d1191337a"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/极地小镇/sandwlldoordj1.png",
+          "role": "dependency",
+          "bytes": 145009,
+          "sha256": "cea69d0737f67f3526aed83b1a96665e455f118117030f72e7ac8b8ff406502b"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/极地小镇/sandwlldoordj2.png",
+          "role": "dependency",
+          "bytes": 151371,
+          "sha256": "4688335491671fd4759a8dc86eacf9881f0b057c444d901f8f56e3f365916f41"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "models/解压资源__地图模型__地图模型__素材__极地小镇__沙漠灰.obj__55a141119f7a/沙漠灰.glb",
+          "bytes": 872764,
+          "sha256": "06339dc19c646e930133000bc020de68c5e60a394f9db82f5f3908b0cb2d3cf8",
+          "format": "glb",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "GLB",
+        "export_apply": true,
+        "export_yup": true
+      },
+      "conversion_details": null,
+      "status": "converted"
+    },
+    {
+      "kind": "model_to_glb",
+      "inputs": [
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/火车站/1.obj",
+          "role": "source",
+          "bytes": 2463247,
+          "sha256": "ee5d5d52f7aa503cacfd835bcc87b1c7168b22ea526efe69a9dfb597367be69a"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "models/解压资源__地图模型__地图模型__素材__火车站__1.obj__ee5d5d52f7aa/1.glb",
+          "bytes": 730920,
+          "sha256": "37aa4237f6a1b702736edad21a1fb4b89dbf57ada55bd2a1ce76bdb7645b7e1c",
+          "format": "glb",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "GLB",
+        "export_apply": true,
+        "export_yup": true
+      },
+      "conversion_details": null,
+      "status": "converted"
+    },
+    {
+      "kind": "model_to_glb",
+      "inputs": [
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/炼钢厂/1.obj",
+          "role": "source",
+          "bytes": 255267,
+          "sha256": "a59a2b64de0571b3fd82bdee23e262febfba1cab7bb58b7f65dba4ab9bbd2650"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "models/解压资源__地图模型__地图模型__素材__炼钢厂__1.obj__a59a2b64de05/1.glb",
+          "bytes": 78852,
+          "sha256": "f2c1e5cf3d1c6e4a922a8cb7c540817116ffd78c8663ef1fb72fd0568649d36b",
+          "format": "glb",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "GLB",
+        "export_apply": true,
+        "export_yup": true
+      },
+      "conversion_details": null,
+      "status": "converted"
+    },
+    {
+      "kind": "model_to_glb",
+      "inputs": [
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/1.obj",
+          "role": "source",
+          "bytes": 4990828,
+          "sha256": "77ef0a6bec22b755d9fbf27a38ffedc2a5022f5833530919290f8aba8fe25111"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/+0~generic86.png",
+          "role": "dependency",
+          "bytes": 495,
+          "sha256": "f1a0eed809bc6142dcd99ac403b37e4386797001ab3290c0ea6d1851569c1b2f"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/+a~generic86.png",
+          "role": "dependency",
+          "bytes": 407,
+          "sha256": "8349e38bde50fe916b84313a1497e3ef0a9c23fcd192ad243b57e635bfca408b"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/-0cstrike_fj2dk.png",
+          "role": "dependency",
+          "bytes": 40657,
+          "sha256": "18d7419fb6ec9675a56dd787100d4ccfadd5631152d9fcc801644ba6ac4504a5"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/-0cstrike_mr2dr.png",
+          "role": "dependency",
+          "bytes": 50494,
+          "sha256": "a263107c0d279e5b797e8c0742d58c922308d1c6bed92da3bb123ea3bad4dda8"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/-0cstrike_we4al.png",
+          "role": "dependency",
+          "bytes": 44461,
+          "sha256": "ae6cacebcf901180dab9232ad131cb215b1188651eeba498dfdeefe8b9531ae9"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/-0out_w3.png",
+          "role": "dependency",
+          "bytes": 54714,
+          "sha256": "8051e7c48ad935bf04f183a15cb97ee52d85f82017612ca096b391044931bae2"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/-1cstrike_fj2dk.png",
+          "role": "dependency",
+          "bytes": 40036,
+          "sha256": "a3c3918bbd00df0284d6b66d848e634e0cd15e7f7733784eeab3d3940270d475"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/-1cstrike_mr2dr.png",
+          "role": "dependency",
+          "bytes": 49584,
+          "sha256": "0f74637bbd61ad1c3de8f137fe2c4d5c03c505e10607224b7d980844c0f11eaf"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/-1cstrike_we4al.png",
+          "role": "dependency",
+          "bytes": 43604,
+          "sha256": "33e6fe76c35140a2c7ed5c969bdbbb946d227e93096c3264cdfe3936e3382a2b"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/-1out_w3.png",
+          "role": "dependency",
+          "bytes": 54222,
+          "sha256": "033c94d4322d731103d6a87775c5aa8b9f71f04b50f3478cd3a6b6c6991edb46"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/aaatrigger.png",
+          "role": "dependency",
+          "bytes": 841,
+          "sha256": "62c8c0ba805ae48f66d93ddf51bfe4dd2dd5c160219c32fc1481cd0d17117e53"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/babtech_wall03.png",
+          "role": "dependency",
+          "bytes": 5727,
+          "sha256": "5c92b85dd4188f0f12cc67e4b05b9bd55620e7de7043d45263de926c7bb5df48"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/c1a1_tnk1.png",
+          "role": "dependency",
+          "bytes": 27372,
+          "sha256": "ef5913c43f5e3fbf64496b4e464b1393605356e540d1c2cf08635b3b49f53eb3"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/clip.png",
+          "role": "dependency",
+          "bytes": 607,
+          "sha256": "3a06a599f6fa11ef27e652c8e1ce73897c792565b09a02893013fc6478ba0c25"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/crete4_flr01.png",
+          "role": "dependency",
+          "bytes": 25998,
+          "sha256": "5dad13a282f7e522e7818cc7acac81690e7e16dcb6bf43bd555c9368b825faf6"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cstrike_oe2vent.png",
+          "role": "dependency",
+          "bytes": 11779,
+          "sha256": "c5fb5fffcf9193ac0bd57c8444a1f6e84f5ae66257bd4208fa93b11962b79fc3"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cstrike_we2ribd.png",
+          "role": "dependency",
+          "bytes": 46348,
+          "sha256": "078a6422bbec0230dd769dad26db7098f2d6e76de6601dc89aed9a3e424f233a"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cublde.png",
+          "role": "dependency",
+          "bytes": 135979,
+          "sha256": "a19b8f9bed787cda26b936382bfdf28c2868c708efca0dc317fad4aed22ae269"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cudre.png",
+          "role": "dependency",
+          "bytes": 164407,
+          "sha256": "ff794a79bde93bfefb9e1cf25d99cc3a100edeaa5701542524d42da08821cb05"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cudri.png",
+          "role": "dependency",
+          "bytes": 179538,
+          "sha256": "43ace35f1e5f4b695bb7b83886e30802687ca40ba23d11fcc422cdd9e282a633"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cugena.png",
+          "role": "dependency",
+          "bytes": 177821,
+          "sha256": "3e5a144061c1e1a44957d51e5cb2aa74f740dbcb7d0a39695ab6a1d5b015ae3d"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cugenc.png",
+          "role": "dependency",
+          "bytes": 182320,
+          "sha256": "9dc85518bd25bb3479bd50eac137a57a2681f56394b599f5768e733f7f85138a"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cugrounda.png",
+          "role": "dependency",
+          "bytes": 105068,
+          "sha256": "0b083cea32979c96780784927a1c9a424edc793ccd8db333dd1424e9a7328c19"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cugroundi.png",
+          "role": "dependency",
+          "bytes": 182616,
+          "sha256": "4db01ee076a192cecee70a133748f734cd592a96526bf39c3cd47dbd10cbb560"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cuiceila.png",
+          "role": "dependency",
+          "bytes": 156798,
+          "sha256": "25cb93674f36183cb06549e14339605d702ff606c499b2cb51e09728beb1d509"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cuiflrc.png",
+          "role": "dependency",
+          "bytes": 192917,
+          "sha256": "58df8603c082d60c77219c81bde2c9e2d16825e8edf0fc082096462ad7342e33"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cuiflre.png",
+          "role": "dependency",
+          "bytes": 196270,
+          "sha256": "e77e650a6a44c56a5ceedb7965af44d69d77c5bbed85f616fdcc4b0610aa380e"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cuiwlle.png",
+          "role": "dependency",
+          "bytes": 185106,
+          "sha256": "ab9849888f09ccba5c5b37f3eee9d96912e430ca33bdd7a5bcefb157e97f3a7d"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cuiwllf.png",
+          "role": "dependency",
+          "bytes": 190651,
+          "sha256": "1cb31455583c4e77055d3ebb8817ce73602dc754b9cc5662c9849dbc93ebca2f"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cutrma.png",
+          "role": "dependency",
+          "bytes": 36739,
+          "sha256": "ab1f18a9cedb88749ab11c61cf071386aa3c5cea84de2955d9c809b1d014f1fb"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cuwlla.png",
+          "role": "dependency",
+          "bytes": 161102,
+          "sha256": "7c2bca1bc3c35f46d77af658dc630ac703a1a1dfc75e1c011135c6b958b7f86c"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cuwllb.png",
+          "role": "dependency",
+          "bytes": 139717,
+          "sha256": "a87a4aee4f447aa9792b46c357bbdc69fedfc960823e9e65260d337ffa7e51da"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cuwllf.png",
+          "role": "dependency",
+          "bytes": 170192,
+          "sha256": "b58946fa8be5d798d4eb445a53dd75e8dc4d09a139edb43d75efc5ab7a030b3d"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cuwllg.png",
+          "role": "dependency",
+          "bytes": 141762,
+          "sha256": "9efa31a294a236ebde5ff6214937a962bdc2cf2762be9f97aaa4172ffe9a79ff"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cuwllj.png",
+          "role": "dependency",
+          "bytes": 165011,
+          "sha256": "429e0455b7888a2fe68c34e38722cf1785b2814e381ec920cb902898ac4591e5"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cuwllk.png",
+          "role": "dependency",
+          "bytes": 153401,
+          "sha256": "c719f07392730e2c7ffdcba3796283003bf384cd22c8ee5c872348e943894b36"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cuwlln.png",
+          "role": "dependency",
+          "bytes": 161514,
+          "sha256": "c4108280aa2c153246f1b25875bcf965fbaa00163fbd598eb81fe6ddfa7b7b3d"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cuwllo.png",
+          "role": "dependency",
+          "bytes": 193044,
+          "sha256": "46143af1c2fd06ab2fef2c195a9cee24faf7c42f09e4d179b552f820a02f75c9"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cuwndc.png",
+          "role": "dependency",
+          "bytes": 139455,
+          "sha256": "35da3e3d6e3a624282178b313dd991d7bcfa96772d1f5b2a62548ace64795658"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cuwndh.png",
+          "role": "dependency",
+          "bytes": 138571,
+          "sha256": "9d0fe0ec0d731dae5c77f6b3594c72ab047a8d370d0818e21f808f087a805c3e"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cxdrd.png",
+          "role": "dependency",
+          "bytes": 39543,
+          "sha256": "097e125e241c1b17c11a1c48f68859dac16f91d75992c13cf046c51335fff016"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cxruga.png",
+          "role": "dependency",
+          "bytes": 103302,
+          "sha256": "2494f9bf69b3a5dee3b1bcd5520c1c359179bd25d5f78fbe78d8a75305c57e6f"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cxstairsd.png",
+          "role": "dependency",
+          "bytes": 16124,
+          "sha256": "dd0af2546a24296e33c2c22ee23052fb0c3cfbb84c60096669eaac46f0902e38"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cxstairse.png",
+          "role": "dependency",
+          "bytes": 18644,
+          "sha256": "edbbecf1764efb1c1d9a3008380caf1550f087cc3314ad510a103d1ed18384ef"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cxwllbooksa.png",
+          "role": "dependency",
+          "bytes": 164405,
+          "sha256": "47303be6c38f848cda77ac9c9ed813589348260fa83eaaa3b6968333aaa423be"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cxwlle.png",
+          "role": "dependency",
+          "bytes": 180466,
+          "sha256": "9ab3ea1ff999f3edc4e26c13325b31e2bcec34f77929b71fc84ef089bac0cdb3"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/cxwoodm.png",
+          "role": "dependency",
+          "bytes": 135275,
+          "sha256": "77682198a31b012ff06669354d1012b6023ff892dc9bc16dfd1b43ee9fc670d4"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/eastcratelgtp.png",
+          "role": "dependency",
+          "bytes": 37934,
+          "sha256": "809c11526fe32c4354598a20442611c5b1242cd9efe2adb54778b0b4d35d32aa"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/eastcratelgtp2.png",
+          "role": "dependency",
+          "bytes": 38844,
+          "sha256": "004a58c6509b83ce6e3e6a8aca929d463aedbbba10c6a3144eb08920444d22db"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/eastcratesm.png",
+          "role": "dependency",
+          "bytes": 9553,
+          "sha256": "0c7eb4b95590a47eaf0e1ec5064dceae1302ef5521e2a6a6339b2d1a5223874a"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/eastdoor1.png",
+          "role": "dependency",
+          "bytes": 133137,
+          "sha256": "1bc6a738f30e318e1d3744f861295f6b9b2f20be5b2aec3e57afd8f4fcdaf5af"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/eastwdwdj0.png",
+          "role": "dependency",
+          "bytes": 17003,
+          "sha256": "52b821aade5e9a6673c973277072b198637d7d7747e995bddaa3d11ded1f2418"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/eastwndwn0.png",
+          "role": "dependency",
+          "bytes": 8673,
+          "sha256": "8b1bda233b87ae73d7c55c4cf6a2ae66199916e22b6390a581933a195b98089b"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/eastwndwn0b.png",
+          "role": "dependency",
+          "bytes": 9029,
+          "sha256": "df98fef4ed4b55752a9ebc1e38fa6d725db98604796b25fd3e4361af92f1fd03"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/eastwndwn0c.png",
+          "role": "dependency",
+          "bytes": 9182,
+          "sha256": "647c7f195db6c3075cae2348aba08aa98895652969bd55be99d98ad40578667f"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/eastwndwn1b.png",
+          "role": "dependency",
+          "bytes": 10515,
+          "sha256": "8788dbfaf5b1f7c9590c11834d84c45e966fb6f7c5bb6356bdc14845932ac030"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/eastwndwntall.png",
+          "role": "dependency",
+          "bytes": 15669,
+          "sha256": "0ce7174366978a7fa6913371319e85ab28be620208c8ece4040c9f3008aac6fb"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/eastwood01.png",
+          "role": "dependency",
+          "bytes": 15167,
+          "sha256": "2008c015f0154a459d817df5c25e10a0b82c2b9ad1ea3c54b76f64ba680cf9df"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/eastwood02.png",
+          "role": "dependency",
+          "bytes": 14897,
+          "sha256": "771ca13d99df5f7fb9f82b626387e488b70d4ef66fce17f12881f690574e633f"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/fifties_cmp3c.png",
+          "role": "dependency",
+          "bytes": 10312,
+          "sha256": "56ee1fbf9f99702a898c6cc4923b229bc6cb324c4170680fe9ecd9d60aec94f1"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/generic012.png",
+          "role": "dependency",
+          "bytes": 21683,
+          "sha256": "0430b7fb095cc651d2e8c068c98501e9ce7cdb482043d9f80c7fc8de7f0587dd"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/glue_plaster1.png",
+          "role": "dependency",
+          "bytes": 60554,
+          "sha256": "784418fcb8a138dddf413bba4d43c612e9dd189521b1e45cb8698cf51d3eeb7e"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/i_church2a.png",
+          "role": "dependency",
+          "bytes": 41174,
+          "sha256": "4d23cfecf20159637caa089b4f4b6b7a72e3cddbe9c9f64f60b8c687ba863152"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/i_grate1.png",
+          "role": "dependency",
+          "bytes": 4836,
+          "sha256": "30c57d60c1d5afbe970d402e978a934e56434c43418dc66c253304d4f880e5dd"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/i_ground1.png",
+          "role": "dependency",
+          "bytes": 6268,
+          "sha256": "3c56c7f66a5aad27c05c9427e80d50a4313c38e22e634a9aa22ec9a5c003f0dc"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/i_ground4.png",
+          "role": "dependency",
+          "bytes": 49566,
+          "sha256": "ae3a8e2a562a843a8130c41ff455c5bf0d09b594e0e6c61f5d462c47a2420509"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/i_roughlow1.png",
+          "role": "dependency",
+          "bytes": 184916,
+          "sha256": "ca38b185d6b33594097a2b1aa9264d870dbaf69540b1e940d86113fceaf29195"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/i_trim3.png",
+          "role": "dependency",
+          "bytes": 13544,
+          "sha256": "bf52fc3b7e5e22ff48d647454f4d0f32670cfeeda432033513317db7e84ee82e"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/keep01.png",
+          "role": "dependency",
+          "bytes": 44539,
+          "sha256": "944ed38686e6e2701177d87af7cea8c3b9e62eba492b01268d6b17e10b12119a"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/m_carpet2.png",
+          "role": "dependency",
+          "bytes": 96218,
+          "sha256": "4ab78efb565821083607ba7078e867746eff82bb0692d0a6b4798fac96b4f4a3"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/m_ceiling3.png",
+          "role": "dependency",
+          "bytes": 121338,
+          "sha256": "1403d8c628d1d67d53435d9eaa6a066c366a734686dfcb70fa6bd22b53192a45"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/m_floor8.png",
+          "role": "dependency",
+          "bytes": 34877,
+          "sha256": "1d20752f40ead185377a9bc04d706d770844e82f642262715bcdc7205dc91d5b"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/m_step1.png",
+          "role": "dependency",
+          "bytes": 1593,
+          "sha256": "e1dce09196392b63c5545bb7375bef48e422afd6c6cd2420ea3289f0291c9bf4"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/origin.png",
+          "role": "dependency",
+          "bytes": 703,
+          "sha256": "fcf83c395a724de5dd63f982a6b2e0a069e3b9bc4986f57193acc5e1b518fb72"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/out_grating2.png",
+          "role": "dependency",
+          "bytes": 2572,
+          "sha256": "c0c76c59b086f75869fc146a7bd9d00e8f0a5ca6bb77f76e1ddb03741b44a296"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/out_hay1.png",
+          "role": "dependency",
+          "bytes": 44541,
+          "sha256": "7d22cfbe74f46992c728772e5dbfcaccdeb4a545f03cc9372c21041c66df5219"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/pi_corbel.png",
+          "role": "dependency",
+          "bytes": 8021,
+          "sha256": "57595acc63900e6376de9c08bad5bafc0bef6699e3c462ec63b7fc5f45b09f60"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/pi_floorwd3.png",
+          "role": "dependency",
+          "bytes": 41713,
+          "sha256": "a636dedad9a654523263340dfc20dfef13c40b0e43bc8a557e79e11be897d079"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/pi_grnmetal.png",
+          "role": "dependency",
+          "bytes": 9765,
+          "sha256": "1e192390b7a011bc38c94cabb0a91cb8c101084ef54f1a6918bbc1c8d301171c"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/pi_lantern.png",
+          "role": "dependency",
+          "bytes": 4583,
+          "sha256": "d555ef60fd3f902f113fb19946ec423a69f35a5b8a2a4035c396f58d06994dce"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/pi_roof.png",
+          "role": "dependency",
+          "bytes": 32473,
+          "sha256": "96861a5f46bb838361e2327712d0bdc830ac1584a9c18903d44afe96bacbac86"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/pi_roofedge.png",
+          "role": "dependency",
+          "bytes": 8125,
+          "sha256": "50279898fb49c8e9f8f175c0d71aa66972f6f4b79b69be57a575bc5b0ad6d835"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/sign4.png",
+          "role": "dependency",
+          "bytes": 18840,
+          "sha256": "a5eab2d79c97f30a5a896657a93155bdae02e752eea08ab35c28113b631dca3e"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/sky.png",
+          "role": "dependency",
+          "bytes": 93,
+          "sha256": "cb8305237bd33b7f44716fcfe9db79cb353bda307400fbb7fca8b3be7bd62474"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/wood2.png",
+          "role": "dependency",
+          "bytes": 163138,
+          "sha256": "e1349e5417168f75bc1bd40c75e6c41f5e64ee8cf81cdca8ba0d7fc588e32f42"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/{blue.png",
+          "role": "dependency",
+          "bytes": 78,
+          "sha256": "4809a529c714ba288eda7748423d145477058d77b0ed6975806ec550b28263a9"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/{cufence.png",
+          "role": "dependency",
+          "bytes": 61466,
+          "sha256": "5ee343825276a37f43d0b1c403061d89c324e71152bb3ca1b6c64e86c6b9f454"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/{eastline2.png",
+          "role": "dependency",
+          "bytes": 18232,
+          "sha256": "abaddcc307dfb7fff460f7f72793e23677abaffa3086b1a78c59f6d23d1cf71d"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/{eastwndwn2.png",
+          "role": "dependency",
+          "bytes": 6677,
+          "sha256": "22e4a4c7f6b33a1110f0bc0a0f3f98a79a19472034c9213647a5f787f73e717f"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/{fence.png",
+          "role": "dependency",
+          "bytes": 117617,
+          "sha256": "f4cf23e4dade32e4d7ce63a4317a79938346c7428f8221c095cf6d55e20cd5b5"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/{invisible.png",
+          "role": "dependency",
+          "bytes": 78,
+          "sha256": "4809a529c714ba288eda7748423d145477058d77b0ed6975806ec550b28263a9"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/{ladder3a.png",
+          "role": "dependency",
+          "bytes": 812,
+          "sha256": "8ea17dceb9d0a3ecffe22ecb9c49b89e4213f55d726fa6c018d1fe4d9df320c7"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/{out_net1.png",
+          "role": "dependency",
+          "bytes": 30394,
+          "sha256": "7df9a20ee3cbf410384945419a2b8097bb992b84fb70449ab0ce3b6719f53808"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/{razor2.png",
+          "role": "dependency",
+          "bytes": 4167,
+          "sha256": "2ebe9091dbd3b22a79071f1d005986dee724e5b7924d965996d86f1620464ffb"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/{vine1.png",
+          "role": "dependency",
+          "bytes": 18914,
+          "sha256": "5f6675d85b8b64e7eb1de326eac90a9fa9edfb84c6adb2167ecb74a74f325229"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/能源站/{woodrail.png",
+          "role": "dependency",
+          "bytes": 7738,
+          "sha256": "a00422d5cdb02fb428324bdb2e2a79cf1e09af2de18af9df38c8d8fb475ee61f"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "models/解压资源__地图模型__地图模型__素材__能源站__1.obj__77ef0a6bec22/1.glb",
+          "bytes": 1327148,
+          "sha256": "fa507a40224f7ad17a881c799706dc43a6a3f5ce84d1be178f6c278aa8d09ac5",
+          "format": "glb",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "GLB",
+        "export_apply": true,
+        "export_yup": true
+      },
+      "conversion_details": null,
+      "status": "converted"
+    },
+    {
+      "kind": "model_to_glb",
+      "inputs": [
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/1.obj",
+          "role": "source",
+          "bytes": 431669,
+          "sha256": "4cd4aa28f1109cc10ff00a96feb0a66cd9346fbd412b2cb023a688690966d40a"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/!aaa_lave.png",
+          "role": "dependency",
+          "bytes": 36364,
+          "sha256": "9c34927a6dbed73801352fa7acfa3976179a9bc3f0f63fbbc1a9cfe172ce95c6"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/aaa_ban2.png",
+          "role": "dependency",
+          "bytes": 116111,
+          "sha256": "623770bc05c1addc476815b62940691ab6c423c11256e311a49c2b2bff0d2e3d"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/aaa_bois2.png",
+          "role": "dependency",
+          "bytes": 15662,
+          "sha256": "4386552c3ac93d3c390ffdef59a34a19a39a255d3bc35dfa888ba8b2b4cc214a"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/aaa_caisse2.png",
+          "role": "dependency",
+          "bytes": 37151,
+          "sha256": "86a5d459ec900490a3df4be2db56d1cfdc52b841c82dd9b181c7b79136d213d5"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/aaa_caisse3.png",
+          "role": "dependency",
+          "bytes": 37989,
+          "sha256": "7835b325534306fb08b6bb05f3f5fd5fca0cf24e7443c6872c2028e8e11fb39b"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/aaa_canyon1.png",
+          "role": "dependency",
+          "bytes": 184676,
+          "sha256": "cfa73c0c28b97ed67246a796268216a6aafe51d66518e282fef2ea5b916ed14a"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/aaa_mur1.png",
+          "role": "dependency",
+          "bytes": 173844,
+          "sha256": "093997b2114272f59e237485355d5886a0f20ce2b8be63a6b527cb1e6158c209"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/aaa_mur3.png",
+          "role": "dependency",
+          "bytes": 183755,
+          "sha256": "2b39c6ebb320bb275116a146f022550383b801c0b5b78e89d954f2b9a7b9bf20"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/aaa_mur3_ban.png",
+          "role": "dependency",
+          "bytes": 161885,
+          "sha256": "183261e0c206b860cb4843763f0773d1b8cf55443eb470433c255db51f07d9e6"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/aaa_mur6.png",
+          "role": "dependency",
+          "bytes": 144827,
+          "sha256": "ea175383710175240a198c801f409fed15cd4993a3ce6bc9b2270318b4617111"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/aaa_mur7.png",
+          "role": "dependency",
+          "bytes": 158632,
+          "sha256": "7978d03f56ea54d022bc3a1c5e911c1d1b2ed64b35f17fad0b69799bdceaddde"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/aaa_sol2.png",
+          "role": "dependency",
+          "bytes": 147556,
+          "sha256": "0202b5845ec9a905b72a66af6a829772340b28e79d1c3c2f6d6fe98e09dcb7d3"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/aaatrigger.png",
+          "role": "dependency",
+          "bytes": 130,
+          "sha256": "bf5e17ef1d8c2a4b3af8ea4700b39879f83a6be5239aa1a93cba842a7073f211"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/caisse3.png",
+          "role": "dependency",
+          "bytes": 38510,
+          "sha256": "f8f7d0d0fd74cf496f4d39c416c407324fbd59d3f0ee41f59317dccf0925726f"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/clip.png",
+          "role": "dependency",
+          "bytes": 160,
+          "sha256": "c934478e6b4a3addf49e2ff569f07030afcf1239cf07e43238ec0f369df1d1e8"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/null.png",
+          "role": "dependency",
+          "bytes": 167,
+          "sha256": "f71b41b17f49631fef06d5e1501b4fe726833fd77c2b09849a5db8de2c2ce03b"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/sky.png",
+          "role": "dependency",
+          "bytes": 93,
+          "sha256": "cb8305237bd33b7f44716fcfe9db79cb353bda307400fbb7fca8b3be7bd62474"
+        },
+        {
+          "path": "_解压资源/地图模型/地图模型/素材/边境哨所/{aaa_barriere1.png",
+          "role": "dependency",
+          "bytes": 3617,
+          "sha256": "1c5b90df3e4a71bb56094719301708d413cfb163ca58ff7ed243286bdf6d7cce"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "models/解压资源__地图模型__地图模型__素材__边境哨所__1.obj__4cd4aa28f110/1.glb",
+          "bytes": 126564,
+          "sha256": "a39de86e9e710cd950642908d2e385d68644cdd538b0d956df7c74a24259b75a",
+          "format": "glb",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "GLB",
+        "export_apply": true,
+        "export_yup": true
+      },
+      "conversion_details": null,
+      "status": "converted"
+    },
+    {
+      "kind": "model_to_glb",
+      "inputs": [
+        {
+          "path": "_解压资源/遗迹杀戮[地图模型]/遗迹杀戮/FBX/YJSL.FBX",
+          "role": "source",
+          "bytes": 192336,
+          "sha256": "c30295e305fd32c64a4e07c9094562a8ac58775a49145c44b9b46313ed9ede91"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "models/解压资源__遗迹杀戮_地图模型___遗迹杀戮__FBX__YJSL.FBX__c30295e305fd/YJSL.glb",
+          "bytes": 104308,
+          "sha256": "126ee66ac58e65b201f05578fd9d941a8d6bc7f5d834f5cd1d2e54a6fad9eb49",
+          "format": "glb",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "GLB",
+        "export_apply": true,
+        "export_yup": true
+      },
+      "conversion_details": null,
+      "status": "converted"
+    },
+    {
+      "kind": "texture_to_png",
+      "inputs": [
+        {
+          "path": "_安全解压资源/_解压资源__创世兵魂武器__武器__m4a1_带枪花___m4a1.unitypackage__5fbe8c99a37a/_materialized/Assets/Modern Weapons Pack/M4A1/Textures/M4A1 Sopmod Body Diffuse.tga",
+          "role": "source",
+          "bytes": 17305644,
+          "sha256": "f4eda1e653c64c4899f35de9757b1a122dfd40d70199cd80950a893d12db5ce3"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "textures/安全解压资源___解压资源__创世兵魂武器__武器__m4a1_带枪花___m4a1.unitypackage__5fbe8c99a37a___materialized__Assets__Modern__f4eda1e653c6/M4A1_Sopmod_Body_Diffuse.png",
+          "bytes": 3184194,
+          "sha256": "0c74e85acf536f98e748213bc2215a158f4055077d2e7e94f36816f2683311f7",
+          "format": "png",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "PNG",
+        "color_mode": "RGBA"
+      },
+      "status": "converted",
+      "width": 2080,
+      "height": 2080
+    },
+    {
+      "kind": "texture_to_png",
+      "inputs": [
+        {
+          "path": "_安全解压资源/_解压资源__创世兵魂武器__武器__m4a1_带枪花___m4a1.unitypackage__5fbe8c99a37a/_materialized/Assets/Modern Weapons Pack/M4A1/Textures/M4A1 Sopmod Iron Sight Diffuse.tga",
+          "role": "source",
+          "bytes": 16777260,
+          "sha256": "3acf2737896382fb1cefc9dd792608c24c578717c39018534132b3c513bf8c5a"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "textures/安全解压资源___解压资源__创世兵魂武器__武器__m4a1_带枪花___m4a1.unitypackage__5fbe8c99a37a___materialized__Assets__Modern__3acf27378963/M4A1_Sopmod_Iron_Sight_Diffuse.png",
+          "bytes": 2313449,
+          "sha256": "702a6dce216936839f0cb137625d5cd5dee10082fadaae60c8772c07da631b12",
+          "format": "png",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "PNG",
+        "color_mode": "RGBA"
+      },
+      "status": "converted",
+      "width": 2048,
+      "height": 2048
+    },
+    {
+      "kind": "texture_to_png",
+      "inputs": [
+        {
+          "path": "_安全解压资源/_解压资源__创世兵魂武器__武器__m4a1_带枪花___m4a1.unitypackage__5fbe8c99a37a/_materialized/Assets/Modern Weapons Pack/M4A1/Textures/M4A1 Sopmod Magazine Diffuse.tga",
+          "role": "source",
+          "bytes": 17305644,
+          "sha256": "5605c869097efac49701a0303207733d68c9e1946a82eba1774755303fd2ca67"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "textures/安全解压资源___解压资源__创世兵魂武器__武器__m4a1_带枪花___m4a1.unitypackage__5fbe8c99a37a___materialized__Assets__Modern__5605c869097e/M4A1_Sopmod_Magazine_Diffuse.png",
+          "bytes": 1405349,
+          "sha256": "4771dbb0e9a52b4ccf52a14a3e9bf68333a543b99320fc0316b78eefb0813e5e",
+          "format": "png",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "PNG",
+        "color_mode": "RGBA"
+      },
+      "status": "converted",
+      "width": 2080,
+      "height": 2080
+    },
+    {
+      "kind": "texture_to_png",
+      "inputs": [
+        {
+          "path": "_安全解压资源/_解压资源__创世兵魂武器__武器__m4a1_带枪花___枪花.unitypackage__641fe5a4b0fb/_materialized/Assets/JMO Assets/WarFX/Desktop/Textures/MuzzleFlashes/WFX_T_MF Sparks RIFLE1 A8.tga",
+          "role": "source",
+          "bytes": 196652,
+          "sha256": "30b932d762ea2a6f665f357819f161f6063019d0cffe19eea2c20611aad17fff"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "textures/安全解压资源___解压资源__创世兵魂武器__武器__m4a1_带枪花___枪花.unitypackage__641fe5a4b0fb___materialized__Assets__JMO_Asse__30b932d762ea/WFX_T_MF_Sparks_RIFLE1_A8.png",
+          "bytes": 18921,
+          "sha256": "00ec5c4fe06b112ec577ddb9db569eedab90df613929fb48bc7c2f5dbc88217f",
+          "format": "png",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "PNG",
+        "color_mode": "RGBA"
+      },
+      "status": "converted",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "kind": "texture_to_png",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂武器/武器/AN94/an94.bmp",
+          "role": "source",
+          "bytes": 263222,
+          "sha256": "2120eb194519933e778aa41c3aa903bf1e9aec2524202a84795842fb7a6005c3"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "textures/解压资源__创世兵魂武器__武器__AN94__an94.bmp__2120eb194519/an94.png",
+          "bytes": 332563,
+          "sha256": "e93d43c6eeb6d7f40ad6047557c620a2d2aab8d31a376ae5fb846efba6d1141e",
+          "format": "png",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "PNG",
+        "color_mode": "RGBA"
+      },
+      "status": "converted",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "kind": "texture_to_png",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂武器/武器/手斧/401e6fb1.bmp",
+          "role": "source",
+          "bytes": 263222,
+          "sha256": "ffdc79127b3a71f21341360bae3c1ec583acaad636805a42acf4c16f1b6ead48"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "textures/解压资源__创世兵魂武器__武器__手斧__401e6fb1.bmp__ffdc79127b3a/401e6fb1.png",
+          "bytes": 259515,
+          "sha256": "86874ffc45ccbdebd89a2e3623d918fdf87da55c8d57de94c8684f342a601e08",
+          "format": "png",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "PNG",
+        "color_mode": "RGBA"
+      },
+      "status": "converted",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "kind": "texture_to_png",
+      "inputs": [
+        {
+          "path": "_解压资源/创世：遗迹杀戮/创世：遗迹杀戮/Relic Killing_Data/ScreenSelector.bmp",
+          "role": "source",
+          "bytes": 515070,
+          "sha256": "ea3010f2b74c8ee4554f9953cd0a4d76756d724fca14e376fafca5e9039fc04d"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "textures/解压资源__创世_遗迹杀戮__创世_遗迹杀戮__Relic_Killing_Data__ScreenSelector.bmp__ea3010f2b74c/ScreenSelector.png",
+          "bytes": 203414,
+          "sha256": "1f683ce2bd659db146f5bbc4b5d2950d8d77e0f0b5abb7f06b606c67bd400d6e",
+          "format": "png",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "PNG",
+        "color_mode": "RGBA"
+      },
+      "status": "converted",
+      "width": 414,
+      "height": 414
+    },
+    {
+      "kind": "texture_to_png",
+      "inputs": [
+        {
+          "path": "_解压资源/界面怀旧版（十一月更）/界面怀旧版（十一月更）/CSBH.11.1_Data/ScreenSelector.bmp",
+          "role": "source",
+          "bytes": 27054,
+          "sha256": "96c3870b53baf3212ceaf8f223fd9ea4c64da36bee4fcc68a6279717f80e5df1"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "textures/解压资源__界面怀旧版_十一月更___界面怀旧版_十一月更___CSBH.11.1_Data__ScreenSelector.bmp__96c3870b53ba/ScreenSelector.png",
+          "bytes": 21716,
+          "sha256": "dd48abd8d27f71cff9a05ef83063ff2cec52d7d738af1346e65f882fe6337eb0",
+          "format": "png",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "format": "PNG",
+        "color_mode": "RGBA"
+      },
+      "status": "converted",
+      "width": 120,
+      "height": 75
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "CF2.0/CrossFire/rez/BGM/bgm_track1_loop.mp3",
+          "role": "source",
+          "bytes": 1080323,
+          "sha256": "1b21aeed057e32bb5b0114f141a41b97eb4c36c8e9f875df06ae12625ee2e3eb"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/CF2.0__CrossFire__rez__BGM__bgm_track1_loop.mp3__1b21aeed057e/bgm_track1_loop.wav",
+          "bytes": 11901952,
+          "sha256": "ce58ba4b40ddad728d01ebc930ab8c1f9fe5b8b0bd54d540a6a9fac093ab6fba",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "CF2.0/CrossFire/rez/BGM/bgm_track2_loop.mp3",
+          "role": "source",
+          "bytes": 1080323,
+          "sha256": "1b21aeed057e32bb5b0114f141a41b97eb4c36c8e9f875df06ae12625ee2e3eb"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/CF2.0__CrossFire__rez__BGM__bgm_track2_loop.mp3__1b21aeed057e/bgm_track2_loop.wav",
+          "bytes": 11901952,
+          "sha256": "ce58ba4b40ddad728d01ebc930ab8c1f9fe5b8b0bd54d540a6a9fac093ab6fba",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "CF2.0/CrossFire/rez/BGM/bgm_track3_loop.mp3",
+          "role": "source",
+          "bytes": 1090772,
+          "sha256": "b531262eb04f396893054cf2a0c4ce5299f31bf521382885a9e6dee87ed67f0f"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/CF2.0__CrossFire__rez__BGM__bgm_track3_loop.mp3__b531262eb04f/bgm_track3_loop.wav",
+          "bytes": 12017152,
+          "sha256": "7cd42a8d9c09bacd1ade8959f86efb8b901c10223e80c7390e9e4742a06caede",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "CF2.0/CrossFire/rez/BGM/bgm_track4_loop.mp3",
+          "role": "source",
+          "bytes": 1090772,
+          "sha256": "b531262eb04f396893054cf2a0c4ce5299f31bf521382885a9e6dee87ed67f0f"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/CF2.0__CrossFire__rez__BGM__bgm_track4_loop.mp3__b531262eb04f/bgm_track4_loop.wav",
+          "bytes": 12017152,
+          "sha256": "7cd42a8d9c09bacd1ade8959f86efb8b901c10223e80c7390e9e4742a06caede",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "CF2.0/CrossFire/rez/Snd2/Ghost/Etc/EscapeBGM.mp3",
+          "role": "source",
+          "bytes": 4542216,
+          "sha256": "5f6cdd8d56659db7d13dd0778ecb67c398eab5d2960d17e544d94bbad44173fd"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/CF2.0__CrossFire__rez__Snd2__Ghost__Etc__EscapeBGM.mp3__5f6cdd8d5665/EscapeBGM.wav",
+          "bytes": 20016640,
+          "sha256": "b1885f380ecac94f8420affa2651023ead151c74ace8eb3aecffa6174b8c4f99",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "CF2.0/CrossFire/rez/Snd2/Ghost/Etc/NanoAmbiSound.mp3",
+          "role": "source",
+          "bytes": 1453547,
+          "sha256": "11c8a8df71e4b5266a7b781dcae94cfb968f8f30c22bea4745271d48efa04e11"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/CF2.0__CrossFire__rez__Snd2__Ghost__Etc__NanoAmbiSound.mp3__11c8a8df71e4/NanoAmbiSound.wav",
+          "bytes": 6404608,
+          "sha256": "9b9a4a3b5387382f7d075ee900fc2475dde24bab77e4d969c133da4075e7011e",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "CF2.0/CrossFire/rez/Snd2/Wave/Soundtrack/120s_1.mp3",
+          "role": "source",
+          "bytes": 963840,
+          "sha256": "a4ae9e0262442cfb389275b3c5dded7d8e22035c13abe1cde100370e7bd57e61"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/CF2.0__CrossFire__rez__Snd2__Wave__Soundtrack__120s_1.mp3__a4ae9e026244/120s_1.wav",
+          "bytes": 4630528,
+          "sha256": "a020eba60dc982e6c0f089e6e5bc8a7b35e03b9f9809b0ab26b0c3187f8cf2b7",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "CF2.0/CrossFire/rez/Snd2/Wave/Soundtrack/120s_2.mp3",
+          "role": "source",
+          "bytes": 634560,
+          "sha256": "f00eca9195b346db50cce2380ba22b29fd4ccc39b42bf587747ee96af62f4bc1"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/CF2.0__CrossFire__rez__Snd2__Wave__Soundtrack__120s_2.mp3__f00eca9195b3/120s_2.wav",
+          "bytes": 3049984,
+          "sha256": "dd6f2bcbf0c942a97ae14a0973238319377940517dfdafd5912e4f5fcd9e3594",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "CF2.0/CrossFire/rez/Snd2/Wave/Soundtrack/Dom_EnergyTransmitter.mp3",
+          "role": "source",
+          "bytes": 655680,
+          "sha256": "b875867c0afaf96f83f36a31570c0c6fbdd210c14883d5b81dc1d56ac01ce9d6"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/CF2.0__CrossFire__rez__Snd2__Wave__Soundtrack__Dom_EnergyTransmitter.mp3__b875867c0afa/Dom_EnergyTransmitter.wav",
+          "bytes": 3151360,
+          "sha256": "c913cd8a98d59e6d50c1b9ab893a53ab66c10884f781db6332d1aa664710baea",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "CF2.0/CrossFire/rez/Snd2/Wave/Soundtrack/Wave_LittleBitMore.mp3",
+          "role": "source",
+          "bytes": 877440,
+          "sha256": "98081ad2c1686dda22f5d1b7261a67879fde4fc3241bf5fd96b6a13ccae3b2a8"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/CF2.0__CrossFire__rez__Snd2__Wave__Soundtrack__Wave_LittleBitMore.mp3__98081ad2c168/Wave_LittleBitMore.wav",
+          "bytes": 4215808,
+          "sha256": "e45cce615265d3071d85697235c7f30e00e7203e4408847aee0134861941829a",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "CF2.0/CrossFire/rez/Snd2/Wave/Soundtrack/Wave_Lose.mp3",
+          "role": "source",
+          "bytes": 683520,
+          "sha256": "f23f0d33bc504068aedd838b02c2ab9ba33c9a76675049c9018d1253c3628b25"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/CF2.0__CrossFire__rez__Snd2__Wave__Soundtrack__Wave_Lose.mp3__f23f0d33bc50/Wave_Lose.wav",
+          "bytes": 3284992,
+          "sha256": "749daf3dfd416c47a863382a3ca435814c63942f398e68f428ba2497f98d5bc3",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "CF2.0/CrossFire/rez/Snd2/Wave/Soundtrack/Wave_LvUp.mp3",
+          "role": "source",
+          "bytes": 267840,
+          "sha256": "014b8c9cf8fac4a28915d1b15d7ce02ef63faca74c3974a02f1f5690ca40b527"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/CF2.0__CrossFire__rez__Snd2__Wave__Soundtrack__Wave_LvUp.mp3__014b8c9cf8fa/Wave_LvUp.wav",
+          "bytes": 1289728,
+          "sha256": "653c687fabb9fa23c469dc22bb7d094bf41dcd9a014e862acfc2a109246f7321",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "CF2.0/CrossFire/rez/Snd2/Wave/Soundtrack/Wave_Maintheme.mp3",
+          "role": "source",
+          "bytes": 3589440,
+          "sha256": "c4b986fdbc787c4fe4996ec9278497c644a3b0f5f1bc9b1862e09ff8e80bdb37"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/CF2.0__CrossFire__rez__Snd2__Wave__Soundtrack__Wave_Maintheme.mp3__c4b986fdbc78/Wave_Maintheme.wav",
+          "bytes": 17233408,
+          "sha256": "410391c7133c4ffe92fe824111245c8db0c52e444501fb9ba0fbf1b959524de2",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "CF2.0/CrossFire/rez/Snd2/Wave/Soundtrack/Wave_RoundStart.mp3",
+          "role": "source",
+          "bytes": 419520,
+          "sha256": "980ada5b8d4a224173ec63a8ff480895d69f66fcdc4c0d2606d3b2d2325fd093"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/CF2.0__CrossFire__rez__Snd2__Wave__Soundtrack__Wave_RoundStart.mp3__980ada5b8d4a/Wave_RoundStart.wav",
+          "bytes": 2017792,
+          "sha256": "0c09458cb40dbd15852cc1fed188f62963df74f804f3fd278d309526dde2d8b2",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "CF2.0/CrossFire/rez/Snd2/Wave/Soundtrack/Wave_TowerDestroyed.mp3",
+          "role": "source",
+          "bytes": 459754,
+          "sha256": "8079dc7bd354490f745075dedf9ac165dbddde89d5dc727694669332fc8e0c8d"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/CF2.0__CrossFire__rez__Snd2__Wave__Soundtrack__Wave_TowerDestroyed.mp3__8079dc7bd354/Wave_TowerDestroyed.wav",
+          "bytes": 2020044,
+          "sha256": "83b7893cf84a007a2dfab4f4828b6fcaa5292076ff874398ae4e967fb1654ec1",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "CF2.0/CrossFire/rez/Snd2/Wave/Soundtrack/Wave_Victory.mp3",
+          "role": "source",
+          "bytes": 623040,
+          "sha256": "3f02cf898a0441904185234d5d138b983ecdb327b7a043894805710c2934ea52"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/CF2.0__CrossFire__rez__Snd2__Wave__Soundtrack__Wave_Victory.mp3__3f02cf898a04/Wave_Victory.wav",
+          "bytes": 2994688,
+          "sha256": "45fcb655e788434417ed03f01602412f8a6ce124bc1f55a3ce97bed7ae12501f",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Fireinthehole_Flashbang.46813.mp3",
+          "role": "source",
+          "bytes": 17147,
+          "sha256": "14c4636d5c0175101480e47f1f77d7f2875ff54b6e100902cc07c725b4abb42c"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Fireinthehole_Flashbang.46813.mp3__14c4636d5c01/Fireinthehole_Flashbang.46813.wav",
+          "bytes": 81280,
+          "sha256": "73d11438fef093e27e6b886c5c34cdc5c21aefbcd3f877e6f4d851432344437f",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Fireinthehole_Flashbang.47229.mp3",
+          "role": "source",
+          "bytes": 16836,
+          "sha256": "06b9c63fd77b69594d888ceb134b7a1f5a189dd66c3ed683ad4b7ed14b99c721"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Fireinthehole_Flashbang.47229.mp3__06b9c63fd77b/Fireinthehole_Flashbang.47229.wav",
+          "bytes": 78976,
+          "sha256": "7c3da620078dc0a392ed5dd0eddde9af595e83bd91f33b7368b6eb34de8a4bf1",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Fireinthehole_Grenade.46813.mp3",
+          "role": "source",
+          "bytes": 15275,
+          "sha256": "381c3af50c28232a311f20021bcd135755b7f9f842a30ba349b346715c41a4ff"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Fireinthehole_Grenade.46813.mp3__381c3af50c28/Fireinthehole_Grenade.46813.wav",
+          "bytes": 67456,
+          "sha256": "1373d254c24e4a1a858e2030207a84a26f35203815ac736f92b53de60891933c",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Fireinthehole_Grenade.47229.mp3",
+          "role": "source",
+          "bytes": 16356,
+          "sha256": "fdf60964d0e3321422413b89d64c72b528c2736e1d7b19bcd83a6474379e29aa"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Fireinthehole_Grenade.47229.mp3__fdf60964d0e3/Fireinthehole_Grenade.47229.wav",
+          "bytes": 75520,
+          "sha256": "0ac9580c8f64f8c37ec1940bf66d4301e821ea0b7077792fb088fbf88811a2af",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Fireinthehole_Smoke.46813.mp3",
+          "role": "source",
+          "bytes": 16835,
+          "sha256": "22a743fad968e3d95dfc3efc97e8c470cd7b374fce3202cebb93161cccd16356"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Fireinthehole_Smoke.46813.mp3__22a743fad968/Fireinthehole_Smoke.46813.wav",
+          "bytes": 78976,
+          "sha256": "1486c0293ad04ac173821f2b37820142b28bb6b3493656f99dc5709bf4c9773b",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Fireinthehole_Smoke.47229.mp3",
+          "role": "source",
+          "bytes": 15276,
+          "sha256": "951b873756fec7c534f908d5a4a0debe0cab3ac1f76e9b55a3b826e8d148593d"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Fireinthehole_Smoke.47229.mp3__951b873756fe/Fireinthehole_Smoke.47229.wav",
+          "bytes": 67456,
+          "sha256": "fd8674224a5e062126453ef77b4feb7655ad2c14202339ba584b21719773eca3",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_End_Defuse.46813.mp3",
+          "role": "source",
+          "bytes": 20580,
+          "sha256": "ce2cff6c98e5055e35c7f15ad9888820c86e06568d1670ac3ee242f8f60e9b96"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_End_Defuse.46813.mp3__ce2cff6c98e5/Round_End_Defuse.46813.wav",
+          "bytes": 106624,
+          "sha256": "81e9679213c00d7fb371dea006deed2fcc13cb5d56a29770d36aa621d541fc59",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_End_Defuse.47229.mp3",
+          "role": "source",
+          "bytes": 19332,
+          "sha256": "08246418b2f812af90d9842463ce110f8b924117837cd0d1fe86329d632e27f7"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_End_Defuse.47229.mp3__08246418b2f8/Round_End_Defuse.47229.wav",
+          "bytes": 97408,
+          "sha256": "4b3f295d3079d4124af14764f7be1e3fa021cf64b68c0c712a79b2bdd904bc62",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_End_Draw.46813.mp3",
+          "role": "source",
+          "bytes": 13248,
+          "sha256": "259ade1e90b40f2980ef95577268c4977d8d6e01ce01b04507b4bd50b4f34eb1"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_End_Draw.46813.mp3__259ade1e90b4/Round_End_Draw.46813.wav",
+          "bytes": 52480,
+          "sha256": "58452cc69adcd9897869f6114d1cc15dbae136cfa6fb82ba99b3b70b8acd826b",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_End_Draw.47229.mp3",
+          "role": "source",
+          "bytes": 12780,
+          "sha256": "e612834b6840ad17fea2e654861502c6e9854776f0abc7997e47d1408f183e51"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_End_Draw.47229.mp3__e612834b6840/Round_End_Draw.47229.wav",
+          "bytes": 49024,
+          "sha256": "65be9fad790b65efd8146e680afac91bec7c15710f702e7f743533bce43c3cb9",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_End_Lose.46813.mp3",
+          "role": "source",
+          "bytes": 14808,
+          "sha256": "5a26f75edea146b8a2ed56aab18fd9366c97e5d203e1e1c47582dda4b3788266"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_End_Lose.46813.mp3__5a26f75edea1/Round_End_Lose.46813.wav",
+          "bytes": 64000,
+          "sha256": "88f0ba131c745844d50ec06f8324920d4d3e3c142869d840714101efeb731d15",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_End_Lose.47229.mp3",
+          "role": "source",
+          "bytes": 14808,
+          "sha256": "b5c3e3b676475d2ccfa41f36e738b6f3f6b68097e4cbf0cd705ee77805043330"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_End_Lose.47229.mp3__b5c3e3b67647/Round_End_Lose.47229.wav",
+          "bytes": 64000,
+          "sha256": "8b7a1498096eba25c4d71762c0877660af234f6782e1c43ceaf0eea7e119ca40",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_End_Win.46813.mp3",
+          "role": "source",
+          "bytes": 16680,
+          "sha256": "7dae007522bef21f69aa8459bb8dfadfecbdc757550cba8a7c53ba39a471fedb"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_End_Win.46813.mp3__7dae007522be/Round_End_Win.46813.wav",
+          "bytes": 77824,
+          "sha256": "eea09ba5d9f15052380cd61de66c09b0f70826f3718f1325601b6d1191ad589a",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_End_Win.47229.mp3",
+          "role": "source",
+          "bytes": 14964,
+          "sha256": "6c06b011b0197fe54d375238b2717bb1eab6f9695ef58a768b015c9aa817c7e9"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_End_Win.47229.mp3__6c06b011b019/Round_End_Win.47229.wav",
+          "bytes": 65152,
+          "sha256": "beef8f85f97f9da5d9214bf442494df5ee2ede524e0215d39421625ed77c4c39",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_CT_1.46813.mp3",
+          "role": "source",
+          "bytes": 15900,
+          "sha256": "163d9f79791b82d4619b4d52b206d36ae6a4b4d0bc3161d61e1814881fd8bcde"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_CT_1.46813.mp3__163d9f79791b/Round_Start_CT_1.46813.wav",
+          "bytes": 72064,
+          "sha256": "ea2fe098c98ba2169612b6e2a33431e0e10582b7317eef761f28441fa8428cc1",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_CT_1.47229.mp3",
+          "role": "source",
+          "bytes": 11532,
+          "sha256": "3f77846eddcf7a1807ae116ce5ef2e79a43d4d2ef4605b28d11603c4258f863d"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_CT_1.47229.mp3__3f77846eddcf/Round_Start_CT_1.47229.wav",
+          "bytes": 39808,
+          "sha256": "587d9b0ea708497cd6389c601f34dbe3a12cd653534bc93bcba5283ecc81398f",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_CT_2.46813.mp3",
+          "role": "source",
+          "bytes": 15120,
+          "sha256": "5a3fa57d4364c85cfb4ca30996cd6ecaa28fc080f652b95ba964f328ecb08b22"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_CT_2.46813.mp3__5a3fa57d4364/Round_Start_CT_2.46813.wav",
+          "bytes": 66304,
+          "sha256": "caee689899395050a72d51bd9ad07be399cc67b8d41b2110fb02554dac7ce32f",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_CT_2.47229.mp3",
+          "role": "source",
+          "bytes": 19644,
+          "sha256": "b12baae062515a46bcfb55740580771149cc2b2fc98741ef2dcad9594c3fc71a"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_CT_2.47229.mp3__b12baae06251/Round_Start_CT_2.47229.wav",
+          "bytes": 99712,
+          "sha256": "615da688f1fe7f05f0feb8cfed87bd8fa1530315e9c8573d15336438687c2708",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_CT_3.46813.mp3",
+          "role": "source",
+          "bytes": 15744,
+          "sha256": "d5d7ed718c6c24f4b8cad6c3931b9b3326bc125c356aabc6b1f1eef3a036f818"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_CT_3.46813.mp3__d5d7ed718c6c/Round_Start_CT_3.46813.wav",
+          "bytes": 70912,
+          "sha256": "a293e9aacee766a336d315f1acd9fec460f8bcbf089f3526a530c72f17d14410",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_CT_3.47229.mp3",
+          "role": "source",
+          "bytes": 17148,
+          "sha256": "b9af2f5d883044f094c5534c63186ed6adf1e1b15f0da3a3e51bfc578b868800"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_CT_3.47229.mp3__b9af2f5d8830/Round_Start_CT_3.47229.wav",
+          "bytes": 81280,
+          "sha256": "68631bb755d162cc14b1cd8a909b4a6ee75fc98880e55d4604902238970dc616",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_CT_4.46813.mp3",
+          "role": "source",
+          "bytes": 14184,
+          "sha256": "67301fe0f969c3539902de636101bc26c0870557c65abb1362fbdfe181e925fb"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_CT_4.46813.mp3__67301fe0f969/Round_Start_CT_4.46813.wav",
+          "bytes": 59392,
+          "sha256": "c7b84584636dc8130adb56e3e3a9a4a56b971c0a13a8bc7449afe1de3d55704e",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_CT_4.47229.mp3",
+          "role": "source",
+          "bytes": 18552,
+          "sha256": "754196a994dbe3a8a078ede9b7cd254a535155a349fdb2305e2c755ce6f2deea"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_CT_4.47229.mp3__754196a994db/Round_Start_CT_4.47229.wav",
+          "bytes": 91648,
+          "sha256": "ea3e3933b44f411433d834b654b4586db50ce92a873dbc763eee906c835a730e",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_CT_5.46813.mp3",
+          "role": "source",
+          "bytes": 15588,
+          "sha256": "3fa2c879ff48b24c2eeee202159d8bcf3d7f0c9811ca8f1ab64ab0b7b5d0aad3"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_CT_5.46813.mp3__3fa2c879ff48/Round_Start_CT_5.46813.wav",
+          "bytes": 69760,
+          "sha256": "832e45b65feb91b7129294f8ab6b873f8673730ee03d93222a586ebbe9a74bb8",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_CT_5.47229.mp3",
+          "role": "source",
+          "bytes": 18552,
+          "sha256": "8c740c9c4c7abe788ff5bf8a294bdb594037851d7d555bfcdb05732172759792"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_CT_5.47229.mp3__8c740c9c4c7a/Round_Start_CT_5.47229.wav",
+          "bytes": 91648,
+          "sha256": "17c84a871a52979fcaa9d01e40e58233f83bf86e28ce568c4f1cf92b6b131129",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_T_1.49993(1).mp3",
+          "role": "source",
+          "bytes": 17148,
+          "sha256": "716b3fbf23c8694efa161e273b4c59afe4ae5f05682c5ac06cf87e7b6656b147"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_T_1.49993_1_.mp3__716b3fbf23c8/Round_Start_T_1.49993_1.wav",
+          "bytes": 81280,
+          "sha256": "e08bf81a3095da8c13795242ba17c7a756a3c56c92d721855a3122d5900a5977",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_T_1.49993.mp3",
+          "role": "source",
+          "bytes": 15899,
+          "sha256": "edcfcda03dc6629db18f5ad48263d81b911c7ce876c58dba0000e60c1400df73"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_T_1.49993.mp3__edcfcda03dc6/Round_Start_T_1.49993.wav",
+          "bytes": 72064,
+          "sha256": "c68ebe0e664fc81bcbc9e954c6fc023656641e824856ad03495b2743649e20cd",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_T_2.49993(1).mp3",
+          "role": "source",
+          "bytes": 16836,
+          "sha256": "d918cc19002744b3a7ab8e58f2ed6b7b9645efbe83ac95994b48497f335b6964"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_T_2.49993_1_.mp3__d918cc190027/Round_Start_T_2.49993_1.wav",
+          "bytes": 78976,
+          "sha256": "571d21c9f1e329b22aaf9805742e965fc50f9acc4fbc1d1f72119adbadb4ad0a",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_T_2.49993.mp3",
+          "role": "source",
+          "bytes": 16991,
+          "sha256": "05589aa37f9ae2597a7b04ac2da82f3d9fe94fa0f2cca6f8470f06d47b3c8198"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_T_2.49993.mp3__05589aa37f9a/Round_Start_T_2.49993.wav",
+          "bytes": 80128,
+          "sha256": "7069ccedb3bf529f593b4edbc89a2d3ddccf6311bf8453447cc6e297c19f99b2",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_T_3.49993(1).mp3",
+          "role": "source",
+          "bytes": 14651,
+          "sha256": "00009e259e8976bbfecd434b6f1f90404dfdcd913112e346a4757f35c3d0c15b"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_T_3.49993_1_.mp3__00009e259e89/Round_Start_T_3.49993_1.wav",
+          "bytes": 62848,
+          "sha256": "661465214e07c7f49ed6bcf1f948d481b59d4732a46c64ce1afceda03168ec33",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_T_3.49993.mp3",
+          "role": "source",
+          "bytes": 15120,
+          "sha256": "ebf0e7369be0b9ef6543622895ea6dd3250254b3ac81e24d116288e6a0d25f25"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_T_3.49993.mp3__ebf0e7369be0/Round_Start_T_3.49993.wav",
+          "bytes": 66304,
+          "sha256": "11980979556adc2d9de5293c444b4b0235f66877cab3783bee7c2bf0646f9a30",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_T_4.49993(1).mp3",
+          "role": "source",
+          "bytes": 15900,
+          "sha256": "700b3d4c019905d181dc4da132f12c4c24c93d4812d1528365b85a256f42f77d"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_T_4.49993_1_.mp3__700b3d4c0199/Round_Start_T_4.49993_1.wav",
+          "bytes": 72064,
+          "sha256": "7547ad2683ba506246d5f4363091bcb00c25f78cea42167dfac659ce1225f35f",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_T_4.49993.mp3",
+          "role": "source",
+          "bytes": 16991,
+          "sha256": "339283098be92e73e5dfc9f08b6846f008a97608e511766f4c3486ee07bc39a3"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_T_4.49993.mp3__339283098be9/Round_Start_T_4.49993.wav",
+          "bytes": 80128,
+          "sha256": "4c86c5decf9b09f13290fe395d8cfc38894fb4d7f366304a0e99a8dccc57bc04",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_T_5.49993(1).mp3",
+          "role": "source",
+          "bytes": 15900,
+          "sha256": "fccf905c91b71e57bc8025c3b47e68c67404c53f338d78be2816249777681648"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_T_5.49993_1_.mp3__fccf905c91b7/Round_Start_T_5.49993_1.wav",
+          "bytes": 72064,
+          "sha256": "0598c56b55cc4f0f07f7aeaf3f205a0d5778697d5888e9d440180d250efb0fa7",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Round_Start_T_5.49993.mp3",
+          "role": "source",
+          "bytes": 15899,
+          "sha256": "b39e16e213ca526b62e6c998f74b1698e22d6b441f29c913acdab764e560fefa"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Round_Start_T_5.49993.mp3__b39e16e213ca/Round_Start_T_5.49993.wav",
+          "bytes": 72064,
+          "sha256": "c68ebe0e664fc81bcbc9e954c6fc023656641e824856ad03495b2743649e20cd",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Stage_Start_Adv_CT.46813.mp3",
+          "role": "source",
+          "bytes": 20112,
+          "sha256": "d7e2508918bc1a7e9ca4d4283bd73e2724c7ad547cdfd85e608c773bf0644838"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Stage_Start_Adv_CT.46813.mp3__d7e2508918bc/Stage_Start_Adv_CT.46813.wav",
+          "bytes": 103168,
+          "sha256": "c4f4d49cedca6063b7ccb72c37fcaa4b2b573e8694b32a743c392e67bc351d57",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Stage_Start_Adv_CT.47229.mp3",
+          "role": "source",
+          "bytes": 23700,
+          "sha256": "b26d8fa66802eeb1f54d5b0fb39e2dbc0440d33d1681f9d2531b6d3f869b191e"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Stage_Start_Adv_CT.47229.mp3__b26d8fa66802/Stage_Start_Adv_CT.47229.wav",
+          "bytes": 129664,
+          "sha256": "e94f6a3bef745ae1a4fe9a623ec14578c799e8abdf26f5a4158624c01b8d5397",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Stage_Start_Adv_T.49993(1).mp3",
+          "role": "source",
+          "bytes": 23076,
+          "sha256": "431938719b9dfca5ba25c669d01a71913cc50e397038ce50f6e7b2acc6b75f37"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Stage_Start_Adv_T.49993_1_.mp3__431938719b9d/Stage_Start_Adv_T.49993_1.wav",
+          "bytes": 125056,
+          "sha256": "f5eca00d071324e092dfd9a449532086d6ba24057333e62911cc16a2284ee3ba",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Stage_Start_Adv_T.49993.mp3",
+          "role": "source",
+          "bytes": 22139,
+          "sha256": "9c9ca4e582cf4af61d742a36e734419b3f721ca691e534903403fbd96e3ac3cd"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Stage_Start_Adv_T.49993.mp3__9c9ca4e582cf/Stage_Start_Adv_T.49993.wav",
+          "bytes": 118144,
+          "sha256": "cceb1dae42e74b0a81686eb8d67a99a0950ab182df0523ea83bd879b79f78d73",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Stage_Start_Default.46813.mp3",
+          "role": "source",
+          "bytes": 20736,
+          "sha256": "577f6fedf78ffd2a862dd39b7a9a7a831c739dae125bcf0f631bf3ba0bf26e26"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Stage_Start_Default.46813.mp3__577f6fedf78f/Stage_Start_Default.46813.wav",
+          "bytes": 107776,
+          "sha256": "e7f0b8e342a68207a55e832bdb74b46d00a2ad4d781ba4f5df0e835abd631355",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/Stage_Start_Default.47229.mp3",
+          "role": "source",
+          "bytes": 27600,
+          "sha256": "a055284f164075a184488b617805d05600ba225e14a9373f94568f96b8ae6e9f"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__Stage_Start_Default.47229.mp3__a055284f1640/Stage_Start_Default.47229.wav",
+          "bytes": 158464,
+          "sha256": "65f7b3592a5ad6c075d6b1056d97035ea9615be2e3a0486e7c7a66d4ab763af1",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/aim.43483.mp3",
+          "role": "source",
+          "bytes": 1253,
+          "sha256": "93ac39af197e8a94ef815bd0093e7b7cfd85203d96cbdfd8be2d6cb643dcd0d7"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__aim.43483.mp3__93ac39af197e/aim.43483.wav",
+          "bytes": 17920,
+          "sha256": "8ffc26b710d1afdafdd04ec415228675e64a9d3b10230250bed21fbd586df0ca",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/aim.53884.mp3",
+          "role": "source",
+          "bytes": 1253,
+          "sha256": "93ac39af197e8a94ef815bd0093e7b7cfd85203d96cbdfd8be2d6cb643dcd0d7"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__aim.53884.mp3__93ac39af197e/aim.53884.wav",
+          "bytes": 17920,
+          "sha256": "8ffc26b710d1afdafdd04ec415228675e64a9d3b10230250bed21fbd586df0ca",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/aim.80037.mp3",
+          "role": "source",
+          "bytes": 1253,
+          "sha256": "93ac39af197e8a94ef815bd0093e7b7cfd85203d96cbdfd8be2d6cb643dcd0d7"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__aim.80037.mp3__93ac39af197e/aim.80037.wav",
+          "bytes": 17920,
+          "sha256": "8ffc26b710d1afdafdd04ec415228675e64a9d3b10230250bed21fbd586df0ca",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/aniu_anxia.43483.mp3",
+          "role": "source",
+          "bytes": 17527,
+          "sha256": "14958d3bebbfe4afc806e84edcf02d50cdfebbee2e7489738528ac4bd301fb82"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__aniu_anxia.43483.mp3__14958d3bebbf/aniu_anxia.43483.wav",
+          "bytes": 87040,
+          "sha256": "98b5d3044923be0f8e9a2ea1888ea7fb85dba8e03f27bb10ad2e155199dbc3dc",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/aniu_jinguo.43483.mp3",
+          "role": "source",
+          "bytes": 12223,
+          "sha256": "1527daf942c129871e9a2b750d4ddc5f756ed237bc904865ec07fd3bd7f02329"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__aniu_jinguo.43483.mp3__1527daf942c1/aniu_jinguo.43483.wav",
+          "bytes": 47872,
+          "sha256": "e2609261c8e298b76e141011a4929fc403e367e93df5cd104c08c23c5dd38da3",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/bang.48051.mp3",
+          "role": "source",
+          "bytes": 21117,
+          "sha256": "20f0aa372bf19825a186eae6e1b85683b36c75bf47c0849a0455f8adca0e1088"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__bang.48051.mp3__20f0aa372bf1/bang.48051.wav",
+          "bytes": 114688,
+          "sha256": "0b4eae3f3b4a53954203f0c50e381e707ba231788883ae08a9d9bd1cb80d3bec",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/bang.58479.mp3",
+          "role": "source",
+          "bytes": 6217,
+          "sha256": "adeb0f51146e63e183dcf0a1d4cc53d83105c8e483d877bd321a72c701433cdf"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__bang.58479.mp3__adeb0f51146e/bang.58479.wav",
+          "bytes": 53632,
+          "sha256": "a2174800874847f6c6cd152e7026a023b217516d3bb3329bbba659e675aae4b2",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/bolt.43483.mp3",
+          "role": "source",
+          "bytes": 17885,
+          "sha256": "722bbf263bb8230964968fe48e963207cf8e9861fa4eccf43fe2f87da83af355"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__bolt.43483.mp3__722bbf263bb8/bolt.43483.wav",
+          "bytes": 135424,
+          "sha256": "7821449999bb78821131cbbfe60c1346ba4186850b60e4699966c82b28ea61f7",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/bolt.56413.mp3",
+          "role": "source",
+          "bytes": 18301,
+          "sha256": "16f25330336f20ca3cbab9d62e5726a32c5f1c5b8684c13cd1da78bd8682b83d"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__bolt.56413.mp3__16f25330336f/bolt.56413.wav",
+          "bytes": 140032,
+          "sha256": "ea1a8688084437d5d576b0b6b7388ad7b9a1c70b50838c3da0c2ce1b22c84b85",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/bolt.80037.mp3",
+          "role": "source",
+          "bytes": 17885,
+          "sha256": "722bbf263bb8230964968fe48e963207cf8e9861fa4eccf43fe2f87da83af355"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__bolt.80037.mp3__722bbf263bb8/bolt.80037.wav",
+          "bytes": 135424,
+          "sha256": "7821449999bb78821131cbbfe60c1346ba4186850b60e4699966c82b28ea61f7",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/breath.46727.mp3",
+          "role": "source",
+          "bytes": 35735,
+          "sha256": "20d10a1c920b31ae3f13359a1c802427d8a86ef2e74e6d36e31ff9e89490b54d"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__breath.46727.mp3__20d10a1c920b/breath.46727.wav",
+          "bytes": 395776,
+          "sha256": "7bc37f7beb56a486d88cabf926f30a3a65d2c11178e540983e773ef15216348a",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(1).mp3",
+          "role": "source",
+          "bytes": 18138,
+          "sha256": "605b188349af238b70bc8c1c4490d2ea3a435779055ea8fbd6084ea912e4d8d0"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_1_.mp3__605b188349af/deploy.43483_1.wav",
+          "bytes": 137728,
+          "sha256": "2429fa3e0cd493f357e49ba2cf419eaba1d69343d34bca9122496259cafad312",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(10).mp3",
+          "role": "source",
+          "bytes": 15434,
+          "sha256": "9a2079771da32709f9c752dea1b675f4385e3d5576712d25c2bb1ddcc6f430cf"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_10_.mp3__9a2079771da3/deploy.43483_10.wav",
+          "bytes": 107776,
+          "sha256": "62be4178529825ccd1adc087b915ad70ed1cd1ec2dfa30769bedae91fc4bc19b",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(11).mp3",
+          "role": "source",
+          "bytes": 5876,
+          "sha256": "071c23829aad961e2728610fcacf5d3ad1e9088f43db30c9e98f706eb1d43667"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_11_.mp3__071c23829aad/deploy.43483_11.wav",
+          "bytes": 68608,
+          "sha256": "2c44a5a5f6c4ae8cfd3194e8d4e297d9e0c3a51e2ad6087a321e7c70d31bec08",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(12).mp3",
+          "role": "source",
+          "bytes": 11206,
+          "sha256": "66f1bb48cc3b4787576e4f4d2b5b4fdc28c036228a0e520f7c5c3597c15ca1e2"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_12_.mp3__66f1bb48cc3b/deploy.43483_12.wav",
+          "bytes": 61696,
+          "sha256": "190bc0d2e0acc0083634aa6f876fd301306defe9e93eb6e4e59765d14f123fe6",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(13).mp3",
+          "role": "source",
+          "bytes": 18346,
+          "sha256": "f8217a461b2470ee28c5a3b0b06addf99d1550020fe164639fa7599435e17569"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_13_.mp3__f8217a461b24/deploy.43483_13.wav",
+          "bytes": 140032,
+          "sha256": "4799fdbbce8c8fbe9794e4ffc47803ed1db958d259ba8ea073764f104f11cb9e",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(14).mp3",
+          "role": "source",
+          "bytes": 12938,
+          "sha256": "67949ea4b9fa234ec4be6a99d23614f64d2aace1c100cf9251147e8bb14c4e96"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_14_.mp3__67949ea4b9fa/deploy.43483_14.wav",
+          "bytes": 80128,
+          "sha256": "a236d5e8433d09d9bf7a3602c228fad369ac31824d4c8ef08ab4e7b79687518c",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(15).mp3",
+          "role": "source",
+          "bytes": 8372,
+          "sha256": "872fa01ebb8a8ad0a9eb6e1b97643cc623e5c11c1eca3552d35d42939609dda4"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_15_.mp3__872fa01ebb8a/deploy.43483_15.wav",
+          "bytes": 96256,
+          "sha256": "6d0940891c3e3599357e88bde22ca77eeaa8cec94e1ae7a09864aa6114c02917",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(16).mp3",
+          "role": "source",
+          "bytes": 15850,
+          "sha256": "1f4da234b62d2be184701c49903fce383124e2c1c64f95845bedbb0c82b0e424"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_16_.mp3__1f4da234b62d/deploy.43483_16.wav",
+          "bytes": 112384,
+          "sha256": "c39565d29fb665000125558470c609664c397ecdefe5132c225ff36d4d622764",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(17).mp3",
+          "role": "source",
+          "bytes": 24796,
+          "sha256": "0f0488fbdb77f50abb53cd38ab156ad13578c7d5b59918a7501d747492b83ada"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_17_.mp3__0f0488fbdb77/deploy.43483_17.wav",
+          "bytes": 144640,
+          "sha256": "7e0a487900a4ca891d6d96ca77eec43b0bbfea01b92612d80f7819ae6ae43ee7",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(18).mp3",
+          "role": "source",
+          "bytes": 4628,
+          "sha256": "e50a2913aa06ffa98a45bc6ea148f9dc4ef7bfb639abbf7dc2accb87419aacb1"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_18_.mp3__e50a2913aa06/deploy.43483_18.wav",
+          "bytes": 54784,
+          "sha256": "d5a31d4f376d9442a2673a35cc9705c918439f925736e6fa34dafa12d748befa",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(19).mp3",
+          "role": "source",
+          "bytes": 6272,
+          "sha256": "2908c8e8033de4352145654e0e81de71e8d2430325934a2f0bcda3e4136537c9"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_19_.mp3__2908c8e8033d/deploy.43483_19.wav",
+          "bytes": 93992,
+          "sha256": "79b035f44c79abd03cf2db374d5fd791d2224653b63d84ce65067250f8589b76",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(2).mp3",
+          "role": "source",
+          "bytes": 15434,
+          "sha256": "9a2079771da32709f9c752dea1b675f4385e3d5576712d25c2bb1ddcc6f430cf"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_2_.mp3__9a2079771da3/deploy.43483_2.wav",
+          "bytes": 107776,
+          "sha256": "62be4178529825ccd1adc087b915ad70ed1cd1ec2dfa30769bedae91fc4bc19b",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(20).mp3",
+          "role": "source",
+          "bytes": 20857,
+          "sha256": "2c5ac9570193bfd5f99dac1ad9325c4c92db382f2295ed1cc1c29e1246732f51"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_20_.mp3__2c5ac9570193/deploy.43483_20.wav",
+          "bytes": 110080,
+          "sha256": "f9c893ee45eeed0156da00b6e85fbf722f278b9b52a7fd8f2160cc99f0138d0a",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(21).mp3",
+          "role": "source",
+          "bytes": 16058,
+          "sha256": "666aac2d200eef65e1fb5a3c0d4e961e45fb48b07985ade534d8a261794b53b3"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_21_.mp3__666aac2d200e/deploy.43483_21.wav",
+          "bytes": 114688,
+          "sha256": "f13bc192efffee0039aa75a09e7defdae5d4bda9ec79102a5369ccf66232ff62",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(22).mp3",
+          "role": "source",
+          "bytes": 18346,
+          "sha256": "f8217a461b2470ee28c5a3b0b06addf99d1550020fe164639fa7599435e17569"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_22_.mp3__f8217a461b24/deploy.43483_22.wav",
+          "bytes": 140032,
+          "sha256": "4799fdbbce8c8fbe9794e4ffc47803ed1db958d259ba8ea073764f104f11cb9e",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(23).mp3",
+          "role": "source",
+          "bytes": 19269,
+          "sha256": "08bac6603c26078236e8b1de658344d22483c627bd909d94ac0c35191745a2ec"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_23_.mp3__08bac6603c26/deploy.43483_23.wav",
+          "bytes": 91648,
+          "sha256": "3b4c1d731d551cab16abfc11bbd38456bab56dce5d8cb0c5c04df8739ed3f98c",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(3).mp3",
+          "role": "source",
+          "bytes": 5876,
+          "sha256": "071c23829aad961e2728610fcacf5d3ad1e9088f43db30c9e98f706eb1d43667"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_3_.mp3__071c23829aad/deploy.43483_3.wav",
+          "bytes": 68608,
+          "sha256": "2c44a5a5f6c4ae8cfd3194e8d4e297d9e0c3a51e2ad6087a321e7c70d31bec08",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(4).mp3",
+          "role": "source",
+          "bytes": 13078,
+          "sha256": "81b12313c3bcece727d2b8161ed2439f17a0de3fc9a55128a82e79f011359277"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_4_.mp3__81b12313c3bc/deploy.43483_4.wav",
+          "bytes": 82432,
+          "sha256": "82584ddee406f8646cc2857198d018dc192632a04decc5856a78243b873e257d",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(5).mp3",
+          "role": "source",
+          "bytes": 15446,
+          "sha256": "0645f32a467b45e58ef24e796067965f1f359ac981ad75774eb388a29108ad07"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_5_.mp3__0645f32a467b/deploy.43483_5.wav",
+          "bytes": 66304,
+          "sha256": "60adb8a5f478607df7ef47a5d08d38dae750f2092896daad57547d7089f72129",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(6).mp3",
+          "role": "source",
+          "bytes": 13078,
+          "sha256": "58faf0544219069f1cd9e6d4ded8167adcc321630548114e623c681809bd7a31"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_6_.mp3__58faf0544219/deploy.43483_6.wav",
+          "bytes": 82432,
+          "sha256": "26a9bb4ebcc384bf0ac6de4947b0191a7a36328dca11bf5d1120626300aa7fcb",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(7).mp3",
+          "role": "source",
+          "bytes": 13078,
+          "sha256": "81b12313c3bcece727d2b8161ed2439f17a0de3fc9a55128a82e79f011359277"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_7_.mp3__81b12313c3bc/deploy.43483_7.wav",
+          "bytes": 82432,
+          "sha256": "82584ddee406f8646cc2857198d018dc192632a04decc5856a78243b873e257d",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(8).mp3",
+          "role": "source",
+          "bytes": 5876,
+          "sha256": "071c23829aad961e2728610fcacf5d3ad1e9088f43db30c9e98f706eb1d43667"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_8_.mp3__071c23829aad/deploy.43483_8.wav",
+          "bytes": 68608,
+          "sha256": "2c44a5a5f6c4ae8cfd3194e8d4e297d9e0c3a51e2ad6087a321e7c70d31bec08",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483(9).mp3",
+          "role": "source",
+          "bytes": 21050,
+          "sha256": "2404afdf215e1e157b69a323034a2014de9eb55bf8ea05ba53de37f2588b23f4"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483_9_.mp3__2404afdf215e/deploy.43483_9.wav",
+          "bytes": 103168,
+          "sha256": "27a68f634f711f1385d78a5000c7e3b616ab9a1fb7366bd27d768de7c6bf706c",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.43483.mp3",
+          "role": "source",
+          "bytes": 12938,
+          "sha256": "67949ea4b9fa234ec4be6a99d23614f64d2aace1c100cf9251147e8bb14c4e96"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.43483.mp3__67949ea4b9fa/deploy.43483.wav",
+          "bytes": 80128,
+          "sha256": "a236d5e8433d09d9bf7a3602c228fad369ac31824d4c8ef08ab4e7b79687518c",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.46929.mp3",
+          "role": "source",
+          "bytes": 10356,
+          "sha256": "03a24384ad9f0da82ed969250dc60f707174f412c6ec32f661a68d7344c64bbd"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.46929.mp3__03a24384ad9f/deploy.46929.wav",
+          "bytes": 29440,
+          "sha256": "8453dd17b1d7d6abceeffe7221749679c42a843b6ce2bb9006e22ea4f89e3b6e",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.49865.mp3",
+          "role": "source",
+          "bytes": 6187,
+          "sha256": "5759dea8393b00501459bfcc534ac4b3d32529b84c578e36a254bf75cf981407"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.49865.mp3__5759dea8393b/deploy.49865.wav",
+          "bytes": 125760,
+          "sha256": "9505c520128a7d70d83251b3e615a211ef66163e207247298a590d5a56d0be7b",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.53884.mp3",
+          "role": "source",
+          "bytes": 18138,
+          "sha256": "605b188349af238b70bc8c1c4490d2ea3a435779055ea8fbd6084ea912e4d8d0"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.53884.mp3__605b188349af/deploy.53884.wav",
+          "bytes": 137728,
+          "sha256": "2429fa3e0cd493f357e49ba2cf419eaba1d69343d34bca9122496259cafad312",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.56270.mp3",
+          "role": "source",
+          "bytes": 21783,
+          "sha256": "5c4fe45f00d236f8beffb763ead5d8b534924b2fc9f952bef885f406688af74c"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.56270.mp3__5c4fe45f00d2/deploy.56270.wav",
+          "bytes": 53632,
+          "sha256": "496be956f3fe0ebf235da6156348a454f6b80f3d6b626bb3baf9bfc907df942c",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/deploy.80037.mp3",
+          "role": "source",
+          "bytes": 18138,
+          "sha256": "605b188349af238b70bc8c1c4490d2ea3a435779055ea8fbd6084ea912e4d8d0"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__deploy.80037.mp3__605b188349af/deploy.80037.wav",
+          "bytes": 137728,
+          "sha256": "2429fa3e0cd493f357e49ba2cf419eaba1d69343d34bca9122496259cafad312",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/die.46727.mp3",
+          "role": "source",
+          "bytes": 26922,
+          "sha256": "62c5744a4dd4e5a088dc3f93490181f0fe29621147db52bb69427b7dc7e4c15f"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__die.46727.mp3__62c5744a4dd4/die.46727.wav",
+          "bytes": 114688,
+          "sha256": "884f1bc413a0bc9276d15b4ae7d999aa21846ce62e3dcca72e551f9b8f8130aa",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/end_tip.46944.mp3",
+          "role": "source",
+          "bytes": 28650,
+          "sha256": "cacb707f75b89d3b93ffe535260b33a20b3a72149faa8323e7310a2fa96c6194"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__end_tip.46944.mp3__cacb707f75b8/end_tip.46944.wav",
+          "bytes": 149248,
+          "sha256": "7ab5a5ec00d68194b68ed5beb8f38d8df2d8fe4512538637af700272c81d7141",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/explode.43483.mp3",
+          "role": "source",
+          "bytes": 38927,
+          "sha256": "a07498cc07ea7183ed08de0f3dd4206e2740056e6f2500d618a4768b399a8cb7"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__explode.43483.mp3__a07498cc07ea/explode.43483.wav",
+          "bytes": 241820,
+          "sha256": "298f2edb1c37f7c799e8acd214babac8ad94baf8389f509391e9be13b097607d",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.43483(1).mp3",
+          "role": "source",
+          "bytes": 14950,
+          "sha256": "ae02a724b0df2fb3f9d95cac3a68601fa10b3147946e441e751f00d7c53bba69"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.43483_1_.mp3__ae02a724b0df/fire.43483_1.wav",
+          "bytes": 103168,
+          "sha256": "a56bbbb30486759785fbfdc6cd7a2f60b34034ec8797d189403ab808d319944c",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.43483(2).mp3",
+          "role": "source",
+          "bytes": 13852,
+          "sha256": "cbe02b2a1fe647b3a2a8fea99836e18113bfd1ac6f01bd938f0fbc2d8b0fd0a2"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.43483_2_.mp3__cbe02b2a1fe6/fire.43483_2.wav",
+          "bytes": 52480,
+          "sha256": "79cdbf3c881520f468453b7f93d53ba1eb4261901a95446749c40107e51ae93f",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.43483(3).mp3",
+          "role": "source",
+          "bytes": 14795,
+          "sha256": "08bd14775a8d8c28f9f2e50969563ad89c73419f92d7f381a78e2814da441ef1"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.43483_3_.mp3__08bd14775a8d/fire.43483_3.wav",
+          "bytes": 82432,
+          "sha256": "5a6d5ab0ef5b0e6975379ce7e807f06995edbac5f62c87c32c7ff48198df184b",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.43483(4).mp3",
+          "role": "source",
+          "bytes": 18837,
+          "sha256": "6dd67040413d717eb9d97d801332e014e5144e4b416d4e1a6c23fdf08f311ed5"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.43483_4_.mp3__6dd67040413d/fire.43483_4.wav",
+          "bytes": 144640,
+          "sha256": "821a7361d932baa2b2f906f08aba8835768a284b1e6e36e29fe094fbf93ac271",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.43483.mp3",
+          "role": "source",
+          "bytes": 14950,
+          "sha256": "ae02a724b0df2fb3f9d95cac3a68601fa10b3147946e441e751f00d7c53bba69"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.43483.mp3__ae02a724b0df/fire.43483.wav",
+          "bytes": 103168,
+          "sha256": "a56bbbb30486759785fbfdc6cd7a2f60b34034ec8797d189403ab808d319944c",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.45978(1).mp3",
+          "role": "source",
+          "bytes": 16894,
+          "sha256": "55a237fe575d47920d0a6d55c6a7e67c07413b035f9c40ccd884345a4795261f"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.45978_1_.mp3__55a237fe575d/fire.45978_1.wav",
+          "bytes": 81280,
+          "sha256": "1ef09f956e66607141612cfda0f545dbc5f14ba2cd2aca1a1889b89c8030bd8b",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.45978(2).mp3",
+          "role": "source",
+          "bytes": 15927,
+          "sha256": "37ff1c82ca38afbb1321822e1f99695fc41247f436d3c5a81b870c799f7eaa21"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.45978_2_.mp3__37ff1c82ca38/fire.45978_2.wav",
+          "bytes": 69760,
+          "sha256": "6f9a48cfc3790958cb97da000687220741efbfe975fc335ae6f04cadfc33b97c",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.45978(3).mp3",
+          "role": "source",
+          "bytes": 15958,
+          "sha256": "5e1b905b7c6f141ff949e56c924a718de63a9f62fa6ce5e982ce523f8624f231"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.45978_3_.mp3__5e1b905b7c6f/fire.45978_3.wav",
+          "bytes": 74368,
+          "sha256": "f30126c52bca2b5ca136f39614d58bf8525a1d07c0489f62eefaac5a7ecc225f",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.45978(4).mp3",
+          "role": "source",
+          "bytes": 11278,
+          "sha256": "f529162ac39819ea3338aa7257b808bc3b90ae5b353f91d9461cb51a7e403b37"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.45978_4_.mp3__f529162ac398/fire.45978_4.wav",
+          "bytes": 39808,
+          "sha256": "f402917cc2b8c41183e22b167013a4dfd3872ad043ed7a55f3fd0802e9945e96",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.45978.mp3",
+          "role": "source",
+          "bytes": 12058,
+          "sha256": "0e412697cdb6ab0695ad4698dbc5d633a705f3447c8f3417398c86098082ce7b"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.45978.mp3__0e412697cdb6/fire.45978.wav",
+          "bytes": 45568,
+          "sha256": "d2386bb3c8af26ec26add17d775ed2924f58774948b4c6589a75699cab7ce339",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.45986.mp3",
+          "role": "source",
+          "bytes": 13774,
+          "sha256": "03329c1b7526578e40def23336e1f2f2222a86fb4027717f1661ad7f79a3ecf5"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.45986.mp3__03329c1b7526/fire.45986.wav",
+          "bytes": 58240,
+          "sha256": "1e5516fe20e24c531f00eb3d6f95039f3c4048709274ed20ba93807d041ae9bb",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.46104(1).mp3",
+          "role": "source",
+          "bytes": 12526,
+          "sha256": "5c9b28b1444a2a25d942ccb1159f5669196adf52963cdfa7d8112954257c7edd"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.46104_1_.mp3__5c9b28b1444a/fire.46104_1.wav",
+          "bytes": 49024,
+          "sha256": "328e51f9355f719b6385ff68dfdb980849272a9b688427840c0719d1a6fa292f",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.46104(2).mp3",
+          "role": "source",
+          "bytes": 12994,
+          "sha256": "624897188f3bfbb8a8fb8edf34ecb64b0fdd07b541ef854155838541927ca48d"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.46104_2_.mp3__624897188f3b/fire.46104_2.wav",
+          "bytes": 52480,
+          "sha256": "ca3700beb18d509f4c436d9bfd8b6c90a2c8df26aa011020ec5701594bbb09cd",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.46104(3).mp3",
+          "role": "source",
+          "bytes": 10030,
+          "sha256": "632bc7d323d5194f1b6fd6714337b9776516b6091d7f4a62d94bf49e5031bf5b"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.46104_3_.mp3__632bc7d323d5/fire.46104_3.wav",
+          "bytes": 30592,
+          "sha256": "1f6dbfe0bc6e57fda8950ec229d0eb1d66565f52decece4d06eabab06da9f975",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.46104.mp3",
+          "role": "source",
+          "bytes": 12526,
+          "sha256": "5c9b28b1444a2a25d942ccb1159f5669196adf52963cdfa7d8112954257c7edd"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.46104.mp3__5c9b28b1444a/fire.46104.wav",
+          "bytes": 49024,
+          "sha256": "328e51f9355f719b6385ff68dfdb980849272a9b688427840c0719d1a6fa292f",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.46105.mp3",
+          "role": "source",
+          "bytes": 17830,
+          "sha256": "52c49c3211948bd55467f9ea432cf905b02cd49e4a6c62e20f9718706d54b2bc"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.46105.mp3__52c49c321194/fire.46105.wav",
+          "bytes": 88192,
+          "sha256": "920015efff928a8e817c459a355a91e7e56af5d6254eee0e962d32de5c54e674",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.46109(1).mp3",
+          "role": "source",
+          "bytes": 12994,
+          "sha256": "c276a92e68bebd6050f7fae1cdacd894b136a28ad97b16ba475aac82793c7584"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.46109_1_.mp3__c276a92e68be/fire.46109_1.wav",
+          "bytes": 52480,
+          "sha256": "435260b8f7514efae47010b6fd97d06fd12487ab8cda1d594d38941c937229ac",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.46109.mp3",
+          "role": "source",
+          "bytes": 9550,
+          "sha256": "5fcd0a809596da1019196c660e8398511842174a65afbf2b91c3924697fdc488"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.46109.mp3__5fcd0a809596/fire.46109.wav",
+          "bytes": 27136,
+          "sha256": "3fa2020b3d444b67db7ec2fba2d2f9f0cd2404697b421f59c9ef3446801c0926",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.47227(1).mp3",
+          "role": "source",
+          "bytes": 19716,
+          "sha256": "c6dd3227a70317f2c91361f34d80de7b2176947b6a2e31861507a63c511d87a9"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.47227_1_.mp3__c6dd3227a703/fire.47227_1.wav",
+          "bytes": 98560,
+          "sha256": "73b1dcd48dc9874670daf9126b630a1d95d33ec64672224df7f946dcbe219fa6",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.47227.mp3",
+          "role": "source",
+          "bytes": 19716,
+          "sha256": "c6dd3227a70317f2c91361f34d80de7b2176947b6a2e31861507a63c511d87a9"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.47227.mp3__c6dd3227a703/fire.47227.wav",
+          "bytes": 98560,
+          "sha256": "73b1dcd48dc9874670daf9126b630a1d95d33ec64672224df7f946dcbe219fa6",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.47350.mp3",
+          "role": "source",
+          "bytes": 14710,
+          "sha256": "aa3955eadeb5de211c1b28035ff22061f905e2f23dc37a1d9d14b00715287982"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.47350.mp3__aa3955eadeb5/fire.47350.wav",
+          "bytes": 65152,
+          "sha256": "e6a32ea642931258d4dcdf337093bec155ee73dc0ef024b1a556c4cd6384e409",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.49865.mp3",
+          "role": "source",
+          "bytes": 12682,
+          "sha256": "859918a3d40d1a1d879f60cccd3832e2551a40173380188868cfb047043a9243"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.49865.mp3__859918a3d40d/fire.49865.wav",
+          "bytes": 50176,
+          "sha256": "24403742cd36b780c697c146037a252ee74a4a5fbb22355fcc5a2ef827bfdbe5",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.53884.mp3",
+          "role": "source",
+          "bytes": 19716,
+          "sha256": "c6dd3227a70317f2c91361f34d80de7b2176947b6a2e31861507a63c511d87a9"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.53884.mp3__c6dd3227a703/fire.53884.wav",
+          "bytes": 98560,
+          "sha256": "73b1dcd48dc9874670daf9126b630a1d95d33ec64672224df7f946dcbe219fa6",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/fire.80037.mp3",
+          "role": "source",
+          "bytes": 8947,
+          "sha256": "b424920331b4f3d9df24a112d74234b4f1b6147d6d0c27615e87175b2938f4f4"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__fire.80037.mp3__b424920331b4/fire.80037.wav",
+          "bytes": 23680,
+          "sha256": "0f7414f0719dba96d1e7dd1fbb4bdcd4a0945067c7eca2623831e102b718ef2c",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/golden_ace.46944.mp3",
+          "role": "source",
+          "bytes": 25917,
+          "sha256": "0a6bdcc43f1a72c099ba521ee12fbe60cc2052eda435db246f927459aaf179ba"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__golden_ace.46944.mp3__0a6bdcc43f1a/golden_ace.46944.wav",
+          "bytes": 137728,
+          "sha256": "f4115163573912a8cf37b0230076d5b31c6cbcec3b4714d0f8aebb21797db337",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/gray_ace.46944.mp3",
+          "role": "source",
+          "bytes": 22785,
+          "sha256": "a40ece4d9daeafbb90202abd57434dabc32110d9a915309080e01306e5b0bd76"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__gray_ace.46944.mp3__a40ece4d9dae/gray_ace.46944.wav",
+          "bytes": 110080,
+          "sha256": "a1d812f91b7998875aa13c9b89f3f36088beac5f917ce9ce4b833a0abac75067",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/harmed.46727.mp3",
+          "role": "source",
+          "bytes": 10530,
+          "sha256": "cd6579126661bbd742d9008eff13995faf6b6dc09d9110294f71f40702ecc4b9"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__harmed.46727.mp3__cd6579126661/harmed.46727.wav",
+          "bytes": 37504,
+          "sha256": "d83e91aff8f322529059551b10b303119b59a6d145c9b93851c3dc52e8a0ab96",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/headshot.46727.mp3",
+          "role": "source",
+          "bytes": 19318,
+          "sha256": "d3707333f5f9b6908c4e68f5fd76482afd9becb06e15c196b1dbd0d046987168"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__headshot.46727.mp3__d3707333f5f9/headshot.46727.wav",
+          "bytes": 151552,
+          "sha256": "aab55e46d3f9fd707c7a4d88396b0cd10ac78f1af93e37baed7826e93ffbdfa5",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/heartbeat.46727.mp3",
+          "role": "source",
+          "bytes": 23331,
+          "sha256": "78f0a6e4f039dbcb725399113d690698ddcfdb149721a7eb4e53d25bdc128459"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__heartbeat.46727.mp3__78f0a6e4f039/heartbeat.46727.wav",
+          "bytes": 195328,
+          "sha256": "f50cdb262d6cebfd01735686b58a9cac80f86f9142c7fc017116610ff5608642",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/hit1.43483.mp3",
+          "role": "source",
+          "bytes": 10442,
+          "sha256": "204c1f5df91b68523f2da030c504637728022c3c545ef37f24f2a3db8f0e4706"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__hit1.43483.mp3__204c1f5df91b/hit1.43483.wav",
+          "bytes": 52480,
+          "sha256": "14b36c0001bac41c3a4e9f781818cf6f23e97cce021fca9f36320c580c5a4312",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/hit2.43483.mp3",
+          "role": "source",
+          "bytes": 9610,
+          "sha256": "4ef4eed8c7cae6b48c0f73c82b59e0c7648d83efb3ba4cc6e60945066850a513"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__hit2.43483.mp3__4ef4eed8c7ca/hit2.43483.wav",
+          "bytes": 43264,
+          "sha256": "2d29912edd2f66ba9c0c4c9c0089f33f225b9e6b0d913f2b5df5625cb8f2cea0",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/hit3.43483.mp3",
+          "role": "source",
+          "bytes": 8766,
+          "sha256": "80111a732794762a0baf79b68fbe0bacf0a4a18185c5cad55554375d7cc8d66e"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__hit3.43483.mp3__80111a732794/hit3.43483.wav",
+          "bytes": 34048,
+          "sha256": "c0ea5e959e4fc5e49e28041d55611fa89e90db4527f305b870fdc4d2398dc541",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/hit4.43483.mp3",
+          "role": "source",
+          "bytes": 13097,
+          "sha256": "13d3790e5a5308f02ae36b38449dfb407a88739791934c9f01baf7c00e519f13"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__hit4.43483.mp3__13d3790e5a53/hit4.43483.wav",
+          "bytes": 45568,
+          "sha256": "69e1c31cc78097170c1af51153e73ae93ea58f8fefe0e16a2fe3809e8cc6e793",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/hit5.43483.mp3",
+          "role": "source",
+          "bytes": 10026,
+          "sha256": "9b00190e24853aff82f0ab983e76920e4bb1cdbc80cba94f457e3679f3e33dd3"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__hit5.43483.mp3__9b00190e2485/hit5.43483.wav",
+          "bytes": 47872,
+          "sha256": "73888f33566d2bd78d49bf90dc4c7d551a7686628d30129266e889933acc0b2f",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/hitwall1.46730.mp3",
+          "role": "source",
+          "bytes": 3380,
+          "sha256": "d4f5952da826b3b0f77dd991767cedb3cad03313001981734105aa25e3081308"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__hitwall1.46730.mp3__d4f5952da826/hitwall1.46730.wav",
+          "bytes": 40960,
+          "sha256": "16e8e67c236b7415016cf8e006684f6b3592ef0c85e62256fc8183d2e6635386",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/hitwall2.46730.mp3",
+          "role": "source",
+          "bytes": 4420,
+          "sha256": "ca5f913f3c071aabc65ebcba915edb66853559c417820c2f54d1293ec94b5e91"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__hitwall2.46730.mp3__ca5f913f3c07/hitwall2.46730.wav",
+          "bytes": 52480,
+          "sha256": "eabf65f3475d9a15ae574b0e5cc53440974b7ab0f15836ee9530a1e5f40d2633",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/jump.46727.mp3",
+          "role": "source",
+          "bytes": 12246,
+          "sha256": "0991f2d8029b1bc7042e01d4e2ff56defa49d81fc7fd375ce74786ebd2b1526f"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__jump.46727.mp3__0991f2d8029b/jump.46727.wav",
+          "bytes": 73216,
+          "sha256": "e44713c1d6da66d8a2bbbe8b7be8bbab30f6e0c9f77d36b2256668f65f6f68e6",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/kill1.46727.mp3",
+          "role": "source",
+          "bytes": 18694,
+          "sha256": "56a753b3424b4f692b662ae70bc3581be6a6938793a0ee467cbee22328311695"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__kill1.46727.mp3__56a753b3424b/kill1.46727.wav",
+          "bytes": 144640,
+          "sha256": "d5a691e19592cc785a459ec4830960355a1b8e1fd0bb0f7b5a3b7f2e6a77088f",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/kill2.46727.mp3",
+          "role": "source",
+          "bytes": 21190,
+          "sha256": "c67c0c6b14916f85c2674148d3c8a97549c91efc91e54b64d9ec25bfc37dae98"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__kill2.46727.mp3__c67c0c6b1491/kill2.46727.wav",
+          "bytes": 172288,
+          "sha256": "8b76ef079e3eab9fd70a4ab1379d5c9987b754da55b4ec1c99e690a8059dc9e9",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/kill3.46727.mp3",
+          "role": "source",
+          "bytes": 20150,
+          "sha256": "6ade4ea810b3b283da11b65419d673f086ca5374d1c191691ce3007306a702f3"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__kill3.46727.mp3__6ade4ea810b3/kill3.46727.wav",
+          "bytes": 160768,
+          "sha256": "81dcc23938745e99f6db8646ecb7de51c59c474b9f56e85ce30bef5eaae7cbcf",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/kill4.46727.mp3",
+          "role": "source",
+          "bytes": 21190,
+          "sha256": "95d37b716aa0bdb9e167e5f6df3dc16d969ac51b327e728a188ac58586b078d1"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__kill4.46727.mp3__95d37b716aa0/kill4.46727.wav",
+          "bytes": 172288,
+          "sha256": "508736931432ab599530446a00b0eb9ef6daa2f5beb669988d0227e65f9df3c6",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/kill5.46727.mp3",
+          "role": "source",
+          "bytes": 20982,
+          "sha256": "4f3ee4bf86a665461ad3944b08362c96d89f75dd56584e0abe64d84723b415cd"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__kill5.46727.mp3__4f3ee4bf86a6/kill5.46727.wav",
+          "bytes": 169984,
+          "sha256": "67f03d3362c6623a132febbe59392d3407bc2b56c721c954b0f0ad5fc7937911",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/kill6.46727.mp3",
+          "role": "source",
+          "bytes": 20774,
+          "sha256": "11f8079ae3a5cdd45b77af45df756fb6178936525f2e754ffd9a0f8855f89da9"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__kill6.46727.mp3__11f8079ae3a5/kill6.46727.wav",
+          "bytes": 167680,
+          "sha256": "374982e60e2f22919b1b70b562f3de3f3554f2903f925612631bea46a91df2d2",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/kill7.46727.mp3",
+          "role": "source",
+          "bytes": 19318,
+          "sha256": "7a64886f6e94d3d70d5eecba6bea517fb86ccacd561e81a6b6d11b36f0eaf344"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__kill7.46727.mp3__7a64886f6e94/kill7.46727.wav",
+          "bytes": 151552,
+          "sha256": "bee4ede9037137d22d233e7fde29b9dc026485ca08c7f42a816cfba6abcba1f2",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/kill8.46727.mp3",
+          "role": "source",
+          "bytes": 17862,
+          "sha256": "25ca4a7f0d030a8832a0f47670cad12071c66d017fdbb75a417a3cf63b8b9eb6"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__kill8.46727.mp3__25ca4a7f0d03/kill8.46727.wav",
+          "bytes": 135424,
+          "sha256": "d3c1d35523c55997f12dfe46e680ed48503816438cd158c02df06668f725249a",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/land.46727.mp3",
+          "role": "source",
+          "bytes": 10374,
+          "sha256": "62c5917152a7250253eb9396fe16c25741efc097aa6e723b12bdf5a7b31ca60d"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__land.46727.mp3__62c5917152a7/land.46727.wav",
+          "bytes": 52480,
+          "sha256": "54c962d27815565b22db5b368ff77c989b06f9604bf74cda7a9ea464738f2216",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/pistol.43483.mp3",
+          "role": "source",
+          "bytes": 2288,
+          "sha256": "9d93de34c37135ca9f0a9a22c1d47d94475d965f9d19a35253062737452971cb"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__pistol.43483.mp3__9d93de34c371/pistol.43483.wav",
+          "bytes": 29440,
+          "sha256": "7d4560483dda560068c84e3ee28b941dbe1d37d6994e14972d7c25b7b9d84ae5",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/pump.96763.mp3",
+          "role": "source",
+          "bytes": 8182,
+          "sha256": "7802a173bf9425e239775dd8613a2675109d3720ee193cfd06e08030b0385222"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__pump.96763.mp3__7802a173bf94/pump.96763.wav",
+          "bytes": 28288,
+          "sha256": "86db99d2603f61eafd55950ba71d9833d735e7df2f721e9d083a30310be40873",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.43483(1).mp3",
+          "role": "source",
+          "bytes": 27037,
+          "sha256": "32c7562792e7b4e3532af4953a60718a1c223c4f29bfff924ae3ace1a95c2fbb"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.43483_1_.mp3__32c7562792e7/reload.43483_1.wav",
+          "bytes": 236800,
+          "sha256": "1b168a4b6e47818a185e3ccf1f2a84b2c5e1eea1f34b967859f61fa2c9ffde51",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.43483(10).mp3",
+          "role": "source",
+          "bytes": 23296,
+          "sha256": "06acaaf03405a743a186f60b640a2d33aa7cd2adbb0c414d0a8804de8b3cc681"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.43483_10_.mp3__06acaaf03405/reload.43483_10.wav",
+          "bytes": 262144,
+          "sha256": "85eb64681f45f3652d1f1cb2c75a96ac6b313f5a2b4010304850646529467676",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.43483(11).mp3",
+          "role": "source",
+          "bytes": 34714,
+          "sha256": "ec01e85cf29f7788f606f62f9fe71a8abca957855e5736816a516ded528bb885"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.43483_11_.mp3__ec01e85cf29f/reload.43483_11.wav",
+          "bytes": 232192,
+          "sha256": "61a03a154d9612b9b06086de8ca656b1f084eb3db872be4b9c9a322c742d912d",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.43483(12).mp3",
+          "role": "source",
+          "bytes": 25350,
+          "sha256": "3b15ae205fb0ac32f3c8cf3d2f3b48359f2d152be44e159e0e4602ee5c2b9713"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.43483_12_.mp3__3b15ae205fb0/reload.43483_12.wav",
+          "bytes": 218368,
+          "sha256": "08ab7dc07554c3b19a63698f766b128261686ef99ef2f250cc813976d12745a5",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.43483(13).mp3",
+          "role": "source",
+          "bytes": 32214,
+          "sha256": "545f777ca12178ee1c39f5ef76dc546328c0312e30667fea88a58ab9aeb21f7f"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.43483_13_.mp3__545f777ca121/reload.43483_13.wav",
+          "bytes": 294400,
+          "sha256": "c579e5fade47d901a646c0a7941c9939ddcc154e1c4c0b5ba5f6b6db65b8408c",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.43483(14).mp3",
+          "role": "source",
+          "bytes": 22877,
+          "sha256": "81d9e12feaf93d09309c55cd4b5aad4624fba70a551a90be6b56dc8532fd4a94"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.43483_14_.mp3__81d9e12feaf9/reload.43483_14.wav",
+          "bytes": 190720,
+          "sha256": "1aaa256358a0797367be3aa098c5818d34d8468e41638324ff29a6c270e139f7",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.43483(15).mp3",
+          "role": "source",
+          "bytes": 20826,
+          "sha256": "d8651b7ae39cb0835c9b834e45e67bff1904b2e1490b4eee721e835401b29008"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.43483_15_.mp3__d8651b7ae39c/reload.43483_15.wav",
+          "bytes": 113536,
+          "sha256": "1928d632f7be9d836c0be6ed03375b1714c0a066fa90f18dec38677070af8845",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.43483(16).mp3",
+          "role": "source",
+          "bytes": 32214,
+          "sha256": "5009d8d9797e6e43646cddce2e667d4a29c3eb0561969735a823843c359c488b"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.43483_16_.mp3__5009d8d9797e/reload.43483_16.wav",
+          "bytes": 294400,
+          "sha256": "103810258b5ca85fa4db6d6d71b60ad298163ec2eeeacfa60adaefe64e07075e",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.43483(17).mp3",
+          "role": "source",
+          "bytes": 27713,
+          "sha256": "5f19a0827576b57ba03aa581e0332b356a0c97730362e8df9d04316c86b02175"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.43483_17_.mp3__5f19a0827576/reload.43483_17.wav",
+          "bytes": 174592,
+          "sha256": "3215fd1f9699c18dd016908141304daa5133b5569c6e9e4deb48c9ba263e4f56",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.43483(2).mp3",
+          "role": "source",
+          "bytes": 30758,
+          "sha256": "1253f308c2548db1c74595b3cb586821c81a316ac3636d20f1610bfad49725dc"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.43483_2_.mp3__1253f308c254/reload.43483_2.wav",
+          "bytes": 278272,
+          "sha256": "4f51a214e558d82c8571a65ffc1639e4fdea722d50eaf94859379ac655e5be92",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.43483(3).mp3",
+          "role": "source",
+          "bytes": 31590,
+          "sha256": "e7c586b69f50b218ab02128e2e526eedd0f4e6e86d2835660141b77c5c0d72a7"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.43483_3_.mp3__e7c586b69f50/reload.43483_3.wav",
+          "bytes": 287488,
+          "sha256": "0869db766a4f36659236ecd055d037b075b8c7b16f79cca22a99dfeba8d0c353",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.43483(4).mp3",
+          "role": "source",
+          "bytes": 25558,
+          "sha256": "56a000c4b7ce6d4b59fb43a5870d46c7282c6e17002c0fa439a186f4d9febabb"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.43483_4_.mp3__56a000c4b7ce/reload.43483_4.wav",
+          "bytes": 220672,
+          "sha256": "948c25577efd8d6835ad2bb1b3efe32482aeea0612f61193334f294a3f4184f1",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.43483(5).mp3",
+          "role": "source",
+          "bytes": 32214,
+          "sha256": "545f777ca12178ee1c39f5ef76dc546328c0312e30667fea88a58ab9aeb21f7f"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.43483_5_.mp3__545f777ca121/reload.43483_5.wav",
+          "bytes": 294400,
+          "sha256": "c579e5fade47d901a646c0a7941c9939ddcc154e1c4c0b5ba5f6b6db65b8408c",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.43483(6).mp3",
+          "role": "source",
+          "bytes": 21190,
+          "sha256": "5ef897e1c348ef3835eb284508a39279b1bb6941708cc80f1b14c7278dff9b0b"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.43483_6_.mp3__5ef897e1c348/reload.43483_6.wav",
+          "bytes": 172288,
+          "sha256": "08e87dd50e5c828a34999ecf63a9ad1e6281e8045b63903a764535b95ade4a92",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.43483(7).mp3",
+          "role": "source",
+          "bytes": 30758,
+          "sha256": "1253f308c2548db1c74595b3cb586821c81a316ac3636d20f1610bfad49725dc"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.43483_7_.mp3__1253f308c254/reload.43483_7.wav",
+          "bytes": 278272,
+          "sha256": "4f51a214e558d82c8571a65ffc1639e4fdea722d50eaf94859379ac655e5be92",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.43483(8).mp3",
+          "role": "source",
+          "bytes": 30185,
+          "sha256": "8cc1a3ae16283030d667f35718f710a5f78f5ff398d5e64cf478335a4b02775b"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.43483_8_.mp3__8cc1a3ae1628/reload.43483_8.wav",
+          "bytes": 183808,
+          "sha256": "047857f1e2d435d547cb162a2ad08d36b1a1fa34faa857e0019462dcc0a7a8be",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.43483(9).mp3",
+          "role": "source",
+          "bytes": 21837,
+          "sha256": "2a47e09e8dc4f2ca841cdf85a207c7fb6da0b1805cb599c3f61cffa69b047ef9"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.43483_9_.mp3__2a47e09e8dc4/reload.43483_9.wav",
+          "bytes": 179200,
+          "sha256": "81e48cee5edbf0ec05904d84f9978b13ce13bcc29cd85bce9cd685fb732777a1",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.43483.mp3",
+          "role": "source",
+          "bytes": 25558,
+          "sha256": "56a000c4b7ce6d4b59fb43a5870d46c7282c6e17002c0fa439a186f4d9febabb"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.43483.mp3__56a000c4b7ce/reload.43483.wav",
+          "bytes": 220672,
+          "sha256": "948c25577efd8d6835ad2bb1b3efe32482aeea0612f61193334f294a3f4184f1",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.46929.mp3",
+          "role": "source",
+          "bytes": 9094,
+          "sha256": "86be98ca1bd10b8296b09fa321ef7e542807ae9e3a2ee971967278c7accf54c4"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.46929.mp3__86be98ca1bd1/reload.46929.wav",
+          "bytes": 23680,
+          "sha256": "0f1fbbc7d9736fbb6760dfe624a6c5f20e8999515794e2c8dd14859dd0005493",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.49865.mp3",
+          "role": "source",
+          "bytes": 24049,
+          "sha256": "6c7347f65b1f66c9a13947c32be6afff5e2bbd0508f6bd38246cc3cc6682b1eb"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.49865.mp3__6c7347f65b1f/reload.49865.wav",
+          "bytes": 204544,
+          "sha256": "27820005ff5c8a6114fb70bb9d71f0e2092ff977237ff7bcd9f9eb3ef168c8d0",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.53884.mp3",
+          "role": "source",
+          "bytes": 27037,
+          "sha256": "32c7562792e7b4e3532af4953a60718a1c223c4f29bfff924ae3ace1a95c2fbb"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.53884.mp3__32c7562792e7/reload.53884.wav",
+          "bytes": 236800,
+          "sha256": "1b168a4b6e47818a185e3ccf1f2a84b2c5e1eea1f34b967859f61fa2c9ffde51",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.56270(1).mp3",
+          "role": "source",
+          "bytes": 18184,
+          "sha256": "5f3bde4d190be5f41ea724c2cf5bbf2105a2f552a9bf373a66f0cec5fa34156e"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.56270_1_.mp3__5f3bde4d190b/reload.56270_1.wav",
+          "bytes": 160768,
+          "sha256": "0c03f2b6272705d33d31f5369be8e4f87a2acbbe95ac897550d83771dadccd80",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.56270.mp3",
+          "role": "source",
+          "bytes": 42367,
+          "sha256": "02624388bab88112dd7ef050aa4ac623258633cabdd1e3bbb09de559e3d5279f"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.56270.mp3__02624388bab8/reload.56270.wav",
+          "bytes": 120448,
+          "sha256": "9594c907759f5ec8e46538acafc10d2984db4f904ad07661580eb20cf822b7e1",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/reload.80037.mp3",
+          "role": "source",
+          "bytes": 27037,
+          "sha256": "32c7562792e7b4e3532af4953a60718a1c223c4f29bfff924ae3ace1a95c2fbb"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__reload.80037.mp3__32c7562792e7/reload.80037.wav",
+          "bytes": 236800,
+          "sha256": "1b168a4b6e47818a185e3ccf1f2a84b2c5e1eea1f34b967859f61fa2c9ffde51",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/rifle.43483.mp3",
+          "role": "source",
+          "bytes": 2548,
+          "sha256": "92a73ec09e66108e83c6c67fe3c2b3a757a46b0e9afeeef1ae5642a0be7a3a00"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__rifle.43483.mp3__92a73ec09e66/rifle.43483.wav",
+          "bytes": 31744,
+          "sha256": "290604de31759c73a58a197046867099d7f19c5dd7b9dea2ac3cd5e5b6bb2977",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/slash.43483(1).mp3",
+          "role": "source",
+          "bytes": 10891,
+          "sha256": "8064a1a8dd4a740cd64c135b70c5cdeb3711cb14341b0d1fdfb7c723ef741630"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__slash.43483_1_.mp3__8064a1a8dd4a/slash.43483_1.wav",
+          "bytes": 57088,
+          "sha256": "5f1ecbababb4268121a5bc8c0533900917d37e84192dd6cd56a82ff27f3e99fc",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/slash.43483(2).mp3",
+          "role": "source",
+          "bytes": 11206,
+          "sha256": "7a3051e4e5b4afb308758ab88eb2e8fa309df74c347589f8a98c3be4d7574024"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__slash.43483_2_.mp3__7a3051e4e5b4/slash.43483_2.wav",
+          "bytes": 61696,
+          "sha256": "04e473b954254bb80ec39690e3d903293228b9902c64bb1363884e3152230271",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/slash.43483.mp3",
+          "role": "source",
+          "bytes": 8570,
+          "sha256": "269a1a1cf1e63b4f4caa7a1d5102f5314bca2cc0674b1dab99cf3f15a79d0501"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__slash.43483.mp3__269a1a1cf1e6/slash.43483.wav",
+          "bytes": 31744,
+          "sha256": "d407174c34e6f3a5e8d02d2bf268511e83f1649c08647a6a5b57ca591c275961",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/slash.45987.mp3",
+          "role": "source",
+          "bytes": 9402,
+          "sha256": "f319f69d0e634c33e84805880686d000b725f0bea2c363786efc6d3cd733dcda"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__slash.45987.mp3__f319f69d0e63/slash.45987.wav",
+          "bytes": 40960,
+          "sha256": "09eb93e5602e779472a92cf1c4558e68dfb0927ae470b996dd2acc29892cb446",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/slash.56270.mp3",
+          "role": "source",
+          "bytes": 11603,
+          "sha256": "efeea18e695f28061aafc0b38727ce3afb0f0e42fda8a22712fd87743f872a03"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__slash.56270.mp3__efeea18e695f/slash.56270.wav",
+          "bytes": 73216,
+          "sha256": "150e73ec884c65bdbb0c82442c81c8cc0734d0bb37f96bd4fc13386285a054f8",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/stab.43483.mp3",
+          "role": "source",
+          "bytes": 7732,
+          "sha256": "a7df0eeb3c289d3f6a6e2a807cfa1c8a803e23b7f70459a54203e1618e0c77f0"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__stab.43483.mp3__a7df0eeb3c28/stab.43483.wav",
+          "bytes": 89344,
+          "sha256": "e277f31460e2f8267e84ff80d6d9f8dfd5c6f0967b1f324aac33727146096861",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/stab.46809(1).mp3",
+          "role": "source",
+          "bytes": 11136,
+          "sha256": "21735b9d9d61ec87a218d92b5bd08618b9e84e3316efafdc2a50b97cf46c8964"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__stab.46809_1_.mp3__21735b9d9d61/stab.46809_1.wav",
+          "bytes": 35200,
+          "sha256": "ff7e185a528dff08567a72da588d7b05f4179d746974cc262498de0a05033c53",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/stab.46809.mp3",
+          "role": "source",
+          "bytes": 11136,
+          "sha256": "21735b9d9d61ec87a218d92b5bd08618b9e84e3316efafdc2a50b97cf46c8964"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__stab.46809.mp3__21735b9d9d61/stab.46809.wav",
+          "bytes": 35200,
+          "sha256": "ff7e185a528dff08567a72da588d7b05f4179d746974cc262498de0a05033c53",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/stab.46813.mp3",
+          "role": "source",
+          "bytes": 12339,
+          "sha256": "5bbe725b7fd60c080a8ffa6c562cbf09a84658a7498077496e7ba6b58ef58e19"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__stab.46813.mp3__5bbe725b7fd6/stab.46813.wav",
+          "bytes": 50176,
+          "sha256": "3c94111e73ad1faeac44cc068d2018660c4cfcc9b08d5d382bcdbe53f5b2a70a",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/stab.56270.mp3",
+          "role": "source",
+          "bytes": 12963,
+          "sha256": "c4c2dea2fa178f211f42ed09fc28f783a1db8213ddd7cc7e7a6c6923f1f70215"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__stab.56270.mp3__c4c2dea2fa17/stab.56270.wav",
+          "bytes": 82432,
+          "sha256": "c9d14825b3b32da2b1b109a711b337afc6d8fed3f48a9253a8baea0ad5657b6e",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/stab.60868.mp3",
+          "role": "source",
+          "bytes": 5785,
+          "sha256": "f27913da8ea9dbe0dafc75063b50b2b403eedc8577119cf0c9f8f171bb8f92db"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__stab.60868.mp3__f27913da8ea9/stab.60868.wav",
+          "bytes": 59392,
+          "sha256": "ec8a27300b974e7783545f6d64826c4a6b18707f8f203a6067e4b0916cc64842",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/stab.69100.mp3",
+          "role": "source",
+          "bytes": 12595,
+          "sha256": "56d6d264f082eae2248c238004cffc55486f83709b9ce6488b547f24a58ff433"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__stab.69100.mp3__56d6d264f082/stab.69100.wav",
+          "bytes": 81996,
+          "sha256": "d14f6c8f351ff199bc1808d9641a8f55b8352064e275f3d06ddc0b613cf44872",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/step1.51695.mp3",
+          "role": "source",
+          "bytes": 9404,
+          "sha256": "b3c5ac880972194bbaba2063d3d454c92d1221e6ff542176a767f2ff1d7ba8f6"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__step1.51695.mp3__b3c5ac880972/step1.51695.wav",
+          "bytes": 14464,
+          "sha256": "405ea0fb7fe8ecdb91fc99b467d0fc04d8d33ca854d74e01ba7f0448f5431c66",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/step2.51695.mp3",
+          "role": "source",
+          "bytes": 8359,
+          "sha256": "d3e0b8bd4f985267923c456444719d2ee3b979069b8baa668eb1151547faf469"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__step2.51695.mp3__d3e0b8bd4f98/step2.51695.wav",
+          "bytes": 13312,
+          "sha256": "5f440ecb470bfe609f16b26baf28ea81015663846e422806714f2ff09482bea1",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/step3.51695.mp3",
+          "role": "source",
+          "bytes": 7314,
+          "sha256": "843681512208cec159f12984db536f9880eecb69e3fb5f69dcc742dfbbffbcea"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__step3.51695.mp3__843681512208/step3.51695.wav",
+          "bytes": 12160,
+          "sha256": "c9d1cd1a335998e270a3859c2210cadc420dfd43dc60c4e0d61c78c20c3634fe",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    },
+    {
+      "kind": "audio_to_wav",
+      "inputs": [
+        {
+          "path": "_解压资源/创世兵魂素材/创世兵魂/step4.51695.mp3",
+          "role": "source",
+          "bytes": 8359,
+          "sha256": "78f90d6fad8a72a693cfdacd112d573ffcb0211c07846112b32e0007dd1e74b3"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "audio/解压资源__创世兵魂素材__创世兵魂__step4.51695.mp3__78f90d6fad8a/step4.51695.wav",
+          "bytes": 13312,
+          "sha256": "635af6a7fda1e3cd3852ef62a324dbc1189396fb3ea28a7880a7a405b49f1f87",
+          "format": "wav_pcm16",
+          "status": "verified_existing"
+        }
+      ],
+      "parameters": {
+        "container": "WAVE",
+        "codec": "LEI16"
+      },
+      "status": "converted"
+    }
+  ]
+}

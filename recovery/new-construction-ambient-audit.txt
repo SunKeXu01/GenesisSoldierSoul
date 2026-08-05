@@ -1,0 +1,10 @@
+clip=GeneratedConstructionWind
+samples=176400
+frequency=22050
+length=8.000
+rms=0.058390
+seamDelta=0.000091
+loop=True
+playOnAwake=False
+spatialBlend=0.0
+failures=none

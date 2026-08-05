@@ -1,0 +1,42 @@
+{
+  "workspace": "/Users/Admin/Documents/创世兵魂",
+  "output": "/Users/Admin/Documents/创世兵魂/_安全解压资源",
+  "extract": true,
+  "summary": {
+    "extracted": 4
+  },
+  "archives": [
+    {
+      "archive": "base.apk.1",
+      "bytes": 93542969,
+      "status": "extracted",
+      "members": 234,
+      "sha256": "c90fbfd89f75a174d90c2071fa26495a106e694c273762417da3bcb7f6cd6b55",
+      "destination": "_安全解压资源/base.apk.1__c90fbfd89f75"
+    },
+    {
+      "archive": "兵魂回忆录.apk.1",
+      "bytes": 156567295,
+      "status": "extracted",
+      "members": 409,
+      "sha256": "57cb40fcff6a17a914c33255b25b1134d07b38244c3bba0efd69e835fd2a7e14",
+      "destination": "_安全解压资源/兵魂回忆录.apk.1__57cb40fcff6a"
+    },
+    {
+      "archive": "创世兵魂地图手机版浏览（通过缓存恢复的）.apk.1",
+      "bytes": 148510586,
+      "status": "extracted",
+      "members": 167,
+      "sha256": "698aeba0ef194559875ee1ac567f1c01a54dd0ffec12dae9cda30c43e2cac45e",
+      "destination": "_安全解压资源/创世兵魂地图手机版浏览_通过缓存恢复的_.apk.1__698aeba0ef19"
+    },
+    {
+      "archive": "遗迹杀戮(1).apk.1",
+      "bytes": 135222989,
+      "status": "extracted",
+      "members": 1273,
+      "sha256": "c9745db1614ead6401bdfb74328f1147f898dd080942749ce7d77b635329a5a2",
+      "destination": "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e"
+    }
+  ]
+}

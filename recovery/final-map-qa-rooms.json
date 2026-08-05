@@ -1,0 +1,60 @@
+{
+  "rooms": [
+    {
+      "id": "e87aac62",
+      "name": "MapQA Pyramid",
+      "map": "pyramid",
+      "maxPlayers": 12,
+      "createdAt": 1785750577404,
+      "players": 0
+    },
+    {
+      "id": "5eea1bb8",
+      "name": "MapQA NewConstruction",
+      "map": "newconstructionsite",
+      "maxPlayers": 12,
+      "createdAt": 1785750577405,
+      "players": 0
+    },
+    {
+      "id": "e2121622",
+      "name": "MapQA Biochemical",
+      "map": "biochemicaltown",
+      "maxPlayers": 12,
+      "createdAt": 1785750577406,
+      "players": 0
+    },
+    {
+      "id": "ee84f304",
+      "name": "MapQA Classic",
+      "map": "classicconstructionsite",
+      "maxPlayers": 12,
+      "createdAt": 1785750601632,
+      "players": 0
+    },
+    {
+      "id": "da28f1db",
+      "name": "MapQA Steel",
+      "map": "steelfactory",
+      "maxPlayers": 12,
+      "createdAt": 1785745742745,
+      "players": 0
+    },
+    {
+      "id": "8d888cd0",
+      "name": "MapQA IceFire",
+      "map": "icefiremaze",
+      "maxPlayers": 12,
+      "createdAt": 1785745742756,
+      "players": 0
+    },
+    {
+      "id": "c596b30a",
+      "name": "MapQA Radiation",
+      "map": "radiationdistrict",
+      "maxPlayers": 12,
+      "createdAt": 1785745742766,
+      "players": 0
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+map=RadiationDistrict
+profile=IndustrialHum
+clip=GeneratedIndustrialHum
+samples=176400
+frequency=22050
+length=8.000
+rms=0.038937
+seamDelta=0.000169
+loop=True
+playOnAwake=False
+spatialBlend=0.0
+failures=none

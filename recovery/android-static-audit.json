@@ -1,0 +1,2734 @@
+{
+  "generated_at_utc": "2026-08-04T05:18:23.193577+00:00",
+  "tools": {
+    "apkanalyzer": "/opt/homebrew/bin/apkanalyzer",
+    "java_home": "/opt/homebrew/opt/openjdk@17",
+    "monodis": "/Applications/Unity/Unity.app/Contents/MonoBleedingEdge/bin/monodis"
+  },
+  "packages": [
+    {
+      "archive": "base.apk.1",
+      "archive_sha256": "c90fbfd89f75a174d90c2071fa26495a106e694c273762417da3bcb7f6cd6b55",
+      "archive_bytes": 93542969,
+      "extracted_root": "_安全解压资源/base.apk.1__c90fbfd89f75",
+      "manifest": {
+        "package": "com.Game.Test",
+        "version_code": "1",
+        "version_name": "0.1.1T",
+        "install_location": "2",
+        "platform_build_version": "5.0.1-1624448",
+        "min_sdk": "22",
+        "target_sdk": "22",
+        "permissions": [],
+        "components": {
+          "activity": [
+            {
+              "name": "com.unity3d.player.UnityPlayerActivity",
+              "exported": null,
+              "permission": null,
+              "authorities": null,
+              "actions": [
+                "android.intent.action.MAIN"
+              ],
+              "categories": [
+                "android.intent.category.LAUNCHER",
+                "android.intent.category.LEANBACK_LAUNCHER"
+              ]
+            }
+          ],
+          "activity-alias": [],
+          "service": [],
+          "provider": [],
+          "receiver": []
+        },
+        "application": {
+          "name": null,
+          "debuggable": "false",
+          "uses_cleartext_traffic": null,
+          "network_security_config": null,
+          "backup_agent": null
+        }
+      },
+      "engine": {
+        "engine": "Unity",
+        "backend": "Mono",
+        "version": "5.2.5f1",
+        "evidence": [
+          "libunity.so",
+          "libmono*.so"
+        ]
+      },
+      "dex": {
+        "files": [
+          {
+            "path": "classes.dex",
+            "bytes": 77836,
+            "sha256": "d1cc3125fe2c6a4511bc56a4f98600a78e9b1079e0863bf7cfad115427542f0f",
+            "dex_version": "035",
+            "file_size_header": 77836,
+            "strings": 985,
+            "types": 275,
+            "prototypes": 330,
+            "fields": 286,
+            "methods": 961,
+            "classes": 79,
+            "network_endpoints": []
+          }
+        ],
+        "summary": {
+          "total": {
+            "kind": "P",
+            "defined": 468,
+            "referenced": 961,
+            "bytes": 48516,
+            "name": "<TOTAL>"
+          },
+          "top_packages": [
+            {
+              "kind": "P",
+              "defined": 442,
+              "referenced": 473,
+              "bytes": 41707,
+              "name": "com"
+            },
+            {
+              "kind": "P",
+              "defined": 442,
+              "referenced": 473,
+              "bytes": 41707,
+              "name": "com.unity3d"
+            },
+            {
+              "kind": "P",
+              "defined": 442,
+              "referenced": 473,
+              "bytes": 41707,
+              "name": "com.unity3d.player"
+            },
+            {
+              "kind": "P",
+              "defined": 19,
+              "referenced": 30,
+              "bytes": 2374,
+              "name": "org"
+            },
+            {
+              "kind": "P",
+              "defined": 19,
+              "referenced": 19,
+              "bytes": 2286,
+              "name": "org.fmod"
+            },
+            {
+              "kind": "P",
+              "defined": 7,
+              "referenced": 7,
+              "bytes": 539,
+              "name": "bitter"
+            },
+            {
+              "kind": "P",
+              "defined": 7,
+              "referenced": 7,
+              "bytes": 539,
+              "name": "bitter.jnibridge"
+            }
+          ]
+        }
+      },
+      "native_libraries": [
+        {
+          "path": "lib/armeabi-v7a/libmain.so",
+          "abi_directory": "armeabi-v7a",
+          "bytes": 33968,
+          "sha256": "4657bab3c1ad2f9c54cf52fe6deffcb8411493f9db113ae3a9655f6fbffabdef",
+          "elf_architecture": "arm",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/armeabi-v7a/libmono.so",
+          "abi_directory": "armeabi-v7a",
+          "bytes": 3758452,
+          "sha256": "6595a68b255119d8ba556002dfa61fd59ee74bff032da96dfbdd715643f137dc",
+          "elf_architecture": "arm",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/armeabi-v7a/libunity.so",
+          "abi_directory": "armeabi-v7a",
+          "bytes": 14582660,
+          "sha256": "cccd07b414123a00805edcd762c5fe3e9a49c245c468facd352d9518f45a6f58",
+          "elf_architecture": "arm",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/x86/libmain.so",
+          "abi_directory": "x86",
+          "bytes": 20156,
+          "sha256": "b849096d6e6e2015cc3896a716b5480499648ab5bbd3679c420740408f3d340d",
+          "elf_architecture": "x86",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/x86/libmono.so",
+          "abi_directory": "x86",
+          "bytes": 3624156,
+          "sha256": "21a7e39f49b31daf7521490b9def9423267b7f2132c521ac2c2184ab3dae3764",
+          "elf_architecture": "x86",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/x86/libunity.so",
+          "abi_directory": "x86",
+          "bytes": 18147608,
+          "sha256": "d81cfbdeaa13c1880fb9c2c0f93106d3f6a41b881a5e9de8e45be2621d51f257",
+          "elf_architecture": "x86",
+          "elf_bits": "32"
+        }
+      ],
+      "data": {
+        "present": true,
+        "files": 215,
+        "bytes": 201301391,
+        "managed_assemblies": [
+          "assets/bin/Data/Managed/Assembly-CSharp.dll",
+          "assets/bin/Data/Managed/Mono.Security.dll",
+          "assets/bin/Data/Managed/System.Core.dll",
+          "assets/bin/Data/Managed/System.dll",
+          "assets/bin/Data/Managed/UnityEngine.Networking.dll",
+          "assets/bin/Data/Managed/UnityEngine.UI.dll",
+          "assets/bin/Data/Managed/UnityEngine.dll",
+          "assets/bin/Data/Managed/mscorlib.dll"
+        ],
+        "managed_assembly_count": 8,
+        "split_files": 183,
+        "serialized_files": 5,
+        "resource_streams": 7,
+        "has_global_metadata": false
+      },
+      "embedded_obb": [
+        {
+          "path": "_exported-unity-objects/MonoScript/sharedassets0.assets__29__NetworkLobbyManager.json",
+          "bytes": 584,
+          "sha256": "a797d8f65961021fdb9091457781d688fa1919b1afb3b380de30c42ca852e664",
+          "container": "unknown",
+          "members": 0,
+          "member_samples": []
+        },
+        {
+          "path": "_exported-unity-objects/MonoScript/sharedassets0.assets__53__NetworkLobbyPlayer.json",
+          "bytes": 588,
+          "sha256": "0494cfff01793c614d51f9bebe1313f2ae820d7faf35ed06228d6655851f804a",
+          "container": "unknown",
+          "members": 0,
+          "member_samples": []
+        }
+      ],
+      "mono": {
+        "assembly": "assets/bin/Data/Managed/Assembly-CSharp.dll",
+        "bytes": 12288,
+        "sha256": "1bd326427e19e4afffbe433e7c6d2b35d3000de444b652d54436162870d6a806",
+        "metadata_directory": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/android-mono-metadata/base.apk.1__c90fbfd89f75",
+        "types": 14,
+        "fields": 73,
+        "methods": 62,
+        "constants": 1,
+        "candidate_types": [
+          "10: PlayerControl (flist=28, mlist=33, flags=0x100001, extends=0x5)"
+        ],
+        "state_machines": [],
+        "numeric_il_literals": [
+          {
+            "value": "0.",
+            "uses": 19
+          },
+          {
+            "value": "-1.",
+            "uses": 5
+          },
+          {
+            "value": "1.",
+            "uses": 5
+          },
+          {
+            "value": "0x09",
+            "uses": 2
+          },
+          {
+            "value": "0x0a",
+            "uses": 2
+          },
+          {
+            "value": "0x0b",
+            "uses": 2
+          },
+          {
+            "value": "0x0c",
+            "uses": 2
+          },
+          {
+            "value": "0x0d",
+            "uses": 2
+          },
+          {
+            "value": "0x0e",
+            "uses": 2
+          },
+          {
+            "value": "0x0f",
+            "uses": 2
+          },
+          {
+            "value": "0x10",
+            "uses": 2
+          },
+          {
+            "value": "0x11",
+            "uses": 2
+          },
+          {
+            "value": "0x12",
+            "uses": 2
+          },
+          {
+            "value": "0x13",
+            "uses": 2
+          },
+          {
+            "value": "0x14",
+            "uses": 2
+          },
+          {
+            "value": "0x15",
+            "uses": 2
+          },
+          {
+            "value": "0x16",
+            "uses": 2
+          },
+          {
+            "value": "0x17",
+            "uses": 2
+          },
+          {
+            "value": "0x18",
+            "uses": 2
+          },
+          {
+            "value": "0x19",
+            "uses": 2
+          },
+          {
+            "value": "0x1a",
+            "uses": 2
+          },
+          {
+            "value": "0x1b",
+            "uses": 2
+          },
+          {
+            "value": "0x1c",
+            "uses": 2
+          },
+          {
+            "value": "0x1d",
+            "uses": 2
+          },
+          {
+            "value": "5.",
+            "uses": 2
+          },
+          {
+            "value": "IL_001c:  callvirt instance void class [UnityEngine]UnityEngine.GameObject::SetActive(bool)",
+            "uses": 2
+          },
+          {
+            "value": "2.",
+            "uses": 2
+          },
+          {
+            "value": "0x64",
+            "uses": 2
+          },
+          {
+            "value": "4.",
+            "uses": 2
+          },
+          {
+            "value": "50.",
+            "uses": 2
+          },
+          {
+            "value": "0.10000000149011612",
+            "uses": 1
+          },
+          {
+            "value": "IL_0018:  ldc.i4.s 0x1e",
+            "uses": 1
+          },
+          {
+            "value": "IL_0022:  bne.un IL_003f",
+            "uses": 1
+          },
+          {
+            "value": "IL_0034:  ldelem.ref",
+            "uses": 1
+          },
+          {
+            "value": "IL_0041:  bne.un IL_005e",
+            "uses": 1
+          },
+          {
+            "value": "IL_0053:  ldelem.ref",
+            "uses": 1
+          },
+          {
+            "value": "IL_0060:  bne.un IL_007d",
+            "uses": 1
+          },
+          {
+            "value": "IL_0072:  ldelem.ref",
+            "uses": 1
+          },
+          {
+            "value": "IL_007f:  bne.un IL_009c",
+            "uses": 1
+          },
+          {
+            "value": "IL_0091:  ldelem.ref",
+            "uses": 1
+          },
+          {
+            "value": "IL_009e:  bne.un IL_00bb",
+            "uses": 1
+          },
+          {
+            "value": "IL_00b0:  ldelem.ref",
+            "uses": 1
+          },
+          {
+            "value": "IL_00bd:  bne.un IL_00da",
+            "uses": 1
+          },
+          {
+            "value": "IL_00cf:  ldelem.ref",
+            "uses": 1
+          },
+          {
+            "value": "IL_00dc:  bne.un IL_00f9",
+            "uses": 1
+          },
+          {
+            "value": "IL_00ee:  ldelem.ref",
+            "uses": 1
+          },
+          {
+            "value": "IL_00fb:  bne.un IL_0118",
+            "uses": 1
+          },
+          {
+            "value": "IL_010d:  ldelem.ref",
+            "uses": 1
+          },
+          {
+            "value": "IL_012d:  ldelem.ref",
+            "uses": 1
+          },
+          {
+            "value": "IL_03e6:  ldc.i4.2",
+            "uses": 1
+          }
+        ],
+        "il_sha256": "848b7cd643120bfc6e53c89691048dee8c596591566dc7bff12387157813cbe7"
+      },
+      "security_boundary": "static_only_no_install_no_execution_no_auth_bypass"
+    },
+    {
+      "archive": "兵魂回忆录.apk.1",
+      "archive_sha256": "57cb40fcff6a17a914c33255b25b1134d07b38244c3bba0efd69e835fd2a7e14",
+      "archive_bytes": 156567295,
+      "extracted_root": "_安全解压资源/兵魂回忆录.apk.1__57cb40fcff6a",
+      "manifest": {
+        "package": "com.gx.memory",
+        "version_code": "1",
+        "version_name": "1.0",
+        "install_location": "2",
+        "platform_build_version": "10",
+        "min_sdk": "16",
+        "target_sdk": "29",
+        "permissions": [
+          "android.permission.ACCESS_NETWORK_STATE",
+          "android.permission.INTERNET"
+        ],
+        "components": {
+          "activity": [
+            {
+              "name": "com.unity3d.player.UnityPlayerActivity",
+              "exported": null,
+              "permission": null,
+              "authorities": null,
+              "actions": [
+                "android.intent.action.MAIN"
+              ],
+              "categories": [
+                "android.intent.category.LAUNCHER"
+              ]
+            },
+            {
+              "name": "com.unity3d.splash.services.ads.adunit.AdUnitActivity",
+              "exported": null,
+              "permission": null,
+              "authorities": null,
+              "actions": [],
+              "categories": []
+            },
+            {
+              "name": "com.unity3d.splash.services.ads.adunit.AdUnitTransparentActivity",
+              "exported": null,
+              "permission": null,
+              "authorities": null,
+              "actions": [],
+              "categories": []
+            },
+            {
+              "name": "com.unity3d.splash.services.ads.adunit.AdUnitTransparentSoftwareActivity",
+              "exported": null,
+              "permission": null,
+              "authorities": null,
+              "actions": [],
+              "categories": []
+            },
+            {
+              "name": "com.unity3d.splash.services.ads.adunit.AdUnitSoftwareActivity",
+              "exported": null,
+              "permission": null,
+              "authorities": null,
+              "actions": [],
+              "categories": []
+            }
+          ],
+          "activity-alias": [],
+          "service": [],
+          "provider": [],
+          "receiver": []
+        },
+        "application": {
+          "name": null,
+          "debuggable": null,
+          "uses_cleartext_traffic": null,
+          "network_security_config": null,
+          "backup_agent": null
+        }
+      },
+      "engine": {
+        "engine": "Unity",
+        "backend": "Mono",
+        "version": "2018.4.14c1",
+        "evidence": [
+          "libunity.so",
+          "libmono*.so"
+        ]
+      },
+      "dex": {
+        "files": [
+          {
+            "path": "classes.dex",
+            "bytes": 327388,
+            "sha256": "6e0062fe94aa7e991b78c26bc9b7b13f81aff1b7b7df108275919ef8cf4791e5",
+            "dex_version": "035",
+            "file_size_header": 327388,
+            "strings": 3453,
+            "types": 763,
+            "prototypes": 953,
+            "fields": 1040,
+            "methods": 3181,
+            "classes": 329,
+            "network_endpoints": [
+              "https://splash-ads.unitychina.cn/webview/release/config.json",
+              "https://splash.unity.cn/api/register-game-launch"
+            ]
+          }
+        ],
+        "summary": {
+          "total": {
+            "kind": "P",
+            "defined": 1950,
+            "referenced": 3181,
+            "bytes": 209504,
+            "name": "<TOTAL>"
+          },
+          "top_packages": [
+            {
+              "kind": "P",
+              "defined": 1921,
+              "referenced": 2087,
+              "bytes": 197190,
+              "name": "com"
+            },
+            {
+              "kind": "P",
+              "defined": 1916,
+              "referenced": 2082,
+              "bytes": 196500,
+              "name": "com.unity3d"
+            },
+            {
+              "kind": "P",
+              "defined": 1316,
+              "referenced": 1445,
+              "bytes": 138247,
+              "name": "com.unity3d.splash"
+            },
+            {
+              "kind": "P",
+              "defined": 600,
+              "referenced": 637,
+              "bytes": 58253,
+              "name": "com.unity3d.player"
+            },
+            {
+              "kind": "P",
+              "defined": 5,
+              "referenced": 5,
+              "bytes": 690,
+              "name": "com.gx"
+            },
+            {
+              "kind": "P",
+              "defined": 5,
+              "referenced": 5,
+              "bytes": 690,
+              "name": "com.gx.memory"
+            },
+            {
+              "kind": "P",
+              "defined": 19,
+              "referenced": 52,
+              "bytes": 2490,
+              "name": "org"
+            },
+            {
+              "kind": "P",
+              "defined": 19,
+              "referenced": 19,
+              "bytes": 2226,
+              "name": "org.fmod"
+            },
+            {
+              "kind": "P",
+              "defined": 10,
+              "referenced": 10,
+              "bytes": 928,
+              "name": "bitter"
+            },
+            {
+              "kind": "P",
+              "defined": 10,
+              "referenced": 10,
+              "bytes": 928,
+              "name": "bitter.jnibridge"
+            }
+          ]
+        }
+      },
+      "native_libraries": [
+        {
+          "path": "lib/armeabi-v7a/libMonoPosixHelper.so",
+          "abi_directory": "armeabi-v7a",
+          "bytes": 317132,
+          "sha256": "197147c939eb6775da4f68254e56ed61f34ef0ecc00d5b05a9fce0ac7a0a07d2",
+          "elf_architecture": "arm",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/armeabi-v7a/libmain.so",
+          "abi_directory": "armeabi-v7a",
+          "bytes": 22476,
+          "sha256": "433777368fddefeab8e349b3e9731b893dcc405e61353f93cac8f555202b688a",
+          "elf_architecture": "arm",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/armeabi-v7a/libmonobdwgc-2.0.so",
+          "abi_directory": "armeabi-v7a",
+          "bytes": 5435624,
+          "sha256": "96eac10899ce41c836b475f746c6a6bc9b5aea520f81b52ebcc767de2b1e9903",
+          "elf_architecture": "arm",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/armeabi-v7a/libunity.so",
+          "abi_directory": "armeabi-v7a",
+          "bytes": 17818308,
+          "sha256": "4739b3bf60b7ee850c845038a6f4bafefff49c9fe71e1fc1760f70c0a3d5f641",
+          "elf_architecture": "arm",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/x86/libMonoPosixHelper.so",
+          "abi_directory": "x86",
+          "bytes": 280232,
+          "sha256": "fa9a8028652cd0694c91e1878814d7744853e01c45eebad8acaae3cfc9fba6c1",
+          "elf_architecture": "x86",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/x86/libmain.so",
+          "abi_directory": "x86",
+          "bytes": 9900,
+          "sha256": "506e8868027556f3b6b3f22f9c1d0b0238212c03e90005f5e162fad7d674d0b2",
+          "elf_architecture": "x86",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/x86/libmonobdwgc-2.0.so",
+          "abi_directory": "x86",
+          "bytes": 5096632,
+          "sha256": "bf547d1e32a4ef4197c99a3b3d5133c2fdad9659a7a748a8daeeb41d1216408e",
+          "elf_architecture": "x86",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/x86/libunity.so",
+          "abi_directory": "x86",
+          "bytes": 22023932,
+          "sha256": "bd6ff4bfe7ee43eb90ac45131f9c2efa5a11e4ec857ff8d516fc31831e5972c6",
+          "elf_architecture": "x86",
+          "elf_bits": "32"
+        }
+      ],
+      "data": {
+        "present": true,
+        "files": 383,
+        "bytes": 289629225,
+        "managed_assemblies": [
+          "assets/bin/Data/Managed/Assembly-CSharp.dll",
+          "assets/bin/Data/Managed/Mono.Security.dll",
+          "assets/bin/Data/Managed/System.ComponentModel.Composition.dll",
+          "assets/bin/Data/Managed/System.Configuration.dll",
+          "assets/bin/Data/Managed/System.Core.dll",
+          "assets/bin/Data/Managed/System.Data.dll",
+          "assets/bin/Data/Managed/System.Diagnostics.StackTrace.dll",
+          "assets/bin/Data/Managed/System.Drawing.dll",
+          "assets/bin/Data/Managed/System.EnterpriseServices.dll",
+          "assets/bin/Data/Managed/System.Globalization.Extensions.dll",
+          "assets/bin/Data/Managed/System.IO.Compression.FileSystem.dll",
+          "assets/bin/Data/Managed/System.IO.Compression.dll",
+          "assets/bin/Data/Managed/System.Net.Http.dll",
+          "assets/bin/Data/Managed/System.Numerics.dll",
+          "assets/bin/Data/Managed/System.Runtime.Serialization.Xml.dll",
+          "assets/bin/Data/Managed/System.Runtime.Serialization.dll",
+          "assets/bin/Data/Managed/System.ServiceModel.Internals.dll",
+          "assets/bin/Data/Managed/System.Transactions.dll",
+          "assets/bin/Data/Managed/System.Xml.Linq.dll",
+          "assets/bin/Data/Managed/System.Xml.XPath.XDocument.dll",
+          "assets/bin/Data/Managed/System.Xml.dll",
+          "assets/bin/Data/Managed/System.dll",
+          "assets/bin/Data/Managed/Unity.Analytics.DataPrivacy.dll",
+          "assets/bin/Data/Managed/Unity.InternalAPIEngineBridge.024.dll",
+          "assets/bin/Data/Managed/Unity.TextMeshPro.dll",
+          "assets/bin/Data/Managed/Unity.UIWidgets.dll",
+          "assets/bin/Data/Managed/UnityEngine.AIModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.ARModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.AccessibilityModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.AnimationModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.AssetBundleModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.AudioModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.BaselibModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.ClothModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.CoreModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.CrashReportingModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.DirectorModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.FileSystemHttpModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.GameCenterModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.GridModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.HotReloadModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.IMGUIModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.ImageConversionModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.InputModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.JSONSerializeModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.LocalizationModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.Networking.dll",
+          "assets/bin/Data/Managed/UnityEngine.ParticleSystemModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.PerformanceReportingModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.Physics2DModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.PhysicsModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.ProfilerModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.ScreenCaptureModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.SharedInternalsModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.SpatialTracking.dll",
+          "assets/bin/Data/Managed/UnityEngine.SpatialTrackingModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.SpriteMaskModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.SpriteShapeModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.StreamingModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.StyleSheetsModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.SubstanceModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.TLSModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.TerrainModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.TerrainPhysicsModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.TextCoreModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.TextRenderingModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.TilemapModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.Timeline.dll",
+          "assets/bin/Data/Managed/UnityEngine.TimelineModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.UI.dll",
+          "assets/bin/Data/Managed/UnityEngine.UIElementsModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.UIModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.UNETModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.UmbraModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.UnityAnalyticsModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.UnityConnectModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.UnityTestProtocolModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.UnityWebRequestModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.VFXModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.VRModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.VehiclesModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.VideoModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.WindModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.XRModule.dll",
+          "assets/bin/Data/Managed/UnityEngine.dll",
+          "assets/bin/Data/Managed/mscorlib.dll",
+          "assets/bin/Data/Managed/netstandard.dll"
+        ],
+        "managed_assembly_count": 91,
+        "split_files": 241,
+        "serialized_files": 8,
+        "resource_streams": 4,
+        "has_global_metadata": false
+      },
+      "embedded_obb": [],
+      "mono": {
+        "assembly": "assets/bin/Data/Managed/Assembly-CSharp.dll",
+        "bytes": 81408,
+        "sha256": "e713d5b8869779a5807727ed05289d4c72a61d1dd33a161b04ff975f0750a8ad",
+        "metadata_directory": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/android-mono-metadata/兵魂回忆录.apk.1__57cb40fcff6a",
+        "types": 103,
+        "fields": 553,
+        "methods": 786,
+        "constants": 127,
+        "candidate_types": [
+          "15: MoveController (flist=67, mlist=127, flags=0x100001, extends=0x15)"
+        ],
+        "state_machines": [
+          "101: EasyTouch/<>c (flist=495, mlist=695, flags=0x102103, extends=0x61)",
+          "37: jinzu/<LoadScene>d__3 (flist=347, mlist=493, flags=0x100103, extends=0x61)",
+          "38: jump/<LoadScene>d__3 (flist=353, mlist=499, flags=0x100103, extends=0x61)",
+          "39: nice/<LoadScene>d__3 (flist=359, mlist=505, flags=0x100103, extends=0x61)"
+        ],
+        "numeric_il_literals": [
+          {
+            "value": "0.",
+            "uses": 109
+          },
+          {
+            "value": "IL_000c:  callvirt instance void class [UnityEngine.CoreModule]UnityEngine.GameObject::SetActive(bool)",
+            "uses": 92
+          },
+          {
+            "value": "2.",
+            "uses": 40
+          },
+          {
+            "value": "100.",
+            "uses": 23
+          },
+          {
+            "value": "1.",
+            "uses": 19
+          },
+          {
+            "value": "360.",
+            "uses": 12
+          },
+          {
+            "value": "-1.",
+            "uses": 11
+          },
+          {
+            "value": "0x0a",
+            "uses": 10
+          },
+          {
+            "value": "308",
+            "uses": 7
+          },
+          {
+            "value": "306",
+            "uses": 7
+          },
+          {
+            "value": "IL_0001:  stloc.0",
+            "uses": 6
+          },
+          {
+            "value": "0.019999999552965164",
+            "uses": 4
+          },
+          {
+            "value": "20.",
+            "uses": 4
+          },
+          {
+            "value": "IL_0021:  ret",
+            "uses": 3
+          },
+          {
+            "value": "IL_004e:  callvirt instance void class [UnityEngine.CoreModule]UnityEngine.AsyncOperation::set_allowSceneActivation(bool)",
+            "uses": 3
+          },
+          {
+            "value": "IL_0076:  add",
+            "uses": 3
+          },
+          {
+            "value": "IL_00aa:  ret",
+            "uses": 3
+          },
+          {
+            "value": "0.89999997615814209",
+            "uses": 3
+          },
+          {
+            "value": "0x64",
+            "uses": 3
+          },
+          {
+            "value": "IL_00e3:  add",
+            "uses": 3
+          },
+          {
+            "value": "IL_0117:  ret",
+            "uses": 3
+          },
+          {
+            "value": "IL_0134:  callvirt instance void class [UnityEngine.CoreModule]UnityEngine.AsyncOperation::set_allowSceneActivation(bool)",
+            "uses": 3
+          },
+          {
+            "value": "IL_013a:  ret",
+            "uses": 3
+          },
+          {
+            "value": "0.20000000298023224",
+            "uses": 3
+          },
+          {
+            "value": "IL_0022:  stfld bool EasyJoystick::virtualJoystick",
+            "uses": 3
+          },
+          {
+            "value": "180.",
+            "uses": 3
+          },
+          {
+            "value": "0.0099999997764825821",
+            "uses": 3
+          },
+          {
+            "value": "57.295780181884766",
+            "uses": 3
+          },
+          {
+            "value": "0.10000000149011612",
+            "uses": 2
+          },
+          {
+            "value": "IL_0006:  bne.un IL_0173",
+            "uses": 2
+          },
+          {
+            "value": "IL_000c:  call valuetype [UnityEngine.CoreModule]UnityEngine.Touch class [UnityEngine.CoreModule]UnityEngine.Input::GetTouch(int32)",
+            "uses": 2
+          },
+          {
+            "value": "IL_001a:  bne.un IL_0173",
+            "uses": 2
+          },
+          {
+            "value": "IL_005c:  stloc.3",
+            "uses": 2
+          },
+          {
+            "value": "IL_0079:  newarr [netstandard]System.Char",
+            "uses": 2
+          },
+          {
+            "value": "IL_0080:  ldc.i4.s 0x3a",
+            "uses": 2
+          },
+          {
+            "value": "IL_0089:  ldelem.ref",
+            "uses": 2
+          },
+          {
+            "value": "IL_008b:  newarr [netstandard]System.Char",
+            "uses": 2
+          },
+          {
+            "value": "IL_0092:  ldc.i4.s 0x28",
+            "uses": 2
+          },
+          {
+            "value": "IL_009b:  ldelem.ref",
+            "uses": 2
+          },
+          {
+            "value": "IL_0165:  add",
+            "uses": 2
+          },
+          {
+            "value": "-360.",
+            "uses": 2
+          },
+          {
+            "value": "-282.",
+            "uses": 2
+          },
+          {
+            "value": "0xffffffb0",
+            "uses": 2
+          },
+          {
+            "value": "0x50",
+            "uses": 2
+          },
+          {
+            "value": "10.",
+            "uses": 2
+          },
+          {
+            "value": "IL_000e:  beq.s IL_001e",
+            "uses": 2
+          },
+          {
+            "value": "0x09",
+            "uses": 2
+          },
+          {
+            "value": "IL_0039:  call instance void class EasyJoystick::CreateEvent(valuetype EasyJoystick/MessageName)",
+            "uses": 2
+          },
+          {
+            "value": "25.",
+            "uses": 2
+          },
+          {
+            "value": "0.85000002384185791",
+            "uses": 2
+          }
+        ],
+        "il_sha256": "d21daef2bd750b6631d058442834fc562a75874a3f5c6e2ce7fdf35ca4091093"
+      },
+      "security_boundary": "static_only_no_install_no_execution_no_auth_bypass"
+    },
+    {
+      "archive": "创世兵魂地图手机版浏览（通过缓存恢复的）.apk.1",
+      "archive_sha256": "698aeba0ef194559875ee1ac567f1c01a54dd0ffec12dae9cda30c43e2cac45e",
+      "archive_bytes": 148510586,
+      "extracted_root": "_安全解压资源/创世兵魂地图手机版浏览_通过缓存恢复的_.apk.1__698aeba0ef19",
+      "manifest": {
+        "package": "com.Atom.MapPreview",
+        "version_code": "1",
+        "version_name": "1.0",
+        "install_location": "1",
+        "platform_build_version": "11",
+        "min_sdk": "21",
+        "target_sdk": "26",
+        "permissions": [
+          "android.permission.ACCESS_NETWORK_STATE",
+          "android.permission.ACCESS_WIFI_STATE",
+          "android.permission.INTERNET",
+          "android.permission.MODIFY_AUDIO_SETTINGS",
+          "android.permission.VIBRATE",
+          "android.permission.WAKE_LOCK",
+          "android.permission.WRITE_EXTERNAL_STORAGE",
+          "com.android.vending.BILLING",
+          "com.android.vending.CHECK_LICENSE"
+        ],
+        "components": {
+          "activity": [
+            {
+              "name": "com.epicgames.ue4.SplashActivity",
+              "exported": null,
+              "permission": null,
+              "authorities": null,
+              "actions": [
+                "android.intent.action.MAIN"
+              ],
+              "categories": [
+                "android.intent.category.LAUNCHER"
+              ]
+            },
+            {
+              "name": "com.epicgames.ue4.GameActivity",
+              "exported": null,
+              "permission": null,
+              "authorities": null,
+              "actions": [],
+              "categories": []
+            },
+            {
+              "name": "com.Atom.MapPreview.DownloaderActivity",
+              "exported": null,
+              "permission": null,
+              "authorities": null,
+              "actions": [],
+              "categories": []
+            },
+            {
+              "name": "com.google.android.gms.ads.AdActivity",
+              "exported": "false",
+              "permission": null,
+              "authorities": null,
+              "actions": [],
+              "categories": []
+            },
+            {
+              "name": "com.google.android.gms.auth.api.signin.internal.SignInHubActivity",
+              "exported": "false",
+              "permission": null,
+              "authorities": null,
+              "actions": [],
+              "categories": []
+            },
+            {
+              "name": "com.android.billingclient.api.ProxyBillingActivity",
+              "exported": null,
+              "permission": null,
+              "authorities": null,
+              "actions": [],
+              "categories": []
+            },
+            {
+              "name": "com.google.android.gms.common.api.GoogleApiActivity",
+              "exported": "false",
+              "permission": null,
+              "authorities": null,
+              "actions": [],
+              "categories": []
+            }
+          ],
+          "activity-alias": [],
+          "service": [
+            {
+              "name": "com.Atom.MapPreview.OBBDownloaderService",
+              "exported": null,
+              "permission": null,
+              "authorities": null,
+              "actions": [],
+              "categories": []
+            },
+            {
+              "name": "com.google.android.gms.auth.api.signin.RevocationBoundService",
+              "exported": "true",
+              "permission": "com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION",
+              "authorities": null,
+              "actions": [],
+              "categories": []
+            }
+          ],
+          "provider": [
+            {
+              "name": "androidx.lifecycle.ProcessLifecycleOwnerInitializer",
+              "exported": "false",
+              "permission": null,
+              "authorities": "com.Atom.MapPreview.lifecycle-process",
+              "actions": [],
+              "categories": []
+            }
+          ],
+          "receiver": [
+            {
+              "name": "com.Atom.MapPreview.AlarmReceiver",
+              "exported": null,
+              "permission": null,
+              "authorities": null,
+              "actions": [],
+              "categories": []
+            },
+            {
+              "name": "com.epicgames.ue4.LocalNotificationReceiver",
+              "exported": null,
+              "permission": null,
+              "authorities": null,
+              "actions": [],
+              "categories": []
+            },
+            {
+              "name": "com.epicgames.ue4.MulticastBroadcastReceiver",
+              "exported": "true",
+              "permission": null,
+              "authorities": null,
+              "actions": [
+                "com.android.vending.INSTALL_REFERRER"
+              ],
+              "categories": []
+            }
+          ]
+        },
+        "application": {
+          "name": "com.epicgames.ue4.GameApplication",
+          "debuggable": "true",
+          "uses_cleartext_traffic": null,
+          "network_security_config": null,
+          "backup_agent": null
+        }
+      },
+      "engine": {
+        "engine": "Unreal Engine",
+        "backend": "native UE4",
+        "version": null,
+        "evidence": [
+          "libUE4.so",
+          "assets/UE4CommandLine.txt"
+        ]
+      },
+      "dex": {
+        "files": [
+          {
+            "path": "classes.dex",
+            "bytes": 4843812,
+            "sha256": "e56dfa5260bac7aec81989769d1d148896218da1f6ac0c41e8001b0a21546fae",
+            "dex_version": "035",
+            "file_size_header": 4843812,
+            "strings": 34934,
+            "types": 6568,
+            "prototypes": 8258,
+            "fields": 14124,
+            "methods": 34604,
+            "classes": 5265,
+            "network_endpoints": [
+              "http://schemas.android.com/apk/lib/com.google.android.gms.plus",
+              "http://schemas.android.com/apk/res/android",
+              "http://www.example.com",
+              "http://www.google.com",
+              "https://accounts.google.com",
+              "https://csi.gstatic.com/csi",
+              "https://googleads.g.doubleclick.net/mads/static/mad/sdk/native/mraid/v2/mraid_app_banner.js",
+              "https://googleads.g.doubleclick.net/mads/static/mad/sdk/native/mraid/v2/mraid_app_expanded_banner.js",
+              "https://googleads.g.doubleclick.net/mads/static/mad/sdk/native/mraid/v2/mraid_app_interstitial.js",
+              "https://googleads.g.doubleclick.net/mads/static/mad/sdk/native/native_ads.html",
+              "https://googleads.g.doubleclick.net/mads/static/mad/sdk/native/production/native_ads.js",
+              "https://googleads.g.doubleclick.net/mads/static/mad/sdk/native/production/sdk-core-v40-impl.js",
+              "https://googleads.g.doubleclick.net/mads/static/mad/sdk/native/sdk-core-v40.html",
+              "https://imasdk.googleapis.com/admob/sdkloader/native_video.html",
+              "https://login.live.com",
+              "https://login.yahoo.com",
+              "https://pagead2.googlesyndication.com/pagead/gen_204",
+              "https://pagead2.googlesyndication.com/pagead/gen_204?id=gmob-apps",
+              "https://plus.google.com/",
+              "https://support.google.com/dfp_premium/answer/7160685#push",
+              "https://twitter.com",
+              "https://www.facebook.com",
+              "https://www.google.com/dfp/debugSignals",
+              "https://www.google.com/dfp/inAppPreview",
+              "https://www.google.com/dfp/linkDevice",
+              "https://www.google.com/dfp/sendDebugData",
+              "https://www.googleapis.com/auth/appstate",
+              "https://www.googleapis.com/auth/datastoremobile",
+              "https://www.googleapis.com/auth/drive",
+              "https://www.googleapis.com/auth/drive.appdata",
+              "https://www.googleapis.com/auth/drive.apps",
+              "https://www.googleapis.com/auth/drive.file",
+              "https://www.googleapis.com/auth/fitness.activity.read",
+              "https://www.googleapis.com/auth/fitness.activity.write",
+              "https://www.googleapis.com/auth/fitness.body.read",
+              "https://www.googleapis.com/auth/fitness.body.write",
+              "https://www.googleapis.com/auth/fitness.location.read",
+              "https://www.googleapis.com/auth/fitness.location.write",
+              "https://www.googleapis.com/auth/fitness.nutrition.read",
+              "https://www.googleapis.com/auth/fitness.nutrition.write",
+              "https://www.googleapis.com/auth/games",
+              "https://www.googleapis.com/auth/games.firstparty",
+              "https://www.googleapis.com/auth/games_lite",
+              "https://www.googleapis.com/auth/plus.login",
+              "https://www.googleapis.com/auth/plus.me",
+              "https://www.linkedin.com",
+              "https://www.paypal.com"
+            ]
+          },
+          {
+            "path": "classes2.dex",
+            "bytes": 528340,
+            "sha256": "8f7b2bd9a90a77236fff3730a7099144ae808b955bed77c4ec486b5fa210263f",
+            "dex_version": "035",
+            "file_size_header": 528340,
+            "strings": 6173,
+            "types": 944,
+            "prototypes": 910,
+            "fields": 4417,
+            "methods": 3042,
+            "classes": 502,
+            "network_endpoints": [
+              "https://example.com/",
+              "https://google.com/",
+              "https://www.googleapis.com/auth/games",
+              "https://www.samsung.com/"
+            ]
+          },
+          {
+            "path": "classes3.dex",
+            "bytes": 1308,
+            "sha256": "5723c2889129a08cc07352e005fd83876a56dabb0cfecbfa5d1e1a086bedf7ab",
+            "dex_version": "035",
+            "file_size_header": 1308,
+            "strings": 25,
+            "types": 8,
+            "prototypes": 2,
+            "fields": 5,
+            "methods": 5,
+            "classes": 2,
+            "network_endpoints": []
+          },
+          {
+            "path": "classes4.dex",
+            "bytes": 5928,
+            "sha256": "450ce19c0a3036ea961ff5183771317b7926027604902717453712d751a6b024",
+            "dex_version": "035",
+            "file_size_header": 5928,
+            "strings": 125,
+            "types": 32,
+            "prototypes": 27,
+            "fields": 11,
+            "methods": 39,
+            "classes": 4,
+            "network_endpoints": []
+          }
+        ],
+        "summary": {
+          "total": {
+            "kind": "P",
+            "defined": 30490,
+            "referenced": 36924,
+            "bytes": 3259376,
+            "name": "<TOTAL>"
+          },
+          "top_packages": [
+            {
+              "kind": "P",
+              "defined": 22329,
+              "referenced": 23418,
+              "bytes": 2412949,
+              "name": "com"
+            },
+            {
+              "kind": "P",
+              "defined": 20847,
+              "referenced": 21796,
+              "bytes": 2209796,
+              "name": "com.google"
+            },
+            {
+              "kind": "P",
+              "defined": 20619,
+              "referenced": 21560,
+              "bytes": 2188104,
+              "name": "com.google.android"
+            },
+            {
+              "kind": "P",
+              "defined": 160,
+              "referenced": 166,
+              "bytes": 12263,
+              "name": "com.google.ads"
+            },
+            {
+              "kind": "P",
+              "defined": 35,
+              "referenced": 36,
+              "bytes": 3247,
+              "name": "com.google.androidgamesdk"
+            },
+            {
+              "kind": "P",
+              "defined": 27,
+              "referenced": 28,
+              "bytes": 5706,
+              "name": "com.google.vr"
+            },
+            {
+              "kind": "P",
+              "defined": 6,
+              "referenced": 6,
+              "bytes": 476,
+              "name": "com.google.firebase"
+            },
+            {
+              "kind": "P",
+              "defined": 966,
+              "referenced": 1087,
+              "bytes": 139310,
+              "name": "com.epicgames"
+            },
+            {
+              "kind": "P",
+              "defined": 966,
+              "referenced": 1087,
+              "bytes": 139310,
+              "name": "com.epicgames.ue4"
+            },
+            {
+              "kind": "P",
+              "defined": 411,
+              "referenced": 420,
+              "bytes": 43014,
+              "name": "com.android"
+            },
+            {
+              "kind": "P",
+              "defined": 325,
+              "referenced": 328,
+              "bytes": 31299,
+              "name": "com.android.billingclient"
+            },
+            {
+              "kind": "P",
+              "defined": 86,
+              "referenced": 92,
+              "bytes": 11715,
+              "name": "com.android.vending"
+            },
+            {
+              "kind": "P",
+              "defined": 79,
+              "referenced": 89,
+              "bytes": 16607,
+              "name": "com.Atom"
+            },
+            {
+              "kind": "P",
+              "defined": 79,
+              "referenced": 89,
+              "bytes": 16607,
+              "name": "com.Atom.MapPreview"
+            },
+            {
+              "kind": "P",
+              "defined": 26,
+              "referenced": 26,
+              "bytes": 4222,
+              "name": "com.oculus"
+            },
+            {
+              "kind": "P",
+              "defined": 19,
+              "referenced": 19,
+              "bytes": 2969,
+              "name": "com.oculus.systemutils"
+            },
+            {
+              "kind": "P",
+              "defined": 7,
+              "referenced": 7,
+              "bytes": 1253,
+              "name": "com.oculus.vrapi"
+            },
+            {
+              "kind": "P",
+              "defined": 6741,
+              "referenced": 7160,
+              "bytes": 687643,
+              "name": "androidx"
+            },
+            {
+              "kind": "P",
+              "defined": 2891,
+              "referenced": 2980,
+              "bytes": 275523,
+              "name": "androidx.core"
+            },
+            {
+              "kind": "P",
+              "defined": 875,
+              "referenced": 875,
+              "bytes": 65455,
+              "name": "androidx.core.view"
+            },
+            {
+              "kind": "P",
+              "defined": 668,
+              "referenced": 707,
+              "bytes": 65219,
+              "name": "androidx.core.app"
+            },
+            {
+              "kind": "P",
+              "defined": 307,
+              "referenced": 325,
+              "bytes": 36517,
+              "name": "androidx.core.graphics"
+            },
+            {
+              "kind": "P",
+              "defined": 288,
+              "referenced": 320,
+              "bytes": 28472,
+              "name": "androidx.core.widget"
+            },
+            {
+              "kind": "P",
+              "defined": 201,
+              "referenced": 201,
+              "bytes": 21642,
+              "name": "androidx.core.content"
+            },
+            {
+              "kind": "P",
+              "defined": 153,
+              "referenced": 153,
+              "bytes": 19515,
+              "name": "androidx.core.text"
+            },
+            {
+              "kind": "P",
+              "defined": 127,
+              "referenced": 127,
+              "bytes": 9470,
+              "name": "androidx.core.os"
+            },
+            {
+              "kind": "P",
+              "defined": 86,
+              "referenced": 86,
+              "bytes": 10357,
+              "name": "androidx.core.provider"
+            },
+            {
+              "kind": "P",
+              "defined": 70,
+              "referenced": 70,
+              "bytes": 8321,
+              "name": "androidx.core.util"
+            },
+            {
+              "kind": "P",
+              "defined": 33,
+              "referenced": 33,
+              "bytes": 2529,
+              "name": "androidx.core.hardware"
+            },
+            {
+              "kind": "P",
+              "defined": 30,
+              "referenced": 30,
+              "bytes": 1805,
+              "name": "androidx.core.net"
+            },
+            {
+              "kind": "P",
+              "defined": 24,
+              "referenced": 24,
+              "bytes": 602,
+              "name": "androidx.core.internal"
+            },
+            {
+              "kind": "P",
+              "defined": 7,
+              "referenced": 7,
+              "bytes": 630,
+              "name": "androidx.core.database"
+            },
+            {
+              "kind": "P",
+              "defined": 6,
+              "referenced": 6,
+              "bytes": 767,
+              "name": "androidx.core.accessibilityservice"
+            },
+            {
+              "kind": "P",
+              "defined": 4,
+              "referenced": 4,
+              "bytes": 225,
+              "name": "androidx.core.math"
+            },
+            {
+              "kind": "P",
+              "defined": 910,
+              "referenced": 938,
+              "bytes": 90859,
+              "name": "androidx.fragment"
+            },
+            {
+              "kind": "P",
+              "defined": 898,
+              "referenced": 926,
+              "bytes": 87053,
+              "name": "androidx.fragment.app"
+            },
+            {
+              "kind": "P",
+              "defined": 396,
+              "referenced": 414,
+              "bytes": 40939,
+              "name": "androidx.media"
+            },
+            {
+              "kind": "P",
+              "defined": 25,
+              "referenced": 31,
+              "bytes": 2632,
+              "name": "androidx.media.app"
+            },
+            {
+              "kind": "P",
+              "defined": 14,
+              "referenced": 15,
+              "bytes": 1569,
+              "name": "androidx.media.session"
+            },
+            {
+              "kind": "P",
+              "defined": 281,
+              "referenced": 295,
+              "bytes": 23836,
+              "name": "androidx.collection"
+            },
+            {
+              "kind": "P",
+              "defined": 222,
+              "referenced": 291,
+              "bytes": 32454,
+              "name": "androidx.viewpager"
+            },
+            {
+              "kind": "P",
+              "defined": 210,
+              "referenced": 279,
+              "bytes": 29113,
+              "name": "androidx.viewpager.widget"
+            },
+            {
+              "kind": "P",
+              "defined": 269,
+              "referenced": 281,
+              "bytes": 27223,
+              "name": "androidx.lifecycle"
+            },
+            {
+              "kind": "P",
+              "defined": 12,
+              "referenced": 12,
+              "bytes": 3806,
+              "name": "androidx.lifecycle.extensions"
+            },
+            {
+              "kind": "P",
+              "defined": 2,
+              "referenced": 2,
+              "bytes": 160,
+              "name": "androidx.lifecycle.livedata"
+            },
+            {
+              "kind": "P",
+              "defined": 1,
+              "referenced": 1,
+              "bytes": 80,
+              "name": "androidx.lifecycle.process"
+            },
+            {
+              "kind": "P",
+              "defined": 1,
+              "referenced": 1,
+              "bytes": 80,
+              "name": "androidx.lifecycle.service"
+            },
+            {
+              "kind": "P",
+              "defined": 1,
+              "referenced": 1,
+              "bytes": 80,
+              "name": "androidx.lifecycle.viewmodel"
+            },
+            {
+              "kind": "P",
+              "defined": 202,
+              "referenced": 242,
+              "bytes": 20356,
+              "name": "androidx.swiperefreshlayout"
+            },
+            {
+              "kind": "P",
+              "defined": 190,
+              "referenced": 230,
+              "bytes": 17015,
+              "name": "androidx.swiperefreshlayout.widget"
+            },
+            {
+              "kind": "P",
+              "defined": 204,
+              "referenced": 229,
+              "bytes": 23955,
+              "name": "androidx.coordinatorlayout"
+            },
+            {
+              "kind": "P",
+              "defined": 192,
+              "referenced": 217,
+              "bytes": 20045,
+              "name": "androidx.coordinatorlayout.widget"
+            },
+            {
+              "kind": "P",
+              "defined": 204,
+              "referenced": 220,
+              "bytes": 15319,
+              "name": "androidx.versionedparcelable"
+            },
+            {
+              "kind": "P",
+              "defined": 188,
+              "referenced": 212,
+              "bytes": 17854,
+              "name": "androidx.loader"
+            },
+            {
+              "kind": "P",
+              "defined": 118,
+              "referenced": 138,
+              "bytes": 9371,
+              "name": "androidx.loader.content"
+            },
+            {
+              "kind": "P",
+              "defined": 58,
+              "referenced": 62,
+              "bytes": 5142,
+              "name": "androidx.loader.app"
+            },
+            {
+              "kind": "P",
+              "defined": 156,
+              "referenced": 182,
+              "bytes": 19607,
+              "name": "androidx.drawerlayout"
+            },
+            {
+              "kind": "P",
+              "defined": 144,
+              "referenced": 170,
+              "bytes": 16266,
+              "name": "androidx.drawerlayout.widget"
+            },
+            {
+              "kind": "P",
+              "defined": 165,
+              "referenced": 180,
+              "bytes": 27021,
+              "name": "androidx.legacy"
+            },
+            {
+              "kind": "P",
+              "defined": 106,
+              "referenced": 116,
+              "bytes": 10342,
+              "name": "androidx.legacy.app"
+            },
+            {
+              "kind": "P",
+              "defined": 12,
+              "referenced": 12,
+              "bytes": 3806,
+              "name": "androidx.legacy.coreui"
+            },
+            {
+              "kind": "P",
+              "defined": 12,
+              "referenced": 12,
+              "bytes": 3341,
+              "name": "androidx.legacy.coreutils"
+            },
+            {
+              "kind": "P",
+              "defined": 12,
+              "referenced": 12,
+              "bytes": 4211,
+              "name": "androidx.legacy.v13"
+            },
+            {
+              "kind": "P",
+              "defined": 12,
+              "referenced": 12,
+              "bytes": 4211,
+              "name": "androidx.legacy.v4"
+            },
+            {
+              "kind": "P",
+              "defined": 6,
+              "referenced": 11,
+              "bytes": 438,
+              "name": "androidx.legacy.widget"
+            },
+            {
+              "kind": "P",
+              "defined": 4,
+              "referenced": 4,
+              "bytes": 568,
+              "name": "androidx.legacy.content"
+            },
+            {
+              "kind": "P",
+              "defined": 1,
+              "referenced": 1,
+              "bytes": 104,
+              "name": "androidx.legacy.view"
+            },
+            {
+              "kind": "P",
+              "defined": 175,
+              "referenced": 175,
+              "bytes": 20598,
+              "name": "androidx.customview"
+            },
+            {
+              "kind": "P",
+              "defined": 146,
+              "referenced": 146,
+              "bytes": 16230,
+              "name": "androidx.customview.widget"
+            },
+            {
+              "kind": "P",
+              "defined": 17,
+              "referenced": 17,
+              "bytes": 1027,
+              "name": "androidx.customview.view"
+            },
+            {
+              "kind": "P",
+              "defined": 111,
+              "referenced": 129,
+              "bytes": 14647,
+              "name": "androidx.slidingpanelayout"
+            },
+            {
+              "kind": "P",
+              "defined": 99,
+              "referenced": 117,
+              "bytes": 11306,
+              "name": "androidx.slidingpanelayout.widget"
+            },
+            {
+              "kind": "P",
+              "defined": 96,
+              "referenced": 96,
+              "bytes": 5910,
+              "name": "androidx.documentfile"
+            },
+            {
+              "kind": "P",
+              "defined": 95,
+              "referenced": 95,
+              "bytes": 5830,
+              "name": "androidx.documentfile.provider"
+            },
+            {
+              "kind": "P",
+              "defined": 73,
+              "referenced": 80,
+              "bytes": 5577,
+              "name": "androidx.arch"
+            },
+            {
+              "kind": "P",
+              "defined": 73,
+              "referenced": 80,
+              "bytes": 5577,
+              "name": "androidx.arch.core"
+            },
+            {
+              "kind": "P",
+              "defined": 62,
+              "referenced": 67,
+              "bytes": 4379,
+              "name": "androidx.cursoradapter"
+            },
+            {
+              "kind": "P",
+              "defined": 61,
+              "referenced": 66,
+              "bytes": 4299,
+              "name": "androidx.cursoradapter.widget"
+            },
+            {
+              "kind": "P",
+              "defined": 46,
+              "referenced": 49,
+              "bytes": 5502,
+              "name": "androidx.print"
+            },
+            {
+              "kind": "P",
+              "defined": 34,
+              "referenced": 35,
+              "bytes": 4915,
+              "name": "androidx.annotation"
+            }
+          ]
+        }
+      },
+      "native_libraries": [
+        {
+          "path": "lib/armeabi-v7a/libOVRPlugin.so",
+          "abi_directory": "armeabi-v7a",
+          "bytes": 331532,
+          "sha256": "6f7765e2338312ba5412d6f5475a8393fe2463352365d3b61efc442440097c1f",
+          "elf_architecture": "arm",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/armeabi-v7a/libUE4.so",
+          "abi_directory": "armeabi-v7a",
+          "bytes": 144938488,
+          "sha256": "9866061a2dea7d0e08b4a8dbc4e199869e4ebdfd533aa1eb95d77228948fd555",
+          "elf_architecture": "arm",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/armeabi-v7a/libc++_shared.so",
+          "abi_directory": "armeabi-v7a",
+          "bytes": 600804,
+          "sha256": "41f855dc6facebfbbae5fc5c98a412b368fb3f53c2439af27a30158cdb252e54",
+          "elf_architecture": "arm",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/armeabi-v7a/libplaycore.so",
+          "abi_directory": "armeabi-v7a",
+          "bytes": 91744,
+          "sha256": "2191c44f9b3a195cffcc4db1677f763b179e4f2269db48aca6e63788781765ee",
+          "elf_architecture": "arm",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/armeabi-v7a/libtry-alloc-lib.so",
+          "abi_directory": "armeabi-v7a",
+          "bytes": 13904,
+          "sha256": "2be0b8e4a03b276e6aa1f30b258ecc949533a0a870580e7cb3165b445c6fdf38",
+          "elf_architecture": "arm",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/armeabi-v7a/libvrapi.so",
+          "abi_directory": "armeabi-v7a",
+          "bytes": 104796,
+          "sha256": "87633fe3cd202c697034ca9b481dccbe72efcb81575aa662008bc5e17b3194c8",
+          "elf_architecture": "arm",
+          "elf_bits": "32"
+        }
+      ],
+      "data": {
+        "present": false,
+        "files": 0,
+        "bytes": 0,
+        "managed_assemblies": [],
+        "managed_assembly_count": 0,
+        "split_files": 0,
+        "serialized_files": 0,
+        "resource_streams": 0,
+        "has_global_metadata": false
+      },
+      "embedded_obb": [
+        {
+          "path": "assets/main.obb.png",
+          "bytes": 94784648,
+          "sha256": "cbd0aab58ff4bbd3e48cbd63b8b6f144d9cc17c40885078cab23f307d31657c1",
+          "container": "zip",
+          "members": 1,
+          "member_samples": [
+            "MapPreview/Content/Paks/MapPreview-Android_Multi.pak"
+          ],
+          "contains_unreal_pak": true,
+          "unreal_pak_versions": [
+            {
+              "member": "MapPreview/Content/Paks/MapPreview-Android_Multi.pak",
+              "version": 11,
+              "version_name": "Fnv64BugFix",
+              "footer_offset": 94784160
+            }
+          ]
+        }
+      ],
+      "mono": null,
+      "security_boundary": "static_only_no_install_no_execution_no_auth_bypass"
+    },
+    {
+      "archive": "遗迹杀戮(1).apk.1",
+      "archive_sha256": "c9745db1614ead6401bdfb74328f1147f898dd080942749ce7d77b635329a5a2",
+      "archive_bytes": 135222989,
+      "extracted_root": "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e",
+      "manifest": {
+        "package": "com.CSBH.APK",
+        "version_code": "1",
+        "version_name": "1.22.5v",
+        "install_location": "2",
+        "platform_build_version": "10",
+        "min_sdk": "9",
+        "target_sdk": "29",
+        "permissions": [],
+        "components": {
+          "activity": [
+            {
+              "name": "com.unity3d.player.UnityPlayerActivity",
+              "exported": null,
+              "permission": null,
+              "authorities": null,
+              "actions": [
+                "android.intent.action.MAIN"
+              ],
+              "categories": [
+                "android.intent.category.LAUNCHER",
+                "android.intent.category.LEANBACK_LAUNCHER"
+              ]
+            }
+          ],
+          "activity-alias": [],
+          "service": [],
+          "provider": [],
+          "receiver": []
+        },
+        "application": {
+          "name": null,
+          "debuggable": "false",
+          "uses_cleartext_traffic": null,
+          "network_security_config": null,
+          "backup_agent": null
+        }
+      },
+      "engine": {
+        "engine": "Unity",
+        "backend": "Mono",
+        "version": "5.2.5f1",
+        "evidence": [
+          "libunity.so",
+          "libmono*.so"
+        ]
+      },
+      "dex": {
+        "files": [
+          {
+            "path": "classes.dex",
+            "bytes": 77836,
+            "sha256": "d1cc3125fe2c6a4511bc56a4f98600a78e9b1079e0863bf7cfad115427542f0f",
+            "dex_version": "035",
+            "file_size_header": 77836,
+            "strings": 985,
+            "types": 275,
+            "prototypes": 330,
+            "fields": 286,
+            "methods": 961,
+            "classes": 79,
+            "network_endpoints": []
+          }
+        ],
+        "summary": {
+          "total": {
+            "kind": "P",
+            "defined": 468,
+            "referenced": 961,
+            "bytes": 48516,
+            "name": "<TOTAL>"
+          },
+          "top_packages": [
+            {
+              "kind": "P",
+              "defined": 442,
+              "referenced": 473,
+              "bytes": 41707,
+              "name": "com"
+            },
+            {
+              "kind": "P",
+              "defined": 442,
+              "referenced": 473,
+              "bytes": 41707,
+              "name": "com.unity3d"
+            },
+            {
+              "kind": "P",
+              "defined": 442,
+              "referenced": 473,
+              "bytes": 41707,
+              "name": "com.unity3d.player"
+            },
+            {
+              "kind": "P",
+              "defined": 19,
+              "referenced": 30,
+              "bytes": 2374,
+              "name": "org"
+            },
+            {
+              "kind": "P",
+              "defined": 19,
+              "referenced": 19,
+              "bytes": 2286,
+              "name": "org.fmod"
+            },
+            {
+              "kind": "P",
+              "defined": 7,
+              "referenced": 7,
+              "bytes": 539,
+              "name": "bitter"
+            },
+            {
+              "kind": "P",
+              "defined": 7,
+              "referenced": 7,
+              "bytes": 539,
+              "name": "bitter.jnibridge"
+            }
+          ]
+        }
+      },
+      "native_libraries": [
+        {
+          "path": "lib/armeabi-v7a/libmain.so",
+          "abi_directory": "armeabi-v7a",
+          "bytes": 33968,
+          "sha256": "4657bab3c1ad2f9c54cf52fe6deffcb8411493f9db113ae3a9655f6fbffabdef",
+          "elf_architecture": "arm",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/armeabi-v7a/libmono.so",
+          "abi_directory": "armeabi-v7a",
+          "bytes": 3758452,
+          "sha256": "6595a68b255119d8ba556002dfa61fd59ee74bff032da96dfbdd715643f137dc",
+          "elf_architecture": "arm",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/armeabi-v7a/libunity.so",
+          "abi_directory": "armeabi-v7a",
+          "bytes": 14582660,
+          "sha256": "cccd07b414123a00805edcd762c5fe3e9a49c245c468facd352d9518f45a6f58",
+          "elf_architecture": "arm",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/x86/libmain.so",
+          "abi_directory": "x86",
+          "bytes": 20156,
+          "sha256": "b849096d6e6e2015cc3896a716b5480499648ab5bbd3679c420740408f3d340d",
+          "elf_architecture": "x86",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/x86/libmono.so",
+          "abi_directory": "x86",
+          "bytes": 3624156,
+          "sha256": "21a7e39f49b31daf7521490b9def9423267b7f2132c521ac2c2184ab3dae3764",
+          "elf_architecture": "x86",
+          "elf_bits": "32"
+        },
+        {
+          "path": "lib/x86/libunity.so",
+          "abi_directory": "x86",
+          "bytes": 18147608,
+          "sha256": "d81cfbdeaa13c1880fb9c2c0f93106d3f6a41b881a5e9de8e45be2621d51f257",
+          "elf_architecture": "x86",
+          "elf_bits": "32"
+        }
+      ],
+      "data": {
+        "present": true,
+        "files": 1254,
+        "bytes": 460580689,
+        "managed_assemblies": [
+          "assets/bin/Data/Managed/Assembly-CSharp.dll",
+          "assets/bin/Data/Managed/Mono.Security.dll",
+          "assets/bin/Data/Managed/System.Core.dll",
+          "assets/bin/Data/Managed/System.dll",
+          "assets/bin/Data/Managed/UnityEngine.Networking.dll",
+          "assets/bin/Data/Managed/UnityEngine.UI.dll",
+          "assets/bin/Data/Managed/UnityEngine.dll",
+          "assets/bin/Data/Managed/mscorlib.dll"
+        ],
+        "managed_assembly_count": 8,
+        "split_files": 388,
+        "serialized_files": 1,
+        "resource_streams": 378,
+        "has_global_metadata": false
+      },
+      "embedded_obb": [
+        {
+          "path": "_exported-unity-objects/MonoScript/sharedassets0.assets__154__NetworkLobbyManager.json",
+          "bytes": 584,
+          "sha256": "a797d8f65961021fdb9091457781d688fa1919b1afb3b380de30c42ca852e664",
+          "container": "unknown",
+          "members": 0,
+          "member_samples": []
+        },
+        {
+          "path": "_exported-unity-objects/MonoScript/sharedassets0.assets__223__NetworkLobbyPlayer.json",
+          "bytes": 588,
+          "sha256": "0494cfff01793c614d51f9bebe1313f2ae820d7faf35ed06228d6655851f804a",
+          "container": "unknown",
+          "members": 0,
+          "member_samples": []
+        }
+      ],
+      "mono": {
+        "assembly": "assets/bin/Data/Managed/Assembly-CSharp.dll",
+        "bytes": 81408,
+        "sha256": "ec068c3fe7d511be6b14ee99fdbde95e85611162e7eeffc65c420c102adda046",
+        "metadata_directory": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/android-mono-metadata/遗迹杀戮_1_.apk.1__c9745db1614e",
+        "types": 60,
+        "fields": 723,
+        "methods": 399,
+        "constants": 1,
+        "candidate_types": [
+          "10: PlayerMessage (flist=72, mlist=33, flags=0x100001, extends=0x5)",
+          "11: PlayerMove (flist=137, mlist=40, flags=0x100001, extends=0x5)",
+          "14: ChatRoom (flist=181, mlist=61, flags=0x100001, extends=0x5)",
+          "15: GameRoom (flist=200, mlist=71, flags=0x100001, extends=0x5)",
+          "18: ID_player (flist=268, mlist=92, flags=0x100001, extends=0x5)",
+          "21: Modle_Room (flist=291, mlist=106, flags=0x100001, extends=0x5)",
+          "39: loadingMap (flist=494, mlist=253, flags=0x100001, extends=0x5)",
+          "40: AI_Gun (flist=496, mlist=257, flags=0x100001, extends=0x5)",
+          "43: Dao_Weapon (flist=531, mlist=270, flags=0x100001, extends=0x5)",
+          "45: Fu_Weapon (flist=548, mlist=276, flags=0x100001, extends=0x5)",
+          "46: Gun (flist=575, mlist=282, flags=0x100001, extends=0x5)",
+          "50: SL_Weapon (flist=594, mlist=296, flags=0x100001, extends=0x5)",
+          "52: WeaponControl (flist=610, mlist=304, flags=0x100001, extends=0x5)",
+          "53: Zhu_Weapon (flist=621, mlist=313, flags=0x100001, extends=0x5)",
+          "58: ID_player/<LoadLevel>c__Iterator0 (flist=665, mlist=336, flags=0x100103, extends=0x6d)",
+          "9: PlayerHealth (flist=49, mlist=28, flags=0x100001, extends=0x5)"
+        ],
+        "state_machines": [
+          "58: ID_player/<LoadLevel>c__Iterator0 (flist=665, mlist=336, flags=0x100103, extends=0x6d)"
+        ],
+        "numeric_il_literals": [
+          {
+            "value": "0.",
+            "uses": 141
+          },
+          {
+            "value": "1.",
+            "uses": 40
+          },
+          {
+            "value": "0.5",
+            "uses": 25
+          },
+          {
+            "value": "3.",
+            "uses": 19
+          },
+          {
+            "value": "2.",
+            "uses": 13
+          },
+          {
+            "value": "5.",
+            "uses": 11
+          },
+          {
+            "value": "0.10000000149011612",
+            "uses": 11
+          },
+          {
+            "value": "-1.",
+            "uses": 9
+          },
+          {
+            "value": "0x16",
+            "uses": 9
+          },
+          {
+            "value": "4.",
+            "uses": 8
+          },
+          {
+            "value": "0.80000001192092896",
+            "uses": 8
+          },
+          {
+            "value": "9.",
+            "uses": 8
+          },
+          {
+            "value": "0.30000001192092896",
+            "uses": 8
+          },
+          {
+            "value": "0.60000002384185791",
+            "uses": 7
+          },
+          {
+            "value": "1.5",
+            "uses": 7
+          },
+          {
+            "value": "0.89999997615814209",
+            "uses": 7
+          },
+          {
+            "value": "0x64",
+            "uses": 6
+          },
+          {
+            "value": "0.40000000596046448",
+            "uses": 6
+          },
+          {
+            "value": "8.",
+            "uses": 6
+          },
+          {
+            "value": "0x1e",
+            "uses": 6
+          },
+          {
+            "value": "6.",
+            "uses": 6
+          },
+          {
+            "value": "7.",
+            "uses": 6
+          },
+          {
+            "value": "1.0399999618530273",
+            "uses": 6
+          },
+          {
+            "value": "1.0815999507904053",
+            "uses": 6
+          },
+          {
+            "value": "0.44999998807907104",
+            "uses": 6
+          },
+          {
+            "value": "90.",
+            "uses": 5
+          },
+          {
+            "value": "0.20000000298023224",
+            "uses": 5
+          },
+          {
+            "value": "304",
+            "uses": 5
+          },
+          {
+            "value": "301",
+            "uses": 5
+          },
+          {
+            "value": "0x0d",
+            "uses": 5
+          },
+          {
+            "value": "0.75",
+            "uses": 5
+          },
+          {
+            "value": "0x0a",
+            "uses": 5
+          },
+          {
+            "value": "0x0c",
+            "uses": 5
+          },
+          {
+            "value": "0x0f",
+            "uses": 5
+          },
+          {
+            "value": "0x14",
+            "uses": 5
+          },
+          {
+            "value": "0x2a",
+            "uses": 5
+          },
+          {
+            "value": "0x37",
+            "uses": 5
+          },
+          {
+            "value": "0x46",
+            "uses": 5
+          },
+          {
+            "value": "0x55",
+            "uses": 5
+          },
+          {
+            "value": "IL_0002:  stfld int32 SetUp::ZR_BG",
+            "uses": 5
+          },
+          {
+            "value": "3.5",
+            "uses": 4
+          },
+          {
+            "value": "0.019999999552965164",
+            "uses": 4
+          },
+          {
+            "value": "0x1b",
+            "uses": 4
+          },
+          {
+            "value": "0x09",
+            "uses": 4
+          },
+          {
+            "value": "0.090000003576278687",
+            "uses": 4
+          },
+          {
+            "value": "IL_000d:  stfld int32 Scrollbar_::T",
+            "uses": 4
+          },
+          {
+            "value": "IL_0002:  stfld int32 SetUp::DT_BG",
+            "uses": 4
+          },
+          {
+            "value": "100.",
+            "uses": 4
+          },
+          {
+            "value": "60.",
+            "uses": 4
+          },
+          {
+            "value": "IL_0008:  callvirt instance valuetype [UnityEngine]UnityEngine.AnimatorStateInfo class [UnityEngine]UnityEngine.Animator::GetCurrentAnimatorStateInfo(int32)",
+            "uses": 4
+          }
+        ],
+        "il_sha256": "c3d1339c42f95b08d2dff1b8f986bf0929ad81c1ef58a2c75606a40b09939677"
+      },
+      "security_boundary": "static_only_no_install_no_execution_no_auth_bypass"
+    }
+  ],
+  "cross_version": {
+    "package_count": 4,
+    "shared_exact_sample_groups": 17,
+    "shared_samples": [
+      {
+        "sha256": "21a7e39f49b31daf7521490b9def9423267b7f2132c521ac2c2184ab3dae3764",
+        "archives": [
+          "base.apk.1",
+          "遗迹杀戮(1).apk.1"
+        ],
+        "paths": [
+          "_安全解压资源/base.apk.1__c90fbfd89f75/lib/x86/libmono.so",
+          "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/lib/x86/libmono.so"
+        ]
+      },
+      {
+        "sha256": "2c5347e9aeaa36eb3636d38d5fc89a31c2cf175f32d59ed3f7c8802e71d79780",
+        "archives": [
+          "base.apk.1",
+          "遗迹杀戮(1).apk.1"
+        ],
+        "paths": [
+          "_安全解压资源/base.apk.1__c90fbfd89f75/assets/bin/Data/Managed/Mono.Security.dll",
+          "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/assets/bin/Data/Managed/Mono.Security.dll"
+        ]
+      },
+      {
+        "sha256": "2cd73239eb0c093d0f580eacf3aa49120b6a6ae23e30f7588f39ced4f9e2037a",
+        "archives": [
+          "base.apk.1",
+          "遗迹杀戮(1).apk.1"
+        ],
+        "paths": [
+          "_安全解压资源/base.apk.1__c90fbfd89f75/assets/bin/Data/Managed/UnityEngine.Networking.dll",
+          "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/assets/bin/Data/Managed/UnityEngine.Networking.dll"
+        ]
+      },
+      {
+        "sha256": "4657bab3c1ad2f9c54cf52fe6deffcb8411493f9db113ae3a9655f6fbffabdef",
+        "archives": [
+          "base.apk.1",
+          "遗迹杀戮(1).apk.1"
+        ],
+        "paths": [
+          "_安全解压资源/base.apk.1__c90fbfd89f75/lib/armeabi-v7a/libmain.so",
+          "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/lib/armeabi-v7a/libmain.so"
+        ]
+      },
+      {
+        "sha256": "6595a68b255119d8ba556002dfa61fd59ee74bff032da96dfbdd715643f137dc",
+        "archives": [
+          "base.apk.1",
+          "遗迹杀戮(1).apk.1"
+        ],
+        "paths": [
+          "_安全解压资源/base.apk.1__c90fbfd89f75/lib/armeabi-v7a/libmono.so",
+          "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/lib/armeabi-v7a/libmono.so"
+        ]
+      },
+      {
+        "sha256": "65aead5891dee9d83b865bf23e41ee71ac581ec80b71765128819dcc6d45bcbd",
+        "archives": [
+          "base.apk.1",
+          "遗迹杀戮(1).apk.1"
+        ],
+        "paths": [
+          "_安全解压资源/base.apk.1__c90fbfd89f75/assets/bin/Data/3524992d5418289408866ca4208471ef.resource",
+          "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/assets/bin/Data/01cdf639c273e824e8fe62c9237da3ee.resource"
+        ]
+      },
+      {
+        "sha256": "660ae7a82bd7839d26f104e1b8c47d5c4976548b99bd78d9c23b721a6f8e740c",
+        "archives": [
+          "base.apk.1",
+          "遗迹杀戮(1).apk.1"
+        ],
+        "paths": [
+          "_安全解压资源/base.apk.1__c90fbfd89f75/assets/bin/Data/Managed/mscorlib.dll",
+          "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/assets/bin/Data/Managed/mscorlib.dll"
+        ]
+      },
+      {
+        "sha256": "836377248dd6a2b9925f943288bcd8450e96d09515995beaee528ca3c0407553",
+        "archives": [
+          "base.apk.1",
+          "遗迹杀戮(1).apk.1"
+        ],
+        "paths": [
+          "_安全解压资源/base.apk.1__c90fbfd89f75/assets/bin/Data/Managed/System.Core.dll",
+          "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/assets/bin/Data/Managed/System.Core.dll"
+        ]
+      },
+      {
+        "sha256": "8b5ee837f14a51f0e71af2e3f87ba6c000fd9aaed75aeae173ef8d23074ea165",
+        "archives": [
+          "base.apk.1",
+          "遗迹杀戮(1).apk.1"
+        ],
+        "paths": [
+          "_安全解压资源/base.apk.1__c90fbfd89f75/assets/bin/Data/Managed/UnityEngine.UI.dll",
+          "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/assets/bin/Data/Managed/UnityEngine.UI.dll"
+        ]
+      },
+      {
+        "sha256": "b849096d6e6e2015cc3896a716b5480499648ab5bbd3679c420740408f3d340d",
+        "archives": [
+          "base.apk.1",
+          "遗迹杀戮(1).apk.1"
+        ],
+        "paths": [
+          "_安全解压资源/base.apk.1__c90fbfd89f75/lib/x86/libmain.so",
+          "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/lib/x86/libmain.so"
+        ]
+      },
+      {
+        "sha256": "cccd07b414123a00805edcd762c5fe3e9a49c245c468facd352d9518f45a6f58",
+        "archives": [
+          "base.apk.1",
+          "遗迹杀戮(1).apk.1"
+        ],
+        "paths": [
+          "_安全解压资源/base.apk.1__c90fbfd89f75/lib/armeabi-v7a/libunity.so",
+          "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/lib/armeabi-v7a/libunity.so"
+        ]
+      },
+      {
+        "sha256": "cecd4a75ff47f1bd1508fa756a0671f63ae30296be4720f4a20ee79528eb8250",
+        "archives": [
+          "base.apk.1",
+          "遗迹杀戮(1).apk.1"
+        ],
+        "paths": [
+          "_安全解压资源/base.apk.1__c90fbfd89f75/assets/bin/Data/Managed/System.dll",
+          "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/assets/bin/Data/Managed/System.dll"
+        ]
+      },
+      {
+        "sha256": "d284e83608882ec4201fc03d0ddd8ceae6b74618fdf074251a26e241324a8e92",
+        "archives": [
+          "base.apk.1",
+          "遗迹杀戮(1).apk.1"
+        ],
+        "paths": [
+          "_安全解压资源/base.apk.1__c90fbfd89f75/assets/bin/Data/f926e84c59583d742b4e3779dbf13457.resource",
+          "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/assets/bin/Data/082ccd25b7cbb9d408f39914b7616f53.resource"
+        ]
+      },
+      {
+        "sha256": "d81cfbdeaa13c1880fb9c2c0f93106d3f6a41b881a5e9de8e45be2621d51f257",
+        "archives": [
+          "base.apk.1",
+          "遗迹杀戮(1).apk.1"
+        ],
+        "paths": [
+          "_安全解压资源/base.apk.1__c90fbfd89f75/lib/x86/libunity.so",
+          "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/lib/x86/libunity.so"
+        ]
+      },
+      {
+        "sha256": "d9293e2ebb588a7168ad74590dc575b059491ec402198677f2e3fdd3396b3c94",
+        "archives": [
+          "base.apk.1",
+          "遗迹杀戮(1).apk.1"
+        ],
+        "paths": [
+          "_安全解压资源/base.apk.1__c90fbfd89f75/assets/bin/Data/561cfa2c25b8f0642abf3363e4d6612f.resource",
+          "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/assets/bin/Data/a09a994f1ce88fa4d9df28cad9e047b0.resource"
+        ]
+      },
+      {
+        "sha256": "deb6abfa3ac938416ea7728cc5e3745535d204686af29c0e4a803263431e2c94",
+        "archives": [
+          "base.apk.1",
+          "遗迹杀戮(1).apk.1"
+        ],
+        "paths": [
+          "_安全解压资源/base.apk.1__c90fbfd89f75/assets/bin/Data/adba8cbeb41bed749aabab22ade46fb2.resource",
+          "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/assets/bin/Data/43a855aacf2a85841ad3da87ad7518e6.resource"
+        ]
+      },
+      {
+        "sha256": "e428db4e8652f5d548024ccbbb994dc1636a3c4ad374bac48e18e2fd5db6c76b",
+        "archives": [
+          "base.apk.1",
+          "遗迹杀戮(1).apk.1"
+        ],
+        "paths": [
+          "_安全解压资源/base.apk.1__c90fbfd89f75/assets/bin/Data/Managed/UnityEngine.dll",
+          "_安全解压资源/遗迹杀戮_1_.apk.1__c9745db1614e/assets/bin/Data/Managed/UnityEngine.dll"
+        ]
+      }
+    ],
+    "engines": {
+      "Unity Mono": 3,
+      "Unreal Engine native UE4": 1
+    }
+  },
+  "unity_objects": {
+    "base.apk.1": {
+      "serialized_files": 6,
+      "objects": 423,
+      "types": {
+        "AnimationClip": 5,
+        "AnimatorController": 1,
+        "AudioClip": 35,
+        "Avatar": 1,
+        "Material": 115,
+        "Mesh": 41,
+        "MonoScript": 66,
+        "PreloadData": 6,
+        "Shader": 13,
+        "Sprite": 11,
+        "Texture2D": 129
+      },
+      "weapon_candidates": 0
+    },
+    "兵魂回忆录.apk.1": {
+      "serialized_files": 7,
+      "objects": 936,
+      "types": {
+        "AudioClip": 8,
+        "Avatar": 1,
+        "Material": 99,
+        "Mesh": 467,
+        "PreloadData": 7,
+        "Shader": 8,
+        "Sprite": 155,
+        "Texture2D": 189,
+        "VideoClip": 2
+      },
+      "weapon_candidates": 6
+    },
+    "创世兵魂地图手机版浏览（通过缓存恢复的）.apk.1": {
+      "serialized_files": 0,
+      "objects": 0,
+      "types": {},
+      "weapon_candidates": 0
+    },
+    "遗迹杀戮(1).apk.1": {
+      "serialized_files": 4,
+      "objects": 9132,
+      "types": {
+        "Animation": 3,
+        "AnimationClip": 38,
+        "Animator": 8,
+        "AnimatorController": 12,
+        "AudioClip": 22,
+        "AudioListener": 1,
+        "AudioSource": 15,
+        "Avatar": 2,
+        "BoxCollider": 9,
+        "Camera": 1,
+        "Canvas": 1,
+        "CanvasGroup": 1,
+        "CanvasRenderer": 1406,
+        "Cubemap": 2,
+        "FlareLayer": 1,
+        "Font": 12,
+        "GUILayer": 1,
+        "GameObject": 1625,
+        "Light": 1,
+        "LightProbes": 2,
+        "LightmapSettings": 1,
+        "Material": 41,
+        "Mesh": 41,
+        "MeshFilter": 25,
+        "MeshRenderer": 25,
+        "MonoBehaviour": 3158,
+        "MonoScript": 111,
+        "NavMeshData": 1,
+        "ParticleSystem": 11,
+        "ParticleSystemRenderer": 11,
+        "PhysicMaterial": 1,
+        "PreloadData": 3,
+        "Projector": 1,
+        "RectTransform": 1545,
+        "RenderSettings": 1,
+        "RenderTexture": 1,
+        "Rigidbody": 5,
+        "Shader": 14,
+        "SphereCollider": 2,
+        "Sprite": 416,
+        "SpriteRenderer": 2,
+        "Texture2D": 469,
+        "TrailRenderer": 4,
+        "Transform": 80
+      },
+      "weapon_candidates": 24
+    }
+  },
+  "unity_exports": {
+    "manifest": "recovery/android-unity-object-exports.json",
+    "unitypy_version": "1.25.2",
+    "packages": [
+      {
+        "archive": "base.apk.1",
+        "objects": 417,
+        "exported": 393,
+        "raw_fallback": 24,
+        "failed": 0
+      },
+      {
+        "archive": "兵魂回忆录.apk.1",
+        "objects": 927,
+        "exported": 927,
+        "raw_fallback": 0,
+        "failed": 0
+      },
+      {
+        "archive": "遗迹杀戮(1).apk.1",
+        "objects": 9082,
+        "exported": 5492,
+        "raw_fallback": 3590,
+        "failed": 0
+      }
+    ],
+    "objects": 10426,
+    "failed": 0
+  },
+  "unity_object_inventory": "recovery/apk-unity-asset-inventory.json"
+}

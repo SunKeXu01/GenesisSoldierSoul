@@ -47,14 +47,46 @@ namespace GenesisSoldierSoul.Multiplayer
         private static IEnumerator ApplyAfterLayout()
         {
             yield return null;
+            var restoredCloseButtons = 0;
             // AssetRipper preserved the serialized Button.onClick callbacks.
             // The recovered scripts also add the same callback again in Start(),
             // causing two LoadScene calls from one click and aborting WebGL.
             // Remove runtime-added listeners while retaining serialized originals.
             foreach (var button in Resources.FindObjectsOfTypeAll<Button>())
             {
-                if (button.gameObject.scene == SceneManager.GetActiveScene())
-                    button.onClick.RemoveAllListeners();
+                if (button.gameObject.scene != SceneManager.GetActiveScene())
+                    continue;
+                button.onClick.RemoveAllListeners();
+
+                // Asset recovery also produced full-panel decorative Buttons
+                // with no persistent callback. They sit above real controls in
+                // several lobby popups and consume every pointer ray, including
+                // the visible close button. A zero-callback button has no action
+                // to preserve, so make it transparent to UI raycasts.
+                if (button.onClick.GetPersistentEventCount() == 0)
+                {
+                    button.interactable = false;
+                    if (button.targetGraphic != null)
+                        button.targetGraphic.raycastTarget = false;
+                }
+
+                // Some recovered UnityEvents retain their serialized count but
+                // lose the callable target in WebGL. Rebind the small close
+                // component directly; setting the same panel inactive twice is
+                // harmless when the persistent callback is still valid.
+                foreach (var close in button.GetComponents<guanbi>())
+                {
+                    if (close.option == null)
+                        continue;
+                    button.onClick.AddListener(close.Click);
+                    restoredCloseButtons += 1;
+                }
+            }
+            if (restoredCloseButtons > 0)
+            {
+                Debug.Log(
+                    "[GenesisWebGL] 已恢复 " + restoredCloseButtons
+                    + " 个大厅弹窗关闭按钮。");
             }
 
             var activeScene = SceneManager.GetActiveScene();
@@ -63,8 +95,8 @@ namespace GenesisSoldierSoul.Multiplayer
                 GenesisExitGameplayMode();
                 // The recovered lobby already contains the original “训练模式”
                 // button, but its archived callback only played the click sound.
-                // Use the recovered pyramid scene because it is the most complete
-                // surviving map package (environment, colliders and scene light).
+                // Pyramid is the verified first map in the recovered-map
+                // rotation. Later rounds advance through the other promoted maps.
                 var trainingButton = GameObject.Find(
                     "Canvas/RawImage 1/RawImage/Button 2");
                 var button = trainingButton == null
@@ -80,7 +112,7 @@ namespace GenesisSoldierSoul.Multiplayer
             else if (GenesisMultiplayerBootstrap.IsPlayableMap(activeScene.name))
             {
                 Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.lockState = CursorLockMode.None;
             }
 
             if (activeScene.name != "Scene1")
@@ -99,10 +131,11 @@ namespace GenesisSoldierSoul.Multiplayer
 
         private static void EnterPyramid()
         {
-            // Fullscreen and pointer lock are browser-gated APIs. They must be
-            // requested synchronously from the original button click, before
-            // the asynchronous scene load consumes the user gesture.
+            // Install canvas-relative mouse tracking before loading gameplay.
+            // Fullscreen remains an explicit template-button choice and the
+            // WebGL client intentionally does not request Pointer Lock.
             GenesisEnterGameplayMode();
+            GenesisLobbySession.EnterTraining();
             SceneManager.LoadScene("Pyramid");
         }
 #endif

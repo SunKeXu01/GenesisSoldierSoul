@@ -1,0 +1,89 @@
+{
+  "source_assets": "/Users/Admin/Documents/创世兵魂/原程序恢复/单机怀旧创世兵魂V1.2.1/UnityProject/ExportedProject/Assets",
+  "root_asset": "GameObject/Shotgun01.prefab",
+  "target_assets": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/client-restored/Assets",
+  "namespace": "RecoveredWeaponClosures/Shotgun01",
+  "asset_count": 18,
+  "reused_guid_count": 1,
+  "missing_guid_count": 0,
+  "conflict_count": 0,
+  "copied": [
+    {
+      "source": "AnimationClip/Fire01.anim",
+      "target": "RecoveredWeaponClosures/Shotgun01/AnimationClip/Fire01.anim"
+    },
+    {
+      "source": "AnimationClip/Idle01.anim",
+      "target": "RecoveredWeaponClosures/Shotgun01/AnimationClip/Idle01.anim"
+    },
+    {
+      "source": "AnimationClip/Idle02.anim",
+      "target": "RecoveredWeaponClosures/Shotgun01/AnimationClip/Idle02.anim"
+    },
+    {
+      "source": "AnimationClip/Idle03.anim",
+      "target": "RecoveredWeaponClosures/Shotgun01/AnimationClip/Idle03.anim"
+    },
+    {
+      "source": "AnimationClip/Idle04.anim",
+      "target": "RecoveredWeaponClosures/Shotgun01/AnimationClip/Idle04.anim"
+    },
+    {
+      "source": "AnimationClip/Reload01.anim",
+      "target": "RecoveredWeaponClosures/Shotgun01/AnimationClip/Reload01.anim"
+    },
+    {
+      "source": "AnimationClip/Reload02.anim",
+      "target": "RecoveredWeaponClosures/Shotgun01/AnimationClip/Reload02.anim"
+    },
+    {
+      "source": "GameObject/Shotgun01.prefab",
+      "target": "RecoveredWeaponClosures/Shotgun01/GameObject/Shotgun01.prefab"
+    },
+    {
+      "source": "Material/MA_Shotgun01.mat",
+      "target": "RecoveredWeaponClosures/Shotgun01/Material/MA_Shotgun01.mat"
+    },
+    {
+      "source": "Mesh/InsertMesh.asset",
+      "target": "RecoveredWeaponClosures/Shotgun01/Mesh/InsertMesh.asset"
+    },
+    {
+      "source": "Mesh/Left_0.asset",
+      "target": "RecoveredWeaponClosures/Shotgun01/Mesh/Left_0.asset"
+    },
+    {
+      "source": "Mesh/PumpMesh.asset",
+      "target": "RecoveredWeaponClosures/Shotgun01/Mesh/PumpMesh.asset"
+    },
+    {
+      "source": "Mesh/ReloadMesh_0.asset",
+      "target": "RecoveredWeaponClosures/Shotgun01/Mesh/ReloadMesh_0.asset"
+    },
+    {
+      "source": "Mesh/Right_1.asset",
+      "target": "RecoveredWeaponClosures/Shotgun01/Mesh/Right_1.asset"
+    },
+    {
+      "source": "Mesh/TriggerMesh_0.asset",
+      "target": "RecoveredWeaponClosures/Shotgun01/Mesh/TriggerMesh_0.asset"
+    },
+    {
+      "source": "Mesh/WeaponMainMesh.asset",
+      "target": "RecoveredWeaponClosures/Shotgun01/Mesh/WeaponMainMesh.asset"
+    },
+    {
+      "source": "Texture2D/DI_Shotgun01.png",
+      "target": "RecoveredWeaponClosures/Shotgun01/Texture2D/DI_Shotgun01.png"
+    },
+    {
+      "source": "Texture2D/NM_Shotgun01.png",
+      "target": "RecoveredWeaponClosures/Shotgun01/Texture2D/NM_Shotgun01.png"
+    }
+  ],
+  "reused": {
+    "f45106b66e35b8041803fb32afb70e6b": "Resources/OriginalGame/FirstPerson/Materials/MA_Arm.mat"
+  },
+  "missing_guids": [],
+  "conflicts": []
+}

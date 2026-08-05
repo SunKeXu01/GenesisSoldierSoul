@@ -15,7 +15,8 @@ public class Fangjian : MonoBehaviour
 		GameObject btnObj = GameObject.Find("Button18");
 		if (btnObj == null)
 		{
-			Debug.LogWarning("Recovered button target was not found in scene: " + gameObject.scene.name);
+			// This recovered component is reused by scenes that do not expose
+			// the optional legacy navigation button.
 			return;
 		}
 		Button component = btnObj.GetComponent<Button>();

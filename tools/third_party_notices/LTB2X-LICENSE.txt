@@ -1,0 +1,6 @@
+Cote-Duke LTB2X loader source license notice
+
+Source code provided "as-is". Feel free to modify and redistribute. Always include this file with your distribution package. (License.txt)
+
+Upstream: https://cote-duke.narod.ru/LtbSource.zip
+Downloaded archive SHA-256: 2c99507cf39082d33bd57095eb660a2639f0c2ec863fddf5d5faad000c0e8cf1

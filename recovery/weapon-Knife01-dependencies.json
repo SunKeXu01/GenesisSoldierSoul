@@ -1,0 +1,30 @@
+{
+  "source_assets": "/Users/Admin/Documents/创世兵魂/原程序恢复/单机怀旧创世兵魂V1.2.1/UnityProject/ExportedProject/Assets",
+  "root_asset": "GameObject/Knife01.prefab",
+  "target_assets": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/client-restored/Assets",
+  "namespace": "RecoveredWeaponClosures/Knife01",
+  "asset_count": 1,
+  "reused_guid_count": 10,
+  "missing_guid_count": 0,
+  "conflict_count": 0,
+  "copied": [
+    {
+      "source": "GameObject/Knife01.prefab",
+      "target": "RecoveredWeaponClosures/Knife01/GameObject/Knife01.prefab"
+    }
+  ],
+  "reused": {
+    "a586b5e50d4c2e34491fe26a37c80c8c": "Resources/OriginalGame/FirstPerson/Animations/Idle02_1.anim",
+    "a28ce4e65d0412447937cc9fc4b0e2c5": "Resources/OriginalGame/FirstPerson/Materials/Knife01.mat",
+    "f45106b66e35b8041803fb32afb70e6b": "Resources/OriginalGame/FirstPerson/Materials/MA_Arm.mat",
+    "89f94abebd9411d46b9b919628dd138b": "Resources/OriginalGame/FirstPerson/Animations/Idle04_1.anim",
+    "44015412f3f9204419f6b61d76dba3fc": "Resources/OriginalGame/FirstPerson/Meshes/Right_0.asset",
+    "f7b63446f1597d949905c47e36e9e3f3": "Resources/OriginalGame/FirstPerson/Animations/Throw.anim",
+    "0c7a559fcc62e3d4bbe881c57b6b8c46": "Resources/OriginalGame/FirstPerson/Animations/Idle03_1.anim",
+    "5f6dd3fceb5f1f74f8f8ef341483fc69": "Resources/OriginalGame/FirstPerson/Knife/Knife01.prefab",
+    "00289a8df3c395744b2de9418288db0e": "Resources/OriginalGame/FirstPerson/Animations/Idle01_1.anim",
+    "32f176aa4d235d642b422f13a898657e": "Resources/OriginalGame/FirstPerson/Meshes/Knife.asset"
+  },
+  "missing_guids": [],
+  "conflicts": []
+}

@@ -1,0 +1,58 @@
+{
+    "generatedAtUtc": "2026-08-05T08:52:25.4602810Z",
+    "unityVersion": "2022.3.62f3c1",
+    "passed": true,
+    "prefabLoaded": true,
+    "humanoidAnimatorFound": true,
+    "controllerLoaded": true,
+    "usesDirectional2DBlend": true,
+    "jumpStateFound": true,
+    "landStateFound": true,
+    "jumpTransitionsToLand": true,
+    "landTransitionsToLocomotion": true,
+    "runtimeEightDirectionSamplesPassed": true,
+    "runtimeJumpSamplePassed": true,
+    "runtimeLandSamplePassed": true,
+    "runtimeDirectionSamples": [
+        "(-0.71,-0.71):state=Locomotion,clips=WalkBackwardOneHand@0.27+RunBackwardOneHand@0.23+WalkStrafeLeftOneHand@0.27+RunStrafeLeftOneHand@0.23",
+        "(0.00,-1.00):state=Locomotion,clips=RunBackwardOneHand@1.00",
+        "(0.71,-0.71):state=Locomotion,clips=WalkBackwardOneHand@0.27+RunBackwardOneHand@0.23+WalkStrafeRightOneHand@0.27+RunStrafeRightOneHand@0.23",
+        "(-1.00,0.00):state=Locomotion,clips=RunStrafeLeftOneHand@1.00",
+        "(1.00,0.00):state=Locomotion,clips=RunStrafeRightOneHand@1.00",
+        "(-0.71,0.71):state=Locomotion,clips=WalkForward@0.27+Run@0.23+WalkStrafeLeftOneHand@0.27+RunStrafeLeftOneHand@0.23",
+        "(0.00,1.00):state=Locomotion,clips=Run@1.00",
+        "(0.71,0.71):state=Locomotion,clips=WalkForward@0.27+Run@0.23+WalkStrafeRightOneHand@0.27+RunStrafeRightOneHand@0.23"
+    ],
+    "parameters": [
+        "Speed",
+        "Grounded",
+        "MoveX",
+        "MoveZ"
+    ],
+    "locomotionClips": [
+        "Run",
+        "RunBackwardOneHand",
+        "RunStrafeLeftOneHand",
+        "RunStrafeRightOneHand",
+        "StandIdleOneHand",
+        "WalkBackwardOneHand",
+        "WalkForward",
+        "WalkStrafeLeftOneHand",
+        "WalkStrafeRightOneHand"
+    ],
+    "missingClips": [],
+    "combatBones": [
+        "Marine_L_UpperArm",
+        "Marine_R_UpperArm",
+        "Marine_R_Hand"
+    ],
+    "missingCombatBones": [],
+    "combatWeaponPrefabs": [
+        "Assets/Resources/OriginalGame/M4A1.prefab",
+        "Assets/Resources/OriginalGame/M9.prefab",
+        "Assets/Resources/OriginalGame/FirstPerson/RecoveredClosures/Shotgun01/GameObject/Shotgun01.prefab",
+        "Assets/Resources/OriginalGame/FirstPerson/Knife/Knife01.prefab",
+        "Assets/Resources/OriginalGame/FirstPerson/RecoveredClosures/Grenade01/GameObject/Grenade01.prefab"
+    ],
+    "missingCombatWeaponPrefabs": []
+}
