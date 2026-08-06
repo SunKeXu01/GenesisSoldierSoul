@@ -1,5 +1,7 @@
 # LTB runtime layout-v3 全量几何恢复
 
+> 历史阶段报告；当前 layout-v5 已恢复 joints/weights/glTF skin，见 `LTB_SKIN_LAYOUT_V5_RECOVERY_2026-08-06.md`。
+
 日期：2026-08-06
 
 ## 结论

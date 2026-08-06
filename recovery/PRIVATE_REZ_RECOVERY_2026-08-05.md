@@ -34,19 +34,19 @@ DTX 转换器支持以下经尺寸关系验证的格式：
 
 ## LTB 几何转换
 
-基于 Cote-Duke LTB2X 与公开 CrossFire LithTech 运行时/打包器的结构规则独立实现了有界 Python 解析器；第三方出处记录在转换清单，未运行其 Windows 示例程序。layout-v3 按运行时定义解析 rigid/skeletal/vertex-animated/null render object、四路顶点流、matrix palette/骨骼重索引、顶点动画重复表和 OBB，并验证对象尺寸、有限浮点、索引范围和完整 GLB 2.0 块结构。
+基于 Cote-Duke LTB2X 与公开 CrossFire LithTech 运行时/打包器的结构规则独立实现了有界 Python 解析器；第三方出处记录在转换清单，未运行其 Windows 示例程序。layout-v5 在 rigid/skeletal/vertex-animated/null render object、四路顶点流、matrix palette/骨骼重索引、顶点动画重复表和 OBB 基础上，进一步从 rigid bone effector、direct BoneSet 和 indexed matrix palette 严格恢复 joints/weights/skin。
 
 - 候选 LTB model：8,721；严格转换/复核 GLB：8,721；保留失败：0。
-- GLB 共含 32,608 个网格、23,507,870 顶点、20,749,724 三角形，输出 909,248,808 字节。
-- 321 个复合布局文件额外严格解析 14,896 条骨骼元数据；尚未写入 glTF skin/动画，不伪称已恢复蒙皮动画。
-- 输出保留源坐标，不做未经证明的轴变换；仅声明网格几何，不伪称已恢复骨骼、蒙皮或动画。
+- GLB 共含 32,608 个网格、23,507,870 顶点、20,749,724 三角形，输出 950,977,288 字节。
+- 321 个复合布局文件严格解析 14,896 条骨骼，均已写入 glTF skin；1,844 个网格含 `JOINTS_0/WEIGHTS_0`。
+- 输出保留源坐标，不做未经证明的轴变换；骨骼与顶点动画通道仍未转换，不伪称已恢复动画。
 - 每个成功项保存输入/输出哈希和 GLB 结构验证；每个失败项保存源包、stream index、输入路径和具体错误。
 
 ## 仍未完成
 
 - 两份 RF199 已从固定数据区起点严格恢复 9,520 PNG + 1 DDS（141,831,713 字节），并在首个未知字节停止；详见 `RF199_FRAMED_PREFIX_RECOVERY_2026-08-06.md`。
 - 仍完全未分帧的 5 个包为 RB001、两份 RF019、RF164、RF266；另保留两份 RF199 共 670,465,134 字节未知后缀。在没有可信边界前不做整段魔数 carving。
-- LTB 静态几何 8,721/8,721 全部通过；321 个文件已有骨骼层级/绑定矩阵元数据，但完整 joints/weights/skin/动画仍保留在原 LTB 中。详见 `LTB_RUNTIME_LAYOUT_V3_RECOVERY_2026-08-06.md`。
+- LTB 静态几何 8,721/8,721 全部通过；321 个文件的 joints/weights/skin 已转换。骨骼与顶点动画通道仍保留在原 LTB 中，详见 `LTB_SKIN_LAYOUT_V5_RECOVERY_2026-08-06.md`。
 - 364 个 loose LTC 已在 2026-08-06 全部恢复为 LTA：固定 16 字节 XOR 包装去除后，
   使用 LithTech LTC/LZSS v0 位流解码；输出 51,657,941 字节、失败 0，并由同名
   `AI3_FatalCanyon_DZ.LTA` 逐字节精确匹配验证。详见 `LTC_RECOVERY_2026-08-06.md`。
@@ -65,4 +65,4 @@ DTX 转换器支持以下经尺寸关系验证的格式：
 - 工具：`tools/recover_private_rez.py`、`tools/recover_private_rez_framed_prefix.py`、`tools/convert_private_rez_media.py`、`tools/convert_ltb_models.py`、`tools/lithtech_ltc.py`。
 - 专项测试：`tools/test_recover_private_rez.py`、`tools/test_convert_private_rez_media.py`、`tools/test_convert_ltb_models.py`。
 
-统一 provenance 已验证 12/12 清单、148,829 个输出、21,433,831,251 字节，错误 0。
+统一 provenance 已验证 12/12 清单、148,829 个输出、21,475,559,731 字节，错误 0。

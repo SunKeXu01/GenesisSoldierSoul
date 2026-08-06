@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-08-06T03:57:22.909053+00:00",
+  "generated_at_utc": "2026-08-06T04:30:10.442439+00:00",
   "tool": "tools/audit_special_formats.py",
-  "tool_version": "9",
+  "tool_version": "10",
   "workspace": "/Users/Admin/Documents/创世兵魂",
   "root_inventory_sha256": "e88424a9d72e1a76939ec39ce77dc7b766c670d6c1b835f132976fc9c9ac0e4e",
   "safety": {
@@ -16409,7 +16409,7 @@
       },
       "recovery_tool_version": "1",
       "media_tool_version": "1",
-      "model_tool_version": "4",
+      "model_tool_version": "6",
       "png_prefix_tool_version": "1",
       "verifications": [
         {
@@ -16429,7 +16429,7 @@
         {
           "manifest": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-model-conversions.json",
           "outputs_verified": 8721,
-          "bytes_verified": 909248808,
+          "bytes_verified": 950977288,
           "errors": [],
           "status": "verified"
         },
@@ -16478,7 +16478,9 @@
         "ltb_glb_meshes": 32608,
         "ltb_glb_vertices": 23507870,
         "ltb_glb_triangles": 20749724,
-        "ltb_glb_bytes": 909248808,
+        "ltb_glb_bytes": 950977288,
+        "ltb_glb_skinned_files": 321,
+        "ltb_glb_skinned_meshes": 1844,
         "ltb_glb_failures": 0,
         "rez_png_prefix_archives": 2,
         "rez_png_prefix_images": 9520,
@@ -34629,7 +34631,7 @@
       {
         "manifest": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-model-conversions.json",
         "outputs_verified": 8721,
-        "bytes_verified": 909248808,
+        "bytes_verified": 950977288,
         "errors": [],
         "status": "verified"
       },
@@ -34659,7 +34661,7 @@
       "manifests": 12,
       "verified": 12,
       "outputs": 148829,
-      "bytes": 21433831251,
+      "bytes": 21475559731,
       "errors": 0
     }
   }

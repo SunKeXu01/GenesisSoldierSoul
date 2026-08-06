@@ -88,6 +88,7 @@ def composite_ltb(
     render_object_type: int = 4,
     with_obb: bool = False,
     nonfinite_normal_vertex: int | None = None,
+    direct_skeletal: bool = False,
 ) -> bytes:
     data = bytearray(94)
     struct.pack_into("<HH", data, 0, 1, 9)
@@ -128,12 +129,15 @@ def composite_ltb(
     if render_object_type == 4:
         payload.extend(struct.pack("<4I4II", 3, 1, 1, 1, 0x13, 0, 0, 0, 0))
     elif render_object_type == 5:
-        payload.extend(struct.pack("<4I", 3, 1, 6, 4))
-        payload.extend(b"\x01")
+        payload.extend(
+            struct.pack("<4I", 3, 1, 1 if direct_skeletal else 6, 1 if direct_skeletal else 4)
+        )
+        payload.extend(b"\x00" if direct_skeletal else b"\x01")
         payload.extend(struct.pack("<4I", 0x13, 0, 0, 0))
-        payload.extend(b"\x01")
-        payload.extend(struct.pack("<3I", 0, 0, 1))
-        payload.extend(struct.pack("<I", 0))
+        payload.extend(b"\x00" if direct_skeletal else b"\x01")
+        if not direct_skeletal:
+            payload.extend(struct.pack("<3I", 0, 0, 1))
+            payload.extend(struct.pack("<I", 0))
     elif render_object_type == 6:
         payload.extend(
             struct.pack("<5I4I2I", 3, 3, 1, 1, 1, 0x13, 0, 0, 0, 0, 0)
@@ -150,7 +154,7 @@ def composite_ltb(
             if vertex_index == nonfinite_normal_vertex
             else (0.0, 0.0, 1.0)
         )
-        if render_object_type == 5:
+        if render_object_type == 5 and not direct_skeletal:
             payload.extend(
                 struct.pack(
                     "<3f3f4B3f2f",
@@ -171,6 +175,8 @@ def composite_ltb(
                 struct.pack("<3f3f2f", *position, *normal, *uv)
             )
     payload.extend(struct.pack("<3H", 0, 1, 2))
+    if render_object_type == 5 and direct_skeletal:
+        payload.extend(struct.pack("<IHH4BI", 1, 0, 3, 0, 0xFF, 0xFF, 0xFF, 3))
     if render_object_type == 6:
         payload.extend(struct.pack("<I", 0))
     data.extend(struct.pack("<I", len(payload)) + payload)
@@ -230,14 +236,14 @@ class LtbModelTests(unittest.TestCase):
         self.assertEqual(details["triangle_count"], 1)
         self.assertEqual(meshes[0].mesh_type, 4)
 
-    def test_layout_v3_preserves_different_prior_output(self):
+    def test_layout_v5_preserves_different_prior_output(self):
         source = minimal_ltb()
         digest = hashlib.sha256(source).hexdigest()
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             input_path = root / "source.ltb"
             legacy_path = root / "legacy.glb"
-            output_path = root / "layout-v3.glb"
+            output_path = root / "layout-v5.glb"
             input_path.write_bytes(source)
             legacy_path.write_bytes(b"legacy-must-remain")
             result = convert_one(
@@ -250,7 +256,7 @@ class LtbModelTests(unittest.TestCase):
                     "stream_index": 7,
                     "input_label": "source.ltb",
                     "output_path": str(output_path),
-                    "output_relative": "layout-v3.glb",
+                    "output_relative": "layout-v5.glb",
                     "legacy_output_path": str(legacy_path),
                 }
             )
@@ -277,6 +283,25 @@ class LtbModelTests(unittest.TestCase):
         self.assertEqual(details["matrix_palette_submeshes"], 1)
         self.assertEqual(details["reindexed_bone_entries"], 1)
         self.assertEqual(details["vertex_stream_layout_counts"], {"0x13/48": 1})
+        self.assertEqual(meshes[0].joints[0], (0, 0, 0, 0))
+        self.assertEqual(meshes[0].weights[0], (1.0, 0.0, 0.0, 0.0))
+
+        glb = make_glb(meshes, {"test": True}, details["skeleton_metadata"])
+        self.assertEqual(validate_glb(glb)["skins"], 1)
+        json_size = struct.unpack_from("<I", glb, 12)[0]
+        document = json.loads(glb[20 : 20 + json_size].decode().rstrip(" "))
+        attributes = document["meshes"][0]["primitives"][0]["attributes"]
+        self.assertIn("JOINTS_0", attributes)
+        self.assertIn("WEIGHTS_0", attributes)
+        self.assertEqual(document["nodes"][-1]["skin"], 0)
+
+    def test_parses_direct_bone_set_skin_mapping(self):
+        meshes, details = parse_crossfire_composite_ltb(
+            composite_ltb(5, direct_skeletal=True), 0, 1, 98
+        )
+        self.assertEqual(details["skinned_mesh_count"], 1)
+        self.assertEqual(meshes[0].joints, [(0, 0, 0, 0)] * 3)
+        self.assertEqual(meshes[0].weights, [(1.0, 0.0, 0.0, 0.0)] * 3)
 
     def test_parses_vertex_animated_geometry(self):
         meshes, details = parse_crossfire_composite_ltb(

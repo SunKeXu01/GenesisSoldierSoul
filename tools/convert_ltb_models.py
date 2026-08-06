@@ -3,9 +3,9 @@
 
 The structural offsets are independently implemented from the loader notes in
 Cote-Duke's LTB2X source release and the public CrossFire LithTech runtime
-loader.  See third_party_notices/LTB2X-LICENSE.txt.  Mesh geometry is converted;
-bounded skeleton metadata is audited, while skins and animations remain in the
-source LTB and are not claimed in the GLB.
+loader.  See third_party_notices/LTB2X-LICENSE.txt.  Mesh geometry and bounded
+skeletal vertex bindings are converted; vertex and skeletal animation channels
+remain in the source LTB and are not claimed in the GLB.
 """
 
 from __future__ import annotations
@@ -28,7 +28,7 @@ from typing import Any
 MAX_MESHES = 100_000
 MAX_VERTICES = 65_535
 MAX_FACES = 65_535
-OUTPUT_LAYOUT_VERSION = "layout-v3"
+OUTPUT_LAYOUT_VERSION = "layout-v5"
 
 RENDER_OBJECT_RIGID = 4
 RENDER_OBJECT_SKELETAL = 5
@@ -65,6 +65,26 @@ class LtbMesh:
     normals: list[tuple[float, float, float]]
     texcoords: list[tuple[float, float]]
     indices: list[int]
+    joints: list[tuple[int, int, int, int]] | None = None
+    weights: list[tuple[float, float, float, float]] | None = None
+
+
+def complete_blend_weights(
+    explicit: tuple[float, ...], label: str, vertex_index: int
+) -> tuple[float, float, float, float]:
+    if not all(math.isfinite(value) for value in explicit):
+        raise LtbError(f"non-finite blend weight in {label} at vertex {vertex_index}")
+    implicit = 1.0 - sum(explicit)
+    values = [*explicit, implicit]
+    if any(value < -1e-4 or value > 1.0001 for value in values):
+        raise LtbError(f"invalid blend weights in {label} at vertex {vertex_index}")
+    values = [min(1.0, max(0.0, value)) for value in values]
+    total = sum(values)
+    if total <= 1e-8:
+        raise LtbError(f"zero blend weight total in {label} at vertex {vertex_index}")
+    values = [value / total for value in values]
+    values.extend([0.0] * (4 - len(values)))
+    return tuple(values[:4])
 
 
 def sha256_bytes(data: bytes) -> str:
@@ -149,11 +169,15 @@ def parse_vertex_streams(
     int,
     list[dict[str, int]],
     set[int],
+    list[tuple[float, float, float, float]] | None,
+    list[tuple[int, int, int, int]] | None,
 ]:
     positions: list[tuple[float, float, float] | None] = [None] * vertex_count
     normals: list[tuple[float, float, float] | None] = [None] * vertex_count
     texcoords: list[tuple[float, float] | None] = [None] * vertex_count
     nonfinite_normal_vertices: set[int] = set()
+    blend_weights: list[tuple[float, float, float, float]] | None = None
+    blend_indices: list[tuple[int, int, int, int]] | None = None
     stream_details = []
     for stream_index, flags in enumerate(stream_flags):
         if not flags:
@@ -174,6 +198,34 @@ def parse_vertex_streams(
                     )
                 if positions[vertex_index] is None:
                     positions[vertex_index] = position
+                explicit_weight_count = {
+                    BLEND_NONE: 0,
+                    BLEND_NONINDEXED_B1: 1,
+                    BLEND_NONINDEXED_B2: 2,
+                    BLEND_NONINDEXED_B3: 3,
+                    BLEND_INDEXED_B1: 1,
+                    BLEND_INDEXED_B2: 2,
+                    BLEND_INDEXED_B3: 3,
+                }[blend_type]
+                if explicit_weight_count:
+                    explicit = struct.unpack_from(
+                        f"<{explicit_weight_count}f", data, base + 12
+                    )
+                    if blend_weights is None:
+                        blend_weights = [
+                            (0.0, 0.0, 0.0, 0.0) for _ in range(vertex_count)
+                        ]
+                    blend_weights[vertex_index] = complete_blend_weights(
+                        explicit, stream_label, vertex_index
+                    )
+                    if blend_type >= BLEND_INDEXED_B1:
+                        if blend_indices is None:
+                            blend_indices = [
+                                (0, 0, 0, 0) for _ in range(vertex_count)
+                            ]
+                        blend_indices[vertex_index] = struct.unpack_from(
+                            "<4B", data, base + 12 + explicit_weight_count * 4
+                        )
             if normal_offset is not None:
                 normal = struct.unpack_from("<3f", data, base + normal_offset)
                 if all(math.isfinite(value) for value in normal):
@@ -212,6 +264,8 @@ def parse_vertex_streams(
         cursor,
         stream_details,
         nonfinite_normal_vertices,
+        blend_weights,
+        blend_indices,
     )
 
 
@@ -356,6 +410,9 @@ def parse_crossfire_composite_ltb(
         cursor += submesh_count * 4 + 8
         for sub_index in range(submesh_count):
             label = f"submesh {top_index}/{sub_index}"
+            bone_effector: int | None = None
+            matrix_palette = False
+            reindexed: tuple[int, ...] = ()
             bounded_slice(data, cursor, 29, f"{label} header")
             texture_count = u32(data, cursor, f"{label} texture count")
             if texture_count > 4:
@@ -501,6 +558,8 @@ def parse_crossfire_composite_ltb(
                     cursor,
                     stream_details,
                     nonfinite_normal_vertices,
+                    blend_weights,
+                    blend_indices,
                 ) = (
                     parse_vertex_streams(
                         data,
@@ -518,29 +577,8 @@ def parse_crossfire_composite_ltb(
                 indices, cursor = parse_triangle_indices(
                     data, cursor, vertex_count, triangle_count, label
                 )
-                (
-                    positions,
-                    normals,
-                    texcoords,
-                    indices,
-                    nonfinite_normal_vertices,
-                    removed_count,
-                ) = remove_unreferenced_nonfinite_normal_vertices(
-                    positions,
-                    normals,
-                    texcoords,
-                    indices,
-                    nonfinite_normal_vertices,
-                )
-                removed_unreferenced_nonfinite_normal_vertices += removed_count
-                normals, repaired_count = repair_nonfinite_normals(
-                    positions,
-                    normals,
-                    indices,
-                    nonfinite_normal_vertices,
-                    label,
-                )
-                repaired_normal_vertices += repaired_count
+                joints: list[tuple[int, int, int, int]] | None = None
+                weights: list[tuple[float, float, float, float]] | None = None
                 if (
                     render_object_type == RENDER_OBJECT_SKELETAL
                     and not matrix_palette
@@ -551,10 +589,89 @@ def parse_crossfire_composite_ltb(
                         raise LtbError(
                             f"implausible bone set count in {label}: {bone_set_count}"
                         )
-                    bounded_slice(
+                    bone_set_data = bounded_slice(
                         data, cursor, bone_set_count * 12, f"{label} bone sets"
                     )
+                    if blend_weights is None:
+                        if max_bones_per_triangle != 1:
+                            raise LtbError(f"missing direct blend weights in {label}")
+                        blend_weights = [
+                            (1.0, 0.0, 0.0, 0.0) for _ in range(vertex_count)
+                        ]
+                    joints = [(0, 0, 0, 0) for _ in range(vertex_count)]
+                    assigned = [False] * vertex_count
+                    previous_index_end = 0
+                    for bone_set_index in range(bone_set_count):
+                        first_vertex, set_vertex_count, *rest = struct.unpack_from(
+                            "<HH4BI", bone_set_data, bone_set_index * 12
+                        )
+                        bone_slots = tuple(rest[:4])
+                        index_end = rest[4]
+                        if (
+                            first_vertex + set_vertex_count > vertex_count
+                            or index_end < previous_index_end
+                            or index_end > len(indices)
+                            or index_end % 3
+                        ):
+                            raise LtbError(f"invalid direct bone set in {label}")
+                        previous_index_end = index_end
+                        mapped_slots = tuple(0 if bone == 0xFF else bone for bone in bone_slots)
+                        if any(
+                            bone != 0xFF and bone >= bone_count for bone in bone_slots
+                        ):
+                            raise LtbError(f"out-of-range direct bone in {label}")
+                        for vertex_index in range(
+                            first_vertex, first_vertex + set_vertex_count
+                        ):
+                            if assigned[vertex_index]:
+                                raise LtbError(f"overlapping direct bone sets in {label}")
+                            for slot, weight in zip(
+                                bone_slots, blend_weights[vertex_index]
+                            ):
+                                if slot == 0xFF and weight > 1e-5:
+                                    raise LtbError(
+                                        f"weighted empty direct bone slot in {label}"
+                                    )
+                            joints[vertex_index] = mapped_slots
+                            assigned[vertex_index] = True
+                    if bone_set_count and previous_index_end != len(indices):
+                        raise LtbError(f"incomplete direct bone-set index coverage in {label}")
+                    if any(not assigned[index] for index in set(indices)):
+                        raise LtbError(f"unassigned referenced direct vertex in {label}")
+                    weights = blend_weights
                     cursor += bone_set_count * 12
+                elif render_object_type == RENDER_OBJECT_SKELETAL:
+                    if blend_weights is None or blend_indices is None:
+                        raise LtbError(f"missing matrix-palette skin data in {label}")
+                    joints = []
+                    for vertex_index, local_joints in enumerate(blend_indices):
+                        if reindexed_bones and any(
+                            index >= len(reindexed)
+                            and weight > 1e-5
+                            for index, weight in zip(
+                                local_joints, blend_weights[vertex_index]
+                            )
+                        ):
+                            raise LtbError(
+                                f"out-of-range reindexed palette joint in {label}"
+                            )
+                        mapped = tuple(
+                            (
+                                reindexed[index]
+                                if reindexed_bones and index < len(reindexed)
+                                else index if not reindexed_bones else 0
+                            )
+                            for index in local_joints
+                        )
+                        if any(
+                            joint >= bone_count and weight > 1e-5
+                            for joint, weight in zip(
+                                mapped, blend_weights[vertex_index]
+                            )
+                        ):
+                            raise LtbError(f"out-of-range matrix-palette joint in {label}")
+                        joints.append(mapped)
+                    weights = blend_weights
                 elif render_object_type == RENDER_OBJECT_VERTEX_ANIMATED:
                     duplicate_count = u32(data, cursor, f"{label} duplicate map count")
                     cursor += 4
@@ -573,6 +690,56 @@ def parse_crossfire_composite_ltb(
                         if source >= vertex_count or destination >= vertex_count:
                             raise LtbError(f"out-of-range duplicate map in {label}")
                     cursor += duplicate_count * 4
+                elif render_object_type == RENDER_OBJECT_RIGID:
+                    if bone_effector is None or bone_effector >= bone_count:
+                        raise LtbError(f"out-of-range rigid bone effector in {label}")
+                    joints = [(bone_effector, 0, 0, 0)] * vertex_count
+                    weights = [(1.0, 0.0, 0.0, 0.0)] * vertex_count
+
+                if joints is not None and weights is not None:
+                    joints = [
+                        tuple(
+                            joint if weight > 1e-7 else 0
+                            for joint, weight in zip(vertex_joints, vertex_weights)
+                        )
+                        for vertex_joints, vertex_weights in zip(joints, weights)
+                    ]
+
+                removable_vertices = nonfinite_normal_vertices - set(indices)
+                (
+                    positions,
+                    normals,
+                    texcoords,
+                    indices,
+                    nonfinite_normal_vertices,
+                    removed_count,
+                ) = remove_unreferenced_nonfinite_normal_vertices(
+                    positions,
+                    normals,
+                    texcoords,
+                    indices,
+                    nonfinite_normal_vertices,
+                )
+                if removable_vertices and joints is not None and weights is not None:
+                    joints = [
+                        value
+                        for index, value in enumerate(joints)
+                        if index not in removable_vertices
+                    ]
+                    weights = [
+                        value
+                        for index, value in enumerate(weights)
+                        if index not in removable_vertices
+                    ]
+                removed_unreferenced_nonfinite_normal_vertices += removed_count
+                normals, repaired_count = repair_nonfinite_normals(
+                    positions,
+                    normals,
+                    indices,
+                    nonfinite_normal_vertices,
+                    label,
+                )
+                repaired_normal_vertices += repaired_count
                 if cursor != object_end:
                     raise LtbError(
                         f"{label} object size mismatch: parsed={cursor} "
@@ -587,6 +754,8 @@ def parse_crossfire_composite_ltb(
                         normals,
                         texcoords,
                         indices,
+                        joints,
+                        weights,
                     )
                 )
                 render_object_type_counts[render_object_type] += 1
@@ -646,6 +815,7 @@ def parse_crossfire_composite_ltb(
         "header": [1, 9],
         "layout": "crossfire_top_mesh_submesh",
         "mesh_count": len(meshes),
+        "skinned_mesh_count": sum(mesh.joints is not None for mesh in meshes),
         "top_mesh_count": top_mesh_count,
         "oriented_bounding_box_count": oriented_bounding_box_count,
         "submesh_slots": submesh_slots,
@@ -942,21 +1112,67 @@ def align4(buffer: bytearray, pad: int = 0) -> None:
     buffer.extend(bytes([pad]) * ((-len(buffer)) % 4))
 
 
-def make_glb(meshes: list[LtbMesh], source: dict[str, Any]) -> bytes:
+def multiply_matrix4(left: list[float], right: list[float]) -> list[float]:
+    return [
+        sum(left[row * 4 + inner] * right[inner * 4 + column] for inner in range(4))
+        for row in range(4)
+        for column in range(4)
+    ]
+
+
+def invert_matrix4(matrix: list[float], label: str) -> list[float]:
+    augmented = [
+        [*matrix[row * 4 : row * 4 + 4], *[float(row == column) for column in range(4)]]
+        for row in range(4)
+    ]
+    for column in range(4):
+        pivot = max(range(column, 4), key=lambda row: abs(augmented[row][column]))
+        if abs(augmented[pivot][column]) <= 1e-10:
+            raise LtbError(f"singular bind matrix for {label}")
+        augmented[column], augmented[pivot] = augmented[pivot], augmented[column]
+        scale = augmented[column][column]
+        augmented[column] = [value / scale for value in augmented[column]]
+        for row in range(4):
+            if row == column:
+                continue
+            factor = augmented[row][column]
+            augmented[row] = [
+                value - factor * pivot_value
+                for value, pivot_value in zip(augmented[row], augmented[column])
+            ]
+    inverse = [value for row in augmented for value in row[4:]]
+    if not all(math.isfinite(value) for value in inverse):
+        raise LtbError(f"non-finite inverse bind matrix for {label}")
+    return inverse
+
+
+def gltf_matrix(matrix: list[float]) -> list[float]:
+    """Convert LTMatrix's row-major storage to glTF's column-major array."""
+    return [matrix[row * 4 + column] for column in range(4) for row in range(4)]
+
+
+def make_glb(
+    meshes: list[LtbMesh],
+    source: dict[str, Any],
+    skeleton: dict[str, Any] | None = None,
+) -> bytes:
     binary = bytearray()
     buffer_views = []
     accessors = []
     gltf_meshes = []
-    nodes = []
+    nodes: list[dict[str, Any]] = []
+    scene_nodes: list[int] = []
+    skins: list[dict[str, Any]] = []
 
-    def append_view(payload: bytes, target: int) -> int:
+    def append_view(payload: bytes, target: int | None) -> int:
         align4(binary)
         offset = len(binary)
         binary.extend(payload)
         index = len(buffer_views)
-        buffer_views.append(
-            {"buffer": 0, "byteOffset": offset, "byteLength": len(payload), "target": target}
-        )
+        view = {"buffer": 0, "byteOffset": offset, "byteLength": len(payload)}
+        if target is not None:
+            view["target"] = target
+        buffer_views.append(view)
         return index
 
     def append_accessor(
@@ -980,6 +1196,57 @@ def make_glb(meshes: list[LtbMesh], source: dict[str, Any]) -> bytes:
         accessors.append(accessor)
         return len(accessors) - 1
 
+    has_skinned_mesh = any(mesh.joints is not None for mesh in meshes)
+    if has_skinned_mesh:
+        if skeleton is None:
+            raise LtbError("skinned mesh has no skeleton metadata")
+        names = skeleton["names"]
+        parents = skeleton["parent_indices"]
+        global_matrices = skeleton["bind_matrices"]
+        bone_count = skeleton["bone_count"]
+        if not (
+            bone_count
+            == len(names)
+            == len(parents)
+            == len(global_matrices)
+            <= 65_535
+        ):
+            raise LtbError("invalid skeleton metadata dimensions")
+        for bone_index, (name, parent, global_matrix) in enumerate(
+            zip(names, parents, global_matrices)
+        ):
+            local_matrix = (
+                global_matrix
+                if parent < 0
+                else multiply_matrix4(
+                    invert_matrix4(global_matrices[parent], f"bone {parent}"),
+                    global_matrix,
+                )
+            )
+            nodes.append({"name": name, "matrix": gltf_matrix(local_matrix)})
+            if parent < 0:
+                scene_nodes.append(bone_index)
+            else:
+                nodes[parent].setdefault("children", []).append(bone_index)
+        inverse_bind_payload = b"".join(
+            struct.pack(
+                "<16f",
+                *gltf_matrix(invert_matrix4(matrix, f"bone {index}")),
+            )
+            for index, matrix in enumerate(global_matrices)
+        )
+        inverse_bind_accessor = append_accessor(
+            append_view(inverse_bind_payload, None), 5126, bone_count, "MAT4"
+        )
+        skins.append(
+            {
+                "name": "LTB skeleton",
+                "inverseBindMatrices": inverse_bind_accessor,
+                "joints": list(range(bone_count)),
+                "skeleton": scene_nodes[0],
+            }
+        )
+
     for mesh in meshes:
         if not mesh.positions or not mesh.indices:
             continue
@@ -1001,16 +1268,43 @@ def make_glb(meshes: list[LtbMesh], source: dict[str, Any]) -> bytes:
         index_accessor = append_accessor(
             append_view(index_payload, 34963), 5123, len(mesh.indices), "SCALAR"
         )
+        attributes = {
+            "POSITION": position_accessor,
+            "NORMAL": normal_accessor,
+            "TEXCOORD_0": uv_accessor,
+        }
+        if mesh.joints is not None or mesh.weights is not None:
+            if (
+                mesh.joints is None
+                or mesh.weights is None
+                or len(mesh.joints) != len(mesh.positions)
+                or len(mesh.weights) != len(mesh.positions)
+            ):
+                raise LtbError(f"incomplete skin arrays for mesh {mesh.name}")
+            joint_payload = b"".join(
+                struct.pack("<4H", *value) for value in mesh.joints
+            )
+            weight_payload = b"".join(
+                struct.pack("<4f", *value) for value in mesh.weights
+            )
+            attributes["JOINTS_0"] = append_accessor(
+                append_view(joint_payload, 34962),
+                5123,
+                len(mesh.joints),
+                "VEC4",
+            )
+            attributes["WEIGHTS_0"] = append_accessor(
+                append_view(weight_payload, 34962),
+                5126,
+                len(mesh.weights),
+                "VEC4",
+            )
         gltf_meshes.append(
             {
                 "name": mesh.name,
                 "primitives": [
                     {
-                        "attributes": {
-                            "POSITION": position_accessor,
-                            "NORMAL": normal_accessor,
-                            "TEXCOORD_0": uv_accessor,
-                        },
+                        "attributes": attributes,
                         "indices": index_accessor,
                         "mode": 4,
                     }
@@ -1018,7 +1312,14 @@ def make_glb(meshes: list[LtbMesh], source: dict[str, Any]) -> bytes:
                 "extras": {"sourceMeshType": mesh.mesh_type},
             }
         )
-        nodes.append({"name": mesh.name, "mesh": len(gltf_meshes) - 1})
+        mesh_node: dict[str, Any] = {
+            "name": mesh.name,
+            "mesh": len(gltf_meshes) - 1,
+        }
+        if mesh.joints is not None:
+            mesh_node["skin"] = 0
+        nodes.append(mesh_node)
+        scene_nodes.append(len(nodes) - 1)
     if not gltf_meshes:
         raise LtbError("LTB contains no non-empty triangle mesh")
     gltf = {
@@ -1028,18 +1329,20 @@ def make_glb(meshes: list[LtbMesh], source: dict[str, Any]) -> bytes:
             "extras": {
                 "sourceFormat": "LithTech Jupiter LTB v9",
                 "sourceCoordinateSystem": "preserved; no unproven axis transform",
-                "limitations": "bones and animations are not converted",
+                "limitations": "skeletal and vertex animation channels are not converted",
                 **source,
             },
         },
         "scene": 0,
-        "scenes": [{"nodes": list(range(len(nodes)))}],
+        "scenes": [{"nodes": scene_nodes}],
         "nodes": nodes,
         "meshes": gltf_meshes,
         "buffers": [{"byteLength": len(binary)}],
         "bufferViews": buffer_views,
         "accessors": accessors,
     }
+    if skins:
+        gltf["skins"] = skins
     json_chunk = bytearray(json.dumps(gltf, ensure_ascii=False, separators=(",", ":")).encode())
     align4(json_chunk, 0x20)
     align4(binary)
@@ -1073,10 +1376,22 @@ def validate_glb(data: bytes) -> dict[str, int]:
     for view in gltf["bufferViews"]:
         if view.get("byteOffset", 0) + view["byteLength"] > declared:
             raise LtbError("GLB bufferView exceeds buffer")
+    for mesh_index, mesh in enumerate(gltf["meshes"]):
+        for primitive in mesh["primitives"]:
+            attributes = primitive["attributes"]
+            if ("JOINTS_0" in attributes) != ("WEIGHTS_0" in attributes):
+                raise LtbError(f"incomplete skin attributes on mesh {mesh_index}")
+    for skin in gltf.get("skins", []):
+        if not skin["joints"] or any(index >= len(gltf["nodes"]) for index in skin["joints"]):
+            raise LtbError("invalid GLB skin joint list")
+        accessor = gltf["accessors"][skin["inverseBindMatrices"]]
+        if accessor["type"] != "MAT4" or accessor["count"] != len(skin["joints"]):
+            raise LtbError("invalid GLB inverse bind matrices")
     return {
         "meshes": len(gltf["meshes"]),
         "nodes": len(gltf["nodes"]),
         "accessors": len(gltf["accessors"]),
+        "skins": len(gltf.get("skins", [])),
     }
 
 
@@ -1094,6 +1409,7 @@ def convert_one(task: dict[str, Any]) -> dict[str, Any]:
             "streamIndex": task["stream_index"],
             "inputSha256": task["input_sha256"],
         },
+        details.get("skeleton_metadata"),
     )
     validation = validate_glb(glb)
     digest = sha256_bytes(glb)
@@ -1157,7 +1473,11 @@ def convert_one(task: dict[str, Any]) -> dict[str, Any]:
             "path": task["output_relative"],
             "bytes": len(glb),
             "sha256": digest,
-            "representation": "lithtech_ltb_v9_geometry_glb",
+            "representation": (
+                "lithtech_ltb_v9_geometry_skin_glb"
+                if validation["skins"]
+                else "lithtech_ltb_v9_geometry_glb"
+            ),
             "status": status,
         },
         "status": status,
@@ -1202,7 +1522,7 @@ def main() -> int:
             )
             prior_version_relative = str(
                 Path("private-rez-models")
-                / "layout-v2"
+                / "layout-v3"
                 / source_key
                 / f"stream-{stream['stream_index']:05d}.glb"
             )
@@ -1244,7 +1564,7 @@ def main() -> int:
     manifest = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "tool": "tools/convert_ltb_models.py",
-        "tool_version": "4",
+        "tool_version": "6",
         "reference": {
             "name": "Cote-Duke LTB2X loader source",
             "url": "https://cote-duke.narod.ru/LtbSource.zip",
@@ -1278,8 +1598,8 @@ def main() -> int:
         },
         "scope": (
             "mesh geometry, normals, UVs and triangle indices; source coordinates "
-            "preserved; composite-layout bone hierarchy/bind-matrix metadata audited "
-            "but not exported as a glTF skin; animations not claimed"
+            "preserved; proven rigid/direct/matrix-palette vertex bindings and bind "
+            "matrices exported as glTF skins; animation channels not claimed"
         ),
         "records": records,
         "failures": failures,
@@ -1302,6 +1622,10 @@ def main() -> int:
             "composite_bones": sum(
                 item["details"].get("skeleton_metadata", {}).get("bone_count", 0)
                 for item in records
+            ),
+            "skinned_glbs": sum(item["validation"]["skins"] > 0 for item in records),
+            "skinned_meshes": sum(
+                item["details"].get("skinned_mesh_count", 0) for item in records
             ),
             "matrix_palette_submeshes": sum(
                 item["details"].get("matrix_palette_submeshes", 0)

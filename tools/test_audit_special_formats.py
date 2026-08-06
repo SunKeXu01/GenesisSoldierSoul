@@ -369,6 +369,8 @@ class SpecialFormatTests(unittest.TestCase):
         self.assertEqual(result["status"], "verified")
         self.assertEqual(result["summary"]["png_conversions"], 1)
         self.assertEqual(result["summary"]["ltb_glb_conversions"], 1)
+        self.assertEqual(result["summary"]["ltb_glb_skinned_files"], 0)
+        self.assertEqual(result["summary"]["ltb_glb_skinned_meshes"], 0)
         self.assertEqual(result["summary"]["ltb_glb_failures"], 1)
         self.assertEqual(len(result["verifications"]), 3)
         self.assertEqual(result["summary"]["verification_errors"], 0)

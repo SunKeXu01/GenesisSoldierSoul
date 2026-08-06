@@ -62,7 +62,7 @@
 - 四包已进一步完成 Manifest、DEX、ELF、引擎/后端、OBB 与 Mono 元数据综合审计。三个 Unity 包分别识别为 `5.2.5f1`、`2018.4.14c1`、`5.2.5f1` Mono；地图浏览包识别为 UE4 原生包，其伪装成 `main.obb.png` 的 ZIP 内含 Pak 格式 11（`Fnv64BugFix`），但没有可验证的 UE4 点版本字符串。三份 `Assembly-CSharp.dll` 已静态恢复 177 个类型、1,349 个字段、1,247 个方法和完整 IL。机器及人工报告分别为 `recovery/android-static-audit.json` 与 `recovery/ANDROID_STATIC_AUDIT_2026-08-04.md`，完整 Mono 表位于 `recovery/android-mono-metadata/`。
 - Windows 发布包已完成统一只读静态审计：12 套 Unity Mono 包覆盖 `5.0.2f1`、`5.2.5f1`、`2018.4.14c1`、`2019.1.4f1`，另识别 1 套 Unreal x86-64 发布包及 CF2.0 客户端；948 个 PE 出现位置归并为 309 个唯一模块，均保留架构、节区、导入/导出、资源段和分类字符串证据。12 份 `Assembly-CSharp.dll` 已生成完整 IL，共 1,326 类型、9,260 字段和 9,787 方法。综合报告见 `recovery/WINDOWS_STATIC_AUDIT_2026-08-04.md`。
 - 9 套 Windows Unity 包已有来源对应的 AssetRipper 恢复工程；对余下 3 套包新增哈希隔离的逐对象导出，共保存 33,797 个对象、372,259,582 字节，失败 0。第二次同参数执行全部命中既有哈希，报告及清单见 `recovery/WINDOWS_UNITY_OBJECT_EXPORTS_2026-08-04.md` 与 `recovery/windows-unity-object-exports.json`。
-- 专用格式转换已建立统一证据账本：2 份 UnityPackage 的 19 个资产保持 GUID、原路径与 `.meta`；417 个 SWF/误标缓存共提取 1,874 个 PNG、1,601 个矢量标签、74 个字体标签、1,380 个 Sprite/时间轴和 538 个 ATF；私有 REZ 已恢复 8,721 个 LTB 几何 GLB、40,356 个 PNG、1 个 DDS 和 51,657,941 字节 LTA，标准媒体另含 15 个 GLB、8 个 PNG、188 个 PCM WAV。综合账本逐项复核 148,829 个输出、21,433,831,251 字节，错误 0，见 `recovery/SPECIAL_FORMAT_CONVERSION_LEDGER_2026-08-04.md`。
+- 专用格式转换已建立统一证据账本：2 份 UnityPackage 的 19 个资产保持 GUID、原路径与 `.meta`；417 个 SWF/误标缓存共提取 1,874 个 PNG、1,601 个矢量标签、74 个字体标签、1,380 个 Sprite/时间轴和 538 个 ATF；私有 REZ 已恢复 8,721 个 LTB 几何 GLB，其中 321 个含 glTF skin，另有 40,356 PNG、1 DDS 和 51,657,941 字节 LTA；标准媒体含 15 GLB、8 PNG、188 PCM WAV。综合账本逐项复核 148,829 个输出、21,475,559,731 字节，错误 0，见 `recovery/SPECIAL_FORMAT_CONVERSION_LEDGER_2026-08-04.md`。
 - Unreal 只读解析已验证 Windows 与 Android 两份 Pak v11 索引 SHA-1，分别记录 1,521 与 2,253 个条目；两组 UTOC/UCAS 完成版本、条目/压缩块和哈希配对。当前容器使用 Oodle/IoStore，内容级对象恢复仍作为明确待办，不会运行包内程序或猜测解密。
 - 击杀信息从单条覆盖改为最多四条的滚动队列，连续击杀和联网死亡不再互相吞掉，布局与参考录像右上角多行击杀提示一致。
 - 联网战斗协议现会广播装备、开火、换弹、挥刀和投掷动作；远端角色在基础移动 Animator 之后叠加上肢动作，动作序列号独立去重，避免旧消息重放覆盖当前姿态。双 WebGL 客户端已在同一动态房间完成在线人数和远端角色生成验证。
@@ -100,7 +100,7 @@ AK-74M 与 AWP 已完成实验性适配，但不会在缺少自身完整第一�
 
 ## 仍需转换后才能使用
 
-- CF 私有目录中仍有 5 个完全未分帧 REZ、两份 RF199 的未知后缀及 LTB 完整蒙皮/动画；两份 RF199 的可证明连续前缀已恢复 9,520 PNG + 1 DDS。LTB 静态几何已 8,721/8,721 转换，321 个复合 LTB 已解析 14,896 条骨骼元数据但尚未生成 skin/动画。标准 `engine.rez` 的 DTX 已转 PNG，其中 15 个 LTB 实为 RenderStyle 而非几何模型。364 个 loose LTC 已全部恢复为 LTA，不再列为未知格式。
+- CF 私有目录中仍有 5 个完全未分帧 REZ、两份 RF199 的未知后缀及 LTB 骨骼/顶点动画通道；两份 RF199 的可证明连续前缀已恢复 9,520 PNG + 1 DDS。LTB 静态几何已 8,721/8,721 转换，321 个复合 LTB 的 14,896 条骨骼和 1,844 个网格已生成 skin。标准 `engine.rez` 的 DTX 已转 PNG，其中 15 个 LTB 实为 RenderStyle 而非几何模型。364 个 loose LTC 已全部恢复为 LTA，不再列为未知格式。
 - Flash SWF 中已提取但尚未转成 SVG/TTF/PNG 的矢量、字体和 ATF 标签；位图 PNG 与时间轴元数据已经可审计使用。
 - Unity 发布包中未完成依赖闭包的 Prefab、动画控制器和特效。
 - Unreal PAK/UCAS/UTOC 以及 Android OBB 中的地图资源。
