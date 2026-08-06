@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-08-06T05:08:44.249249+00:00",
+  "generated_at_utc": "2026-08-06T05:22:59.742070+00:00",
   "tool": "tools/audit_special_formats.py",
-  "tool_version": "11",
+  "tool_version": "12",
   "workspace": "/Users/Admin/Documents/创世兵魂",
   "root_inventory_sha256": "e88424a9d72e1a76939ec39ce77dc7b766c670d6c1b835f132976fc9c9ac0e4e",
   "safety": {
@@ -16512,6 +16512,20 @@
       "raw_sprite_tag": 1380,
       "raw_font_tag": 74,
       "atf_texture_payload": 538
+    },
+    "atf_conversion_manifest": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/atf-texture-conversions.json",
+    "atf_conversions": {
+      "sources": 538,
+      "converted": 538,
+      "failed": 0,
+      "outputs": 1076,
+      "output_bytes": 271008801,
+      "format_counts": {
+        "compressed": 346,
+        "compressed_alpha": 192
+      },
+      "declared_mip_levels": 5117,
+      "converted_mip_levels": 1001
     }
   },
   "unreal": {
@@ -34585,6 +34599,13 @@
         "status": "verified"
       },
       {
+        "manifest": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/atf-texture-conversions.json",
+        "outputs_verified": 1076,
+        "bytes_verified": 271008801,
+        "errors": [],
+        "status": "verified"
+      },
+      {
         "manifest": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/recovered-media-conversions.json",
         "outputs_verified": 211,
         "bytes_verified": 152644477,
@@ -34663,10 +34684,10 @@
       }
     ],
     "summary": {
-      "manifests": 12,
-      "verified": 12,
-      "outputs": 148829,
-      "bytes": 21546511271,
+      "manifests": 13,
+      "verified": 13,
+      "outputs": 149905,
+      "bytes": 21817520072,
       "errors": 0
     }
   }

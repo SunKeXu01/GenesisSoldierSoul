@@ -223,7 +223,8 @@ tools/verify_delivery.sh --full
   和 1 DDS。仍未完成的是 5 个完全未分帧私有 REZ、两份 RF199 的未知后缀、
   LTB 已对 8,721 个候选全部严格转换；321 个文件由 layout-v7 生成 glTF skin，
   98 个源文件的 818 个骨骼/顶点动画已生成 88,740 个 glTF 通道和 2,940 个 morph target。
-  仍未完成的是 Flash ATF 标准媒体转换和受 Oodle 限制的 Unreal 内容。
+  538 个 Flash ATF 已全部重建为 DXT1/DXT5 DDS 和 RGBA PNG，并保留 1,001 个实际存在的 mip 层。
+  仍未完成的是受 Oodle 限制的 Unreal 内容。
   工具只做静态读取，不执行来源不明程序。
 - 商城仅为只读资源目录；账号、余额、购买、充值、VIP、任务、活动和战队业务没有
   权威后端依据，因此不提供伪实现。

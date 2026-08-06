@@ -1,2 +1,3 @@
 Pillow==11.3.0
 UnityPy==1.25.2
+imagecodecs==2026.6.26

@@ -1537,6 +1537,20 @@ def audit_conversion_manifests(repo: Path) -> dict[str, Any]:
             ),
         )
     )
+    atf_path = repo / "recovery/atf-texture-conversions.json"
+    if atf_path.is_file():
+        atf = json.loads(atf_path.read_text(encoding="utf-8"))
+        results.append(
+            verify_conversion_manifest(
+                atf_path,
+                Path(atf["parameters"]["output"]),
+                (
+                    output_item
+                    for record in atf["records"]
+                    for output_item in record["outputs"]
+                ),
+            )
+        )
     media_path = repo / "recovery/recovered-media-conversions.json"
     media = json.loads(media_path.read_text(encoding="utf-8"))
     media_root = Path(media["parameters"]["output"])
@@ -1829,6 +1843,7 @@ def markdown(report: dict[str, Any]) -> str:
             "",
             f"- SWF 输入：{flash['summary']['sources']}；有效 SWF：{flash['summary']['parsed']}；资源标签：{flash['summary']['resources']}。",
             f"- PNG：{flash['summary'].get('decoded_png', 0)}；矢量：{flash['summary'].get('raw_vector_tag', 0)}；字体：{flash['summary'].get('raw_font_tag', 0)}；Sprite：{flash['summary'].get('raw_sprite_tag', 0)}；ATF：{flash['summary'].get('atf_texture_payload', 0)}。",
+            f"- ATF 标准媒体转换：{flash.get('atf_conversions', {}).get('converted', 0)}/{flash.get('atf_conversions', {}).get('sources', 0)}；DDS/PNG 输出 {flash.get('atf_conversions', {}).get('outputs', 0)}，有效 mip 层 {flash.get('atf_conversions', {}).get('converted_mip_levels', 0)}，失败 {flash.get('atf_conversions', {}).get('failed', 0)}。",
             "",
             "## Unreal",
             "",
@@ -1880,7 +1895,7 @@ def main() -> int:
     report: dict[str, Any] = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "tool": "tools/audit_special_formats.py",
-        "tool_version": "11",
+        "tool_version": "12",
         "workspace": str(workspace),
         "root_inventory_sha256": index["inventory_sha256"],
         "safety": {
@@ -1892,7 +1907,18 @@ def main() -> int:
     report["unity"] = audit_unitypackages(workspace, samples_by_type["unity_package"], safe_manifest)
     report["rez"] = audit_rez(workspace, samples_by_type["lithtech_rez"], output)
     report["rez"]["private_recovery"] = audit_private_rez_supplements(repo, output)
-    report["flash"] = {"manifest": str(args.flash_manifest), "summary": flash["summary"]}
+    atf_manifest_path = repo / "recovery/atf-texture-conversions.json"
+    atf_summary = (
+        json.loads(atf_manifest_path.read_text(encoding="utf-8"))["summary"]
+        if atf_manifest_path.is_file()
+        else {}
+    )
+    report["flash"] = {
+        "manifest": str(args.flash_manifest),
+        "summary": flash["summary"],
+        "atf_conversion_manifest": str(atf_manifest_path),
+        "atf_conversions": atf_summary,
+    }
     unreal_samples = samples_by_type["unreal_pak"] + samples_by_type["unreal_ucas"] + samples_by_type["unreal_utoc"]
     report["unreal"] = audit_unreal(workspace, unreal_samples, android_audit, output)
     report["unreal"]["uassetapi"] = audit_uassetapi_outputs(output)
