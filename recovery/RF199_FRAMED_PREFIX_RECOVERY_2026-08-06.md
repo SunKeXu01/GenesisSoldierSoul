@@ -27,15 +27,17 @@ carving，也不运行客户端程序。
 
 四段未知后缀均保存精确停止偏移、大小、前缀、SHA-256 和熵证据。当前前缀
 不满足任何已实现的严格边界规则，因此不将后缀内部偶然出现的签名当作资源。
-仍从数据区起点完全未知的 3 个包为 `RB001.REZ`、`RF164.REZ` 和
-`RF266.REZ`；后两者只确认以 LithTech world version 85 开始，尚未证明文件边界。
+后续 world v85 严格解析已证明 `RF164.REZ` 和 `RF266.REZ` 的数据区
+各自是一个完整 world，共 58,778,137 字节且尾字节为 0；详见
+`LITHTECH_WORLD_V85_RECOVERY_2026-08-06.md`。从数据区起点完全未知的包现仅剩
+`RB001.REZ`。
 
 ## 验证与产物
 
 - 27,087 个源帧另加 16,220 个转换 PNG，共 43,307 个输出、
   3,717,123,514 字节，逐项大小与 SHA-256 验证通过。
-- 统一 provenance：13/13 清单、183,691 个输出、25,392,811,873 字节、错误 0。
-- 专项 Python 回归 12 项，覆盖各格式边界、混合顺序、错误 CRC 和未知尾部停止。
+- 统一 provenance：13/13 清单、183,693 个输出、25,451,590,010 字节、错误 0。
+- 专项 Python 回归 15 项，覆盖各格式边界、混合顺序、错误 CRC、world v85 和未知尾部停止。
 - 工具：`tools/recover_private_rez_framed_prefix.py`。
 - 测试：`tools/test_recover_private_rez_framed_prefix.py`。
 - 可再生成机器清单：`recovery/private-rez-framed-prefix-recovery.json`（Git 忽略）。
@@ -43,5 +45,5 @@ carving，也不运行客户端程序。
 - 汇总账本：`recovery/special-format-conversion-ledger.json` 与
   `SPECIAL_FORMAT_CONVERSION_LEDGER_2026-08-04.md`。
 
-原 7 个完全未分帧包因此缩小为 3 个完全未知包和 4 个有精确停止证据的未知
+原 7 个完全未分帧包因此缩小为 1 个完全未知包和 4 个有精确停止证据的未知
 后缀。下一步只有在能证明边界时才继续扩展解析器。

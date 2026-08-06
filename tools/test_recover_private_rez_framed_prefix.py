@@ -18,6 +18,7 @@ from recover_private_rez_framed_prefix import (
     parse_dtx,
     parse_gif,
     parse_jpeg,
+    parse_lithtech_world,
     parse_mp4,
     parse_png,
     parse_tga,
@@ -123,6 +124,30 @@ def webm() -> bytes:
     return b"\x1A\x45\xDF\xA3" + b"\x84webm" + b"\x18\x53\x80\x67" + b"\x84data"
 
 
+def lithtech_world(*, invalid_child: bool = False) -> bytes:
+    render_offset = 60
+    header = struct.pack(
+        "<15I",
+        85,
+        render_offset,
+        render_offset,
+        render_offset,
+        render_offset,
+        render_offset,
+        render_offset,
+        *([0] * 8),
+    )
+    block = (
+        struct.pack("<6f", 0.0, 0.0, 0.0, 1.0, 1.0, 1.0)
+        + struct.pack("<6I", 0, 0, 0, 0, 0, 0)
+        + bytes((1 if invalid_child else 0,))
+        + struct.pack("<2I", 1 if invalid_child else 0xFFFFFFFF, 0xFFFFFFFF)
+    )
+    render_world = struct.pack("<I", 1) + block + struct.pack("<I", 0)
+    client_light_groups = struct.pack("<I", 0)
+    return header + render_world + client_light_groups
+
+
 class PrivateRezPngPrefixTests(unittest.TestCase):
     def test_parses_crc_valid_png_at_exact_offset(self):
         data = png(3, 2)
@@ -200,6 +225,24 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
         self.assertEqual(parsed["bytes"], len(data))
         self.assertEqual(parsed["doctype"], "webm")
 
+    def test_parses_lithtech_world_v85_render_tail_at_exact_offset(self):
+        data = lithtech_world()
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data)
+            parsed = parse_lithtech_world(stream, 0, len(data))
+        self.assertEqual(parsed["bytes"], len(data))
+        self.assertEqual(parsed["version"], 85)
+        self.assertEqual(parsed["render_blocks"], 1)
+        self.assertEqual(parsed["client_light_groups"], 0)
+        self.assertEqual(parsed["sha256"], hashlib.sha256(data).hexdigest())
+
+    def test_rejects_lithtech_world_with_invalid_child_index(self):
+        data = lithtech_world(invalid_child=True)
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data)
+            with self.assertRaisesRegex(RezError, "child 0 index"):
+                parse_lithtech_world(stream, 0, len(data))
+
     def test_parses_ini_and_binary_bounded_web_bundle(self):
         ini_data = ini()
         with tempfile.TemporaryFile() as stream:
@@ -256,6 +299,34 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
             )
             self.assertEqual(result["trailing_region"]["bytes"], len(suffix))
             self.assertIn("no signature search", result["trailing_region"]["interpretation"])
+
+    def test_recovers_lithtech_world_and_preserves_unsupported_suffix(self):
+        frame = lithtech_world()
+        suffix = b"UNSUPPORTED"
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "RF164.REZ"
+            data = bytearray(168)
+            data.extend(frame + suffix)
+            root_offset = len(data)
+            data.extend(bytes(24))
+            data[:2] = b"\r\n"
+            data[126] = 0x1A
+            struct.pack_into("<III", data, 127, 1, root_offset, 24)
+            source.write_bytes(data)
+            result = recover_framed_prefix(
+                source,
+                hashlib.sha256(data).hexdigest(),
+                root_offset,
+                root / "out",
+            )
+            self.assertEqual(
+                [item["kind"] for item in result["resources"]],
+                ["lithtech_world"],
+            )
+            recovered = root / "out" / result["outputs"][0]["path"]
+            self.assertEqual(recovered.read_bytes(), frame)
+            self.assertEqual(result["trailing_region"]["bytes"], len(suffix))
 
     def test_recovers_mixed_media_and_converts_tga_dtx(self):
         frames = [

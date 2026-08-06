@@ -62,6 +62,12 @@ MP4_TOP_LEVEL_BOXES = {
 EBML_HEADER_ID = 0x1A45DFA3
 EBML_SEGMENT_ID = 0x18538067
 EBML_SIGNATURE = b"\x1A\x45\xDF\xA3"
+LITHTECH_WORLD_VERSION = 85
+LITHTECH_WORLD_HEADER_BYTES = 60
+LITHTECH_RENDER_VERTEX_BYTES = 68
+MAXIMUM_WORLD_ITEMS = 10_000_000
+MAXIMUM_WORLD_STRING_BYTES = 4096
+MAXIMUM_WORLD_RECURSION = 64
 
 
 def hash_region(stream: BinaryIO, offset: int, size: int) -> str:
@@ -853,6 +859,282 @@ def parse_webm(stream: BinaryIO, offset: int, region_end: int) -> dict[str, obje
     }
 
 
+class LithTechWorldReader:
+    """Bounded little-endian reader for LithTech Jupiter world render data."""
+
+    def __init__(self, stream: BinaryIO, position: int, region_end: int) -> None:
+        self.stream = stream
+        self.position = position
+        self.region_end = region_end
+
+    def require(self, size: int, label: str) -> None:
+        if size < 0 or self.position + size > self.region_end:
+            raise RezError(
+                f"LithTech world {label} crosses region boundary at {self.position}: "
+                f"size={size} end={self.region_end}"
+            )
+
+    def read(self, size: int, label: str) -> bytes:
+        self.require(size, label)
+        self.stream.seek(self.position)
+        data = self.stream.read(size)
+        if len(data) != size:
+            raise RezError(f"truncated LithTech world {label} at {self.position}")
+        self.position += size
+        return data
+
+    def skip(self, size: int, label: str) -> None:
+        self.require(size, label)
+        self.position += size
+
+    def u8(self, label: str) -> int:
+        return self.read(1, label)[0]
+
+    def u16(self, label: str) -> int:
+        return struct.unpack("<H", self.read(2, label))[0]
+
+    def u32(self, label: str) -> int:
+        return struct.unpack("<I", self.read(4, label))[0]
+
+    def floats(self, count: int, label: str) -> tuple[float, ...]:
+        values = struct.unpack(f"<{count}f", self.read(count * 4, label))
+        if not all(value == value and abs(value) != float("inf") for value in values):
+            raise RezError(f"non-finite LithTech world {label} at {self.position}")
+        return values
+
+    def string(self, label: str, maximum: int = MAXIMUM_WORLD_STRING_BYTES) -> bytes:
+        length = self.u16(f"{label} length")
+        if length > maximum:
+            raise RezError(f"LithTech world {label} is too long: {length}")
+        value = self.read(length, label)
+        if b"\0" in value:
+            raise RezError(f"LithTech world {label} contains an embedded NUL")
+        return value
+
+    def count(self, label: str, maximum: int = MAXIMUM_WORLD_ITEMS) -> int:
+        value = self.u32(label)
+        if value > maximum:
+            raise RezError(f"implausible LithTech world {label}: {value}")
+        return value
+
+
+def parse_lithtech_render_polygon(
+    reader: LithTechWorldReader, label: str, *, occluder: bool
+) -> None:
+    vertices = reader.u8(f"{label} vertex count")
+    if vertices < 3:
+        raise RezError(f"LithTech world {label} has fewer than three vertices")
+    reader.floats(vertices * 3, f"{label} vertices")
+    reader.floats(4, f"{label} plane")
+    if occluder:
+        reader.u32(f"{label} id")
+
+
+def parse_lithtech_render_light_group(
+    reader: LithTechWorldReader, label: str
+) -> None:
+    reader.string(f"{label} id")
+    reader.floats(3, f"{label} color")
+    reader.skip(reader.count(f"{label} vertex intensity bytes"), f"{label} intensities")
+    section_count = reader.count(f"{label} section lightmap count")
+    for section_index in range(section_count):
+        sub_count = reader.count(f"{label} section {section_index} sub-lightmap count")
+        for sub_index in range(sub_count):
+            prefix = f"{label} section {section_index} sub-lightmap {sub_index}"
+            reader.skip(16, f"{prefix} rectangle")
+            reader.skip(reader.count(f"{prefix} bytes"), f"{prefix} data")
+
+
+def parse_lithtech_render_block(
+    reader: LithTechWorldReader, label: str, block_count: int
+) -> dict[str, int]:
+    bounds = reader.floats(6, f"{label} bounds")
+    if any(value < 0 for value in bounds[3:]):
+        raise RezError(f"LithTech world {label} has negative half-dimensions")
+    section_count = reader.count(f"{label} section count")
+    section_triangles = 0
+    for section_index in range(section_count):
+        prefix = f"{label} section {section_index}"
+        reader.string(f"{prefix} texture 0", 1024)
+        reader.string(f"{prefix} texture 1", 1024)
+        reader.u8(f"{prefix} shader")
+        triangles = reader.count(f"{prefix} triangle count")
+        if triangles == 0:
+            raise RezError(f"LithTech world {prefix} has zero triangles")
+        section_triangles += triangles
+        if section_triangles > MAXIMUM_WORLD_ITEMS:
+            raise RezError(f"implausible LithTech world {label} section triangles")
+        reader.string(f"{prefix} texture effect", 1024)
+        reader.u32(f"{prefix} lightmap width")
+        reader.u32(f"{prefix} lightmap height")
+        reader.skip(reader.count(f"{prefix} lightmap bytes"), f"{prefix} lightmap")
+
+    vertex_count = reader.count(f"{label} vertex count")
+    vertex_data = reader.read(
+        vertex_count * LITHTECH_RENDER_VERTEX_BYTES, f"{label} vertices"
+    )
+    for vertex_index in range(vertex_count):
+        base = vertex_index * LITHTECH_RENDER_VERTEX_BYTES
+        position = struct.unpack_from("<3f", vertex_data, base)
+        if not all(
+            value == value and abs(value) != float("inf") for value in position
+        ):
+            raise RezError(
+                f"non-finite LithTech world {label} vertex {vertex_index} position"
+            )
+
+    triangle_count = reader.count(f"{label} triangle count")
+    if triangle_count != section_triangles:
+        raise RezError(
+            f"LithTech world {label} triangle total mismatch: "
+            f"sections={section_triangles} block={triangle_count}"
+        )
+    for triangle_index in range(triangle_count):
+        indices = (
+            reader.u32(f"{label} triangle {triangle_index} index 0"),
+            reader.u32(f"{label} triangle {triangle_index} index 1"),
+            reader.u32(f"{label} triangle {triangle_index} index 2"),
+        )
+        reader.u32(f"{label} triangle {triangle_index} polygon index")
+        if any(index >= vertex_count for index in indices):
+            raise RezError(
+                f"LithTech world {label} triangle {triangle_index} has invalid "
+                f"vertex index {indices} for {vertex_count} vertices"
+            )
+
+    sky_count = reader.count(f"{label} sky portal count")
+    for polygon_index in range(sky_count):
+        parse_lithtech_render_polygon(
+            reader, f"{label} sky portal {polygon_index}", occluder=False
+        )
+    occluder_count = reader.count(f"{label} occluder count")
+    for polygon_index in range(occluder_count):
+        parse_lithtech_render_polygon(
+            reader, f"{label} occluder {polygon_index}", occluder=True
+        )
+    light_group_count = reader.count(f"{label} light group count")
+    for group_index in range(light_group_count):
+        parse_lithtech_render_light_group(reader, f"{label} light group {group_index}")
+
+    child_flags = reader.u8(f"{label} child flags")
+    if child_flags & ~0x03:
+        raise RezError(f"LithTech world {label} has invalid child flags 0x{child_flags:02x}")
+    for child_index in range(2):
+        index = reader.u32(f"{label} child {child_index}")
+        if child_flags & (1 << child_index) and index >= block_count:
+            raise RezError(
+                f"LithTech world {label} child {child_index} index {index} "
+                f"exceeds block count {block_count}"
+            )
+    return {
+        "sections": section_count,
+        "vertices": vertex_count,
+        "triangles": triangle_count,
+        "sky_portals": sky_count,
+        "occluders": occluder_count,
+        "light_groups": light_group_count,
+    }
+
+
+def parse_lithtech_render_world(
+    reader: LithTechWorldReader, label: str, depth: int = 0
+) -> dict[str, int]:
+    if depth > MAXIMUM_WORLD_RECURSION:
+        raise RezError("LithTech render-world recursion exceeds safety limit")
+    block_count = reader.count(f"{label} block count")
+    totals = {
+        "render_worlds": 1,
+        "render_blocks": block_count,
+        "sections": 0,
+        "vertices": 0,
+        "triangles": 0,
+        "sky_portals": 0,
+        "occluders": 0,
+        "light_groups": 0,
+        "child_world_models": 0,
+    }
+    for block_index in range(block_count):
+        block = parse_lithtech_render_block(
+            reader, f"{label} block {block_index}", block_count
+        )
+        for key, value in block.items():
+            totals[key] += value
+    model_count = reader.count(f"{label} child world-model count")
+    for model_index in range(model_count):
+        reader.string(f"{label} child world-model {model_index} name", 256)
+        child = parse_lithtech_render_world(
+            reader, f"{label} child world-model {model_index}", depth + 1
+        )
+        for key, value in child.items():
+            totals[key] += value
+    totals["child_world_models"] += model_count
+    return totals
+
+
+def parse_lithtech_world(
+    stream: BinaryIO, offset: int, region_end: int
+) -> dict[str, object]:
+    """Parse a Jupiter world v85 through its self-delimiting render tail.
+
+    The layout follows CrossFire's published ``ReadWorldHeader``,
+    ``CD3D_RenderWorld::Load`` and ``CD3D_RenderBlock::Load`` implementations.
+    It starts at an exact offset and never searches for a later world header.
+    """
+    if offset < 0 or offset + LITHTECH_WORLD_HEADER_BYTES > region_end:
+        raise RezError(f"truncated LithTech world header at {offset}")
+    stream.seek(offset)
+    header = stream.read(LITHTECH_WORLD_HEADER_BYTES)
+    values = struct.unpack("<15I", header)
+    version = values[0]
+    if version != LITHTECH_WORLD_VERSION:
+        raise RezError(f"LithTech world v85 header absent at exact offset {offset}")
+    section_offsets = values[1:7]
+    if not all(
+        LITHTECH_WORLD_HEADER_BYTES <= value < region_end - offset
+        for value in section_offsets
+    ):
+        raise RezError(f"LithTech world section offset is outside the frame at {offset}")
+    if tuple(sorted(section_offsets)) != section_offsets:
+        raise RezError(f"LithTech world section offsets are not monotonic at {offset}")
+
+    reader = LithTechWorldReader(stream, offset + section_offsets[-1], region_end)
+    totals = parse_lithtech_render_world(reader, "root render world")
+    client_group_count = reader.count("client light group count")
+    client_samples = 0
+    for group_index in range(client_group_count):
+        label = f"client light group {group_index}"
+        reader.string(f"{label} id")
+        reader.floats(3, f"{label} color")
+        reader.skip(12, f"{label} minimum sample coordinate")
+        extents = struct.unpack("<3i", reader.read(12, f"{label} sample extents"))
+        if any(value < 0 for value in extents):
+            raise RezError(f"LithTech world {label} has negative sample extents")
+        samples = extents[0] * extents[1] * extents[2]
+        if samples > MAXIMUM_WORLD_ITEMS:
+            raise RezError(f"implausible LithTech world {label} sample count: {samples}")
+        reader.skip(samples, f"{label} samples")
+        client_samples += samples
+
+    size = reader.position - offset
+    if size <= LITHTECH_WORLD_HEADER_BYTES:
+        raise RezError(f"LithTech world parser made no progress at {offset}")
+    return {
+        "offset": offset,
+        "bytes": size,
+        "sha256": hash_region(stream, offset, size),
+        "version": version,
+        "object_data_offset": section_offsets[0],
+        "blind_object_data_offset": section_offsets[1],
+        "light_grid_offset": section_offsets[2],
+        "collision_data_offset": section_offsets[3],
+        "particle_blocker_data_offset": section_offsets[4],
+        "render_data_offset": section_offsets[5],
+        "client_light_groups": client_group_count,
+        "client_light_samples": client_samples,
+        **totals,
+    }
+
+
 def copy_verified_region(
     source: Path, offset: int, size: int, expected_sha256: str, destination: Path
 ) -> str:
@@ -930,6 +1212,11 @@ def converted_png(source: Path, kind: str) -> tuple[bytes, dict[str, object]]:
 
 
 def prefix_kind(prefix: bytes) -> str | None:
+    if (
+        len(prefix) >= LITHTECH_WORLD_HEADER_BYTES
+        and struct.unpack_from("<I", prefix)[0] == LITHTECH_WORLD_VERSION
+    ):
+        return "lithtech_world"
     if prefix.startswith(PNG_SIGNATURE):
         return "png"
     if prefix.startswith(DDS_MAGIC):
@@ -1029,12 +1316,16 @@ def recover_framed_prefix(
             elif kind == "webm":
                 record = parse_webm(stream, position, region_end)
                 representation = "private_rez_vint_sized_webm_frame"
+            elif kind == "lithtech_world":
+                record = parse_lithtech_world(stream, position, region_end)
+                representation = "private_rez_strict_lithtech_world_v85_frame"
             else:
                 break
             extension = {
                 "jpeg": "jpg",
                 "config": "txt",
                 "web_bundle": "txt",
+                "lithtech_world": "dat",
             }.get(str(kind), str(kind))
             destination = base / f"{kind}-{len(records):05d}.{extension}"
             status = copy_verified_region(
@@ -1140,7 +1431,7 @@ def main() -> int:
     manifest = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "tool": "tools/recover_private_rez_framed_prefix.py",
-        "tool_version": "6",
+        "tool_version": "7",
         "workspace": str(workspace),
         "root_inventory_sha256": index["inventory_sha256"],
         "safety": {
@@ -1159,6 +1450,7 @@ def main() -> int:
             "web_bundle_printable_and_binary_successor_required": True,
             "mp4_top_level_box_chain_required": True,
             "webm_ebml_header_and_sized_segment_required": True,
+            "lithtech_world_v85_render_tail_required": True,
             "outputs_isolated_by_source_hash": True,
         },
         "archives": archives,
@@ -1182,6 +1474,17 @@ def main() -> int:
                 int(item["bytes"])
                 for item in all_outputs
                 if item["representation"] == "private_rez_header_sized_dds_frame"
+            ),
+            "lithtech_worlds": sum(
+                item["representation"]
+                == "private_rez_strict_lithtech_world_v85_frame"
+                for item in all_outputs
+            ),
+            "lithtech_world_bytes": sum(
+                int(item["bytes"])
+                for item in all_outputs
+                if item["representation"]
+                == "private_rez_strict_lithtech_world_v85_frame"
             ),
             "framed_resources": sum(len(item["resources"]) for item in archives),
             "resource_kind_counts": dict(
