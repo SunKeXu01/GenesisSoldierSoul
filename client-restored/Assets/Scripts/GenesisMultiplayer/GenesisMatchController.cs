@@ -531,6 +531,7 @@ namespace GenesisSoldierSoul.Multiplayer
             // Apply the calibrated pose after animation sampling so firing and
             // idle clips cannot lift the cut shoulder ends into the viewport.
             UpdateFirstPersonMotion();
+            CenterRecoveredShotgunViewmodel();
             if (knife != null
                 && knife.activeInHierarchy
                 && selectedWeapon == WeaponSlot.Knife)
@@ -1369,6 +1370,7 @@ namespace GenesisSoldierSoul.Multiplayer
                 activePose = riflePose;
             weaponCamera.fieldOfView = activePose.FieldOfView;
             weaponCamera.nearClipPlane = activePose.NearClip;
+            weaponCamera.farClipPlane = 3f;
         }
 
         private static void ApplyViewmodelPose(
@@ -1426,6 +1428,7 @@ namespace GenesisSoldierSoul.Multiplayer
                     if (idle != null)
                         idle.wrapMode = WrapMode.Loop;
                     rifleAnimation.Play("Idle01");
+                    rifleAnimation.Sample();
                 }
                 rifleMuzzle = rifle
                     .GetComponentsInChildren<Transform>(true)
@@ -1447,11 +1450,13 @@ namespace GenesisSoldierSoul.Multiplayer
                     rifle.transform,
                     rifleWeaponId == GenesisWeaponLoadout.M16);
             }
-            rifleRestPosition = rifle.transform.localPosition;
-            rifleRestRotation = rifle.transform.localRotation;
             foreach (var collider in rifle.GetComponentsInChildren<Collider>(true))
                 collider.enabled = false;
             SetLayerRecursively(rifle, 31);
+
+            PrepareRecoveredShotgunViewmodel();
+            rifleRestPosition = rifle.transform.localPosition;
+            rifleRestRotation = rifle.transform.localRotation;
 
             if (rifleMuzzle == null)
             {
@@ -1472,6 +1477,35 @@ namespace GenesisSoldierSoul.Multiplayer
                     rifleStructure.WeaponRoot,
                     rifleMuzzle);
             }
+        }
+
+        private void PrepareRecoveredShotgunViewmodel()
+        {
+            if (rifleWeaponId != GenesisWeaponLoadout.Shotgun || rifle == null)
+                return;
+            foreach (var skinned in
+                rifle.GetComponentsInChildren<SkinnedMeshRenderer>(true))
+                skinned.updateWhenOffscreen = true;
+        }
+
+        private void CenterRecoveredShotgunViewmodel()
+        {
+            if (rifleWeaponId != GenesisWeaponLoadout.Shotgun
+                || rifle == null
+                || !rifle.activeInHierarchy
+                || rifle.transform.parent == null)
+                return;
+            var renderers = rifle.GetComponentsInChildren<Renderer>(true)
+                .Where(item => item.enabled && item.gameObject.activeInHierarchy)
+                .ToArray();
+            if (renderers.Length == 0)
+                return;
+            var bounds = renderers[0].bounds;
+            for (var index = 1; index < renderers.Length; index += 1)
+                bounds.Encapsulate(renderers[index].bounds);
+            var targetCenter = rifle.transform.parent.TransformPoint(
+                new Vector3(0.33f, -0.22f, 0.82f));
+            rifle.transform.position += targetCenter - bounds.center;
         }
 
         private static GameObject CreateViewmodelRoot(

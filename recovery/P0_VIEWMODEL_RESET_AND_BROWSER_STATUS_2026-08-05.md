@@ -1,4 +1,4 @@
-# P0 视模重置与浏览器验收状态（2026-08-05）
+# P0 视模重置与浏览器验收状态（2026-08-06 更新）
 
 ## 已实现的重置行为
 
@@ -18,12 +18,17 @@ PlayMode 使用真实资源加载路径与 Prefab，覆盖：
 5. 死亡停止旧 Reload、隐藏全部视模，复活只恢复手枪及 Idle，回合结束再次清空；
 6. 四类视模的 Viewmodel/Animation/Arms/Weapon/Effects 角色分层。
 
-结果：Unity EditMode `66/66`、PlayMode `8/8`、最终自动门禁 `9/9`、完整 WebGL 构建通过。日志和 XML 位于 `artifacts/delivery-verification/`，最终报告为 `recovery/final-automated-regression.json`。
+结果：Unity EditMode `66/66`、PlayMode `9/9`、完整 WebGL 构建通过。新增的 Shotgun01 用例不只检查 `activeSelf`，还校验启用的渲染器中心位于武器相机裁剪面内，且水平、垂直屏幕占比都大于 `0.08`；该断言在初始生成和断线/重连后各执行一次。
 
-## 浏览器实机状态
+## 浏览器实机结果
 
-本轮未把浏览器实机两项标记为完成：Codex in-app Browser 对 `http://127.0.0.1:8080/` 和实际局域网地址的访问均在导航层被私网策略拦截；当前也没有可连接的 Chrome 扩展实例。服务器、WebGL 构建和浏览器入口本身已由完整交付门禁验证，但这不能替代可见实机交互。
+2026-08-06 已在 in-app Browser 中直接运行 WebGL 验收构建，该构建文件树 SHA-256 为 `e763099922ce515ad8a7172988e26da7538af2e16fb5f4802937324f2f27e9c4`。同一源码在全部门禁中重建后的最终文件树 SHA-256 为 `aa6957cbf1cac1a508fc8bf7a89e7e0784a8929f46445b469700373e9a0fea03`；构建中包含生成时信息，因此重建哈希不会与浏览器验收构建相同。可见验收结果：
 
-待浏览器连接可用后，需在同一构建上补做并留图：死亡、复活、回合结束、断线、重连，以及各节点的唯一模型、Idle 恢复、无瞬跳、无残留、无旧动画覆盖。完成前清单保持未勾选。
+1. Shotgun01 初始生成时武器和双手在右下角可见，不再处于武器相机远裁剪面外；
+2. 死亡画面显示 `YOU DIED / RESPAWN 1s`、HP 0 且视模隐藏，复活后 HP 恢复且 Shotgun01 重新可见；
+3. `ROUND OVER` 节点视模隐藏，随后正常返回房间列表；
+4. 服务器中断后立即离开战斗画面，显示 `ROOM SERVER OFFLINE`，不残留视模；服务器恢复后房间列表重连，再次进入房间时只恢复当前 Shotgun01 视模。
 
-本轮 WebGL 文件树清单 SHA-256：`f16c1e64aed03d2fe8099ba31f13db18b154725904b6a8dca95294811eba0250`；该值对应 `artifacts/delivery-verification/webgl-tree.sha256` 文件内容，构建重跑后必须重新生成，不能当作长期固定产物哈希。
+本地留图位于 `recovery/viewmodel-reset-browser-shotgun-final-{alive,death,respawn}-2026-08-06.png`、`recovery/viewmodel-reset-browser-shotgun-round-over-2026-08-06.png`、`recovery/viewmodel-reset-browser-{disconnected,reconnected-lobby}-2026-08-06.png` 和 `recovery/viewmodel-reset-browser-shotgun-reconnected-match-2026-08-06.png`。图片按仓库策略保持在 Git 忽略列表内，不上传大型临时证据。
+
+浏览器自动化运输层曾输出 Statsig 超时，手动中断 WebSocket 时 Unity Development Console 也按预期记录 `websocket error`；它们不是视模逻辑异常。

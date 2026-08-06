@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Reflection;
+using System.Text;
 using GenesisSoldierSoul.WeaponActions;
 using NUnit.Framework;
 using UnityEngine;
@@ -43,6 +44,7 @@ public sealed class GenesisMatchControllerPlayModeTests
     [UnityTearDown]
     public IEnumerator TearDown()
     {
+        PlayerPrefs.DeleteKey("Genesis.PrimaryWeapon");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         if (player != null)
@@ -154,6 +156,31 @@ public sealed class GenesisMatchControllerPlayModeTests
     }
 
     [UnityTest]
+    public IEnumerator ShotgunViewmodelRemainsInsideCameraBeforeAndAfterReset()
+    {
+        UnityEngine.Object.Destroy(player);
+        yield return null;
+        PlayerPrefs.SetString("Genesis.PrimaryWeapon", "shotgun01");
+
+        player = new GameObject("PlayMode Shotgun Match Player");
+        var cameraObject = new GameObject("PlayMode Shotgun View Camera");
+        cameraObject.transform.SetParent(player.transform, false);
+        viewCamera = cameraObject.AddComponent<Camera>();
+        match = player.AddComponent(matchType) as MonoBehaviour;
+        Assert.That(match, Is.Not.Null);
+        Invoke("Configure", player.transform, viewCamera, null);
+        yield return null;
+        yield return null;
+
+        AssertActiveViewmodelVisible("initial spawn");
+        Invoke("OnConnectionChanged", false);
+        AssertAllViewmodelsHidden();
+        Invoke("OnConnectionChanged", true);
+        yield return null;
+        AssertActiveViewmodelVisible("reconnect");
+    }
+
+    [UnityTest]
     public IEnumerator DisconnectInvalidatesReloadAndReconnectRestoresControl()
     {
         Set("rifleMagazine", 29);
@@ -226,6 +253,55 @@ public sealed class GenesisMatchControllerPlayModeTests
         Assert.That(Get<GameObject>("pistol").activeSelf, Is.False);
         Assert.That(Get<GameObject>("knife").activeSelf, Is.False);
         Assert.That(Get<GameObject>("grenade").activeSelf, Is.False);
+    }
+
+    private void AssertActiveViewmodelVisible(string phase)
+    {
+        var rifle = Get<GameObject>("rifle");
+        var camera = Get<Camera>("weaponCamera");
+        Assert.That(rifle.activeSelf, Is.True, phase);
+        Assert.That(camera.enabled, Is.True, phase);
+        Assert.That(camera.farClipPlane, Is.LessThanOrEqualTo(3.01f), phase);
+        var visibleRenderers = 0;
+        var minViewport = new Vector2(float.PositiveInfinity, float.PositiveInfinity);
+        var maxViewport = new Vector2(float.NegativeInfinity, float.NegativeInfinity);
+        var rendererPositions = new StringBuilder();
+        foreach (var renderer in rifle.GetComponentsInChildren<Renderer>(true))
+        {
+            if (!renderer.enabled || !renderer.gameObject.activeInHierarchy)
+                continue;
+            var viewport = camera.WorldToViewportPoint(renderer.bounds.center);
+            rendererPositions.Append(renderer.name)
+                .Append('=')
+                .Append(viewport.ToString("F3"))
+                .Append(' ');
+            var bounds = renderer.bounds;
+            foreach (var x in new[] { bounds.min.x, bounds.max.x })
+            foreach (var y in new[] { bounds.min.y, bounds.max.y })
+            foreach (var z in new[] { bounds.min.z, bounds.max.z })
+            {
+                var corner = camera.WorldToViewportPoint(new Vector3(x, y, z));
+                if (corner.z <= camera.nearClipPlane
+                    || corner.z >= camera.farClipPlane)
+                    continue;
+                minViewport = Vector2.Min(minViewport, corner);
+                maxViewport = Vector2.Max(maxViewport, corner);
+            }
+            if (viewport.z > camera.nearClipPlane
+                && viewport.z < camera.farClipPlane
+                && viewport.x >= 0f && viewport.x <= 1f
+                && viewport.y >= 0f && viewport.y <= 1f)
+                visibleRenderers += 1;
+        }
+        Assert.That(visibleRenderers, Is.GreaterThan(0),
+            phase + ": an active Shotgun01 renderer must be inside the weapon camera. "
+            + rendererPositions);
+        Assert.That(maxViewport.x - minViewport.x, Is.GreaterThan(0.08f),
+            phase + ": Shotgun01 must occupy a visible horizontal span. "
+            + minViewport + " -> " + maxViewport);
+        Assert.That(maxViewport.y - minViewport.y, Is.GreaterThan(0.08f),
+            phase + ": Shotgun01 must occupy a visible vertical span. "
+            + minViewport + " -> " + maxViewport);
     }
 
     private static object LocalState(

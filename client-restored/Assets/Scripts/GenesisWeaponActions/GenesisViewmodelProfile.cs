@@ -79,6 +79,17 @@ namespace GenesisSoldierSoul.WeaponActions
                         47f,
                         0.01f);
                     break;
+                case GenesisViewmodelKind.Shotgun:
+                    // The recovered prefab keeps its original large hierarchy;
+                    // GenesisMatchController recentres it after applying this
+                    // proportional scale so it fits the isolated 3-unit camera.
+                    pose = new GenesisViewmodelPose(
+                        new Vector3(0.08f, -0.31f, 0.12f),
+                        Vector3.zero,
+                        0.085f,
+                        52f,
+                        0.01f);
+                    break;
                 case GenesisViewmodelKind.Pistol:
                     pose = new GenesisViewmodelPose(
                         new Vector3(0.08f, -0.14f, 0.12f),
