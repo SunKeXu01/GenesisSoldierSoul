@@ -45,7 +45,9 @@ DTX 转换器支持以下经尺寸关系验证的格式：
 
 - 7 个未分帧包包括 RB001、两组 RF019/RF199，以及 RF164/RF266；在没有可信目录边界前不做整段魔数 carving。
 - 654 个 LTB 结构变体仍未通过严格几何解析；8,067 个成功 GLB 只覆盖静态几何，骨骼/蒙皮/动画仍保留在原 LTB 中。
-- 364 个 loose LTC 仍为私有高熵格式，未获得可验证解密/解释规则。
+- 364 个 loose LTC 已在 2026-08-06 全部恢复为 LTA：固定 16 字节 XOR 包装去除后，
+  使用 LithTech LTC/LZSS v0 位流解码；输出 51,657,941 字节、失败 0，并由同名
+  `AI3_FatalCanyon_DZ.LTA` 逐字节精确匹配验证。详见 `LTC_RECOVERY_2026-08-06.md`。
 - 私有目录块仍未恢复原文件名；每项使用源包哈希和稳定 stream index 标识。
 
 ## 证据与门禁
@@ -56,7 +58,8 @@ DTX 转换器支持以下经尺寸关系验证的格式：
 - 解码输出：`recovery/special-formats/private-rez-decoded/`。
 - PNG 输出：`recovery/special-formats/private-rez-media/`。
 - GLB 输出：`recovery/special-formats/private-rez-models/`。
-- 工具：`tools/recover_private_rez.py`、`tools/convert_private_rez_media.py`、`tools/convert_ltb_models.py`。
+- LTC LTA 输出：`recovery/special-formats/ltc-decoded/`。
+- 工具：`tools/recover_private_rez.py`、`tools/convert_private_rez_media.py`、`tools/convert_ltb_models.py`、`tools/lithtech_ltc.py`。
 - 专项测试：`tools/test_recover_private_rez.py`、`tools/test_convert_private_rez_media.py`、`tools/test_convert_ltb_models.py`。
 
-统一 provenance 已验证 11/11 清单、138,290 个输出、21,130,777,757 字节，错误 0。
+统一 provenance 已验证 11/11 清单、138,654 个输出、21,182,435,698 字节，错误 0。

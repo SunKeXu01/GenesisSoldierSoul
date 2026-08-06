@@ -13,6 +13,10 @@ from pathlib import Path
 from typing import Any
 
 GUID_RE = re.compile(rb"guid:\s*([0-9a-f]{32})")
+LIGHTING_SCENE_BACKREF_RE = re.compile(
+    rb"^\s*m_Scene:\s*\{[^}]*guid:\s*([0-9a-f]{32})",
+    re.MULTILINE,
+)
 ZERO_GUID = "0" * 32
 BUILTIN_GUIDS = {
     "0000000000000000e000000000000000",
@@ -54,16 +58,35 @@ def asset_files(root: Path, seed: str) -> list[Path]:
     return []
 
 
-def direct_guids(path: Path) -> set[str]:
+def direct_guid_analysis(path: Path) -> tuple[set[str], list[dict[str, str]]]:
     try:
         data = path.read_bytes()
     except OSError:
-        return set()
+        return set(), []
     if b"\0" in data[:4096]:
-        return set()
-    return {value.decode("ascii") for value in GUID_RE.findall(data)
-            if value.decode("ascii") != ZERO_GUID
-            and value.decode("ascii") not in BUILTIN_GUIDS}
+        return set(), []
+    guids = {value.decode("ascii") for value in GUID_RE.findall(data)
+             if value.decode("ascii") != ZERO_GUID
+             and value.decode("ascii") not in BUILTIN_GUIDS}
+    ignored = []
+    # Unity LightingData.asset serializes m_Scene as an owner/back-reference.
+    # Traversing it as a runtime dependency walks from a derived playable scene
+    # back into the original source scene and produces false missing-script
+    # edges. Other GUIDs in the lighting data remain ordinary dependencies.
+    if path.name == "LightingData.asset":
+        for value in LIGHTING_SCENE_BACKREF_RE.findall(data):
+            guid = value.decode("ascii")
+            if guid in guids:
+                guids.remove(guid)
+                ignored.append({
+                    "guid": guid,
+                    "reason": "Unity LightingData m_Scene owner back-reference",
+                })
+    return guids, ignored
+
+
+def direct_guids(path: Path) -> set[str]:
+    return direct_guid_analysis(path)[0]
 
 
 def closure(root: Path, seeds: list[str], index: dict[str, str]) -> dict[str, Any]:
@@ -73,13 +96,17 @@ def closure(root: Path, seeds: list[str], index: dict[str, str]) -> dict[str, An
         pending.extend(items)
     visited: set[str] = set()
     missing: set[str] = set()
+    ignored_back_references: list[dict[str, str]] = []
     while pending:
         path = pending.popleft()
         relative = path.relative_to(root).as_posix()
         if relative in visited or path.name.endswith(".meta"):
             continue
         visited.add(relative)
-        for guid in direct_guids(path):
+        guids, ignored = direct_guid_analysis(path)
+        for item in ignored:
+            ignored_back_references.append({"path": relative, **item})
+        for guid in guids:
             target = index.get(guid)
             if target is None:
                 missing.add(guid)
@@ -87,7 +114,14 @@ def closure(root: Path, seeds: list[str], index: dict[str, str]) -> dict[str, An
             target_path = root / target
             if target not in visited and target_path.is_file():
                 pending.append(target_path)
-    return {"assets": sorted(visited), "missing_guids": sorted(missing)}
+    return {
+        "assets": sorted(visited),
+        "missing_guids": sorted(missing),
+        "ignored_back_references": sorted(
+            ignored_back_references,
+            key=lambda item: (item["path"], item["guid"]),
+        ),
+    }
 
 
 def dimensions(paths: list[str]) -> dict[str, bool]:
@@ -147,6 +181,8 @@ def audit(repo: Path, policy_path: Path) -> dict[str, Any]:
             "asset_count": len(result["assets"]),
             "missing_guid_count": len(result["missing_guids"]),
             "missing_guids": result["missing_guids"],
+            "ignored_back_reference_count": len(result["ignored_back_references"]),
+            "ignored_back_references": result["ignored_back_references"],
             "dimensions_present": dimensions(result["assets"]),
         })
     counts = Counter(item["grade"] for item in groups)
@@ -177,14 +213,15 @@ def markdown(report: dict[str, Any]) -> str:
         "record and a clear safety state are mandatory. Recovery/diagnostic builds may inspect "
         "D-grade evidence, but the formal build gate rejects it.",
         "",
-        "| Group | Grade | Runtime | Assets | Missing GUIDs | Reason |",
-        "|---|:---:|:---:|---:|---:|---|",
+        "| Group | Grade | Runtime | Assets | Missing GUIDs | Ignored backlinks | Reason |",
+        "|---|:---:|:---:|---:|---:|---:|---|",
     ]
     for item in report["groups"]:
         reason = item["reason"].replace("|", "\\|")
         lines.append(f"| `{item['id']}` | {item['grade']} | "
                      f"{'yes' if item['intended_runtime'] else 'no'} | "
-                     f"{item['asset_count']} | {item['missing_guid_count']} | {reason} |")
+                     f"{item['asset_count']} | {item['missing_guid_count']} | "
+                     f"{item['ignored_back_reference_count']} | {reason} |")
     lines += ["", "## Formal source and fallback ledger", ""]
     for item in report["groups"]:
         if not item["intended_runtime"]:

@@ -53,7 +53,7 @@ tools/verify_delivery.sh --full
 - APK/Windows 静态恢复：`ANDROID_STATIC_AUDIT_2026-08-04.md`、`WINDOWS_STATIC_AUDIT_2026-08-04.md`。
 
 “当前运行时正式选用”只描述恢复工程配置，不代表取得发行权。当前 7 个运行时资源组
-均因缺少批准权利记录为 D 级，A 级为 0；`playable_maps` 另记录 19 个恢复源缺失 GUID。
+均因缺少批准权利记录为 D 级，A 级为 0。2026-08-06 复核后七个运行时组的前向 GUID 闭包均为 0 缺失；此前 `playable_maps` 的 19 项来自 LightingData 所属场景反向边误判。
 正式构建因此按设计 fail-closed，只允许 `GENESIS_DIAGNOSTIC=1` 的研究构建。
 
 ## 回退方案
@@ -69,8 +69,10 @@ tools/verify_delivery.sh --full
 ## 已知限制
 
 - 账号、余额、购买、充值、VIP、任务、活动和战队没有权威后端协议，当前不提供伪实现。
-- CF 私有 REZ/LTC、Flash ATF 和 Oodle/IoStore Unreal 容器尚未完成内容级转换。
-- 正式发布许可与 19 个恢复源 GUID 缺口尚未闭合，正式发布门禁保持关闭。
+- 364 个 CF LTC 已全部恢复为 LTA（51,657,941 字节、失败 0、同名明文对精确匹配）；
+  7 个未分帧私有 REZ、654 个 LTB 变体/骨骼动画、Flash ATF 和受 Oodle 限制的
+  Unreal 内容仍未完成。
+- 正式发布许可尚未闭合，正式发布门禁保持关闭；技术 GUID 闭包已修正为七个运行时组 0 缺失。
 - 长时间 Chromium 自动化偶发浏览器层 `UnknownError`；已与 Unity、资源、Shader 和 WebSocket 应用错误分开记录。
 
 ## 验收证据

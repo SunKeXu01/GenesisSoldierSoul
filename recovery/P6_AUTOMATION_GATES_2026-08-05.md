@@ -10,7 +10,7 @@
 
 - Unity EditMode：65/65 Passed，`p6-editmode-2026-08-05.xml`。
 - Unity PlayMode：6/6 Passed，`p6-playmode-2026-08-05.xml`。
-- Python 工具链：38/38 Passed，使用工作区捆绑 Python 与 Pillow，`p6-tools-tests-2026-08-05.log`。
+- Python 工具链：60/60 Passed，使用工作区捆绑 Python 与 Pillow；新增 LTC 字面量、span、显式结束标记和物理 EOF 回归。
 - 服务端：Vitest 30/30 Passed，TypeScript 构建通过（本轮前一阶段已复验）。
 
 ## 资源、骨骼与锚点
@@ -31,7 +31,7 @@
 阻断原因：
 
 - `resource-closure-policy.json` 尚无任何批准许可记录，因此 A 级计数为 0/7。
-- `playable_maps` 的恢复源依赖闭包仍记录 19 个原始客户端缺失 GUID；当前生成的七张可玩场景本身已通过运行时、材质、碰撞、导航及发布审计，但不能把恢复源缺口伪装成正式闭包。
+- 2026-08-06 复核确认原先 19 个缺失 GUID 全部来自 `LightingData.asset.m_Scene` 所属场景反向边被误作前向运行时依赖；审计器现显式记录并排除该反向边，七个运行时资源组前向 GUID 闭包均为 0 缺失。正式门禁仍因 7 个运行时组缺少批准许可记录而拒绝放行，未借技术修复绕过权利门禁。详见 `GUID_CLOSURE_CORRECTION_2026-08-06.md`。
 
 在权利记录经人工批准并补齐或正式替换这些恢复源依赖前，只允许 `GENESIS_DIAGNOSTIC=1` 的诊断构建，正式 WebGL 构建继续拒绝发布。
 

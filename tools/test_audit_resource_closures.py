@@ -12,6 +12,50 @@ SPEC.loader.exec_module(subject)
 
 
 class ResourceClosureAuditTests(unittest.TestCase):
+    def test_lighting_scene_owner_reference_is_not_a_runtime_dependency(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            project = Path(temporary) / "client-restored"
+            playable = project / "Assets/PlayableMaps/Test.unity"
+            lighting = project / "Assets/Recovered/Test/LightingData.asset"
+            source_scene = project / "Assets/Recovered/Test/Source.unity"
+            playable.parent.mkdir(parents=True)
+            lighting.parent.mkdir(parents=True)
+            lighting_guid = "1" * 32
+            scene_guid = "2" * 32
+            missing_script_guid = "3" * 32
+            playable.write_text(
+                f"m_LightingDataAsset: {{fileID: 112000000, guid: {lighting_guid}, type: 2}}\n",
+                encoding="utf-8",
+            )
+            lighting.write_text(
+                f"m_Scene: {{fileID: 102900000, guid: {scene_guid}, type: 3}}\n",
+                encoding="utf-8",
+            )
+            source_scene.write_text(
+                f"m_Script: {{fileID: 11500000, guid: {missing_script_guid}, type: 3}}\n",
+                encoding="utf-8",
+            )
+            lighting.with_suffix(".asset.meta").write_text(
+                f"fileFormatVersion: 2\nguid: {lighting_guid}\n",
+                encoding="utf-8",
+            )
+            source_scene.with_suffix(".unity.meta").write_text(
+                f"fileFormatVersion: 2\nguid: {scene_guid}\n",
+                encoding="utf-8",
+            )
+            result = subject.closure(
+                project,
+                ["Assets/PlayableMaps"],
+                subject.guid_index(project),
+            )
+            self.assertEqual([], result["missing_guids"])
+            self.assertNotIn(
+                "Assets/Recovered/Test/Source.unity",
+                result["assets"],
+            )
+            self.assertEqual(1, len(result["ignored_back_references"]))
+            self.assertEqual(scene_guid, result["ignored_back_references"][0]["guid"])
+
     def test_rights_missing_forces_d_even_when_dependency_closure_is_complete(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

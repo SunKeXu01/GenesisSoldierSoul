@@ -19,6 +19,7 @@ from audit_special_formats import (
     safe_zip_name,
     write_unreal_package_closure_manifest,
 )
+from lithtech_ltc import CROSSFIRE_XOR_KEY, decode_ltc, lta_structure
 
 
 def fstring(value: str) -> bytes:
@@ -27,6 +28,37 @@ def fstring(value: str) -> bytes:
 
 
 class SpecialFormatTests(unittest.TestCase):
+    @staticmethod
+    def _pack_ltc_bits(bits):
+        clear = bytes(
+            sum(bit << offset for offset, bit in enumerate(bits[index : index + 8]))
+            for index in range(0, len(bits), 8)
+        )
+        return bytes(value ^ CROSSFIRE_XOR_KEY[index % 16] for index, value in enumerate(clear))
+
+    def test_decodes_crossfire_ltc_literal_and_end_token(self):
+        bits = [0] * 32
+        for value in b"(ok)":
+            bits.append(1)
+            bits.extend((value >> shift) & 1 for shift in range(7, -1, -1))
+        bits.extend([0] + [0] * 12 + [0] * 4)
+        result = decode_ltc(self._pack_ltc_bits(bits))
+        self.assertEqual(result.data, b"(ok)")
+        self.assertEqual(result.termination, "end_token")
+        self.assertEqual(lta_structure(result.data)["parenthesis_depth"], 0)
+
+    def test_decodes_crossfire_ltc_span_and_physical_eof(self):
+        bits = [0] * 32
+        for value in b"ab":
+            bits.append(1)
+            bits.extend((value >> shift) & 1 for shift in range(7, -1, -1))
+        bits.append(0)
+        bits.extend((1 >> shift) & 1 for shift in range(11, -1, -1))
+        bits.extend([0, 0, 0, 0])  # stored length 0 means a two-byte span
+        result = decode_ltc(self._pack_ltc_bits(bits))
+        self.assertEqual(result.data, b"abab")
+        self.assertEqual(result.termination, "physical_eof")
+
     def test_decodes_raw_bgra_dtx(self):
         data = bytearray(164 + 16)
         struct.pack_into("<iiHHHHII", data, 0, 0, -5, 2, 2, 1, 0, 0x88, 0)

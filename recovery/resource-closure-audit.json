@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-05T05:45:17.815477+00:00",
+  "generatedAtUtc": "2026-08-06T02:16:29.142781+00:00",
   "policyPath": "recovery/resource-closure-policy.json",
   "policySha256": "7d79fa457e953173c23d7138cf466d036043123460f3c493d836d6beda42c730",
   "formalBuildAllowed": false,
@@ -24,28 +24,16 @@
       "seed_paths": [
         "Assets/PlayableMaps"
       ],
-      "asset_count": 2334,
-      "missing_guid_count": 19,
-      "missing_guids": [
-        "0918ed3106c9b794c2ddfdab7503546b",
-        "0b5004fd15a0ff26abb75be985543089",
-        "0ba54310687059c9d46ab8f29a74efb3",
-        "223da02a69327f578cddea18f09f77ee",
-        "244452777f7c40960a17a16cba8116e1",
-        "31a014bdad3d6614797d9e1b255ce422",
-        "4090235689019e8dade2fb65364f77e3",
-        "518c37d6ae4d551209126f3f9110694d",
-        "56f6a28e317c0f10d85006a1fc3234fe",
-        "698a94082ef7d58c4cd189c7baaefd13",
-        "8515e23fa474ef24dadae0feb4f992c8",
-        "9f4cecc79f41f3ba9877ae77f9faf3a4",
-        "adf9f13c18a18de9fecc7250e3c933ce",
-        "bc48b33db37c467c36398adab28f6403",
-        "c10f274298905b5ee8a99fa33b33f103",
-        "cfba646cc84420b7dce1f745d9b3ac7e",
-        "dd3d37e38df554c345e7c15a181dc07f",
-        "ddacd39d85510443f9c700043753afe4",
-        "f2fc7cb57261d460cddf11907e4ff3c3"
+      "asset_count": 2155,
+      "missing_guid_count": 0,
+      "missing_guids": [],
+      "ignored_back_reference_count": 1,
+      "ignored_back_references": [
+        {
+          "path": "Assets/RecoveredMaps/JunePyramid/金字塔/Scenep/LightingData.asset",
+          "guid": "b9da64576221e024aa3e3da94596c6ae",
+          "reason": "Unity LightingData m_Scene owner back-reference"
+        }
       ],
       "dimensions_present": {
         "model_or_mesh": true,
@@ -74,6 +62,8 @@
       "asset_count": 124,
       "missing_guid_count": 0,
       "missing_guids": [],
+      "ignored_back_reference_count": 0,
+      "ignored_back_references": [],
       "dimensions_present": {
         "model_or_mesh": true,
         "texture": true,
@@ -99,6 +89,8 @@
       "asset_count": 32,
       "missing_guid_count": 0,
       "missing_guids": [],
+      "ignored_back_reference_count": 0,
+      "ignored_back_references": [],
       "dimensions_present": {
         "model_or_mesh": true,
         "texture": true,
@@ -123,6 +115,8 @@
       "asset_count": 52,
       "missing_guid_count": 0,
       "missing_guids": [],
+      "ignored_back_reference_count": 0,
+      "ignored_back_references": [],
       "dimensions_present": {
         "model_or_mesh": false,
         "texture": false,
@@ -146,6 +140,8 @@
       "asset_count": 8,
       "missing_guid_count": 0,
       "missing_guids": [],
+      "ignored_back_reference_count": 0,
+      "ignored_back_references": [],
       "dimensions_present": {
         "model_or_mesh": true,
         "texture": true,
@@ -170,6 +166,8 @@
       "asset_count": 10,
       "missing_guid_count": 0,
       "missing_guids": [],
+      "ignored_back_reference_count": 0,
+      "ignored_back_references": [],
       "dimensions_present": {
         "model_or_mesh": true,
         "texture": true,
@@ -193,6 +191,8 @@
       "asset_count": 1,
       "missing_guid_count": 0,
       "missing_guids": [],
+      "ignored_back_reference_count": 0,
+      "ignored_back_references": [],
       "dimensions_present": {
         "model_or_mesh": false,
         "texture": false,
@@ -216,6 +216,8 @@
       "asset_count": 94,
       "missing_guid_count": 0,
       "missing_guids": [],
+      "ignored_back_reference_count": 0,
+      "ignored_back_references": [],
       "dimensions_present": {
         "model_or_mesh": true,
         "texture": true,

@@ -1,21 +1,21 @@
 # Resource Closure Audit
 
-Generated: `2026-08-05T05:45:17.815477+00:00`
+Generated: `2026-08-06T02:16:29.142781+00:00`
 
 Formal build allowed: **false**
 
 A grade is fail-closed: technical closure alone is insufficient. An approved rights record and a clear safety state are mandatory. Recovery/diagnostic builds may inspect D-grade evidence, but the formal build gate rejects it.
 
-| Group | Grade | Runtime | Assets | Missing GUIDs | Reason |
-|---|:---:|:---:|---:|---:|---|
-| `playable_maps` | D | yes | 2334 | 19 | approved rights record missing |
-| `first_person_weapons` | D | yes | 124 | 0 | approved rights record missing |
-| `third_person_character` | D | yes | 32 | 0 | approved rights record missing |
-| `combat_audio` | D | yes | 52 | 0 | approved rights record missing |
-| `hud_textures` | D | yes | 8 | 0 | approved rights record missing |
-| `combat_effects` | D | yes | 10 | 0 | approved rights record missing |
-| `runtime_configuration` | D | yes | 1 | 0 | approved rights record missing |
-| `preview_and_audit_outputs` | D | no | 94 | 0 | approved rights record missing |
+| Group | Grade | Runtime | Assets | Missing GUIDs | Ignored backlinks | Reason |
+|---|:---:|:---:|---:|---:|---:|---|
+| `playable_maps` | D | yes | 2155 | 0 | 1 | approved rights record missing |
+| `first_person_weapons` | D | yes | 124 | 0 | 0 | approved rights record missing |
+| `third_person_character` | D | yes | 32 | 0 | 0 | approved rights record missing |
+| `combat_audio` | D | yes | 52 | 0 | 0 | approved rights record missing |
+| `hud_textures` | D | yes | 8 | 0 | 0 | approved rights record missing |
+| `combat_effects` | D | yes | 10 | 0 | 0 | approved rights record missing |
+| `runtime_configuration` | D | yes | 1 | 0 | 0 | approved rights record missing |
+| `preview_and_audit_outputs` | D | no | 94 | 0 | 0 | approved rights record missing |
 
 ## Formal source and fallback ledger
 

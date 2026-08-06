@@ -19,6 +19,7 @@ from typing import Any, Iterable
 
 from PIL import Image
 
+from lithtech_ltc import LtcDecodeError, decode_ltc, lta_structure
 from rez_extract import RezArchive, RezError, safe_parts
 
 
@@ -538,19 +539,53 @@ def audit_rez(
     loose_ltc = sorted(set(path.resolve() for path in loose_ltc))
     ltc_records = []
     for path in loose_ltc:
-        with path.open("rb") as stream:
-            sample_data = stream.read(4096)
-        ltc_records.append(
-            {
-                "path": str(path.relative_to(workspace)),
-                "bytes": path.stat().st_size,
-                "sha256": sha256_file(path),
-                "sample_entropy": entropy(sample_data),
-                "header_hex": sample_data[:32].hex(),
-                "status": "preserved_private_encrypted_or_obfuscated",
-                "failure_reason": "no plaintext LTC signature or validated decryption key; unsafe guessing is prohibited",
-            }
-        )
+        source_data = path.read_bytes()
+        source_sha256 = sha256_bytes(source_data)
+        record: dict[str, Any] = {
+            "path": str(path.relative_to(workspace)),
+            "bytes": len(source_data),
+            "sha256": source_sha256,
+            "sample_entropy": entropy(source_data[:4096]),
+            "header_hex": source_data[:32].hex(),
+            "decoder": "CrossFire repeating XOR mask + LithTech LTC/LZSS v0",
+        }
+        try:
+            decoded = decode_ltc(source_data)
+            destination = output / "ltc-decoded" / f"{path.stem}__{source_sha256[:12]}.lta"
+            converted = output_record(destination, decoded.data, output, "decoded_lithtech_lta")
+            plaintext_peer = path.with_suffix(".LTA")
+            peer_match = None
+            if plaintext_peer.is_file() and plaintext_peer.resolve() != path.resolve():
+                peer_match = decoded.data == plaintext_peer.read_bytes()
+            record.update(
+                {
+                    "status": "decoded_and_verified",
+                    "termination": decoded.termination,
+                    "bits_consumed": decoded.bits_consumed,
+                    "input_bits": decoded.input_bits,
+                    "decoded_bytes": len(decoded.data),
+                    "decoded_sha256": sha256_bytes(decoded.data),
+                    "structure": lta_structure(decoded.data),
+                    "plaintext_peer": (
+                        {
+                            "path": str(plaintext_peer.relative_to(workspace)),
+                            "exact_match": peer_match,
+                        }
+                        if peer_match is not None
+                        else None
+                    ),
+                    "outputs": [converted],
+                }
+            )
+        except (LtcDecodeError, OSError) as error:
+            record.update(
+                {
+                    "status": "preserved_decode_failed",
+                    "failure_reason": f"{type(error).__name__}: {error}",
+                    "outputs": [],
+                }
+            )
+        ltc_records.append(record)
     return {
         "archives": archives,
         "loose_ltc": ltc_records,
@@ -569,7 +604,17 @@ def audit_rez(
                 for item in archives
                 for output_item in item["outputs"]
             ),
-            "ltc_preserved": len(ltc_records),
+            "ltc_sources": len(ltc_records),
+            "ltc_decoded": sum(item["status"] == "decoded_and_verified" for item in ltc_records),
+            "ltc_decode_failed": sum(item["status"] == "preserved_decode_failed" for item in ltc_records),
+            "ltc_end_token": sum(item.get("termination") == "end_token" for item in ltc_records),
+            "ltc_physical_eof": sum(item.get("termination") == "physical_eof" for item in ltc_records),
+            "ltc_decoded_bytes": sum(item.get("decoded_bytes", 0) for item in ltc_records),
+            "ltc_plaintext_peer_exact_matches": sum(
+                item.get("plaintext_peer", {}).get("exact_match", False)
+                for item in ltc_records
+                if item.get("plaintext_peer")
+            ),
         },
     }
 
@@ -1714,7 +1759,7 @@ def markdown(report: dict[str, Any]) -> str:
             f"- REZ：{rez['summary']['parsed_standard']} 个标准包、{rez['summary']['private_or_unsupported']} 个私有目录变体。",
             f"- 标准条目：{rez['summary']['entries']}；DTX→PNG：{rez['summary']['dtx_png']}；LTB RenderStyle 分类：{rez['summary']['ltb_classified']}。",
             f"- 私有 REZ 内容恢复：LZMA 流 {rez['private_recovery']['summary'].get('lzma_streams', 0)}，解码字节 {rez['private_recovery']['summary'].get('decoded_bytes', 0)}；新物化输出 {rez['private_recovery']['summary'].get('materialized_outputs', 0)}；严格转换 PNG {rez['private_recovery']['summary'].get('png_conversions', 0)}（{json.dumps(rez['private_recovery']['summary'].get('png_kind_counts', {}), ensure_ascii=False, sort_keys=True)}）；LTB 几何→GLB {rez['private_recovery']['summary'].get('ltb_glb_conversions', 0)}、保留失败 {rez['private_recovery']['summary'].get('ltb_glb_failures', 0)}，门禁错误 {rez['private_recovery']['summary'].get('verification_errors', 0)}。",
-            f"- loose LTC：{rez['summary']['ltc_preserved']} 个；均保留哈希与高熵/头部证据，未猜测解密。",
+            f"- loose LTC：{rez['summary']['ltc_decoded']}/{rez['summary']['ltc_sources']} 个严格解码，失败 {rez['summary']['ltc_decode_failed']}；显式结束标记 {rez['summary']['ltc_end_token']}、物理 EOF 结束 {rez['summary']['ltc_physical_eof']}，输出 {rez['summary']['ltc_decoded_bytes']} 字节；同名明文样本精确匹配 {rez['summary']['ltc_plaintext_peer_exact_matches']}。",
             "",
             "## Flash / ATF",
             "",
@@ -1771,7 +1816,7 @@ def main() -> int:
     report: dict[str, Any] = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "tool": "tools/audit_special_formats.py",
-        "tool_version": "7",
+        "tool_version": "8",
         "workspace": str(workspace),
         "root_inventory_sha256": index["inventory_sha256"],
         "safety": {
@@ -1810,6 +1855,11 @@ def main() -> int:
             for output_item in item.get("outputs", [item["output"]])
         ]
         + report["unreal"]["uassetapi"]["outputs"]
+        + [
+            output_item
+            for item in report["rez"]["loose_ltc"]
+            for output_item in item.get("outputs", [])
+        ]
     )
     report["conversion_provenance"]["manifests"].append(
         verify_conversion_manifest(args.json, output, special_outputs)
