@@ -10,7 +10,7 @@
 
 - Unity EditMode：65/65 Passed，`p6-editmode-2026-08-05.xml`。
 - Unity PlayMode：6/6 Passed，`p6-playmode-2026-08-05.xml`。
-- Python 工具链：66/66 Passed，使用工作区捆绑 Python 与 Pillow；新增 LTC、RF199 连续帧，以及 LTB layout-v2 旧文件保留和复合 mesh/骨骼元数据回归。
+- Python 工具链：70/70 Passed，使用工作区捆绑 Python 与 Pillow；新增 LTC、RF199 连续帧，以及 LTB layout-v3 矩阵调色板、顶点动画、OBB 与有界法线恢复回归。
 - 服务端：Vitest 30/30 Passed，TypeScript 构建通过（本轮前一阶段已复验）。
 
 ## 资源、骨骼与锚点

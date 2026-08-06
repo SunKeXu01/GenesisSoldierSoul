@@ -84,26 +84,97 @@ def mismatched_skinned_ltb() -> bytes:
     return bytes(data)
 
 
-def composite_ltb() -> bytes:
-    data = bytearray(98)
+def composite_ltb(
+    render_object_type: int = 4,
+    with_obb: bool = False,
+    nonfinite_normal_vertex: int | None = None,
+) -> bytes:
+    data = bytearray(94)
     struct.pack_into("<HH", data, 0, 1, 9)
     struct.pack_into("<I", data, 32, 1)
     struct.pack_into("<H", data, 84, 0)
-    struct.pack_into("<I", data, 94, 1)
+    struct.pack_into("<f", data, 86, 10.0)
+    struct.pack_into("<I", data, 90, int(with_obb))
+    if with_obb:
+        data.extend(
+            struct.pack(
+                "<15fIf",
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0,
+                1.0,
+            )
+        )
+    data.extend(struct.pack("<I", 1))
     name = b"Composite"
     data.extend(struct.pack("<H", len(name)) + name)
     data.extend(struct.pack("<I", 1))
     data.extend(struct.pack("<I", 0) + bytes(8))
-    data.extend(bytes(4) + struct.pack("<I", 0) + bytes(17))
-    data.extend(struct.pack("<II", 0, 1))
-    data.extend(struct.pack("<III", 3, 1, 1) + bytes(20))
-    for position, uv in (
+    data.extend(struct.pack("<I4IIBI", 1, 0, 0, 0, 0, 0, 0, render_object_type))
+    payload = bytearray()
+    if render_object_type == 4:
+        payload.extend(struct.pack("<4I4II", 3, 1, 1, 1, 0x13, 0, 0, 0, 0))
+    elif render_object_type == 5:
+        payload.extend(struct.pack("<4I", 3, 1, 6, 4))
+        payload.extend(b"\x01")
+        payload.extend(struct.pack("<4I", 0x13, 0, 0, 0))
+        payload.extend(b"\x01")
+        payload.extend(struct.pack("<3I", 0, 0, 1))
+        payload.extend(struct.pack("<I", 0))
+    elif render_object_type == 6:
+        payload.extend(
+            struct.pack("<5I4I2I", 3, 3, 1, 1, 1, 0x13, 0, 0, 0, 0, 0)
+        )
+    else:
+        raise ValueError(render_object_type)
+    for vertex_index, (position, uv) in enumerate((
         ((0.0, 0.0, 0.0), (0.0, 0.0)),
         ((1.0, 0.0, 0.0), (1.0, 0.0)),
         ((0.0, 1.0, 0.0), (0.0, 1.0)),
-    ):
-        data.extend(struct.pack("<3f3f2f", *position, 0.0, 0.0, 1.0, *uv))
-    data.extend(struct.pack("<3H", 0, 1, 2) + b"\0")
+    )):
+        normal = (
+            (float("nan"), 0.0, 1.0)
+            if vertex_index == nonfinite_normal_vertex
+            else (0.0, 0.0, 1.0)
+        )
+        if render_object_type == 5:
+            payload.extend(
+                struct.pack(
+                    "<3f3f4B3f2f",
+                    *position,
+                    1.0,
+                    0.0,
+                    0.0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    *normal,
+                    *uv,
+                )
+            )
+        else:
+            payload.extend(
+                struct.pack("<3f3f2f", *position, *normal, *uv)
+            )
+    payload.extend(struct.pack("<3H", 0, 1, 2))
+    if render_object_type == 6:
+        payload.extend(struct.pack("<I", 0))
+    data.extend(struct.pack("<I", len(payload)) + payload)
+    data.extend(b"\x01\x00")
     bone_name = b"root"
     data.extend(struct.pack("<H", len(bone_name)) + bone_name + bytes(3))
     data.extend(
@@ -159,14 +230,14 @@ class LtbModelTests(unittest.TestCase):
         self.assertEqual(details["triangle_count"], 1)
         self.assertEqual(meshes[0].mesh_type, 4)
 
-    def test_layout_v2_preserves_different_legacy_output(self):
+    def test_layout_v3_preserves_different_prior_output(self):
         source = minimal_ltb()
         digest = hashlib.sha256(source).hexdigest()
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             input_path = root / "source.ltb"
             legacy_path = root / "legacy.glb"
-            output_path = root / "layout-v2.glb"
+            output_path = root / "layout-v3.glb"
             input_path.write_bytes(source)
             legacy_path.write_bytes(b"legacy-must-remain")
             result = convert_one(
@@ -179,7 +250,7 @@ class LtbModelTests(unittest.TestCase):
                     "stream_index": 7,
                     "input_label": "source.ltb",
                     "output_path": str(output_path),
-                    "output_relative": "layout-v2.glb",
+                    "output_relative": "layout-v3.glb",
                     "legacy_output_path": str(legacy_path),
                 }
             )
@@ -189,12 +260,43 @@ class LtbModelTests(unittest.TestCase):
 
     def test_parses_composite_submesh_and_skeleton_metadata(self):
         data = composite_ltb()
-        meshes, details = parse_crossfire_composite_ltb(data, 0, 1)
+        meshes, details = parse_crossfire_composite_ltb(data, 0, 1, 98)
         self.assertEqual(len(meshes), 1)
         self.assertEqual(details["layout"], "crossfire_top_mesh_submesh")
         self.assertEqual(details["triangle_count"], 1)
+        self.assertEqual(details["render_object_type_counts"], {"4": 1})
         self.assertEqual(details["skeleton_metadata"]["names"], ["root"])
         self.assertEqual(details["skeleton_metadata"]["parent_indices"], [-1])
+
+    def test_parses_reindexed_matrix_palette_geometry(self):
+        meshes, details = parse_crossfire_composite_ltb(
+            composite_ltb(5), 0, 1, 98
+        )
+        self.assertEqual(len(meshes), 1)
+        self.assertEqual(details["render_object_type_counts"], {"5": 1})
+        self.assertEqual(details["matrix_palette_submeshes"], 1)
+        self.assertEqual(details["reindexed_bone_entries"], 1)
+        self.assertEqual(details["vertex_stream_layout_counts"], {"0x13/48": 1})
+
+    def test_parses_vertex_animated_geometry(self):
+        meshes, details = parse_crossfire_composite_ltb(
+            composite_ltb(6), 0, 1, 98
+        )
+        self.assertEqual(len(meshes), 1)
+        self.assertEqual(details["render_object_type_counts"], {"6": 1})
+        self.assertEqual(details["vertex_animation_submeshes"], 1)
+
+    def test_repairs_referenced_nonfinite_normal_from_triangle_geometry(self):
+        meshes, details = parse_crossfire_composite_ltb(
+            composite_ltb(4, nonfinite_normal_vertex=0), 0, 1, 98
+        )
+        self.assertEqual(details["repaired_normal_vertices"], 1)
+        self.assertEqual(meshes[0].normals[0], (0.0, 0.0, 1.0))
+
+    def test_skips_valid_oriented_bounding_boxes_before_geometry(self):
+        meshes, details = parse_ltb(composite_ltb(4, with_obb=True))
+        self.assertEqual(len(meshes), 1)
+        self.assertEqual(details["oriented_bounding_box_count"], 1)
 
 
 if __name__ == "__main__":

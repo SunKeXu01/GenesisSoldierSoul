@@ -1,5 +1,7 @@
 # LTB layout-v2 几何与骨骼元数据恢复
 
+> 历史阶段报告；169 项剩余变体已由 layout-v3 全部解析，当前结果见 `LTB_RUNTIME_LAYOUT_V3_RECOVERY_2026-08-06.md`。
+
 日期：2026-08-06
 
 ## 结论
