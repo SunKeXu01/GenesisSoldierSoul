@@ -16,6 +16,7 @@ from recover_private_rez_framed_prefix import (
     parse_ascii_web_bundle,
     parse_ini,
     parse_start_end_config,
+    parse_standalone_idat,
     parse_swf,
     parse_dds,
     parse_dtx,
@@ -26,6 +27,7 @@ from recover_private_rez_framed_prefix import (
     parse_lithtech_world,
     parse_mp4,
     parse_png,
+    parse_rps,
     parse_tga,
     parse_ui_layout,
     parse_webm,
@@ -42,6 +44,10 @@ def png(width: int = 1, height: int = 1) -> bytes:
     ihdr = struct.pack(">IIBBBBB", width, height, 8, 6, 0, 0, 0)
     pixels = zlib.compress(b"\0\0\0\0\0")
     return PNG_SIGNATURE + chunk(b"IHDR", ihdr) + chunk(b"IDAT", pixels) + chunk(b"IEND", b"")
+
+
+def standalone_idat() -> bytes:
+    return chunk(b"IDAT", zlib.compress(b"orphan pixels"))
 
 
 def dds_dxt1(width: int = 4, height: int = 4) -> bytes:
@@ -223,6 +229,21 @@ def cfsprite(*, repeated_tick_delta: int = 0) -> bytes:
     return bytes(data)
 
 
+def rps(*, bad_index: bool = False) -> bytes:
+    paths = [
+        "f:/_ svn/svn_개발실/cfclient/rez/ui/test.png".encode("cp949"),
+        b"ui/second.png",
+    ]
+    data = bytearray(struct.pack("<I", len(paths)))
+    for path in paths:
+        data.extend(struct.pack("<H", len(path)))
+        data.extend(path)
+    data.extend(struct.pack("<I", 2))
+    data.extend(struct.pack("<2I", 0, 2 if bad_index else 1))
+    data.extend(struct.pack("<I", 0))
+    return bytes(data)
+
+
 class PrivateRezPngPrefixTests(unittest.TestCase):
     def test_parses_crc_valid_png_at_exact_offset(self):
         data = png(3, 2)
@@ -240,6 +261,23 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
             stream.write(data)
             with self.assertRaisesRegex(RezError, "CRC mismatch"):
                 parse_png(stream, 0, len(data))
+
+    def test_parses_crc_valid_standalone_idat_before_known_successor(self):
+        data = standalone_idat()
+        successor = png()
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data + successor)
+            parsed = parse_standalone_idat(stream, 0, len(data + successor))
+        self.assertEqual(parsed["bytes"], len(data))
+        self.assertEqual(parsed["next_frame_kind"], "png")
+        self.assertEqual(parsed["sha256"], hashlib.sha256(data).hexdigest())
+
+    def test_rejects_standalone_idat_without_known_successor(self):
+        data = standalone_idat()
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data + b"UNKNOWN")
+            with self.assertRaisesRegex(RezError, "no known successor"):
+                parse_standalone_idat(stream, 0, len(data + b"UNKNOWN"))
 
     def test_parses_header_sized_dds_at_exact_offset(self):
         data = dds_dxt1(8, 4)
@@ -328,6 +366,24 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
             stream.write(data)
             with self.assertRaisesRegex(RezError, "tick sequence"):
                 parse_cfsprite(stream, 0, len(data))
+
+    def test_parses_cp949_rps_path_and_index_tables(self):
+        data = rps()
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data + png())
+            parsed = parse_rps(stream, 0, len(data + png()))
+        self.assertEqual(parsed["bytes"], len(data))
+        self.assertEqual(parsed["path_count"], 2)
+        self.assertEqual(parsed["index_count"], 2)
+        self.assertIn("개발실", parsed["paths"][0])
+        self.assertEqual(parsed["sha256"], hashlib.sha256(data).hexdigest())
+
+    def test_rejects_nonsequential_rps_index_table(self):
+        data = rps(bad_index=True)
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data)
+            with self.assertRaisesRegex(RezError, "non-sequential RPS index"):
+                parse_rps(stream, 0, len(data))
 
     def test_parses_complete_fws_and_cws_at_exact_offset(self):
         for signature, compression in ((b"FWS", "none"), (b"CWS", "zlib")):
@@ -589,6 +645,8 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
             dtx(),
             web_bundle(),
             png(),
+            standalone_idat(),
+            png(),
             ui_layout(),
             png(),
             overlay_bundle(),
@@ -601,6 +659,8 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
             cp949_web_bundle(),
             png(),
             cfsprite(),
+            rps(),
+            png(),
         ]
         suffix = b"UNSUPPORTED"
         with tempfile.TemporaryDirectory() as temporary:
@@ -633,6 +693,8 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
                     "dtx",
                     "web_bundle",
                     "png",
+                    "standalone_idat",
+                    "png",
                     "ui_layout",
                     "png",
                     "web_bundle",
@@ -645,9 +707,11 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
                     "cp949_web_bundle",
                     "png",
                     "cfsprite",
+                    "rps",
+                    "png",
                 ],
             )
-            self.assertEqual(len(result["outputs"]), 25)
+            self.assertEqual(len(result["outputs"]), 29)
             self.assertEqual(result["trailing_region"]["bytes"], len(suffix))
 
 

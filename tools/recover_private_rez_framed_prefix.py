@@ -5,7 +5,8 @@ Parsing always starts at the fixed REZ data offset and stops at the first
 unsupported byte.  It never searches for a later signature.  Supported frames
 have self-proving boundaries or byte-identical loose peers: CRC-valid PNG,
 header-sized DDS/DTX, complete TGA (including RLE packet accounting),
-block-complete GIF, marker-complete JPEG, LithTech world v85, CFSprite v5, and an
+block-complete GIF, marker-complete JPEG, LithTech world v85, CFSprite v5,
+CrossFire RPS tables, CRC-valid orphan IDAT chunks with known successors, and an
 unambiguous chain of exact loose-file matches.
 """
 
@@ -75,6 +76,8 @@ CFSPRITE_SCHEMA = 9
 CFSPRITE_TICK_RATE = 30
 MAXIMUM_CFSPRITE_ITEMS = 100_000
 MAXIMUM_CFSPRITE_STRING_BYTES = 4096
+MAXIMUM_RPS_ITEMS = 100_000
+MAXIMUM_RPS_STRING_BYTES = 4096
 EXACT_PEER_PREFIX_BYTES = 16
 SWF_SIGNATURES = {b"FWS", b"CWS"}
 MAXIMUM_SWF_UNCOMPRESSED_BYTES = 512 * 1024 * 1024
@@ -287,6 +290,40 @@ def parse_png(stream: BinaryIO, offset: int, region_end: int) -> dict[str, objec
                 "chunk_count": chunk_count,
                 "chunk_counts": dict(sorted(chunk_counts.items())),
             }
+
+
+def parse_standalone_idat(
+    stream: BinaryIO, offset: int, region_end: int
+) -> dict[str, object]:
+    """Preserve one CRC-valid orphan IDAT chunk before a known next frame."""
+    if offset < 0 or offset + 12 > region_end:
+        raise RezError(f"truncated standalone IDAT at {offset}")
+    stream.seek(offset)
+    header = stream.read(8)
+    length, chunk_type = struct.unpack(">I4s", header)
+    if chunk_type != b"IDAT" or length == 0 or length > MAXIMUM_PNG_CHUNK_BYTES:
+        raise RezError(f"standalone IDAT header absent at exact offset {offset}")
+    end = offset + 12 + length
+    if end > region_end:
+        raise RezError(f"standalone IDAT crosses REZ boundary at {offset}")
+    data = stream.read(length)
+    raw_crc = stream.read(4)
+    expected_crc = zlib.crc32(chunk_type + data) & 0xFFFFFFFF
+    actual_crc = struct.unpack(">I", raw_crc)[0]
+    if actual_crc != expected_crc:
+        raise RezError(f"standalone IDAT CRC mismatch at {offset}")
+    stream.seek(end)
+    successor = prefix_kind(stream.read(DTX_HEADER_BYTES))
+    if successor is None or successor == "standalone_idat":
+        raise RezError(f"standalone IDAT has no known successor at {end}")
+    return {
+        "offset": offset,
+        "bytes": end - offset,
+        "sha256": hash_region(stream, offset, end - offset),
+        "payload_bytes": length,
+        "crc32": f"{actual_crc:08x}",
+        "next_frame_kind": successor,
+    }
 
 
 def parse_dds(stream: BinaryIO, offset: int, region_end: int) -> dict[str, object]:
@@ -1862,6 +1899,73 @@ def parse_cfsprite(stream: BinaryIO, offset: int, region_end: int) -> dict[str, 
     }
 
 
+def parse_rps(stream: BinaryIO, offset: int, region_end: int) -> dict[str, object]:
+    """Parse one CrossFire resource-path table with its explicit index tail."""
+    if offset < 0 or offset + 12 > region_end:
+        raise RezError(f"truncated RPS resource-path table at {offset}")
+    position = offset
+
+    def read(size: int, label: str) -> bytes:
+        nonlocal position
+        if size < 0 or position + size > region_end:
+            raise RezError(f"truncated RPS {label} at {position}")
+        stream.seek(position)
+        value = stream.read(size)
+        if len(value) != size:
+            raise RezError(f"truncated RPS {label} at {position}")
+        position += size
+        return value
+
+    def u16(label: str) -> int:
+        return struct.unpack("<H", read(2, label))[0]
+
+    def u32(label: str) -> int:
+        return struct.unpack("<I", read(4, label))[0]
+
+    path_count = u32("path count")
+    if path_count > MAXIMUM_RPS_ITEMS:
+        raise RezError(f"implausible RPS path count at {offset}: {path_count}")
+    paths: list[str] = []
+    for path_index in range(path_count):
+        length = u16(f"path {path_index} length")
+        if length == 0 or length > MAXIMUM_RPS_STRING_BYTES:
+            raise RezError(f"invalid RPS path {path_index} length: {length}")
+        raw = read(length, f"path {path_index}")
+        if b"\0" in raw:
+            raise RezError(f"RPS path {path_index} contains an embedded NUL")
+        try:
+            path = raw.decode("cp949")
+        except UnicodeDecodeError as error:
+            raise RezError(f"invalid CP949 RPS path {path_index}") from error
+        if any(ord(character) < 0x20 or ord(character) == 0x7F for character in path):
+            raise RezError(f"control character in RPS path {path_index}")
+        normalized = path.replace("\\", "/").lower()
+        if not normalized.endswith((".png", ".jpg", ".jpeg", ".tga", ".dtx")):
+            raise RezError(f"unsupported RPS path suffix at {path_index}: {path!r}")
+        paths.append(path)
+
+    index_count = u32("index count")
+    if not 1 <= index_count <= MAXIMUM_RPS_ITEMS:
+        raise RezError(f"implausible RPS index count at {offset}: {index_count}")
+    indices = [u32(f"index {index}") for index in range(index_count)]
+    if indices != list(range(index_count)):
+        raise RezError(f"non-sequential RPS index table at {offset}: {indices[:16]}")
+    if u32("reserved") != 0:
+        raise RezError(f"nonzero RPS reserved field at {offset}")
+
+    size = position - offset
+    return {
+        "offset": offset,
+        "bytes": size,
+        "sha256": hash_region(stream, offset, size),
+        "path_count": path_count,
+        "index_count": index_count,
+        "paths": paths,
+        "indices": indices,
+        "encoding": "cp949",
+    }
+
+
 def copy_verified_region(
     source: Path, offset: int, size: int, expected_sha256: str, destination: Path
 ) -> str:
@@ -1941,6 +2045,21 @@ def converted_png(source: Path, kind: str) -> tuple[bytes, dict[str, object]]:
 def prefix_kind(prefix: bytes) -> str | None:
     if prefix.startswith(CFSPRITE_SIGNATURE):
         return "cfsprite"
+    if len(prefix) >= 16:
+        rps_path_count = struct.unpack_from("<I", prefix)[0]
+        if rps_path_count == 0 and prefix[:16] == struct.pack("<4I", 0, 1, 0, 0):
+            return "rps"
+        if 1 <= rps_path_count <= MAXIMUM_RPS_ITEMS:
+            rps_first_length = struct.unpack_from("<H", prefix, 4)[0]
+            if (
+                1 <= rps_first_length <= min(MAXIMUM_RPS_STRING_BYTES, len(prefix) - 6)
+                and b"\0" not in prefix[6 : 6 + rps_first_length]
+                and prefix[6 : 6 + rps_first_length]
+                .replace(b"\\", b"/")
+                .lower()
+                .endswith((b".png", b".jpg", b".jpeg", b".tga", b".dtx"))
+            ):
+                return "rps"
     if prefix.startswith(b"GROUP ") and b"DEFAULTGROUP " in prefix[:128]:
         return "ui_layout"
     if prefix.startswith(b"//val\r\n") and b"var " in prefix[:128]:
@@ -1972,6 +2091,12 @@ def prefix_kind(prefix: bytes) -> str | None:
         return "lithtech_world"
     if prefix.startswith(PNG_SIGNATURE):
         return "png"
+    if (
+        len(prefix) >= 12
+        and prefix[4:8] == b"IDAT"
+        and 0 < struct.unpack_from(">I", prefix)[0] <= MAXIMUM_PNG_CHUNK_BYTES
+    ):
+        return "standalone_idat"
     if prefix.startswith(DDS_MAGIC):
         return "dds"
     if prefix[:6] in GIF_SIGNATURES:
@@ -2041,6 +2166,9 @@ def recover_framed_prefix(
             if kind == "png":
                 record = parse_png(stream, position, region_end)
                 representation = "private_rez_crc_valid_png_frame"
+            elif kind == "standalone_idat":
+                record = parse_standalone_idat(stream, position, region_end)
+                representation = "private_rez_crc_valid_standalone_idat_chunk"
             elif kind == "dds":
                 record = parse_dds(stream, position, region_end)
                 representation = "private_rez_header_sized_dds_frame"
@@ -2099,6 +2227,9 @@ def recover_framed_prefix(
             elif kind == "cfsprite":
                 record = parse_cfsprite(stream, position, region_end)
                 representation = "private_rez_strict_cfsprite_v5_frame"
+            elif kind == "rps":
+                record = parse_rps(stream, position, region_end)
+                representation = "private_rez_strict_cp949_rps_frame"
             elif peer_index is not None:
                 record = match_exact_peer(stream, position, region_end, peer_index)
                 if record is None:
@@ -2133,6 +2264,8 @@ def recover_framed_prefix(
                     "ui_layout": "txt",
                     "lithtech_world": "dat",
                     "cfsprite": "xfi",
+                    "rps": "rps",
+                    "standalone_idat": "idat",
                     "html": "html",
                 }.get(str(kind), str(kind))
             destination = base / f"{kind}-{len(records):05d}.{extension}"
@@ -2258,7 +2391,7 @@ def main() -> int:
     manifest = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "tool": "tools/recover_private_rez_framed_prefix.py",
-        "tool_version": "14",
+        "tool_version": "15",
         "workspace": str(workspace),
         "root_inventory_sha256": index["inventory_sha256"],
         "safety": {
@@ -2267,6 +2400,7 @@ def main() -> int:
             "sequential_from_data_offset_only": True,
             "signature_search_or_carving": False,
             "png_crc_required": True,
+            "standalone_idat_crc_and_known_successor_required": True,
             "dds_dtx_header_sized_payload_required": True,
             "tga_pixel_or_rle_packet_accounting_required": True,
             "gif_sub_block_and_trailer_required": True,
@@ -2285,6 +2419,7 @@ def main() -> int:
             "html_doctype_structure_and_unique_end_tag_required": True,
             "lithtech_world_v85_render_tail_required": True,
             "cfsprite_v5_counts_indices_ticks_and_finite_transforms_required": True,
+            "rps_cp949_paths_sequential_indices_and_zero_reserved_required": True,
             "exact_loose_peer_byte_equality_required": True,
             "exact_loose_peer_unique_length_required": True,
             "loose_peer_symlinks_ignored": True,
@@ -2302,6 +2437,17 @@ def main() -> int:
                 int(item["bytes"])
                 for item in all_outputs
                 if item["representation"] == "private_rez_crc_valid_png_frame"
+            ),
+            "standalone_idat_chunks": sum(
+                item["representation"]
+                == "private_rez_crc_valid_standalone_idat_chunk"
+                for item in all_outputs
+            ),
+            "standalone_idat_bytes": sum(
+                int(item["bytes"])
+                for item in all_outputs
+                if item["representation"]
+                == "private_rez_crc_valid_standalone_idat_chunk"
             ),
             "dds_images": sum(
                 item["representation"] == "private_rez_header_sized_dds_frame"
@@ -2331,6 +2477,15 @@ def main() -> int:
                 int(item["bytes"])
                 for item in all_outputs
                 if item["representation"] == "private_rez_strict_cfsprite_v5_frame"
+            ),
+            "rps_files": sum(
+                item["representation"] == "private_rez_strict_cp949_rps_frame"
+                for item in all_outputs
+            ),
+            "rps_bytes": sum(
+                int(item["bytes"])
+                for item in all_outputs
+                if item["representation"] == "private_rez_strict_cp949_rps_frame"
             ),
             "swf_files": sum(
                 item["representation"].endswith("_swf_frame")
