@@ -25,7 +25,7 @@
 - 逐项机器账本：`recovery/special-format-conversion-ledger.json`。
 - 隔离明文输出：`recovery/special-formats/ltc-decoded/`（可由账本和工具重复生成，不纳入 Git）。
 
-统一 provenance 在后续 RF199 与 LTB layout-v5 恢复纳入后，当前验证 12/12 清单、148,829 个输出、21,475,559,731 字节，错误 0。
+统一 provenance 在后续 RF199 与 LTB layout-v7 恢复纳入后，当前验证 12/12 清单、148,829 个输出、21,546,511,271 字节，错误 0。
 
 ## 使用
 

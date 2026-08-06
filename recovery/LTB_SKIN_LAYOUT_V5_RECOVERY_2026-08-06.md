@@ -1,5 +1,7 @@
 # LTB layout-v5 glTF skin 恢复
 
+> 历史阶段报告；当前 layout-v7 已恢复骨骼 TRS 与顶点 morph 动画，见 `LTB_ANIMATION_LAYOUT_V7_RECOVERY_2026-08-06.md`。
+
 日期：2026-08-06
 
 ## 结论

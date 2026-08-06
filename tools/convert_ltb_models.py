@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Convert bounded LithTech Jupiter LTB v9 meshes to glTF 2.0 GLB.
+"""Convert bounded LithTech Jupiter LTB v9 models to glTF 2.0 GLB.
 
 The structural offsets are independently implemented from the loader notes in
 Cote-Duke's LTB2X source release and the public CrossFire LithTech runtime
-loader.  See third_party_notices/LTB2X-LICENSE.txt.  Mesh geometry and bounded
-skeletal vertex bindings are converted; vertex and skeletal animation channels
-remain in the source LTB and are not claimed in the GLB.
+loader.  See third_party_notices/LTB2X-LICENSE.txt.  Mesh geometry, bounded
+skeletal vertex bindings, skeletal animation channels, and vertex morph
+animation channels are converted.
 """
 
 from __future__ import annotations
@@ -28,7 +28,10 @@ from typing import Any
 MAX_MESHES = 100_000
 MAX_VERTICES = 65_535
 MAX_FACES = 65_535
-OUTPUT_LAYOUT_VERSION = "layout-v5"
+MAX_ANIMATIONS = 10_000
+MAX_KEYFRAMES = 100_000
+MAX_SOCKETS = 100_000
+OUTPUT_LAYOUT_VERSION = "layout-v7"
 
 RENDER_OBJECT_RIGID = 4
 RENDER_OBJECT_SKELETAL = 5
@@ -67,6 +70,29 @@ class LtbMesh:
     indices: list[int]
     joints: list[tuple[int, int, int, int]] | None = None
     weights: list[tuple[float, float, float, float]] | None = None
+    animation_node: int | None = None
+    unduplicated_vertex_count: int | None = None
+    duplicate_map: list[tuple[int, int]] | None = None
+    retained_vertex_indices: list[int] | None = None
+    source_vertex_count: int | None = None
+
+
+@dataclass
+class LtbAnimationNode:
+    translations: list[tuple[float, float, float]]
+    rotations: list[tuple[float, float, float, float]]
+    vertex_frames: list[list[tuple[float, float, float]]] | None = None
+
+
+@dataclass
+class LtbAnimation:
+    name: str
+    compression_type: int
+    interpolation_ms: int
+    times_ms: list[int]
+    keyframe_strings: list[str]
+    nodes: list[LtbAnimationNode]
+    root_translation: tuple[float, float, float] = (0.0, 0.0, 0.0)
 
 
 def complete_blend_weights(
@@ -111,6 +137,391 @@ def u16(data: bytes, offset: int, label: str) -> int:
 
 def u32(data: bytes, offset: int, label: str) -> int:
     return struct.unpack("<I", bounded_slice(data, offset, 4, label))[0]
+
+
+def read_ltb_string(data: bytes, cursor: int, label: str) -> tuple[str, int]:
+    length = u16(data, cursor, f"{label} length")
+    cursor += 2
+    value = bounded_slice(data, cursor, length, label).decode(
+        "cp1252", errors="replace"
+    )
+    return value, cursor + length
+
+
+def normalize_quaternion(
+    value: tuple[float, float, float, float], label: str
+) -> tuple[float, float, float, float]:
+    if not all(math.isfinite(component) for component in value):
+        raise LtbError(f"non-finite quaternion in {label}")
+    magnitude = math.sqrt(sum(component * component for component in value))
+    if magnitude <= 1e-8:
+        raise LtbError(f"zero quaternion in {label}")
+    return tuple(component / magnitude for component in value)
+
+
+def expand_animation_channel(
+    values: list[tuple[float, ...]],
+    keyframe_count: int,
+    default: tuple[float, ...],
+    label: str,
+) -> list[tuple[float, ...]]:
+    if not values:
+        return [default] * keyframe_count
+    if len(values) == 1:
+        return values * keyframe_count
+    if len(values) != keyframe_count:
+        raise LtbError(
+            f"invalid animation channel count in {label}: "
+            f"{len(values)}/{keyframe_count}"
+        )
+    return values
+
+
+def parse_composite_tail(
+    data: bytes, cursor: int, bone_count: int
+) -> tuple[list[LtbAnimation], dict[str, Any], int]:
+    """Parse the model data following the preorder skeleton node records."""
+    weight_set_count = u32(data, cursor, "weight set count")
+    cursor += 4
+    if weight_set_count > MAX_ANIMATIONS:
+        raise LtbError(f"implausible weight set count: {weight_set_count}")
+    for weight_set_index in range(weight_set_count):
+        _, cursor = read_ltb_string(
+            data, cursor, f"weight set {weight_set_index} name"
+        )
+        weight_count = u32(data, cursor, f"weight set {weight_set_index} count")
+        cursor += 4
+        if weight_count != bone_count:
+            raise LtbError(
+                f"weight set {weight_set_index} size mismatch: "
+                f"{weight_count}/{bone_count}"
+            )
+        weights = struct.unpack(
+            f"<{weight_count}f",
+            bounded_slice(
+                data,
+                cursor,
+                weight_count * 4,
+                f"weight set {weight_set_index} values",
+            ),
+        )
+        cursor += weight_count * 4
+        if not all(math.isfinite(value) for value in weights):
+            raise LtbError(f"non-finite weight set {weight_set_index}")
+
+    child_model_count = u32(data, cursor, "child model count")
+    cursor += 4
+    if not 1 <= child_model_count <= 32:
+        raise LtbError(f"implausible child model count: {child_model_count}")
+    child_model_names = ["SELF"]
+    for child_index in range(1, child_model_count):
+        child_name, cursor = read_ltb_string(
+            data, cursor, f"child model {child_index} name"
+        )
+        child_model_names.append(child_name)
+
+    animation_count = u32(data, cursor, "animation count")
+    cursor += 4
+    if animation_count > MAX_ANIMATIONS:
+        raise LtbError(f"implausible animation count: {animation_count}")
+    animations: list[LtbAnimation] = []
+    compression_counts: Counter[int] = Counter()
+    duplicate_timestamps = 0
+    vertex_animation_channels = 0
+    total_keyframes = 0
+    for animation_index in range(animation_count):
+        dimensions = struct.unpack(
+            "<3f",
+            bounded_slice(data, cursor, 12, f"animation {animation_index} dimensions"),
+        )
+        cursor += 12
+        if not all(math.isfinite(value) and value >= 0 for value in dimensions):
+            raise LtbError(f"invalid animation dimensions at {animation_index}")
+        name, cursor = read_ltb_string(
+            data, cursor, f"animation {animation_index} name"
+        )
+        compression_type = u32(
+            data, cursor, f"animation {animation_index} compression"
+        )
+        interpolation_ms = u32(
+            data, cursor + 4, f"animation {animation_index} interpolation"
+        )
+        keyframe_count = u32(
+            data, cursor + 8, f"animation {animation_index} keyframe count"
+        )
+        cursor += 12
+        if compression_type not in (0, 1, 2, 3):
+            raise LtbError(
+                f"unsupported animation compression {compression_type} at "
+                f"animation {animation_index}"
+            )
+        if not 1 <= keyframe_count <= MAX_KEYFRAMES:
+            raise LtbError(
+                f"implausible keyframe count at animation {animation_index}: "
+                f"{keyframe_count}"
+            )
+        times_ms: list[int] = []
+        keyframe_strings: list[str] = []
+        for keyframe_index in range(keyframe_count):
+            time_ms = u32(
+                data,
+                cursor,
+                f"animation {animation_index} keyframe {keyframe_index} time",
+            )
+            cursor += 4
+            keyframe_string, cursor = read_ltb_string(
+                data,
+                cursor,
+                f"animation {animation_index} keyframe {keyframe_index} string",
+            )
+            if times_ms and time_ms < times_ms[-1]:
+                raise LtbError(f"non-monotonic animation time in {name}")
+            if times_ms and time_ms == times_ms[-1]:
+                duplicate_timestamps += 1
+            times_ms.append(time_ms)
+            keyframe_strings.append(keyframe_string)
+
+        animation_nodes: list[LtbAnimationNode] = []
+        for bone_index in range(bone_count):
+            label = f"animation {animation_index} bone {bone_index}"
+            vertex_frames: list[list[tuple[float, float, float]]] | None = None
+            if compression_type == 0:
+                is_vertex_animation = bool(
+                    bounded_slice(data, cursor, 1, f"{label} vertex flag")[0]
+                )
+                cursor += 1
+                if is_vertex_animation:
+                    vertex_frames = []
+                    for keyframe_index in range(keyframe_count):
+                        vertex_count = u32(
+                            data,
+                            cursor,
+                            f"{label} frame {keyframe_index} vertex count",
+                        )
+                        cursor += 4
+                        if vertex_count > MAX_VERTICES:
+                            raise LtbError(
+                                f"implausible vertex animation count in {label}: "
+                                f"{vertex_count}"
+                            )
+                        values = struct.unpack(
+                            f"<{vertex_count * 3}f",
+                            bounded_slice(
+                                data,
+                                cursor,
+                                vertex_count * 12,
+                                f"{label} frame {keyframe_index} vertices",
+                            ),
+                        )
+                        cursor += vertex_count * 12
+                        if not all(math.isfinite(value) for value in values):
+                            raise LtbError(f"non-finite vertex animation in {label}")
+                        vertex_frames.append(
+                            [
+                                tuple(values[offset : offset + 3])
+                                for offset in range(0, len(values), 3)
+                            ]
+                        )
+                    translations = [(0.0, 0.0, 0.0)] * keyframe_count
+                    rotations = [(0.0, 0.0, 0.0, 1.0)] * keyframe_count
+                    vertex_animation_channels += 1
+                else:
+                    position_values = struct.unpack(
+                        f"<{keyframe_count * 3}f",
+                        bounded_slice(
+                            data,
+                            cursor,
+                            keyframe_count * 12,
+                            f"{label} positions",
+                        ),
+                    )
+                    cursor += keyframe_count * 12
+                    quaternion_values = struct.unpack(
+                        f"<{keyframe_count * 4}f",
+                        bounded_slice(
+                            data,
+                            cursor,
+                            keyframe_count * 16,
+                            f"{label} rotations",
+                        ),
+                    )
+                    cursor += keyframe_count * 16
+                    translations = [
+                        tuple(position_values[offset : offset + 3])
+                        for offset in range(0, len(position_values), 3)
+                    ]
+                    rotations = [
+                        normalize_quaternion(
+                            tuple(quaternion_values[offset : offset + 4]), label
+                        )
+                        for offset in range(0, len(quaternion_values), 4)
+                    ]
+            else:
+                position_count = u32(data, cursor, f"{label} position count")
+                cursor += 4
+                position_width = 6 if compression_type == 2 else 12
+                position_data = bounded_slice(
+                    data,
+                    cursor,
+                    position_count * position_width,
+                    f"{label} positions",
+                )
+                cursor += position_count * position_width
+                if compression_type == 2:
+                    packed_positions = struct.unpack(
+                        f"<{position_count * 3}h", position_data
+                    )
+                    position_values = [
+                        tuple(value / 16.0 for value in packed_positions[offset : offset + 3])
+                        for offset in range(0, len(packed_positions), 3)
+                    ]
+                else:
+                    unpacked_positions = struct.unpack(
+                        f"<{position_count * 3}f", position_data
+                    )
+                    position_values = [
+                        tuple(unpacked_positions[offset : offset + 3])
+                        for offset in range(0, len(unpacked_positions), 3)
+                    ]
+                quaternion_count = u32(data, cursor, f"{label} rotation count")
+                cursor += 4
+                quaternion_width = 16 if compression_type == 1 else 8
+                quaternion_data = bounded_slice(
+                    data,
+                    cursor,
+                    quaternion_count * quaternion_width,
+                    f"{label} rotations",
+                )
+                cursor += quaternion_count * quaternion_width
+                if compression_type == 1:
+                    unpacked_quaternions = struct.unpack(
+                        f"<{quaternion_count * 4}f", quaternion_data
+                    )
+                    quaternion_values = [
+                        tuple(unpacked_quaternions[offset : offset + 4])
+                        for offset in range(0, len(unpacked_quaternions), 4)
+                    ]
+                else:
+                    packed_quaternions = struct.unpack(
+                        f"<{quaternion_count * 4}h", quaternion_data
+                    )
+                    quaternion_values = [
+                        tuple(
+                            value / 32767.0
+                            for value in packed_quaternions[offset : offset + 4]
+                        )
+                        for offset in range(0, len(packed_quaternions), 4)
+                    ]
+                translations = expand_animation_channel(
+                    position_values,
+                    keyframe_count,
+                    (0.0, 0.0, 0.0),
+                    f"{label} positions",
+                )
+                rotations = [
+                    normalize_quaternion(value, label)
+                    for value in expand_animation_channel(
+                        quaternion_values,
+                        keyframe_count,
+                        (0.0, 0.0, 0.0, 1.0),
+                        f"{label} rotations",
+                    )
+                ]
+            if not all(
+                math.isfinite(value)
+                for translation in translations
+                for value in translation
+            ):
+                raise LtbError(f"non-finite animation translation in {label}")
+            animation_nodes.append(
+                LtbAnimationNode(translations, rotations, vertex_frames)
+            )
+        animations.append(
+            LtbAnimation(
+                name,
+                compression_type,
+                interpolation_ms,
+                times_ms,
+                keyframe_strings,
+                animation_nodes,
+            )
+        )
+        compression_counts[compression_type] += 1
+        total_keyframes += keyframe_count
+
+    socket_count = u32(data, cursor, "socket count")
+    cursor += 4
+    if socket_count > MAX_SOCKETS:
+        raise LtbError(f"implausible socket count: {socket_count}")
+    for socket_index in range(socket_count):
+        node_index = u32(data, cursor, f"socket {socket_index} node")
+        cursor += 4
+        if node_index >= bone_count:
+            raise LtbError(f"out-of-range socket node at {socket_index}")
+        _, cursor = read_ltb_string(data, cursor, f"socket {socket_index} name")
+        values = struct.unpack(
+            "<10f", bounded_slice(data, cursor, 40, f"socket {socket_index} values")
+        )
+        cursor += 40
+        if not all(math.isfinite(value) for value in values):
+            raise LtbError(f"non-finite socket values at {socket_index}")
+
+    animation_binding_count = 0
+    for child_index in range(child_model_count):
+        binding_count = u32(data, cursor, f"child {child_index} binding count")
+        cursor += 4
+        if binding_count > MAX_ANIMATIONS:
+            raise LtbError(
+                f"implausible animation binding count for child {child_index}: "
+                f"{binding_count}"
+            )
+        binding_names = []
+        for binding_index in range(binding_count):
+            binding_name, cursor = read_ltb_string(
+                data,
+                cursor,
+                f"child {child_index} binding {binding_index} name",
+            )
+            values = struct.unpack(
+                "<6f",
+                bounded_slice(
+                    data,
+                    cursor,
+                    24,
+                    f"child {child_index} binding {binding_index} values",
+                ),
+            )
+            cursor += 24
+            if not all(math.isfinite(value) for value in values):
+                raise LtbError(
+                    f"non-finite animation binding for child {child_index}"
+                )
+            binding_names.append(binding_name)
+            if child_index == 0:
+                if binding_index >= len(animations):
+                    raise LtbError("self animation binding exceeds animation list")
+                animations[binding_index].root_translation = tuple(values[3:6])
+        if child_index == 0:
+            animation_names = [animation.name for animation in animations]
+            if binding_names != animation_names:
+                raise LtbError("self animation bindings do not match animation list")
+        animation_binding_count += binding_count
+
+    details = {
+        "weight_set_count": weight_set_count,
+        "child_model_count": child_model_count,
+        "child_model_names": child_model_names,
+        "animation_count": animation_count,
+        "animation_keyframes": total_keyframes,
+        "animation_compression_counts": {
+            str(key): value for key, value in sorted(compression_counts.items())
+        },
+        "duplicate_animation_timestamps": duplicate_timestamps,
+        "vertex_animation_channels": vertex_animation_channels,
+        "socket_count": socket_count,
+        "animation_binding_count": animation_binding_count,
+    }
+    return animations, details, cursor
 
 
 def vertex_stream_layout(
@@ -229,8 +640,16 @@ def parse_vertex_streams(
             if normal_offset is not None:
                 normal = struct.unpack_from("<3f", data, base + normal_offset)
                 if all(math.isfinite(value) for value in normal):
-                    if normals[vertex_index] is None:
-                        normals[vertex_index] = normal
+                    normal_length = math.sqrt(
+                        sum(value * value for value in normal)
+                    )
+                    if normal_length > 1e-12:
+                        normal = tuple(value / normal_length for value in normal)
+                        if normals[vertex_index] is None:
+                            normals[vertex_index] = normal
+                    else:
+                        nonfinite_normal_vertices.add(vertex_index)
+                        normal = None
                 else:
                     nonfinite_normal_vertices.add(vertex_index)
                     normal = None
@@ -290,10 +709,11 @@ def repair_nonfinite_normals(
     indices: list[int],
     invalid_vertices: set[int],
     label: str,
-) -> tuple[list[tuple[float, float, float]], int]:
+) -> tuple[list[tuple[float, float, float]], int, int]:
     if not invalid_vertices:
-        return normals, 0
+        return normals, 0, 0
     accumulated = {vertex: [0.0, 0.0, 0.0] for vertex in invalid_vertices}
+    neighbor_normals = {vertex: [0.0, 0.0, 0.0] for vertex in invalid_vertices}
     for index in range(0, len(indices), 3):
         triangle = indices[index : index + 3]
         if not any(vertex in invalid_vertices for vertex in triangle):
@@ -312,13 +732,24 @@ def repair_nonfinite_normals(
             if vertex in accumulated:
                 for axis in range(3):
                     accumulated[vertex][axis] += face[axis]
+                for neighbor in triangle:
+                    if neighbor in invalid_vertices:
+                        continue
+                    for axis in range(3):
+                        neighbor_normals[vertex][axis] += normals[neighbor][axis]
     repaired = list(normals)
+    fallback_count = 0
     for vertex, value in accumulated.items():
         length = math.sqrt(sum(component * component for component in value))
         if not math.isfinite(length) or length <= 1e-12:
-            raise LtbError(f"cannot derive finite normal for vertex {vertex} in {label}")
+            value = neighbor_normals[vertex]
+            length = math.sqrt(sum(component * component for component in value))
+            fallback_count += 1
+        if not math.isfinite(length) or length <= 1e-12:
+            value = [0.0, 0.0, 1.0]
+            length = 1.0
         repaired[vertex] = tuple(component / length for component in value)
-    return repaired, len(invalid_vertices)
+    return repaired, len(invalid_vertices), fallback_count
 
 
 def remove_unreferenced_nonfinite_normal_vertices(
@@ -381,6 +812,7 @@ def parse_crossfire_composite_ltb(
     reindexed_bone_entries = 0
     vertex_animation_submeshes = 0
     repaired_normal_vertices = 0
+    fallback_normal_vertices = 0
     removed_unreferenced_nonfinite_normal_vertices = 0
     stream_layout_counts: Counter[str] = Counter()
     bone_count = u32(data, 32, "bone count")
@@ -413,6 +845,9 @@ def parse_crossfire_composite_ltb(
             bone_effector: int | None = None
             matrix_palette = False
             reindexed: tuple[int, ...] = ()
+            animation_node: int | None = None
+            unduplicated_vertex_count: int | None = None
+            duplicate_map: list[tuple[int, int]] | None = None
             bounded_slice(data, cursor, 29, f"{label} header")
             texture_count = u32(data, cursor, f"{label} texture count")
             if texture_count > 4:
@@ -539,6 +974,8 @@ def parse_crossfire_composite_ltb(
                 cursor += 44
                 if unduplicated_vertex_count > vertex_count:
                     raise LtbError(f"invalid unduplicated vertex count in {label}")
+                if animation_node >= bone_count:
+                    raise LtbError(f"out-of-range animation node in {label}")
                 blend_type = BLEND_NONE
             else:
                 raise LtbError(
@@ -683,12 +1120,14 @@ def parse_crossfire_composite_ltb(
                     duplicate_data = bounded_slice(
                         data, cursor, duplicate_count * 4, f"{label} duplicate map"
                     )
+                    duplicate_map = []
                     for duplicate_index in range(duplicate_count):
                         source, destination = struct.unpack_from(
                             "<HH", duplicate_data, duplicate_index * 4
                         )
                         if source >= vertex_count or destination >= vertex_count:
                             raise LtbError(f"out-of-range duplicate map in {label}")
+                        duplicate_map.append((source, destination))
                     cursor += duplicate_count * 4
                 elif render_object_type == RENDER_OBJECT_RIGID:
                     if bone_effector is None or bone_effector >= bone_count:
@@ -706,6 +1145,9 @@ def parse_crossfire_composite_ltb(
                     ]
 
                 removable_vertices = nonfinite_normal_vertices - set(indices)
+                retained_vertex_indices = [
+                    index for index in range(vertex_count) if index not in removable_vertices
+                ]
                 (
                     positions,
                     normals,
@@ -732,7 +1174,7 @@ def parse_crossfire_composite_ltb(
                         if index not in removable_vertices
                     ]
                 removed_unreferenced_nonfinite_normal_vertices += removed_count
-                normals, repaired_count = repair_nonfinite_normals(
+                normals, repaired_count, fallback_count = repair_nonfinite_normals(
                     positions,
                     normals,
                     indices,
@@ -740,6 +1182,7 @@ def parse_crossfire_composite_ltb(
                     label,
                 )
                 repaired_normal_vertices += repaired_count
+                fallback_normal_vertices += fallback_count
                 if cursor != object_end:
                     raise LtbError(
                         f"{label} object size mismatch: parsed={cursor} "
@@ -756,6 +1199,19 @@ def parse_crossfire_composite_ltb(
                         indices,
                         joints,
                         weights,
+                        animation_node,
+                        unduplicated_vertex_count,
+                        duplicate_map,
+                        (
+                            retained_vertex_indices
+                            if render_object_type == RENDER_OBJECT_VERTEX_ANIMATED
+                            else None
+                        ),
+                        (
+                            vertex_count
+                            if render_object_type == RENDER_OBJECT_VERTEX_ANIMATED
+                            else None
+                        ),
                     )
                 )
                 render_object_type_counts[render_object_type] += 1
@@ -773,6 +1229,8 @@ def parse_crossfire_composite_ltb(
     if not any(mesh.positions and mesh.indices for mesh in meshes):
         raise LtbError("composite layout contains no non-empty triangle mesh")
     bone_names = []
+    bone_node_indices = []
+    bone_flags = []
     bone_child_counts = []
     bone_matrices = []
     for bone_index in range(bone_count):
@@ -782,8 +1240,14 @@ def parse_crossfire_composite_ltb(
             data, cursor, name_length, f"bone {bone_index} name"
         ).decode("cp1252", errors="replace")
         cursor += name_length
-        bounded_slice(data, cursor, 3, f"bone {bone_index} flags")
+        node_index, node_flags = struct.unpack(
+            "<HB", bounded_slice(data, cursor, 3, f"bone {bone_index} flags")
+        )
         cursor += 3
+        if node_index != bone_index:
+            raise LtbError(
+                f"unexpected preorder node index at bone {bone_index}: {node_index}"
+            )
         matrix = struct.unpack_from(
             "<16f", bounded_slice(data, cursor, 64, f"bone {bone_index} matrix")
         )
@@ -795,6 +1259,8 @@ def parse_crossfire_composite_ltb(
         if child_count > bone_count:
             raise LtbError(f"implausible child count at bone {bone_index}: {child_count}")
         bone_names.append(bone_name)
+        bone_node_indices.append(node_index)
+        bone_flags.append(node_flags)
         bone_child_counts.append(child_count)
         bone_matrices.append(list(matrix))
     bone_parents = [-1] * bone_count
@@ -811,7 +1277,12 @@ def parse_crossfire_composite_ltb(
         raise LtbError(
             f"bone hierarchy child total mismatch: {sum(bone_child_counts)}/{bone_count - 1}"
         )
-    return meshes, {
+    animations, tail_details, cursor = parse_composite_tail(
+        data, cursor, bone_count
+    )
+    if cursor != len(data):
+        raise LtbError(f"unparsed composite tail bytes: {len(data) - cursor}")
+    details = {
         "header": [1, 9],
         "layout": "crossfire_top_mesh_submesh",
         "mesh_count": len(meshes),
@@ -830,6 +1301,7 @@ def parse_crossfire_composite_ltb(
         "reindexed_bone_entries": reindexed_bone_entries,
         "vertex_animation_submeshes": vertex_animation_submeshes,
         "repaired_normal_vertices": repaired_normal_vertices,
+        "fallback_normal_vertices": fallback_normal_vertices,
         "removed_unreferenced_nonfinite_normal_vertices": (
             removed_unreferenced_nonfinite_normal_vertices
         ),
@@ -837,13 +1309,18 @@ def parse_crossfire_composite_ltb(
         "skeleton_metadata": {
             "bone_count": bone_count,
             "names": bone_names,
+            "node_indices": bone_node_indices,
+            "flags": bone_flags,
             "parent_indices": bone_parents,
             "child_counts": bone_child_counts,
             "bind_matrices": bone_matrices,
         },
+        **tail_details,
+        "_animations": animations,
         "parsed_bytes": cursor,
         "trailing_bytes": len(data) - cursor,
     }
+    return meshes, details
 
 
 def parse_ltb(data: bytes) -> tuple[list[LtbMesh], dict[str, Any]]:
@@ -1088,7 +1565,7 @@ def parse_ltb(data: bytes) -> tuple[list[LtbMesh], dict[str, Any]]:
                 f"legacy layout: {legacy_error}; composite layout: {composite_error}"
             ) from composite_error
     mesh_type_counts: Counter[int] = Counter()
-    for mesh in meshes:
+    for mesh_index, mesh in enumerate(meshes):
         mesh_type = mesh.mesh_type
         mesh_type_counts[mesh_type] += 1
     return meshes, {
@@ -1151,10 +1628,128 @@ def gltf_matrix(matrix: list[float]) -> list[float]:
     return [matrix[row * 4 + column] for column in range(4) for row in range(4)]
 
 
+def matrix_to_trs(
+    matrix: list[float], label: str
+) -> tuple[
+    tuple[float, float, float],
+    tuple[float, float, float, float],
+    tuple[float, float, float],
+]:
+    if len(matrix) != 16 or not all(math.isfinite(value) for value in matrix):
+        raise LtbError(f"invalid local matrix for {label}")
+    if any(abs(matrix[index] - expected) > 1e-4 for index, expected in ((12, 0), (13, 0), (14, 0), (15, 1))):
+        raise LtbError(f"non-affine local matrix for {label}")
+    columns = [
+        [matrix[row * 4 + column] for row in range(3)] for column in range(3)
+    ]
+    scale = tuple(math.sqrt(sum(value * value for value in column)) for column in columns)
+    if any(value <= 1e-8 for value in scale):
+        raise LtbError(f"degenerate local scale for {label}")
+    rotation = [
+        [matrix[row * 4 + column] / scale[column] for column in range(3)]
+        for row in range(3)
+    ]
+    if any(
+        abs(sum(rotation[row][axis] * rotation[other][axis] for axis in range(3)))
+        > 1e-4
+        for row in range(3)
+        for other in range(row + 1, 3)
+    ):
+        raise LtbError(f"sheared local matrix for {label}")
+    determinant = (
+        rotation[0][0]
+        * (rotation[1][1] * rotation[2][2] - rotation[1][2] * rotation[2][1])
+        - rotation[0][1]
+        * (rotation[1][0] * rotation[2][2] - rotation[1][2] * rotation[2][0])
+        + rotation[0][2]
+        * (rotation[1][0] * rotation[2][1] - rotation[1][1] * rotation[2][0])
+    )
+    if abs(determinant - 1.0) > 1e-4:
+        raise LtbError(f"reflected local matrix for {label}")
+    trace = rotation[0][0] + rotation[1][1] + rotation[2][2]
+    if trace > 0:
+        factor = math.sqrt(trace + 1.0) * 2.0
+        quaternion = (
+            (rotation[2][1] - rotation[1][2]) / factor,
+            (rotation[0][2] - rotation[2][0]) / factor,
+            (rotation[1][0] - rotation[0][1]) / factor,
+            factor / 4.0,
+        )
+    elif rotation[0][0] > rotation[1][1] and rotation[0][0] > rotation[2][2]:
+        factor = math.sqrt(1.0 + rotation[0][0] - rotation[1][1] - rotation[2][2]) * 2.0
+        quaternion = (
+            factor / 4.0,
+            (rotation[0][1] + rotation[1][0]) / factor,
+            (rotation[0][2] + rotation[2][0]) / factor,
+            (rotation[2][1] - rotation[1][2]) / factor,
+        )
+    elif rotation[1][1] > rotation[2][2]:
+        factor = math.sqrt(1.0 + rotation[1][1] - rotation[0][0] - rotation[2][2]) * 2.0
+        quaternion = (
+            (rotation[0][1] + rotation[1][0]) / factor,
+            factor / 4.0,
+            (rotation[1][2] + rotation[2][1]) / factor,
+            (rotation[0][2] - rotation[2][0]) / factor,
+        )
+    else:
+        factor = math.sqrt(1.0 + rotation[2][2] - rotation[0][0] - rotation[1][1]) * 2.0
+        quaternion = (
+            (rotation[0][2] + rotation[2][0]) / factor,
+            (rotation[1][2] + rotation[2][1]) / factor,
+            factor / 4.0,
+            (rotation[1][0] - rotation[0][1]) / factor,
+        )
+    return (
+        (matrix[3], matrix[7], matrix[11]),
+        normalize_quaternion(quaternion, label),
+        scale,
+    )
+
+
+def coalesced_keyframe_indices(times_ms: list[int]) -> list[int]:
+    """Keep the final source key when LTB has duplicate millisecond timestamps."""
+    indices: list[int] = []
+    for index, time_ms in enumerate(times_ms):
+        if indices and times_ms[indices[-1]] == time_ms:
+            indices[-1] = index
+        else:
+            indices.append(index)
+    return indices
+
+
+def expand_vertex_animation_frame(
+    mesh: LtbMesh, frame: list[tuple[float, float, float]], label: str
+) -> list[tuple[float, float, float]]:
+    if (
+        mesh.unduplicated_vertex_count is None
+        or mesh.duplicate_map is None
+        or mesh.retained_vertex_indices is None
+        or mesh.source_vertex_count is None
+    ):
+        raise LtbError(f"incomplete vertex animation metadata for {mesh.name}")
+    if len(frame) != mesh.unduplicated_vertex_count:
+        raise LtbError(
+            f"vertex animation frame size mismatch in {label}: "
+            f"{len(frame)}/{mesh.unduplicated_vertex_count}"
+        )
+    expanded: list[tuple[float, float, float] | None] = [
+        None
+    ] * mesh.source_vertex_count
+    expanded[: len(frame)] = frame
+    for source, destination in mesh.duplicate_map:
+        if expanded[source] is None:
+            raise LtbError(f"unresolved duplicate source in {label}: {source}")
+        expanded[destination] = expanded[source]
+    if any(expanded[index] is None for index in mesh.retained_vertex_indices):
+        raise LtbError(f"incomplete vertex animation coverage in {label}")
+    return [expanded[index] for index in mesh.retained_vertex_indices]  # type: ignore[misc]
+
+
 def make_glb(
     meshes: list[LtbMesh],
     source: dict[str, Any],
     skeleton: dict[str, Any] | None = None,
+    animations: list[LtbAnimation] | None = None,
 ) -> bytes:
     binary = bytearray()
     buffer_views = []
@@ -1163,6 +1758,12 @@ def make_glb(
     nodes: list[dict[str, Any]] = []
     scene_nodes: list[int] = []
     skins: list[dict[str, Any]] = []
+    gltf_animations: list[dict[str, Any]] = []
+    mesh_node_indices: list[int] = []
+    mesh_morph_ranges: list[dict[int, tuple[int, int]]] = []
+    mesh_morph_target_counts: list[int] = []
+    default_translations: list[tuple[float, float, float]] = []
+    default_rotations: list[tuple[float, float, float, float]] = []
 
     def append_view(payload: bytes, target: int | None) -> int:
         align4(binary)
@@ -1196,19 +1797,23 @@ def make_glb(
         accessors.append(accessor)
         return len(accessors) - 1
 
+    animations = animations or []
     has_skinned_mesh = any(mesh.joints is not None for mesh in meshes)
-    if has_skinned_mesh:
+    has_model_skeleton = skeleton is not None and (has_skinned_mesh or animations)
+    if has_model_skeleton:
         if skeleton is None:
-            raise LtbError("skinned mesh has no skeleton metadata")
+            raise LtbError("animated or skinned mesh has no skeleton metadata")
         names = skeleton["names"]
         parents = skeleton["parent_indices"]
         global_matrices = skeleton["bind_matrices"]
+        bone_flags = skeleton.get("flags", [0] * len(names))
         bone_count = skeleton["bone_count"]
         if not (
             bone_count
             == len(names)
             == len(parents)
             == len(global_matrices)
+            == len(bone_flags)
             <= 65_535
         ):
             raise LtbError("invalid skeleton metadata dimensions")
@@ -1223,29 +1828,42 @@ def make_glb(
                     global_matrix,
                 )
             )
-            nodes.append({"name": name, "matrix": gltf_matrix(local_matrix)})
+            translation, rotation, scale = matrix_to_trs(
+                local_matrix, f"bone {bone_index}"
+            )
+            default_translations.append(translation)
+            default_rotations.append(rotation)
+            nodes.append(
+                {
+                    "name": name,
+                    "translation": list(translation),
+                    "rotation": list(rotation),
+                    "scale": list(scale),
+                }
+            )
             if parent < 0:
                 scene_nodes.append(bone_index)
             else:
                 nodes[parent].setdefault("children", []).append(bone_index)
-        inverse_bind_payload = b"".join(
-            struct.pack(
-                "<16f",
-                *gltf_matrix(invert_matrix4(matrix, f"bone {index}")),
+        if has_skinned_mesh:
+            inverse_bind_payload = b"".join(
+                struct.pack(
+                    "<16f",
+                    *gltf_matrix(invert_matrix4(matrix, f"bone {index}")),
+                )
+                for index, matrix in enumerate(global_matrices)
             )
-            for index, matrix in enumerate(global_matrices)
-        )
-        inverse_bind_accessor = append_accessor(
-            append_view(inverse_bind_payload, None), 5126, bone_count, "MAT4"
-        )
-        skins.append(
-            {
-                "name": "LTB skeleton",
-                "inverseBindMatrices": inverse_bind_accessor,
-                "joints": list(range(bone_count)),
-                "skeleton": scene_nodes[0],
-            }
-        )
+            inverse_bind_accessor = append_accessor(
+                append_view(inverse_bind_payload, None), 5126, bone_count, "MAT4"
+            )
+            skins.append(
+                {
+                    "name": "LTB skeleton",
+                    "inverseBindMatrices": inverse_bind_accessor,
+                    "joints": list(range(bone_count)),
+                    "skeleton": scene_nodes[0],
+                }
+            )
 
     for mesh in meshes:
         if not mesh.positions or not mesh.indices:
@@ -1299,19 +1917,67 @@ def make_glb(
                 len(mesh.weights),
                 "VEC4",
             )
-        gltf_meshes.append(
-            {
-                "name": mesh.name,
-                "primitives": [
-                    {
-                        "attributes": attributes,
-                        "indices": index_accessor,
-                        "mode": 4,
-                    }
-                ],
-                "extras": {"sourceMeshType": mesh.mesh_type},
-            }
-        )
+        primitive: dict[str, Any] = {
+            "attributes": attributes,
+            "indices": index_accessor,
+            "mode": 4,
+        }
+        morph_targets: list[dict[str, int]] = []
+        morph_target_names: list[str] = []
+        morph_ranges: dict[int, tuple[int, int]] = {}
+        if mesh.animation_node is not None and animations:
+            if mesh.animation_node >= len(animations[0].nodes):
+                raise LtbError(f"missing vertex animation node for mesh {mesh.name}")
+            for animation_index, animation in enumerate(animations):
+                animation_node = animation.nodes[mesh.animation_node]
+                if animation_node.vertex_frames is None:
+                    raise LtbError(
+                        f"animation {animation.name} lacks vertex frames for {mesh.name}"
+                    )
+                start = len(morph_targets)
+                for frame_index, frame in enumerate(animation_node.vertex_frames):
+                    expanded = expand_vertex_animation_frame(
+                        mesh, frame, f"{animation.name}/{mesh.name}/{frame_index}"
+                    )
+                    deltas = [
+                        tuple(animated[axis] - base[axis] for axis in range(3))
+                        for animated, base in zip(expanded, mesh.positions)
+                    ]
+                    payload = b"".join(
+                        struct.pack("<3f", *value) for value in deltas
+                    )
+                    delta_mins = [
+                        min(value[axis] for value in deltas) for axis in range(3)
+                    ]
+                    delta_maxs = [
+                        max(value[axis] for value in deltas) for axis in range(3)
+                    ]
+                    accessor = append_accessor(
+                        append_view(payload, 34962),
+                        5126,
+                        len(deltas),
+                        "VEC3",
+                        delta_mins,
+                        delta_maxs,
+                    )
+                    morph_targets.append({"POSITION": accessor})
+                    morph_target_names.append(
+                        f"{animation.name}/frame-{frame_index:04d}"
+                    )
+                morph_ranges[animation_index] = (
+                    start,
+                    len(animation_node.vertex_frames),
+                )
+            primitive["targets"] = morph_targets
+        gltf_mesh: dict[str, Any] = {
+            "name": mesh.name,
+            "primitives": [primitive],
+            "extras": {"sourceMeshType": mesh.mesh_type},
+        }
+        if morph_targets:
+            gltf_mesh["weights"] = [0.0] * len(morph_targets)
+            gltf_mesh["extras"]["targetNames"] = morph_target_names
+        gltf_meshes.append(gltf_mesh)
         mesh_node: dict[str, Any] = {
             "name": mesh.name,
             "mesh": len(gltf_meshes) - 1,
@@ -1319,9 +1985,177 @@ def make_glb(
         if mesh.joints is not None:
             mesh_node["skin"] = 0
         nodes.append(mesh_node)
-        scene_nodes.append(len(nodes) - 1)
+        mesh_node_index = len(nodes) - 1
+        mesh_node_indices.append(mesh_node_index)
+        mesh_morph_ranges.append(morph_ranges)
+        mesh_morph_target_counts.append(len(morph_targets))
+        scene_nodes.append(mesh_node_index)
     if not gltf_meshes:
         raise LtbError("LTB contains no non-empty triangle mesh")
+    if animations:
+        if not has_model_skeleton or skeleton is None:
+            raise LtbError("animation export requires skeleton metadata")
+        bone_count = skeleton["bone_count"]
+        bone_flags = skeleton.get("flags", [0] * bone_count)
+        for animation_index, animation in enumerate(animations):
+            if len(animation.nodes) != bone_count:
+                raise LtbError(
+                    f"animation node count mismatch in {animation.name}: "
+                    f"{len(animation.nodes)}/{bone_count}"
+                )
+            selected_indices = coalesced_keyframe_indices(animation.times_ms)
+            times_seconds = [
+                animation.times_ms[index] / 1000.0 for index in selected_indices
+            ]
+            time_payload = struct.pack(
+                f"<{len(times_seconds)}f", *times_seconds
+            )
+            time_accessor = append_accessor(
+                append_view(time_payload, None),
+                5126,
+                len(times_seconds),
+                "SCALAR",
+                [times_seconds[0]],
+                [times_seconds[-1]],
+            )
+            samplers: list[dict[str, Any]] = []
+            channels: list[dict[str, Any]] = []
+            for bone_index, animation_node in enumerate(animation.nodes):
+                translations = []
+                for source_index in selected_indices:
+                    if bone_flags[bone_index] & 0x02:
+                        translation = (
+                            (0.0, 0.0, 0.0)
+                            if skeleton["parent_indices"][bone_index] < 0
+                            else default_translations[bone_index]
+                        )
+                    else:
+                        translation = animation_node.translations[source_index]
+                        if bone_index == 0:
+                            translation = tuple(
+                                translation[axis]
+                                + animation.root_translation[axis]
+                                for axis in range(3)
+                            )
+                    translations.append(translation)
+                translation_payload = b"".join(
+                    struct.pack("<3f", *value) for value in translations
+                )
+                translation_accessor = append_accessor(
+                    append_view(translation_payload, None),
+                    5126,
+                    len(translations),
+                    "VEC3",
+                )
+                samplers.append(
+                    {
+                        "input": time_accessor,
+                        "output": translation_accessor,
+                        "interpolation": "LINEAR",
+                    }
+                )
+                channels.append(
+                    {
+                        "sampler": len(samplers) - 1,
+                        "target": {"node": bone_index, "path": "translation"},
+                    }
+                )
+
+                rotations = [
+                    animation_node.rotations[index] for index in selected_indices
+                ]
+                continuous_rotations = []
+                for rotation in rotations:
+                    if continuous_rotations and sum(
+                        left * right
+                        for left, right in zip(continuous_rotations[-1], rotation)
+                    ) < 0:
+                        rotation = tuple(-value for value in rotation)
+                    continuous_rotations.append(rotation)
+                rotation_payload = b"".join(
+                    struct.pack("<4f", *value) for value in continuous_rotations
+                )
+                rotation_accessor = append_accessor(
+                    append_view(rotation_payload, None),
+                    5126,
+                    len(continuous_rotations),
+                    "VEC4",
+                )
+                samplers.append(
+                    {
+                        "input": time_accessor,
+                        "output": rotation_accessor,
+                        "interpolation": "LINEAR",
+                    }
+                )
+                channels.append(
+                    {
+                        "sampler": len(samplers) - 1,
+                        "target": {"node": bone_index, "path": "rotation"},
+                    }
+                )
+
+            for mesh_index, morph_ranges in enumerate(mesh_morph_ranges):
+                if animation_index not in morph_ranges:
+                    continue
+                start, frame_count = morph_ranges[animation_index]
+                target_count = mesh_morph_target_counts[mesh_index]
+                weight_values = []
+                for source_index in selected_indices:
+                    if source_index >= frame_count:
+                        raise LtbError(
+                            f"morph frame mismatch in animation {animation.name}"
+                        )
+                    values = [0.0] * target_count
+                    values[start + source_index] = 1.0
+                    weight_values.extend(values)
+                weight_payload = struct.pack(
+                    f"<{len(weight_values)}f", *weight_values
+                )
+                weight_accessor = append_accessor(
+                    append_view(weight_payload, None),
+                    5126,
+                    len(weight_values),
+                    "SCALAR",
+                )
+                samplers.append(
+                    {
+                        "input": time_accessor,
+                        "output": weight_accessor,
+                        "interpolation": "LINEAR",
+                    }
+                )
+                channels.append(
+                    {
+                        "sampler": len(samplers) - 1,
+                        "target": {
+                            "node": mesh_node_indices[mesh_index],
+                            "path": "weights",
+                        },
+                    }
+                )
+            keyframe_events = [
+                {"timeMs": time_ms, "value": value}
+                for time_ms, value in zip(
+                    animation.times_ms, animation.keyframe_strings
+                )
+                if value
+            ]
+            gltf_animation: dict[str, Any] = {
+                "name": animation.name,
+                "samplers": samplers,
+                "channels": channels,
+                "extras": {
+                    "sourceCompressionType": animation.compression_type,
+                    "interpolationMs": animation.interpolation_ms,
+                    "duplicateTimestampsCoalesced": (
+                        len(animation.times_ms) - len(selected_indices)
+                    ),
+                },
+            }
+            if keyframe_events:
+                gltf_animation["extras"]["keyframeEvents"] = keyframe_events
+            gltf_animations.append(gltf_animation)
     gltf = {
         "asset": {
             "version": "2.0",
@@ -1329,7 +2163,7 @@ def make_glb(
             "extras": {
                 "sourceFormat": "LithTech Jupiter LTB v9",
                 "sourceCoordinateSystem": "preserved; no unproven axis transform",
-                "limitations": "skeletal and vertex animation channels are not converted",
+                "limitations": "materials, sockets, weight sets and child-model bindings are not converted",
                 **source,
             },
         },
@@ -1343,6 +2177,8 @@ def make_glb(
     }
     if skins:
         gltf["skins"] = skins
+    if gltf_animations:
+        gltf["animations"] = gltf_animations
     json_chunk = bytearray(json.dumps(gltf, ensure_ascii=False, separators=(",", ":")).encode())
     align4(json_chunk, 0x20)
     align4(binary)
@@ -1381,17 +2217,74 @@ def validate_glb(data: bytes) -> dict[str, int]:
             attributes = primitive["attributes"]
             if ("JOINTS_0" in attributes) != ("WEIGHTS_0" in attributes):
                 raise LtbError(f"incomplete skin attributes on mesh {mesh_index}")
+            for target in primitive.get("targets", []):
+                accessor = gltf["accessors"][target["POSITION"]]
+                position_accessor = gltf["accessors"][attributes["POSITION"]]
+                if (
+                    accessor["type"] != "VEC3"
+                    or accessor["componentType"] != 5126
+                    or accessor["count"] != position_accessor["count"]
+                ):
+                    raise LtbError(f"invalid morph target on mesh {mesh_index}")
     for skin in gltf.get("skins", []):
         if not skin["joints"] or any(index >= len(gltf["nodes"]) for index in skin["joints"]):
             raise LtbError("invalid GLB skin joint list")
         accessor = gltf["accessors"][skin["inverseBindMatrices"]]
         if accessor["type"] != "MAT4" or accessor["count"] != len(skin["joints"]):
             raise LtbError("invalid GLB inverse bind matrices")
+    for animation_index, animation in enumerate(gltf.get("animations", [])):
+        if not animation["channels"] or not animation["samplers"]:
+            raise LtbError(f"empty GLB animation {animation_index}")
+        for channel in animation["channels"]:
+            if channel["sampler"] >= len(animation["samplers"]):
+                raise LtbError(f"invalid sampler in animation {animation_index}")
+            target = channel["target"]
+            if target["node"] >= len(gltf["nodes"]):
+                raise LtbError(f"invalid animation node in animation {animation_index}")
+            sampler = animation["samplers"][channel["sampler"]]
+            input_accessor = gltf["accessors"][sampler["input"]]
+            output_accessor = gltf["accessors"][sampler["output"]]
+            if (
+                input_accessor["type"] != "SCALAR"
+                or input_accessor["componentType"] != 5126
+                or input_accessor["count"] < 1
+            ):
+                raise LtbError(f"invalid animation input at {animation_index}")
+            path = target["path"]
+            if path == "translation":
+                expected_type = "VEC3"
+                expected_count = input_accessor["count"]
+            elif path == "rotation":
+                expected_type = "VEC4"
+                expected_count = input_accessor["count"]
+            elif path == "weights":
+                node = gltf["nodes"][target["node"]]
+                target_count = len(gltf["meshes"][node["mesh"]].get("weights", []))
+                expected_type = "SCALAR"
+                expected_count = input_accessor["count"] * target_count
+            else:
+                raise LtbError(f"unsupported animation path: {path}")
+            if (
+                output_accessor["type"] != expected_type
+                or output_accessor["componentType"] != 5126
+                or output_accessor["count"] != expected_count
+            ):
+                raise LtbError(f"invalid animation output at {animation_index}")
     return {
         "meshes": len(gltf["meshes"]),
         "nodes": len(gltf["nodes"]),
         "accessors": len(gltf["accessors"]),
         "skins": len(gltf.get("skins", [])),
+        "animations": len(gltf.get("animations", [])),
+        "animation_channels": sum(
+            len(animation["channels"])
+            for animation in gltf.get("animations", [])
+        ),
+        "morph_targets": sum(
+            len(primitive.get("targets", []))
+            for mesh in gltf["meshes"]
+            for primitive in mesh["primitives"]
+        ),
     }
 
 
@@ -1401,6 +2294,7 @@ def convert_one(task: dict[str, Any]) -> dict[str, Any]:
     if len(data) != task["input_bytes"] or sha256_bytes(data) != task["input_sha256"]:
         raise LtbError(f"LTB input provenance mismatch: {input_path}")
     meshes, details = parse_ltb(data)
+    animations = details.pop("_animations", [])
     glb = make_glb(
         meshes,
         {
@@ -1410,6 +2304,7 @@ def convert_one(task: dict[str, Any]) -> dict[str, Any]:
             "inputSha256": task["input_sha256"],
         },
         details.get("skeleton_metadata"),
+        animations,
     )
     validation = validate_glb(glb)
     digest = sha256_bytes(glb)
@@ -1473,11 +2368,10 @@ def convert_one(task: dict[str, Any]) -> dict[str, Any]:
             "path": task["output_relative"],
             "bytes": len(glb),
             "sha256": digest,
-            "representation": (
-                "lithtech_ltb_v9_geometry_skin_glb"
-                if validation["skins"]
-                else "lithtech_ltb_v9_geometry_glb"
-            ),
+            "representation": "lithtech_ltb_v9_geometry"
+            + ("_skin" if validation["skins"] else "")
+            + ("_animation" if validation["animations"] else "")
+            + "_glb",
             "status": status,
         },
         "status": status,
@@ -1522,7 +2416,7 @@ def main() -> int:
             )
             prior_version_relative = str(
                 Path("private-rez-models")
-                / "layout-v3"
+                / "layout-v6"
                 / source_key
                 / f"stream-{stream['stream_index']:05d}.glb"
             )
@@ -1564,7 +2458,7 @@ def main() -> int:
     manifest = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "tool": "tools/convert_ltb_models.py",
-        "tool_version": "6",
+        "tool_version": "8",
         "reference": {
             "name": "Cote-Duke LTB2X loader source",
             "url": "https://cote-duke.narod.ru/LtbSource.zip",
@@ -1579,13 +2473,18 @@ def main() -> int:
             },
             {
                 "name": "CrossFire LithTech D3D model runtime loaders",
-                "url": "https://github.com/liquiddeath13/crossfire_base/tree/fbc4fc238dbfd3b76ad417d45a3d62e072f9d0e4/runtime/render_a/src/sys/d3d",
-                "usage": "render-object IDs, matrix-palette, vertex-stream and OBB behavior cross-check",
+                "url": "https://github.com/liquiddeath13/crossfire_base/blob/fbc4fc238dbfd3b76ad417d45a3d62e072f9d0e4/runtime/model/src/model_load.cpp",
+                "usage": "model node, compressed animation channel, socket and binding behavior cross-check",
             },
             {
                 "name": "LithTech Jupiter D3D model packer",
                 "url": "https://github.com/jsj2008/lithtech/blob/0eab18289bed72879eddb648d3311075b108cf46/tools/Model_Packer/lta2ltb_d3d.cpp",
                 "usage": "serialized render-object and vertex-field ordering cross-check",
+            },
+            {
+                "name": "LithTech Jupiter animation serializer",
+                "url": "https://github.com/jsj2008/lithtech/blob/0eab18289bed72879eddb648d3311075b108cf46/tools/shared/model/model_save.cpp",
+                "usage": "keyframe, compression, vertex-frame, socket and animation binding field ordering cross-check",
             },
         ],
         "parameters": {
@@ -1599,7 +2498,8 @@ def main() -> int:
         "scope": (
             "mesh geometry, normals, UVs and triangle indices; source coordinates "
             "preserved; proven rigid/direct/matrix-palette vertex bindings and bind "
-            "matrices exported as glTF skins; animation channels not claimed"
+            "matrices exported as glTF skins; skeletal TRS and vertex position "
+            "channels exported as glTF animations and morph targets"
         ),
         "records": records,
         "failures": failures,
@@ -1627,6 +2527,21 @@ def main() -> int:
             "skinned_meshes": sum(
                 item["details"].get("skinned_mesh_count", 0) for item in records
             ),
+            "animated_glbs": sum(
+                item["validation"]["animations"] > 0 for item in records
+            ),
+            "animations": sum(
+                item["validation"]["animations"] for item in records
+            ),
+            "animation_channels": sum(
+                item["validation"]["animation_channels"] for item in records
+            ),
+            "animation_keyframes": sum(
+                item["details"].get("animation_keyframes", 0) for item in records
+            ),
+            "morph_targets": sum(
+                item["validation"]["morph_targets"] for item in records
+            ),
             "matrix_palette_submeshes": sum(
                 item["details"].get("matrix_palette_submeshes", 0)
                 for item in records
@@ -1641,6 +2556,10 @@ def main() -> int:
             ),
             "repaired_normal_vertices": sum(
                 item["details"].get("repaired_normal_vertices", 0)
+                for item in records
+            ),
+            "fallback_normal_vertices": sum(
+                item["details"].get("fallback_normal_vertices", 0)
                 for item in records
             ),
             "removed_unreferenced_nonfinite_normal_vertices": sum(

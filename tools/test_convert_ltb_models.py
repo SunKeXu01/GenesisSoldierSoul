@@ -89,6 +89,7 @@ def composite_ltb(
     with_obb: bool = False,
     nonfinite_normal_vertex: int | None = None,
     direct_skeletal: bool = False,
+    with_animation: bool = False,
 ) -> bytes:
     data = bytearray(94)
     struct.pack_into("<HH", data, 0, 1, 9)
@@ -205,6 +206,46 @@ def composite_ltb(
             0,
         )
     )
+    if not with_animation:
+        data.extend(struct.pack("<IIIII", 0, 1, 0, 0, 0))
+        return bytes(data)
+    animation_name = b"Move"
+    data.extend(struct.pack("<III", 0, 1, 1))
+    data.extend(struct.pack("<3fH", 1.0, 1.0, 1.0, len(animation_name)))
+    data.extend(animation_name)
+    data.extend(struct.pack("<III", 0, 200, 2))
+    data.extend(struct.pack("<IH", 0, 0))
+    data.extend(struct.pack("<IH", 1000, 0))
+    if render_object_type == 6:
+        data.extend(b"\x01")
+        for z_offset in (0.0, 1.0):
+            data.extend(struct.pack("<I", 3))
+            for position in (
+                (0.0, 0.0, z_offset),
+                (1.0, 0.0, z_offset),
+                (0.0, 1.0, z_offset),
+            ):
+                data.extend(struct.pack("<3f", *position))
+    else:
+        data.extend(b"\x00")
+        data.extend(struct.pack("<6f", 0.0, 0.0, 0.0, 1.0, 0.0, 0.0))
+        data.extend(
+            struct.pack(
+                "<8f",
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                2**-0.5,
+                2**-0.5,
+            )
+        )
+    data.extend(struct.pack("<I", 0))
+    data.extend(struct.pack("<IH", 1, len(animation_name)))
+    data.extend(animation_name)
+    data.extend(struct.pack("<6f", 1.0, 1.0, 1.0, 2.0, 0.0, 0.0))
     return bytes(data)
 
 
@@ -236,14 +277,14 @@ class LtbModelTests(unittest.TestCase):
         self.assertEqual(details["triangle_count"], 1)
         self.assertEqual(meshes[0].mesh_type, 4)
 
-    def test_layout_v5_preserves_different_prior_output(self):
+    def test_layout_v7_preserves_different_prior_output(self):
         source = minimal_ltb()
         digest = hashlib.sha256(source).hexdigest()
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             input_path = root / "source.ltb"
             legacy_path = root / "legacy.glb"
-            output_path = root / "layout-v5.glb"
+            output_path = root / "layout-v7.glb"
             input_path.write_bytes(source)
             legacy_path.write_bytes(b"legacy-must-remain")
             result = convert_one(
@@ -256,7 +297,7 @@ class LtbModelTests(unittest.TestCase):
                     "stream_index": 7,
                     "input_label": "source.ltb",
                     "output_path": str(output_path),
-                    "output_relative": "layout-v5.glb",
+                    "output_relative": "layout-v7.glb",
                     "legacy_output_path": str(legacy_path),
                 }
             )
@@ -311,11 +352,69 @@ class LtbModelTests(unittest.TestCase):
         self.assertEqual(details["render_object_type_counts"], {"6": 1})
         self.assertEqual(details["vertex_animation_submeshes"], 1)
 
+    def test_exports_skeletal_animation_channels_and_root_binding(self):
+        meshes, details = parse_crossfire_composite_ltb(
+            composite_ltb(5, direct_skeletal=True, with_animation=True),
+            0,
+            1,
+            98,
+        )
+        self.assertEqual(details["animation_count"], 1)
+        self.assertEqual(details["animation_keyframes"], 2)
+        animation = details["_animations"][0]
+        self.assertEqual(animation.root_translation, (2.0, 0.0, 0.0))
+        glb = make_glb(
+            meshes,
+            {"test": True},
+            details["skeleton_metadata"],
+            details["_animations"],
+        )
+        validation = validate_glb(glb)
+        self.assertEqual(validation["animations"], 1)
+        self.assertEqual(validation["animation_channels"], 2)
+        json_size = struct.unpack_from("<I", glb, 12)[0]
+        document = json.loads(glb[20 : 20 + json_size].decode().rstrip(" "))
+        self.assertNotIn("matrix", document["nodes"][0])
+        self.assertEqual(document["animations"][0]["name"], "Move")
+
+    def test_exports_vertex_animation_as_morph_targets_and_weights(self):
+        meshes, details = parse_crossfire_composite_ltb(
+            composite_ltb(6, with_animation=True), 0, 1, 98
+        )
+        glb = make_glb(
+            meshes,
+            {"test": True},
+            details["skeleton_metadata"],
+            details["_animations"],
+        )
+        validation = validate_glb(glb)
+        self.assertEqual(validation["animations"], 1)
+        self.assertEqual(validation["morph_targets"], 2)
+        self.assertEqual(validation["animation_channels"], 3)
+        json_size = struct.unpack_from("<I", glb, 12)[0]
+        document = json.loads(glb[20 : 20 + json_size].decode().rstrip(" "))
+        primitive = document["meshes"][0]["primitives"][0]
+        self.assertEqual(len(primitive["targets"]), 2)
+        self.assertTrue(
+            any(
+                channel["target"]["path"] == "weights"
+                for channel in document["animations"][0]["channels"]
+            )
+        )
+
     def test_repairs_referenced_nonfinite_normal_from_triangle_geometry(self):
         meshes, details = parse_crossfire_composite_ltb(
             composite_ltb(4, nonfinite_normal_vertex=0), 0, 1, 98
         )
         self.assertEqual(details["repaired_normal_vertices"], 1)
+        self.assertEqual(meshes[0].normals[0], (0.0, 0.0, 1.0))
+
+    def test_normalizes_finite_vertex_normals_for_gltf(self):
+        data = bytearray(composite_ltb(4))
+        vertex_data = data.find(struct.pack("<3f3f2f", 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0))
+        self.assertGreater(vertex_data, 0)
+        struct.pack_into("<3f", data, vertex_data + 12, 0.0, 0.0, 2.0)
+        meshes, _ = parse_crossfire_composite_ltb(bytes(data), 0, 1, 98)
         self.assertEqual(meshes[0].normals[0], (0.0, 0.0, 1.0))
 
     def test_skips_valid_oriented_bounding_boxes_before_geometry(self):

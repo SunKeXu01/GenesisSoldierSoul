@@ -221,9 +221,9 @@ tools/verify_delivery.sh --full
 - 364 个 CrossFire LTC 已用固定 XOR 包装 + LithTech LZSS 规则全部恢复为 LTA，
   并由同名明文样本逐字节验证；两份 RF199 又从数据区起点连续恢复 9,520 PNG
   和 1 DDS。仍未完成的是 5 个完全未分帧私有 REZ、两份 RF199 的未知后缀、
-  LTB 静态几何已对 8,721 个候选全部严格转换，321 个文件已由 layout-v5 生成 glTF skin；
-  仍未完成的是 LTB 骨骼/顶点动画通道、
-  Flash ATF 标准媒体转换和受 Oodle 限制的 Unreal 内容。
+  LTB 已对 8,721 个候选全部严格转换；321 个文件由 layout-v7 生成 glTF skin，
+  98 个源文件的 818 个骨骼/顶点动画已生成 88,740 个 glTF 通道和 2,940 个 morph target。
+  仍未完成的是 Flash ATF 标准媒体转换和受 Oodle 限制的 Unreal 内容。
   工具只做静态读取，不执行来源不明程序。
 - 商城仅为只读资源目录；账号、余额、购买、充值、VIP、任务、活动和战队业务没有
   权威后端依据，因此不提供伪实现。
