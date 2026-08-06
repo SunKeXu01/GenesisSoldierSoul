@@ -45,10 +45,10 @@ DTX 转换器支持以下经尺寸关系验证的格式：
 
 ## 仍未完成
 
-- 两份 RF019 和两份 RF199 已从固定数据区起点严格恢复 27,116 个连续资源、3,219,386,439 字节，并将 15,963 个 DTX 与 257 个 TGA 转为 16,220 个 PNG；新增 3 个 SWF、1 个 FLV、1 个 HTML 和 24 个 PNG，详见 `RF199_WEB_MEDIA_PREFIX_RECOVERY_2026-08-06.md` 与 `RF199_FRAMED_PREFIX_RECOVERY_2026-08-06.md`。
+- 两份 RF019 和两份 RF199 已从固定数据区起点严格恢复 28,273 个连续资源、3,253,472,631 字节，并将 15,973 个 DTX 与 257 个 TGA 转为 16,230 个 PNG；延伸恢复包含 3 个 SWF、1 个 FLV、1 个 HTML、1 个 CP949 Web bundle、1 个 UI layout、10 个 DTX 和 1,169 个 PNG，详见 `RF199_WEB_MEDIA_PREFIX_RECOVERY_2026-08-06.md` 与 `RF199_FRAMED_PREFIX_RECOVERY_2026-08-06.md`。
 - RF164 与 RF266 已按 world v85 的递归 render tail 严格恢复 2 个资源、58,778,137 字节，两者都精确到达 REZ 数据区末尾，见 `LITHTECH_WORLD_V85_RECOVERY_2026-08-06.md`。
 - RB001 已由 492 个同源 loose 精确匹配区段连续恢复 28,520,661 字节，其中一个 12,589,936 字节区段还独立通过 world v85 结构解析，见 `RB001_EXACT_PEER_PREFIX_RECOVERY_2026-08-06.md`。
-- 已无从数据区起点完全未知的包；RF019/RF199 的 4 个后缀与 RB001 的 1 个后缀合计保留 462,445,793 字节。在没有可信边界前不做整段魔数 carving。
+- 已无从数据区起点完全未知的包；RF019/RF199 的 4 个后缀与 RB001 的 1 个后缀合计保留 428,359,601 字节。在没有可信边界前不做整段魔数 carving。
 - LTB 几何 8,721/8,721、321 个 skin 和源内全部 818 个骨骼/顶点动画均已转换，详见 `LTB_ANIMATION_LAYOUT_V7_RECOVERY_2026-08-06.md`。
 - 364 个 loose LTC 已在 2026-08-06 全部恢复为 LTA：固定 16 字节 XOR 包装去除后，
   使用 LithTech LTC/LZSS v0 位流解码；输出 51,657,941 字节、失败 0，并由同名
@@ -68,4 +68,4 @@ DTX 转换器支持以下经尺寸关系验证的格式：
 - 工具：`tools/recover_private_rez.py`、`tools/recover_private_rez_framed_prefix.py`、`tools/convert_private_rez_media.py`、`tools/convert_ltb_models.py`、`tools/lithtech_ltc.py`。
 - 专项测试：`tools/test_recover_private_rez.py`、`tools/test_convert_private_rez_media.py`、`tools/test_convert_ltb_models.py`。
 
-统一 provenance 已验证 13/13 清单、184,214 个输出、25,483,621,864 字节，错误 0。
+统一 provenance 已验证 13/13 清单、185,381 个输出、25,517,717,171 字节，错误 0。

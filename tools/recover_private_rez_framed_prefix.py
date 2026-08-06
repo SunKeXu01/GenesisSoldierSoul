@@ -76,6 +76,20 @@ MAXIMUM_SWF_TAGS = 1_000_000
 FLV_SIGNATURE = b"FLV"
 MAXIMUM_FLV_TAGS = 10_000_000
 HTML_END_TAG = b"</html>"
+WEB_BINARY_SUCCESSOR_KINDS = {
+    "png",
+    "dds",
+    "gif",
+    "jpeg",
+    "mp4",
+    "webm",
+    "cfb",
+    "swf",
+    "flv",
+    "lithtech_world",
+    "tga",
+    "dtx",
+}
 
 
 def hash_region(stream: BinaryIO, offset: int, size: int) -> str:
@@ -755,6 +769,136 @@ def parse_ascii_web_bundle(
             if css_script_bundle
             else "css_overlay"
         ),
+        "next_frame_kind": next_kind,
+    }
+
+
+def parse_cp949_web_bundle(
+    stream: BinaryIO, offset: int, region_end: int
+) -> dict[str, object]:
+    """Parse a CP949 JavaScript/CSS bundle to a closed, exact binary successor."""
+    stream.seek(offset)
+    data = stream.read(
+        min(MAXIMUM_TEXT_FRAME_BYTES + DTX_HEADER_BYTES, region_end - offset)
+    )
+    if not data.startswith(b"//val\r\n") or b"var " not in data[:128]:
+        raise RezError(f"CP949 web bundle header absent at exact offset {offset}")
+    index = 0
+    while index < len(data):
+        if index > 0:
+            successor = prefix_kind(data[index : index + DTX_HEADER_BYTES])
+            if successor in WEB_BINARY_SUCCESSOR_KINDS:
+                bundle = data[:index]
+                text = bundle.decode("cp949", errors="strict")
+                if (
+                    "function " not in text
+                    or "body{" not in text
+                    or not text.rstrip().endswith("}")
+                    or text.count("{") != text.count("}")
+                    or text.count("(") != text.count(")")
+                    or text.count("[") != text.count("]")
+                ):
+                    raise RezError(f"incomplete CP949 web bundle grammar at {offset}")
+                return {
+                    "offset": offset,
+                    "bytes": len(bundle),
+                    "sha256": hashlib.sha256(bundle).hexdigest(),
+                    "encoding": "cp949",
+                    "bundle_kind": "javascript_and_css",
+                    "non_ascii_characters": sum(ord(value) > 127 for value in text),
+                    "next_frame_kind": successor,
+                }
+        byte = data[index]
+        if byte >= 0x80:
+            if index + 2 > len(data):
+                raise RezError(f"truncated CP949 character at {offset + index}")
+            try:
+                data[index : index + 2].decode("cp949", errors="strict")
+            except UnicodeDecodeError as error:
+                raise RezError(f"invalid CP949 character at {offset + index}") from error
+            index += 2
+            continue
+        if byte not in b"\t\n\r" and not 32 <= byte <= 126:
+            raise RezError(f"invalid CP949 web bundle byte at {offset + index}")
+        index += 1
+    raise RezError(f"CP949 web bundle has no exact supported successor at {offset}")
+
+
+def parse_ui_layout(
+    stream: BinaryIO, offset: int, region_end: int
+) -> dict[str, object]:
+    """Parse a complete LithTech UI GROUP layout before an exact binary frame."""
+    layout = read_ascii_prefix(stream, offset, region_end)
+    if not layout.startswith(b"GROUP "):
+        raise RezError(f"UI layout GROUP header absent at exact offset {offset}")
+    try:
+        text = layout.decode("ascii", errors="strict")
+    except UnicodeDecodeError as error:
+        raise RezError(f"UI layout is not ASCII at {offset}") from error
+    group_names: list[str] = []
+    default_names: list[str] = []
+    component_counts: Counter[str] = Counter()
+    component_open = False
+    component_count = 0
+    end_count = 0
+    allowed_components = {"IMAGE", "STATIC", "BUTTON", "COMBOBUTTON", "SCROLLBAR"}
+    for raw_line in text.replace("\r\n", "\n").split("\n"):
+        line = raw_line.strip()
+        if not line:
+            continue
+        if line.startswith("GROUP "):
+            if component_open or len(line.split()) != 2:
+                raise RezError(f"invalid UI GROUP line at {offset}: {line!r}")
+            group_names.append(line.split()[1])
+        elif line.startswith("DEFAULTGROUP "):
+            if component_open or len(line.split()) != 2 or not group_names:
+                raise RezError(f"invalid UI DEFAULTGROUP line at {offset}: {line!r}")
+            name = line.split()[1]
+            if name != group_names[-1]:
+                raise RezError(f"UI default group does not match GROUP at {offset}")
+            default_names.append(name)
+        elif line == "-END":
+            if not component_open:
+                raise RezError(f"orphan UI component end at {offset}")
+            component_open = False
+            end_count += 1
+        elif line.startswith("-"):
+            if not component_open or len(line) < 2:
+                raise RezError(f"UI property outside a component at {offset}: {line!r}")
+        else:
+            parts = line.split()
+            if (
+                component_open
+                or len(parts) != 2
+                or parts[0] not in allowed_components
+                or len(default_names) != len(group_names)
+            ):
+                raise RezError(f"invalid UI component line at {offset}: {line!r}")
+            component_open = True
+            component_count += 1
+            component_counts[parts[0]] += 1
+    if (
+        component_open
+        or not group_names
+        or group_names != default_names
+        or component_count == 0
+        or component_count != end_count
+    ):
+        raise RezError(f"incomplete UI layout grammar at {offset}")
+    next_offset = offset + len(layout)
+    stream.seek(next_offset)
+    next_kind = prefix_kind(stream.read(DTX_HEADER_BYTES))
+    if next_kind not in WEB_BINARY_SUCCESSOR_KINDS:
+        raise RezError(f"UI layout has no exact binary successor at {next_offset}")
+    return {
+        "offset": offset,
+        "bytes": len(layout),
+        "sha256": hashlib.sha256(layout).hexdigest(),
+        "encoding": "ascii",
+        "groups": len(group_names),
+        "group_names": group_names,
+        "components": component_count,
+        "component_counts": dict(sorted(component_counts.items())),
         "next_frame_kind": next_kind,
     }
 
@@ -1637,6 +1781,10 @@ def converted_png(source: Path, kind: str) -> tuple[bytes, dict[str, object]]:
 
 
 def prefix_kind(prefix: bytes) -> str | None:
+    if prefix.startswith(b"GROUP ") and b"DEFAULTGROUP " in prefix[:128]:
+        return "ui_layout"
+    if prefix.startswith(b"//val\r\n") and b"var " in prefix[:128]:
+        return "cp949_web_bundle"
     lower_prefix = prefix[:64].lower()
     if lower_prefix.startswith(b"<!") and b"doctype html" in lower_prefix:
         return "html"
@@ -1760,6 +1908,12 @@ def recover_framed_prefix(
             elif kind == "web_bundle":
                 record = parse_ascii_web_bundle(stream, position, region_end)
                 representation = "private_rez_binary_bounded_ascii_web_bundle"
+            elif kind == "cp949_web_bundle":
+                record = parse_cp949_web_bundle(stream, position, region_end)
+                representation = "private_rez_grammar_bounded_cp949_web_bundle"
+            elif kind == "ui_layout":
+                record = parse_ui_layout(stream, position, region_end)
+                representation = "private_rez_grammar_bounded_ui_layout"
             elif kind == "mp4":
                 record = parse_mp4(stream, position, region_end)
                 representation = "private_rez_box_sized_mp4_frame"
@@ -1812,6 +1966,8 @@ def recover_framed_prefix(
                     "jpeg": "jpg",
                     "config": "txt",
                     "web_bundle": "txt",
+                    "cp949_web_bundle": "txt",
+                    "ui_layout": "txt",
                     "lithtech_world": "dat",
                     "html": "html",
                 }.get(str(kind), str(kind))
@@ -1938,7 +2094,7 @@ def main() -> int:
     manifest = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "tool": "tools/recover_private_rez_framed_prefix.py",
-        "tool_version": "11",
+        "tool_version": "13",
         "workspace": str(workspace),
         "root_inventory_sha256": index["inventory_sha256"],
         "safety": {
@@ -1955,6 +2111,8 @@ def main() -> int:
             "cfb_difat_fat_extent_required": True,
             "ini_grammar_required": True,
             "web_bundle_printable_and_binary_successor_required": True,
+            "cp949_web_bundle_grammar_and_binary_successor_required": True,
+            "ui_layout_group_component_and_binary_successor_required": True,
             "mp4_top_level_box_chain_required": True,
             "webm_ebml_header_and_sized_segment_required": True,
             "swf_declared_length_complete_tag_stream_and_end_required": True,
@@ -2028,6 +2186,26 @@ def main() -> int:
                 int(item["bytes"])
                 for item in all_outputs
                 if item["representation"] == "private_rez_explicit_end_tag_html_frame"
+            ),
+            "cp949_web_bundles": sum(
+                item["representation"]
+                == "private_rez_grammar_bounded_cp949_web_bundle"
+                for item in all_outputs
+            ),
+            "cp949_web_bundle_bytes": sum(
+                int(item["bytes"])
+                for item in all_outputs
+                if item["representation"]
+                == "private_rez_grammar_bounded_cp949_web_bundle"
+            ),
+            "ui_layouts": sum(
+                item["representation"] == "private_rez_grammar_bounded_ui_layout"
+                for item in all_outputs
+            ),
+            "ui_layout_bytes": sum(
+                int(item["bytes"])
+                for item in all_outputs
+                if item["representation"] == "private_rez_grammar_bounded_ui_layout"
             ),
             "exact_peer_resources": sum(
                 "peer_paths" in resource

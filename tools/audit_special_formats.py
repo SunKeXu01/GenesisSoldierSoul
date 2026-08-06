@@ -1855,6 +1855,26 @@ def audit_private_rez_supplements(repo: Path, output: Path) -> dict[str, Any]:
                 if framed_prefix is not None
                 else 0
             ),
+            "rez_framed_prefix_cp949_web_bundles": (
+                framed_prefix["summary"].get("cp949_web_bundles", 0)
+                if framed_prefix is not None
+                else 0
+            ),
+            "rez_framed_prefix_cp949_web_bundle_bytes": (
+                framed_prefix["summary"].get("cp949_web_bundle_bytes", 0)
+                if framed_prefix is not None
+                else 0
+            ),
+            "rez_framed_prefix_ui_layouts": (
+                framed_prefix["summary"].get("ui_layouts", 0)
+                if framed_prefix is not None
+                else 0
+            ),
+            "rez_framed_prefix_ui_layout_bytes": (
+                framed_prefix["summary"].get("ui_layout_bytes", 0)
+                if framed_prefix is not None
+                else 0
+            ),
             "rez_framed_prefix_converted_png_images": (
                 framed_prefix["summary"].get("converted_png_images", 0)
                 if framed_prefix is not None
@@ -1966,7 +1986,7 @@ def main() -> int:
     report: dict[str, Any] = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "tool": "tools/audit_special_formats.py",
-        "tool_version": "15",
+        "tool_version": "16",
         "workspace": str(workspace),
         "root_inventory_sha256": index["inventory_sha256"],
         "safety": {

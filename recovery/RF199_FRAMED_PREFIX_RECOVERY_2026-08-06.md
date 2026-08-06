@@ -6,8 +6,8 @@
 
 原先归为“完全未分帧”的两份 `RF019.REZ`，以及仅恢复 PNG/DDS 前缀的两份
 `RF199.REZ`，现均从固定 REZ v1 数据区起点 `168` 开始按当前位置连续解析。
-共严格恢复 27,116 个资源、3,219,386,439 个源字节，并为 15,963 个 DTX 和
-257 个 TGA 生成 16,220 个 PNG。所有输出都按来源哈希隔离，原始 REZ 未改写。
+共严格恢复 28,273 个资源、3,253,472,631 个源字节，并为 15,973 个 DTX 和
+257 个 TGA 生成 16,230 个 PNG。所有输出都按来源哈希隔离，原始 REZ 未改写。
 
 恢复器只接受具有可证明结束边界的格式：PNG CRC/chunk、DDS/DTX 头与 mip
 载荷、TGA 像素或 RLE packet、GIF sub-block/trailer、JPEG marker/EOI、结构化
@@ -21,9 +21,9 @@ carving，也不运行客户端程序。
 |---|---:|---|---:|---:|
 | `CF2.0/CrossFire/rez/RF019.REZ` | 6,866 | TGA 1、DTX 6,858、GIF 2、JPEG 4、配置 1 | 1,185,934,368 | 1,176,204 |
 | `CF2.0/CrossFire/rez2/RF019.REZ` | 9,111 | DTX 9,105、PNG 4、CFB 1、INI 1 | 1,659,713,437 | 1,661,180 |
-| `CF2.0/CrossFire/rez/RF199.REZ` | 6,281 | PNG 6,068、DDS 1、TGA 202、Web bundle 3、MP4 1、WebM 1、SWF 3、FLV 1、HTML 1 | 253,443,867 | 437,781,181 |
+| `CF2.0/CrossFire/rez/RF199.REZ` | 7,438 | PNG 7,213、DTX 10、DDS 1、TGA 202、Web bundle 4、UI layout 1、MP4 1、WebM 1、SWF 3、FLV 1、HTML 1 | 287,530,059 | 403,694,989 |
 | `CF2.0/CrossFire/rez2/RF199.REZ` | 4,858 | PNG 4,804、TGA 54 | 120,294,767 | 777,032 |
-| 合计 | 27,116 | 15 类 | 3,219,386,439 | 441,395,597 |
+| 合计 | 28,273 | 18 类 | 3,253,472,631 | 407,309,405 |
 
 四段未知后缀均保存精确停止偏移、大小、前缀、SHA-256 和熵证据。RF199 的
 Web/媒体延伸恢复详见 `RF199_WEB_MEDIA_PREFIX_RECOVERY_2026-08-06.md`。当前前缀
@@ -36,10 +36,10 @@ Web/媒体延伸恢复详见 `RF199_WEB_MEDIA_PREFIX_RECOVERY_2026-08-06.md`。�
 
 ## 验证与产物
 
-- 27,116 个源帧另加 16,220 个转换 PNG，共 43,336 个输出、
-  3,720,634,707 字节，逐项大小与 SHA-256 验证通过。
-- 统一 provenance：13/13 清单、184,214 个输出、25,483,621,864 字节、错误 0。
-- 专项 Python 回归 22 项，覆盖各格式边界、混合顺序、错误 CRC、SWF/FLV/HTML、world v85、exact peer 歧义拒绝和未知尾部停止。
+- 28,273 个源帧另加 16,230 个转换 PNG，共 44,503 个输出、
+  3,754,730,014 字节，逐项大小与 SHA-256 验证通过。
+- 统一 provenance：13/13 清单、185,381 个输出、25,517,717,171 字节、错误 0。
+- 专项 Python 回归 26 项，覆盖各格式边界、混合顺序、错误 CRC、SWF/FLV/HTML、CP949 bundle、UI layout、world v85、exact peer 歧义拒绝和未知尾部停止。
 - 工具：`tools/recover_private_rez_framed_prefix.py`。
 - 测试：`tools/test_recover_private_rez_framed_prefix.py`。
 - 可再生成机器清单：`recovery/private-rez-framed-prefix-recovery.json`（Git 忽略）。

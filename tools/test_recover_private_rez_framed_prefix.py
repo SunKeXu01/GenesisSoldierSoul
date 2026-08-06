@@ -11,6 +11,7 @@ from PIL import Image
 from recover_private_rez_framed_prefix import (
     PNG_SIGNATURE,
     parse_cfb,
+    parse_cp949_web_bundle,
     parse_ascii_web_bundle,
     parse_ini,
     parse_start_end_config,
@@ -25,6 +26,7 @@ from recover_private_rez_framed_prefix import (
     parse_mp4,
     parse_png,
     parse_tga,
+    parse_ui_layout,
     parse_webm,
     recover_framed_prefix,
 )
@@ -185,6 +187,20 @@ def html() -> bytes:
     )
 
 
+def cp949_web_bundle() -> bytes:
+    return (
+        "//val\r\nvar label = '랭킹';\r\nfunction show(){ return label; }\r\n"
+        "body{ color: white; }\r\n"
+    ).encode("cp949")
+
+
+def ui_layout() -> bytes:
+    return (
+        b"GROUP TEST\r\n\r\nDEFAULTGROUP TEST\r\n\r\n"
+        b"STATIC Label\r\n-POSITIONX 1\r\n--DEFAULTMSG \"\"\r\n-END\r\n\r\n"
+    )
+
+
 class PrivateRezPngPrefixTests(unittest.TestCase):
     def test_parses_crc_valid_png_at_exact_offset(self):
         data = png(3, 2)
@@ -320,6 +336,42 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
         self.assertEqual(parsed["bytes"], len(data))
         self.assertTrue(parsed["explicit_end_tag"])
         self.assertEqual(parsed["sha256"], hashlib.sha256(data).hexdigest())
+
+    def test_parses_cp949_web_bundle_at_closed_binary_successor(self):
+        data = cp949_web_bundle()
+        successor = png()
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data + successor)
+            parsed = parse_cp949_web_bundle(stream, 0, len(data + successor))
+        self.assertEqual(parsed["bytes"], len(data))
+        self.assertEqual(parsed["encoding"], "cp949")
+        self.assertEqual(parsed["non_ascii_characters"], 2)
+        self.assertEqual(parsed["next_frame_kind"], "png")
+
+    def test_rejects_unbalanced_cp949_web_bundle(self):
+        data = cp949_web_bundle().replace(b"}", b"", 1)
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data + png())
+            with self.assertRaisesRegex(RezError, "incomplete CP949 web bundle grammar"):
+                parse_cp949_web_bundle(stream, 0, len(data + png()))
+
+    def test_parses_complete_ui_layout_before_binary_successor(self):
+        data = ui_layout()
+        successor = png()
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data + successor)
+            parsed = parse_ui_layout(stream, 0, len(data + successor))
+        self.assertEqual(parsed["bytes"], len(data))
+        self.assertEqual(parsed["group_names"], ["TEST"])
+        self.assertEqual(parsed["component_counts"], {"STATIC": 1})
+        self.assertEqual(parsed["next_frame_kind"], "png")
+
+    def test_rejects_ui_layout_without_component_end(self):
+        data = ui_layout().replace(b"-END\r\n", b"")
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data + png())
+            with self.assertRaisesRegex(RezError, "incomplete UI layout grammar"):
+                parse_ui_layout(stream, 0, len(data + png()))
 
     def test_rejects_lithtech_world_with_invalid_child_index(self):
         data = lithtech_world(invalid_child=True)
@@ -497,6 +549,8 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
             dtx(),
             web_bundle(),
             png(),
+            ui_layout(),
+            png(),
             overlay_bundle(),
             mp4(),
             webm(),
@@ -504,6 +558,8 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
             flv(),
             swf(b"FWS"),
             html(),
+            cp949_web_bundle(),
+            png(),
         ]
         suffix = b"UNSUPPORTED"
         with tempfile.TemporaryDirectory() as temporary:
@@ -536,6 +592,8 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
                     "dtx",
                     "web_bundle",
                     "png",
+                    "ui_layout",
+                    "png",
                     "web_bundle",
                     "mp4",
                     "webm",
@@ -543,9 +601,11 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
                     "flv",
                     "swf",
                     "html",
+                    "cp949_web_bundle",
+                    "png",
                 ],
             )
-            self.assertEqual(len(result["outputs"]), 20)
+            self.assertEqual(len(result["outputs"]), 24)
             self.assertEqual(result["trailing_region"]["bytes"], len(suffix))
 
 

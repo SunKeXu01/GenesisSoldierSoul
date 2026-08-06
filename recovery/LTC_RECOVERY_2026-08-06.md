@@ -19,13 +19,13 @@
 ## 实现与证据
 
 - 解码器/CLI：`tools/lithtech_ltc.py`。
-- 统一审计：`tools/audit_special_formats.py`（当前 tool version 15）。
+- 统一审计：`tools/audit_special_formats.py`（当前 tool version 16）。
 - 回归测试：`tools/test_audit_special_formats.py`，覆盖字面量、回溯 span、显式结束标记与物理 EOF。
 - 汇总：`recovery/SPECIAL_FORMAT_CONVERSION_LEDGER_2026-08-04.md`。
 - 逐项机器账本：`recovery/special-format-conversion-ledger.json`。
 - 隔离明文输出：`recovery/special-formats/ltc-decoded/`（可由账本和工具重复生成，不纳入 Git）。
 
-统一 provenance 在后续私有 REZ 连续帧、SWF/FLV/HTML、world v85、RB001 exact-peer 前缀与 LTB layout-v7 恢复纳入后，当前验证 13/13 清单、184,214 个输出、25,483,621,864 字节，错误 0。
+统一 provenance 在后续私有 REZ 连续帧、SWF/FLV/HTML/CP949/UI、world v85、RB001 exact-peer 前缀与 LTB layout-v7 恢复纳入后，当前验证 13/13 清单、185,381 个输出、25,517,717,171 字节，错误 0。
 
 ## 使用
 
