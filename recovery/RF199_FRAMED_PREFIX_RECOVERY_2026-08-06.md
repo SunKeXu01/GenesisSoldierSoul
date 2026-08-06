@@ -1,35 +1,47 @@
-# RF199 连续帧资源恢复
+# 私有 REZ 连续帧资源恢复
 
 日期：2026-08-06
 
 ## 结论
 
-此前归类为“未分帧”的两份 `RF199.REZ` 已从固定 REZ v1 数据区起点 `168` 开始，按当前位置连续恢复 9,520 个 PNG 和 1 个 DDS，共 141,831,713 字节。所有 PNG 均要求完整 `IHDR/IDAT/IEND` 结构和逐 chunk CRC；DDS 要求标准 124 字节头、可计算的像素格式/维度/mipmap 载荷长度。遇到首个不支持字节立即停止，未搜索后续魔数、未做 carving、未运行客户端程序。
+原先归为“完全未分帧”的两份 `RF019.REZ`，以及仅恢复 PNG/DDS 前缀的两份
+`RF199.REZ`，现均从固定 REZ v1 数据区起点 `168` 开始按当前位置连续解析。
+共严格恢复 27,087 个资源、3,215,875,246 个源字节，并为 15,963 个 DTX 和
+257 个 TGA 生成 16,220 个 PNG。所有输出都按来源哈希隔离，原始 REZ 未改写。
+
+恢复器只接受具有可证明结束边界的格式：PNG CRC/chunk、DDS/DTX 头与 mip
+载荷、TGA 像素或 RLE packet、GIF sub-block/trailer、JPEG marker/EOI、结构化
+配置结束标记、INI 文法、CFB DIFAT/FAT 分配范围、MP4 box chain，以及带显式
+Segment 长度的 WebM。遇到首个不支持字节立即停止；不搜索后续魔数、不做
+carving，也不运行客户端程序。
 
 ## 分包结果
 
-| 来源 | PNG | DDS | 已恢复字节 | 停止偏移 | 保留后缀 |
-|---|---:|---:|---:|---:|---:|
-| `CF2.0/CrossFire/rez/RF199.REZ` | 5,200 | 1（256×256 DXT1） | 70,400,840 | 70,401,008 | 620,824,208 |
-| `CF2.0/CrossFire/rez2/RF199.REZ` | 4,320 | 0 | 71,430,873 | 71,431,041 | 49,640,926 |
-| 合计 | 9,520 | 1 | 141,831,713 | — | 670,465,134 |
+| 来源 | 连续资源 | 类型摘要 | 已恢复源字节 | 保留后缀 |
+|---|---:|---|---:|---:|
+| `CF2.0/CrossFire/rez/RF019.REZ` | 6,866 | TGA 1、DTX 6,858、GIF 2、JPEG 4、配置 1 | 1,185,934,368 | 1,176,204 |
+| `CF2.0/CrossFire/rez2/RF019.REZ` | 9,111 | DTX 9,105、PNG 4、CFB 1、INI 1 | 1,659,713,437 | 1,661,180 |
+| `CF2.0/CrossFire/rez/RF199.REZ` | 6,252 | PNG 6,044、DDS 1、TGA 202、Web bundle 3、MP4 1、WebM 1 | 249,932,674 | 441,292,374 |
+| `CF2.0/CrossFire/rez2/RF199.REZ` | 4,858 | PNG 4,804、TGA 54 | 120,294,767 | 777,032 |
+| 合计 | 27,087 | 12 类 | 3,215,875,246 | 444,906,790 |
 
-第一份包的实际连续序列是 `2,888 PNG → 1 DDS → 2,312 PNG`，证明不能把“首个非 PNG”误当成整个可证明前缀的终点；恢复器因此只在当前位置分派 PNG/DDS 两种严格解析器。第二份为连续 4,320 个 PNG。两份的未知后缀均原样保留。
+四段未知后缀均保存精确停止偏移、大小、前缀、SHA-256 和熵证据。当前前缀
+不满足任何已实现的严格边界规则，因此不将后缀内部偶然出现的签名当作资源。
+仍从数据区起点完全未知的 3 个包为 `RB001.REZ`、`RF164.REZ` 和
+`RF266.REZ`；后两者只确认以 LithTech world version 85 开始，尚未证明文件边界。
 
-## 验证
+## 验证与产物
 
-- 9,521/9,521 输出的大小与 SHA-256 和清单一致。
-- Pillow 对 9,520 PNG 与 1 个 DDS 全部 `verify()` 成功，错误 0。
-- 共 6,036 个唯一内容哈希、3,485 个重复实例、112 组图像尺寸；重复项仍逐来源/偏移留证，不擅自去重源记录。
-- 统一 provenance 在后续 LTB layout-v7 恢复纳入后：12/12 清单、148,829 个输出、21,546,511,271 字节、错误 0。
-- Python 回归覆盖精确偏移、PNG CRC 拒绝、DDS 头计算、PNG→DDS→PNG 顺序及未知后缀停止。
-
-## 实现与产物
-
+- 27,087 个源帧另加 16,220 个转换 PNG，共 43,307 个输出、
+  3,717,123,514 字节，逐项大小与 SHA-256 验证通过。
+- 统一 provenance：13/13 清单、183,691 个输出、25,392,811,873 字节、错误 0。
+- 专项 Python 回归 12 项，覆盖各格式边界、混合顺序、错误 CRC 和未知尾部停止。
 - 工具：`tools/recover_private_rez_framed_prefix.py`。
 - 测试：`tools/test_recover_private_rez_framed_prefix.py`。
-- 机器清单：`recovery/private-rez-framed-prefix-recovery.json`（可再生成，Git 忽略）。
-- 隔离输出：`recovery/special-formats/private-rez-png-prefix/`（可再生成，Git 忽略）。
-- 汇总账本：`recovery/special-format-conversion-ledger.json` 与 `SPECIAL_FORMAT_CONVERSION_LEDGER_2026-08-04.md`。
+- 可再生成机器清单：`recovery/private-rez-framed-prefix-recovery.json`（Git 忽略）。
+- 可再生成隔离输出：`recovery/special-formats/private-rez-png-prefix/`（Git 忽略）。
+- 汇总账本：`recovery/special-format-conversion-ledger.json` 与
+  `SPECIAL_FORMAT_CONVERSION_LEDGER_2026-08-04.md`。
 
-原 7 个完全未分帧包现缩小为：5 个仍从数据区起点未知，以及 2 个 RF199 仅剩已明确偏移和哈希证据的未知后缀。下一步仍不得绕过边界验证去搜索后缀内部资源。
+原 7 个完全未分帧包因此缩小为 3 个完全未知包和 4 个有精确停止证据的未知
+后缀。下一步只有在能证明边界时才继续扩展解析器。

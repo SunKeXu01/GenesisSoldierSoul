@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-08-06T05:22:59.742070+00:00",
+  "generated_at_utc": "2026-08-06T05:53:26.111395+00:00",
   "tool": "tools/audit_special_formats.py",
-  "tool_version": "12",
+  "tool_version": "13",
   "workspace": "/Users/Admin/Documents/创世兵魂",
   "root_inventory_sha256": "e88424a9d72e1a76939ec39ce77dc7b766c670d6c1b835f132976fc9c9ac0e4e",
   "safety": {
@@ -16405,12 +16405,12 @@
         "recovery": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-recovery.json",
         "media": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-media-conversions.json",
         "model": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-model-conversions.json",
-        "png_prefix": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-framed-prefix-recovery.json"
+        "framed_prefix": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-framed-prefix-recovery.json"
       },
       "recovery_tool_version": "1",
       "media_tool_version": "1",
       "model_tool_version": "8",
-      "png_prefix_tool_version": "1",
+      "framed_prefix_tool_version": "6",
       "verifications": [
         {
           "manifest": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-recovery.json",
@@ -16435,8 +16435,8 @@
         },
         {
           "manifest": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-framed-prefix-recovery.json",
-          "outputs_verified": 9521,
-          "bytes_verified": 141831713,
+          "outputs_verified": 43307,
+          "bytes_verified": 3717123514,
           "errors": [],
           "status": "verified"
         }
@@ -16487,12 +16487,28 @@
         "ltb_glb_animation_channels": 88740,
         "ltb_glb_morph_targets": 2940,
         "ltb_glb_failures": 0,
-        "rez_png_prefix_archives": 2,
-        "rez_png_prefix_images": 9520,
-        "rez_png_prefix_bytes": 141634977,
-        "rez_dds_prefix_images": 1,
-        "rez_dds_prefix_bytes": 196736,
-        "rez_png_prefix_trailing_bytes_preserved": 670465134,
+        "rez_framed_prefix_archives": 4,
+        "rez_framed_prefix_resources": 27087,
+        "rez_framed_prefix_kind_counts": {
+          "cfb": 1,
+          "config": 1,
+          "dds": 1,
+          "dtx": 15963,
+          "gif": 2,
+          "ini": 1,
+          "jpeg": 4,
+          "mp4": 1,
+          "png": 10852,
+          "tga": 257,
+          "web_bundle": 3,
+          "webm": 1
+        },
+        "rez_framed_prefix_raw_bytes": 3215875246,
+        "rez_framed_prefix_converted_png_images": 16220,
+        "rez_framed_prefix_converted_png_bytes": 501248268,
+        "rez_framed_prefix_outputs": 43307,
+        "rez_framed_prefix_output_bytes": 3717123514,
+        "rez_framed_prefix_trailing_bytes_preserved": 444906790,
         "verification_errors": 0
       }
     }
@@ -34663,8 +34679,8 @@
       },
       {
         "manifest": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-framed-prefix-recovery.json",
-        "outputs_verified": 9521,
-        "bytes_verified": 141831713,
+        "outputs_verified": 43307,
+        "bytes_verified": 3717123514,
         "errors": [],
         "status": "verified"
       },
@@ -34686,8 +34702,8 @@
     "summary": {
       "manifests": 13,
       "verified": 13,
-      "outputs": 149905,
-      "bytes": 21817520072,
+      "outputs": 183691,
+      "bytes": 25392811873,
       "errors": 0
     }
   }

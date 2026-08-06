@@ -219,8 +219,10 @@ tools/verify_delivery.sh --full
   `LightingData.asset` 的 `m_Scene` 所属场景反向边，避免从可玩场景错误回溯到旧源场景。
   正式资源门禁仍因缺少已批准权利记录而拒绝放行。
 - 364 个 CrossFire LTC 已用固定 XOR 包装 + LithTech LZSS 规则全部恢复为 LTA，
-  并由同名明文样本逐字节验证；两份 RF199 又从数据区起点连续恢复 9,520 PNG
-  和 1 DDS。仍未完成的是 5 个完全未分帧私有 REZ、两份 RF199 的未知后缀、
+  并由同名明文样本逐字节验证；两份 RF019 和两份 RF199 又从数据区起点连续
+  恢复 27,087 个资源、3,215,875,246 个源字节，并把其中 15,963 个 DTX 和
+  257 个 TGA 转为 16,220 个 PNG。仍未完成的是 3 个完全未知私有 REZ、上述
+  4 个包的未知后缀、
   LTB 已对 8,721 个候选全部严格转换；321 个文件由 layout-v7 生成 glTF skin，
   98 个源文件的 818 个骨骼/顶点动画已生成 88,740 个 glTF 通道和 2,940 个 morph target。
   538 个 Flash ATF 已全部重建为 DXT1/DXT5 DDS 和 RGBA PNG，并保留 1,001 个实际存在的 mip 层。

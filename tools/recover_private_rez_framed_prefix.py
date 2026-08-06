@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Recover a contiguous, structurally framed PNG/DDS prefix from private REZ."""
+"""Recover a contiguous chain of strictly framed media from private REZ.
+
+Parsing always starts at the fixed REZ data offset and stops at the first
+unsupported byte.  It never searches for a later signature.  Supported frames
+have self-proving boundaries: CRC-valid PNG, header-sized DDS/DTX, complete
+TGA (including RLE packet accounting), block-complete GIF, and marker-complete
+JPEG.
+"""
 
 from __future__ import annotations
 
@@ -15,6 +22,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import BinaryIO
 
+from PIL import Image
+
+from audit_special_formats import decode_dtx
 from recover_private_rez import CHUNK_SIZE, entropy, parse_rez_header, sha256_file
 from rez_extract import RezError
 
@@ -24,6 +34,47 @@ MAXIMUM_PNG_CHUNK_BYTES = 128 * 1024 * 1024
 MAXIMUM_PNG_CHUNKS = 1_000_000
 DDS_MAGIC = b"DDS "
 DDS_HEADER_BYTES = 128
+GIF_SIGNATURES = {b"GIF87a", b"GIF89a"}
+JPEG_SIGNATURE = b"\xFF\xD8"
+TGA_FOOTER_SIGNATURE = b"TRUEVISION-XFILE.\x00"
+DTX_HEADER_BYTES = 164
+CFB_SIGNATURE = b"\xD0\xCF\x11\xE0\xA1\xB1\x1A\xE1"
+CFB_FREE = 0xFFFFFFFF
+CFB_END = 0xFFFFFFFE
+CFB_FAT = 0xFFFFFFFD
+CFB_DIFAT = 0xFFFFFFFC
+MAXIMUM_TEXT_FRAME_BYTES = 16 * 1024 * 1024
+MP4_TOP_LEVEL_BOXES = {
+    b"ftyp",
+    b"free",
+    b"skip",
+    b"wide",
+    b"mdat",
+    b"moov",
+    b"uuid",
+    b"meta",
+    b"moof",
+    b"mfra",
+    b"sidx",
+    b"pdin",
+    b"styp",
+}
+EBML_HEADER_ID = 0x1A45DFA3
+EBML_SEGMENT_ID = 0x18538067
+EBML_SIGNATURE = b"\x1A\x45\xDF\xA3"
+
+
+def hash_region(stream: BinaryIO, offset: int, size: int) -> str:
+    stream.seek(offset)
+    digest = hashlib.sha256()
+    remaining = size
+    while remaining:
+        data = stream.read(min(CHUNK_SIZE, remaining))
+        if not data:
+            raise RezError(f"truncated framed resource at {offset}")
+        digest.update(data)
+        remaining -= len(data)
+    return digest.hexdigest()
 
 
 def parse_png(stream: BinaryIO, offset: int, region_end: int) -> dict[str, object]:
@@ -169,6 +220,639 @@ def parse_dds(stream: BinaryIO, offset: int, region_end: int) -> dict[str, objec
     }
 
 
+def parse_tga(stream: BinaryIO, offset: int, region_end: int) -> dict[str, object]:
+    """Parse an uncompressed or RLE true-color/grayscale TGA exactly."""
+    if offset < 0 or offset + 18 > region_end:
+        raise RezError(f"truncated TGA header at {offset}")
+    stream.seek(offset)
+    header = stream.read(18)
+    id_length, color_map_type, image_type = struct.unpack_from("<BBB", header)
+    width, height = struct.unpack_from("<HH", header, 12)
+    bits_per_pixel = header[16]
+    if (
+        color_map_type != 0
+        or image_type not in {2, 3, 10, 11}
+        or width == 0
+        or height == 0
+        or bits_per_pixel not in {8, 24, 32}
+    ):
+        raise RezError(f"unsupported TGA header at exact offset {offset}")
+    bytes_per_pixel = bits_per_pixel // 8
+    position = offset + 18 + id_length
+    if position > region_end:
+        raise RezError(f"TGA image ID crosses REZ data boundary at {offset}")
+    pixel_count = width * height
+    if image_type in {2, 3}:
+        position += pixel_count * bytes_per_pixel
+        packet_count = 0
+    else:
+        stream.seek(position)
+        decoded_pixels = 0
+        packet_count = 0
+        while decoded_pixels < pixel_count:
+            raw_packet = stream.read(1)
+            if not raw_packet:
+                raise RezError(f"truncated TGA RLE packet at {offset}")
+            count = (raw_packet[0] & 0x7F) + 1
+            if decoded_pixels + count > pixel_count:
+                raise RezError(f"TGA RLE packet overruns image at {offset}")
+            encoded_bytes = bytes_per_pixel if raw_packet[0] & 0x80 else count * bytes_per_pixel
+            if stream.tell() + encoded_bytes > region_end:
+                raise RezError(f"TGA RLE data crosses REZ boundary at {offset}")
+            stream.seek(encoded_bytes, os.SEEK_CUR)
+            decoded_pixels += count
+            packet_count += 1
+        position = stream.tell()
+    if position > region_end:
+        raise RezError(f"TGA pixels cross REZ data boundary at {offset}")
+    stream.seek(position)
+    footer = stream.read(26)
+    has_footer = len(footer) == 26 and footer[8:] == TGA_FOOTER_SIGNATURE
+    if has_footer:
+        position += 26
+    size = position - offset
+    return {
+        "offset": offset,
+        "bytes": size,
+        "sha256": hash_region(stream, offset, size),
+        "width": width,
+        "height": height,
+        "bits_per_pixel": bits_per_pixel,
+        "image_type": image_type,
+        "rle": image_type in {10, 11},
+        "rle_packets": packet_count,
+        "tga_2_footer": has_footer,
+    }
+
+
+def parse_dtx(stream: BinaryIO, offset: int, region_end: int) -> dict[str, object]:
+    """Parse a section-free DTX v-5 whose mip payload size is derivable."""
+    if offset < 0 or offset + DTX_HEADER_BYTES > region_end:
+        raise RezError(f"truncated DTX header at {offset}")
+    stream.seek(offset)
+    header = stream.read(DTX_HEADER_BYTES)
+    resource_type, version = struct.unpack_from("<ii", header)
+    width, height, mipmaps, sections = struct.unpack_from("<HHHH", header, 8)
+    bpp_identifier = header[26]
+    if (
+        resource_type not in {0, 1}
+        or version != -5
+        or width == 0
+        or height == 0
+        or not 1 <= mipmaps <= 32
+        or sections != 0
+        or bpp_identifier not in {3, 4, 5, 6}
+    ):
+        raise RezError(f"unsupported DTX header at exact offset {offset}")
+    payload_bytes = 0
+    for level in range(mipmaps):
+        level_width = max(1, width >> level)
+        level_height = max(1, height >> level)
+        if bpp_identifier == 3:
+            payload_bytes += level_width * level_height * 4
+        else:
+            block_bytes = 8 if bpp_identifier == 4 else 16
+            payload_bytes += (
+                max(1, (level_width + 3) // 4)
+                * max(1, (level_height + 3) // 4)
+                * block_bytes
+            )
+    size = DTX_HEADER_BYTES + payload_bytes
+    if offset + size > region_end:
+        raise RezError(f"DTX payload crosses REZ data boundary at {offset}")
+    return {
+        "offset": offset,
+        "bytes": size,
+        "sha256": hash_region(stream, offset, size),
+        "resource_type": resource_type,
+        "version": version,
+        "width": width,
+        "height": height,
+        "mip_count": mipmaps,
+        "sections": sections,
+        "bpp_identifier": bpp_identifier,
+        "pixel_format": {3: "BGRA8888", 4: "DXT1", 5: "DXT3", 6: "DXT5"}[
+            bpp_identifier
+        ],
+    }
+
+
+def read_gif_sub_blocks(stream: BinaryIO, position: int, region_end: int) -> int:
+    stream.seek(position)
+    while True:
+        raw_length = stream.read(1)
+        if not raw_length:
+            raise RezError(f"truncated GIF sub-block at {position}")
+        length = raw_length[0]
+        position += 1
+        if length == 0:
+            return position
+        if position + length > region_end:
+            raise RezError(f"GIF sub-block crosses REZ boundary at {position}")
+        stream.seek(length, os.SEEK_CUR)
+        position += length
+
+
+def parse_gif(stream: BinaryIO, offset: int, region_end: int) -> dict[str, object]:
+    """Parse a GIF through its trailer with complete sub-block accounting."""
+    if offset < 0 or offset + 13 > region_end:
+        raise RezError(f"truncated GIF header at {offset}")
+    stream.seek(offset)
+    header = stream.read(13)
+    if header[:6] not in GIF_SIGNATURES:
+        raise RezError(f"GIF signature absent at exact offset {offset}")
+    width, height = struct.unpack_from("<HH", header, 6)
+    if width == 0 or height == 0:
+        raise RezError(f"GIF has zero dimensions at {offset}")
+    position = offset + 13
+    if header[10] & 0x80:
+        position += 3 * (1 << ((header[10] & 0x07) + 1))
+    image_count = extension_count = 0
+    while position < region_end:
+        stream.seek(position)
+        introducer = stream.read(1)
+        position += 1
+        if introducer == b"\x3B":
+            if image_count == 0:
+                raise RezError(f"GIF has no image descriptor at {offset}")
+            size = position - offset
+            return {
+                "offset": offset,
+                "bytes": size,
+                "sha256": hash_region(stream, offset, size),
+                "width": width,
+                "height": height,
+                "images": image_count,
+                "extensions": extension_count,
+                "version": header[:6].decode("ascii"),
+            }
+        if introducer == b"\x21":
+            if position >= region_end:
+                raise RezError(f"truncated GIF extension at {position}")
+            position += 1  # extension label
+            extension_count += 1
+            position = read_gif_sub_blocks(stream, position, region_end)
+            continue
+        if introducer != b"\x2C" or position + 9 > region_end:
+            raise RezError(f"invalid GIF block at {position - 1}")
+        stream.seek(position)
+        descriptor = stream.read(9)
+        position += 9
+        if descriptor[8] & 0x80:
+            position += 3 * (1 << ((descriptor[8] & 0x07) + 1))
+        if position >= region_end:
+            raise RezError(f"truncated GIF image data at {position}")
+        position += 1  # LZW minimum code size
+        image_count += 1
+        position = read_gif_sub_blocks(stream, position, region_end)
+    raise RezError(f"GIF trailer missing at {offset}")
+
+
+def parse_jpeg(stream: BinaryIO, offset: int, region_end: int) -> dict[str, object]:
+    """Parse JPEG markers and entropy scans through the exact EOI marker."""
+    if offset < 0 or offset + 4 > region_end:
+        raise RezError(f"truncated JPEG header at {offset}")
+    stream.seek(offset)
+    if stream.read(2) != JPEG_SIGNATURE:
+        raise RezError(f"JPEG signature absent at exact offset {offset}")
+    position = offset + 2
+    width = height = None
+    scans = 0
+    while position < region_end:
+        stream.seek(position)
+        if stream.read(1) != b"\xFF":
+            raise RezError(f"JPEG marker prefix absent at {position}")
+        marker_byte = stream.read(1)
+        while marker_byte == b"\xFF":
+            marker_byte = stream.read(1)
+        if not marker_byte:
+            raise RezError(f"truncated JPEG marker at {position}")
+        marker = marker_byte[0]
+        position = stream.tell()
+        if marker == 0xD9:
+            size = position - offset
+            if width is None or scans == 0:
+                raise RezError(f"incomplete JPEG structure at {offset}")
+            return {
+                "offset": offset,
+                "bytes": size,
+                "sha256": hash_region(stream, offset, size),
+                "width": width,
+                "height": height,
+                "scans": scans,
+            }
+        if marker in set(range(0xD0, 0xD8)) | {0x01, 0xD8}:
+            continue
+        if position + 2 > region_end:
+            raise RezError(f"truncated JPEG segment length at {position}")
+        stream.seek(position)
+        segment_length = struct.unpack(">H", stream.read(2))[0]
+        if segment_length < 2 or position + segment_length > region_end:
+            raise RezError(f"invalid JPEG segment length at {position}: {segment_length}")
+        segment_start = position + 2
+        if marker in set(range(0xC0, 0xC4)) | set(range(0xC5, 0xC8)) | set(
+            range(0xC9, 0xCC)
+        ) | set(range(0xCD, 0xD0)):
+            if segment_length < 7:
+                raise RezError(f"truncated JPEG frame header at {position}")
+            stream.seek(segment_start + 1)
+            height, width = struct.unpack(">HH", stream.read(4))
+            if width == 0 or height == 0:
+                raise RezError(f"JPEG has zero dimensions at {position}")
+        position += segment_length
+        if marker != 0xDA:
+            continue
+        scans += 1
+        stream.seek(position)
+        while position < region_end:
+            raw = stream.read(1)
+            if not raw:
+                break
+            position += 1
+            if raw != b"\xFF":
+                continue
+            following = stream.read(1)
+            if not following:
+                break
+            position += 1
+            if following == b"\x00" or 0xD0 <= following[0] <= 0xD7:
+                continue
+            stream.seek(-2, os.SEEK_CUR)
+            position -= 2
+            break
+    raise RezError(f"JPEG EOI marker missing at {offset}")
+
+
+def parse_start_end_config(
+    stream: BinaryIO, offset: int, region_end: int
+) -> dict[str, object]:
+    """Parse one or more strict ``<start>``/``<end>`` ASCII config blocks."""
+    stream.seek(offset)
+    collected = bytearray()
+    limit = min(region_end - offset, MAXIMUM_TEXT_FRAME_BYTES)
+    while len(collected) < limit:
+        raw = stream.read(1)
+        if not raw or raw[0] not in {9, 10, 13} | set(range(32, 127)):
+            break
+        collected.extend(raw)
+    if not collected.startswith(b"<start>\r\n"):
+        raise RezError(f"config block absent at exact offset {offset}")
+    try:
+        text = collected.decode("ascii")
+    except UnicodeDecodeError as error:
+        raise RezError(f"non-ASCII config block at {offset}") from error
+    lines = text.replace("\r\n", "\n").split("\n")
+    index = block_count = pair_count = 0
+    while index < len(lines):
+        while index < len(lines) and lines[index] == "":
+            index += 1
+        if index >= len(lines):
+            break
+        if lines[index] != "<start>":
+            raise RezError(f"invalid config start line at {offset}: {lines[index]!r}")
+        index += 1
+        block_pairs = 0
+        while index < len(lines) and lines[index] != "<end>":
+            line = lines[index]
+            if "=" not in line:
+                raise RezError(f"invalid config key/value at {offset}: {line!r}")
+            key, value = line.split("=", 1)
+            if (
+                not key
+                or not all(character.isalnum() or character == "_" for character in key)
+                or not value
+            ):
+                raise RezError(f"invalid config key/value at {offset}: {line!r}")
+            block_pairs += 1
+            pair_count += 1
+            index += 1
+        if index >= len(lines) or block_pairs == 0:
+            raise RezError(f"unterminated/empty config block at {offset}")
+        index += 1
+        block_count += 1
+    if block_count == 0:
+        raise RezError(f"empty config sequence at {offset}")
+    size = len(collected)
+    return {
+        "offset": offset,
+        "bytes": size,
+        "sha256": hashlib.sha256(collected).hexdigest(),
+        "blocks": block_count,
+        "key_value_pairs": pair_count,
+        "encoding": "ascii",
+        "line_endings": "CRLF" if b"\r\n" in collected else "LF",
+    }
+
+
+def read_ascii_prefix(stream: BinaryIO, offset: int, region_end: int) -> bytes:
+    stream.seek(offset)
+    collected = bytearray()
+    limit = min(region_end - offset, MAXIMUM_TEXT_FRAME_BYTES)
+    allowed = {9, 10, 13} | set(range(32, 127))
+    while len(collected) < limit:
+        raw = stream.read(1)
+        if not raw or raw[0] not in allowed:
+            break
+        collected.extend(raw)
+    if len(collected) == limit and offset + len(collected) < region_end:
+        raise RezError(f"ASCII frame exceeds safety limit at {offset}")
+    return bytes(collected)
+
+
+def parse_ini(stream: BinaryIO, offset: int, region_end: int) -> dict[str, object]:
+    """Parse a complete printable INI frame ending at the next binary frame."""
+    collected = read_ascii_prefix(stream, offset, region_end)
+    try:
+        text = collected.decode("ascii")
+    except UnicodeDecodeError as error:
+        raise RezError(f"non-ASCII INI at {offset}") from error
+    section_count = pair_count = 0
+    in_section = False
+    for raw_line in text.replace("\r\n", "\n").split("\n"):
+        line = raw_line.strip()
+        if not line or line.startswith((";", "#")):
+            continue
+        if line.startswith("[") and line.endswith("]") and len(line) > 2:
+            section_count += 1
+            in_section = True
+            continue
+        if not in_section or "=" not in line or not line.split("=", 1)[0].strip():
+            raise RezError(f"invalid INI line at {offset}: {raw_line!r}")
+        pair_count += 1
+    if section_count == 0 or pair_count == 0:
+        raise RezError(f"empty INI structure at {offset}")
+    return {
+        "offset": offset,
+        "bytes": len(collected),
+        "sha256": hashlib.sha256(collected).hexdigest(),
+        "sections": section_count,
+        "key_value_pairs": pair_count,
+        "encoding": "ascii",
+    }
+
+
+def parse_ascii_web_bundle(
+    stream: BinaryIO, offset: int, region_end: int
+) -> dict[str, object]:
+    """Preserve one printable web bundle bounded by the next exact binary frame."""
+    collected = read_ascii_prefix(stream, offset, region_end)
+    jquery_bundle = (
+        collected.startswith(b"/*! jQuery ")
+        and b"jQuery" in collected
+        and b"jquery.org/license" in collected[:256]
+    )
+    css_script_bundle = (
+        collected.startswith((b"body{", b"body {"))
+        and b"background" in collected
+        and b"function " in collected
+        and collected.count(b"{") == collected.count(b"}")
+    )
+    css_overlay = (
+        collected.startswith(b"//.overlay{")
+        and b".overlay" in collected
+        and b"@media" in collected
+        and collected.count(b"{") == collected.count(b"}")
+    )
+    if len(collected) < 100 or not (jquery_bundle or css_script_bundle or css_overlay):
+        raise RezError(f"unsupported ASCII web bundle at {offset}")
+    next_offset = offset + len(collected)
+    stream.seek(next_offset)
+    next_prefix = stream.read(DTX_HEADER_BYTES)
+    next_kind = prefix_kind(next_prefix)
+    if next_kind is None:
+        raise RezError(f"web bundle has no exact supported successor at {next_offset}")
+    return {
+        "offset": offset,
+        "bytes": len(collected),
+        "sha256": hashlib.sha256(collected).hexdigest(),
+        "encoding": "ascii",
+        "bundle_kind": (
+            "jquery"
+            if jquery_bundle
+            else "css_and_script"
+            if css_script_bundle
+            else "css_overlay"
+        ),
+        "next_frame_kind": next_kind,
+    }
+
+
+def parse_cfb(stream: BinaryIO, offset: int, region_end: int) -> dict[str, object]:
+    """Derive an OLE CFB boundary from its DIFAT/FAT allocation tables."""
+    if offset < 0 or offset + 512 > region_end:
+        raise RezError(f"truncated CFB header at {offset}")
+    stream.seek(offset)
+    header = stream.read(512)
+    if header[:8] != CFB_SIGNATURE:
+        raise RezError(f"CFB signature absent at exact offset {offset}")
+    minor, major, byte_order, sector_shift, mini_shift = struct.unpack_from(
+        "<5H", header, 24
+    )
+    if major not in {3, 4} or byte_order != 0xFFFE:
+        raise RezError(f"unsupported CFB version/byte order at {offset}")
+    if sector_shift != (9 if major == 3 else 12) or mini_shift != 6:
+        raise RezError(f"invalid CFB sector shifts at {offset}")
+    if any(header[34:40]):
+        raise RezError(f"non-zero CFB reserved header bytes at {offset}")
+    sector_size = 1 << sector_shift
+    if offset + sector_size > region_end:
+        raise RezError(f"CFB header sector crosses REZ boundary at {offset}")
+    if major == 4:
+        stream.seek(offset + 512)
+        if any(stream.read(sector_size - 512)):
+            raise RezError(f"non-zero CFB v4 header padding at {offset}")
+    directory_sectors, fat_sector_count, first_directory = struct.unpack_from(
+        "<III", header, 40
+    )
+    mini_cutoff, first_mini_fat, mini_fat_count, first_difat, difat_count = (
+        struct.unpack_from("<IIIII", header, 56)
+    )
+    if major == 3 and directory_sectors != 0:
+        raise RezError(f"CFB v3 directory sector count must be zero at {offset}")
+    if fat_sector_count == 0 or mini_cutoff != 0x1000:
+        raise RezError(f"invalid CFB FAT count/cutoff at {offset}")
+    difat = [value for value in struct.unpack_from("<109I", header, 76) if value != CFB_FREE]
+    difat_sector_ids: list[int] = []
+    next_difat = first_difat
+    for index in range(difat_count):
+        if next_difat > 0xFFFFFFFA:
+            raise RezError(f"invalid CFB DIFAT chain at {offset}")
+        sector_offset = offset + (next_difat + 1) * sector_size
+        if sector_offset + sector_size > region_end:
+            raise RezError(f"CFB DIFAT sector crosses REZ boundary at {offset}")
+        stream.seek(sector_offset)
+        values = struct.unpack(f"<{sector_size // 4}I", stream.read(sector_size))
+        difat.extend(value for value in values[:-1] if value != CFB_FREE)
+        difat_sector_ids.append(next_difat)
+        next_difat = values[-1]
+        if index == difat_count - 1 and next_difat != CFB_END:
+            raise RezError(f"unterminated CFB DIFAT chain at {offset}")
+    if difat_count == 0 and first_difat != CFB_END:
+        raise RezError(f"unexpected CFB DIFAT start at {offset}")
+    if len(difat) != fat_sector_count or len(set(difat)) != len(difat):
+        raise RezError(f"CFB DIFAT/FAT count mismatch at {offset}")
+    fat_entries: list[int] = []
+    for sector_id in difat:
+        if sector_id > 0xFFFFFFFA:
+            raise RezError(f"invalid CFB FAT sector id at {offset}")
+        sector_offset = offset + (sector_id + 1) * sector_size
+        if sector_offset + sector_size > region_end:
+            raise RezError(f"CFB FAT sector crosses REZ boundary at {offset}")
+        stream.seek(sector_offset)
+        fat_entries.extend(struct.unpack(f"<{sector_size // 4}I", stream.read(sector_size)))
+    allocated = [index for index, value in enumerate(fat_entries) if value != CFB_FREE]
+    if not allocated:
+        raise RezError(f"CFB contains no allocated sectors at {offset}")
+    last_sector = allocated[-1]
+    for index in allocated:
+        value = fat_entries[index]
+        if value <= 0xFFFFFFFA and value > last_sector:
+            raise RezError(f"CFB FAT points beyond allocated extent at {offset}")
+    for sector_id in difat:
+        if sector_id > last_sector or fat_entries[sector_id] != CFB_FAT:
+            raise RezError(f"CFB FAT sector is not self-marked at {offset}")
+    for sector_id in difat_sector_ids:
+        if sector_id > last_sector or fat_entries[sector_id] != CFB_DIFAT:
+            raise RezError(f"CFB DIFAT sector is not self-marked at {offset}")
+    for sector_id in (first_directory,):
+        if sector_id > last_sector:
+            raise RezError(f"CFB directory starts beyond allocated extent at {offset}")
+    if mini_fat_count and first_mini_fat > last_sector:
+        raise RezError(f"CFB mini FAT starts beyond allocated extent at {offset}")
+    size = (last_sector + 2) * sector_size
+    if offset + size > region_end:
+        raise RezError(f"CFB allocation crosses REZ data boundary at {offset}")
+    return {
+        "offset": offset,
+        "bytes": size,
+        "sha256": hash_region(stream, offset, size),
+        "minor_version": minor,
+        "major_version": major,
+        "sector_size": sector_size,
+        "allocated_sectors": len(allocated),
+        "last_allocated_sector": last_sector,
+        "fat_sectors": fat_sector_count,
+        "difat_sectors": difat_count,
+        "mini_fat_sectors": mini_fat_count,
+    }
+
+
+def parse_mp4(stream: BinaryIO, offset: int, region_end: int) -> dict[str, object]:
+    """Parse a complete ISO BMFF/MP4 top-level box chain at an exact offset."""
+    position = offset
+    box_count = 0
+    box_counts: Counter[str] = Counter()
+    while position + 8 <= region_end:
+        stream.seek(position)
+        header = stream.read(16)
+        size32, box_type = struct.unpack_from(">I4s", header)
+        if box_type not in MP4_TOP_LEVEL_BOXES:
+            break
+        if box_type == b"ftyp" and box_count > 0:
+            break
+        header_bytes = 8
+        if size32 == 1:
+            if len(header) < 16:
+                raise RezError(f"truncated MP4 extended box header at {position}")
+            box_size = struct.unpack_from(">Q", header, 8)[0]
+            header_bytes = 16
+        elif size32 == 0:
+            raise RezError(f"unbounded MP4 box is not accepted at {position}")
+        else:
+            box_size = size32
+        if box_size < header_bytes or position + box_size > region_end:
+            raise RezError(f"invalid MP4 box size at {position}: {box_size}")
+        if box_count == 0:
+            if box_type != b"ftyp" or box_size < 16:
+                raise RezError(f"MP4 does not begin with a valid ftyp at {offset}")
+            stream.seek(position + header_bytes)
+            major_brand = stream.read(4)
+            if len(major_brand) != 4 or not all(32 <= byte < 127 for byte in major_brand):
+                raise RezError(f"invalid MP4 major brand at {offset}")
+        box_counts[box_type.decode("ascii")] += 1
+        box_count += 1
+        position += box_size
+    if box_count == 0 or not box_counts["ftyp"] or not box_counts["moov"] or not box_counts["mdat"]:
+        raise RezError(f"incomplete MP4 top-level structure at {offset}")
+    size = position - offset
+    return {
+        "offset": offset,
+        "bytes": size,
+        "sha256": hash_region(stream, offset, size),
+        "box_count": box_count,
+        "box_counts": dict(sorted(box_counts.items())),
+    }
+
+
+def read_ebml_vint(
+    stream: BinaryIO, position: int, region_end: int, *, element_id: bool
+) -> tuple[int, int]:
+    if position >= region_end:
+        raise RezError(f"truncated EBML VINT at {position}")
+    stream.seek(position)
+    first_raw = stream.read(1)
+    if not first_raw or first_raw[0] == 0:
+        raise RezError(f"invalid EBML VINT at {position}")
+    first = first_raw[0]
+    length = 1
+    mask = 0x80
+    while not first & mask:
+        length += 1
+        mask >>= 1
+    if length > 8 or position + length > region_end:
+        raise RezError(f"invalid EBML VINT length at {position}: {length}")
+    rest = stream.read(length - 1)
+    if len(rest) != length - 1:
+        raise RezError(f"truncated EBML VINT at {position}")
+    if element_id:
+        value = int.from_bytes(first_raw + rest, "big")
+    else:
+        value = first & (mask - 1)
+        for byte in rest:
+            value = (value << 8) | byte
+        if value == (1 << (7 * length)) - 1:
+            raise RezError(f"unknown-size EBML element is not accepted at {position}")
+    return value, length
+
+
+def parse_webm(stream: BinaryIO, offset: int, region_end: int) -> dict[str, object]:
+    """Parse an EBML Header plus one explicitly sized Matroska/WebM Segment."""
+    header_id, header_id_bytes = read_ebml_vint(stream, offset, region_end, element_id=True)
+    if header_id != EBML_HEADER_ID:
+        raise RezError(f"EBML signature absent at exact offset {offset}")
+    header_size, header_size_bytes = read_ebml_vint(
+        stream, offset + header_id_bytes, region_end, element_id=False
+    )
+    header_payload = offset + header_id_bytes + header_size_bytes
+    if header_size > 1024 * 1024 or header_payload + header_size > region_end:
+        raise RezError(f"invalid EBML header size at {offset}: {header_size}")
+    stream.seek(header_payload)
+    header_data = stream.read(header_size)
+    if b"webm" not in header_data.lower() and b"matroska" not in header_data.lower():
+        raise RezError(f"EBML DocType is not WebM/Matroska at {offset}")
+    segment_offset = header_payload + header_size
+    segment_id, segment_id_bytes = read_ebml_vint(
+        stream, segment_offset, region_end, element_id=True
+    )
+    if segment_id != EBML_SEGMENT_ID:
+        raise RezError(f"Matroska Segment absent after EBML header at {segment_offset}")
+    segment_size, segment_size_bytes = read_ebml_vint(
+        stream, segment_offset + segment_id_bytes, region_end, element_id=False
+    )
+    end = segment_offset + segment_id_bytes + segment_size_bytes + segment_size
+    if end > region_end:
+        raise RezError(f"Matroska Segment crosses REZ boundary at {offset}")
+    size = end - offset
+    return {
+        "offset": offset,
+        "bytes": size,
+        "sha256": hash_region(stream, offset, size),
+        "doctype": "webm" if b"webm" in header_data.lower() else "matroska",
+        "ebml_header_bytes": header_size,
+        "segment_bytes": segment_size,
+    }
+
+
 def copy_verified_region(
     source: Path, offset: int, size: int, expected_sha256: str, destination: Path
 ) -> str:
@@ -179,7 +863,7 @@ def copy_verified_region(
             or destination.stat().st_size != size
             or sha256_file(destination) != expected_sha256
         ):
-            raise RezError(f"existing PNG prefix output differs: {destination}")
+            raise RezError(f"existing framed-resource output differs: {destination}")
         return "verified_existing"
     with source.open("rb") as input_stream, tempfile.NamedTemporaryFile(
         dir=destination.parent, prefix=".partial-", delete=False
@@ -201,9 +885,100 @@ def copy_verified_region(
             raise
     if digest.hexdigest() != expected_sha256:
         temporary.unlink(missing_ok=True)
-        raise RezError(f"copied PNG hash mismatch at {offset}")
+        raise RezError(f"copied framed-resource hash mismatch at {offset}")
     os.replace(temporary, destination)
     return "recovered"
+
+
+def write_verified_bytes(destination: Path, data: bytes) -> str:
+    digest = hashlib.sha256(data).hexdigest()
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    if destination.exists():
+        if (
+            not destination.is_file()
+            or destination.stat().st_size != len(data)
+            or sha256_file(destination) != digest
+        ):
+            raise RezError(f"existing converted frame differs: {destination}")
+        return "verified_existing"
+    destination.write_bytes(data)
+    if sha256_file(destination) != digest:
+        raise RezError(f"converted frame hash mismatch: {destination}")
+    return "converted"
+
+
+def converted_png(source: Path, kind: str) -> tuple[bytes, dict[str, object]]:
+    data = source.read_bytes()
+    if kind == "dtx":
+        png, details = decode_dtx(data)
+        return png, {"converter": "decode_dtx", **details}
+    try:
+        with Image.open(source) as image:
+            image.load()
+            converted = image.convert("RGBA")
+            with tempfile.SpooledTemporaryFile(max_size=16 * 1024 * 1024) as stream:
+                converted.save(stream, format="PNG", optimize=False)
+                stream.seek(0)
+                return stream.read(), {
+                    "converter": "Pillow",
+                    "width": converted.width,
+                    "height": converted.height,
+                    "mode": "RGBA",
+                }
+    except Exception as error:
+        raise RezError(f"Pillow failed to convert {kind}: {source}") from error
+
+
+def prefix_kind(prefix: bytes) -> str | None:
+    if prefix.startswith(PNG_SIGNATURE):
+        return "png"
+    if prefix.startswith(DDS_MAGIC):
+        return "dds"
+    if prefix[:6] in GIF_SIGNATURES:
+        return "gif"
+    if prefix.startswith(JPEG_SIGNATURE):
+        return "jpeg"
+    if len(prefix) >= 16 and prefix[4:8] == b"ftyp":
+        return "mp4"
+    if prefix.startswith(EBML_SIGNATURE):
+        return "webm"
+    if prefix.startswith(CFB_SIGNATURE):
+        return "cfb"
+    if prefix.startswith(b"<start>\r\n") or prefix.startswith(b"<start>\n"):
+        return "config"
+    if prefix.startswith(b"/*! jQuery "):
+        return "web_bundle"
+    if prefix.startswith((b"body{", b"body {")):
+        return "web_bundle"
+    if prefix.startswith(b"//.overlay{"):
+        return "web_bundle"
+    if prefix.startswith(b"[") and b"]" in prefix[:128] and b"=" in prefix[:256]:
+        return "ini"
+    if len(prefix) >= 18:
+        id_length, color_map_type, image_type = struct.unpack_from("<BBB", prefix)
+        width, height = struct.unpack_from("<HH", prefix, 12)
+        if (
+            color_map_type == 0
+            and image_type in {2, 3, 10, 11}
+            and width
+            and height
+            and prefix[16] in {8, 24, 32}
+        ):
+            return "tga"
+    if len(prefix) >= DTX_HEADER_BYTES:
+        resource_type, version = struct.unpack_from("<ii", prefix)
+        width, height, mipmaps, sections = struct.unpack_from("<HHHH", prefix, 8)
+        if (
+            resource_type in {0, 1}
+            and version == -5
+            and width
+            and height
+            and 1 <= mipmaps <= 32
+            and sections == 0
+            and prefix[26] in {3, 4, 5, 6}
+        ):
+            return "dtx"
+    return None
 
 
 def recover_framed_prefix(
@@ -216,18 +991,52 @@ def recover_framed_prefix(
     with source.open("rb") as stream:
         while position + 4 <= region_end:
             stream.seek(position)
-            signature = stream.read(len(PNG_SIGNATURE))
-            if signature == PNG_SIGNATURE:
+            prefix = stream.read(DTX_HEADER_BYTES)
+            kind = prefix_kind(prefix)
+            if kind == "png":
                 record = parse_png(stream, position, region_end)
-                kind = "png"
                 representation = "private_rez_crc_valid_png_frame"
-            elif signature[:4] == DDS_MAGIC:
+            elif kind == "dds":
                 record = parse_dds(stream, position, region_end)
-                kind = "dds"
                 representation = "private_rez_header_sized_dds_frame"
+            elif kind == "tga":
+                record = parse_tga(stream, position, region_end)
+                representation = "private_rez_packet_sized_tga_frame"
+            elif kind == "dtx":
+                record = parse_dtx(stream, position, region_end)
+                representation = "private_rez_header_sized_dtx_frame"
+            elif kind == "gif":
+                record = parse_gif(stream, position, region_end)
+                representation = "private_rez_block_complete_gif_frame"
+            elif kind == "jpeg":
+                record = parse_jpeg(stream, position, region_end)
+                representation = "private_rez_marker_complete_jpeg_frame"
+            elif kind == "config":
+                record = parse_start_end_config(stream, position, region_end)
+                representation = "private_rez_structured_ascii_config_frame"
+            elif kind == "cfb":
+                record = parse_cfb(stream, position, region_end)
+                representation = "private_rez_fat_sized_cfb_frame"
+            elif kind == "ini":
+                record = parse_ini(stream, position, region_end)
+                representation = "private_rez_structured_ascii_ini_frame"
+            elif kind == "web_bundle":
+                record = parse_ascii_web_bundle(stream, position, region_end)
+                representation = "private_rez_binary_bounded_ascii_web_bundle"
+            elif kind == "mp4":
+                record = parse_mp4(stream, position, region_end)
+                representation = "private_rez_box_sized_mp4_frame"
+            elif kind == "webm":
+                record = parse_webm(stream, position, region_end)
+                representation = "private_rez_vint_sized_webm_frame"
             else:
                 break
-            destination = base / f"{kind}-{len(records):05d}.{kind}"
+            extension = {
+                "jpeg": "jpg",
+                "config": "txt",
+                "web_bundle": "txt",
+            }.get(str(kind), str(kind))
+            destination = base / f"{kind}-{len(records):05d}.{extension}"
             status = copy_verified_region(
                 source,
                 int(record["offset"]),
@@ -242,11 +1051,31 @@ def recover_framed_prefix(
                 "representation": representation,
                 "status": status,
             }
+            record_outputs = [output_record]
+            if kind in {"tga", "dtx"}:
+                png, conversion = converted_png(destination, str(kind))
+                converted_destination = base / f"converted-{len(records):05d}.png"
+                converted_status = write_verified_bytes(converted_destination, png)
+                converted_output = {
+                    "path": str(converted_destination.relative_to(output)),
+                    "bytes": len(png),
+                    "sha256": hashlib.sha256(png).hexdigest(),
+                    "representation": f"private_rez_{kind}_frame_to_png",
+                    "status": converted_status,
+                }
+                record["conversion"] = conversion
+                record_outputs.append(converted_output)
             record.update(
-                {"index": len(records), "kind": kind, "status": status, "output": output_record}
+                {
+                    "index": len(records),
+                    "kind": kind,
+                    "status": status,
+                    "output": output_record,
+                    "outputs": record_outputs,
+                }
             )
             records.append(record)
-            outputs.append(output_record)
+            outputs.extend(record_outputs)
             position += int(record["bytes"])
     if not records:
         raise RezError(f"no supported framed prefix at REZ data offset: {source}")
@@ -261,7 +1090,7 @@ def recover_framed_prefix(
             "bytes": region_end - position,
             "prefix_hex": sample[:32].hex(),
             "sample_entropy": entropy(sample),
-            "status": "non_png_suffix_preserved",
+            "status": "unsupported_suffix_preserved",
             "interpretation": (
                 "recovery stopped at the first exact unsupported byte; no signature search "
                 "or carving was performed"
@@ -289,8 +1118,8 @@ def main() -> int:
         header = parse_rez_header(source)
         with source.open("rb") as stream:
             stream.seek(header["data_offset"])
-            prefix = stream.read(len(PNG_SIGNATURE))
-        if prefix != PNG_SIGNATURE:
+            prefix = stream.read(DTX_HEADER_BYTES)
+        if prefix_kind(prefix) is None:
             continue
         actual_sha256 = sha256_file(source)
         if actual_sha256 != sample["sha256"]:
@@ -311,7 +1140,7 @@ def main() -> int:
     manifest = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "tool": "tools/recover_private_rez_framed_prefix.py",
-        "tool_version": "1",
+        "tool_version": "6",
         "workspace": str(workspace),
         "root_inventory_sha256": index["inventory_sha256"],
         "safety": {
@@ -320,7 +1149,16 @@ def main() -> int:
             "sequential_from_data_offset_only": True,
             "signature_search_or_carving": False,
             "png_crc_required": True,
-            "dds_header_sized_payload_required": True,
+            "dds_dtx_header_sized_payload_required": True,
+            "tga_pixel_or_rle_packet_accounting_required": True,
+            "gif_sub_block_and_trailer_required": True,
+            "jpeg_marker_and_eoi_required": True,
+            "config_start_end_grammar_required": True,
+            "cfb_difat_fat_extent_required": True,
+            "ini_grammar_required": True,
+            "web_bundle_printable_and_binary_successor_required": True,
+            "mp4_top_level_box_chain_required": True,
+            "webm_ebml_header_and_sized_segment_required": True,
             "outputs_isolated_by_source_hash": True,
         },
         "archives": archives,
@@ -345,6 +1183,32 @@ def main() -> int:
                 for item in all_outputs
                 if item["representation"] == "private_rez_header_sized_dds_frame"
             ),
+            "framed_resources": sum(len(item["resources"]) for item in archives),
+            "resource_kind_counts": dict(
+                sorted(
+                    Counter(
+                        str(resource["kind"])
+                        for archive in archives
+                        for resource in archive["resources"]
+                    ).items()
+                )
+            ),
+            "raw_frame_bytes": sum(
+                int(resource["bytes"])
+                for archive in archives
+                for resource in archive["resources"]
+            ),
+            "converted_png_images": sum(
+                item["representation"].endswith("_frame_to_png")
+                for item in all_outputs
+            ),
+            "converted_png_bytes": sum(
+                int(item["bytes"])
+                for item in all_outputs
+                if item["representation"].endswith("_frame_to_png")
+            ),
+            "outputs": len(all_outputs),
+            "output_bytes": sum(int(item["bytes"]) for item in all_outputs),
             "trailing_bytes_preserved": sum(
                 int(item["trailing_region"]["bytes"]) for item in archives
             ),
