@@ -305,6 +305,9 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
         suffix = b"UNSUPPORTED"
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
+            peers = root / "RF164"
+            peers.mkdir()
+            (peers / "map.DAT").write_bytes(frame)
             source = root / "RF164.REZ"
             data = bytearray(168)
             data.extend(frame + suffix)
@@ -319,14 +322,83 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
                 hashlib.sha256(data).hexdigest(),
                 root_offset,
                 root / "out",
+                peer_root=peers,
             )
             self.assertEqual(
                 [item["kind"] for item in result["resources"]],
                 ["lithtech_world"],
             )
+            self.assertEqual(result["resources"][0]["peer_paths"], ["map.DAT"])
             recovered = root / "out" / result["outputs"][0]["path"]
             self.assertEqual(recovered.read_bytes(), frame)
             self.assertEqual(result["trailing_region"]["bytes"], len(suffix))
+
+    def test_recovers_unambiguous_exact_loose_peer_chain(self):
+        first = b"A" * 24
+        second = b"B" * 3
+        suffix = b"UNSUPPORTED" + first
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            peers = root / "RB001"
+            (peers / "REZ" / "BUTES").mkdir(parents=True)
+            (peers / "REZ" / "BUTES" / "first.DAT").write_bytes(first)
+            (peers / "REZ" / "BUTES" / "first-alias.DAT").write_bytes(first)
+            (peers / "REZ" / "BUTES" / "second.LTC").write_bytes(second)
+            source = root / "RB001.REZ"
+            data = bytearray(168)
+            data.extend(first + second + suffix)
+            root_offset = len(data)
+            data.extend(bytes(24))
+            data[:2] = b"\r\n"
+            data[126] = 0x1A
+            struct.pack_into("<III", data, 127, 1, root_offset, 24)
+            source.write_bytes(data)
+            result = recover_framed_prefix(
+                source,
+                hashlib.sha256(data).hexdigest(),
+                root_offset,
+                root / "out",
+                peer_root=peers,
+            )
+            self.assertEqual(
+                [item["kind"] for item in result["resources"]],
+                ["exact_peer", "exact_peer"],
+            )
+            self.assertEqual(result["resources"][0]["peer_count"], 2)
+            self.assertEqual(
+                result["resources"][0]["peer_paths"],
+                ["REZ/BUTES/first-alias.DAT", "REZ/BUTES/first.DAT"],
+            )
+            outputs = [root / "out" / item["path"] for item in result["outputs"]]
+            self.assertEqual([item.read_bytes() for item in outputs], [first, second])
+            self.assertEqual(result["trailing_region"]["bytes"], len(suffix))
+
+    def test_rejects_ambiguous_exact_peer_lengths(self):
+        short = b"X" * 20
+        long = short + b"Y" * 8
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            peers = root / "RB001"
+            peers.mkdir()
+            (peers / "short.DAT").write_bytes(short)
+            (peers / "long.DAT").write_bytes(long)
+            source = root / "RB001.REZ"
+            data = bytearray(168)
+            data.extend(long)
+            root_offset = len(data)
+            data.extend(bytes(24))
+            data[:2] = b"\r\n"
+            data[126] = 0x1A
+            struct.pack_into("<III", data, 127, 1, root_offset, 24)
+            source.write_bytes(data)
+            with self.assertRaisesRegex(RezError, "ambiguous exact loose-peer lengths"):
+                recover_framed_prefix(
+                    source,
+                    hashlib.sha256(data).hexdigest(),
+                    root_offset,
+                    root / "out",
+                    peer_root=peers,
+                )
 
     def test_recovers_mixed_media_and_converts_tga_dtx(self):
         frames = [

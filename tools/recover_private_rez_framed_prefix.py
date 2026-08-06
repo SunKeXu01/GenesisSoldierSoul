@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Recover a contiguous chain of strictly framed media from private REZ.
+"""Recover a contiguous chain of strictly bounded resources from private REZ.
 
 Parsing always starts at the fixed REZ data offset and stops at the first
 unsupported byte.  It never searches for a later signature.  Supported frames
-have self-proving boundaries: CRC-valid PNG, header-sized DDS/DTX, complete
-TGA (including RLE packet accounting), block-complete GIF, and marker-complete
-JPEG.
+have self-proving boundaries or byte-identical loose peers: CRC-valid PNG,
+header-sized DDS/DTX, complete TGA (including RLE packet accounting),
+block-complete GIF, marker-complete JPEG, LithTech world v85, and an
+unambiguous chain of exact loose-file matches.
 """
 
 from __future__ import annotations
@@ -68,6 +69,7 @@ LITHTECH_RENDER_VERTEX_BYTES = 68
 MAXIMUM_WORLD_ITEMS = 10_000_000
 MAXIMUM_WORLD_STRING_BYTES = 4096
 MAXIMUM_WORLD_RECURSION = 64
+EXACT_PEER_PREFIX_BYTES = 16
 
 
 def hash_region(stream: BinaryIO, offset: int, size: int) -> str:
@@ -81,6 +83,114 @@ def hash_region(stream: BinaryIO, offset: int, size: int) -> str:
         digest.update(data)
         remaining -= len(data)
     return digest.hexdigest()
+
+
+def index_exact_peers(peer_root: Path) -> dict[str, object]:
+    """Index safe regular loose files by prefix without trusting their names."""
+    buckets: dict[bytes, list[dict[str, object]]] = {}
+    short: list[dict[str, object]] = []
+    ignored_symlinks = 0
+    for directory, directories, filenames in os.walk(peer_root, followlinks=False):
+        base = Path(directory)
+        safe_directories = []
+        for name in sorted(directories):
+            path = base / name
+            if path.is_symlink():
+                ignored_symlinks += 1
+            else:
+                safe_directories.append(name)
+        directories[:] = safe_directories
+        for name in sorted(filenames):
+            path = base / name
+            if path.is_symlink():
+                ignored_symlinks += 1
+                continue
+            size = path.stat().st_size
+            if size <= 0:
+                continue
+            with path.open("rb") as stream:
+                prefix = stream.read(EXACT_PEER_PREFIX_BYTES)
+            record = {
+                "path": path,
+                "relative_path": path.relative_to(peer_root).as_posix(),
+                "bytes": size,
+                "prefix": prefix,
+            }
+            if size < EXACT_PEER_PREFIX_BYTES:
+                short.append(record)
+            else:
+                buckets.setdefault(prefix, []).append(record)
+    return {
+        "root": peer_root,
+        "buckets": buckets,
+        "short": short,
+        "files": sum(len(items) for items in buckets.values()) + len(short),
+        "ignored_symlinks": ignored_symlinks,
+    }
+
+
+def exact_peer_sha256(
+    source: BinaryIO, offset: int, region_end: int, peer: dict[str, object]
+) -> str | None:
+    """Return the shared hash only when the peer exactly matches this span."""
+    size = int(peer["bytes"])
+    if offset + size > region_end:
+        return None
+    source.seek(offset)
+    digest = hashlib.sha256()
+    remaining = size
+    with Path(peer["path"]).open("rb") as peer_stream:
+        while remaining:
+            source_data = source.read(min(CHUNK_SIZE, remaining))
+            peer_data = peer_stream.read(len(source_data))
+            if not source_data or source_data != peer_data:
+                return None
+            digest.update(source_data)
+            remaining -= len(source_data)
+        if peer_stream.read(1):
+            raise RezError(f"exact peer grew while reading: {peer['relative_path']}")
+    return digest.hexdigest()
+
+
+def match_exact_peer(
+    source: BinaryIO,
+    offset: int,
+    region_end: int,
+    peer_index: dict[str, object],
+) -> dict[str, object] | None:
+    """Match one exact loose peer at an exact offset, rejecting length ambiguity."""
+    source.seek(offset)
+    prefix = source.read(min(EXACT_PEER_PREFIX_BYTES, region_end - offset))
+    candidates = list(peer_index["buckets"].get(prefix, []))
+    candidates.extend(
+        peer
+        for peer in peer_index["short"]
+        if prefix.startswith(bytes(peer["prefix"]))
+    )
+    matches: list[tuple[dict[str, object], str]] = []
+    for peer in candidates:
+        digest = exact_peer_sha256(source, offset, region_end, peer)
+        if digest is not None:
+            matches.append((peer, digest))
+    if not matches:
+        return None
+    lengths = sorted({int(peer["bytes"]) for peer, _ in matches})
+    if len(lengths) != 1:
+        raise RezError(
+            f"ambiguous exact loose-peer lengths at {offset}: "
+            + ", ".join(str(value) for value in lengths)
+        )
+    digests = {digest for _, digest in matches}
+    if len(digests) != 1:
+        raise RezError(f"exact peers disagree at {offset} despite equal lengths")
+    aliases = sorted(str(peer["relative_path"]) for peer, _ in matches)
+    return {
+        "offset": offset,
+        "bytes": lengths[0],
+        "sha256": next(iter(digests)),
+        "peer_paths": aliases,
+        "peer_count": len(aliases),
+    }
 
 
 def parse_png(stream: BinaryIO, offset: int, region_end: int) -> dict[str, object]:
@@ -1269,14 +1379,19 @@ def prefix_kind(prefix: bytes) -> str | None:
 
 
 def recover_framed_prefix(
-    source: Path, source_sha256: str, region_end: int, output: Path
+    source: Path,
+    source_sha256: str,
+    region_end: int,
+    output: Path,
+    peer_root: Path | None = None,
 ) -> dict[str, object]:
     base = output / "private-rez-png-prefix" / f"{source.stem}__{source_sha256[:12]}"
     records: list[dict[str, object]] = []
     outputs: list[dict[str, object]] = []
     position = parse_rez_header(source)["data_offset"]
+    peer_index = index_exact_peers(peer_root) if peer_root is not None else None
     with source.open("rb") as stream:
-        while position + 4 <= region_end:
+        while position < region_end:
             stream.seek(position)
             prefix = stream.read(DTX_HEADER_BYTES)
             kind = prefix_kind(prefix)
@@ -1319,14 +1434,38 @@ def recover_framed_prefix(
             elif kind == "lithtech_world":
                 record = parse_lithtech_world(stream, position, region_end)
                 representation = "private_rez_strict_lithtech_world_v85_frame"
+            elif peer_index is not None:
+                record = match_exact_peer(stream, position, region_end, peer_index)
+                if record is None:
+                    break
+                kind = "exact_peer"
+                representation = "private_rez_exact_loose_peer_frame"
             else:
                 break
-            extension = {
-                "jpeg": "jpg",
-                "config": "txt",
-                "web_bundle": "txt",
-                "lithtech_world": "dat",
-            }.get(str(kind), str(kind))
+            if peer_index is not None and kind != "exact_peer":
+                peer_match = match_exact_peer(stream, position, region_end, peer_index)
+                if peer_match is not None:
+                    if (
+                        peer_match["bytes"] != record["bytes"]
+                        or peer_match["sha256"] != record["sha256"]
+                    ):
+                        raise RezError(
+                            f"self-bounded frame and exact peer disagree at {position}"
+                        )
+                    record["peer_paths"] = peer_match["peer_paths"]
+                    record["peer_count"] = peer_match["peer_count"]
+            if kind == "exact_peer":
+                extension = (
+                    Path(str(record["peer_paths"][0])).suffix.lower().lstrip(".")
+                    or "bin"
+                )
+            else:
+                extension = {
+                    "jpeg": "jpg",
+                    "config": "txt",
+                    "web_bundle": "txt",
+                    "lithtech_world": "dat",
+                }.get(str(kind), str(kind))
             destination = base / f"{kind}-{len(records):05d}.{extension}"
             status = copy_verified_region(
                 source,
@@ -1373,12 +1512,23 @@ def recover_framed_prefix(
     with source.open("rb") as stream:
         stream.seek(position)
         sample = stream.read(min(4096, region_end - position))
+        trailing_sha256 = hash_region(stream, position, region_end - position)
     return {
         "resources": records,
         "outputs": outputs,
+        "exact_peer_index": (
+            {
+                "root": str(Path(peer_index["root"])),
+                "files": peer_index["files"],
+                "ignored_symlinks": peer_index["ignored_symlinks"],
+            }
+            if peer_index is not None
+            else None
+        ),
         "trailing_region": {
             "offset": position,
             "bytes": region_end - position,
+            "sha256": trailing_sha256,
             "prefix_hex": sample[:32].hex(),
             "sample_entropy": entropy(sample),
             "status": "unsupported_suffix_preserved",
@@ -1410,13 +1560,21 @@ def main() -> int:
         with source.open("rb") as stream:
             stream.seek(header["data_offset"])
             prefix = stream.read(DTX_HEADER_BYTES)
+        peer_root = None
         if prefix_kind(prefix) is None:
-            continue
+            candidate_peer_root = source.with_suffix("")
+            if not candidate_peer_root.is_dir():
+                continue
+            peer_root = candidate_peer_root
         actual_sha256 = sha256_file(source)
         if actual_sha256 != sample["sha256"]:
             raise RezError(f"source hash mismatch: {sample['path']}")
         recovered = recover_framed_prefix(
-            source, actual_sha256, header["root_offset"], output
+            source,
+            actual_sha256,
+            header["root_offset"],
+            output,
+            peer_root=peer_root,
         )
         record = {
             "source": sample["path"],
@@ -1431,7 +1589,7 @@ def main() -> int:
     manifest = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "tool": "tools/recover_private_rez_framed_prefix.py",
-        "tool_version": "7",
+        "tool_version": "8",
         "workspace": str(workspace),
         "root_inventory_sha256": index["inventory_sha256"],
         "safety": {
@@ -1451,6 +1609,9 @@ def main() -> int:
             "mp4_top_level_box_chain_required": True,
             "webm_ebml_header_and_sized_segment_required": True,
             "lithtech_world_v85_render_tail_required": True,
+            "exact_loose_peer_byte_equality_required": True,
+            "exact_loose_peer_unique_length_required": True,
+            "loose_peer_symlinks_ignored": True,
             "outputs_isolated_by_source_hash": True,
         },
         "archives": archives,
@@ -1485,6 +1646,17 @@ def main() -> int:
                 for item in all_outputs
                 if item["representation"]
                 == "private_rez_strict_lithtech_world_v85_frame"
+            ),
+            "exact_peer_resources": sum(
+                "peer_paths" in resource
+                for archive in archives
+                for resource in archive["resources"]
+            ),
+            "exact_peer_bytes": sum(
+                int(resource["bytes"])
+                for archive in archives
+                for resource in archive["resources"]
+                if "peer_paths" in resource
             ),
             "framed_resources": sum(len(item["resources"]) for item in archives),
             "resource_kind_counts": dict(

@@ -1815,6 +1815,16 @@ def audit_private_rez_supplements(repo: Path, output: Path) -> dict[str, Any]:
                 if framed_prefix is not None
                 else 0
             ),
+            "rez_framed_prefix_exact_peer_resources": (
+                framed_prefix["summary"].get("exact_peer_resources", 0)
+                if framed_prefix is not None
+                else 0
+            ),
+            "rez_framed_prefix_exact_peer_bytes": (
+                framed_prefix["summary"].get("exact_peer_bytes", 0)
+                if framed_prefix is not None
+                else 0
+            ),
             "rez_framed_prefix_converted_png_images": (
                 framed_prefix["summary"].get("converted_png_images", 0)
                 if framed_prefix is not None
@@ -1867,7 +1877,7 @@ def markdown(report: dict[str, Any]) -> str:
             "",
             f"- REZ：{rez['summary']['parsed_standard']} 个标准包、{rez['summary']['private_or_unsupported']} 个私有目录变体。",
             f"- 标准条目：{rez['summary']['entries']}；DTX→PNG：{rez['summary']['dtx_png']}；LTB RenderStyle 分类：{rez['summary']['ltb_classified']}。",
-            f"- 私有 REZ 内容恢复：LZMA 流 {rez['private_recovery']['summary'].get('lzma_streams', 0)}，解码字节 {rez['private_recovery']['summary'].get('decoded_bytes', 0)}；新物化输出 {rez['private_recovery']['summary'].get('materialized_outputs', 0)}；严格转换 PNG {rez['private_recovery']['summary'].get('png_conversions', 0)}（{json.dumps(rez['private_recovery']['summary'].get('png_kind_counts', {}), ensure_ascii=False, sort_keys=True)}）；连续帧资源 {rez['private_recovery']['summary'].get('rez_framed_prefix_resources', 0)} 个/{rez['private_recovery']['summary'].get('rez_framed_prefix_raw_bytes', 0)} 源字节（{json.dumps(rez['private_recovery']['summary'].get('rez_framed_prefix_kind_counts', {}), ensure_ascii=False, sort_keys=True)}），其中转换 PNG {rez['private_recovery']['summary'].get('rez_framed_prefix_converted_png_images', 0)} 个/{rez['private_recovery']['summary'].get('rez_framed_prefix_converted_png_bytes', 0)} 字节，保留未知尾部 {rez['private_recovery']['summary'].get('rez_framed_prefix_trailing_bytes_preserved', 0)} 字节；LTB 几何→GLB {rez['private_recovery']['summary'].get('ltb_glb_conversions', 0)}、skin 文件 {rez['private_recovery']['summary'].get('ltb_glb_skinned_files', 0)}/网格 {rez['private_recovery']['summary'].get('ltb_glb_skinned_meshes', 0)}、动画文件 {rez['private_recovery']['summary'].get('ltb_glb_animated_files', 0)}/clip {rez['private_recovery']['summary'].get('ltb_glb_animations', 0)}/关键帧 {rez['private_recovery']['summary'].get('ltb_glb_animation_keyframes', 0)}/通道 {rez['private_recovery']['summary'].get('ltb_glb_animation_channels', 0)}/morph {rez['private_recovery']['summary'].get('ltb_glb_morph_targets', 0)}、保留失败 {rez['private_recovery']['summary'].get('ltb_glb_failures', 0)}，门禁错误 {rez['private_recovery']['summary'].get('verification_errors', 0)}。",
+            f"- 私有 REZ 内容恢复：LZMA 流 {rez['private_recovery']['summary'].get('lzma_streams', 0)}，解码字节 {rez['private_recovery']['summary'].get('decoded_bytes', 0)}；新物化输出 {rez['private_recovery']['summary'].get('materialized_outputs', 0)}；严格转换 PNG {rez['private_recovery']['summary'].get('png_conversions', 0)}（{json.dumps(rez['private_recovery']['summary'].get('png_kind_counts', {}), ensure_ascii=False, sort_keys=True)}）；连续帧资源 {rez['private_recovery']['summary'].get('rez_framed_prefix_resources', 0)} 个/{rez['private_recovery']['summary'].get('rez_framed_prefix_raw_bytes', 0)} 源字节（{json.dumps(rez['private_recovery']['summary'].get('rez_framed_prefix_kind_counts', {}), ensure_ascii=False, sort_keys=True)}），其中同源 loose 精确匹配 {rez['private_recovery']['summary'].get('rez_framed_prefix_exact_peer_resources', 0)} 个/{rez['private_recovery']['summary'].get('rez_framed_prefix_exact_peer_bytes', 0)} 字节，转换 PNG {rez['private_recovery']['summary'].get('rez_framed_prefix_converted_png_images', 0)} 个/{rez['private_recovery']['summary'].get('rez_framed_prefix_converted_png_bytes', 0)} 字节，保留未知尾部 {rez['private_recovery']['summary'].get('rez_framed_prefix_trailing_bytes_preserved', 0)} 字节；LTB 几何→GLB {rez['private_recovery']['summary'].get('ltb_glb_conversions', 0)}、skin 文件 {rez['private_recovery']['summary'].get('ltb_glb_skinned_files', 0)}/网格 {rez['private_recovery']['summary'].get('ltb_glb_skinned_meshes', 0)}、动画文件 {rez['private_recovery']['summary'].get('ltb_glb_animated_files', 0)}/clip {rez['private_recovery']['summary'].get('ltb_glb_animations', 0)}/关键帧 {rez['private_recovery']['summary'].get('ltb_glb_animation_keyframes', 0)}/通道 {rez['private_recovery']['summary'].get('ltb_glb_animation_channels', 0)}/morph {rez['private_recovery']['summary'].get('ltb_glb_morph_targets', 0)}、保留失败 {rez['private_recovery']['summary'].get('ltb_glb_failures', 0)}，门禁错误 {rez['private_recovery']['summary'].get('verification_errors', 0)}。",
             f"- loose LTC：{rez['summary']['ltc_decoded']}/{rez['summary']['ltc_sources']} 个严格解码，失败 {rez['summary']['ltc_decode_failed']}；显式结束标记 {rez['summary']['ltc_end_token']}、物理 EOF 结束 {rez['summary']['ltc_physical_eof']}，输出 {rez['summary']['ltc_decoded_bytes']} 字节；同名明文样本精确匹配 {rez['summary']['ltc_plaintext_peer_exact_matches']}。",
             "",
             "## Flash / ATF",
@@ -1926,7 +1936,7 @@ def main() -> int:
     report: dict[str, Any] = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "tool": "tools/audit_special_formats.py",
-        "tool_version": "13",
+        "tool_version": "14",
         "workspace": str(workspace),
         "root_inventory_sha256": index["inventory_sha256"],
         "safety": {

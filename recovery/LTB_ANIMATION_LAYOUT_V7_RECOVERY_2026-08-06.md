@@ -21,14 +21,14 @@ layout-v7 已完整解析 321 个 CrossFire 复合 LTB 的骨骼后续区并严�
 
 ## 验证
 
-- 当前 Python 工具链：89/89。
+- 当前 Python 工具链：91/91。
 - 内建 GLB 门禁：8,721/8,721，输入/输出大小与 SHA-256 回读一致，失败 0。
 - Khronos glTF Validator `2.0.0-dev.3.10`：321/321 个复合 GLB，0 errors、0 warnings；仅 1,864 条无材质 UV 与 15 条源退化三角形 info。
-- 当前统一 provenance：13/13 清单、183,693 个输出、25,451,590,010 字节、错误 0。
+- 当前统一 provenance：13/13 清单、184,185 个输出、25,480,110,671 字节、错误 0。
 
 ## 边界
 
-glTF 已含骨骼 TRS 动画、vertex morph 动画和 string-key extras；socket、animation weight-set 混合语义与外部 child-model 运行时绑定仍只做严格审计，未伪装成标准 glTF 行为。RF164/RF266 world v85 后续已完整恢复，REZ 剩余范围已缩小为 1 个完全未知包和 4 个有精确停止证据的未知后缀。
+glTF 已含骨骼 TRS 动画、vertex morph 动画和 string-key extras；socket、animation weight-set 混合语义与外部 child-model 运行时绑定仍只做严格审计，未伪装成标准 glTF 行为。RF164/RF266 world v85 与 RB001 同源 loose 连续前缀均已恢复，REZ 已无完全未知包，剩余 5 个有精确停止证据的未知后缀。
 
 - 转换器：`tools/convert_ltb_models.py`，tool version 8，输出 `private-rez-models/layout-v7/`。
 - 回归：`tools/test_convert_ltb_models.py`，覆盖 animation tail、root binding、压缩通道、TRS、morph target/weights、skin 和法线规范化。
