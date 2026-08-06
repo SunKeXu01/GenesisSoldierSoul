@@ -11,6 +11,7 @@ from PIL import Image
 from recover_private_rez_framed_prefix import (
     PNG_SIGNATURE,
     parse_cfb,
+    parse_cfsprite,
     parse_cp949_web_bundle,
     parse_ascii_web_bundle,
     parse_ini,
@@ -201,6 +202,27 @@ def ui_layout() -> bytes:
     )
 
 
+def cfsprite(*, repeated_tick_delta: int = 0) -> bytes:
+    def text(value: str) -> bytes:
+        raw = value.encode("ascii")
+        return struct.pack("<H", len(raw)) + raw
+
+    data = bytearray(text("CFSprite"))
+    data.extend(struct.pack("<7I", 5, 9, 0, 30, 256, 64, 1))
+    data.extend(struct.pack("<I", 0))
+    data.extend(text("TestSprite"))
+    data.extend(struct.pack("<3I", 1, 1, 3))
+    data.extend(text("test.png"))
+    data.extend(text("ui/test.png"))
+    data.extend(struct.pack("<H4I2I2B", 0, 64, 64, 64, 64, 11, 0, 1, 0))
+    data.extend(struct.pack("<I", 2))
+    for tick in (0, 10):
+        data.extend(struct.pack("<3I", tick, 3, tick + repeated_tick_delta))
+        data.extend(struct.pack("<7f", 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0))
+        data.extend(struct.pack("<I4B", tick, 255, 255, 255, 0))
+    return bytes(data)
+
+
 class PrivateRezPngPrefixTests(unittest.TestCase):
     def test_parses_crc_valid_png_at_exact_offset(self):
         data = png(3, 2)
@@ -288,6 +310,24 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
         self.assertEqual(parsed["render_blocks"], 1)
         self.assertEqual(parsed["client_light_groups"], 0)
         self.assertEqual(parsed["sha256"], hashlib.sha256(data).hexdigest())
+
+    def test_parses_self_delimiting_cfsprite_v5_at_exact_offset(self):
+        data = cfsprite()
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data + png())
+            parsed = parse_cfsprite(stream, 0, len(data + png()))
+        self.assertEqual(parsed["bytes"], len(data))
+        self.assertEqual(parsed["items"], 1)
+        self.assertEqual(parsed["keyframes"], 2)
+        self.assertEqual(parsed["names"], ["TestSprite"])
+        self.assertEqual(parsed["sha256"], hashlib.sha256(data).hexdigest())
+
+    def test_rejects_cfsprite_inconsistent_keyframe_ticks(self):
+        data = cfsprite(repeated_tick_delta=1)
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data)
+            with self.assertRaisesRegex(RezError, "tick sequence"):
+                parse_cfsprite(stream, 0, len(data))
 
     def test_parses_complete_fws_and_cws_at_exact_offset(self):
         for signature, compression in ((b"FWS", "none"), (b"CWS", "zlib")):
@@ -560,6 +600,7 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
             html(),
             cp949_web_bundle(),
             png(),
+            cfsprite(),
         ]
         suffix = b"UNSUPPORTED"
         with tempfile.TemporaryDirectory() as temporary:
@@ -603,9 +644,10 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
                     "html",
                     "cp949_web_bundle",
                     "png",
+                    "cfsprite",
                 ],
             )
-            self.assertEqual(len(result["outputs"]), 24)
+            self.assertEqual(len(result["outputs"]), 25)
             self.assertEqual(result["trailing_region"]["bytes"], len(suffix))
 
 

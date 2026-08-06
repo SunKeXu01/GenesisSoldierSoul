@@ -5,7 +5,7 @@ Parsing always starts at the fixed REZ data offset and stops at the first
 unsupported byte.  It never searches for a later signature.  Supported frames
 have self-proving boundaries or byte-identical loose peers: CRC-valid PNG,
 header-sized DDS/DTX, complete TGA (including RLE packet accounting),
-block-complete GIF, marker-complete JPEG, LithTech world v85, and an
+block-complete GIF, marker-complete JPEG, LithTech world v85, CFSprite v5, and an
 unambiguous chain of exact loose-file matches.
 """
 
@@ -69,6 +69,12 @@ LITHTECH_RENDER_VERTEX_BYTES = 68
 MAXIMUM_WORLD_ITEMS = 10_000_000
 MAXIMUM_WORLD_STRING_BYTES = 4096
 MAXIMUM_WORLD_RECURSION = 64
+CFSPRITE_SIGNATURE = b"\x08\x00CFSprite"
+CFSPRITE_VERSION = 5
+CFSPRITE_SCHEMA = 9
+CFSPRITE_TICK_RATE = 30
+MAXIMUM_CFSPRITE_ITEMS = 100_000
+MAXIMUM_CFSPRITE_STRING_BYTES = 4096
 EXACT_PEER_PREFIX_BYTES = 16
 SWF_SIGNATURES = {b"FWS", b"CWS"}
 MAXIMUM_SWF_UNCOMPRESSED_BYTES = 512 * 1024 * 1024
@@ -1704,6 +1710,158 @@ def parse_lithtech_world(
     }
 
 
+class CFSpriteReader:
+    """Bounded reader for CrossFire's unaligned CFSprite v5 stream."""
+
+    def __init__(self, stream: BinaryIO, position: int, region_end: int):
+        self.stream = stream
+        self.position = position
+        self.region_end = region_end
+
+    def read(self, size: int, label: str) -> bytes:
+        if size < 0 or self.position + size > self.region_end:
+            raise RezError(f"truncated CFSprite {label} at {self.position}")
+        self.stream.seek(self.position)
+        value = self.stream.read(size)
+        if len(value) != size:
+            raise RezError(f"truncated CFSprite {label} at {self.position}")
+        self.position += size
+        return value
+
+    def u8(self, label: str) -> int:
+        return self.read(1, label)[0]
+
+    def u16(self, label: str) -> int:
+        return struct.unpack("<H", self.read(2, label))[0]
+
+    def u32(self, label: str) -> int:
+        return struct.unpack("<I", self.read(4, label))[0]
+
+    def floats(self, count: int, label: str) -> tuple[float, ...]:
+        values = struct.unpack(f"<{count}f", self.read(count * 4, label))
+        if not all(value == value and abs(value) != float("inf") for value in values):
+            raise RezError(f"non-finite CFSprite {label} at {self.position}")
+        return values
+
+    def string(self, label: str) -> str:
+        length = self.u16(f"{label} length")
+        if length == 0 or length > MAXIMUM_CFSPRITE_STRING_BYTES:
+            raise RezError(f"invalid CFSprite {label} length: {length}")
+        raw = self.read(length, label)
+        if b"\0" in raw:
+            raise RezError(f"CFSprite {label} contains an embedded NUL")
+        try:
+            value = raw.decode("ascii")
+        except UnicodeDecodeError as error:
+            raise RezError(f"non-ASCII CFSprite {label}") from error
+        if any(ord(character) < 0x20 or ord(character) == 0x7F for character in value):
+            raise RezError(f"control character in CFSprite {label}")
+        return value
+
+
+def parse_cfsprite(stream: BinaryIO, offset: int, region_end: int) -> dict[str, object]:
+    """Parse one self-delimiting CrossFire CFSprite v5 resource."""
+    if offset < 0 or offset + len(CFSPRITE_SIGNATURE) > region_end:
+        raise RezError(f"truncated CFSprite signature at {offset}")
+    reader = CFSpriteReader(stream, offset, region_end)
+    if reader.string("class name") != "CFSprite":
+        raise RezError(f"CFSprite signature absent at exact offset {offset}")
+    version = reader.u32("version")
+    schema = reader.u32("schema")
+    reserved = reader.u32("header reserved")
+    tick_rate = reader.u32("tick rate")
+    width = reader.u32("width")
+    height = reader.u32("height")
+    item_count = reader.u32("item count")
+    if (
+        version != CFSPRITE_VERSION
+        or schema != CFSPRITE_SCHEMA
+        or reserved != 0
+        or tick_rate != CFSPRITE_TICK_RATE
+    ):
+        raise RezError(f"unsupported CFSprite v5 header at {offset}")
+    if not 1 <= width <= 65536 or not 1 <= height <= 65536:
+        raise RezError(f"invalid CFSprite canvas at {offset}: {width}x{height}")
+    if not 1 <= item_count <= MAXIMUM_CFSPRITE_ITEMS:
+        raise RezError(f"implausible CFSprite item count at {offset}: {item_count}")
+
+    keyframe_count = 0
+    names: list[str] = []
+    paths: list[str] = []
+    for item_index in range(item_count):
+        label = f"item {item_index}"
+        stored_index = reader.u32(f"{label} index")
+        if stored_index != item_index:
+            raise RezError(
+                f"CFSprite {label} index mismatch: expected {item_index}, got {stored_index}"
+            )
+        name = reader.string(f"{label} name")
+        resource_flags = tuple(reader.u32(f"{label} resource flag {i}") for i in range(3))
+        filename = reader.string(f"{label} filename")
+        path = reader.string(f"{label} path")
+        if resource_flags[:2] != (1, 1) or resource_flags[2] == 0:
+            raise RezError(f"invalid CFSprite {label} resource flags: {resource_flags}")
+        if not filename.lower().endswith(".png") or not path.lower().endswith(".png"):
+            raise RezError(f"CFSprite {label} does not reference a PNG")
+        if "\\" in path or path.startswith("/") or ".." in path.split("/"):
+            raise RezError(f"unsafe CFSprite {label} path: {path!r}")
+
+        item_reserved = reader.u16(f"{label} reserved")
+        rectangle = tuple(reader.u32(f"{label} rectangle {i}") for i in range(4))
+        flags = reader.u32(f"{label} flags")
+        flags_reserved = reader.u32(f"{label} flags reserved")
+        enabled = reader.u8(f"{label} enabled")
+        mode = reader.u8(f"{label} mode")
+        item_keyframes = reader.u32(f"{label} keyframe count")
+        if item_reserved != 0 or flags != 11 or flags_reserved != 0:
+            raise RezError(f"invalid CFSprite {label} fixed fields")
+        if any(value == 0 or value > 65536 for value in rectangle):
+            raise RezError(f"invalid CFSprite {label} rectangle: {rectangle}")
+        if enabled != 1 or mode not in {0, 1}:
+            raise RezError(f"invalid CFSprite {label} state: enabled={enabled} mode={mode}")
+        if not 1 <= item_keyframes <= MAXIMUM_CFSPRITE_ITEMS:
+            raise RezError(f"implausible CFSprite {label} keyframe count: {item_keyframes}")
+
+        previous_tick = -1
+        resource_index = resource_flags[2]
+        for frame_index in range(item_keyframes):
+            frame_label = f"{label} keyframe {frame_index}"
+            tick = reader.u32(f"{frame_label} tick")
+            stored_resource_index = reader.u32(f"{frame_label} resource index")
+            repeated_tick = reader.u32(f"{frame_label} repeated tick")
+            transform = reader.floats(7, f"{frame_label} transform")
+            ending_tick = reader.u32(f"{frame_label} ending tick")
+            reader.read(4, f"{frame_label} color")
+            if tick <= previous_tick or repeated_tick != tick or ending_tick != tick:
+                raise RezError(f"invalid CFSprite {frame_label} tick sequence")
+            if stored_resource_index != resource_index:
+                raise RezError(f"invalid CFSprite {frame_label} resource reference")
+            if any(abs(value) > 1_000_000 for value in transform):
+                raise RezError(f"implausible CFSprite {frame_label} transform")
+            previous_tick = tick
+        keyframe_count += item_keyframes
+        if keyframe_count > MAXIMUM_CFSPRITE_ITEMS:
+            raise RezError(f"implausible total CFSprite keyframe count at {offset}")
+        names.append(name)
+        paths.append(path)
+
+    size = reader.position - offset
+    return {
+        "offset": offset,
+        "bytes": size,
+        "sha256": hash_region(stream, offset, size),
+        "version": version,
+        "schema": schema,
+        "tick_rate": tick_rate,
+        "width": width,
+        "height": height,
+        "items": item_count,
+        "keyframes": keyframe_count,
+        "names": names,
+        "paths": paths,
+    }
+
+
 def copy_verified_region(
     source: Path, offset: int, size: int, expected_sha256: str, destination: Path
 ) -> str:
@@ -1781,6 +1939,8 @@ def converted_png(source: Path, kind: str) -> tuple[bytes, dict[str, object]]:
 
 
 def prefix_kind(prefix: bytes) -> str | None:
+    if prefix.startswith(CFSPRITE_SIGNATURE):
+        return "cfsprite"
     if prefix.startswith(b"GROUP ") and b"DEFAULTGROUP " in prefix[:128]:
         return "ui_layout"
     if prefix.startswith(b"//val\r\n") and b"var " in prefix[:128]:
@@ -1936,6 +2096,9 @@ def recover_framed_prefix(
             elif kind == "lithtech_world":
                 record = parse_lithtech_world(stream, position, region_end)
                 representation = "private_rez_strict_lithtech_world_v85_frame"
+            elif kind == "cfsprite":
+                record = parse_cfsprite(stream, position, region_end)
+                representation = "private_rez_strict_cfsprite_v5_frame"
             elif peer_index is not None:
                 record = match_exact_peer(stream, position, region_end, peer_index)
                 if record is None:
@@ -1969,6 +2132,7 @@ def recover_framed_prefix(
                     "cp949_web_bundle": "txt",
                     "ui_layout": "txt",
                     "lithtech_world": "dat",
+                    "cfsprite": "xfi",
                     "html": "html",
                 }.get(str(kind), str(kind))
             destination = base / f"{kind}-{len(records):05d}.{extension}"
@@ -2094,7 +2258,7 @@ def main() -> int:
     manifest = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "tool": "tools/recover_private_rez_framed_prefix.py",
-        "tool_version": "13",
+        "tool_version": "14",
         "workspace": str(workspace),
         "root_inventory_sha256": index["inventory_sha256"],
         "safety": {
@@ -2120,6 +2284,7 @@ def main() -> int:
             "flv_tag_sizes_metadata_duration_and_exact_end_required": True,
             "html_doctype_structure_and_unique_end_tag_required": True,
             "lithtech_world_v85_render_tail_required": True,
+            "cfsprite_v5_counts_indices_ticks_and_finite_transforms_required": True,
             "exact_loose_peer_byte_equality_required": True,
             "exact_loose_peer_unique_length_required": True,
             "loose_peer_symlinks_ignored": True,
@@ -2157,6 +2322,15 @@ def main() -> int:
                 for item in all_outputs
                 if item["representation"]
                 == "private_rez_strict_lithtech_world_v85_frame"
+            ),
+            "cfsprite_files": sum(
+                item["representation"] == "private_rez_strict_cfsprite_v5_frame"
+                for item in all_outputs
+            ),
+            "cfsprite_bytes": sum(
+                int(item["bytes"])
+                for item in all_outputs
+                if item["representation"] == "private_rez_strict_cfsprite_v5_frame"
             ),
             "swf_files": sum(
                 item["representation"].endswith("_swf_frame")
