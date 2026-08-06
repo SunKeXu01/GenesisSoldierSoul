@@ -1,8 +1,18 @@
 import json
+import hashlib
 import struct
+import tempfile
 import unittest
+from pathlib import Path
 
-from convert_ltb_models import LtbError, make_glb, parse_ltb, validate_glb
+from convert_ltb_models import (
+    LtbError,
+    convert_one,
+    make_glb,
+    parse_crossfire_composite_ltb,
+    parse_ltb,
+    validate_glb,
+)
 
 
 def minimal_ltb() -> bytes:
@@ -74,6 +84,53 @@ def mismatched_skinned_ltb() -> bytes:
     return bytes(data)
 
 
+def composite_ltb() -> bytes:
+    data = bytearray(98)
+    struct.pack_into("<HH", data, 0, 1, 9)
+    struct.pack_into("<I", data, 32, 1)
+    struct.pack_into("<H", data, 84, 0)
+    struct.pack_into("<I", data, 94, 1)
+    name = b"Composite"
+    data.extend(struct.pack("<H", len(name)) + name)
+    data.extend(struct.pack("<I", 1))
+    data.extend(struct.pack("<I", 0) + bytes(8))
+    data.extend(bytes(4) + struct.pack("<I", 0) + bytes(17))
+    data.extend(struct.pack("<II", 0, 1))
+    data.extend(struct.pack("<III", 3, 1, 1) + bytes(20))
+    for position, uv in (
+        ((0.0, 0.0, 0.0), (0.0, 0.0)),
+        ((1.0, 0.0, 0.0), (1.0, 0.0)),
+        ((0.0, 1.0, 0.0), (0.0, 1.0)),
+    ):
+        data.extend(struct.pack("<3f3f2f", *position, 0.0, 0.0, 1.0, *uv))
+    data.extend(struct.pack("<3H", 0, 1, 2) + b"\0")
+    bone_name = b"root"
+    data.extend(struct.pack("<H", len(bone_name)) + bone_name + bytes(3))
+    data.extend(
+        struct.pack(
+            "<16fI",
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0,
+        )
+    )
+    return bytes(data)
+
+
 class LtbModelTests(unittest.TestCase):
     def test_parses_bounded_mesh_and_writes_valid_glb(self):
         meshes, details = parse_ltb(minimal_ltb())
@@ -101,6 +158,43 @@ class LtbModelTests(unittest.TestCase):
         self.assertEqual(details["mesh_type_counts"], {"4": 1})
         self.assertEqual(details["triangle_count"], 1)
         self.assertEqual(meshes[0].mesh_type, 4)
+
+    def test_layout_v2_preserves_different_legacy_output(self):
+        source = minimal_ltb()
+        digest = hashlib.sha256(source).hexdigest()
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            input_path = root / "source.ltb"
+            legacy_path = root / "legacy.glb"
+            output_path = root / "layout-v2.glb"
+            input_path.write_bytes(source)
+            legacy_path.write_bytes(b"legacy-must-remain")
+            result = convert_one(
+                {
+                    "input_path": str(input_path),
+                    "input_bytes": len(source),
+                    "input_sha256": digest,
+                    "source_archive": "RF000.REZ",
+                    "source_archive_sha256": "a" * 64,
+                    "stream_index": 7,
+                    "input_label": "source.ltb",
+                    "output_path": str(output_path),
+                    "output_relative": "layout-v2.glb",
+                    "legacy_output_path": str(legacy_path),
+                }
+            )
+            self.assertEqual(legacy_path.read_bytes(), b"legacy-must-remain")
+            self.assertEqual(result["status"], "converted_preserving_different_legacy")
+            self.assertEqual(result["output"]["sha256"], hashlib.sha256(output_path.read_bytes()).hexdigest())
+
+    def test_parses_composite_submesh_and_skeleton_metadata(self):
+        data = composite_ltb()
+        meshes, details = parse_crossfire_composite_ltb(data, 0, 1)
+        self.assertEqual(len(meshes), 1)
+        self.assertEqual(details["layout"], "crossfire_top_mesh_submesh")
+        self.assertEqual(details["triangle_count"], 1)
+        self.assertEqual(details["skeleton_metadata"]["names"], ["root"])
+        self.assertEqual(details["skeleton_metadata"]["parent_indices"], [-1])
 
 
 if __name__ == "__main__":

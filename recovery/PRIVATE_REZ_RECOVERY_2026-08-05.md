@@ -34,10 +34,11 @@ DTX 转换器支持以下经尺寸关系验证的格式：
 
 ## LTB 几何转换
 
-基于 Cote-Duke LTB2X 源码公开的 LTB v9 偏移独立实现了有界 Python 解析器；第三方源码及许可出处记录在 `tools/third_party_notices/LTB2X-LICENSE.txt`，未运行其 Windows 示例程序。解析器验证文件头、网格数量、顶点/三角形边界、有限浮点、索引范围、尾段范围和完整 GLB 2.0 块结构，并对 CrossFire 的类型头变体及 83/85 字节几何起点做全网格有界回溯。
+基于 Cote-Duke LTB2X 与公开 CrossFire LTB loader 的结构规则独立实现了有界 Python 解析器；第三方出处记录在转换清单，未运行其 Windows 示例程序。解析器验证文件头、网格数量、顶点/三角形边界、有限浮点、索引范围、尾段范围和完整 GLB 2.0 块结构；layout-v2 增加顶层 mesh + 多 submesh、可变权重段及骨骼名称/层级/绑定矩阵验证。
 
-- 候选 LTB model：8,721；严格转换/复核 GLB：8,067；保留失败：654。
-- GLB 共含 29,630 个网格、20,673,403 顶点、18,086,964 三角形，输出 799,684,968 字节。
+- 候选 LTB model：8,721；严格转换/复核 GLB：8,552；保留失败：169。
+- GLB 共含 31,667 个网格、22,773,183 顶点、19,988,052 三角形，输出 880,281,636 字节。
+- 153 个复合布局文件额外严格解析 7,169 条骨骼元数据；尚未写入 glTF skin/动画，不伪称已恢复蒙皮动画。
 - 输出保留源坐标，不做未经证明的轴变换；仅声明网格几何，不伪称已恢复骨骼、蒙皮或动画。
 - 每个成功项保存输入/输出哈希和 GLB 结构验证；每个失败项保存源包、stream index、输入路径和具体错误。
 
@@ -45,7 +46,7 @@ DTX 转换器支持以下经尺寸关系验证的格式：
 
 - 两份 RF199 已从固定数据区起点严格恢复 9,520 PNG + 1 DDS（141,831,713 字节），并在首个未知字节停止；详见 `RF199_FRAMED_PREFIX_RECOVERY_2026-08-06.md`。
 - 仍完全未分帧的 5 个包为 RB001、两份 RF019、RF164、RF266；另保留两份 RF199 共 670,465,134 字节未知后缀。在没有可信边界前不做整段魔数 carving。
-- 654 个 LTB 结构变体仍未通过严格几何解析；8,067 个成功 GLB 只覆盖静态几何，骨骼/蒙皮/动画仍保留在原 LTB 中。
+- 169 个 LTB 结构变体仍未通过严格几何解析；8,552 个成功 GLB 仍只覆盖静态几何。153 个文件已有骨骼层级/绑定矩阵元数据，但完整 joints/weights/skin/动画仍保留在原 LTB 中。详见 `LTB_LAYOUT_V2_RECOVERY_2026-08-06.md`。
 - 364 个 loose LTC 已在 2026-08-06 全部恢复为 LTA：固定 16 字节 XOR 包装去除后，
   使用 LithTech LTC/LZSS v0 位流解码；输出 51,657,941 字节、失败 0，并由同名
   `AI3_FatalCanyon_DZ.LTA` 逐字节精确匹配验证。详见 `LTC_RECOVERY_2026-08-06.md`。
@@ -64,4 +65,4 @@ DTX 转换器支持以下经尺寸关系验证的格式：
 - 工具：`tools/recover_private_rez.py`、`tools/recover_private_rez_framed_prefix.py`、`tools/convert_private_rez_media.py`、`tools/convert_ltb_models.py`、`tools/lithtech_ltc.py`。
 - 专项测试：`tools/test_recover_private_rez.py`、`tools/test_convert_private_rez_media.py`、`tools/test_convert_ltb_models.py`。
 
-统一 provenance 已验证 12/12 清单、148,175 个输出、21,324,267,411 字节，错误 0。
+统一 provenance 已验证 12/12 清单、148,660 个输出、21,404,864,079 字节，错误 0。

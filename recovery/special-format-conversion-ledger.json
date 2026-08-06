@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-06T02:59:07.209353+00:00",
+  "generated_at_utc": "2026-08-06T03:12:59.591068+00:00",
   "tool": "tools/audit_special_formats.py",
   "tool_version": "9",
   "workspace": "/Users/Admin/Documents/创世兵魂",
@@ -16409,7 +16409,7 @@
       },
       "recovery_tool_version": "1",
       "media_tool_version": "1",
-      "model_tool_version": "1",
+      "model_tool_version": "3",
       "png_prefix_tool_version": "1",
       "verifications": [
         {
@@ -16428,8 +16428,8 @@
         },
         {
           "manifest": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-model-conversions.json",
-          "outputs_verified": 8067,
-          "bytes_verified": 799684968,
+          "outputs_verified": 8552,
+          "bytes_verified": 880281636,
           "errors": [],
           "status": "verified"
         },
@@ -16474,12 +16474,12 @@
         "png_bytes": 5025788415,
         "media_preserved_unsupported": 1,
         "media_failures": 0,
-        "ltb_glb_conversions": 8067,
-        "ltb_glb_meshes": 29630,
-        "ltb_glb_vertices": 20673403,
-        "ltb_glb_triangles": 18086964,
-        "ltb_glb_bytes": 799684968,
-        "ltb_glb_failures": 654,
+        "ltb_glb_conversions": 8552,
+        "ltb_glb_meshes": 31667,
+        "ltb_glb_vertices": 22773183,
+        "ltb_glb_triangles": 19988052,
+        "ltb_glb_bytes": 880281636,
+        "ltb_glb_failures": 169,
         "rez_png_prefix_archives": 2,
         "rez_png_prefix_images": 9520,
         "rez_png_prefix_bytes": 141634977,
@@ -34628,8 +34628,8 @@
       },
       {
         "manifest": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-model-conversions.json",
-        "outputs_verified": 8067,
-        "bytes_verified": 799684968,
+        "outputs_verified": 8552,
+        "bytes_verified": 880281636,
         "errors": [],
         "status": "verified"
       },
@@ -34658,8 +34658,8 @@
     "summary": {
       "manifests": 12,
       "verified": 12,
-      "outputs": 148175,
-      "bytes": 21324267411,
+      "outputs": 148660,
+      "bytes": 21404864079,
       "errors": 0
     }
   }

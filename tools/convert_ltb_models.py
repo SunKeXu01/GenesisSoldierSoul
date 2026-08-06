@@ -13,7 +13,9 @@ import argparse
 import hashlib
 import json
 import math
+import os
 import struct
+import tempfile
 from collections import Counter
 from concurrent.futures import ProcessPoolExecutor
 from dataclasses import dataclass
@@ -25,6 +27,7 @@ from typing import Any
 MAX_MESHES = 100_000
 MAX_VERTICES = 65_535
 MAX_FACES = 65_535
+OUTPUT_LAYOUT_VERSION = "layout-v2"
 
 
 class LtbError(ValueError):
@@ -65,6 +68,233 @@ def u16(data: bytes, offset: int, label: str) -> int:
 
 def u32(data: bytes, offset: int, label: str) -> int:
     return struct.unpack("<I", bounded_slice(data, offset, 4, label))[0]
+
+
+def parse_crossfire_composite_ltb(
+    data: bytes, command_length: int, top_mesh_count: int
+) -> tuple[list[LtbMesh], dict[str, Any]]:
+    """Parse CrossFire's top-mesh/submesh layout and bounded skeleton metadata."""
+    cursor = 98 + command_length
+    meshes: list[LtbMesh] = []
+    mesh_type_counts: Counter[int] = Counter()
+    submesh_slots = 0
+    empty_submeshes = 0
+    for top_index in range(top_mesh_count):
+        name_length = u16(data, cursor, f"top mesh {top_index} name length")
+        cursor += 2
+        name = bounded_slice(
+            data, cursor, name_length, f"top mesh {top_index} name"
+        ).decode("cp1252", errors="replace")
+        cursor += name_length
+        submesh_count = u32(data, cursor, f"top mesh {top_index} submesh count")
+        cursor += 4
+        if submesh_count > MAX_MESHES or submesh_slots + submesh_count > MAX_MESHES:
+            raise LtbError(
+                f"implausible composite submesh count at top mesh {top_index}: "
+                f"{submesh_count}"
+            )
+        submesh_slots += submesh_count
+        bounded_slice(
+            data,
+            cursor,
+            submesh_count * 4 + 8,
+            f"top mesh {top_index} submesh table",
+        )
+        cursor += submesh_count * 4 + 8
+        for sub_index in range(submesh_count):
+            bounded_slice(data, cursor, 29, f"submesh {top_index}/{sub_index} header")
+            cursor += 4
+            material_index = u32(
+                data, cursor, f"submesh {top_index}/{sub_index} material"
+            )
+            cursor += 4 + 17
+            weight_mode = u32(
+                data, cursor, f"submesh {top_index}/{sub_index} weight mode"
+            )
+            cursor += 4
+            section_size = u32(
+                data, cursor, f"submesh {top_index}/{sub_index} section size"
+            )
+            cursor += 4
+            if section_size == 0:
+                empty_submeshes += 1
+                continue
+            vertex_count = u32(
+                data, cursor, f"submesh {top_index}/{sub_index} vertex count"
+            )
+            triangle_count = u32(
+                data, cursor + 4, f"submesh {top_index}/{sub_index} triangle count"
+            )
+            mesh_type = u32(
+                data, cursor + 8, f"submesh {top_index}/{sub_index} mesh type"
+            )
+            cursor += 12
+            if vertex_count > MAX_VERTICES or triangle_count > MAX_FACES:
+                raise LtbError(
+                    f"composite submesh {top_index}/{sub_index} exceeds bounded counts: "
+                    f"{vertex_count}/{triangle_count}"
+                )
+            if mesh_type == 3:
+                mesh_type = 5
+            if mesh_type not in {1, 2, 4, 5}:
+                raise LtbError(
+                    f"unsupported composite mesh type {mesh_type} at "
+                    f"submesh {top_index}/{sub_index}"
+                )
+            bounded_slice(
+                data, cursor, 20, f"submesh {top_index}/{sub_index} pre-vertex data"
+            )
+            cursor += 20
+            if weight_mode == 4:
+                bounded_slice(
+                    data, cursor, 4, f"submesh {top_index}/{sub_index} fixed bone"
+                )
+                cursor += 4
+            elif weight_mode == 5:
+                bounded_slice(
+                    data, cursor, 2, f"submesh {top_index}/{sub_index} weight prefix"
+                )
+                cursor += 2
+            weight_float_count = {1: 0, 2: 1, 4: 3, 5: 2}[mesh_type]
+            stride = 12 + weight_float_count * 4 + 12 + 8
+            bounded_slice(
+                data,
+                cursor,
+                vertex_count * stride,
+                f"submesh {top_index}/{sub_index} vertex buffer",
+            )
+            positions = []
+            normals = []
+            texcoords = []
+            for _ in range(vertex_count):
+                position = struct.unpack_from("<3f", data, cursor)
+                cursor += 12 + weight_float_count * 4
+                normal = struct.unpack_from("<3f", data, cursor)
+                cursor += 12
+                uv = struct.unpack_from("<2f", data, cursor)
+                cursor += 8
+                if not all(math.isfinite(value) for value in (*position, *normal, *uv)):
+                    raise LtbError(
+                        f"non-finite composite vertex in submesh {top_index}/{sub_index}"
+                    )
+                positions.append(position)
+                normals.append(normal)
+                texcoords.append(uv)
+            index_count = triangle_count * 3
+            index_data = bounded_slice(
+                data,
+                cursor,
+                index_count * 2,
+                f"submesh {top_index}/{sub_index} index buffer",
+            )
+            indices = (
+                list(struct.unpack(f"<{index_count}H", index_data))
+                if index_count
+                else []
+            )
+            cursor += index_count * 2
+            if any(index >= vertex_count for index in indices):
+                raise LtbError(
+                    f"out-of-range composite triangle index in submesh "
+                    f"{top_index}/{sub_index}"
+                )
+            if weight_mode == 5:
+                weight_set_count = u32(
+                    data, cursor, f"submesh {top_index}/{sub_index} weight sets"
+                )
+                cursor += 4
+                if weight_set_count > vertex_count + 1:
+                    raise LtbError(
+                        f"implausible weight set count in submesh "
+                        f"{top_index}/{sub_index}: {weight_set_count}"
+                    )
+                bounded_slice(
+                    data,
+                    cursor,
+                    weight_set_count * 12,
+                    f"submesh {top_index}/{sub_index} weight sets",
+                )
+                cursor += weight_set_count * 12
+            final_size = bounded_slice(
+                data, cursor, 1, f"submesh {top_index}/{sub_index} final size"
+            )[0]
+            cursor += 1
+            bounded_slice(
+                data, cursor, final_size, f"submesh {top_index}/{sub_index} final data"
+            )
+            cursor += final_size
+            mesh_name = name if submesh_count == 1 else f"{name}#{sub_index}"
+            meshes.append(
+                LtbMesh(mesh_name, mesh_type, positions, normals, texcoords, indices)
+            )
+            mesh_type_counts[mesh_type] += 1
+
+    if not any(mesh.positions and mesh.indices for mesh in meshes):
+        raise LtbError("composite layout contains no non-empty triangle mesh")
+    bone_count = u32(data, 32, "bone count")
+    if bone_count > 100_000:
+        raise LtbError(f"implausible bone count: {bone_count}")
+    bone_names = []
+    bone_child_counts = []
+    bone_matrices = []
+    for bone_index in range(bone_count):
+        name_length = u16(data, cursor, f"bone {bone_index} name length")
+        cursor += 2
+        bone_name = bounded_slice(
+            data, cursor, name_length, f"bone {bone_index} name"
+        ).decode("cp1252", errors="replace")
+        cursor += name_length
+        bounded_slice(data, cursor, 3, f"bone {bone_index} flags")
+        cursor += 3
+        matrix = struct.unpack_from(
+            "<16f", bounded_slice(data, cursor, 64, f"bone {bone_index} matrix")
+        )
+        cursor += 64
+        if not all(math.isfinite(value) for value in matrix):
+            raise LtbError(f"non-finite bone matrix at bone {bone_index}")
+        child_count = u32(data, cursor, f"bone {bone_index} child count")
+        cursor += 4
+        if child_count > bone_count:
+            raise LtbError(f"implausible child count at bone {bone_index}: {child_count}")
+        bone_names.append(bone_name)
+        bone_child_counts.append(child_count)
+        bone_matrices.append(list(matrix))
+    bone_parents = [-1] * bone_count
+    remaining_children = bone_child_counts.copy()
+    for bone_index in range(1, bone_count):
+        for parent in range(bone_index - 1, -1, -1):
+            if remaining_children[parent] > 0:
+                remaining_children[parent] -= 1
+                bone_parents[bone_index] = parent
+                break
+        if bone_parents[bone_index] < 0:
+            raise LtbError(f"bone hierarchy has no parent for bone {bone_index}")
+    if bone_count and sum(bone_child_counts) != bone_count - 1:
+        raise LtbError(
+            f"bone hierarchy child total mismatch: {sum(bone_child_counts)}/{bone_count - 1}"
+        )
+    return meshes, {
+        "header": [1, 9],
+        "layout": "crossfire_top_mesh_submesh",
+        "mesh_count": len(meshes),
+        "top_mesh_count": top_mesh_count,
+        "submesh_slots": submesh_slots,
+        "empty_submeshes": empty_submeshes,
+        "vertex_count": sum(len(mesh.positions) for mesh in meshes),
+        "triangle_count": sum(len(mesh.indices) // 3 for mesh in meshes),
+        "mesh_type_counts": {
+            str(key): value for key, value in sorted(mesh_type_counts.items())
+        },
+        "skeleton_metadata": {
+            "bone_count": bone_count,
+            "names": bone_names,
+            "parent_indices": bone_parents,
+            "child_counts": bone_child_counts,
+            "bind_matrices": bone_matrices,
+        },
+        "parsed_bytes": cursor,
+        "trailing_bytes": len(data) - cursor,
+    }
 
 
 def parse_ltb(data: bytes) -> tuple[list[LtbMesh], dict[str, Any]]:
@@ -266,13 +496,22 @@ def parse_ltb(data: bytes) -> tuple[list[LtbMesh], dict[str, Any]]:
         failed_states[state] = failure
         raise failure
 
-    meshes, cursor = parse_from(0, first_mesh_cursor)
+    try:
+        meshes, cursor = parse_from(0, first_mesh_cursor)
+    except LtbError as legacy_error:
+        try:
+            return parse_crossfire_composite_ltb(data, command_length, mesh_count)
+        except (LtbError, struct.error) as composite_error:
+            raise LtbError(
+                f"legacy layout: {legacy_error}; composite layout: {composite_error}"
+            ) from composite_error
     mesh_type_counts: Counter[int] = Counter()
     for mesh in meshes:
         mesh_type = mesh.mesh_type
         mesh_type_counts[mesh_type] += 1
     return meshes, {
         "header": [1, 9],
+        "layout": "legacy_single_submesh",
         "command_line": command,
         "mesh_count": len(meshes),
         "vertex_count": sum(len(mesh.positions) for mesh in meshes),
@@ -445,16 +684,42 @@ def convert_one(task: dict[str, Any]) -> dict[str, Any]:
     validation = validate_glb(glb)
     digest = sha256_bytes(glb)
     output_path = Path(task["output_path"])
+    legacy_output_path = Path(task["legacy_output_path"])
     output_path.parent.mkdir(parents=True, exist_ok=True)
     if output_path.exists():
         if output_path.stat().st_size != len(glb) or sha256_file(output_path) != digest:
             raise LtbError(f"existing GLB differs: {output_path}")
         status = "verified_existing"
+    elif (
+        legacy_output_path.is_file()
+        and legacy_output_path.stat().st_size == len(glb)
+        and sha256_file(legacy_output_path) == digest
+    ):
+        try:
+            os.link(legacy_output_path, output_path)
+            status = "migrated_verified_legacy_hardlink"
+        except OSError:
+            with tempfile.NamedTemporaryFile(
+                dir=output_path.parent, prefix=".partial-", delete=False
+            ) as temporary:
+                temporary_path = Path(temporary.name)
+                temporary.write(glb)
+            os.replace(temporary_path, output_path)
+            status = "migrated_verified_legacy_copy"
     else:
-        output_path.write_bytes(glb)
-        if sha256_file(output_path) != digest:
-            raise LtbError(f"GLB readback failed: {output_path}")
-        status = "converted"
+        with tempfile.NamedTemporaryFile(
+            dir=output_path.parent, prefix=".partial-", delete=False
+        ) as temporary:
+            temporary_path = Path(temporary.name)
+            temporary.write(glb)
+        os.replace(temporary_path, output_path)
+        status = (
+            "converted_preserving_different_legacy"
+            if legacy_output_path.exists()
+            else "converted"
+        )
+    if output_path.stat().st_size != len(glb) or sha256_file(output_path) != digest:
+        raise LtbError(f"GLB readback failed: {output_path}")
     return {
         "source_archive": task["source_archive"],
         "source_archive_sha256": task["source_archive_sha256"],
@@ -504,6 +769,12 @@ def main() -> int:
                 raise LtbError("LTB stream has no readable input")
             relative = str(
                 Path("private-rez-models")
+                / OUTPUT_LAYOUT_VERSION
+                / source_key
+                / f"stream-{stream['stream_index']:05d}.glb"
+            )
+            legacy_relative = str(
+                Path("private-rez-models")
                 / source_key
                 / f"stream-{stream['stream_index']:05d}.glb"
             )
@@ -518,6 +789,7 @@ def main() -> int:
                     "input_sha256": stream["sha256"],
                     "output_path": str(output / relative),
                     "output_relative": relative,
+                    "legacy_output_path": str(output / legacy_relative),
                 }
             )
     tasks.sort(key=lambda item: (item["source_archive"], item["stream_index"]))
@@ -540,21 +812,33 @@ def main() -> int:
     manifest = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "tool": "tools/convert_ltb_models.py",
-        "tool_version": "1",
+        "tool_version": "3",
         "reference": {
             "name": "Cote-Duke LTB2X loader source",
             "url": "https://cote-duke.narod.ru/LtbSource.zip",
             "archive_sha256": "2c99507cf39082d33bd57095eb660a2639f0c2ec863fddf5d5faad000c0e8cf1",
             "license_notice": "tools/third_party_notices/LTB2X-LICENSE.txt",
         },
+        "additional_references": [
+            {
+                "name": "NewLTBViewerTool CrossFire composite mesh loader",
+                "url": "https://github.com/giaynhap/NewLTBViewerTool/blob/master/NewSALL/LtbLoader.cpp",
+                "usage": "format behavior cross-check only; no external executable run",
+            }
+        ],
         "parameters": {
             "workspace": str(workspace),
             "recovery_manifest": str(args.recovery_manifest),
             "recovery_manifest_sha256": sha256_file(args.recovery_manifest),
             "output": str(output),
             "workers": args.workers,
+            "output_layout_version": OUTPUT_LAYOUT_VERSION,
         },
-        "scope": "mesh geometry, normals, UVs and triangle indices only; source coordinates preserved; bones and animations not claimed",
+        "scope": (
+            "mesh geometry, normals, UVs and triangle indices; source coordinates "
+            "preserved; composite-layout bone hierarchy/bind-matrix metadata audited "
+            "but not exported as a glTF skin; animations not claimed"
+        ),
         "records": records,
         "failures": failures,
         "summary": {
@@ -565,6 +849,18 @@ def main() -> int:
             "vertices": sum(item["details"]["vertex_count"] for item in records),
             "triangles": sum(item["details"]["triangle_count"] for item in records),
             "output_bytes": sum(item["output"]["bytes"] for item in records),
+            "layout_counts": dict(
+                sorted(Counter(item["details"]["layout"] for item in records).items())
+            ),
+            "composite_skeleton_files": sum(
+                item["details"].get("layout") == "crossfire_top_mesh_submesh"
+                and item["details"]["skeleton_metadata"]["bone_count"] > 0
+                for item in records
+            ),
+            "composite_bones": sum(
+                item["details"].get("skeleton_metadata", {}).get("bone_count", 0)
+                for item in records
+            ),
         },
     }
     args.manifest.parent.mkdir(parents=True, exist_ok=True)
