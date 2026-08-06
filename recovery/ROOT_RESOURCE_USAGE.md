@@ -100,7 +100,7 @@ AK-74M 与 AWP 已完成实验性适配，但不会在缺少自身完整第一�
 
 ## 仍需转换后才能使用
 
-- CF 私有目录中 7 个未分帧 REZ、654 个未支持 LTB 结构及 LTB 骨骼/动画；标准 `engine.rez` 的 DTX 已转 PNG，其中 15 个 LTB 实为 RenderStyle 而非几何模型。364 个 loose LTC 已全部恢复为 LTA，不再列为未知格式。
+- CF 私有目录中 5 个完全未分帧 REZ、两份 RF199 的未知后缀、654 个未支持 LTB 结构及 LTB 骨骼/动画；两份 RF199 的可证明连续前缀已恢复 9,520 PNG + 1 DDS。标准 `engine.rez` 的 DTX 已转 PNG，其中 15 个 LTB 实为 RenderStyle 而非几何模型。364 个 loose LTC 已全部恢复为 LTA，不再列为未知格式。
 - Flash SWF 中已提取但尚未转成 SVG/TTF/PNG 的矢量、字体和 ATF 标签；位图 PNG 与时间轴元数据已经可审计使用。
 - Unity 发布包中未完成依赖闭包的 Prefab、动画控制器和特效。
 - Unreal PAK/UCAS/UTOC 以及 Android OBB 中的地图资源。

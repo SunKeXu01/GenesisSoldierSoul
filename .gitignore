@@ -55,3 +55,5 @@ recovery/*.png
 recovery/private-rez-recovery.json
 recovery/private-rez-media-conversions.json
 recovery/private-rez-model-conversions.json
+recovery/private-rez-png-prefix-recovery.json
+recovery/private-rez-framed-prefix-recovery.json

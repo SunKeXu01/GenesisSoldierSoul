@@ -10,7 +10,7 @@
 
 - Unity EditMode：65/65 Passed，`p6-editmode-2026-08-05.xml`。
 - Unity PlayMode：6/6 Passed，`p6-playmode-2026-08-05.xml`。
-- Python 工具链：60/60 Passed，使用工作区捆绑 Python 与 Pillow；新增 LTC 字面量、span、显式结束标记和物理 EOF 回归。
+- Python 工具链：64/64 Passed，使用工作区捆绑 Python 与 Pillow；新增 LTC 字面量/span/结束方式，以及 RF199 PNG CRC、DDS 载荷边界、连续混合帧与未知后缀停止回归。
 - 服务端：Vitest 30/30 Passed，TypeScript 构建通过（本轮前一阶段已复验）。
 
 ## 资源、骨骼与锚点

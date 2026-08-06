@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-08-06T02:31:29.861577+00:00",
+  "generated_at_utc": "2026-08-06T02:59:07.209353+00:00",
   "tool": "tools/audit_special_formats.py",
-  "tool_version": "8",
+  "tool_version": "9",
   "workspace": "/Users/Admin/Documents/创世兵魂",
   "root_inventory_sha256": "e88424a9d72e1a76939ec39ce77dc7b766c670d6c1b835f132976fc9c9ac0e4e",
   "safety": {
@@ -5486,7 +5486,7 @@
             "bytes": 30273,
             "sha256": "8272cb086093fc31f38049666a9a3cbfd349e6d4bc5f19e3ea979df14094d3df",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -5516,7 +5516,7 @@
             "bytes": 36723,
             "sha256": "2b42fb03dedd5f7f4c99a8ec1be6050a7e84c14b82df26871a443ee169c48f74",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -5546,7 +5546,7 @@
             "bytes": 344385,
             "sha256": "2906a65a35989c984c84c0eca90931d5373cf813371ec0d7bfdd9526e1b2359e",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -5576,7 +5576,7 @@
             "bytes": 322837,
             "sha256": "693381434c0f9194ccb6b047ebbefff3f262cdaa686b243f84e5b046b315e0ff",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -5606,7 +5606,7 @@
             "bytes": 37563,
             "sha256": "3c457d938ab29538b05807bf58d8aa3f164b0b217a6c599f0bd5de3245b0dfc7",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -5639,7 +5639,7 @@
             "bytes": 126744,
             "sha256": "2a0809dffe6b107352ec632367037574ac8ddce6fb1e311fdf02f0475da801fe",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -5669,7 +5669,7 @@
             "bytes": 93259,
             "sha256": "21c2d24f38aef93cdb021c68694261611771c3d6f04130a3e107769390a4dbd3",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -5699,7 +5699,7 @@
             "bytes": 3479,
             "sha256": "921eff0969a0015e445e68f9b76fb384fbd9dc75b4df1bbfd4959592bf48f30c",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -5729,7 +5729,7 @@
             "bytes": 2604,
             "sha256": "20c5006a842d101dbbfdfe9b48a8516c8b55542a0054f9851f4f83fbd36051c8",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -5759,7 +5759,7 @@
             "bytes": 76961,
             "sha256": "d39eab08daa74c2664a3f8c1f5805f54c896cd7c745a3b841a602a9f999f381a",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -5789,7 +5789,7 @@
             "bytes": 14505,
             "sha256": "ad346f295cfb167707187506ba691b9afdc50a3ec06092dc7a14d013c39ed0f7",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -5819,7 +5819,7 @@
             "bytes": 176225,
             "sha256": "44e168d3b2d904436b1455d8c0d699ef71f0235272d3ba3eb0238c4c2c7f7104",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -5849,7 +5849,7 @@
             "bytes": 470902,
             "sha256": "96b0f75eef5f390e3827218c789e0c4221856effde30710fd4fcb98c76b82254",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -5879,7 +5879,7 @@
             "bytes": 108317,
             "sha256": "9b9d8926b0c36c578d24cc98c2852f3f3bd98c743e5a119ce7098845b7fa50af",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -5909,7 +5909,7 @@
             "bytes": 12146,
             "sha256": "d549ca798a3b0acda744eb3d578762a1858ff175e471292a4f2cdf51409c7d79",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -5939,7 +5939,7 @@
             "bytes": 74472,
             "sha256": "ea04de69aa28ceffca6dc86b0ae1b9ebff61765a5ee9fdccdb4f520df908bc3b",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -5969,7 +5969,7 @@
             "bytes": 18485,
             "sha256": "0eeeba48601b45a0a3647a2faeaddbc1bc5bf16924b47ae791c3481af6723c2e",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -5999,7 +5999,7 @@
             "bytes": 515972,
             "sha256": "efae0d620fc83962f48e86eb8ab3db26329a3880aa3d5e9eaf4ed54fc046c3ea",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6029,7 +6029,7 @@
             "bytes": 139895,
             "sha256": "8ac9671871d5b5ab3e11c9df7138d7e36aa25575f6ee3102265510966bfa7aa2",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6059,7 +6059,7 @@
             "bytes": 17468,
             "sha256": "3dd353d7e88df77258f916d76403ecb9478cdc2d04a52cdb3abb1425d2106e40",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6089,7 +6089,7 @@
             "bytes": 50022,
             "sha256": "0ee8c24001518b53723647ce292fb8f9dba4386bbe8004e42350dea1a26cd208",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6119,7 +6119,7 @@
             "bytes": 158814,
             "sha256": "aa63accd86ec81b656b0a5c789bec97984818bd50b1b128153ebc2ab3a0ba665",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6149,7 +6149,7 @@
             "bytes": 29848,
             "sha256": "c9cf07195cda2677df180370076aed4be5de62c20239320da4739099dc074fc6",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6179,7 +6179,7 @@
             "bytes": 178361,
             "sha256": "dd8407bc776c53ea7e4e385e970c1e3ca541ae32aad376137a9a3dd8ca66f17f",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6209,7 +6209,7 @@
             "bytes": 37548,
             "sha256": "77d3efef672a34ada6c105482e7b690a322163d5b8e3482ca3af4a75b41b0cfd",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6239,7 +6239,7 @@
             "bytes": 37548,
             "sha256": "77d3efef672a34ada6c105482e7b690a322163d5b8e3482ca3af4a75b41b0cfd",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6269,7 +6269,7 @@
             "bytes": 363144,
             "sha256": "7ae303b506433fdaa7aef022792ba3b27cac02f66b8ee42472769a44c9e5cd00",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6299,7 +6299,7 @@
             "bytes": 53458,
             "sha256": "f31ad26f9fb5f3c3a7afae57d152b4ceca150486acf8b052a1e491e650bd240d",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6329,7 +6329,7 @@
             "bytes": 5769,
             "sha256": "16d50783a58db644c4d520af800017284ca164077d2005e93dd9c665ff772022",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6359,7 +6359,7 @@
             "bytes": 718,
             "sha256": "8bd9e8f522386db03cc5f14e0c40e9ffbfaf0e89ca8ade08caa4a297bb164d8a",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6389,7 +6389,7 @@
             "bytes": 433,
             "sha256": "ea1f094b8e5719e65cf53657563a9c64c604c22ac7627c601b08f3319ba608a9",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6419,7 +6419,7 @@
             "bytes": 24424,
             "sha256": "de90ff138baefa28b7417e4fd006e576862a299e4ff5a6065761bcad7a0f14fc",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6449,7 +6449,7 @@
             "bytes": 10681360,
             "sha256": "59ead23ce499f245d259158cb1871d66b8eb3267fcfaa35e5895331523556d1d",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6479,7 +6479,7 @@
             "bytes": 6719,
             "sha256": "3ce3380de6d1212dcd3de710b74a16f5629c0d4bc2ff9d351ab6d0ed551c915b",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6509,7 +6509,7 @@
             "bytes": 250925,
             "sha256": "c760854712e52a779857c5fd5e68cb3390fee1d9ab0a7ccc24cc01efc6584de0",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6539,7 +6539,7 @@
             "bytes": 11142,
             "sha256": "3593f15d6601496d8c6d5ff7019e2622050fa1257938a7b2502d9fa211ab4a55",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6569,7 +6569,7 @@
             "bytes": 80219,
             "sha256": "41130e57eb73c707253b15e6e84d7a7841d756e264ae3a8649f6c3daff3c4a08",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6599,7 +6599,7 @@
             "bytes": 288306,
             "sha256": "7fe57ab92c589173a89d5a45dffdc6acd824dba343d4e1b00ad82427e1b7c99d",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6629,7 +6629,7 @@
             "bytes": 348657,
             "sha256": "3591406fb7d14f849a7e93b9cb01c096e1b8386c0efbfaeb48bedb73dd2f7b16",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6659,7 +6659,7 @@
             "bytes": 522,
             "sha256": "96b4c218d90754a39e1672ec670757296e9d089e01959ccf64636c97f6303e14",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6689,7 +6689,7 @@
             "bytes": 2175,
             "sha256": "97c53175bdd87ef56573fd17c5046c515e473db956681faf96f8d806d8fc977b",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6719,7 +6719,7 @@
             "bytes": 12172,
             "sha256": "fcd823fb02cd711c19a2a7461dcc773a2400612835c6adf580fae2f852f4eef2",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6749,7 +6749,7 @@
             "bytes": 56,
             "sha256": "bee9aeda082f016de4f611c3bf31ef4ea37610d1765952fe170005305e707602",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6779,7 +6779,7 @@
             "bytes": 5921,
             "sha256": "6debcf3f29202a42b88e7dafd381e4c7259548b69119789d9c2f16c5498ecf18",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6809,7 +6809,7 @@
             "bytes": 912,
             "sha256": "5994355d0712f5e9a91aea3d81f6699c3040be4de51597e4f937f8de286026ba",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6839,7 +6839,7 @@
             "bytes": 687,
             "sha256": "7d9488d6bd75ab82d775479b729f14d1e66e106a9e728ab5edafa8cec247fbe4",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6869,7 +6869,7 @@
             "bytes": 5118,
             "sha256": "6bdd34b206eebd8b4d33b595b6d62093dbee77de5cd4481f264002f1de5fc818",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6899,7 +6899,7 @@
             "bytes": 9179,
             "sha256": "6c5cd32a6034d6a7de121d5c5b401f7d6be2c1e3c04695a2c2a9c1288665a0bd",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6929,7 +6929,7 @@
             "bytes": 117086,
             "sha256": "515d8ddde0177a66a327425c46cd77e9f3f7d1bcf8b05629a96489a00fa946c2",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6959,7 +6959,7 @@
             "bytes": 4718,
             "sha256": "61042d7c6ae4fa8e909cd77fd1d4c9a4ff85937d4c02fb04315cabf12951d4ee",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -6989,7 +6989,7 @@
             "bytes": 21746,
             "sha256": "eefe098127092ea2140df51c634579a5b600aed5ce13ac8eb63826cfb4376647",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7019,7 +7019,7 @@
             "bytes": 43459,
             "sha256": "8cbef411a7d148fc468e37091cc178f56551ae0f5b053a580bbacb6fe79dead0",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7049,7 +7049,7 @@
             "bytes": 8918,
             "sha256": "26c909a5ba82022a7b08765935d104c8d038f3e7c9096bb29b7da9147453bf5f",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7079,7 +7079,7 @@
             "bytes": 8858,
             "sha256": "b4373ec173eb73e88eee431951c4545fa51f401c5e4298ee3040d37d2c0e78a9",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7109,7 +7109,7 @@
             "bytes": 2313,
             "sha256": "e8c302f53f09f2a6c329cf296aca17c9d14cbdd3b874b4b2de5b1e4b7f09a1a3",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7139,7 +7139,7 @@
             "bytes": 8167,
             "sha256": "455edda886108d6b1015365f1a567ab8ff3277e068889a5168501da30be95168",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7169,7 +7169,7 @@
             "bytes": 153,
             "sha256": "01674429e10c301c2dbae6cdcfcbd4017eb8b8c044ced0636ed8c728c817f1e0",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7199,7 +7199,7 @@
             "bytes": 194,
             "sha256": "4ef3d8ca696a7d9638449b74fe7bcb17ca37f7ba4e3b98884ee9239ee5cda1a4",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7229,7 +7229,7 @@
             "bytes": 5712,
             "sha256": "3b891982799960948af69e48f45c34c6701dafd8a94fd33ff59944328c412e63",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7259,7 +7259,7 @@
             "bytes": 6383,
             "sha256": "af669c5e1435b308b7b789c31afcb057c7f69ec46c10e48b6f9460b5e115b87e",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7289,7 +7289,7 @@
             "bytes": 675,
             "sha256": "3786feeb29dbc49ebfacb21bb409fa95a729ec4b3c77d8f816d84b5627631f19",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7319,7 +7319,7 @@
             "bytes": 848,
             "sha256": "1ae600f50fd7d50e5922cf2206e63701172b3afc217268751866d111f0b775da",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7349,7 +7349,7 @@
             "bytes": 11162,
             "sha256": "5be6b6b491b264b53096ae030898963b0d83a684cbb3d0252be29947e1dd2b66",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7379,7 +7379,7 @@
             "bytes": 1003,
             "sha256": "5b88cf2fe5b133b2a021944b0f611c3937618e93d6e9b04791749957ba397ad2",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7409,7 +7409,7 @@
             "bytes": 721,
             "sha256": "5f1ad9ac047ccc7bbf4e26dddc34b3a97ec7d925707b298db2f01bbbd4bcb7dd",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7439,7 +7439,7 @@
             "bytes": 1556,
             "sha256": "7a66b699438d4836950385eb6fedb96f927b7d3c3f9a53bf1ce10a1987ecdafe",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7469,7 +7469,7 @@
             "bytes": 1668,
             "sha256": "c9a7d66961ed3d670461fb519e4ab6a94b57e38dbc7eef145917aa72d3da1855",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7499,7 +7499,7 @@
             "bytes": 1615,
             "sha256": "81b73a217f1fee8abbde6dc49e873468a0405c2fdcdbde89d38d112fd2ae8125",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7529,7 +7529,7 @@
             "bytes": 1116,
             "sha256": "4e6099307496a2bac79108205a37413b634f3dd66afa9586962030b78ddf35a7",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7559,7 +7559,7 @@
             "bytes": 315,
             "sha256": "5d65ab379d371100be3005dfabde7e72d1c06de95139e95e5a16626efcc6c53e",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7589,7 +7589,7 @@
             "bytes": 1239,
             "sha256": "5c447ec97a791b424629cd25f668611854195258e151ce0d6030e92b512d2a8a",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7619,7 +7619,7 @@
             "bytes": 442127,
             "sha256": "805ba9de88235702bbf48363e14931e0f797609ede2f06762e52dddc2b0b05ce",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7649,7 +7649,7 @@
             "bytes": 2486,
             "sha256": "26855b5e89dd7d0e8329d94a90dc46c2f3677b31d6fade37fe6b9894924e5b61",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7679,7 +7679,7 @@
             "bytes": 2480,
             "sha256": "95263e970590116bf4883414162811c0a38a2f0cd063855295713e5518702bd2",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7709,7 +7709,7 @@
             "bytes": 2491,
             "sha256": "d9959df793893c881b70d6c8645bd2de66d6fb27ecbb02dde894fa53dbc73d07",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7739,7 +7739,7 @@
             "bytes": 1372,
             "sha256": "cbe96591e832469401387cff0c4d7037b4ba61338e309321b4d4a982cd7aa67a",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7769,7 +7769,7 @@
             "bytes": 2476,
             "sha256": "562a07bd25bfc99ec1fb5c8655fcfd179a0517d888e74eba232d8f781189d8b7",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7799,7 +7799,7 @@
             "bytes": 2477,
             "sha256": "2627596150e5d66836dc90665f9fc7ea6fb5ac34f0a352240e9917dac0900dfb",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7829,7 +7829,7 @@
             "bytes": 2484,
             "sha256": "174bcf8dc5ffb19ee843d8939683395b17116d2469084fc3df2ba366800a3746",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7859,7 +7859,7 @@
             "bytes": 1118,
             "sha256": "057eafa201026941963851e486b0b19474ccf1e5e63bb4f31cbbf435cd8b6020",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7889,7 +7889,7 @@
             "bytes": 70446,
             "sha256": "6b1e4332a27f87409247caa6909a38bd74549d82fcb7b9002d6c3f5fd2f84b28",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7919,7 +7919,7 @@
             "bytes": 64676,
             "sha256": "7149b72e564abcc68e27797dbe37c81eb78ae9a4783672827ef5aad1a97ac7d2",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7949,7 +7949,7 @@
             "bytes": 318435,
             "sha256": "f289e52895c3a2b521ea9ed436fa353da607cbe22d3a7332254fec749c82a069",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -7979,7 +7979,7 @@
             "bytes": 57525,
             "sha256": "2aa2a08b0db27ec1741982b33042dfb585b6c97d584190205e3d34f357e14714",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8009,7 +8009,7 @@
             "bytes": 57525,
             "sha256": "2aa2a08b0db27ec1741982b33042dfb585b6c97d584190205e3d34f357e14714",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8039,7 +8039,7 @@
             "bytes": 442127,
             "sha256": "805ba9de88235702bbf48363e14931e0f797609ede2f06762e52dddc2b0b05ce",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8069,7 +8069,7 @@
             "bytes": 126491,
             "sha256": "c5f0d641a623e1d2ca01be44dc183a581a3c409e07a2a146d56d3185fc303be7",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8099,7 +8099,7 @@
             "bytes": 57782,
             "sha256": "61b91d13ac58fa6735d531e405f82adf427685896d286a755ddea0275b45b6a8",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8129,7 +8129,7 @@
             "bytes": 269090,
             "sha256": "e184ed6d03a49f2d6768638c4439122fe14c3da3a8bf6fb870f700f4690bc6a8",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8159,7 +8159,7 @@
             "bytes": 111044,
             "sha256": "ca9c3fe8a5226ca3859edec829312686433157497a2cf0d404eef59458dcbb73",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8189,7 +8189,7 @@
             "bytes": 48016,
             "sha256": "7e3702cc157bc4ea9f997543ca0933d6f1221d30d412964ccd97a544f9d7e288",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8219,7 +8219,7 @@
             "bytes": 332,
             "sha256": "388764a6525da977045d17688eb46ae56e3b6920929f8aed9efde03c4affc6af",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8249,7 +8249,7 @@
             "bytes": 85295,
             "sha256": "6de9c3c3d7c3e072e5c3a9869a60c9a5f30f76871b58b3a684b7a05ef373b5bd",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8279,7 +8279,7 @@
             "bytes": 246203,
             "sha256": "263993053c21a9ae261dd4099331ac888a835a29f193324b18043755bb93dd76",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8309,7 +8309,7 @@
             "bytes": 21573,
             "sha256": "ba0d2652229e06c06b7696a6eba04a1eb8734ee1c2d7c26bc0c29517054c531f",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8339,7 +8339,7 @@
             "bytes": 110875,
             "sha256": "4a9bb91706bf172467f2ae40f2a38e9e8b121579f213c4a71a516d40e407139a",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8369,7 +8369,7 @@
             "bytes": 365488,
             "sha256": "cc1d9de97c1624ef049d8c4426e02870cec2e5a06ef012e01a5173b3405454c0",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8399,7 +8399,7 @@
             "bytes": 38521,
             "sha256": "042a71b6e821cef84ba248e8c6d6ebb5058849c429dc2cc0f205d32d62295039",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8429,7 +8429,7 @@
             "bytes": 44266,
             "sha256": "72705cbf13659119d94dd4c805ee802a70694c77077f46253cc79027cd59753d",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8459,7 +8459,7 @@
             "bytes": 71890,
             "sha256": "1dd5912c9fc22ece6c4e808e6b45c49a2a4a948e77cc7523e2dc7fdb16da4ab2",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8489,7 +8489,7 @@
             "bytes": 124520,
             "sha256": "b5fcf5adc31857ae5a831b78764c9e3302e04b918b03f95e700001a09a845fa5",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8519,7 +8519,7 @@
             "bytes": 1110080,
             "sha256": "e90854fd81f8c3f6235a74b39fb4256800edbac349e3f59d542d947670438227",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8549,7 +8549,7 @@
             "bytes": 354752,
             "sha256": "7b51729c3b4e1a43938e14a72b51c970bd519934572ab8e375ace90093fb007c",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8579,7 +8579,7 @@
             "bytes": 354752,
             "sha256": "7b51729c3b4e1a43938e14a72b51c970bd519934572ab8e375ace90093fb007c",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8609,7 +8609,7 @@
             "bytes": 48977,
             "sha256": "eff88acc7b6297b2a9de028755334ddb4efcbbb2f8da81ea733751bc65615089",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8639,7 +8639,7 @@
             "bytes": 229517,
             "sha256": "db0208d06276e48a3aeee3c3fdd5bde35c30e0a449b552d8fd41f8c817a969fd",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8669,7 +8669,7 @@
             "bytes": 85567,
             "sha256": "f24162cc14732ccb1030ea90980aaae5a1d547ff97f4a0ab5d17a453292379a7",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8699,7 +8699,7 @@
             "bytes": 2189,
             "sha256": "a45c6ba855c5bd29b115de11e8bc6ad922bc51be21621916583c974f2ea55095",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8729,7 +8729,7 @@
             "bytes": 2191,
             "sha256": "0e0d2d5a9258105a87ddcb69c6a6b37d52f366a8e6ee7a16a27aa93dda11503c",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8759,7 +8759,7 @@
             "bytes": 2305,
             "sha256": "eaef50035d1af9dabf0d5c86ff417ffce5edf35b1c63403bbb5ac6db4aff1d4e",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8789,7 +8789,7 @@
             "bytes": 2086,
             "sha256": "86b077603f51357efb119836ee3de2eb49201fba29931cecc97a54919464e439",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8819,7 +8819,7 @@
             "bytes": 2048,
             "sha256": "19e61caca9e050b9d53cb565cd2e1f24e084fa449b55e0d566e3b4a60bac2493",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8849,7 +8849,7 @@
             "bytes": 2047,
             "sha256": "f4c4194d5101605d12ca35de1e8dac3b66ca036482875cba5315b356a18fe6e3",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8879,7 +8879,7 @@
             "bytes": 2150,
             "sha256": "c33b0404bb143fc37230337502afb0b2d1c11ce04f0f6c3eb0ec08e02643e01c",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8909,7 +8909,7 @@
             "bytes": 2095,
             "sha256": "6b06809ad6b61a4720defc233278e647b4c526bcde05a8b0da046c785835fdea",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8939,7 +8939,7 @@
             "bytes": 2039,
             "sha256": "d199778be607307bd908c9d59070f12a77ea5b5ef982810a5d48fc002e36f2bb",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8969,7 +8969,7 @@
             "bytes": 2178,
             "sha256": "8b31b609022e4510aad45db5d72eec4e6f2c62b318fe008983c17f0da81adad7",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -8999,7 +8999,7 @@
             "bytes": 2317,
             "sha256": "db612a5b3b120e34c96dace367a0581e6628e1967d2db2acd845e97296358212",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9029,7 +9029,7 @@
             "bytes": 2052,
             "sha256": "757393d03c5576e61423c3b36e8f3a5890d275a053064a7af9de90859171fbf3",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9059,7 +9059,7 @@
             "bytes": 2186,
             "sha256": "c06818113c103e7248e4b65f3d771826176e5cbcfb681a7b076a9d28b2b48ee7",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9089,7 +9089,7 @@
             "bytes": 2173,
             "sha256": "f05b7976a7e53a81ba0ff2b6ab832db8883869b6ed418144b11e7de9ad3408b6",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9119,7 +9119,7 @@
             "bytes": 2175,
             "sha256": "e9cd9156874aa5f4468dc2be693948b32f14bb9b09aa522654a7724a27db3621",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9149,7 +9149,7 @@
             "bytes": 2735,
             "sha256": "d0e9bb039dfe2b4d754ae793c315079a50234a30342d76695b2b05acfeff29b4",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9179,7 +9179,7 @@
             "bytes": 2192,
             "sha256": "7b8822c026e7554d73d85dab6fb6f3c7522f2f8dced2e84ea2b0ce2cd9880100",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9209,7 +9209,7 @@
             "bytes": 2052,
             "sha256": "234b2257a2ed439e878787d165aa0ed7fb9ee82513a10d88ca565eccd1d44d41",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9239,7 +9239,7 @@
             "bytes": 2491,
             "sha256": "25a2ffb4416dc29463acaca6d27b1b83634225b76dc1bf4580ecc219dc8008a8",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9269,7 +9269,7 @@
             "bytes": 2312,
             "sha256": "12b3aaca9647342ca70420bf1b649d091316fedb23c779cadc20560cdd13d8a6",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9299,7 +9299,7 @@
             "bytes": 2056,
             "sha256": "56da1f57b98343054f7c63c08b16ffe3e397e922e8989820344438ee28879fc4",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9329,7 +9329,7 @@
             "bytes": 2192,
             "sha256": "8f913591e0b3d6a09064b2da25b14b5d9d347f645ead0690be553b9ae3a9c301",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9359,7 +9359,7 @@
             "bytes": 58933,
             "sha256": "7bdc452fad5d73b91b764b30bebec5be383d1d89f2497e6b79a0499117f99fa5",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9389,7 +9389,7 @@
             "bytes": 148216,
             "sha256": "bbfd735470eb767c66b44cbbda0f282142b95c89a39d9e285a3195d1f018997c",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9419,7 +9419,7 @@
             "bytes": 47596,
             "sha256": "436e4ffb0584cee93e4f4a41c7ea59678280db487adca57477e4f6dba60425b0",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9449,7 +9449,7 @@
             "bytes": 255824,
             "sha256": "d49e0445d4a721681e60d424bdf730669f51afb78e0fc7bcb349f05051633efd",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9479,7 +9479,7 @@
             "bytes": 114820,
             "sha256": "cef92412a616adbc3bbd0aec076c929350d993e25fe2ec43fadfd2f079fb98dd",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9509,7 +9509,7 @@
             "bytes": 353506,
             "sha256": "a8eb7b6c9b6f31dd5782d8f88687e220935c2809a1903cbbb1b764ac082dd070",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9539,7 +9539,7 @@
             "bytes": 360145,
             "sha256": "1798a3885406f8e228e6c44d501f5941ffca1bcdd596f9206227998153bb1693",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9569,7 +9569,7 @@
             "bytes": 178987,
             "sha256": "bca4d25a4e9dd726a753bf9ceff36040f90a1591db03b86ff93b51fcc6edca28",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9599,7 +9599,7 @@
             "bytes": 50829,
             "sha256": "e57c69bd79cd49b70d2e68dbb6511b4987000ea6de6341d2b5b1278b7bb4417d",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9629,7 +9629,7 @@
             "bytes": 178987,
             "sha256": "bca4d25a4e9dd726a753bf9ceff36040f90a1591db03b86ff93b51fcc6edca28",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9659,7 +9659,7 @@
             "bytes": 50818,
             "sha256": "993b0820e9fa9bdbbe55ab86361e705f5fd0ab799ee93b19aa71fbbee6da7279",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9689,7 +9689,7 @@
             "bytes": 161876,
             "sha256": "30f52213b0c3adf07a86282ed797d1993a0d5a1b35f0f6e59bffb2aaeccfe878",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9719,7 +9719,7 @@
             "bytes": 257478,
             "sha256": "adf7f1a1d29a8895f834745f0c2f57119b9eac39ff0bf007aad5eb3e3f25e5e2",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9749,7 +9749,7 @@
             "bytes": 114351,
             "sha256": "7ef92c7589edb68db0bbfd6a573d6f0fe1605ef21118f793bef628b679c4d6c7",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9779,7 +9779,7 @@
             "bytes": 250208,
             "sha256": "dfad1b10cdf5daba64e67592a4332558440d35783045aec9f3da02b68e38071e",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9809,7 +9809,7 @@
             "bytes": 64179,
             "sha256": "b4fb4c53b08943ef48e8647ecd2563fa0ca2af440a9851d9eb66e9bc0b14e647",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9839,7 +9839,7 @@
             "bytes": 336293,
             "sha256": "b473e197fa5a5d086d2157cf4b25be003b6dd7c01bd8329311a1a2bd5892b1ce",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9869,7 +9869,7 @@
             "bytes": 162640,
             "sha256": "edf497bced3941c68d443b4a2a55d62c3ad224465e6b44344bd59e4f36a8d822",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9899,7 +9899,7 @@
             "bytes": 15402,
             "sha256": "e30d645287065888cec016dd28862f179273435102b2b83c44c9938cbbc47077",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9929,7 +9929,7 @@
             "bytes": 182073,
             "sha256": "b857a3b5f4e6ba6d1b5057545c181bf55a9b2898d6de164209f364cc93877668",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9959,7 +9959,7 @@
             "bytes": 49923,
             "sha256": "fe7f89ec7c5175f90ff71a80f57514cb17e96f007a33d4e241d0971ee64ac130",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -9989,7 +9989,7 @@
             "bytes": 137847,
             "sha256": "b07637c3c59be6f841a495fdec20884da89a9315f7570a73e4f6a54acd8f7633",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10019,7 +10019,7 @@
             "bytes": 163350,
             "sha256": "011192a6921a70141f3f45b1042104ace1596e6600990fa1faae3d0ca4885a5d",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10049,7 +10049,7 @@
             "bytes": 266857,
             "sha256": "134595ea4bb514e5711fbfab4660517fa56b4b0280f3b2d82e7412763c90b436",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10079,7 +10079,7 @@
             "bytes": 158960,
             "sha256": "f1a0ab7466d12a071d3f551176239bd18e8be7cecbaae0c5d9f6705a563e7d4b",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10109,7 +10109,7 @@
             "bytes": 246760,
             "sha256": "bd569f829459030439ffcc997052774e812b15686cf0c95a229753722fe3bfe7",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10139,7 +10139,7 @@
             "bytes": 158943,
             "sha256": "11fbab6fef623e8202a86a8a7505b82aba41710e9edce523e73e8c16992b60db",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10169,7 +10169,7 @@
             "bytes": 44013,
             "sha256": "b51b928afaf589e79e652388c1a2588416d5d74c5e096a49bae475f9a42daa31",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10199,7 +10199,7 @@
             "bytes": 334052,
             "sha256": "232590e900abd8539eced698e283d8bd03e62769117b69be0e9cff6759610973",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10229,7 +10229,7 @@
             "bytes": 25268,
             "sha256": "fff126043afcf4b5ed49138dc5c10f451e22ff48c2ad6898da09b7525f2e19b0",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10259,7 +10259,7 @@
             "bytes": 45605,
             "sha256": "356a1409acded04cbdcfa99d87cbda813a7f7c57a52f84fa70ccce684837e0b2",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10289,7 +10289,7 @@
             "bytes": 15887,
             "sha256": "fdddd82d38625ee764ddb5f547ae7ba803dfedc8cef67a37846403854c0adcce",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10319,7 +10319,7 @@
             "bytes": 64081,
             "sha256": "b31826fb29d44103bcd632ebb9bc60029e8e7bf64e8940a41afe8592598b2518",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10349,7 +10349,7 @@
             "bytes": 19332,
             "sha256": "b64cce293d93ee00f86e3c4cf2e8e806f03a9362d988f0b11b37904b87cd0a1f",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10379,7 +10379,7 @@
             "bytes": 182052,
             "sha256": "ed805a3a07b524b93a2fda3c540eb9414098463bd22e0591ee8256b33189004e",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10409,7 +10409,7 @@
             "bytes": 182052,
             "sha256": "ed805a3a07b524b93a2fda3c540eb9414098463bd22e0591ee8256b33189004e",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10439,7 +10439,7 @@
             "bytes": 164801,
             "sha256": "fd9396e867b2cf6e501a6324cb8e57a08933a6e490c4a56782232fc8413608ba",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10469,7 +10469,7 @@
             "bytes": 161393,
             "sha256": "5664bc24fe31d8cb41f63a048746f5037b24c0e20e18c5239dc0a66ea4138b56",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10499,7 +10499,7 @@
             "bytes": 94681,
             "sha256": "5e3fe635d3779a8de5fdb6f614cfe844aeb7528b4764c52de7d97f4e926cfc97",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10529,7 +10529,7 @@
             "bytes": 65527,
             "sha256": "8f387a40f7ecbaa6a187d08744e0389354d5ad01b4f76e0aced0891a76921b2b",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10559,7 +10559,7 @@
             "bytes": 154782,
             "sha256": "eccc6765009eb66d0f31850fab71c90dc72e6199944a4a0d9296652ddadac610",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10589,7 +10589,7 @@
             "bytes": 71437,
             "sha256": "0ddb2d81f00e85b13e9e22a8408cb0449cfdc7d8fb9b031f68189524b1169071",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10619,7 +10619,7 @@
             "bytes": 114397,
             "sha256": "4f0a3e41430bc06051032b92f74e7fb00f1fe5cd33b112a42fa7b18f803f6c89",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10649,7 +10649,7 @@
             "bytes": 468336,
             "sha256": "24c89bc202a4b3d325959bf2838e02504cc4067b0d297e3d37acbb7e3588fc8c",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10679,7 +10679,7 @@
             "bytes": 13359,
             "sha256": "2d70139b09629e2e4167e835e2373610e29ee28532b7cb70ff9c387edf8bf28b",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10709,7 +10709,7 @@
             "bytes": 448617,
             "sha256": "22b07e2d69fd61bbbf260470d7e26b6c1b024811a555cf916c957cb3eff8306c",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10739,7 +10739,7 @@
             "bytes": 515908,
             "sha256": "c1f27b0704f1a1b99e59f18b533a0c78413f3963ea9706325331c150bde1563e",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10769,7 +10769,7 @@
             "bytes": 195460,
             "sha256": "2a5db46b851e93c74e8c8c946d43d5723940655e637b511a7553cfad85f3f7a5",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10799,7 +10799,7 @@
             "bytes": 695665,
             "sha256": "cfc9256796c437a02e87c94cb20fede88c141fd36713d97ac6984e8b70b0cba0",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10829,7 +10829,7 @@
             "bytes": 18434,
             "sha256": "3a473eb1b53b637857ef3fc078e4b8117a2c4db5919a44b481a5d206d592bb93",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10859,7 +10859,7 @@
             "bytes": 70873,
             "sha256": "312223ac97ac874faa23ff6e1e6f7ed5e90affcb3a654387f8b8351a9a3194b8",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10889,7 +10889,7 @@
             "bytes": 1445879,
             "sha256": "c8e9abfb61a344eca0712971c2e0ce8a13262e32e39073e15bd2810c025e2728",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10919,7 +10919,7 @@
             "bytes": 163783,
             "sha256": "a9dc0c6a48ea0c5edf00431d12fa098bf9671cff43e2cfcca5498005cd7bc7a7",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10949,7 +10949,7 @@
             "bytes": 300132,
             "sha256": "45a9e3bd762d528d731df5e0e3fc95335d7ed077499513384900241a42a5063b",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -10979,7 +10979,7 @@
             "bytes": 606517,
             "sha256": "7cc325d6067b172976396f25bb32647ff4fea708e1b9e20c69485ae792881bfb",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11009,7 +11009,7 @@
             "bytes": 607131,
             "sha256": "93619c6c284f174d7d7e8523bbe289bc2064e17b9d9386ca4bc60ebe1ce38dd4",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11039,7 +11039,7 @@
             "bytes": 152015,
             "sha256": "2b4b86ec7ac4edcb91ad398a75ded7e3a7b406b4bd7bcf07c38618b37a1deb57",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11069,7 +11069,7 @@
             "bytes": 377954,
             "sha256": "d2d8062e6b0171d2d560eef3e48a723e762af5042c5dbe812d65866ce3feb651",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11099,7 +11099,7 @@
             "bytes": 566417,
             "sha256": "4c8982915a775d60b4407e561063beaf49472fc2c11f8bf57a7bfaf57c5cdbd5",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11129,7 +11129,7 @@
             "bytes": 440588,
             "sha256": "176e5e1c7254ca82c60286e688cf9b017d52779a0d24df0e7477c104431fdcb1",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11159,7 +11159,7 @@
             "bytes": 42342,
             "sha256": "ba661b4e6f23ce8b27b44a39353c80f3e0f05d991df86137a0405b9598c11313",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11189,7 +11189,7 @@
             "bytes": 2214432,
             "sha256": "920a6afa9eeb8a2090ae119539680f02957306fc02db25779a33f4e1f6d2d402",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11219,7 +11219,7 @@
             "bytes": 166260,
             "sha256": "d9bcea9e97ff6f695cb3abcc62457a5910d344e762640f7d75132419f988fec9",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11249,7 +11249,7 @@
             "bytes": 274134,
             "sha256": "2d124d92bc1b747b62357edeea187d83f901a96aa76c7c7e739442c051240bb4",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11279,7 +11279,7 @@
             "bytes": 84855,
             "sha256": "88797722f533119a0f7520c56a38845bc5e909b5ae09e4f530469a5dd344101a",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11309,7 +11309,7 @@
             "bytes": 70895,
             "sha256": "b72867334810471d0216a8ce8c54624e88e3e9b2d0422cb5fb5c1bea3cb98c71",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11339,7 +11339,7 @@
             "bytes": 45606,
             "sha256": "f08f94f979bacbfa434b5c40ee3d8e3875add99d17191ddd1eeaa9d46cbbd957",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11369,7 +11369,7 @@
             "bytes": 2486,
             "sha256": "26855b5e89dd7d0e8329d94a90dc46c2f3677b31d6fade37fe6b9894924e5b61",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11399,7 +11399,7 @@
             "bytes": 2480,
             "sha256": "95263e970590116bf4883414162811c0a38a2f0cd063855295713e5518702bd2",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11429,7 +11429,7 @@
             "bytes": 2488,
             "sha256": "628b6d958d3a3c97a93c15fe4f065e797bc2b33b3ca7e0cb87fa0567a4c70160",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11459,7 +11459,7 @@
             "bytes": 2491,
             "sha256": "d9959df793893c881b70d6c8645bd2de66d6fb27ecbb02dde894fa53dbc73d07",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11489,7 +11489,7 @@
             "bytes": 1372,
             "sha256": "cbe96591e832469401387cff0c4d7037b4ba61338e309321b4d4a982cd7aa67a",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11519,7 +11519,7 @@
             "bytes": 2475,
             "sha256": "c8b9ac8c10c789721f76ce983a9ca8ac0b7634673aca2decc2f224544691c1c4",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11549,7 +11549,7 @@
             "bytes": 2477,
             "sha256": "2627596150e5d66836dc90665f9fc7ea6fb5ac34f0a352240e9917dac0900dfb",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11579,7 +11579,7 @@
             "bytes": 2484,
             "sha256": "174bcf8dc5ffb19ee843d8939683395b17116d2469084fc3df2ba366800a3746",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11609,7 +11609,7 @@
             "bytes": 1118,
             "sha256": "057eafa201026941963851e486b0b19474ccf1e5e63bb4f31cbbf435cd8b6020",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11639,7 +11639,7 @@
             "bytes": 2189,
             "sha256": "c40a14161dfd10306730ff23103de77348a6a9a7afca3ae5a84582b956108e79",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11669,7 +11669,7 @@
             "bytes": 2177,
             "sha256": "3d21c22290ab61ed3673e9cabf553fdb790f50a002046f7d023cc2f67298810f",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11699,7 +11699,7 @@
             "bytes": 2318,
             "sha256": "4d6b19d1b61c7c9faa4783e80a95b53779483713ab066815e5fb53a1300c9a12",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11729,7 +11729,7 @@
             "bytes": 2321,
             "sha256": "5da43374ec46b8c7430dd871fe769c6de6529cf48796ce8f3e53a9a5e3d1a0a8",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11759,7 +11759,7 @@
             "bytes": 2052,
             "sha256": "757393d03c5576e61423c3b36e8f3a5890d275a053064a7af9de90859171fbf3",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11789,7 +11789,7 @@
             "bytes": 2186,
             "sha256": "5fa5cae3e20f05a17d84607c3c3b6b0dc2df75243eed53e8a13c376e56175fe8",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11819,7 +11819,7 @@
             "bytes": 2181,
             "sha256": "15a8bcd689147de086c7fe8ac973879558df098974f226d0450dc92f21592dc0",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11849,7 +11849,7 @@
             "bytes": 2191,
             "sha256": "73d1582fee097c44582d05886d6b95175a673f5bc2c9232afed2a5a40cbfd637",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11879,7 +11879,7 @@
             "bytes": 2052,
             "sha256": "234b2257a2ed439e878787d165aa0ed7fb9ee82513a10d88ca565eccd1d44d41",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11909,7 +11909,7 @@
             "bytes": 146214,
             "sha256": "1f4cbf51a75c42788ca8be893e89f7c9ad5b860e503331972ccec7a1849c0568",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11939,7 +11939,7 @@
             "bytes": 46431,
             "sha256": "bd635862b1f1907e17b976aaba7a3b22527e8fd63240113afe7ca1489cb563b9",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11969,7 +11969,7 @@
             "bytes": 2486,
             "sha256": "26855b5e89dd7d0e8329d94a90dc46c2f3677b31d6fade37fe6b9894924e5b61",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -11999,7 +11999,7 @@
             "bytes": 2480,
             "sha256": "95263e970590116bf4883414162811c0a38a2f0cd063855295713e5518702bd2",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12029,7 +12029,7 @@
             "bytes": 1740,
             "sha256": "d5caefab4d6978c7f343d764aa18dd1951fbb683a2f03d1046a37ee8d3b8e55b",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12059,7 +12059,7 @@
             "bytes": 0,
             "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12089,7 +12089,7 @@
             "bytes": 1115,
             "sha256": "1b94819c5fc4fffc20802e37ccdb26304a9db13beac0197bf43d93386ad3842e",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12119,7 +12119,7 @@
             "bytes": 2491,
             "sha256": "d9959df793893c881b70d6c8645bd2de66d6fb27ecbb02dde894fa53dbc73d07",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12149,7 +12149,7 @@
             "bytes": 1372,
             "sha256": "cbe96591e832469401387cff0c4d7037b4ba61338e309321b4d4a982cd7aa67a",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12179,7 +12179,7 @@
             "bytes": 2475,
             "sha256": "c8b9ac8c10c789721f76ce983a9ca8ac0b7634673aca2decc2f224544691c1c4",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12209,7 +12209,7 @@
             "bytes": 2477,
             "sha256": "2627596150e5d66836dc90665f9fc7ea6fb5ac34f0a352240e9917dac0900dfb",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12239,7 +12239,7 @@
             "bytes": 996,
             "sha256": "fea3717c4a1630d8227d2d849385393bdd6ff560a18ec2400731179733f3d9fa",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12269,7 +12269,7 @@
             "bytes": 1865,
             "sha256": "874411b2cb7dd7cbdc7d22105919092d360c69a53f51bda9ecb6b04353fbe429",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12299,7 +12299,7 @@
             "bytes": 1125,
             "sha256": "a0de3f4a4bda66357dc01ee8e8def4f68a6310841c57f3bc609a39bd618597c4",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12329,7 +12329,7 @@
             "bytes": 495,
             "sha256": "b17fef1c3aa65cd24ae0f226ec3f104199304457116f69ed58a459ff3c39ff0b",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12359,7 +12359,7 @@
             "bytes": 2484,
             "sha256": "174bcf8dc5ffb19ee843d8939683395b17116d2469084fc3df2ba366800a3746",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12389,7 +12389,7 @@
             "bytes": 873,
             "sha256": "2b5e3a673b0ced43f861364c39757575c4e6ce935517211954773fbf9e17160b",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12419,7 +12419,7 @@
             "bytes": 1118,
             "sha256": "057eafa201026941963851e486b0b19474ccf1e5e63bb4f31cbbf435cd8b6020",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12449,7 +12449,7 @@
             "bytes": 862,
             "sha256": "fcada4947e75fbb6efc93b5705d9707a43a788a2519041bd0a3bc2754b7b53b1",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12479,7 +12479,7 @@
             "bytes": 1120,
             "sha256": "734bc75a1648404323a2b5c89047c2c58036710d2557a6e01fee884b8dd8ff9d",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12509,7 +12509,7 @@
             "bytes": 1120,
             "sha256": "5c8bf52ac9dd4634591b0d71210f17cc0989dc4d29349c2ee23654a60e638dbc",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12539,7 +12539,7 @@
             "bytes": 2189,
             "sha256": "a45c6ba855c5bd29b115de11e8bc6ad922bc51be21621916583c974f2ea55095",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12569,7 +12569,7 @@
             "bytes": 2177,
             "sha256": "3d21c22290ab61ed3673e9cabf553fdb790f50a002046f7d023cc2f67298810f",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12599,7 +12599,7 @@
             "bytes": 2058,
             "sha256": "8ccecd9078cf7a33eccb963ad0876e8d81682a5a6ccfd60b69f808c6b08c977a",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12629,7 +12629,7 @@
             "bytes": 2032,
             "sha256": "95463941bec5d0c9ea55f90409e73164c57f00ae236f296134edd2d30755b4b2",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12659,7 +12659,7 @@
             "bytes": 2321,
             "sha256": "5da43374ec46b8c7430dd871fe769c6de6529cf48796ce8f3e53a9a5e3d1a0a8",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12689,7 +12689,7 @@
             "bytes": 2052,
             "sha256": "757393d03c5576e61423c3b36e8f3a5890d275a053064a7af9de90859171fbf3",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12719,7 +12719,7 @@
             "bytes": 2186,
             "sha256": "5fa5cae3e20f05a17d84607c3c3b6b0dc2df75243eed53e8a13c376e56175fe8",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12749,7 +12749,7 @@
             "bytes": 2175,
             "sha256": "e9cd9156874aa5f4468dc2be693948b32f14bb9b09aa522654a7724a27db3621",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12779,7 +12779,7 @@
             "bytes": 3957,
             "sha256": "7e4402e38d835054c6907365a323357fd794d9b1867af4e074cdff8d13d70ea2",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12809,7 +12809,7 @@
             "bytes": 3962,
             "sha256": "a7d9713a2be5419b10d6f9ede625568e4bb469120bf6ec771da44e7bbc036148",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12839,7 +12839,7 @@
             "bytes": 2051,
             "sha256": "fc99761b61e519dfea2e9956af185cc6b39fd9295cf1fb3f499c426664a57512",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12869,7 +12869,7 @@
             "bytes": 2041,
             "sha256": "40cc8a3045896b5c2861ed8b48bcf410afe58354c78c6716631b447aeaa1b771",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12899,7 +12899,7 @@
             "bytes": 2071,
             "sha256": "9ebf1675748fba15c59839c239c56cf32093ea743862cfbfaceb1d1723965c6c",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12929,7 +12929,7 @@
             "bytes": 2037,
             "sha256": "e08ccdab4fe963ecffeff4a93a9123224510db99a94d50a6905f3a953c6a81d5",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12959,7 +12959,7 @@
             "bytes": 2191,
             "sha256": "73d1582fee097c44582d05886d6b95175a673f5bc2c9232afed2a5a40cbfd637",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -12989,7 +12989,7 @@
             "bytes": 2070,
             "sha256": "97d74ead82f3dfb439dade338c644e4df7b1a533491011d3e8420beaa503d3a9",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13019,7 +13019,7 @@
             "bytes": 2052,
             "sha256": "234b2257a2ed439e878787d165aa0ed7fb9ee82513a10d88ca565eccd1d44d41",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13049,7 +13049,7 @@
             "bytes": 2048,
             "sha256": "307148ab73f54fef3d6f7a40729917c4f9894e40495d8d8d29f619a8cf06ea05",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13079,7 +13079,7 @@
             "bytes": 2102,
             "sha256": "e7dee1d256d649c48564957610ba1082c9ab66f7d502d911fd387b5349ff5b14",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13109,7 +13109,7 @@
             "bytes": 2063,
             "sha256": "6da9a122a7b8591e9219b9961a64e52a8759c28dd7350bd4761763aa9f93dd66",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13139,7 +13139,7 @@
             "bytes": 2155,
             "sha256": "3f508579ea6a3939a1c4ec117c85910584c016c4b4c0a6e443487fcd9bbd01dd",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13169,7 +13169,7 @@
             "bytes": 2143,
             "sha256": "dce676b21bfe0e654add4c1ac901c85bca0ec1973bfe9f8b95f2d92176f70c29",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13199,7 +13199,7 @@
             "bytes": 2028,
             "sha256": "37b4c8c32c7f58fe824ccaec076e742297b07d9a6975ea1d865cd2dc377903e9",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13229,7 +13229,7 @@
             "bytes": 2032,
             "sha256": "7f24c12bdfeb7c817d3ee1885e6d4f47e5c0fa3ea9700e659c6fc55ede6fd510",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13259,7 +13259,7 @@
             "bytes": 2285,
             "sha256": "662c57a1369acb7f1f3b9aec941aecbc2353bcba16c951875d40a04294ca72a1",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13289,7 +13289,7 @@
             "bytes": 2018,
             "sha256": "16ac2832bf12a299aa9f4d0a60552d9372553bcced8d2948661229b3fc998478",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13319,7 +13319,7 @@
             "bytes": 2152,
             "sha256": "d24e23f65f8c4461ebc8ffda0f013d890602db50cacc8d479b4c07c1932e2cc5",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13349,7 +13349,7 @@
             "bytes": 2232,
             "sha256": "e5d416e9b63a4ea2278b0533e331cfc591a225ea933b54e451b4cdb60d6bbeb3",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13379,7 +13379,7 @@
             "bytes": 19469,
             "sha256": "e52f0643abb178b7c40f0e93ac9111e3ab83e4e2f2cacf575bb0790ac24f4724",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13409,7 +13409,7 @@
             "bytes": 19473,
             "sha256": "c9b4b2b68af1646d9ad14f2afbe91755e1cabef33146607992d71f0e09f66fd0",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13439,7 +13439,7 @@
             "bytes": 1992,
             "sha256": "ff5e7866986b4549e80b08d58c43866323caa434a3f54801382af474f8744afe",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13469,7 +13469,7 @@
             "bytes": 2021,
             "sha256": "17c4ac38799fdd74485e6c5017262b5895026ab2ad80b7f0bfbb38af611ff35c",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13499,7 +13499,7 @@
             "bytes": 2019,
             "sha256": "cfdd730c638a9e8611930b600b071428c326f33bc75c80d0ad1dee2833d157ad",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13529,7 +13529,7 @@
             "bytes": 2015,
             "sha256": "8c325a42bd319f9c04cff2de345844ca7a50bb83afaf0275eda4bf8a992c3364",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13559,7 +13559,7 @@
             "bytes": 2157,
             "sha256": "69bf0bbdb77a9e435441acb41a30bae3129046ca4807d0e9ec976170dc46ff2b",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13589,7 +13589,7 @@
             "bytes": 2009,
             "sha256": "35b81c9f0741c7eda36cdeb1304e8c8947ee4fdb5d10c442d5845a00489e6df4",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13619,7 +13619,7 @@
             "bytes": 2022,
             "sha256": "210623d49ce66985defd8b69cb5ccaaa88b1d5166d70875ec978315b03f61985",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13649,7 +13649,7 @@
             "bytes": 2042,
             "sha256": "8206ef1c358c9519243defd8ef79fa775ad8fb95228cc35aa99e78a213aac037",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13679,7 +13679,7 @@
             "bytes": 2054,
             "sha256": "925eb8c99e6dd158760e944aa820775fc1e1574b9541306f9aba325848729ed0",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13709,7 +13709,7 @@
             "bytes": 2028,
             "sha256": "721c0ec087795e70ea13e6560e47329188790d3c09827088133881ebdf550058",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13739,7 +13739,7 @@
             "bytes": 78711,
             "sha256": "01b00417ced5e5452741c834c0ed0f2d887270f569fa3c9ab55c01ce618eafbe",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13769,7 +13769,7 @@
             "bytes": 2176,
             "sha256": "62e3b3ac2568bb1e5ab8821228917a9f4f674146ae668a1f563659561e972f07",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13799,7 +13799,7 @@
             "bytes": 2176,
             "sha256": "62e3b3ac2568bb1e5ab8821228917a9f4f674146ae668a1f563659561e972f07",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13829,7 +13829,7 @@
             "bytes": 428858,
             "sha256": "c167690d3397be8cc45a8c51a701fb9c1f77e80c4ecc0a39fb42400f8427c916",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13859,7 +13859,7 @@
             "bytes": 1611,
             "sha256": "d879dc026d42362052bd3cf46fb5ecfdc393b57a95868f65db3e4bef966186ef",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13889,7 +13889,7 @@
             "bytes": 1766,
             "sha256": "a0bf2d8bf61b71c41baa53f65cad909bf551564a096a37bc99cb3ee4582bebad",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13919,7 +13919,7 @@
             "bytes": 1865,
             "sha256": "874411b2cb7dd7cbdc7d22105919092d360c69a53f51bda9ecb6b04353fbe429",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13949,7 +13949,7 @@
             "bytes": 1118,
             "sha256": "057eafa201026941963851e486b0b19474ccf1e5e63bb4f31cbbf435cd8b6020",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -13979,7 +13979,7 @@
             "bytes": 2060,
             "sha256": "27f440238fe200f0e732fb20544c8ee3cb9911c76590a69e37b2a52b6004a6af",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14009,7 +14009,7 @@
             "bytes": 2096,
             "sha256": "2791afc6c103ec4b8fc2eee509e837ced4212bdca49701a7e61f1a806e8e40db",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14039,7 +14039,7 @@
             "bytes": 2041,
             "sha256": "40cc8a3045896b5c2861ed8b48bcf410afe58354c78c6716631b447aeaa1b771",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14069,7 +14069,7 @@
             "bytes": 2052,
             "sha256": "234b2257a2ed439e878787d165aa0ed7fb9ee82513a10d88ca565eccd1d44d41",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14099,7 +14099,7 @@
             "bytes": 2023,
             "sha256": "2e41e10cb71c86d6a7895ef2e7f9e3a61f7f0d1c7559b7da96d7ea0d6c4daba0",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14129,7 +14129,7 @@
             "bytes": 2049,
             "sha256": "3c960e148e59e08450b94a92b14bb3c4aae81db80c76a78a8a8a61a3001a1bdf",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14159,7 +14159,7 @@
             "bytes": 2021,
             "sha256": "17c4ac38799fdd74485e6c5017262b5895026ab2ad80b7f0bfbb38af611ff35c",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14189,7 +14189,7 @@
             "bytes": 2022,
             "sha256": "210623d49ce66985defd8b69cb5ccaaa88b1d5166d70875ec978315b03f61985",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14219,7 +14219,7 @@
             "bytes": 1248689,
             "sha256": "8d6de3d6dd95dec8e54fd307c1006000aba36f4c2aeb7b7e32597ef7000e385d",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14249,7 +14249,7 @@
             "bytes": 799712,
             "sha256": "e6dbaf605cac7059af8daa4fc9bebf0d12d67655f13178e326aca31123e167c2",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14279,7 +14279,7 @@
             "bytes": 286717,
             "sha256": "1a91d7e3eeae020b61ca5581e2afa8566b6855b46a5b04035ce55a89946c1d58",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14309,7 +14309,7 @@
             "bytes": 322554,
             "sha256": "5a5805bfafd0117f946eabc11f338ade1941e714c42b863527dcfda0ba5fd5d3",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14339,7 +14339,7 @@
             "bytes": 267463,
             "sha256": "14047d4c753e4dd2b98cabaa08b884c193233dc0ca42be2f6df74bcd2ed059b9",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14369,7 +14369,7 @@
             "bytes": 53329,
             "sha256": "5a96527d208a12b7b3db34058644d37ca6975a8ba269112939d8389feea57ab5",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14399,7 +14399,7 @@
             "bytes": 358204,
             "sha256": "25b8bdb1fa95b292f4fa26d8287d82dad83f624542de23ac523a2908c3ec6bc3",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14429,7 +14429,7 @@
             "bytes": 128452,
             "sha256": "aa311a679ac84727eccc7b98f91926e184d9e48cee26a80edab11212e5f9fe81",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14459,7 +14459,7 @@
             "bytes": 91791,
             "sha256": "08e2a4882d928c3046afb77d5411d0d90491d55df8359f62761ac7d2b947f1df",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14489,7 +14489,7 @@
             "bytes": 117502,
             "sha256": "c64c181a4d1f18ab563b292c67dee5fbb89813679824f06cda22154ca13f84c9",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14519,7 +14519,7 @@
             "bytes": 231951,
             "sha256": "2d68ef1729a37a87d32b14be9406e25464b42247783d3600bbbe616301842dec",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14549,7 +14549,7 @@
             "bytes": 19469,
             "sha256": "e52f0643abb178b7c40f0e93ac9111e3ab83e4e2f2cacf575bb0790ac24f4724",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14579,7 +14579,7 @@
             "bytes": 134718,
             "sha256": "fb839358d79096364a357f0609cdb67040d8942f0da0d6430e3b3ab2ae0a449e",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14609,7 +14609,7 @@
             "bytes": 114150,
             "sha256": "6c990b3d063137c9e2eeb0ebe9454a2573290630cf31dd10ec626742cc4b8e5f",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14639,7 +14639,7 @@
             "bytes": 116303,
             "sha256": "b02f2d65976ed7c4f83aca0c9a7854d752b846cd3e679662e805e97826aba649",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14669,7 +14669,7 @@
             "bytes": 45774,
             "sha256": "32be26c252b184c7f9acd0813c0b3e4ae84c9de8a19a7435a9f1dc81bd2475f0",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14699,7 +14699,7 @@
             "bytes": 76778,
             "sha256": "138c6f859a0866dacedf600ca78244e0034dc21bd784f37f8488ad14f072a937",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14729,7 +14729,7 @@
             "bytes": 133319,
             "sha256": "8c658a6c6e106a44b6e58683bdd01cb09bbb076d972bd6e030d54a66c9e3bd05",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14759,7 +14759,7 @@
             "bytes": 45570,
             "sha256": "4945e714fd98a09f96d7cee383baec218e1f71991581edde1bdffe5a4a157ef2",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14789,7 +14789,7 @@
             "bytes": 68208,
             "sha256": "c558e7cab8b4ffd4651d44a1cad17e64cf400ae057cde773a90bff847db968ef",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14819,7 +14819,7 @@
             "bytes": 123742,
             "sha256": "f4be55b3a41653080c860c5b5c5dee210e34cc6e297214cf23104b7852298f2b",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14849,7 +14849,7 @@
             "bytes": 221240,
             "sha256": "54d8c5a7dcc88efb05dbcd4eff5d5a69256b905add850a9710c1fda7df3b667a",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14879,7 +14879,7 @@
             "bytes": 168653,
             "sha256": "708dfce5d8b5d482ec6c0ba23467e7b0f9da82e109af479a853e61f02e8a54d9",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14909,7 +14909,7 @@
             "bytes": 86075,
             "sha256": "e4c48cc80c7f33ee00ccf3dc9c588244b1bb196087bdedef12fd9b1211a69a89",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14939,7 +14939,7 @@
             "bytes": 76076,
             "sha256": "8721297d9e4a93c9f0e8439438b3965b7beddd0a1e6b0a4c07c15e2ee55cf40e",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14969,7 +14969,7 @@
             "bytes": 35978,
             "sha256": "168ff3cfa171336ea1e17bf0e0eae365e53236c92867c2f2e07a804825cd25ed",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -14999,7 +14999,7 @@
             "bytes": 73985,
             "sha256": "9aa4d52d11bbd7507241ab71e964736751b65a49acfa548d05525877af2708da",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15029,7 +15029,7 @@
             "bytes": 166222,
             "sha256": "c215ad52f85ced5edc821714b86023da689d32241873a79d3a5c83d9952792d1",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15059,7 +15059,7 @@
             "bytes": 11466,
             "sha256": "d530b765cb93c41a70e19ba5bd218d6abbddff93213fa9887af50ba84d99100c",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15089,7 +15089,7 @@
             "bytes": 200136,
             "sha256": "a072c45a4e2a140c1fba475f5095a537e3e4e3745b55a90e3df5ed94775c658a",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15119,7 +15119,7 @@
             "bytes": 62534,
             "sha256": "db24d1da831bc0f50a2562384d047ec14d43665ccaef3ae06c0394eb1269a755",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15149,7 +15149,7 @@
             "bytes": 47244,
             "sha256": "5bf959b5a0d73146c7069a4e4b0e4bb8783f6ff02fcefa0e495b2b36551fc0b5",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15179,7 +15179,7 @@
             "bytes": 1046506,
             "sha256": "51cc3126d99cdd2bf97b35c17cd7b0cdd319b10f2d5266c15d4f6612dafb734b",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15209,7 +15209,7 @@
             "bytes": 2182,
             "sha256": "569d576c0b7b3b18f2ec33b091f5288471638dff24420033be93cd170b8fd06b",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15239,7 +15239,7 @@
             "bytes": 2219,
             "sha256": "c7ff8ed35f9840fe3d6bea858febf218e109f4814fb548d6663de430b99648cf",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15269,7 +15269,7 @@
             "bytes": 88375,
             "sha256": "ca9fa27c5a9897224ddf0b8a45f2ac34935e9636587a342ddba863f0a8c0b33b",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15299,7 +15299,7 @@
             "bytes": 57829,
             "sha256": "7d0650b41402906102ba7b8b4462e245bc2940882d5ab01eb48d87d7d1480b0c",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15329,7 +15329,7 @@
             "bytes": 1063,
             "sha256": "c1e301879298ffc647e3f95ca7943e5a877a8a7d8b5d39e31fe5b13323c33b76",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15359,7 +15359,7 @@
             "bytes": 5170,
             "sha256": "4199fdf26ff4cbb477c6556920717b53b91805a48d0bbacf58a5ff0ea3bdc285",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15389,7 +15389,7 @@
             "bytes": 346079,
             "sha256": "b09ece32adbd6b6ad9f546c3cd9f1e3bb75b3f78c729e46b934a556a8bfea7ed",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15419,7 +15419,7 @@
             "bytes": 92761,
             "sha256": "5abf3985d30ee80ebe9f9886a607d1a3e6d01fa247e175b99f16fc6044f9a025",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15449,7 +15449,7 @@
             "bytes": 102934,
             "sha256": "3d330145b25c8d9b15cead74c83be6a3124b05765e0a40190d7689f7a73180b1",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15479,7 +15479,7 @@
             "bytes": 110207,
             "sha256": "6c0db6dca0941062ae69a2b9d63f9bf8e9a0bce1c4be17b0955c63a23ea19c96",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15509,7 +15509,7 @@
             "bytes": 57829,
             "sha256": "7d0650b41402906102ba7b8b4462e245bc2940882d5ab01eb48d87d7d1480b0c",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15539,7 +15539,7 @@
             "bytes": 110207,
             "sha256": "6c0db6dca0941062ae69a2b9d63f9bf8e9a0bce1c4be17b0955c63a23ea19c96",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15569,7 +15569,7 @@
             "bytes": 57829,
             "sha256": "7d0650b41402906102ba7b8b4462e245bc2940882d5ab01eb48d87d7d1480b0c",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15599,7 +15599,7 @@
             "bytes": 57829,
             "sha256": "7d0650b41402906102ba7b8b4462e245bc2940882d5ab01eb48d87d7d1480b0c",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15629,7 +15629,7 @@
             "bytes": 86079,
             "sha256": "b42f5699b3344fd5fa04e4339f5681d63ac6f41bb67254d38aa7d4bbf34b429a",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15659,7 +15659,7 @@
             "bytes": 110207,
             "sha256": "6c0db6dca0941062ae69a2b9d63f9bf8e9a0bce1c4be17b0955c63a23ea19c96",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15689,7 +15689,7 @@
             "bytes": 57829,
             "sha256": "7d0650b41402906102ba7b8b4462e245bc2940882d5ab01eb48d87d7d1480b0c",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15719,7 +15719,7 @@
             "bytes": 188015,
             "sha256": "d6371f375506d993af5e8566ddeb759bd46b41b01f0a2baaf357bf3f988a7ecf",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15749,7 +15749,7 @@
             "bytes": 1038,
             "sha256": "40555f1709f5b8352cabdb150699f3da2faeecd20b8ccdd32df612f24ba8fc4a",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15779,7 +15779,7 @@
             "bytes": 62181,
             "sha256": "b069553e1f65cf5d63167fde7c5ade5209d9b166fdbc68bbafc53b427a22f5df",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15809,7 +15809,7 @@
             "bytes": 229250,
             "sha256": "cd8ca62a849eedf4b1d6198bc31c0a43ab1db1813ae843a9c0c523be45e53c37",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15839,7 +15839,7 @@
             "bytes": 126281,
             "sha256": "cd063b7f7b68e2b6fc0137b7b8bddf695b3a9d3072c66fa36e85cc526252be6a",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15869,7 +15869,7 @@
             "bytes": 48786,
             "sha256": "e33fe6febb17644aa474c69c8284f0b6c937573f4957a74c1bc151e4a16667d8",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15899,7 +15899,7 @@
             "bytes": 647,
             "sha256": "0b04d40cba6c96d8180151bac65d1136598652709e040779d6aa09ecfee1b616",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15929,7 +15929,7 @@
             "bytes": 687,
             "sha256": "1202b62f32e87831cba7905a012b3bfa9ad0230074497f73a9069798821f4c86",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15959,7 +15959,7 @@
             "bytes": 1165,
             "sha256": "765d759a8425c0c6b828a931e511d1eb9ffb5202d0d67d30015fa14fe28d6537",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -15989,7 +15989,7 @@
             "bytes": 764,
             "sha256": "12348ef921dc1edc1c4a51abb769284f3b4c224ef30f116bd3332bc5e45a238f",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -16019,7 +16019,7 @@
             "bytes": 57782,
             "sha256": "61b91d13ac58fa6735d531e405f82adf427685896d286a755ddea0275b45b6a8",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -16049,7 +16049,7 @@
             "bytes": 529579,
             "sha256": "b00cad04e8ed7e96c41bd6ed29c30d0cf611dc14c8cf959e32e9e127f55987a6",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -16079,7 +16079,7 @@
             "bytes": 1090097,
             "sha256": "92bfdd13e81852f81453afedc4f5db6c7093376801b10dc0989ffd569ccd8253",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -16109,7 +16109,7 @@
             "bytes": 1090097,
             "sha256": "92bfdd13e81852f81453afedc4f5db6c7093376801b10dc0989ffd569ccd8253",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -16139,7 +16139,7 @@
             "bytes": 59271,
             "sha256": "7c07459d370cfd14d3baa12475a549845cdc8f02b80653363d391f2277503f9b",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -16169,7 +16169,7 @@
             "bytes": 679520,
             "sha256": "f9b4d6f3d754fd4df94279c12b4875a3f5b4267253893ad92a9b7f3577e4d599",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -16199,7 +16199,7 @@
             "bytes": 71543,
             "sha256": "71d51f1a235e7f846c6825265bfb07623270317c398237f501ce68d3e9f6c471",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -16229,7 +16229,7 @@
             "bytes": 406784,
             "sha256": "ae8136eaefb82d26a74b926f4096b7d50bd84c20d174766ae9a3f17f61fceb71",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -16259,7 +16259,7 @@
             "bytes": 40779,
             "sha256": "210b39b9c431f40b1c9b2c4eafd7f5e4f3009648cb8d468888c04ebdc3e3c2df",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -16289,7 +16289,7 @@
             "bytes": 123747,
             "sha256": "90fffcf25b49546095d62277ed06eda2f756a3c6429ff3fb06946731c9ad0ef9",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -16319,7 +16319,7 @@
             "bytes": 159831,
             "sha256": "c65b84cee684f31afa06ac4c7c443e14e01ef17c5d51df00beb3b0e84c97e356",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -16349,7 +16349,7 @@
             "bytes": 237185,
             "sha256": "18e11a644de5c44edfafdc821385ee95544d94d9b1e2241c144142efb1bc4fbb",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       },
@@ -16379,7 +16379,7 @@
             "bytes": 16784,
             "sha256": "dd7dcce7bff3ba3acbfd322d0cdb05ba61d64085c2019a6bee683acf3b480b57",
             "representation": "decoded_lithtech_lta",
-            "status": "converted"
+            "status": "verified_existing"
           }
         ]
       }
@@ -16404,11 +16404,13 @@
       "manifests": {
         "recovery": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-recovery.json",
         "media": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-media-conversions.json",
-        "model": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-model-conversions.json"
+        "model": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-model-conversions.json",
+        "png_prefix": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-framed-prefix-recovery.json"
       },
       "recovery_tool_version": "1",
       "media_tool_version": "1",
       "model_tool_version": "1",
+      "png_prefix_tool_version": "1",
       "verifications": [
         {
           "manifest": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-recovery.json",
@@ -16428,6 +16430,13 @@
           "manifest": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-model-conversions.json",
           "outputs_verified": 8067,
           "bytes_verified": 799684968,
+          "errors": [],
+          "status": "verified"
+        },
+        {
+          "manifest": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-framed-prefix-recovery.json",
+          "outputs_verified": 9521,
+          "bytes_verified": 141831713,
           "errors": [],
           "status": "verified"
         }
@@ -16471,6 +16480,12 @@
         "ltb_glb_triangles": 18086964,
         "ltb_glb_bytes": 799684968,
         "ltb_glb_failures": 654,
+        "rez_png_prefix_archives": 2,
+        "rez_png_prefix_images": 9520,
+        "rez_png_prefix_bytes": 141634977,
+        "rez_dds_prefix_images": 1,
+        "rez_dds_prefix_bytes": 196736,
+        "rez_png_prefix_trailing_bytes_preserved": 670465134,
         "verification_errors": 0
       }
     }
@@ -34619,6 +34634,13 @@
         "status": "verified"
       },
       {
+        "manifest": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/recovery/private-rez-framed-prefix-recovery.json",
+        "outputs_verified": 9521,
+        "bytes_verified": 141831713,
+        "errors": [],
+        "status": "verified"
+      },
+      {
         "manifest": "recovery/special-format-conversion-ledger.json",
         "outputs_verified": 2917,
         "bytes_verified": 162655979,
@@ -34634,10 +34656,10 @@
       }
     ],
     "summary": {
-      "manifests": 11,
-      "verified": 11,
-      "outputs": 138654,
-      "bytes": 21182435698,
+      "manifests": 12,
+      "verified": 12,
+      "outputs": 148175,
+      "bytes": 21324267411,
       "errors": 0
     }
   }

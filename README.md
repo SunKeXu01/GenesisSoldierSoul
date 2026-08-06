@@ -219,8 +219,9 @@ tools/verify_delivery.sh --full
   `LightingData.asset` 的 `m_Scene` 所属场景反向边，避免从可玩场景错误回溯到旧源场景。
   正式资源门禁仍因缺少已批准权利记录而拒绝放行。
 - 364 个 CrossFire LTC 已用固定 XOR 包装 + LithTech LZSS 规则全部恢复为 LTA，
-  并由同名明文样本逐字节验证；仍未完成的是 7 个未分帧私有 REZ、654 个 LTB
-  结构变体/骨骼动画、Flash ATF 标准媒体转换和受 Oodle 限制的 Unreal 内容。
+  并由同名明文样本逐字节验证；两份 RF199 又从数据区起点连续恢复 9,520 PNG
+  和 1 DDS。仍未完成的是 5 个完全未分帧私有 REZ、两份 RF199 的未知后缀、
+  654 个 LTB 结构变体/骨骼动画、Flash ATF 标准媒体转换和受 Oodle 限制的 Unreal 内容。
   工具只做静态读取，不执行来源不明程序。
 - 商城仅为只读资源目录；账号、余额、购买、充值、VIP、任务、活动和战队业务没有
   权威后端依据，因此不提供伪实现。

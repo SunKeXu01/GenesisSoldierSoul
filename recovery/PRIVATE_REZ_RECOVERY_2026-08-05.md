@@ -8,7 +8,7 @@ CrossFire 私有 RF/RB 包保留标准 REZ v1 外层头，但目录块经过私�
 
 ## 恢复规模
 
-- REZ 样本：242 个；其中标准包 1 个、可恢复串接 LZMA 私有包 208 个、空/仅填充数据区 26 个、未分帧 raw/加密数据区 7 个。
+- REZ 样本：242 个；其中标准包 1 个、可恢复串接 LZMA 私有包 208 个、空/仅填充数据区 26 个；原 7 个未分帧 raw/加密数据区中，两份 RF199 已恢复连续帧前缀，现为 5 个完全未分帧包 + 2 个已恢复前缀后的未知后缀。
 - 验证 LZMA 资源流：46,242 条，解码 13,813,267,158 字节。
 - 51 条与现存 loose 文件 SHA-256 完全一致；其余 46,191 条、13,791,715,442 字节按源哈希隔离物化。
 - 明确签名包括 4,163 WAV、346 PNG、44 DDS、898 文本、2 TTF、1 OTF、1 MP3 和 1 个嵌套标准 REZ。
@@ -43,7 +43,8 @@ DTX 转换器支持以下经尺寸关系验证的格式：
 
 ## 仍未完成
 
-- 7 个未分帧包包括 RB001、两组 RF019/RF199，以及 RF164/RF266；在没有可信目录边界前不做整段魔数 carving。
+- 两份 RF199 已从固定数据区起点严格恢复 9,520 PNG + 1 DDS（141,831,713 字节），并在首个未知字节停止；详见 `RF199_FRAMED_PREFIX_RECOVERY_2026-08-06.md`。
+- 仍完全未分帧的 5 个包为 RB001、两份 RF019、RF164、RF266；另保留两份 RF199 共 670,465,134 字节未知后缀。在没有可信边界前不做整段魔数 carving。
 - 654 个 LTB 结构变体仍未通过严格几何解析；8,067 个成功 GLB 只覆盖静态几何，骨骼/蒙皮/动画仍保留在原 LTB 中。
 - 364 个 loose LTC 已在 2026-08-06 全部恢复为 LTA：固定 16 字节 XOR 包装去除后，
   使用 LithTech LTC/LZSS v0 位流解码；输出 51,657,941 字节、失败 0，并由同名
@@ -59,7 +60,8 @@ DTX 转换器支持以下经尺寸关系验证的格式：
 - PNG 输出：`recovery/special-formats/private-rez-media/`。
 - GLB 输出：`recovery/special-formats/private-rez-models/`。
 - LTC LTA 输出：`recovery/special-formats/ltc-decoded/`。
-- 工具：`tools/recover_private_rez.py`、`tools/convert_private_rez_media.py`、`tools/convert_ltb_models.py`、`tools/lithtech_ltc.py`。
+- RF199 连续帧输出：`recovery/special-formats/private-rez-png-prefix/`。
+- 工具：`tools/recover_private_rez.py`、`tools/recover_private_rez_framed_prefix.py`、`tools/convert_private_rez_media.py`、`tools/convert_ltb_models.py`、`tools/lithtech_ltc.py`。
 - 专项测试：`tools/test_recover_private_rez.py`、`tools/test_convert_private_rez_media.py`、`tools/test_convert_ltb_models.py`。
 
-统一 provenance 已验证 11/11 清单、138,654 个输出、21,182,435,698 字节，错误 0。
+统一 provenance 已验证 12/12 清单、148,175 个输出、21,324,267,411 字节，错误 0。
