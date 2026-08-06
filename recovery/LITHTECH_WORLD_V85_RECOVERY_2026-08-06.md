@@ -27,12 +27,12 @@
 
 ## 产物与验证
 
-- 工具：`tools/recover_private_rez_framed_prefix.py`，tool version 7。
+- 工具：`tools/recover_private_rez_framed_prefix.py`，当前 tool version 11（world v85 首次纳入于 version 7）。
 - 回归：`tools/test_recover_private_rez_framed_prefix.py`，15/15；覆盖完整 world、非法子块索引、连续恢复和未知尾段保留。
 - 机器清单：`recovery/private-rez-framed-prefix-recovery.json`（Git 忽略，可再生成）。
 - 隔离输出：`recovery/special-formats/private-rez-png-prefix/RF164__a2d4cf8b147b/lithtech_world-00000.dat` 和 `RF266__0ea0339fe541/lithtech_world-00000.dat`（Git 忽略）。
 - SHA-256：`RF164` 输出 `fad42d24075bac77209837189e7da72149d06b6d5950c8669f73871aae87ffa1`；`RF266` 输出 `146636012e0b20178ea6eb2836bd7b3fb339959634cf470d3b0ac437bb879ac6`。
 - RB001 连续前缀中的 `NANO_RoofGhost.DAT` 又以相同解析器恢复 12,589,936 字节、59 个 RenderBlock、4 个子 WorldModel、939 个材质区段、88,343 个顶点和 40,285 个三角形，并同时通过同源 loose 字节相等验证。
-- 全量 Python 回归 91/91；快速交付门禁通过。统一 provenance 复核 13/13 清单、184,185 个输出、25,480,110,671 字节，错误 0。
+- 全量 Python 回归 96/96；快速交付门禁通过。统一 provenance 复核 13/13 清单、184,214 个输出、25,483,621,864 字节，错误 0。
 
 REZ 已无从数据区起点完全未知的包；剩余范围为 RF019/RF199 的 4 个和 RB001 的 1 个已精确记录停止位置的未知后缀。

@@ -14,9 +14,12 @@ from recover_private_rez_framed_prefix import (
     parse_ascii_web_bundle,
     parse_ini,
     parse_start_end_config,
+    parse_swf,
     parse_dds,
     parse_dtx,
+    parse_flv,
     parse_gif,
+    parse_html,
     parse_jpeg,
     parse_lithtech_world,
     parse_mp4,
@@ -148,6 +151,40 @@ def lithtech_world(*, invalid_child: bool = False) -> bytes:
     return header + render_world + client_light_groups
 
 
+def swf(signature: bytes = b"FWS", *, declared_delta: int = 0) -> bytes:
+    body = b"\x08\x00" + b"\x00\x01" + b"\x01\x00"
+    body += struct.pack("<HHH", 1 << 6, 1 << 6, 0)
+    declared = 8 + len(body) + declared_delta
+    header = signature + b"\x08" + struct.pack("<I", declared)
+    return header + (zlib.compress(body) if signature == b"CWS" else body)
+
+
+def flv(*, bad_previous_size: bool = False) -> bytes:
+    metadata = b"\x02\x00\x0aonMetaData\x08\x00\x00\x00\x02"
+    metadata += b"\x00\x08duration\x00" + struct.pack(">d", 1.0)
+    metadata += b"\x00\x0ccanSeekToEnd\x01\x01\x00\x00\x09"
+
+    def tag(kind: int, payload: bytes, timestamp: int) -> bytes:
+        header = bytes((kind,)) + len(payload).to_bytes(3, "big")
+        header += (timestamp & 0xFFFFFF).to_bytes(3, "big")
+        header += bytes(((timestamp >> 24) & 0xFF,)) + b"\0\0\0"
+        previous = 0 if bad_previous_size else 11 + len(payload)
+        return header + payload + struct.pack(">I", previous)
+
+    return (
+        b"FLV\x01\x01\x00\x00\x00\x09\0\0\0\0"
+        + tag(18, metadata, 0)
+        + tag(9, b"\x12", 1000)
+    )
+
+
+def html() -> bytes:
+    return (
+        b"<! DOCTYPE html>\r\n<html><head><title>Test</title></head>"
+        b"<body><div>Static</div></body></html>"
+    )
+
+
 class PrivateRezPngPrefixTests(unittest.TestCase):
     def test_parses_crc_valid_png_at_exact_offset(self):
         data = png(3, 2)
@@ -234,6 +271,54 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
         self.assertEqual(parsed["version"], 85)
         self.assertEqual(parsed["render_blocks"], 1)
         self.assertEqual(parsed["client_light_groups"], 0)
+        self.assertEqual(parsed["sha256"], hashlib.sha256(data).hexdigest())
+
+    def test_parses_complete_fws_and_cws_at_exact_offset(self):
+        for signature, compression in ((b"FWS", "none"), (b"CWS", "zlib")):
+            data = swf(signature)
+            with tempfile.TemporaryFile() as stream:
+                stream.write(data + png())
+                parsed = parse_swf(stream, 0, len(data + png()))
+            self.assertEqual(parsed["bytes"], len(data))
+            self.assertEqual(parsed["compression"], compression)
+            self.assertEqual(parsed["frame_count"], 1)
+            self.assertEqual(parsed["tag_count"], 3)
+            self.assertEqual(parsed["sha256"], hashlib.sha256(data).hexdigest())
+
+    def test_rejects_cws_declared_length_mismatch(self):
+        data = swf(b"CWS", declared_delta=1)
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data)
+            with self.assertRaisesRegex(RezError, "declared length mismatch"):
+                parse_swf(stream, 0, len(data))
+
+    def test_parses_metadata_bounded_flv_before_known_successor(self):
+        data = flv()
+        successor = swf(b"CWS")
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data + successor)
+            parsed = parse_flv(stream, 0, len(data + successor))
+        self.assertEqual(parsed["bytes"], len(data))
+        self.assertEqual(parsed["tag_counts"], {"script": 1, "video": 1})
+        self.assertEqual(parsed["duration_seconds"], 1.0)
+        self.assertEqual(parsed["last_media_timestamp_ms"], 1000)
+        self.assertEqual(parsed["next_frame_kind"], "swf")
+
+    def test_rejects_flv_previous_tag_size_mismatch(self):
+        data = flv(bad_previous_size=True)
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data)
+            with self.assertRaisesRegex(RezError, "PreviousTagSize mismatch"):
+                parse_flv(stream, 0, len(data))
+
+    def test_parses_html_through_unique_explicit_end_tag(self):
+        data = html()
+        suffix = b"var next = true;"
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data + suffix)
+            parsed = parse_html(stream, 0, len(data + suffix))
+        self.assertEqual(parsed["bytes"], len(data))
+        self.assertTrue(parsed["explicit_end_tag"])
         self.assertEqual(parsed["sha256"], hashlib.sha256(data).hexdigest())
 
     def test_rejects_lithtech_world_with_invalid_child_index(self):
@@ -415,6 +500,10 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
             overlay_bundle(),
             mp4(),
             webm(),
+            swf(b"CWS"),
+            flv(),
+            swf(b"FWS"),
+            html(),
         ]
         suffix = b"UNSUPPORTED"
         with tempfile.TemporaryDirectory() as temporary:
@@ -450,9 +539,13 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
                     "web_bundle",
                     "mp4",
                     "webm",
+                    "swf",
+                    "flv",
+                    "swf",
+                    "html",
                 ],
             )
-            self.assertEqual(len(result["outputs"]), 16)
+            self.assertEqual(len(result["outputs"]), 20)
             self.assertEqual(result["trailing_region"]["bytes"], len(suffix))
 
 

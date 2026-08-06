@@ -30,10 +30,10 @@
 
 ## 产物与验证
 
-- 工具：`tools/recover_private_rez_framed_prefix.py`，tool version 8。
+- 工具：`tools/recover_private_rez_framed_prefix.py`，当前 tool version 11（RB001 exact-peer 首次纳入于 version 8）。
 - 专项回归：`tools/test_recover_private_rez_framed_prefix.py`，17/17；覆盖别名合并、自描述帧双重验证、长度歧义拒绝和未知尾部停止。
 - 机器清单：`recovery/private-rez-framed-prefix-recovery.json`（Git 忽略，可再生成）。
 - 隔离输出：`recovery/special-formats/private-rez-png-prefix/RB001__936e0059b9ed/`（Git 忽略，可再生成）。
-- 统一 provenance：13/13 清单、184,185 个输出、25,480,110,671 字节、错误 0。
+- 统一 provenance：13/13 清单、184,214 个输出、25,483,621,864 字节、错误 0。
 
-原 7 个完全未分帧包现已全部获得可证明的连续边界；剩余范围是 RF019/RF199 的 4 个未知后缀和 RB001 的 1 个未知后缀，共 465,956,986 字节。
+原 7 个完全未分帧包现已全部获得可证明的连续边界；剩余范围是 RF019/RF199 的 4 个未知后缀和 RB001 的 1 个未知后缀，共 462,445,793 字节。

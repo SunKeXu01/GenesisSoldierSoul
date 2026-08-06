@@ -70,6 +70,12 @@ MAXIMUM_WORLD_ITEMS = 10_000_000
 MAXIMUM_WORLD_STRING_BYTES = 4096
 MAXIMUM_WORLD_RECURSION = 64
 EXACT_PEER_PREFIX_BYTES = 16
+SWF_SIGNATURES = {b"FWS", b"CWS"}
+MAXIMUM_SWF_UNCOMPRESSED_BYTES = 512 * 1024 * 1024
+MAXIMUM_SWF_TAGS = 1_000_000
+FLV_SIGNATURE = b"FLV"
+MAXIMUM_FLV_TAGS = 10_000_000
+HTML_END_TAG = b"</html>"
 
 
 def hash_region(stream: BinaryIO, offset: int, size: int) -> str:
@@ -969,6 +975,315 @@ def parse_webm(stream: BinaryIO, offset: int, region_end: int) -> dict[str, obje
     }
 
 
+def validate_swf_body(body: bytes) -> dict[str, int]:
+    """Validate the RECT, frame header, complete tag stream, and final End tag."""
+    if len(body) < 6:
+        raise RezError("truncated SWF frame body")
+    rect_bits = body[0] >> 3
+    if not 1 <= rect_bits <= 31:
+        raise RezError(f"invalid SWF RECT bit width: {rect_bits}")
+    rect_bytes = (5 + 4 * rect_bits + 7) // 8
+    first_tag = rect_bytes + 4
+    if first_tag > len(body):
+        raise RezError("SWF RECT/frame header exceeds declared body")
+    frame_rate_raw, frame_count = struct.unpack_from("<HH", body, rect_bytes)
+    if frame_rate_raw == 0 or frame_count == 0:
+        raise RezError("SWF has a zero frame rate or frame count")
+    cursor = first_tag
+    tag_count = 0
+    while cursor + 2 <= len(body):
+        header = struct.unpack_from("<H", body, cursor)[0]
+        cursor += 2
+        tag_code = header >> 6
+        tag_bytes = header & 0x3F
+        if tag_bytes == 0x3F:
+            if cursor + 4 > len(body):
+                raise RezError("truncated SWF long tag header")
+            tag_bytes = struct.unpack_from("<I", body, cursor)[0]
+            cursor += 4
+        if cursor + tag_bytes > len(body):
+            raise RezError(f"SWF tag {tag_code} exceeds declared body")
+        cursor += tag_bytes
+        tag_count += 1
+        if tag_count > MAXIMUM_SWF_TAGS:
+            raise RezError("SWF tag count exceeds safety limit")
+        if tag_code == 0:
+            if tag_bytes != 0:
+                raise RezError("SWF End tag has a payload")
+            if cursor != len(body):
+                raise RezError("SWF bytes remain after the End tag")
+            return {
+                "rect_bits": rect_bits,
+                "frame_rate_raw": frame_rate_raw,
+                "frame_count": frame_count,
+                "tag_count": tag_count,
+            }
+    raise RezError("SWF tag stream has no complete End tag")
+
+
+def parse_swf(stream: BinaryIO, offset: int, region_end: int) -> dict[str, object]:
+    """Parse an exact FWS or self-delimiting CWS frame without scanning ahead."""
+    if offset < 0 or offset + 8 > region_end:
+        raise RezError(f"truncated SWF header at {offset}")
+    stream.seek(offset)
+    header = stream.read(8)
+    signature = header[:3]
+    version = header[3]
+    declared_bytes = struct.unpack_from("<I", header, 4)[0]
+    if signature not in SWF_SIGNATURES:
+        raise RezError(f"SWF signature absent at exact offset {offset}")
+    if not 1 <= version <= 50:
+        raise RezError(f"unsupported SWF version at {offset}: {version}")
+    if not 14 <= declared_bytes <= MAXIMUM_SWF_UNCOMPRESSED_BYTES:
+        raise RezError(f"implausible SWF declared length at {offset}: {declared_bytes}")
+    expected_body_bytes = declared_bytes - 8
+    if signature == b"FWS":
+        if offset + declared_bytes > region_end:
+            raise RezError(f"FWS frame crosses REZ data boundary at {offset}")
+        body = stream.read(expected_body_bytes)
+        if len(body) != expected_body_bytes:
+            raise RezError(f"truncated FWS body at {offset}")
+        frame_bytes = declared_bytes
+        compression = "none"
+    else:
+        decoder = zlib.decompressobj()
+        body_buffer = bytearray()
+        total_read = 0
+        pending = b""
+        while not decoder.eof:
+            if not pending:
+                remaining_region = region_end - stream.tell()
+                if remaining_region <= 0:
+                    raise RezError(f"truncated CWS Zlib stream at {offset}")
+                pending = stream.read(min(CHUNK_SIZE, remaining_region))
+                total_read += len(pending)
+            try:
+                decoded = decoder.decompress(
+                    pending, expected_body_bytes - len(body_buffer) + 1
+                )
+            except zlib.error as error:
+                raise RezError(f"invalid CWS Zlib stream at {offset}: {error}") from error
+            body_buffer.extend(decoded)
+            if len(body_buffer) > expected_body_bytes:
+                raise RezError(f"CWS expands beyond its declared length at {offset}")
+            pending = decoder.unconsumed_tail
+        compressed_body_bytes = total_read - len(decoder.unused_data)
+        if compressed_body_bytes <= 0:
+            raise RezError(f"empty CWS Zlib stream at {offset}")
+        body = bytes(body_buffer)
+        if len(body) != expected_body_bytes:
+            raise RezError(
+                f"CWS declared length mismatch at {offset}: "
+                f"expected={expected_body_bytes} actual={len(body)}"
+            )
+        frame_bytes = 8 + compressed_body_bytes
+        compression = "zlib"
+    structure = validate_swf_body(body)
+    return {
+        "offset": offset,
+        "bytes": frame_bytes,
+        "sha256": hash_region(stream, offset, frame_bytes),
+        "signature": signature.decode("ascii"),
+        "version": version,
+        "declared_uncompressed_bytes": declared_bytes,
+        "compression": compression,
+        **structure,
+    }
+
+
+def parse_flv_on_metadata(payload: bytes) -> dict[str, object]:
+    """Read the bounded primitive fields used by an FLV onMetaData object."""
+    cursor = 0
+    if len(payload) < 8 or payload[cursor] != 2:
+        raise RezError("FLV script tag does not begin with an AMF string")
+    cursor += 1
+    name_bytes = struct.unpack_from(">H", payload, cursor)[0]
+    cursor += 2
+    if cursor + name_bytes > len(payload):
+        raise RezError("truncated FLV metadata event name")
+    name = payload[cursor : cursor + name_bytes]
+    cursor += name_bytes
+    if name != b"onMetaData" or cursor + 5 > len(payload) or payload[cursor] != 8:
+        raise RezError("FLV first script tag is not an onMetaData ECMA array")
+    cursor += 1
+    declared_fields = struct.unpack_from(">I", payload, cursor)[0]
+    cursor += 4
+    values: dict[str, object] = {}
+    parsed_fields = 0
+    while cursor + 3 <= len(payload):
+        if payload[cursor : cursor + 3] == b"\0\0\x09":
+            cursor += 3
+            if cursor != len(payload):
+                raise RezError("bytes remain after FLV onMetaData object end")
+            return {
+                "declared_fields": declared_fields,
+                "parsed_fields": parsed_fields,
+                **values,
+            }
+        key_bytes = struct.unpack_from(">H", payload, cursor)[0]
+        cursor += 2
+        if cursor + key_bytes + 1 > len(payload):
+            raise RezError("truncated FLV metadata key")
+        key = payload[cursor : cursor + key_bytes].decode("utf-8", errors="strict")
+        cursor += key_bytes
+        value_type = payload[cursor]
+        cursor += 1
+        if value_type == 0:
+            if cursor + 8 > len(payload):
+                raise RezError(f"truncated FLV number metadata field {key}")
+            value = struct.unpack_from(">d", payload, cursor)[0]
+            cursor += 8
+            if value != value or abs(value) == float("inf"):
+                raise RezError(f"non-finite FLV metadata field {key}")
+        elif value_type == 1:
+            if cursor >= len(payload) or payload[cursor] not in {0, 1}:
+                raise RezError(f"invalid FLV boolean metadata field {key}")
+            value = bool(payload[cursor])
+            cursor += 1
+        elif value_type == 2:
+            if cursor + 2 > len(payload):
+                raise RezError(f"truncated FLV string metadata field {key}")
+            value_bytes = struct.unpack_from(">H", payload, cursor)[0]
+            cursor += 2
+            if cursor + value_bytes > len(payload):
+                raise RezError(f"truncated FLV string metadata value {key}")
+            value = payload[cursor : cursor + value_bytes].decode(
+                "utf-8", errors="replace"
+            )
+            cursor += value_bytes
+        else:
+            raise RezError(f"unsupported FLV metadata type {value_type} for {key}")
+        values[key] = value
+        parsed_fields += 1
+    raise RezError("FLV onMetaData object has no complete end marker")
+
+
+def parse_flv(stream: BinaryIO, offset: int, region_end: int) -> dict[str, object]:
+    """Parse a complete FLV tag chain ending at the region or a known successor."""
+    if offset < 0 or offset + 13 > region_end:
+        raise RezError(f"truncated FLV header at {offset}")
+    stream.seek(offset)
+    header = stream.read(9)
+    if header[:3] != FLV_SIGNATURE or header[3] != 1:
+        raise RezError(f"FLV v1 header absent at exact offset {offset}")
+    flags = header[4]
+    if flags & ~0x05 or not flags:
+        raise RezError(f"invalid FLV type flags at {offset}: 0x{flags:02x}")
+    data_offset = struct.unpack_from(">I", header, 5)[0]
+    if data_offset < 9 or offset + data_offset + 4 > region_end:
+        raise RezError(f"invalid FLV data offset at {offset}: {data_offset}")
+    stream.seek(offset + data_offset)
+    if stream.read(4) != b"\0\0\0\0":
+        raise RezError(f"FLV first PreviousTagSize is not zero at {offset}")
+    position = offset + data_offset + 4
+    counts: Counter[str] = Counter()
+    tag_count = 0
+    metadata: dict[str, object] | None = None
+    last_media_timestamp = -1
+    next_frame_kind = None
+    while position < region_end:
+        stream.seek(position)
+        prefix = stream.read(DTX_HEADER_BYTES)
+        successor = prefix_kind(prefix)
+        if successor is not None and successor != "flv" and tag_count:
+            next_frame_kind = successor
+            break
+        if position + 15 > region_end:
+            raise RezError(f"truncated FLV tag at {position}")
+        stream.seek(position)
+        tag_header = stream.read(11)
+        tag_type = tag_header[0]
+        data_bytes = int.from_bytes(tag_header[1:4], "big")
+        timestamp = int.from_bytes(tag_header[4:7], "big") | (tag_header[7] << 24)
+        stream_id = int.from_bytes(tag_header[8:11], "big")
+        if tag_type not in {8, 9, 18} or stream_id != 0:
+            raise RezError(f"invalid FLV tag header at {position}")
+        tag_end = position + 11 + data_bytes
+        if tag_end + 4 > region_end:
+            raise RezError(f"FLV tag crosses REZ data boundary at {position}")
+        if tag_type in {8, 9}:
+            if timestamp < last_media_timestamp:
+                raise RezError(f"FLV media timestamp regresses at {position}")
+            last_media_timestamp = timestamp
+        if tag_type == 18 and metadata is None:
+            stream.seek(position + 11)
+            metadata = parse_flv_on_metadata(stream.read(data_bytes))
+        stream.seek(tag_end)
+        previous_size = struct.unpack(">I", stream.read(4))[0]
+        if previous_size != 11 + data_bytes:
+            raise RezError(f"FLV PreviousTagSize mismatch at {position}")
+        counts[{8: "audio", 9: "video", 18: "script"}[tag_type]] += 1
+        tag_count += 1
+        if tag_count > MAXIMUM_FLV_TAGS:
+            raise RezError("FLV tag count exceeds safety limit")
+        position = tag_end + 4
+    if not tag_count or metadata is None:
+        raise RezError(f"FLV has no tags or onMetaData at {offset}")
+    duration = metadata.get("duration")
+    if not isinstance(duration, float) or duration <= 0:
+        raise RezError(f"FLV has no positive metadata duration at {offset}")
+    if metadata.get("canSeekToEnd") is not True:
+        raise RezError(f"FLV metadata does not confirm seek-to-end at {offset}")
+    if last_media_timestamp < 0 or abs(duration * 1000 - last_media_timestamp) > 1000:
+        raise RezError(
+            f"FLV duration/timestamp mismatch at {offset}: "
+            f"duration_ms={duration * 1000} last={last_media_timestamp}"
+        )
+    frame_bytes = position - offset
+    return {
+        "offset": offset,
+        "bytes": frame_bytes,
+        "sha256": hash_region(stream, offset, frame_bytes),
+        "version": 1,
+        "flags": flags,
+        "tag_count": tag_count,
+        "tag_counts": dict(sorted(counts.items())),
+        "duration_seconds": duration,
+        "last_media_timestamp_ms": last_media_timestamp,
+        "next_frame_kind": next_frame_kind,
+        "metadata_declared_fields": metadata["declared_fields"],
+        "metadata_parsed_fields": metadata["parsed_fields"],
+    }
+
+
+def parse_html(stream: BinaryIO, offset: int, region_end: int) -> dict[str, object]:
+    """Parse one ASCII HTML document through its unique explicit closing tag."""
+    if offset < 0 or offset >= region_end:
+        raise RezError(f"invalid HTML offset {offset}")
+    stream.seek(offset)
+    data = stream.read(min(MAXIMUM_TEXT_FRAME_BYTES, region_end - offset))
+    lower = data.lower()
+    doctype_end = lower.find(b">")
+    if (
+        not lower.startswith(b"<!")
+        or doctype_end < 0
+        or b"doctype html" not in lower[: doctype_end + 1]
+    ):
+        raise RezError(f"HTML doctype absent at exact offset {offset}")
+    end_index = lower.find(HTML_END_TAG)
+    if end_index < 0:
+        raise RezError(f"HTML closing tag absent within safety bound at {offset}")
+    end = end_index + len(HTML_END_TAG)
+    document = data[:end]
+    lowered_document = lower[:end]
+    if any(byte not in b"\t\n\r" and not 32 <= byte <= 126 for byte in document):
+        raise RezError(f"HTML document is not bounded ASCII at {offset}")
+    required = (b"<html", b"<head", b"</head>", b"<body", b"</body>", HTML_END_TAG)
+    positions = [lowered_document.find(marker) for marker in required]
+    if any(position < 0 for position in positions) or positions != sorted(positions):
+        raise RezError(f"HTML document structure is incomplete at {offset}")
+    if lowered_document.count(HTML_END_TAG) != 1:
+        raise RezError(f"HTML document has an ambiguous closing tag at {offset}")
+    return {
+        "offset": offset,
+        "bytes": len(document),
+        "sha256": hashlib.sha256(document).hexdigest(),
+        "encoding": "ascii",
+        "doctype": document[2:doctype_end].decode("ascii").strip(),
+        "explicit_end_tag": True,
+    }
+
+
 class LithTechWorldReader:
     """Bounded little-endian reader for LithTech Jupiter world render data."""
 
@@ -1322,6 +1637,26 @@ def converted_png(source: Path, kind: str) -> tuple[bytes, dict[str, object]]:
 
 
 def prefix_kind(prefix: bytes) -> str | None:
+    lower_prefix = prefix[:64].lower()
+    if lower_prefix.startswith(b"<!") and b"doctype html" in lower_prefix:
+        return "html"
+    if (
+        len(prefix) >= 9
+        and prefix[:3] == FLV_SIGNATURE
+        and prefix[3] == 1
+        and prefix[4] & ~0x05 == 0
+        and prefix[4] != 0
+        and struct.unpack_from(">I", prefix, 5)[0] >= 9
+    ):
+        return "flv"
+    if (
+        len(prefix) >= 8
+        and prefix[:3] in SWF_SIGNATURES
+        and 1 <= prefix[3] <= 50
+        and 14 <= struct.unpack_from("<I", prefix, 4)[0]
+        <= MAXIMUM_SWF_UNCOMPRESSED_BYTES
+    ):
+        return "swf"
     if (
         len(prefix) >= LITHTECH_WORLD_HEADER_BYTES
         and struct.unpack_from("<I", prefix)[0] == LITHTECH_WORLD_VERSION
@@ -1431,6 +1766,19 @@ def recover_framed_prefix(
             elif kind == "webm":
                 record = parse_webm(stream, position, region_end)
                 representation = "private_rez_vint_sized_webm_frame"
+            elif kind == "swf":
+                record = parse_swf(stream, position, region_end)
+                representation = (
+                    "private_rez_zlib_complete_swf_frame"
+                    if record["compression"] == "zlib"
+                    else "private_rez_declared_length_swf_frame"
+                )
+            elif kind == "flv":
+                record = parse_flv(stream, position, region_end)
+                representation = "private_rez_complete_metadata_bounded_flv_frame"
+            elif kind == "html":
+                record = parse_html(stream, position, region_end)
+                representation = "private_rez_explicit_end_tag_html_frame"
             elif kind == "lithtech_world":
                 record = parse_lithtech_world(stream, position, region_end)
                 representation = "private_rez_strict_lithtech_world_v85_frame"
@@ -1465,6 +1813,7 @@ def recover_framed_prefix(
                     "config": "txt",
                     "web_bundle": "txt",
                     "lithtech_world": "dat",
+                    "html": "html",
                 }.get(str(kind), str(kind))
             destination = base / f"{kind}-{len(records):05d}.{extension}"
             status = copy_verified_region(
@@ -1589,7 +1938,7 @@ def main() -> int:
     manifest = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "tool": "tools/recover_private_rez_framed_prefix.py",
-        "tool_version": "8",
+        "tool_version": "11",
         "workspace": str(workspace),
         "root_inventory_sha256": index["inventory_sha256"],
         "safety": {
@@ -1608,6 +1957,10 @@ def main() -> int:
             "web_bundle_printable_and_binary_successor_required": True,
             "mp4_top_level_box_chain_required": True,
             "webm_ebml_header_and_sized_segment_required": True,
+            "swf_declared_length_complete_tag_stream_and_end_required": True,
+            "cws_zlib_eof_required": True,
+            "flv_tag_sizes_metadata_duration_and_exact_end_required": True,
+            "html_doctype_structure_and_unique_end_tag_required": True,
             "lithtech_world_v85_render_tail_required": True,
             "exact_loose_peer_byte_equality_required": True,
             "exact_loose_peer_unique_length_required": True,
@@ -1646,6 +1999,35 @@ def main() -> int:
                 for item in all_outputs
                 if item["representation"]
                 == "private_rez_strict_lithtech_world_v85_frame"
+            ),
+            "swf_files": sum(
+                item["representation"].endswith("_swf_frame")
+                for item in all_outputs
+            ),
+            "swf_bytes": sum(
+                int(item["bytes"])
+                for item in all_outputs
+                if item["representation"].endswith("_swf_frame")
+            ),
+            "flv_files": sum(
+                item["representation"]
+                == "private_rez_complete_metadata_bounded_flv_frame"
+                for item in all_outputs
+            ),
+            "flv_bytes": sum(
+                int(item["bytes"])
+                for item in all_outputs
+                if item["representation"]
+                == "private_rez_complete_metadata_bounded_flv_frame"
+            ),
+            "html_files": sum(
+                item["representation"] == "private_rez_explicit_end_tag_html_frame"
+                for item in all_outputs
+            ),
+            "html_bytes": sum(
+                int(item["bytes"])
+                for item in all_outputs
+                if item["representation"] == "private_rez_explicit_end_tag_html_frame"
             ),
             "exact_peer_resources": sum(
                 "peer_paths" in resource

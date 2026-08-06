@@ -1825,6 +1825,36 @@ def audit_private_rez_supplements(repo: Path, output: Path) -> dict[str, Any]:
                 if framed_prefix is not None
                 else 0
             ),
+            "rez_framed_prefix_swf_files": (
+                framed_prefix["summary"].get("swf_files", 0)
+                if framed_prefix is not None
+                else 0
+            ),
+            "rez_framed_prefix_swf_bytes": (
+                framed_prefix["summary"].get("swf_bytes", 0)
+                if framed_prefix is not None
+                else 0
+            ),
+            "rez_framed_prefix_flv_files": (
+                framed_prefix["summary"].get("flv_files", 0)
+                if framed_prefix is not None
+                else 0
+            ),
+            "rez_framed_prefix_flv_bytes": (
+                framed_prefix["summary"].get("flv_bytes", 0)
+                if framed_prefix is not None
+                else 0
+            ),
+            "rez_framed_prefix_html_files": (
+                framed_prefix["summary"].get("html_files", 0)
+                if framed_prefix is not None
+                else 0
+            ),
+            "rez_framed_prefix_html_bytes": (
+                framed_prefix["summary"].get("html_bytes", 0)
+                if framed_prefix is not None
+                else 0
+            ),
             "rez_framed_prefix_converted_png_images": (
                 framed_prefix["summary"].get("converted_png_images", 0)
                 if framed_prefix is not None
@@ -1936,7 +1966,7 @@ def main() -> int:
     report: dict[str, Any] = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "tool": "tools/audit_special_formats.py",
-        "tool_version": "14",
+        "tool_version": "15",
         "workspace": str(workspace),
         "root_inventory_sha256": index["inventory_sha256"],
         "safety": {
