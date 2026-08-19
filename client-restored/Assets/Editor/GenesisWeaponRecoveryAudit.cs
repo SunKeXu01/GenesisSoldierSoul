@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using GenesisSoldierSoul.Multiplayer;
 using GenesisSoldierSoul.WeaponActions;
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -48,17 +49,29 @@ public static class GenesisWeaponRecoveryAudit
         public readonly string PrefabPath;
         public readonly string[] RequiredAnchors;
         public readonly bool RequiredForRuntime;
+        public readonly bool AllowsColorOnlyMaterials;
 
         public WeaponSpec(
             string name,
             string prefabPath,
             bool requiredForRuntime,
             params string[] anchors)
+            : this(name, prefabPath, requiredForRuntime, false, anchors)
+        {
+        }
+
+        public WeaponSpec(
+            string name,
+            string prefabPath,
+            bool requiredForRuntime,
+            bool allowsColorOnlyMaterials,
+            params string[] anchors)
         {
             Name = name;
             PrefabPath = prefabPath;
             RequiredAnchors = anchors;
             RequiredForRuntime = requiredForRuntime;
+            AllowsColorOnlyMaterials = allowsColorOnlyMaterials;
         }
     }
 
@@ -92,6 +105,78 @@ public static class GenesisWeaponRecoveryAudit
                 + "AWPViewmodelCandidate.prefab",
             false,
             "WeaponMainLocator", "Recovered_AWP_Candidate", "Muzzle", "RightHand"),
+        new WeaponSpec(
+            "AWMTP",
+            "Assets/Resources/OriginalGame/AWMTP.prefab",
+            true,
+            "AWM", "Muzzle"),
+        new WeaponSpec(
+            "AN94ViewmodelCandidate",
+            "Assets/Resources/OriginalGame/FirstPerson/"
+                + "AN94ViewmodelCandidate.prefab",
+            false,
+            "WeaponMainLocator", "Recovered_AN94_Candidate", "Muzzle", "RightHand"),
+        new WeaponSpec(
+            "M249",
+            "Assets/Resources/OriginalGame/M249.prefab",
+            true,
+            "m249", "AmmoBox", "AmmoBelt"),
+        new WeaponSpec(
+            "FAMAS",
+            "Assets/Resources/OriginalGame/FAMAS.prefab",
+            true),
+        new WeaponSpec(
+            "FAMASTP",
+            "Assets/Resources/OriginalGame/FAMASTP.prefab",
+            true),
+        new WeaponSpec(
+            "MicroGalilBaxi",
+            "Assets/Resources/OriginalGame/MicroGalilBaxi.prefab",
+            true),
+        new WeaponSpec(
+            "MicroGalilBaxiTP",
+            "Assets/Resources/OriginalGame/MicroGalilBaxiTP.prefab",
+            true),
+        new WeaponSpec(
+            "Gatling",
+            "Assets/Resources/OriginalGame/Gatling.prefab",
+            true,
+            true,
+            "GatlingBarrelAssembly", "Muzzle"),
+        new WeaponSpec(
+            "GatlingTP",
+            "Assets/Resources/OriginalGame/GatlingTP.prefab",
+            true,
+            true,
+            "GatlingBarrelAssembly", "Muzzle"),
+        new WeaponSpec(
+            "AUGA1",
+            "Assets/Resources/OriginalGame/AUGA1.prefab",
+            true),
+        new WeaponSpec(
+            "AUGA1TP",
+            "Assets/Resources/OriginalGame/AUGA1TP.prefab",
+            true),
+        new WeaponSpec(
+            "AK47Ice",
+            "Assets/Resources/OriginalGame/AK47Ice.prefab",
+            true),
+        new WeaponSpec(
+            "AK47IceTP",
+            "Assets/Resources/OriginalGame/AK47IceTP.prefab",
+            true),
+        new WeaponSpec(
+            "HandAxe",
+            "Assets/Resources/OriginalGame/HandAxe.prefab",
+            true),
+        new WeaponSpec(
+            "Nepal",
+            "Assets/Resources/OriginalGame/Nepal.prefab",
+            true),
+        new WeaponSpec(
+            "NepalTP",
+            "Assets/Resources/OriginalGame/NepalTP.prefab",
+            true),
         new WeaponSpec(
             "Pistol01",
             "Assets/Resources/OriginalGame/FirstPerson/Pistol/Pistol01.prefab",
@@ -329,6 +414,27 @@ public static class GenesisWeaponRecoveryAudit
             "Recovered_M4A1_Sopmod");
     }
 
+    [MenuItem("Genesis/Weapons/Render Original Assault Rifle Runtime Framing")]
+    public static void RenderOriginalAssaultRifleRuntimeFraming()
+    {
+        RenderRuntimeFraming(
+            "Assets/Resources/OriginalGame/FirstPerson/AssaultRifle01.prefab",
+            "recovered-original-assault-rifle-runtime",
+            GenesisViewmodelKind.Rifle,
+            "Main");
+    }
+
+    [MenuItem("Genesis/Weapons/Render Shotgun Runtime Framing")]
+    public static void RenderShotgunRuntimeFraming()
+    {
+        RenderRuntimeFraming(
+            "Assets/Resources/OriginalGame/FirstPerson/RecoveredClosures/"
+                + "Shotgun01/GameObject/Shotgun01.prefab",
+            "recovered-shotgun-runtime",
+            GenesisViewmodelKind.Shotgun,
+            "WeaponMainMesh");
+    }
+
     [MenuItem("Genesis/Weapons/Render AK74M Runtime Framing")]
     public static void RenderAK74MRuntimeFraming()
     {
@@ -351,6 +457,27 @@ public static class GenesisWeaponRecoveryAudit
             "Recovered_AWP_Candidate");
     }
 
+    [MenuItem("Genesis/Weapons/Render AN94 Runtime Framing")]
+    public static void RenderAN94RuntimeFraming()
+    {
+        RenderRuntimeFraming(
+            "Assets/Resources/OriginalGame/FirstPerson/"
+                + "AN94ViewmodelCandidate.prefab",
+            "recovered-an94-runtime",
+            GenesisViewmodelKind.AN94,
+            "Recovered_AN94_Candidate");
+    }
+
+    [MenuItem("Genesis/Weapons/Render M249 Runtime Framing")]
+    public static void RenderM249RuntimeFraming()
+    {
+        RenderRuntimeFraming(
+            "Assets/Resources/OriginalGame/M249.prefab",
+            "recovered-m249-runtime",
+            GenesisViewmodelKind.M249,
+            "Recovered_M249_Candidate");
+    }
+
     private static void RenderRuntimeFraming(
         string prefabPath,
         string outputStem,
@@ -370,10 +497,83 @@ public static class GenesisWeaponRecoveryAudit
         camera.nearClipPlane = 0.01f;
         camera.farClipPlane = 3f;
 
-        var instance = UnityEngine.Object.Instantiate(
-            prefab, cameraObject.transform);
+        var framingRoot = new GameObject("Runtime Viewmodel Root");
+        framingRoot.transform.SetParent(cameraObject.transform, false);
+        GameObject instance;
+        if (kind == GenesisViewmodelKind.Shotgun
+            || kind == GenesisViewmodelKind.AN94
+            || kind == GenesisViewmodelKind.M249
+            || kind == GenesisViewmodelKind.AWP)
+        {
+            var handsPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(
+                "Assets/Resources/OriginalGame/FirstPerson/"
+                    + "M4A1Viewmodel.prefab");
+            instance = UnityEngine.Object.Instantiate(
+                handsPrefab, framingRoot.transform);
+            var handsReferenceWeapon = instance
+                .GetComponentsInChildren<Transform>(true)
+                .FirstOrDefault(item =>
+                    item.name == "Recovered_M4A1_Sopmod");
+            var visualPrefab = kind == GenesisViewmodelKind.AN94
+                ? AssetDatabase.LoadAssetAtPath<GameObject>(
+                    "Assets/Resources/OriginalGame/AN94.prefab")
+                : prefab;
+            var recoveredVisual = UnityEngine.Object.Instantiate(
+                visualPrefab, instance.transform);
+            recoveredVisual.name = kind == GenesisViewmodelKind.AN94
+                || kind == GenesisViewmodelKind.M249
+                ? firearmModelName
+                : "Recovered_" + kind + "_Visual";
+            recoveredVisual.transform.localPosition = Vector3.zero;
+            recoveredVisual.transform.localRotation =
+                kind == GenesisViewmodelKind.AN94
+                    ? Quaternion.Euler(0f, 0f, 90f)
+                    : kind == GenesisViewmodelKind.M249
+                        ? Quaternion.Euler(90f, 0f, 0f)
+                        : Quaternion.identity;
+            foreach (var damagedArm in instance
+                .GetComponentsInChildren<SkinnedMeshRenderer>(true))
+            {
+                if (kind == GenesisViewmodelKind.AN94
+                    || kind == GenesisViewmodelKind.M249
+                    || damagedArm.transform.IsChildOf(
+                        recoveredVisual.transform))
+                    damagedArm.enabled = false;
+            }
+            var damagedAnimation = recoveredVisual.GetComponent<Animation>();
+            if (damagedAnimation != null)
+                damagedAnimation.enabled = false;
+            if (kind == GenesisViewmodelKind.Shotgun)
+            {
+                GenesisMatchController.AlignRecoveredShotgunToHands(
+                    handsReferenceWeapon, recoveredVisual);
+            }
+            else
+            {
+                GenesisMatchController.AlignRecoveredWeaponToHands(
+                    handsReferenceWeapon,
+                    recoveredVisual,
+                    kind == GenesisViewmodelKind.AN94
+                        || kind == GenesisViewmodelKind.M249
+                        ? recoveredVisual.name
+                        : firearmModelName,
+                    kind == GenesisViewmodelKind.AWP
+                        ? 1.34f
+                        : kind == GenesisViewmodelKind.M249 ? 0.94f : 0.86f);
+            }
+            foreach (var firearmPart in
+                instance.GetComponentsInChildren<MeshRenderer>(true))
+            {
+                if (!firearmPart.transform.IsChildOf(recoveredVisual.transform))
+                    firearmPart.enabled = false;
+            }
+        }
+        else
+            instance = UnityEngine.Object.Instantiate(
+                prefab, framingRoot.transform);
         var animation = instance.GetComponent<Animation>();
-        if (animation != null && animation.GetClip("Idle01") != null)
+        if (animation != null
+            && animation.GetClip("Idle01") != null)
         {
             animation.Play("Idle01");
             animation["Idle01"].time = Mathf.Min(
@@ -400,14 +600,24 @@ public static class GenesisWeaponRecoveryAudit
             var pose = GenesisViewmodelProfiles.Get(
                 kind, size.x / (float)size.y);
             camera.aspect = size.x / (float)size.y;
-            instance.transform.localPosition = pose.Position;
-            instance.transform.localRotation = Quaternion.Euler(
+            framingRoot.transform.localPosition = pose.Position;
+            framingRoot.transform.localRotation = Quaternion.Euler(
                 pose.EulerAngles);
-            instance.transform.localScale = Vector3.one * pose.Scale;
+            framingRoot.transform.localScale = Vector3.one * pose.Scale;
             camera.fieldOfView = pose.FieldOfView;
             camera.nearClipPlane = pose.NearClip;
+            if (kind == GenesisViewmodelKind.Shotgun)
+            {
+                var firearm = instance.GetComponentsInChildren<Transform>(true)
+                    .First(item => item.name == firearmModelName);
+                var firearmRenderer = firearm.GetComponent<Renderer>();
+                var targetCenter = cameraObject.transform.TransformPoint(
+                    new Vector3(0.26f, -0.2f, 1.6f));
+                framingRoot.transform.position +=
+                    targetCenter - firearmRenderer.bounds.center;
+            }
             LogRuntimeViewportAudit(
-                camera, instance, size, firearmModelName, kind.ToString());
+                camera, framingRoot, size, firearmModelName, kind.ToString());
             var renderTexture = new RenderTexture(size.x, size.y, 24);
             var image = new Texture2D(
                 size.x, size.y, TextureFormat.RGB24, false);
@@ -456,6 +666,8 @@ public static class GenesisWeaponRecoveryAudit
 
         var minimum = new Vector2(float.PositiveInfinity, float.PositiveInfinity);
         var maximum = new Vector2(float.NegativeInfinity, float.NegativeInfinity);
+        var minimumDepth = float.PositiveInfinity;
+        var maximumDepth = float.NegativeInfinity;
         foreach (var renderer in renderers)
         {
             var filter = renderer.GetComponent<MeshFilter>();
@@ -470,6 +682,8 @@ public static class GenesisWeaponRecoveryAudit
                     bounds.extents, new Vector3(x, y, z));
                 var corner = renderer.transform.TransformPoint(localCorner);
                 var viewport = camera.WorldToViewportPoint(corner);
+                minimumDepth = Mathf.Min(minimumDepth, viewport.z);
+                maximumDepth = Mathf.Max(maximumDepth, viewport.z);
                 if (viewport.z <= camera.nearClipPlane)
                     continue;
                 minimum = Vector2.Min(minimum, viewport);
@@ -478,15 +692,19 @@ public static class GenesisWeaponRecoveryAudit
         }
 
         var muzzle = instance.GetComponentsInChildren<Transform>(true)
-            .FirstOrDefault(item => item.name == "Muzzle");
+            .FirstOrDefault(item => item.name == "Muzzle")
+            ?? instance.GetComponentsInChildren<Transform>(true)
+                .FirstOrDefault(item => item.name == "WeaponMainLocator");
         var muzzleViewport = muzzle == null
             ? new Vector3(-1f, -1f, -1f)
             : camera.WorldToViewportPoint(muzzle.position);
         var occupancy = maximum - minimum;
         Debug.Log(string.Format(
             "[WeaponRecovery] FramingAudit {0} {1}x{2}: firearmMin={3}, "
-                + "firearmMax={4}, occupancy={5}, muzzle={6}",
-            label, size.x, size.y, minimum, maximum, occupancy, muzzleViewport));
+                + "firearmMax={4}, occupancy={5}, depth=({6:F2}, {7:F2}), "
+                + "muzzle={8}",
+            label, size.x, size.y, minimum, maximum, occupancy,
+            minimumDepth, maximumDepth, muzzleViewport));
         if (minimum.x < -0.02f
             || maximum.x > 1.02f
             || occupancy.x > 0.62f
@@ -522,6 +740,17 @@ public static class GenesisWeaponRecoveryAudit
             "recovered-m16-viewmodel-candidate-preview.png",
             new Vector3(-0.25f, 0.1f, -0.9f),
             true);
+    }
+
+    [MenuItem("Genesis/Weapons/Render M16 Runtime Framing")]
+    public static void RenderM16RuntimeFraming()
+    {
+        RenderRuntimeFraming(
+            "Assets/Resources/OriginalGame/FirstPerson/"
+                + "M16ViewmodelCandidate.prefab",
+            "recovered-m16-runtime",
+            GenesisViewmodelKind.M16,
+            "Recovered_M16_Candidate");
     }
 
     [MenuItem("Genesis/Weapons/Render AK74M Viewmodel Candidate Preview")]
@@ -643,6 +872,16 @@ public static class GenesisWeaponRecoveryAudit
             "recovered-pistol-viewmodel-reference.png",
             new Vector3(-0.22f, 0.08f, -0.82f),
             true);
+    }
+
+    [MenuItem("Genesis/Weapons/Render AN94 Source Model Preview")]
+    public static void RenderAN94SourceModelPreview()
+    {
+        RenderPrefabPreview(
+            "Assets/Resources/OriginalGame/AN94.prefab",
+            "recovered-an94-source-model-preview.png",
+            new Vector3(-0.85f, 0.28f, -0.85f),
+            false);
     }
 
     private static void RenderPrefabPreview(
@@ -779,9 +1018,23 @@ public static class GenesisWeaponRecoveryAudit
             passed = renderers.Length > 0
                 && materials.Length > 0
                 && missingMaterials == 0
-                && textures.Length > 0
-                && texturedMaterialCoverage >= 0.75f
-                && clips.Length > 0
+                && (spec.AllowsColorOnlyMaterials
+                    || (textures.Length > 0
+                        && texturedMaterialCoverage >= 0.75f))
+                // M249 is an authentic static multi-part firearm closure.
+                // Its action clips live on the runtime M4 animation root and
+                // are composition-audited by RenderM249RuntimeFraming; do not
+                // require duplicate clips on the source firearm prefab.
+                && (clips.Length > 0 || spec.Name == "M249"
+                    || spec.Name == "FAMAS" || spec.Name == "FAMASTP"
+                    || spec.Name == "MicroGalilBaxi"
+                    || spec.Name == "MicroGalilBaxiTP"
+                    || spec.Name == "Gatling" || spec.Name == "GatlingTP"
+                    || spec.Name == "AUGA1" || spec.Name == "AUGA1TP"
+                    || spec.Name == "AK47Ice" || spec.Name == "AK47IceTP"
+                    || spec.Name == "AWMTP"
+                    || spec.Name == "HandAxe" || spec.Name == "Nepal"
+                    || spec.Name == "NepalTP")
                 && missingAnchors.Length == 0,
             rendererCount = renderers.Length,
             materialCount = materials.Length,

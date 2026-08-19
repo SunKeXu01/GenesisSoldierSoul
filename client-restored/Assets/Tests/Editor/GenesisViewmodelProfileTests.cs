@@ -45,11 +45,49 @@ public sealed class GenesisViewmodelProfileTests
         var awp = GenesisViewmodelProfiles.Get(
             GenesisViewmodelKind.AWP,
             GenesisViewmodelProfiles.ReferenceAspect);
+        var an94 = GenesisViewmodelProfiles.Get(
+            GenesisViewmodelKind.AN94,
+            GenesisViewmodelProfiles.ReferenceAspect);
+        var m249 = GenesisViewmodelProfiles.Get(
+            GenesisViewmodelKind.M249,
+            GenesisViewmodelProfiles.ReferenceAspect);
+        var microGalil = GenesisViewmodelProfiles.Get(
+            GenesisViewmodelKind.MicroGalilBaxi,
+            GenesisViewmodelProfiles.ReferenceAspect);
+        var gatling = GenesisViewmodelProfiles.Get(
+            GenesisViewmodelKind.Gatling,
+            GenesisViewmodelProfiles.ReferenceAspect);
+        var augA1 = GenesisViewmodelProfiles.Get(
+            GenesisViewmodelKind.AUGA1,
+            GenesisViewmodelProfiles.ReferenceAspect);
+        var ak47Ice = GenesisViewmodelProfiles.Get(
+            GenesisViewmodelKind.AK47Ice,
+            GenesisViewmodelProfiles.ReferenceAspect);
 
         Assert.That(ak74m.Position, Is.Not.EqualTo(generic.Position));
+        Assert.That(an94.Position, Is.Not.EqualTo(generic.Position));
+        Assert.That(m249.Position, Is.Not.EqualTo(generic.Position));
+        Assert.That(microGalil.Position, Is.Not.EqualTo(generic.Position));
+        Assert.That(gatling.Position, Is.Not.EqualTo(generic.Position));
+        Assert.That(augA1.Position, Is.Not.EqualTo(generic.Position));
+        Assert.That(ak47Ice.Position, Is.Not.EqualTo(generic.Position));
         Assert.That(awp.Position, Is.Not.EqualTo(generic.Position));
         Assert.That(awp.EulerAngles, Is.Not.EqualTo(ak74m.EulerAngles));
         Assert.That(awp.FieldOfView, Is.LessThan(ak74m.FieldOfView));
+    }
+
+    [Test]
+    public void AN94UsesLongRifleNarrowAspectCorrection()
+    {
+        var wide = GenesisViewmodelProfiles.Get(
+            GenesisViewmodelKind.AN94,
+            GenesisViewmodelProfiles.ReferenceAspect);
+        var narrow = GenesisViewmodelProfiles.Get(
+            GenesisViewmodelKind.AN94,
+            GenesisViewmodelProfiles.MinimumSupportedAspect);
+
+        Assert.That(narrow.Position.x, Is.LessThan(wide.Position.x));
+        Assert.That(narrow.Scale, Is.LessThan(wide.Scale * 0.85f));
     }
 
     [Test]

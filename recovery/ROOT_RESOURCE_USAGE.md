@@ -1,13 +1,13 @@
 # 项目根目录资源复用记录
 
-更新日期：2026-08-05
+更新日期：2026-08-11
 
 ## 交付分类与边界
 
 | 分类 | 定义 | 当前位置/账本 | 发布含义 |
 | --- | --- | --- | --- |
-| 当前运行时正式选用资源 | 七张可玩地图、M4A1/M16/Shotgun01、M9（缺失时回退 Pistol01）、Knife01、Grenade01、角色、HUD、音效和战斗特效 | `client-restored/Assets/`；逐组来源见 `resource-closure-audit.json` | 技术上进入诊断构建，但因缺少批准权利记录当前均为 D 级，不等于可正式发布 |
-| 候选资源 | AK-74M、AWP、AN94、M249、FAMAS、加特林、手斧、尼泊尔等未完成全部动作/依赖/许可门禁的资源 | 原始隔离池与候选审计报告 | 默认关闭，不进入正式武器栏 |
+| 当前运行时正式选用资源 | 七张可玩地图、M4A1/M16/Shotgun01、AK-74M、AWM（兼容 ID `awp`）、AN94、M249、FAMAS、Micro Galil 巴西版、加特林、AUG A1、M9（缺失时回退 Pistol01）、Knife01、军用斧、尼泊尔军刀、Grenade01、角色、HUD、音效和战斗特效 | `client-restored/Assets/`；逐组来源见 `resource-closure-audit.json` | 技术上进入诊断构建，但因缺少批准权利记录当前均为 D 级，不等于可正式发布 |
+| 候选资源 | 尚未形成完整模型/材质/动作/音效闭包的其余源资源 | 原始隔离池与候选审计报告 | 默认关闭，不进入正式武器栏 |
 | 不可变原始样本 | APK、Windows 客户端、Unity `_Data`、UnityPackage、REZ、Flash、Unreal 容器及来源压缩包 | 工作区原路径、APFS 写时复制快照、`root-resource-index.json` | 只读保存，不执行来源不明程序，不直接打入 WebGL |
 | 生成产物 | 安全提取目录、对象导出、格式转换、恢复场景/Prefab、WebGL 构建、截图、测试 XML/日志和审计 JSON | `recovery/`、隔离提取目录、`client-restored/Build/` | 必须能追溯输入哈希与工具流程；构建和临时产物不冒充原始资源 |
 
@@ -63,13 +63,14 @@
 - Windows 发布包已完成统一只读静态审计：12 套 Unity Mono 包覆盖 `5.0.2f1`、`5.2.5f1`、`2018.4.14c1`、`2019.1.4f1`，另识别 1 套 Unreal x86-64 发布包及 CF2.0 客户端；948 个 PE 出现位置归并为 309 个唯一模块，均保留架构、节区、导入/导出、资源段和分类字符串证据。12 份 `Assembly-CSharp.dll` 已生成完整 IL，共 1,326 类型、9,260 字段和 9,787 方法。综合报告见 `recovery/WINDOWS_STATIC_AUDIT_2026-08-04.md`。
 - 9 套 Windows Unity 包已有来源对应的 AssetRipper 恢复工程；对余下 3 套包新增哈希隔离的逐对象导出，共保存 33,797 个对象、372,259,582 字节，失败 0。第二次同参数执行全部命中既有哈希，报告及清单见 `recovery/WINDOWS_UNITY_OBJECT_EXPORTS_2026-08-04.md` 与 `recovery/windows-unity-object-exports.json`。
 - 专用格式转换已建立统一证据账本：2 份 UnityPackage 的 19 个资产保持 GUID、原路径与 `.meta`；417 个 SWF/误标缓存共提取 1,874 个 PNG、1,601 个矢量标签、74 个字体标签、1,380 个 Sprite/时间轴和 538 个 ATF；538 个 ATF 已全部转为 538 DDS + 538 RGBA PNG，保留 1,001 个有效 mip 层；私有 REZ 已恢复 8,721 个 LTB GLB，其中 321 个含 glTF skin，98 个含 818 个骨骼/顶点动画、88,740 个通道和 2,940 个 morph target，另有 40,356 PNG、1 DDS 和 51,657,941 字节 LTA；标准媒体含 15 GLB、8 PNG、188 PCM WAV。综合账本逐项复核 149,905 个输出、21,817,520,072 字节，错误 0，见 `recovery/SPECIAL_FORMAT_CONVERSION_LEDGER_2026-08-04.md`。
-- Unreal 只读解析已验证 Windows 与 Android 两份 Pak v11 索引 SHA-1，分别记录 1,521 与 2,253 个条目；两组 UTOC/UCAS 完成版本、条目/压缩块和哈希配对。当前容器使用 Oodle/IoStore，内容级对象恢复仍作为明确待办，不会运行包内程序或猜测解密。
+- Unreal 只读解析已验证 Windows 与 Android 两份 Pak v11 索引 SHA-1，分别提取 1,521 与 2,253 个条目；其中 1,318 个 Oodle 条目由显式提供且 SHA-256 锁定的解码器恢复，两份 Pak 的不支持标志计数均为 0。Android 518 个 UAsset/UMap 文件闭包、完整 UObject 解析与二进制一致性验证全部通过。两组 UTOC/UCAS 已完成版本、条目/压缩块和哈希配对，IoStore 内容仍只保留目录级证据。
 - 击杀信息从单条覆盖改为最多四条的滚动队列，连续击杀和联网死亡不再互相吞掉，布局与参考录像右上角多行击杀提示一致。
 - 联网战斗协议现会广播装备、开火、换弹、挥刀和投掷动作；远端角色在基础移动 Animator 之后叠加上肢动作，动作序列号独立去重，避免旧消息重放覆盖当前姿态。双 WebGL 客户端已在同一动态房间完成在线人数和远端角色生成验证。
 - 参考画面风格 HUD 已恢复：复用原圆形雷达和顶部阵营比分资源，并补齐动态准星、生命/护甲、弹药、四槽武器栏、计分板及击杀信息。WebGL 已验证武器切换、生命伤害、多人击杀信息和 Tab 计分板联动；记录见 `recovery/REFERENCE_HUD_RECOVERY_2026-08-03.md`。
 - 第三人称动作已进一步统一到共享驱动器：远端玩家与训练 Bot 现在使用正式 M4A1、M9、Knife01 和 Grenade01 模型，并支持持枪、切枪、射击、换弹、受击、倒地与复活复位；恢复和验收记录见 `recovery/THIRD_PERSON_ACTION_RECOVERY_2026-08-03.md`。
 - 7 张恢复地图现已全部进入客户端轮换和服务器大厅白名单，并补齐碰撞、NavMesh 与严格出生点审计；钢铁工厂已用 5 类程序化工业材质替换全白材质，冰火迷宫黑色海面已恢复为可见水面，辐射区出生点已移至开放导航区并面向可通行庭院。7 图均达到基础可玩恢复标准，后续仍需最终美术与网络回归，详见 `recovery/SEVEN_MAP_RECOVERY_2026-08-03.md`。
-- 根目录武器包中的 AK-74M 与 AWP 已完成实验性参数和模型适配，但它们缺少各自完整的第一人称手部动画闭包，目前在正式仓库中关闭。M9 已采用独立手枪构图完成持有、开火、换弹、切枪、死亡、复活与 WebGL 全序列验收，并已转为正式副武器；`Pistol01` 仅保留为资源缺失时的回退。记录见 `recovery/M9_FIRST_PERSON_PROMOTION_2026-08-04.md`。
+- 根目录武器包中的 AK-74M、AWM、AN94、M249、FAMAS、Micro Galil 巴西版、加特林、军用斧与尼泊尔军刀已完成诊断构建适配和 WebGL 实机验收；AWM、尼泊尔、FAMAS 与 Micro Galil 均使用从原 SWF A3D2 数据恢复的独立 FP/TP 几何、原 ATF 转换贴图及各自原音效。AWM 已用 `xinawmxilie` 原 FP/TP 模型替换旧 AWP OBJ 与通用材质，并通过 10/20 单发和右键开镜验收；原 `xinawmAnim_fp` 的两套 20 轨手臂与 12 轨枪体已解析出跑动、开火、待机、换弹、拿枪五段动作及精确时长。每个 27 字节关键帧现已确定由 2 字节大端增量时间和 25 字节变换组成，三份审计清单会逐帧记录时间增量并验证累计时长，位于 `client-restored/Assets/RecoveredWeapons/AWM/Animation/`；剩余 25 字节变换绑定仍在继续，尚未冒充完成。加特林使用原 `加特林机枪2.max` 的 72 网格/27,763 顶点/20,894 面完整几何、四组原纯色材质和原 deploy/fire/reload 音效，已接入 150/150 弹量、枪管预转/射击旋转及第一/第三人称链路；可重复转换脚本为 `client-restored/tools/export_gatling_max.py`。尼泊尔第三人称现已纳入近战持刀姿态与右手武器插槽更新，原 TP 军刀会跟随动画右手；相关军用斧/尼泊尔跟手回归与全部 PlayMode 测试 15/15 通过。损坏的归档步枪手臂仍保持隔离，未冒充专用动作。M9 已采用独立手枪构图完成持有、开火、换弹、切枪、死亡、复活与 WebGL 全序列验收，并已转为正式副武器；`Pistol01` 仅保留为资源缺失时的回退。记录见 `recovery/RUNTIME_RESOURCE_MIGRATION_MATRIX_2026-08-09.md`。
+- AUG A1 已从原 `auga1xilie.108396.swf` 恢复独立 FP/TP A3D2 枪模，绑定原程序恢复工程中的 1024×1024 `augTEX` 枪体贴图及原 deploy/fire/reload 音效，并按原配置接入 30/60 弹量、10.34 发/秒、3.96 秒换弹和右键瞄准。运行资源审计的 AUG FP/TP 贴图覆盖均为 100%，EditMode 82/82、PlayMode 15/15，WebGL 已验证 30→29 开火、鼠标转向和 32° 瞄准。专用压缩动作仍未完成骨骼绑定，当前继续使用共享持枪动作，未冒充完整动作迁移。
 - 正式资源闭包现采用 fail-closed 的 A/B/C/D 机器分级。7 个拟进入正式构建的资源组均有来源和回退记录，但仓库内没有覆盖恢复素材的权利/许可证明，因此当前全部判为 D、A 级为 0；这不会被“技术验收通过”自动覆盖。`GENESIS_DIAGNOSTIC=1` 仍可生成恢复研究构建，非诊断 WebGL 构建会先核验策略哈希、审计时效和 A 级计数并拒绝发布。策略、逐组依赖结果和回退账本见 `recovery/resource-closure-policy.json`、`recovery/resource-closure-audit.json` 与 `recovery/RESOURCE_CLOSURE_AUDIT.md`。
 
 这些资源由 `tools/import_recovered_assets.sh` 可重复同步，不依赖运行来源不明的 EXE。
@@ -84,7 +85,7 @@
 - 两个 M4A1 UnityPackage。
 - 尼泊尔军刀、FAMAS、加特林的 3ds Max 源文件。
 
-AK-74M 与 AWP 已完成实验性适配，但不会在缺少自身完整第一人称动作时进入正式武器栏；M9 已完成正式副武器验收，`Pistol01` 只保留为资源缺失回退。其余模型并不都自带第一人称手部、骨骼和动作，后续仍需按同一流程适配，不能直接当成已经可玩的第一人称武器。
+AK-74M、AWM、AN94、M249、FAMAS、Micro Galil 巴西版、加特林、AUG A1、军用斧与尼泊尔军刀已完成诊断构建适配和实机验收；M9 已完成正式副武器验收，`Pistol01` 只保留为资源缺失回退。AWM、FAMAS、Micro Galil 与 AUG A1 已优先使用 SWF 内可验证的 FP/TP A3D2 几何；加特林已由原 3ds Max Scene 可重复转换并形成可审计的第一/第三人称闭包。
 
 ## REZ 安全提取状态
 
@@ -100,7 +101,7 @@ AK-74M 与 AWP 已完成实验性适配，但不会在缺少自身完整第一�
 
 ## 仍需转换后才能使用
 
-- CF 私有目录已无从数据区起点完全未知的 REZ，仍有 5 个精确停止的未知后缀；两份 RF019 与两份 RF199 的可证明连续前缀已恢复 28,273 个资源、3,253,472,631 个源字节，包含延伸恢复的 SWF/FLV/HTML、CP949 Web bundle、UI layout、DTX 和 PNG；RF164/RF266 又完整恢复 2 个 world v85、58,778,137 字节，RB001 恢复 492 个同源 loose 精确区段、28,520,661 字节。其中 15,973 个 DTX 和 257 个 TGA 已转为 16,230 个 PNG。LTB 几何已 8,721/8,721 转换，321 个复合 LTB 的 14,896 条骨骼和 1,844 个网格已生成 skin，源内 818 个骨骼/顶点动画已全部生成标准 glTF animation/morph。标准 `engine.rez` 的 DTX 已转 PNG，其中 15 个 LTB 实为 RenderStyle 而非几何模型。364 个 loose LTC 已全部恢复为 LTA，不再列为未知格式。
+- CF 私有 REZ 已无未知数据区尾段：7 个原未分帧包共连续恢复 40,312 个资源，RB001 的 4 个加密目录表、769 个文件项及 769/769 个目录 MD5 已严格验证；zero-mirror 合计 974 帧、6,609,886 个源字节。RF164/RF266 完整恢复 2 个 world v85；15,973 个 DTX 和 257 个 TGA 已转 16,230 个 PNG。LTB 几何已 8,721/8,721 转换，321 个复合 LTB 的 14,896 条骨骼和 1,844 个网格已生成 skin，源内 818 个骨骼/顶点动画已全部生成标准 glTF animation/morph。标准 `engine.rez` 的 DTX 已转 PNG，其中 15 个 LTB 实为 RenderStyle 而非几何模型。364 个 loose LTC 已全部恢复为 LTA，不再列为未知格式。
 - Flash SWF 中的 538 个 ATF 已转为 DDS/PNG；矢量和字体标签仍保留原始标签体，尚未转成 SVG/TTF。位图 PNG 与时间轴元数据已经可审计使用。
 - Unity 发布包中未完成依赖闭包的 Prefab、动画控制器和特效。
 - Unreal PAK/UCAS/UTOC 以及 Android OBB 中的地图资源。

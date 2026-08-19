@@ -101,7 +101,7 @@ namespace GenesisSoldierSoul.Multiplayer
             if (!alive)
                 return;
             RestoreActionBase();
-            SetWeapon(command.PresentationWeapon);
+            SetWeapon(command.Weapon);
             action = command.State == GenesisWeaponActionState.Melee
                 ? "knife"
                 : command.Kind == GenesisCombatActionKind.Throw
@@ -185,22 +185,34 @@ namespace GenesisSoldierSoul.Multiplayer
 
         private void SetWeapon(string requested)
         {
-            weapon = requested == "pistol"
-                ? "pistol"
-                : requested == "shotgun" || requested == "shotgun01"
-                    ? "shotgun"
-                    : requested == "knife"
-                        ? "knife"
-                        : requested == "grenade"
-                            ? "grenade"
-                            : "rifle";
+            if (requested == "knife"
+                && GenesisWeaponLoadout.Melee == GenesisWeaponLoadout.HandAxe)
+                requested = "axe";
+            else if (requested == "knife"
+                && GenesisWeaponLoadout.Melee == GenesisWeaponLoadout.Nepal)
+                requested = "nepal";
+            if (requested == "pistol" || requested == "knife"
+                || requested == "axe" || requested == "nepal"
+                || requested == "grenade" || requested == "m16"
+                || requested == "ak74m" || requested == "an94"
+                || requested == "m249" || requested == "famas"
+                || requested == "microgalil_baxi"
+                || requested == "gatling"
+                || requested == "auga1"
+                || requested == "ak47_bingzuan"
+                || requested == "awp")
+                weapon = requested;
+            else if (requested == "shotgun" || requested == "shotgun01")
+                weapon = "shotgun";
+            else
+                weapon = "rifle";
             foreach (var pair in weaponProps)
                 pair.Value.SetActive(pair.Key == weapon);
         }
 
         private void ApplyHoldingPose()
         {
-            if (weapon == "rifle")
+            if (IsRifleWeapon(weapon))
             {
                 SetArm(leftArm, leftArmRest, -48f, 34f, 18f);
                 SetArm(rightArm, rightArmRest, -55f, -8f, -14f);
@@ -215,7 +227,7 @@ namespace GenesisSoldierSoul.Multiplayer
                 SetArm(leftArm, leftArmRest, -38f, 20f, 12f);
                 SetArm(rightArm, rightArmRest, -62f, -5f, -10f);
             }
-            else if (weapon == "knife")
+            else if (IsMeleeWeapon(weapon))
             {
                 SetArm(leftArm, leftArmRest, -12f, 8f, 5f);
                 SetArm(rightArm, rightArmRest, -44f, -18f, -26f);
@@ -329,6 +341,48 @@ namespace GenesisSoldierSoul.Multiplayer
             AddProp("rifle", "OriginalGame/M4A1", null, 0.72f,
                 new Vector3(0.02f, 0.02f, 0.38f),
                 Quaternion.Euler(0f, 180f, 0f));
+            AddProp("m16", "OriginalGame/FirstPerson/M16ViewmodelCandidate",
+                new[] { "Recovered_M16_Candidate" }, 0.72f,
+                new Vector3(0.02f, 0.02f, 0.38f),
+                Quaternion.Euler(0f, 180f, 0f));
+            AddProp("ak74m", "OriginalGame/FirstPerson/AK74MViewmodelCandidate",
+                new[] { "Recovered_AK74M_Candidate" }, 0.72f,
+                new Vector3(0.02f, 0.02f, 0.38f),
+                Quaternion.Euler(0f, 180f, 0f));
+            AddProp("an94", "OriginalGame/FirstPerson/AN94ViewmodelCandidate",
+                new[] { "Recovered_AN94_Candidate" }, 0.74f,
+                new Vector3(0.02f, 0.02f, 0.39f),
+                Quaternion.Euler(0f, 180f, 0f));
+            AddProp("m249", "OriginalGame/M249", null, 0.82f,
+                new Vector3(0.025f, 0.015f, 0.43f),
+                Quaternion.Euler(90f, 180f, 0f));
+            AddProp("famas", "OriginalGame/FAMASTP", null, 0.74f,
+                new Vector3(0.02f, 0.02f, 0.39f),
+                Quaternion.Euler(0f, 180f, 0f));
+            AddProp("microgalil_baxi", "OriginalGame/MicroGalilBaxiTP",
+                null, 0.7f,
+                new Vector3(0.02f, 0.02f, 0.37f),
+                Quaternion.Euler(0f, 180f, 0f));
+            AddProp("gatling", "OriginalGame/GatlingTP", null, 0.86f,
+                new Vector3(0.025f, 0.015f, 0.43f),
+                Quaternion.Euler(90f, 180f, 0f));
+            AddProp("auga1", "OriginalGame/AUGA1TP", null, 0.74f,
+                new Vector3(0.02f, 0.02f, 0.39f),
+                Quaternion.Euler(90f, 180f, 0f));
+            AddProp("ak47_bingzuan", "OriginalGame/AK47IceTP", null, 0.74f,
+                new Vector3(0.02f, 0.02f, 0.39f),
+                Quaternion.Euler(90f, 180f, 0f));
+            GameObject gatlingProp;
+            if (weaponProps.TryGetValue("gatling", out gatlingProp)
+                && gatlingProp != null)
+            {
+                var motor = gatlingProp.AddComponent<GenesisGatlingBarrelMotor>();
+                motor.Configure(gatlingProp.transform);
+            }
+            AddProp("awp", "OriginalGame/AWMTP",
+                null, 0.8f,
+                new Vector3(0.02f, 0.02f, 0.42f),
+                Quaternion.Euler(0f, 180f, 0f));
             AddProp("shotgun",
                 "OriginalGame/FirstPerson/RecoveredClosures/Shotgun01/"
                     + "GameObject/Shotgun01",
@@ -342,10 +396,18 @@ namespace GenesisSoldierSoul.Multiplayer
                     "TriggerMesh" }, 0.25f,
                 new Vector3(0f, 0.01f, 0.1f),
                 Quaternion.Euler(0f, 180f, 0f));
-            AddProp("knife", "OriginalGame/FirstPerson/Knife/Knife01",
-                new[] { "Knife" }, 0.38f,
+            AddMeshProp("knife",
+                "OriginalGame/FirstPerson/Meshes/Knife",
+                "OriginalGame/FirstPerson/Materials/Knife01",
+                0.28f,
                 new Vector3(0f, 0.01f, 0.15f),
-                Quaternion.Euler(0f, 90f, 90f));
+                Quaternion.Euler(-18f, 18f, 92f));
+            AddProp("axe", "OriginalGame/HandAxe", null, 0.78f,
+                new Vector3(0f, 0.015f, 0.18f),
+                Quaternion.Euler(90f, 0f, 0f));
+            AddProp("nepal", "OriginalGame/NepalTP", null, 0.82f,
+                new Vector3(0f, 0.015f, 0.2f),
+                Quaternion.Euler(90f, 0f, 0f));
             AddProp("grenade",
                 "OriginalGame/FirstPerson/RecoveredClosures/Grenade01/"
                     + "GameObject/Grenade01",
@@ -381,7 +443,10 @@ namespace GenesisSoldierSoul.Multiplayer
             foreach (var renderer in renderers)
             {
                 renderer.enabled = allowedRendererNames == null
-                    || Array.IndexOf(allowedRendererNames, renderer.name) >= 0;
+                    || IsRendererAllowed(
+                        renderer.transform,
+                        instance.transform,
+                        allowedRendererNames);
             }
             Bounds bounds;
             if (TryGetBounds(renderers, out bounds))
@@ -395,8 +460,43 @@ namespace GenesisSoldierSoul.Multiplayer
             }
             instance.transform.localPosition += handOffset;
             weaponProps[id] = instance;
-            if (id == "rifle" || id == "shotgun" || id == "pistol")
+            if (IsRifleWeapon(id) || id == "shotgun" || id == "pistol")
                 muzzleAnchors[id] = CreateMuzzleAnchor(instance);
+        }
+
+        private void AddMeshProp(
+            string id,
+            string meshResourcePath,
+            string materialResourcePath,
+            float desiredLength,
+            Vector3 handOffset,
+            Quaternion handRotation)
+        {
+            var mesh = Resources.Load<Mesh>(meshResourcePath);
+            var material = Resources.Load<Material>(materialResourcePath);
+            if (mesh == null || material == null || weaponSocket == null)
+                return;
+            var instance = new GameObject(
+                "ThirdPerson_" + id,
+                typeof(MeshFilter),
+                typeof(MeshRenderer));
+            instance.transform.SetParent(weaponSocket, false);
+            instance.GetComponent<MeshFilter>().sharedMesh = mesh;
+            instance.GetComponent<MeshRenderer>().sharedMaterial = material;
+            instance.transform.localPosition = Vector3.zero;
+            instance.transform.localRotation = handRotation;
+            instance.transform.localScale = Vector3.one;
+            var longest = Mathf.Max(
+                mesh.bounds.size.x,
+                Mathf.Max(mesh.bounds.size.y, mesh.bounds.size.z));
+            if (longest > 0.0001f)
+                instance.transform.localScale *= desiredLength / longest;
+            var renderer = instance.GetComponent<Renderer>();
+            instance.transform.position += weaponSocket.position
+                - renderer.bounds.center;
+            instance.transform.localPosition += handOffset;
+            instance.SetActive(false);
+            weaponProps[id] = instance;
         }
 
         private Transform CreateMuzzleAnchor(GameObject prop)
@@ -424,7 +524,19 @@ namespace GenesisSoldierSoul.Multiplayer
             lastAudioResource = AudioResourceFor(command);
             if (command.Kind == GenesisCombatActionKind.Fire
                 && command.PresentationWeapon != "knife")
-                PlayMuzzleFlash(command.PresentationWeapon);
+                PlayMuzzleFlash(weapon);
+            if (command.Kind == GenesisCombatActionKind.Fire
+                && command.Weapon == "gatling")
+            {
+                GameObject gatling;
+                if (weaponProps.TryGetValue("gatling", out gatling)
+                    && gatling != null)
+                {
+                    var motor = gatling.GetComponent<GenesisGatlingBarrelMotor>();
+                    if (motor != null)
+                        motor.Pulse(0.32f);
+                }
+            }
             if (string.IsNullOrEmpty(lastAudioResource) || spatialAudio == null)
                 return;
             var clip = Resources.Load<AudioClip>(lastAudioResource);
@@ -453,6 +565,12 @@ namespace GenesisSoldierSoul.Multiplayer
             var emission = particles.emission;
             emission.rateOverTime = 0f;
             particles.Emit(presentationWeapon == "shotgun" ? 8 : 5);
+            var particleRenderer =
+                particles.GetComponent<ParticleSystemRenderer>();
+            var particleMaterial = Resources.Load<Material>(
+                "OriginalGame/Effects/BulletImpact");
+            if (particleRenderer != null && particleMaterial != null)
+                particleRenderer.material = particleMaterial;
             var light = flash.AddComponent<Light>();
             light.type = LightType.Point;
             light.range = presentationWeapon == "shotgun" ? 3.5f : 2.4f;
@@ -474,10 +592,32 @@ namespace GenesisSoldierSoul.Multiplayer
                         : "music/deploy";
             if (command.PresentationWeapon == "knife")
                 return command.Kind == GenesisCombatActionKind.Fire
-                    ? "music/slash"
-                    : string.Empty;
+                    ? GenesisWeaponLoadout.Melee == GenesisWeaponLoadout.HandAxe
+                        ? "OriginalGame/Audio/HandAxe/slash"
+                        : GenesisWeaponLoadout.Melee == GenesisWeaponLoadout.Nepal
+                            ? "OriginalGame/Audio/Nepal/slash"
+                        : "music/slash"
+                    : GenesisWeaponLoadout.Melee == GenesisWeaponLoadout.HandAxe
+                        ? "OriginalGame/Audio/HandAxe/deploy"
+                        : GenesisWeaponLoadout.Melee == GenesisWeaponLoadout.Nepal
+                            ? "OriginalGame/Audio/Nepal/deploy"
+                            : string.Empty;
             var family = command.Weapon == "m16"
                 ? "M16"
+                : command.Weapon == "an94"
+                    ? "AN94"
+                : command.Weapon == "m249"
+                    ? "M249"
+                : command.Weapon == "famas"
+                    ? "FAMAS"
+                : command.Weapon == "microgalil_baxi"
+                    ? "MicroGalilBaxi"
+                : command.Weapon == "gatling"
+                    ? "Gatling"
+                : command.Weapon == "auga1"
+                    ? "AUGA1"
+                : command.Weapon == "ak47_bingzuan"
+                    ? "AK47Ice"
                 : command.PresentationWeapon == "shotgun"
                     ? "Shotgun01"
                     : "M4A1";
@@ -489,14 +629,52 @@ namespace GenesisSoldierSoul.Multiplayer
             return "OriginalGame/Audio/" + family + "/" + actionName;
         }
 
+        private static bool IsRifleWeapon(string value)
+        {
+            return value == "rifle" || value == "m16"
+                || value == "ak74m" || value == "an94" || value == "m249"
+                || value == "famas" || value == "microgalil_baxi"
+                || value == "gatling" || value == "auga1"
+                || value == "ak47_bingzuan"
+                || value == "awp";
+        }
+
+        private static bool IsMeleeWeapon(string value)
+        {
+            return value == "knife" || value == "axe" || value == "nepal";
+        }
+
+        private static bool IsRendererAllowed(
+            Transform renderer,
+            Transform instanceRoot,
+            string[] allowedNames)
+        {
+            var current = renderer;
+            while (current != null)
+            {
+                if (Array.IndexOf(allowedNames, current.name) >= 0)
+                    return true;
+                if (current == instanceRoot)
+                    break;
+                current = current.parent;
+            }
+            return false;
+        }
+
         private void UpdateWeaponSocket()
         {
             if (weaponSocket == null || rightHand == null || visual == null)
                 return;
             weaponSocket.position = rightHand.position;
-            weaponSocket.rotation = visual.parent == null
-                ? visual.rotation
-                : visual.parent.rotation;
+            // One-handed props must inherit the animated hand orientation so
+            // the blade/grenade follows equip and attack poses instead of only
+            // hovering at the hand position with a root-space rotation.
+            weaponSocket.rotation = IsMeleeWeapon(weapon)
+                || weapon == "grenade"
+                ? rightHand.rotation
+                : visual.parent == null
+                    ? visual.rotation
+                    : visual.parent.rotation;
         }
 
         private void ApplyWeaponHandContacts()

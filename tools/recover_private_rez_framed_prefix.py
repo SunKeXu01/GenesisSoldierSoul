@@ -27,6 +27,13 @@ from typing import BinaryIO
 from PIL import Image
 
 from audit_special_formats import decode_dtx
+from crossfire_rez_directory import parse_crossfire_rez_directory
+from lithtech_ltc import (
+    CROSSFIRE_XOR_KEY,
+    LtcDecodeError,
+    decode_ltc_lta_root_prefix,
+    lta_structure,
+)
 from recover_private_rez import CHUNK_SIZE, entropy, parse_rez_header, sha256_file
 from rez_extract import RezError
 
@@ -219,6 +226,97 @@ def match_exact_peer(
         "sha256": next(iter(digests)),
         "peer_paths": aliases,
         "peer_count": len(aliases),
+    }
+
+
+def parse_ltc_root_before_exact_peer(
+    source: BinaryIO,
+    offset: int,
+    region_end: int,
+    peer_index: dict[str, object],
+) -> dict[str, object] | None:
+    """Bound an embedded CrossFire LTC root only when an exact peer follows it."""
+    if offset < 0 or offset + 4 > region_end:
+        return None
+    source.seek(offset)
+    if source.read(4) != CROSSFIRE_XOR_KEY[:4]:
+        return None
+    source.seek(offset)
+    encoded = source.read(region_end - offset)
+    try:
+        decoded = decode_ltc_lta_root_prefix(encoded)
+    except LtcDecodeError:
+        return None
+    successor_offset = offset + decoded.input_bytes
+    successor = match_exact_peer(source, successor_offset, region_end, peer_index)
+    if successor is None:
+        return None
+    source_bytes = encoded[: decoded.input_bytes]
+    structure = lta_structure(decoded.data)
+    if (
+        not structure["starts_like_lta_text"]
+        or structure["parenthesis_depth"] != 0
+        or structure["minimum_parenthesis_depth"] < 0
+        or structure["unterminated_quote"]
+    ):
+        raise RezError(f"strict LTC root structure disagrees at {offset}")
+    return {
+        "offset": offset,
+        "bytes": decoded.input_bytes,
+        "sha256": hashlib.sha256(source_bytes).hexdigest(),
+        "decoded_bytes": len(decoded.data),
+        "decoded_sha256": hashlib.sha256(decoded.data).hexdigest(),
+        "decoded_structure": structure,
+        "bits_consumed": decoded.bits_consumed,
+        "padding_bits": decoded.padding_bits,
+        "version": decoded.version,
+        "successor_offset": successor_offset,
+        "successor_peer_paths": successor["peer_paths"],
+        "successor_peer_count": successor["peer_count"],
+        "successor_bytes": successor["bytes"],
+        "successor_sha256": successor["sha256"],
+        "_decoded_data": decoded.data,
+    }
+
+
+def match_crossfire_directory_entry(
+    source: BinaryIO,
+    offset: int,
+    region_end: int,
+    directory_index: dict[str, object],
+) -> dict[str, object] | None:
+    """Match a decoded directory entry and require its stored MD5 to verify."""
+    entry = directory_index["by_offset"].get(offset)
+    if entry is None:
+        return None
+    if offset + entry.size > region_end:
+        raise RezError(f"CrossFire directory entry crosses data region: {entry.path}")
+    source.seek(offset)
+    sha256 = hashlib.sha256()
+    md5 = hashlib.md5(usedforsecurity=False)
+    remaining = entry.size
+    while remaining:
+        data = source.read(min(CHUNK_SIZE, remaining))
+        if not data:
+            raise RezError(f"truncated CrossFire directory entry: {entry.path}")
+        sha256.update(data)
+        md5.update(data)
+        remaining -= len(data)
+    actual_md5 = md5.hexdigest().upper()
+    if actual_md5 != entry.md5:
+        raise RezError(
+            f"CrossFire directory MD5 mismatch for {entry.path}: "
+            f"expected {entry.md5}, got {actual_md5}"
+        )
+    return {
+        "offset": offset,
+        "bytes": entry.size,
+        "sha256": sha256.hexdigest(),
+        "archive_path": entry.path,
+        "directory_md5": entry.md5,
+        "directory_md5_verified": True,
+        "resource_id": entry.resource_id,
+        "timestamp": entry.timestamp,
     }
 
 
@@ -2146,6 +2244,271 @@ def prefix_kind(prefix: bytes) -> str | None:
     return None
 
 
+TRAILING_PROFILE_WINDOW_BYTES = 64 * 1024
+TRAILING_PROFILE_BLOCK_BYTES = 16
+TRAILING_ZERO_RUN_MIN_BYTES = 64
+TRAILING_ZERO_RUN_LIMIT = 32
+ZERO_MIRROR_MINIMUM_CHAIN = 3
+
+
+def scan_trailing_zero_runs(
+    stream: BinaryIO,
+    offset: int,
+    region_end: int,
+    *,
+    minimum_bytes: int = TRAILING_ZERO_RUN_MIN_BYTES,
+    limit: int = TRAILING_ZERO_RUN_LIMIT,
+) -> dict[str, object]:
+    """Map exact zero runs in an opaque suffix without interpreting its format."""
+    if offset > region_end:
+        raise RezError(f"trailing region begins after data boundary: {offset}")
+    if minimum_bytes <= 0 or limit <= 0:
+        raise RezError("zero-run minimum and limit must be positive")
+    stream.seek(offset)
+    position = offset
+    run_start: int | None = None
+    total_zero_bytes = 0
+    qualifying: list[dict[str, int]] = []
+
+    def finish_run(end: int) -> None:
+        nonlocal run_start
+        if run_start is None:
+            return
+        size = end - run_start
+        if size >= minimum_bytes:
+            qualifying.append(
+                {
+                    "offset": run_start,
+                    "relative_offset": run_start - offset,
+                    "bytes": size,
+                }
+            )
+        run_start = None
+
+    while position < region_end:
+        data = stream.read(min(CHUNK_SIZE, region_end - position))
+        if not data:
+            raise RezError(f"truncated trailing zero-run scan at {position}")
+        for index, byte in enumerate(data):
+            absolute = position + index
+            if byte == 0:
+                total_zero_bytes += 1
+                if run_start is None:
+                    run_start = absolute
+            else:
+                finish_run(absolute)
+        position += len(data)
+    finish_run(region_end)
+
+    by_offset = sorted(qualifying, key=lambda item: item["offset"])
+    paired_prefix = next(
+        (
+            item
+            for item in by_offset
+            if item["relative_offset"] > 0
+            and item["relative_offset"] == item["bytes"]
+        ),
+        None,
+    )
+    longest = sorted(
+        qualifying,
+        key=lambda item: (-item["bytes"], item["offset"]),
+    )[:limit]
+    size = region_end - offset
+    return {
+        "total_zero_bytes": total_zero_bytes,
+        "zero_ratio": round(total_zero_bytes / size if size else 0.0, 6),
+        "qualifying_run_count": len(qualifying),
+        "minimum_run_bytes": minimum_bytes,
+        "longest_runs": longest,
+        "symmetric_prefix_zero_run": paired_prefix,
+    }
+
+
+def parse_zero_mirror_pair(
+    stream: BinaryIO,
+    offset: int,
+    region_end: int,
+) -> dict[str, object]:
+    """Parse one opaque payload followed by its all-zero storage half.
+
+    The frame ends at the end of a maximal zero run. A payload may itself end
+    in zero bytes, so the midpoint may fall inside that run. For odd-sized
+    frames the zero half owns the extra byte: ``floor(total/2)`` information
+    bytes followed by ``ceil(total/2)`` zero bytes. No meaning or original
+    filename is inferred for the information-bearing first half.
+    """
+    if offset < 0 or offset >= region_end:
+        raise RezError(f"zero-mirror offset outside data region: {offset}")
+    stream.seek(offset)
+    if stream.read(1) == b"\0":
+        raise RezError(f"zero-mirror payload begins with zero at {offset}")
+    stream.seek(offset)
+    position = offset
+    run_start: int | None = None
+    while position < region_end:
+        data = stream.read(min(CHUNK_SIZE, region_end - position))
+        if not data:
+            raise RezError(f"truncated zero-mirror scan at {position}")
+        for index, byte in enumerate(data):
+            absolute = position + index
+            if byte == 0:
+                if run_start is None:
+                    run_start = absolute
+                continue
+            if run_start is None:
+                continue
+            end = absolute
+            total_bytes = end - offset
+            midpoint = offset + total_bytes // 2
+            if total_bytes >= 2 and run_start <= midpoint < end:
+                payload_bytes = total_bytes // 2
+                zero_plane_bytes = total_bytes - payload_bytes
+                payload_sha256 = hash_region(stream, offset, payload_bytes)
+                return {
+                    "offset": offset,
+                    "bytes": total_bytes,
+                    "sha256": hash_region(stream, offset, total_bytes),
+                    "payload_bytes": payload_bytes,
+                    "payload_sha256": payload_sha256,
+                    "zero_plane_bytes": zero_plane_bytes,
+                    "zero_plane_extra_bytes": zero_plane_bytes - payload_bytes,
+                    "payload_trailing_zero_bytes": midpoint - run_start,
+                }
+            run_start = None
+        position += len(data)
+    if run_start is not None:
+        end = region_end
+        total_bytes = end - offset
+        midpoint = offset + total_bytes // 2
+        if total_bytes >= 2 and run_start <= midpoint < end:
+            payload_bytes = total_bytes // 2
+            zero_plane_bytes = total_bytes - payload_bytes
+            return {
+                "offset": offset,
+                "bytes": total_bytes,
+                "sha256": hash_region(stream, offset, total_bytes),
+                "payload_bytes": payload_bytes,
+                "payload_sha256": hash_region(stream, offset, payload_bytes),
+                "zero_plane_bytes": zero_plane_bytes,
+                "zero_plane_extra_bytes": zero_plane_bytes - payload_bytes,
+                "payload_trailing_zero_bytes": midpoint - run_start,
+            }
+    raise RezError(f"zero-mirror boundary absent at exact offset {offset}")
+
+
+def has_zero_mirror_chain(
+    stream: BinaryIO,
+    offset: int,
+    region_end: int,
+    *,
+    minimum_frames: int = ZERO_MIRROR_MINIMUM_CHAIN,
+) -> bool:
+    """Require multiple consecutive pairs before enabling opaque framing."""
+    if minimum_frames <= 0:
+        raise RezError("zero-mirror minimum frame count must be positive")
+    position = offset
+    for _ in range(minimum_frames):
+        try:
+            record = parse_zero_mirror_pair(stream, position, region_end)
+        except RezError:
+            return False
+        position += int(record["bytes"])
+    return True
+
+
+def profile_trailing_region(
+    stream: BinaryIO,
+    offset: int,
+    region_end: int,
+    *,
+    window_bytes: int = TRAILING_PROFILE_WINDOW_BYTES,
+) -> dict[str, object]:
+    """Describe an unsupported suffix without searching it for later frames.
+
+    Only three fixed windows are sampled. This is evidence about the opaque
+    region, not a carving mechanism or a claim that it has been decoded.
+    """
+    size = region_end - offset
+    if size < 0:
+        raise RezError(f"trailing region begins after data boundary: {offset}")
+    if size == 0:
+        return {
+            "classification": "empty",
+            "exact_start_kind": None,
+            "window_bytes": 0,
+            "windows": [],
+            "block_alignment": {"mod_8": 0, "mod_16": 0},
+        }
+    if window_bytes <= 0:
+        raise RezError("trailing profile window must be positive")
+
+    sample_size = min(window_bytes, size)
+    positions = [
+        ("start", offset),
+        ("middle", offset + (size - sample_size) // 2),
+        ("end", region_end - sample_size),
+    ]
+    windows: list[dict[str, object]] = []
+    for label, position in positions:
+        stream.seek(position)
+        sample = stream.read(sample_size)
+        if len(sample) != sample_size:
+            raise RezError(f"truncated trailing profile window at {position}")
+        blocks = [
+            sample[index : index + TRAILING_PROFILE_BLOCK_BYTES]
+            for index in range(0, len(sample), TRAILING_PROFILE_BLOCK_BYTES)
+            if len(sample[index : index + TRAILING_PROFILE_BLOCK_BYTES])
+            == TRAILING_PROFILE_BLOCK_BYTES
+        ]
+        repeated_blocks = len(blocks) - len(set(blocks))
+        compressed_bytes = len(zlib.compress(sample, level=9))
+        windows.append(
+            {
+                "label": label,
+                "offset": position,
+                "bytes": len(sample),
+                "entropy": entropy(sample),
+                "zero_ratio": round(sample.count(0) / len(sample), 6),
+                "printable_ascii_ratio": round(
+                    sum(byte in {9, 10, 13} or 32 <= byte <= 126 for byte in sample)
+                    / len(sample),
+                    6,
+                ),
+                "zlib_ratio": round(compressed_bytes / len(sample), 6),
+                "repeated_16_byte_block_ratio": round(
+                    repeated_blocks / len(blocks) if blocks else 0.0,
+                    6,
+                ),
+            }
+        )
+
+    entropies = [float(item["entropy"]) for item in windows]
+    zlib_ratios = [float(item["zlib_ratio"]) for item in windows]
+    if min(entropies) >= 7.8 and min(zlib_ratios) >= 0.98:
+        classification = "high_entropy_opaque_candidate"
+    elif min(entropies) < 7.3 or min(zlib_ratios) < 0.9:
+        classification = "structured_or_redundant_binary_candidate"
+    else:
+        classification = "mixed_opaque_candidate"
+
+    stream.seek(offset)
+    exact_prefix = stream.read(min(DTX_HEADER_BYTES, size))
+    zero_runs = scan_trailing_zero_runs(stream, offset, region_end)
+    return {
+        "classification": classification,
+        "exact_start_kind": prefix_kind(exact_prefix),
+        "window_bytes": sample_size,
+        "windows": windows,
+        "block_alignment": {"mod_8": size % 8, "mod_16": size % 16},
+        "zero_runs": zero_runs,
+        "interpretation": (
+            "fixed start/middle/end samples only; no interior signature search, "
+            "decryption, decompression, or carving was performed"
+        ),
+    }
+
+
 def recover_framed_prefix(
     source: Path,
     source_sha256: str,
@@ -2158,6 +2521,16 @@ def recover_framed_prefix(
     outputs: list[dict[str, object]] = []
     position = parse_rez_header(source)["data_offset"]
     peer_index = index_exact_peers(peer_root) if peer_root is not None else None
+    directory_index = None
+    if peer_root is not None:
+        header = parse_rez_header(source)
+        try:
+            directory_index = parse_crossfire_rez_directory(
+                source, header["root_offset"], header["root_size"]
+            )
+        except RezError:
+            directory_index = None
+    zero_mirror_chain_active = False
     with source.open("rb") as stream:
         while position < region_end:
             stream.seek(position)
@@ -2230,15 +2603,59 @@ def recover_framed_prefix(
             elif kind == "rps":
                 record = parse_rps(stream, position, region_end)
                 representation = "private_rez_strict_cp949_rps_frame"
-            elif peer_index is not None:
-                record = match_exact_peer(stream, position, region_end, peer_index)
-                if record is None:
-                    break
-                kind = "exact_peer"
-                representation = "private_rez_exact_loose_peer_frame"
             else:
-                break
-            if peer_index is not None and kind != "exact_peer":
+                record = (
+                    match_crossfire_directory_entry(
+                        stream, position, region_end, directory_index
+                    )
+                    if directory_index is not None
+                    else None
+                )
+                if record is not None:
+                    kind = "crossfire_directory_entry"
+                    representation = (
+                        "private_rez_crossfire_directory_md5_verified_frame"
+                    )
+                else:
+                    record = (
+                        match_exact_peer(stream, position, region_end, peer_index)
+                        if peer_index is not None
+                        else None
+                    )
+                if record is not None and kind != "crossfire_directory_entry":
+                    kind = "exact_peer"
+                    representation = "private_rez_exact_loose_peer_frame"
+                if record is None:
+                    record = (
+                        parse_ltc_root_before_exact_peer(
+                            stream, position, region_end, peer_index
+                        )
+                        if peer_index is not None
+                        else None
+                    )
+                    if record is not None:
+                        kind = "ltc_root"
+                        representation = (
+                            "private_rez_ltc_balanced_lta_root_before_exact_peer"
+                        )
+                if record is None:
+                    if not zero_mirror_chain_active and not has_zero_mirror_chain(
+                        stream, position, region_end
+                    ):
+                        break
+                    try:
+                        record = parse_zero_mirror_pair(stream, position, region_end)
+                    except RezError:
+                        break
+                    zero_mirror_chain_active = True
+                    kind = "zero_mirror"
+                    representation = (
+                        "private_rez_equal_or_one_extra_zero_plane_opaque_frame"
+                    )
+            if peer_index is not None and kind not in {
+                "exact_peer",
+                "crossfire_directory_entry",
+            }:
                 peer_match = match_exact_peer(stream, position, region_end, peer_index)
                 if peer_match is not None:
                     if (
@@ -2255,6 +2672,11 @@ def recover_framed_prefix(
                     Path(str(record["peer_paths"][0])).suffix.lower().lstrip(".")
                     or "bin"
                 )
+            elif kind == "crossfire_directory_entry":
+                extension = (
+                    Path(str(record["archive_path"])).suffix.lower().lstrip(".")
+                    or "bin"
+                )
             else:
                 extension = {
                     "jpeg": "jpg",
@@ -2267,8 +2689,13 @@ def recover_framed_prefix(
                     "rps": "rps",
                     "standalone_idat": "idat",
                     "html": "html",
+                    "ltc_root": "ltc",
+                    "zero_mirror": "zmp",
                 }.get(str(kind), str(kind))
-            destination = base / f"{kind}-{len(records):05d}.{extension}"
+            if kind == "crossfire_directory_entry":
+                destination = base / "directory" / str(record["archive_path"])
+            else:
+                destination = base / f"{kind}-{len(records):05d}.{extension}"
             status = copy_verified_region(
                 source,
                 int(record["offset"]),
@@ -2284,6 +2711,35 @@ def recover_framed_prefix(
                 "status": status,
             }
             record_outputs = [output_record]
+            if kind == "ltc_root":
+                decoded_data = record.pop("_decoded_data")
+                decoded_destination = base / f"ltc-root-{len(records):05d}.lta"
+                decoded_status = write_verified_bytes(decoded_destination, decoded_data)
+                decoded_output = {
+                    "path": str(decoded_destination.relative_to(output)),
+                    "bytes": record["decoded_bytes"],
+                    "sha256": record["decoded_sha256"],
+                    "representation": "private_rez_ltc_root_to_lta",
+                    "status": decoded_status,
+                }
+                record_outputs.append(decoded_output)
+            if kind == "zero_mirror":
+                payload_destination = base / f"zero-mirror-payload-{len(records):05d}.bin"
+                payload_status = copy_verified_region(
+                    source,
+                    int(record["offset"]),
+                    int(record["payload_bytes"]),
+                    str(record["payload_sha256"]),
+                    payload_destination,
+                )
+                payload_output = {
+                    "path": str(payload_destination.relative_to(output)),
+                    "bytes": record["payload_bytes"],
+                    "sha256": record["payload_sha256"],
+                    "representation": "private_rez_zero_mirror_information_half",
+                    "status": payload_status,
+                }
+                record_outputs.append(payload_output)
             if kind in {"tga", "dtx"}:
                 png, conversion = converted_png(destination, str(kind))
                 converted_destination = base / f"converted-{len(records):05d}.png"
@@ -2315,6 +2771,7 @@ def recover_framed_prefix(
         stream.seek(position)
         sample = stream.read(min(4096, region_end - position))
         trailing_sha256 = hash_region(stream, position, region_end - position)
+        trailing_profile = profile_trailing_region(stream, position, region_end)
     return {
         "resources": records,
         "outputs": outputs,
@@ -2327,12 +2784,23 @@ def recover_framed_prefix(
             if peer_index is not None
             else None
         ),
+        "crossfire_directory_index": (
+            {
+                "entries": len(directory_index["entries"]),
+                "tables": len(directory_index["tables"]),
+                "key_bytes": directory_index["key_bytes"],
+                "status": "strictly_decoded",
+            }
+            if directory_index is not None
+            else None
+        ),
         "trailing_region": {
             "offset": position,
             "bytes": region_end - position,
             "sha256": trailing_sha256,
             "prefix_hex": sample[:32].hex(),
             "sample_entropy": entropy(sample),
+            "profile": trailing_profile,
             "status": "unsupported_suffix_preserved",
             "interpretation": (
                 "recovery stopped at the first exact unsupported byte; no signature search "
@@ -2391,7 +2859,7 @@ def main() -> int:
     manifest = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "tool": "tools/recover_private_rez_framed_prefix.py",
-        "tool_version": "15",
+        "tool_version": "20",
         "workspace": str(workspace),
         "root_inventory_sha256": index["inventory_sha256"],
         "safety": {
@@ -2422,6 +2890,16 @@ def main() -> int:
             "rps_cp949_paths_sequential_indices_and_zero_reserved_required": True,
             "exact_loose_peer_byte_equality_required": True,
             "exact_loose_peer_unique_length_required": True,
+            "ltc_root_balanced_ascii_required": True,
+            "ltc_root_token_boundary_required": True,
+            "ltc_root_zero_16_bit_padding_required": True,
+            "ltc_root_exact_loose_peer_successor_required": True,
+            "crossfire_directory_ranges_names_and_types_required": True,
+            "crossfire_directory_unique_paths_offsets_and_nonoverlap_required": True,
+            "crossfire_directory_resource_md5_required": True,
+            "zero_mirror_minimum_consecutive_frames": ZERO_MIRROR_MINIMUM_CHAIN,
+            "zero_mirror_equal_or_one_extra_zero_plane_required": True,
+            "zero_mirror_payload_semantics_inferred": False,
             "loose_peer_symlinks_ignored": True,
             "outputs_isolated_by_source_hash": True,
         },
@@ -2546,6 +3024,51 @@ def main() -> int:
                 for archive in archives
                 for resource in archive["resources"]
                 if "peer_paths" in resource
+            ),
+            "zero_mirror_frames": sum(
+                resource["kind"] == "zero_mirror"
+                for archive in archives
+                for resource in archive["resources"]
+            ),
+            "zero_mirror_source_bytes": sum(
+                int(resource["bytes"])
+                for archive in archives
+                for resource in archive["resources"]
+                if resource["kind"] == "zero_mirror"
+            ),
+            "zero_mirror_payload_bytes": sum(
+                int(resource["payload_bytes"])
+                for archive in archives
+                for resource in archive["resources"]
+                if resource["kind"] == "zero_mirror"
+            ),
+            "ltc_root_frames": sum(
+                resource["kind"] == "ltc_root"
+                for archive in archives
+                for resource in archive["resources"]
+            ),
+            "ltc_root_source_bytes": sum(
+                int(resource["bytes"])
+                for archive in archives
+                for resource in archive["resources"]
+                if resource["kind"] == "ltc_root"
+            ),
+            "ltc_root_decoded_bytes": sum(
+                int(resource["decoded_bytes"])
+                for archive in archives
+                for resource in archive["resources"]
+                if resource["kind"] == "ltc_root"
+            ),
+            "crossfire_directory_resources": sum(
+                resource["kind"] == "crossfire_directory_entry"
+                for archive in archives
+                for resource in archive["resources"]
+            ),
+            "crossfire_directory_resource_bytes": sum(
+                int(resource["bytes"])
+                for archive in archives
+                for resource in archive["resources"]
+                if resource["kind"] == "crossfire_directory_entry"
             ),
             "framed_resources": sum(len(item["resources"]) for item in archives),
             "resource_kind_counts": dict(

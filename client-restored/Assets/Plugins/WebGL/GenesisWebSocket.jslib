@@ -26,8 +26,29 @@ mergeInto(LibraryManager.library, {
           return;
         }
         canvas.style.cursor = "none";
+        if (document.pointerLockElement !== canvas && canvas.requestPointerLock) {
+          canvas.requestPointerLock();
+        }
+      });
+      document.addEventListener("pointerlockchange", function () {
+        if (!Module.canvas) {
+          return;
+        }
+        Module.canvas.style.cursor =
+          document.pointerLockElement === Module.canvas ? "none" : "default";
       });
     }
+  },
+
+  GenesisRequestPointerLock: function () {
+    var canvas = Module.canvas;
+    if (canvas && window.__genesisGameplayMode && canvas.requestPointerLock) {
+      canvas.requestPointerLock();
+    }
+  },
+
+  GenesisIsPointerLocked: function () {
+    return document.pointerLockElement === Module.canvas ? 1 : 0;
   },
 
   GenesisConsumeMouseDeltaX: function () {
@@ -48,6 +69,9 @@ mergeInto(LibraryManager.library, {
     window.__genesisMouseDeltaY = 0;
     if (Module.canvas) {
       Module.canvas.style.cursor = "default";
+    }
+    if (document.pointerLockElement === Module.canvas && document.exitPointerLock) {
+      document.exitPointerLock();
     }
   },
 

@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "policy": "A requires a complete technical dependency closure, an approved rights record, and no safety hold. D takes precedence over A/B/C whenever provenance, licence, or safety is unresolved.",
+  "schema_version": 2,
+  "policy": "A requires a complete technical dependency closure, a policy-approved on-disk rights record whose scope, asset-manifest hash, and evidence hashes verify, and no safety hold. D takes precedence over A/B/C whenever provenance, licence, or safety is unresolved.",
   "approved_rights_records": [],
   "formal_resource_groups": [
     {

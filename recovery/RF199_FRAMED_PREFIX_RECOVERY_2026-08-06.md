@@ -31,9 +31,9 @@ Web/媒体延伸恢复详见 `RF199_WEB_MEDIA_PREFIX_RECOVERY_2026-08-06.md`。�
 不满足任何已实现的严格边界规则，因此不将后缀内部偶然出现的签名当作资源。
 后续 world v85 严格解析已证明 `RF164.REZ` 和 `RF266.REZ` 的数据区
 各自是一个完整 world，共 58,778,137 字节且尾字节为 0；详见
-`LITHTECH_WORLD_V85_RECOVERY_2026-08-06.md`。`RB001.REZ` 后续又由 492 个
-同源 loose 精确区段恢复连续前缀，见 `RB001_EXACT_PEER_PREFIX_RECOVERY_2026-08-06.md`；
-现已没有从数据区起点完全未知的包。
+`LITHTECH_WORLD_V85_RECOVERY_2026-08-06.md`。`RB001.REZ` 后续已由加密目录
+的 769/769 个 MD5 严格验证并完整闭合，见 `RB001_ENCRYPTED_DIRECTORY_RECOVERY_2026-08-09.md`；
+现已没有未知 REZ 数据区尾段。
 
 ## 验证与产物
 
@@ -48,5 +48,11 @@ Web/媒体延伸恢复详见 `RF199_WEB_MEDIA_PREFIX_RECOVERY_2026-08-06.md`。�
 - 汇总账本：`recovery/special-format-conversion-ledger.json` 与
   `SPECIAL_FORMAT_CONVERSION_LEDGER_2026-08-04.md`。
 
-原 7 个完全未分帧包均已获得连续边界，当前保留 5 个有精确停止证据的未知
-后缀。下一步只有在能证明边界时才继续扩展解析器。
+原 7 个完全未分帧包均已获得连续边界；截至本报告初版保留 5 个有精确停止证据的
+未知后缀。后续仍只在能证明边界时扩展解析器。
+
+## 2026-08-09 后续进展
+
+后缀确定性画像和逐字节差分先证明 RF019/RF199 的 971 个 zero-mirror 连续帧；
+RB001 加密目录闭环后又确认 3 个目录表 zero-mirror 帧。合计 974 帧、6,609,886
+个源字节，7 个目标包未知尾段均为 0。详见 `REZ_ZERO_MIRROR_RECOVERY_2026-08-09.md`。

@@ -80,8 +80,8 @@ public static class GenesisStoreCatalogAudit
                 + "candidates={2}, standardIssue={3}, textures={4}",
             entries.Length, missing.Length, candidateCount, standardCount,
             string.Join(";", texturePaths)));
-        if (entries.Length != 8 || missing.Length != 0
-            || candidateCount != 2 || standardCount != 3
+        if (entries.Length != 12 || missing.Length != 0
+            || candidateCount != 4 || standardCount != 3
             || !texturePaths.Contains(
                 "Assets/OriginalGame/UI/storeUI.110482/bitmap-00004.png")
             || !texturePaths.Contains(
@@ -139,7 +139,7 @@ public static class GenesisStoreCatalogAudit
                 + "buttons={2}, rawImages={3}, boundary={4}, preview={5}",
             scene.name, cards.Length, buttons.Length, rawImages.Length,
             boundary != null, previewPath));
-        if (cards.Length != 8 || buttons.Length != 1
+        if (cards.Length != 10 || buttons.Length != 1
             || buttons[0].name != "CloseRecoveredCatalog"
             || rawImages.Length < 2 || boundary == null)
         {

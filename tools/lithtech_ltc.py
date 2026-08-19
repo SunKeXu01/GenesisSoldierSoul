@@ -29,6 +29,15 @@ class LtcDecodeResult:
     version: int
 
 
+@dataclass(frozen=True)
+class LtcRootPrefixResult:
+    data: bytes
+    bits_consumed: int
+    input_bytes: int
+    padding_bits: int
+    version: int
+
+
 class _BitReader:
     def __init__(self, data: bytes) -> None:
         self.data = data
@@ -105,6 +114,118 @@ def decode_ltc(data: bytes, *, maximum_output_bytes: int = 256 * 1024 * 1024) ->
             return LtcDecodeResult(
                 bytes(output), "physical_eof", reader.position, len(clear) * 8, version
             )
+
+
+def decode_ltc_lta_root_prefix(
+    data: bytes,
+    *,
+    maximum_output_bytes: int = 256 * 1024 * 1024,
+) -> LtcRootPrefixResult:
+    """Decode one token-bounded LTA root followed by zero bits to a 16-bit boundary.
+
+    This is for a compressed LTA embedded before another independently bounded
+    resource. It deliberately rejects arbitrary binary output, unbalanced LTA,
+    a root closure inside an LZSS span, and non-zero alignment padding.
+    """
+    if maximum_output_bytes <= 0:
+        raise ValueError("maximum_output_bytes must be positive")
+    clear = unwrap_crossfire_ltc(data)
+    reader = _BitReader(clear)
+    try:
+        version = reader.unsigned(32)
+    except EOFError as error:
+        raise LtcDecodeError("truncated LTC version") from error
+    if version != 0:
+        raise LtcDecodeError(f"unsupported LTC version: {version}")
+
+    window = bytearray(WINDOW_SIZE)
+    window_position = 1
+    output = bytearray()
+    depth = 0
+    root_started = False
+    in_quote = False
+    escaped = False
+    in_comment = False
+    previous = None
+
+    def append(value: int) -> None:
+        nonlocal window_position, depth, root_started
+        nonlocal in_quote, escaped, in_comment, previous
+        if len(output) >= maximum_output_bytes:
+            raise LtcDecodeError(
+                f"decoded output exceeds safety limit: {maximum_output_bytes} bytes"
+            )
+        if value not in {9, 10, 13} and not 32 <= value <= 126:
+            raise LtcDecodeError(
+                f"non-text byte before LTA root closure at output {len(output)}: 0x{value:02x}"
+            )
+        output.append(value)
+        window[window_position] = value
+        window_position = (window_position + 1) & (WINDOW_SIZE - 1)
+
+        if in_comment:
+            if value in {10, 13}:
+                in_comment = False
+            previous = value
+            return
+        if in_quote:
+            if escaped:
+                escaped = False
+            elif value == 0x5C:
+                escaped = True
+            elif value == 0x22:
+                in_quote = False
+            previous = value
+            return
+        if previous == 0x2F and value == 0x2F:
+            in_comment = True
+            previous = value
+            return
+        if value == 0x22:
+            in_quote = True
+        elif value == 0x28:
+            root_started = True
+            depth += 1
+        elif value == 0x29:
+            depth -= 1
+            if depth < 0:
+                raise LtcDecodeError("LTA parenthesis depth became negative")
+        elif not root_started and value not in {9, 10, 13, 32}:
+            raise LtcDecodeError("LTC output does not begin with an LTA root")
+        previous = value
+
+    while True:
+        try:
+            token_type = reader.bit()
+            if token_type:
+                append(reader.unsigned(8))
+            else:
+                span_position = reader.unsigned(12)
+                if span_position == 0:
+                    raise LtcDecodeError("LTC end token precedes a complete LTA root")
+                span_length = reader.unsigned(4) + MIN_SPAN_LENGTH
+                for _ in range(span_length):
+                    value = window[span_position]
+                    span_position = (span_position + 1) & (WINDOW_SIZE - 1)
+                    append(value)
+            if root_started and depth == 0 and not in_quote and not in_comment:
+                if output[-1] != 0x29:
+                    raise LtcDecodeError("LTA root did not close at a token boundary")
+                aligned_bits = ((reader.position + 15) // 16) * 16
+                if aligned_bits > len(clear) * 8:
+                    raise LtcDecodeError("truncated LTC 16-bit alignment padding")
+                for bit_position in range(reader.position, aligned_bits):
+                    if (clear[bit_position // 8] >> (bit_position % 8)) & 1:
+                        raise LtcDecodeError("non-zero LTC 16-bit alignment padding")
+                return LtcRootPrefixResult(
+                    bytes(output),
+                    reader.position,
+                    aligned_bits // 8,
+                    aligned_bits - reader.position,
+                    version,
+                )
+        except EOFError as error:
+            raise LtcDecodeError("physical EOF precedes a complete LTA root") from error
 
 
 def lta_structure(data: bytes) -> dict[str, object]:

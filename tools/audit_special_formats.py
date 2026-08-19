@@ -5,17 +5,19 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import importlib.util
 import io
 import json
 import math
 import re
 import struct
+import tempfile
 import zipfile
 import zlib
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
-from typing import Any, Iterable
+from typing import Any, Callable, Iterable
 
 from PIL import Image
 
@@ -26,6 +28,8 @@ from rez_extract import RezArchive, RezError, safe_parts
 PAK_MAGIC_BYTES = struct.pack("<I", 0x5A6F12E1)
 UTOC_MAGIC = b"-==--==--==--==-"
 GUID_RE = re.compile(r"\bguid:\s*([0-9a-fA-F]{32})\b")
+SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
+OodleDecoder = Callable[[bytes, int], bytes]
 
 
 def sha256_file(path: Path) -> str:
@@ -38,6 +42,69 @@ def sha256_file(path: Path) -> str:
 
 def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
+
+
+def load_locked_pyooz_wheel(
+    wheel: Path, expected_sha256: str
+) -> tuple[OodleDecoder, dict[str, Any], tempfile.TemporaryDirectory[str]]:
+    """Load an explicitly supplied, hash-locked pyooz wheel for Oodle decoding."""
+    wheel = wheel.resolve()
+    expected_sha256 = expected_sha256.lower()
+    if not SHA256_RE.fullmatch(expected_sha256):
+        raise ValueError("pyooz wheel SHA-256 must be 64 lowercase hexadecimal digits")
+    actual_sha256 = sha256_file(wheel)
+    if actual_sha256 != expected_sha256:
+        raise ValueError(
+            f"pyooz wheel SHA-256 mismatch: expected {expected_sha256}, got {actual_sha256}"
+        )
+    temporary = tempfile.TemporaryDirectory(prefix="pyooz-locked-")
+    temporary_root = Path(temporary.name)
+    with zipfile.ZipFile(wheel) as archive:
+        names = set(archive.namelist())
+        modules = sorted(name for name in names if name == "ooz.abi3.so")
+        metadata_names = sorted(
+            name for name in names if name.endswith(".dist-info/METADATA")
+        )
+        if modules != ["ooz.abi3.so"] or len(metadata_names) != 1:
+            temporary.cleanup()
+            raise ValueError("pyooz wheel has an unexpected module or metadata layout")
+        metadata = archive.read(metadata_names[0]).decode("utf-8")
+        required = {
+            "Name: pyooz",
+            "Version: 0.0.8",
+            "Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+        }
+        if not required.issubset(set(metadata.splitlines())):
+            temporary.cleanup()
+            raise ValueError("pyooz wheel metadata does not match the approved provider")
+        module_path = temporary_root / "ooz.abi3.so"
+        module_path.write_bytes(archive.read("ooz.abi3.so"))
+    spec = importlib.util.spec_from_file_location("ooz", module_path)
+    if spec is None or spec.loader is None:
+        temporary.cleanup()
+        raise ValueError("cannot load the hash-locked pyooz module")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+
+    def decode(data: bytes, output_bytes: int) -> bytes:
+        if output_bytes <= 0:
+            raise ValueError("Oodle output size must be positive")
+        decoded = module.decompress(data, output_bytes)
+        if not isinstance(decoded, bytes) or len(decoded) != output_bytes:
+            raise ValueError("pyooz returned an invalid decoded buffer")
+        return decoded
+
+    provider = {
+        "package": "pyooz",
+        "version": "0.0.8",
+        "license": "GPL-3.0-or-later",
+        "wheel": wheel.name,
+        "wheel_sha256": actual_sha256,
+        "module_sha256": sha256_file(module_path),
+        "source": "https://pypi.org/project/pyooz/0.0.8/",
+        "status": "hash_locked_native_decoder_loaded",
+    }
+    return decode, provider, temporary
 
 
 def write_verified(path: Path, data: bytes) -> str:
@@ -884,6 +951,53 @@ def write_unreal_directory_manifest(
     )
 
 
+def decode_compact_pak_entry(data: bytes, offset: int) -> dict[str, int | bool]:
+    """Decode Unreal's variable-width FPakEntry compact-index representation."""
+    if offset < 0 or offset + 4 > len(data):
+        raise ValueError("truncated Pak compact-entry bitfield")
+    start = offset
+    bitfield = struct.unpack_from("<I", data, offset)[0]
+    offset += 4
+
+    def read_integer(use_32_bits: bool, label: str) -> int:
+        nonlocal offset
+        width = 4 if use_32_bits else 8
+        if offset + width > len(data):
+            raise ValueError(f"truncated Pak compact-entry {label}")
+        value = struct.unpack_from("<I" if use_32_bits else "<Q", data, offset)[0]
+        offset += width
+        return value
+
+    encoded_block_size = bitfield & 0x3F
+    if encoded_block_size == 0x3F:
+        compression_block_size = read_integer(True, "compression block size")
+    else:
+        compression_block_size = encoded_block_size << 11
+    compression_method_index = (bitfield >> 23) & 0x3F
+    data_offset = read_integer(bool(bitfield & (1 << 31)), "data offset")
+    uncompressed_size = read_integer(
+        bool(bitfield & (1 << 30)), "uncompressed size"
+    )
+    if compression_method_index:
+        stored_size = read_integer(bool(bitfield & (1 << 29)), "stored size")
+    else:
+        stored_size = uncompressed_size
+    block_count = (bitfield >> 6) & 0xFFFF
+    if block_count == 1:
+        compression_block_size = uncompressed_size
+    return {
+        "flags": bitfield,
+        "compression_method_index": compression_method_index,
+        "compression_block_size": compression_block_size,
+        "compression_block_count": block_count,
+        "encrypted": bool(bitfield & (1 << 22)),
+        "data_offset": data_offset,
+        "uncompressed_size": uncompressed_size,
+        "stored_size": stored_size,
+        "encoded_bytes": offset - start,
+    }
+
+
 def extract_supported_pak_entries(
     path: Path,
     source_label: str,
@@ -892,18 +1006,16 @@ def extract_supported_pak_entries(
     directory_entries: list[dict[str, Any]],
     encoded_entries: bytes,
     output: Path,
+    oodle_decoder: OodleDecoder | None = None,
+    oodle_provider: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    """Extract only fully understood uncompressed and Zlib v11 encodings.
+    """Extract verified uncompressed, Zlib, and opt-in Oodle Pak v11 entries.
 
-    0xe0000000 is the compact 32-bit offset/size form with no compression.
-    Compression-method index 2 is the Pak footer's Zlib method and carries an
-    explicit block size, offset, uncompressed size, and stored size. Every
-    payload is checked against the serialized FPakEntry SHA-1 before a
-    source-hash-isolated output is written. Oodle and unknown combinations
-    remain untouched and are counted explicitly.
+    Compact FPakEntry fields are decoded at their bitfield-selected widths.
+    Compact sizes/methods are checked against the serialized FPakEntry, and
+    every stored payload is checked against its serialized SHA-1 before output.
     """
 
-    supported_flag = 0xE0000000
     unsupported_flags: Counter[int] = Counter()
     method_counts: Counter[str] = Counter()
     records = []
@@ -914,16 +1026,17 @@ def extract_supported_pak_entries(
     with path.open("rb") as stream:
         for entry in directory_entries:
             encoded_offset = entry["encoded_entry_offset"]
-            if encoded_offset + 12 > len(encoded_entries):
+            try:
+                compact = decode_compact_pak_entry(encoded_entries, encoded_offset)
+            except ValueError as error:
                 raise ValueError(
-                    f"Pak encoded entry exceeds table: {entry['path']}"
-                )
-            flags = struct.unpack_from("<I", encoded_entries, encoded_offset)[0]
-            compression_method_index = (flags >> 23) & 0x3F
-            if flags == supported_flag:
-                data_offset, payload_size = struct.unpack_from(
-                    "<II", encoded_entries, encoded_offset + 4
-                )
+                    f"Pak encoded entry exceeds table: {entry['path']}: {error}"
+                ) from error
+            flags = int(compact["flags"])
+            compression_method_index = int(compact["compression_method_index"])
+            if compression_method_index == 0 and not compact["encrypted"]:
+                data_offset = int(compact["data_offset"])
+                payload_size = int(compact["uncompressed_size"])
                 if data_offset + 53 + payload_size > index_offset:
                     raise ValueError(
                         f"Pak payload overlaps index or exceeds data: {entry['path']}"
@@ -955,18 +1068,15 @@ def extract_supported_pak_entries(
                 stored_payload = payload
                 representation = "pak_uncompressed_entry_original"
                 method_label = "uncompressed"
-            elif compression_method_index == 2:
-                if encoded_offset + 20 > len(encoded_entries):
-                    raise ValueError(
-                        f"truncated Pak compact Zlib entry: {entry['path']}"
-                    )
-                (
-                    _encoded_flags,
-                    encoded_block_size,
-                    data_offset,
-                    uncompressed_size,
-                    stored_size,
-                ) = struct.unpack_from("<IIIII", encoded_entries, encoded_offset)
+            elif compression_method_index in {1, 2} and not compact["encrypted"]:
+                if compression_method_index == 1 and oodle_decoder is None:
+                    unsupported_flags[flags] += 1
+                    continue
+                encoded_block_size = int(compact["compression_block_size"])
+                encoded_block_count = int(compact["compression_block_count"])
+                data_offset = int(compact["data_offset"])
+                uncompressed_size = int(compact["uncompressed_size"])
+                stored_size = int(compact["stored_size"])
                 stream.seek(data_offset)
                 base_header = stream.read(52)
                 if len(base_header) != 52:
@@ -1002,18 +1112,19 @@ def extract_supported_pak_entries(
                 if (
                     serialized_stored_size != stored_size
                     or serialized_uncompressed_size != uncompressed_size
-                    or method != 2
+                    or method != compression_method_index
                     or encrypted != 0
+                    or block_count != encoded_block_count
                     or compression_block_size != encoded_block_size
                 ):
                     raise ValueError(
-                        "Pak compact Zlib entry disagrees with serialized header: "
+                        "Pak compact compressed entry disagrees with serialized header: "
                         f"{entry['path']}"
                     )
                 header_size = 57 + block_count * 16
                 if blocks[0][0] != header_size:
                     raise ValueError(
-                        f"Pak Zlib first block does not follow header: {entry['path']}"
+                        f"Pak first compressed block does not follow header: {entry['path']}"
                     )
                 if any(
                     end <= start
@@ -1021,46 +1132,63 @@ def extract_supported_pak_entries(
                     for index, (start, end) in enumerate(blocks)
                 ):
                     raise ValueError(
-                        f"invalid Pak Zlib block ranges: {entry['path']}"
+                        f"invalid Pak compressed block ranges: {entry['path']}"
                     )
                 if blocks[-1][1] - blocks[0][0] != stored_size:
                     raise ValueError(
-                        f"Pak Zlib stored-size mismatch: {entry['path']}"
+                        f"Pak compressed stored-size mismatch: {entry['path']}"
                     )
                 if data_offset + blocks[-1][1] > index_offset:
                     raise ValueError(
-                        f"Pak Zlib payload overlaps index: {entry['path']}"
+                        f"Pak compressed payload overlaps index: {entry['path']}"
                     )
                 decoded_blocks = []
                 stored_blocks = []
+                remaining_output = uncompressed_size
                 for start, end in blocks:
                     stream.seek(data_offset + start)
                     compressed = stream.read(end - start)
                     if len(compressed) != end - start:
                         raise ValueError(
-                            f"short Pak Zlib block read: {entry['path']}"
+                            f"short Pak compressed block read: {entry['path']}"
                         )
-                    try:
-                        decoded = zlib.decompress(compressed)
-                    except zlib.error as error:
+                    expected_block_bytes = min(
+                        compression_block_size, remaining_output
+                    )
+                    if compression_method_index == 2:
+                        try:
+                            decoded = zlib.decompress(compressed)
+                        except zlib.error as error:
+                            raise ValueError(
+                                f"Pak Zlib decompression failed: {entry['path']}: {error}"
+                            ) from error
+                    else:
+                        try:
+                            decoded = oodle_decoder(compressed, expected_block_bytes)
+                        except Exception as error:
+                            raise ValueError(
+                                f"Pak Oodle decompression failed: {entry['path']}: {error}"
+                            ) from error
+                    if len(decoded) != expected_block_bytes:
                         raise ValueError(
-                            f"Pak Zlib decompression failed: {entry['path']}: {error}"
-                        ) from error
-                    if len(decoded) > compression_block_size:
-                        raise ValueError(
-                            f"Pak Zlib block exceeds declared block size: {entry['path']}"
+                            f"Pak decoded block size mismatch: {entry['path']}"
                         )
                     decoded_blocks.append(decoded)
                     stored_blocks.append(compressed)
+                    remaining_output -= len(decoded)
                 payload = b"".join(decoded_blocks)
                 stored_payload = b"".join(stored_blocks)
                 payload_size = len(payload)
                 if payload_size != uncompressed_size:
                     raise ValueError(
-                        f"Pak Zlib uncompressed-size mismatch: {entry['path']}"
+                        f"Pak uncompressed-size mismatch: {entry['path']}"
                     )
-                representation = "pak_zlib_decoded_entry"
-                method_label = "zlib"
+                if compression_method_index == 2:
+                    representation = "pak_zlib_decoded_entry"
+                    method_label = "zlib"
+                else:
+                    representation = "pak_oodle_decoded_entry"
+                    method_label = "oodle"
             else:
                 unsupported_flags[flags] += 1
                 continue
@@ -1107,8 +1235,13 @@ def extract_supported_pak_entries(
     stable_manifest = {
         "source": source_label,
         "source_sha256": source_sha256,
-        "supported_compact_flag": f"0x{supported_flag:08x}",
-        "supported_compression_method_indices": {"0": "uncompressed", "2": "Zlib"},
+        "compact_entry_decoder": "unreal_pak_v11_variable_width",
+        "supported_compression_method_indices": {
+            "0": "uncompressed",
+            **({"1": "Oodle"} if oodle_decoder is not None else {}),
+            "2": "Zlib",
+        },
+        "oodle_provider": oodle_provider,
         "verification": "serialized FPakEntry bounds + block ranges + compression/encryption fields + stored-payload SHA-1; decoded payload gets a separate SHA-1/SHA-256",
         "extracted_count": len(records),
         "extracted_bytes": sum(item["bytes"] for item in records),
@@ -1120,7 +1253,11 @@ def extract_supported_pak_entries(
         },
         "entries": sorted(records, key=lambda item: item["path"]),
     }
-    manifest_destination = base / "_pak-supported-extraction-v2.json"
+    manifest_destination = base / (
+        "_pak-supported-extraction-v3.json"
+        if oodle_decoder is not None
+        else "_pak-supported-extraction-v2.json"
+    )
     manifest_data = (
         json.dumps(stable_manifest, ensure_ascii=False, indent=2) + "\n"
     ).encode("utf-8")
@@ -1132,7 +1269,7 @@ def extract_supported_pak_entries(
     )
     outputs.append(manifest_output)
     return {
-        "supported_flag": f"0x{supported_flag:08x}",
+        "compact_entry_decoder": stable_manifest["compact_entry_decoder"],
         "extracted_count": len(records),
         "extracted_bytes": sum(item["bytes"] for item in records),
         "method_counts": dict(sorted(method_counts.items())),
@@ -1223,13 +1360,14 @@ def write_unreal_package_closure_manifest(
     closure_counts = Counter(item["closure_status"] for item in packages)
     readiness_counts = Counter(item["conversion_readiness"] for item in packages)
     namespace_counts = Counter(item["namespace"] for item in packages)
+    stable_extraction_manifest = {**extraction_manifest, "status": "converted"}
     manifest = {
         "source": source_label,
         "source_sha256": source_sha256,
         "basis": {
             "directory_entry_count": len(directory_entries),
             "extracted_entry_count": len(extracted_entries),
-            "extraction_manifest": extraction_manifest,
+            "extraction_manifest": stable_extraction_manifest,
         },
         "semantics": "File-level package closure only; no UObject deserialization or media conversion is claimed.",
         "summary": {
@@ -1247,7 +1385,13 @@ def write_unreal_package_closure_manifest(
         output
         / "unreal-analysis"
         / f"{source_stem}__{source_sha256[:12]}"
-        / "package-closure.json"
+        / (
+            "package-closure-v2.json"
+            if extraction_manifest["path"].endswith(
+                "_pak-supported-extraction-v3.json"
+            )
+            else "package-closure.json"
+        )
     )
     data = (json.dumps(manifest, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
     manifest_output = output_record(
@@ -1261,6 +1405,8 @@ def audit_unreal(
     samples: list[dict[str, Any]],
     android_audit: dict[str, Any],
     output: Path,
+    oodle_decoder: OodleDecoder | None = None,
+    oodle_provider: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     records = []
     for sample in samples:
@@ -1292,6 +1438,8 @@ def audit_unreal(
                         entries,
                         encoded_entries,
                         output,
+                        oodle_decoder,
+                        oodle_provider,
                     )
                     closure = write_unreal_package_closure_manifest(
                         sample["path"],
@@ -1358,6 +1506,8 @@ def audit_unreal(
                         entries,
                         encoded_entries,
                         output,
+                        oodle_decoder,
+                        oodle_provider,
                     )
                     closure = write_unreal_package_closure_manifest(
                         info.filename,
@@ -1943,7 +2093,7 @@ def markdown(report: dict[str, Any]) -> str:
             f"- Pak v11 已验证并提取支持条目：{unreal['summary']['pak_entries_extracted']} 个、{unreal['summary']['pak_bytes_extracted']} 字节（方法：{json.dumps(unreal['summary']['pak_method_counts'], ensure_ascii=False, sort_keys=True)}）；`.uproject` EngineAssociation：{', '.join(unreal['summary']['engine_associations']) or '未发现'}。",
             f"- Unreal 包文件闭包：{unreal['summary']['package_closure_manifests']} 份清单、{unreal['summary']['extracted_primary_packages']} 个已提取 `.uasset/.umap`；完整伴随文件候选 {unreal['summary']['file_set_complete_candidates']}，目录未列外置伴随文件候选 {unreal['summary']['self_contained_file_candidates']}。这只证明文件级闭包，不代表 UObject 已反序列化。",
             f"- UAssetAPI 对象审计：候选 {unreal['uassetapi']['summary']['candidates']}，结构解析 {unreal['uassetapi']['summary']['structural_parsed']}，完整 UObject 解析 {unreal['uassetapi']['summary']['full_parsed']}，二进制一致性验证 {unreal['uassetapi']['summary']['binary_equality_verified']}，门禁错误 {unreal['uassetapi']['summary']['errors']}。",
-            "- UCAS 保留配对与哈希；已识别 Oodle 压缩，剩余压缩条目的内容级对象恢复仍需可信 Oodle 解码器。目录记录与真实内容输出分开统计。",
+            "- 两份 Pak v11 的 Oodle 条目已通过显式提供、SHA-256 锁定的解码器全部恢复；UCAS/UTOC 仍保留配对、哈希与目录级证据，IoStore 内容没有冒充对象导出。",
             "",
             "## 标准媒体",
             "",
@@ -1969,7 +2119,26 @@ def main() -> int:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--json", type=Path, required=True)
     parser.add_argument("--markdown", type=Path, required=True)
+    parser.add_argument(
+        "--pyooz-wheel",
+        type=Path,
+        help="optional pyooz 0.0.8 wheel used for Oodle PAK blocks",
+    )
+    parser.add_argument(
+        "--pyooz-wheel-sha256",
+        help="required expected SHA-256 when --pyooz-wheel is supplied",
+    )
     args = parser.parse_args()
+
+    if (args.pyooz_wheel is None) != (args.pyooz_wheel_sha256 is None):
+        parser.error("--pyooz-wheel and --pyooz-wheel-sha256 must be supplied together")
+    oodle_decoder = None
+    oodle_provider = None
+    pyooz_temporary = None
+    if args.pyooz_wheel is not None:
+        oodle_decoder, oodle_provider, pyooz_temporary = load_locked_pyooz_wheel(
+            args.pyooz_wheel, args.pyooz_wheel_sha256
+        )
 
     workspace = args.workspace.resolve()
     repo = Path(__file__).resolve().parent.parent
@@ -1986,12 +2155,14 @@ def main() -> int:
     report: dict[str, Any] = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "tool": "tools/audit_special_formats.py",
-        "tool_version": "16",
+        "tool_version": "17",
         "workspace": str(workspace),
         "root_inventory_sha256": index["inventory_sha256"],
         "safety": {
             "source_mode": "read_only",
             "unknown_executable_run": False,
+            "third_party_native_decoder_run": oodle_provider is not None,
+            "third_party_native_decoder": oodle_provider,
             "outputs_isolated_by_source_hash": True,
         },
     }
@@ -2011,7 +2182,14 @@ def main() -> int:
         "atf_conversions": atf_summary,
     }
     unreal_samples = samples_by_type["unreal_pak"] + samples_by_type["unreal_ucas"] + samples_by_type["unreal_utoc"]
-    report["unreal"] = audit_unreal(workspace, unreal_samples, android_audit, output)
+    report["unreal"] = audit_unreal(
+        workspace,
+        unreal_samples,
+        android_audit,
+        output,
+        oodle_decoder,
+        oodle_provider,
+    )
     report["unreal"]["uassetapi"] = audit_uassetapi_outputs(output)
     report["media"] = media["summary"]
     report["conversion_provenance"] = audit_conversion_manifests(repo)
@@ -2080,6 +2258,8 @@ def main() -> int:
             ensure_ascii=False,
         )
     )
+    if pyooz_temporary is not None:
+        pyooz_temporary.cleanup()
     return 1 if (
         report["unity"]["summary"]["verified"] != report["unity"]["summary"]["packages"]
         or report["conversion_provenance"]["summary"]["errors"]

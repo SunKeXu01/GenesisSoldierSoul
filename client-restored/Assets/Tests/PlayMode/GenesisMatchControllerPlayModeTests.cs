@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using GenesisSoldierSoul.WeaponActions;
@@ -125,6 +126,28 @@ public sealed class GenesisMatchControllerPlayModeTests
         Assert.That(Get<GameObject>("pistol").activeSelf, Is.True);
         Assert.That(Get<GameObject>("grenade").activeSelf, Is.False);
         Assert.That(Get<int>("grenadeCount"), Is.EqualTo(1));
+    }
+
+    [UnityTest]
+    public IEnumerator KnifeBladeOccupiesWeaponCameraWhenEquipped()
+    {
+        Invoke("SetWeapon", WeaponSlot.Knife, false);
+        yield return null;
+
+        var knife = Get<GameObject>("knife");
+        var camera = Get<Camera>("weaponCamera");
+        Assert.That(knife.activeSelf, Is.True);
+        var blade = knife.transform.Find(
+            "AnimationRoot_KnifeHands/Recovered_Knife_Blade");
+        Assert.That(blade, Is.Not.Null);
+        var renderer = blade.GetComponent<Renderer>();
+        Assert.That(renderer, Is.Not.Null);
+        Assert.That(renderer.enabled, Is.True);
+        var viewport = camera.WorldToViewportPoint(renderer.bounds.center);
+        Assert.That(viewport.z, Is.GreaterThan(camera.nearClipPlane));
+        Assert.That(viewport.z, Is.LessThan(camera.farClipPlane));
+        Assert.That(viewport.x, Is.InRange(0f, 1f));
+        Assert.That(viewport.y, Is.InRange(0f, 1f));
     }
 
     [UnityTest]
@@ -302,6 +325,19 @@ public sealed class GenesisMatchControllerPlayModeTests
         Assert.That(maxViewport.y - minViewport.y, Is.GreaterThan(0.08f),
             phase + ": Shotgun01 must occupy a visible vertical span. "
             + minViewport + " -> " + maxViewport);
+
+        var firearm = rifle.GetComponentsInChildren<Transform>(true)
+            .FirstOrDefault(item => item.name == "WeaponMainMesh");
+        Assert.That(firearm, Is.Not.Null, phase + ": shotgun firearm mesh");
+        var firearmRenderer = firearm.GetComponent<Renderer>();
+        Assert.That(firearmRenderer, Is.Not.Null,
+            phase + ": shotgun firearm renderer");
+        var firearmCenter = camera.WorldToViewportPoint(
+            firearmRenderer.bounds.center);
+        Assert.That(firearmCenter.z,
+            Is.InRange(camera.nearClipPlane, camera.farClipPlane), phase);
+        Assert.That(firearmCenter.x, Is.InRange(0.08f, 0.92f), phase);
+        Assert.That(firearmCenter.y, Is.InRange(0.08f, 0.82f), phase);
     }
 
     private static object LocalState(

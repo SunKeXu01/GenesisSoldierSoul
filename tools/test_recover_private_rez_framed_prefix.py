@@ -8,6 +8,12 @@ from pathlib import Path
 
 from PIL import Image
 
+from crossfire_rez_directory import (
+    CrossfireRezDirectoryEntry,
+    decode_crossfire_rez_directory,
+    encode_crossfire_rez_directory,
+)
+from lithtech_ltc import CROSSFIRE_XOR_KEY
 from recover_private_rez_framed_prefix import (
     PNG_SIGNATURE,
     parse_cfb,
@@ -25,13 +31,19 @@ from recover_private_rez_framed_prefix import (
     parse_html,
     parse_jpeg,
     parse_lithtech_world,
+    parse_ltc_root_before_exact_peer,
+    match_crossfire_directory_entry,
     parse_mp4,
     parse_png,
     parse_rps,
     parse_tga,
     parse_ui_layout,
     parse_webm,
+    parse_zero_mirror_pair,
+    profile_trailing_region,
     recover_framed_prefix,
+    scan_trailing_zero_runs,
+    has_zero_mirror_chain,
 )
 from rez_extract import RezError
 
@@ -44,6 +56,21 @@ def png(width: int = 1, height: int = 1) -> bytes:
     ihdr = struct.pack(">IIBBBBB", width, height, 8, 6, 0, 0, 0)
     pixels = zlib.compress(b"\0\0\0\0\0")
     return PNG_SIGNATURE + chunk(b"IHDR", ihdr) + chunk(b"IDAT", pixels) + chunk(b"IEND", b"")
+
+
+def literal_ltc_root(text: bytes) -> bytes:
+    bits = [0] * 32
+    for value in text:
+        bits.append(1)
+        bits.extend((value >> shift) & 1 for shift in range(7, -1, -1))
+    bits.extend([0] * ((-len(bits)) % 16))
+    clear = bytearray((len(bits) + 7) // 8)
+    for position, value in enumerate(bits):
+        clear[position // 8] |= value << (position % 8)
+    return bytes(
+        value ^ CROSSFIRE_XOR_KEY[index % len(CROSSFIRE_XOR_KEY)]
+        for index, value in enumerate(clear)
+    )
 
 
 def standalone_idat() -> bytes:
@@ -245,6 +272,95 @@ def rps(*, bad_index: bool = False) -> bytes:
 
 
 class PrivateRezPngPrefixTests(unittest.TestCase):
+    def test_parses_zero_mirror_pair_with_payload_trailing_zero(self):
+        payload = b"A" * 99 + b"\0"
+        data = payload + bytes(len(payload)) + b"NEXT"
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data)
+            parsed = parse_zero_mirror_pair(stream, 0, len(data))
+        self.assertEqual(parsed["bytes"], 200)
+        self.assertEqual(parsed["payload_bytes"], 100)
+        self.assertEqual(parsed["zero_plane_extra_bytes"], 0)
+        self.assertEqual(parsed["payload_trailing_zero_bytes"], 1)
+        self.assertEqual(parsed["payload_sha256"], hashlib.sha256(payload).hexdigest())
+
+    def test_parses_odd_zero_mirror_pair_with_extra_zero_plane_byte(self):
+        payload = b"ABC"
+        data = payload + bytes(len(payload) + 1) + b"NEXT"
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data)
+            parsed = parse_zero_mirror_pair(stream, 0, len(data))
+        self.assertEqual(parsed["bytes"], 7)
+        self.assertEqual(parsed["payload_bytes"], 3)
+        self.assertEqual(parsed["zero_plane_bytes"], 4)
+        self.assertEqual(parsed["zero_plane_extra_bytes"], 1)
+
+    def test_requires_consecutive_zero_mirror_pairs(self):
+        pairs = b"".join(value + bytes(len(value)) for value in (b"ABC", b"DEFG", b"HI"))
+        with tempfile.TemporaryFile() as stream:
+            stream.write(pairs)
+            self.assertTrue(has_zero_mirror_chain(stream, 0, len(pairs)))
+            self.assertFalse(has_zero_mirror_chain(stream, 0, len(pairs), minimum_frames=4))
+            with self.assertRaisesRegex(RezError, "must be positive"):
+                has_zero_mirror_chain(stream, 0, len(pairs), minimum_frames=0)
+
+    def test_maps_exact_zero_runs_and_symmetric_prefix(self):
+        data = b"A" * 100 + bytes(100) + b"B" * 20 + bytes(80) + b"C"
+        with tempfile.TemporaryFile() as stream:
+            stream.write(data)
+            result = scan_trailing_zero_runs(stream, 0, len(data))
+        self.assertEqual(result["total_zero_bytes"], 180)
+        self.assertEqual(result["qualifying_run_count"], 2)
+        self.assertEqual(
+            result["symmetric_prefix_zero_run"],
+            {"offset": 100, "relative_offset": 100, "bytes": 100},
+        )
+        self.assertEqual(result["longest_runs"][0]["bytes"], 100)
+
+    def test_zero_run_scan_rejects_invalid_configuration(self):
+        with tempfile.TemporaryFile() as stream:
+            with self.assertRaisesRegex(RezError, "begins after data boundary"):
+                scan_trailing_zero_runs(stream, 2, 1)
+            with self.assertRaisesRegex(RezError, "minimum and limit must be positive"):
+                scan_trailing_zero_runs(stream, 0, 0, minimum_bytes=0)
+
+    def test_profiles_empty_structured_and_high_entropy_suffixes(self):
+        with tempfile.TemporaryFile() as stream:
+            empty = profile_trailing_region(stream, 0, 0)
+        self.assertEqual(empty["classification"], "empty")
+
+        structured_data = bytes(64 * 1024)
+        with tempfile.TemporaryFile() as stream:
+            stream.write(structured_data)
+            structured = profile_trailing_region(stream, 0, len(structured_data))
+        self.assertEqual(
+            structured["classification"],
+            "structured_or_redundant_binary_candidate",
+        )
+        self.assertEqual(structured["windows"][0]["zero_ratio"], 1.0)
+        self.assertLess(structured["windows"][0]["zlib_ratio"], 0.01)
+
+        opaque_data = b"".join(
+            hashlib.sha256(struct.pack("<I", index)).digest() for index in range(6144)
+        )
+        with tempfile.TemporaryFile() as stream:
+            stream.write(opaque_data)
+            opaque = profile_trailing_region(stream, 0, len(opaque_data))
+        self.assertEqual(opaque["classification"], "high_entropy_opaque_candidate")
+        self.assertIsNone(opaque["exact_start_kind"])
+        self.assertEqual(
+            [item["label"] for item in opaque["windows"]],
+            ["start", "middle", "end"],
+        )
+        self.assertTrue(all(item["entropy"] > 7.9 for item in opaque["windows"]))
+
+    def test_trailing_profile_rejects_invalid_bounds_and_window(self):
+        with tempfile.TemporaryFile() as stream:
+            with self.assertRaisesRegex(RezError, "begins after data boundary"):
+                profile_trailing_region(stream, 2, 1)
+            with self.assertRaisesRegex(RezError, "window must be positive"):
+                profile_trailing_region(stream, 0, 1, window_bytes=0)
+
     def test_parses_crc_valid_png_at_exact_offset(self):
         data = png(3, 2)
         with tempfile.TemporaryFile() as stream:
@@ -606,6 +722,126 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
             self.assertEqual([item.read_bytes() for item in outputs], [first, second])
             self.assertEqual(result["trailing_region"]["bytes"], len(suffix))
 
+    def test_recovers_md5_verified_crossfire_directory_entry(self):
+        frame = b"PRIVATE-DIRECTORY-RESOURCE"
+        name = b"fixture"
+        extension = b"TAD\0"
+        md5 = hashlib.md5(frame, usedforsecurity=False).hexdigest().upper().encode()
+        table = (
+            struct.pack("<5i", 0, 168, len(frame), 0, 7)
+            + extension
+            + struct.pack("<2i", 0, len(name))
+            + name
+            + b"\xaa\0"
+            + md5
+        )
+        root_offset = 168 + len(frame)
+        encoded_table = encode_crossfire_rez_directory(table, root_offset)
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            peers = root / "RB001"
+            peers.mkdir()
+            source = root / "RB001.REZ"
+            data = bytearray(168)
+            data.extend(frame + encoded_table)
+            data[:2] = b"\r\n"
+            data[126] = 0x1A
+            struct.pack_into("<III", data, 127, 1, root_offset, len(encoded_table))
+            source.write_bytes(data)
+            result = recover_framed_prefix(
+                source,
+                hashlib.sha256(data).hexdigest(),
+                root_offset,
+                root / "out",
+                peer_root=peers,
+            )
+            self.assertEqual(
+                [item["kind"] for item in result["resources"]],
+                ["crossfire_directory_entry"],
+            )
+            record = result["resources"][0]
+            self.assertEqual(record["archive_path"], "fixture.DAT")
+            self.assertTrue(record["directory_md5_verified"])
+            self.assertEqual(result["trailing_region"]["bytes"], 0)
+            output = root / "out" / result["outputs"][0]["path"]
+            self.assertEqual(output.read_bytes(), frame)
+
+    def test_crossfire_directory_codec_roundtrip_and_md5_rejection(self):
+        clear = b"strict directory fixture"
+        encoded = encode_crossfire_rez_directory(clear, 12345)
+        self.assertEqual(decode_crossfire_rez_directory(encoded, 12345), clear)
+        entry = CrossfireRezDirectoryEntry(
+            "bad.DAT", 0, len(clear), 0, 0, "0" * 32
+        )
+        with tempfile.TemporaryFile() as stream:
+            stream.write(clear)
+            with self.assertRaisesRegex(RezError, "directory MD5 mismatch"):
+                match_crossfire_directory_entry(
+                    stream,
+                    0,
+                    len(clear),
+                    {"by_offset": {0: entry}},
+                )
+
+    def test_recovers_token_bounded_ltc_root_before_exact_peer(self):
+        decoded = b'(world (name "test"))'
+        encoded = literal_ltc_root(decoded)
+        peer = b"EXACT-LOOSE-SUCCESSOR" * 2
+        suffix = b"UNSUPPORTED"
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            peers = root / "RB001"
+            (peers / "REZ" / "BUTES").mkdir(parents=True)
+            (peers / "REZ" / "BUTES" / "successor.DAT").write_bytes(peer)
+            source = root / "RB001.REZ"
+            data = bytearray(168)
+            data.extend(encoded + peer + suffix)
+            root_offset = len(data)
+            data.extend(bytes(24))
+            data[:2] = b"\r\n"
+            data[126] = 0x1A
+            struct.pack_into("<III", data, 127, 1, root_offset, 24)
+            source.write_bytes(data)
+            result = recover_framed_prefix(
+                source,
+                hashlib.sha256(data).hexdigest(),
+                root_offset,
+                root / "out",
+                peer_root=peers,
+            )
+            self.assertEqual(
+                [item["kind"] for item in result["resources"]],
+                ["ltc_root", "exact_peer"],
+            )
+            ltc_record = result["resources"][0]
+            self.assertEqual(ltc_record["bytes"], len(encoded))
+            self.assertEqual(ltc_record["decoded_bytes"], len(decoded))
+            self.assertEqual(
+                ltc_record["successor_peer_paths"],
+                ["REZ/BUTES/successor.DAT"],
+            )
+            decoded_output = next(
+                item
+                for item in result["outputs"]
+                if item["representation"] == "private_rez_ltc_root_to_lta"
+            )
+            self.assertEqual((root / "out" / decoded_output["path"]).read_bytes(), decoded)
+            self.assertEqual(result["trailing_region"]["bytes"], len(suffix))
+
+            with source.open("rb") as stream:
+                no_peer = {
+                    "root": peers,
+                    "buckets": {},
+                    "short": [],
+                    "files": 0,
+                    "ignored_symlinks": 0,
+                }
+                self.assertIsNone(
+                    parse_ltc_root_before_exact_peer(
+                        stream, 168, root_offset, no_peer
+                    )
+                )
+
     def test_rejects_ambiguous_exact_peer_lengths(self):
         short = b"X" * 20
         long = short + b"Y" * 8
@@ -632,6 +868,44 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
                     root / "out",
                     peer_root=peers,
                 )
+
+    def test_recovers_proven_zero_mirror_chain_and_payload_halves(self):
+        payloads = [b"opaque-one", b"opaque-two\0", b"opaque-three"]
+        pairs = b"".join(payload + bytes(len(payload)) for payload in payloads)
+        suffix = b"UNSUPPORTED"
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "RF019.REZ"
+            data = bytearray(168)
+            data.extend(png() + pairs + suffix)
+            root_offset = len(data)
+            data.extend(bytes(24))
+            data[:2] = b"\r\n"
+            data[126] = 0x1A
+            struct.pack_into("<III", data, 127, 1, root_offset, 24)
+            source.write_bytes(data)
+            result = recover_framed_prefix(
+                source,
+                hashlib.sha256(data).hexdigest(),
+                root_offset,
+                root / "out",
+            )
+            self.assertEqual(
+                [item["kind"] for item in result["resources"]],
+                ["png", "zero_mirror", "zero_mirror", "zero_mirror"],
+            )
+            self.assertEqual(len(result["outputs"]), 7)
+            payload_outputs = [
+                item
+                for item in result["outputs"]
+                if item["representation"]
+                == "private_rez_zero_mirror_information_half"
+            ]
+            self.assertEqual(
+                [(root / "out" / item["path"]).read_bytes() for item in payload_outputs],
+                payloads,
+            )
+            self.assertEqual(result["trailing_region"]["bytes"], len(suffix))
 
     def test_recovers_mixed_media_and_converts_tga_dtx(self):
         frames = [
@@ -713,6 +987,10 @@ class PrivateRezPngPrefixTests(unittest.TestCase):
             )
             self.assertEqual(len(result["outputs"]), 29)
             self.assertEqual(result["trailing_region"]["bytes"], len(suffix))
+            self.assertEqual(
+                result["trailing_region"]["profile"]["classification"],
+                "structured_or_redundant_binary_candidate",
+            )
 
 
 if __name__ == "__main__":

@@ -220,13 +220,15 @@ tools/verify_delivery.sh --full
   正式资源门禁仍因缺少已批准权利记录而拒绝放行。
 - 364 个 CrossFire LTC 已用固定 XOR 包装 + LithTech LZSS 规则全部恢复为 LTA，
   并由同名明文样本逐字节验证；两份 RF019 和两份 RF199 又从数据区起点连续
-  恢复 27,087 个资源、3,215,875,246 个源字节，并把其中 15,963 个 DTX 和
-  257 个 TGA 转为 16,220 个 PNG。仍未完成的是 3 个完全未知私有 REZ、上述
-  4 个包的未知后缀、
+  恢复资源；随后通过 world v85、zero-mirror 帧和 RB001 加密目录 MD5 将 7 个
+  原未分帧 REZ 全部闭合到数据区末尾，未知尾段为 0，并把其中 15,973 个 DTX 和
+  257 个 TGA 转为 16,230 个 PNG。
   LTB 已对 8,721 个候选全部严格转换；321 个文件由 layout-v7 生成 glTF skin，
   98 个源文件的 818 个骨骼/顶点动画已生成 88,740 个 glTF 通道和 2,940 个 morph target。
   538 个 Flash ATF 已全部重建为 DXT1/DXT5 DDS 和 RGBA PNG，并保留 1,001 个实际存在的 mip 层。
-  仍未完成的是受 Oodle 限制的 Unreal 内容。
+  两份 Pak v11 的 1,318 个 Oodle 条目已用显式提供且 SHA-256 锁定的解码器恢复；
+  Android 的 518 个 UAsset/UMap 文件闭包与 UObject 二进制一致性验证均通过。
+  UTOC/UCAS 的 IoStore 内容仍只保留目录级证据。
   工具只做静态读取，不执行来源不明程序。
 - 商城仅为只读资源目录；账号、余额、购买、充值、VIP、任务、活动和战队业务没有
   权威后端依据，因此不提供伪实现。

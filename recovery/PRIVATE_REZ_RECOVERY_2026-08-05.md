@@ -4,11 +4,11 @@
 
 CrossFire 私有 RF/RB 包保留标准 REZ v1 外层头，但目录块经过私有处理。静态分析确认 208 个包的数据区由独立 LZMA-Alone 流串接组成，每条流对应一个资源；工具只在属性字节 `0x5d`、16 MiB 字典、声明长度、流 EOF 和解码长度全部一致时接受输出。
 
-没有猜测目录密钥、运行客户端 EXE/DLL，原始包保持只读。遇到非 LZMA 区段立即停止并保留偏移、大小、前缀与熵证据。
+主体 LZMA 恢复没有猜测目录密钥或运行客户端 EXE/DLL，原始包保持只读。后续对 RB001 增加了显式、严格验证的 CrossFire 加密目录兼容解析；769/769 个目录 MD5 与归档数据一致。
 
 ## 恢复规模
 
-- REZ 样本：242 个；其中标准包 1 个、可恢复串接 LZMA 私有包 208 个、空/仅填充数据区 26 个；原 7 个未分帧 raw/加密数据区均已获得连续边界：RF019/RF199 恢复多格式前缀，RF164/RF266 恢复完整 world v85，RB001 恢复同源 loose 精确前缀。现为 0 个完全未知包 + 5 个有精确停止证据的未知后缀。
+- REZ 样本：242 个；其中标准包 1 个、可恢复串接 LZMA 私有包 208 个、空/仅填充数据区 26 个；原 7 个未分帧 raw/加密数据区均已连续恢复到数据区末尾，未知尾段为 0。
 - 验证 LZMA 资源流：46,242 条，解码 13,813,267,158 字节。
 - 51 条与现存 loose 文件 SHA-256 完全一致；其余 46,191 条、13,791,715,442 字节按源哈希隔离物化。
 - 明确签名包括 4,163 WAV、346 PNG、44 DDS、898 文本、2 TTF、1 OTF、1 MP3 和 1 个嵌套标准 REZ。
@@ -43,17 +43,17 @@ DTX 转换器支持以下经尺寸关系验证的格式：
 - 输出保留源坐标，不做未经证明的轴变换；socket、weight-set 混合和外部 child-model 绑定只审计、不伪装成标准 glTF 行为。
 - 每个成功项保存输入/输出哈希和 GLB 结构验证；每个失败项保存源包、stream index、输入路径和具体错误。
 
-## 仍未完成
+## 连续恢复补充
 
-- 两份 RF019 和两份 RF199 已从固定数据区起点严格恢复 38,567 个连续资源、3,654,297,962 字节，并将 15,973 个 DTX 与 257 个 TGA 转为 16,230 个 PNG；延伸恢复包含 3 个 SWF、1 个 FLV、1 个 HTML、1 个 CP949 Web bundle、1 个 UI layout、4 个 CFSprite v5、4 个 RPS、75 个孤立 IDAT、10 个 DTX 和 11,380 个 PNG，详见 `RF199_WEB_MEDIA_PREFIX_RECOVERY_2026-08-06.md`、`RF199_CFSPRITE_V5_RECOVERY_2026-08-06.md` 与 `RF199_FRAMED_PREFIX_RECOVERY_2026-08-06.md`。
+- 两份 RF019 和两份 RF199 已从固定数据区起点严格恢复 39,538 个连续资源、3,660,782,036 字节，并将 15,973 个 DTX 与 257 个 TGA 转为 16,230 个 PNG；延伸恢复包含 971 个 zero-mirror 帧、3 个 SWF、1 个 FLV、1 个 HTML、1 个 CP949 Web bundle、1 个 UI layout、4 个 CFSprite v5、4 个 RPS、75 个孤立 IDAT、10 个 DTX 和 11,380 个 PNG，详见 `REZ_ZERO_MIRROR_RECOVERY_2026-08-09.md`、`RF199_WEB_MEDIA_PREFIX_RECOVERY_2026-08-06.md`、`RF199_CFSPRITE_V5_RECOVERY_2026-08-06.md` 与 `RF199_FRAMED_PREFIX_RECOVERY_2026-08-06.md`。
 - RF164 与 RF266 已按 world v85 的递归 render tail 严格恢复 2 个资源、58,778,137 字节，两者都精确到达 REZ 数据区末尾，见 `LITHTECH_WORLD_V85_RECOVERY_2026-08-06.md`。
-- RB001 已由 492 个同源 loose 精确匹配区段连续恢复 28,520,661 字节，其中一个 12,589,936 字节区段还独立通过 world v85 结构解析，见 `RB001_EXACT_PEER_PREFIX_RECOVERY_2026-08-06.md`。
-- 已无从数据区起点完全未知的包；RF019/RF199 的 4 个后缀与 RB001 的 1 个后缀合计保留 27,534,270 字节。在没有可信边界前不做整段魔数 carving。
+- RB001 的加密目录已严格解析为 4 个表、769 个文件项，769/769 个目录 MD5 验证一致；768 个目录资源和 1 个 world v85 资源连续覆盖数据区，末尾 3 个目录表 zero-mirror 帧也已闭合。详见 `RB001_ENCRYPTED_DIRECTORY_RECOVERY_2026-08-09.md`。
+- 7 个原未分帧包的未知尾段总计为 0；仍不做无边界魔数 carving。
 - LTB 几何 8,721/8,721、321 个 skin 和源内全部 818 个骨骼/顶点动画均已转换，详见 `LTB_ANIMATION_LAYOUT_V7_RECOVERY_2026-08-06.md`。
 - 364 个 loose LTC 已在 2026-08-06 全部恢复为 LTA：固定 16 字节 XOR 包装去除后，
   使用 LithTech LTC/LZSS v0 位流解码；输出 51,657,941 字节、失败 0，并由同名
   `AI3_FatalCanyon_DZ.LTA` 逐字节精确匹配验证。详见 `LTC_RECOVERY_2026-08-06.md`。
-- 私有目录块仍未恢复原文件名；每项使用源包哈希和稳定 stream index 标识。
+- RB001 已恢复目录原文件名；其余串接 LZMA 包仍使用源包哈希和稳定 stream index 标识。
 
 ## 证据与门禁
 
@@ -65,7 +65,7 @@ DTX 转换器支持以下经尺寸关系验证的格式：
 - GLB 输出：`recovery/special-formats/private-rez-models/`。
 - LTC LTA 输出：`recovery/special-formats/ltc-decoded/`。
 - 私有 REZ 连续帧输出：`recovery/special-formats/private-rez-png-prefix/`。
-- 工具：`tools/recover_private_rez.py`、`tools/recover_private_rez_framed_prefix.py`、`tools/convert_private_rez_media.py`、`tools/convert_ltb_models.py`、`tools/lithtech_ltc.py`。
+- 工具：`tools/recover_private_rez.py`、`tools/recover_private_rez_framed_prefix.py`、`tools/crossfire_rez_directory.py`、`tools/convert_private_rez_media.py`、`tools/convert_ltb_models.py`、`tools/lithtech_ltc.py`。
 - 专项测试：`tools/test_recover_private_rez.py`、`tools/test_convert_private_rez_media.py`、`tools/test_convert_ltb_models.py`。
 
-统一 provenance 已验证 13/13 清单、195,675 个输出、25,918,542,502 字节，错误 0。
+后续 Unreal Oodle/UObject 闭包完成后，统一 provenance 已验证 13/13 清单、199,680 个输出、26,387,143,524 字节，错误 0。

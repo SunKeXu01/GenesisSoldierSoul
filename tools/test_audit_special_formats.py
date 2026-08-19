@@ -9,8 +9,10 @@ from pathlib import Path
 from audit_special_formats import (
     audit_private_rez_supplements,
     audit_uassetapi_outputs,
+    decode_compact_pak_entry,
     decode_dtx,
     extract_supported_pak_entries,
+    load_locked_pyooz_wheel,
     parse_iostore_directory_index,
     parse_pak,
     parse_pak_directory_index,
@@ -19,7 +21,13 @@ from audit_special_formats import (
     safe_zip_name,
     write_unreal_package_closure_manifest,
 )
-from lithtech_ltc import CROSSFIRE_XOR_KEY, decode_ltc, lta_structure
+from lithtech_ltc import (
+    CROSSFIRE_XOR_KEY,
+    LtcDecodeError,
+    decode_ltc,
+    decode_ltc_lta_root_prefix,
+    lta_structure,
+)
 
 
 def fstring(value: str) -> bytes:
@@ -58,6 +66,32 @@ class SpecialFormatTests(unittest.TestCase):
         result = decode_ltc(self._pack_ltc_bits(bits))
         self.assertEqual(result.data, b"abab")
         self.assertEqual(result.termination, "physical_eof")
+
+    def test_decodes_token_bounded_lta_root_prefix_with_zero_alignment(self):
+        bits = [0] * 32
+        for value in b"(world)":
+            bits.append(1)
+            bits.extend((value >> shift) & 1 for shift in range(7, -1, -1))
+        consumed = len(bits)
+        bits.extend([0] * ((16 - len(bits) % 16) % 16))
+        encoded = self._pack_ltc_bits(bits) + b"SUCCESSOR"
+        result = decode_ltc_lta_root_prefix(encoded)
+        self.assertEqual(result.data, b"(world)")
+        self.assertEqual(result.bits_consumed, consumed)
+        self.assertEqual(result.input_bytes, len(bits) // 8)
+        self.assertEqual(result.padding_bits, len(bits) - consumed)
+
+    def test_lta_root_prefix_rejects_non_text_and_nonzero_padding(self):
+        for payload in (b"(bad\x01)", b"(ok)"):
+            bits = [0] * 32
+            for value in payload:
+                bits.append(1)
+                bits.extend((value >> shift) & 1 for shift in range(7, -1, -1))
+            bits.extend([0] * ((16 - len(bits) % 16) % 16))
+            if payload == b"(ok)":
+                bits[-1] = 1
+            with self.assertRaises(LtcDecodeError):
+                decode_ltc_lta_root_prefix(self._pack_ltc_bits(bits))
 
     def test_decodes_raw_bgra_dtx(self):
         data = bytearray(164 + 16)
@@ -164,6 +198,35 @@ class SpecialFormatTests(unittest.TestCase):
             extracted = root / "out" / result["outputs"][0]["path"]
             self.assertEqual(extracted.read_bytes(), payload)
 
+    def test_decodes_compact_pak_entry_with_implicit_block_size(self):
+        flags = 0xE08000A0
+        encoded = struct.pack("<IIII", flags, 0x1234, 0x20000, 0x4567)
+        entry = decode_compact_pak_entry(encoded, 0)
+        self.assertEqual(entry["compression_method_index"], 1)
+        self.assertEqual(entry["compression_block_count"], 2)
+        self.assertEqual(entry["compression_block_size"], 0x10000)
+        self.assertEqual(entry["data_offset"], 0x1234)
+        self.assertEqual(entry["uncompressed_size"], 0x20000)
+        self.assertEqual(entry["stored_size"], 0x4567)
+        self.assertEqual(entry["encoded_bytes"], 16)
+
+    def test_decodes_compact_pak_entry_with_64_bit_fields(self):
+        flags = 0x00800040
+        encoded = struct.pack(
+            "<IQQQ", flags, 0x1_0000_1234, 0x2_0000_5678, 0x3_0000_9ABC
+        )
+        entry = decode_compact_pak_entry(encoded, 0)
+        self.assertEqual(entry["compression_method_index"], 1)
+        self.assertEqual(entry["compression_block_count"], 1)
+        self.assertEqual(entry["compression_block_size"], 0x2_0000_5678)
+        self.assertEqual(entry["data_offset"], 0x1_0000_1234)
+        self.assertEqual(entry["stored_size"], 0x3_0000_9ABC)
+        self.assertEqual(entry["encoded_bytes"], 28)
+
+    def test_rejects_truncated_compact_pak_entry(self):
+        with self.assertRaisesRegex(ValueError, "stored size"):
+            decode_compact_pak_entry(struct.pack("<III", 0xE08000A0, 1, 2), 0)
+
     def test_decodes_blocked_zlib_pak_entry_and_verifies_sha1(self):
         payload = b"zlib payload" * 200
         compressed = zlib.compress(payload)
@@ -201,6 +264,59 @@ class SpecialFormatTests(unittest.TestCase):
             extracted = root / "out" / result["outputs"][0]["path"]
             self.assertEqual(extracted.read_bytes(), payload)
 
+    def test_decodes_hash_verified_oodle_pak_entry_with_locked_provider(self):
+        payload = b"oodle payload" * 200
+        compressed = b"synthetic-oodle-block"
+        header_size = 73
+        serialized = (
+            struct.pack("<QQQi", 0, len(compressed), len(payload), 1)
+            + hashlib.sha1(compressed).digest()
+            + struct.pack("<IQQ", 1, header_size, header_size + len(compressed))
+            + b"\0"
+            + struct.pack("<I", len(payload))
+            + compressed
+        )
+        encoded = struct.pack(
+            "<IIIII",
+            0xE080007F,
+            len(payload),
+            0,
+            len(payload),
+            len(compressed),
+        )
+        calls = []
+
+        def decoder(data, output_bytes):
+            calls.append((data, output_bytes))
+            return payload
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            pak = root / "oodle.pak"
+            pak.write_bytes(serialized)
+            result = extract_supported_pak_entries(
+                pak,
+                "Sample/Oodle.pak",
+                hashlib.sha256(serialized).hexdigest(),
+                len(serialized),
+                [{"path": "Asset.uexp", "encoded_entry_offset": 0}],
+                encoded,
+                root / "out",
+                decoder,
+                {"package": "test-provider"},
+            )
+            self.assertEqual(result["method_counts"], {"oodle": 1})
+            self.assertEqual(calls, [(compressed, len(payload))])
+            extracted = root / "out" / result["outputs"][0]["path"]
+            self.assertEqual(extracted.read_bytes(), payload)
+
+    def test_rejects_unlocked_pyooz_wheel(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            wheel = Path(tmp) / "pyooz.whl"
+            wheel.write_bytes(b"not the approved wheel")
+            with self.assertRaisesRegex(ValueError, "wheel SHA-256 mismatch"):
+                load_locked_pyooz_wheel(wheel, "0" * 64)
+
     def test_classifies_unreal_package_file_closure(self):
         directory_entries = [
             {"path": "Game/T_Ready.uasset"},
@@ -216,16 +332,35 @@ class SpecialFormatTests(unittest.TestCase):
             {"path": "Game/Inline.uasset", "sha256": "d" * 64, "bytes": 4},
         ]
         with tempfile.TemporaryDirectory() as tmp:
-            result = write_unreal_package_closure_manifest(
+            arguments = (
                 "Content.pak",
                 "1" * 64,
                 directory_entries,
                 extracted_entries,
-                {"path": "manifest.json", "sha256": "2" * 64, "bytes": 10},
+            )
+            result = write_unreal_package_closure_manifest(
+                *arguments,
+                {
+                    "path": "manifest.json",
+                    "sha256": "2" * 64,
+                    "bytes": 10,
+                    "status": "converted",
+                },
                 Path(tmp),
             )
             manifest = Path(tmp) / result["manifest"]["path"]
             content = json.loads(manifest.read_text())
+            repeated = write_unreal_package_closure_manifest(
+                *arguments,
+                {
+                    "path": "manifest.json",
+                    "sha256": "2" * 64,
+                    "bytes": 10,
+                    "status": "verified_existing",
+                },
+                Path(tmp),
+            )
+            self.assertEqual(repeated["manifest"]["status"], "verified_existing")
         self.assertEqual(result["extracted_primary_packages"], 3)
         self.assertEqual(
             result["conversion_readiness_counts"],

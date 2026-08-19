@@ -1,0 +1,38 @@
+{
+  "source": "/Users/Admin/Documents/创世兵魂/_解压资源/创世兵魂武器/武器/加特林（内存有点大）/加特林机枪2.max",
+  "output": "/Users/Admin/Documents/创世兵魂/GenesisSoldierSoul/client-restored/Assets/RecoveredWeapons/Gatling/Gatling.fbx",
+  "meshCount": 72,
+  "vertexCount": 27763,
+  "polygonCount": 20894,
+  "barrelParts": [
+    "Circle62",
+    "Circle73",
+    "Circle74",
+    "Circle75",
+    "Circle76",
+    "Circle77",
+    "Circle78",
+    "Circle79",
+    "Circle80",
+    "Circle81"
+  ],
+  "materialMode": "source solid-color groups; no bitmap maps",
+  "materials": [
+    "GatlingAccent",
+    "GatlingBody",
+    "GatlingBronze",
+    "GatlingSteel"
+  ],
+  "bounds": {
+    "min": [
+      -0.6101635098457336,
+      -0.17406995594501495,
+      -0.015873171389102936
+    ],
+    "max": [
+      0.0022350288927555084,
+      0.8231582641601562,
+      0.24210956692695618
+    ]
+  }
+}

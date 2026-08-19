@@ -28,7 +28,7 @@ layout-v7 已完整解析 321 个 CrossFire 复合 LTB 的骨骼后续区并严�
 
 ## 边界
 
-glTF 已含骨骼 TRS 动画、vertex morph 动画和 string-key extras；socket、animation weight-set 混合语义与外部 child-model 运行时绑定仍只做严格审计，未伪装成标准 glTF 行为。RF164/RF266 world v85 与 RB001 同源 loose 连续前缀均已恢复，REZ 已无完全未知包，剩余 5 个有精确停止证据的未知后缀。
+glTF 已含骨骼 TRS 动画、vertex morph 动画和 string-key extras；socket、animation weight-set 混合语义与外部 child-model 运行时绑定仍只做严格审计，未伪装成标准 glTF 行为。RF164/RF266 world v85 已恢复；2026-08-09 又通过 974 个 zero-mirror 帧与 RB001 加密目录 MD5 完成全部 7 个目标 REZ 的数据区闭环，未知尾段为 0。
 
 - 转换器：`tools/convert_ltb_models.py`，tool version 8，输出 `private-rez-models/layout-v7/`。
 - 回归：`tools/test_convert_ltb_models.py`，覆盖 animation tail、root binding、压缩通道、TRS、morph target/weights、skin 和法线规范化。

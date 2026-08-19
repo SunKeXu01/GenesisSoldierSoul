@@ -1,23 +1,24 @@
 MAP Pyramid
 Renderers=403 enabled=403 bounds=Center: (174.83, 445.62, 107.32), Extents: (21.15, 11.69, 42.02)
-Camera First Person Player/Main Camera active=False enabled=True position=(188.50, 440.35, 143.78) rotation=(0.00, 180.00, 0.00) clear=Skybox mask=-1 near=0.1 far=1000
+Camera First Person Player/Main Camera active=False enabled=True position=(167.78, 439.18, 78.94) rotation=(0.00, 273.85, 0.00) clear=Skybox mask=-1 near=0.1 far=1000
 Light Directional Light active=True enabled=True type=Directional intensity=1
-Player First Person Player active=False position=(188.50, 439.71, 143.78) rotation=(0.00, 180.00, 0.00)
+Player First Person Player active=False position=(167.78, 438.54, 78.94) rotation=(0.00, 273.85, 0.00)
 MAP NewConstructionSite
 Renderers=35 enabled=35 bounds=Center: (310.36, 391.02, -542.66), Extents: (10.29, 4.55, 10.15)
-Camera First Person Player/Main Camera active=False enabled=True position=(318.51, 392.57, -547.32) rotation=(0.00, 0.00, 0.00) clear=Skybox mask=-1 near=0.1 far=1000
-Player First Person Player active=False position=(318.51, 391.93, -547.32) rotation=(0.00, 0.00, 0.00)
+Camera First Person Player/Main Camera active=False enabled=True position=(318.33, 392.72, -548.67) rotation=(0.00, 0.00, 0.00) clear=Skybox mask=-1 near=0.1 far=1000
+Light GenesisNewConstructionSun active=True enabled=True type=Directional intensity=0.75
+Player First Person Player active=False position=(318.33, 392.08, -548.67) rotation=(0.00, 0.00, 0.00)
 MAP BiochemicalTown
 Renderers=177 enabled=176 bounds=Center: (3.47, -1.05, -2.39), Extents: (58.79, 20.80, 63.06)
-Camera First Person Player/Main Camera active=False enabled=True position=(9.77, 3.82, 48.35) rotation=(0.00, 175.64, 0.00) clear=Skybox mask=-1 near=0.1 far=1000
-Light Directional Light active=True enabled=True type=Directional intensity=1
-Player First Person Player active=False position=(9.77, 3.18, 48.35) rotation=(0.00, 175.64, 0.00)
+Camera First Person Player/Main Camera active=False enabled=True position=(39.73, 3.53, 34.13) rotation=(0.00, 239.67, 0.00) clear=Skybox mask=-1 near=0.1 far=1000
+Light Directional Light active=True enabled=True type=Directional intensity=0.68
+Player First Person Player active=False position=(39.73, 2.89, 34.13) rotation=(0.00, 239.67, 0.00)
 MAP ClassicConstructionSite
 Renderers=318 enabled=318 bounds=Center: (449.78, 110.15, 75.34), Extents: (74.59, 20.21, 98.96)
 Camera First Person Player/Main Camera active=False enabled=True position=(449.78, 94.00, 75.34) rotation=(0.00, 0.00, 0.00) clear=Skybox mask=-1 near=0.1 far=1000
 Light Spot Light (2) active=True enabled=True type=Spot intensity=10
 Light 暖光 (10)/Spot Light (2) active=True enabled=True type=Spot intensity=25
-Light Directional Light active=True enabled=True type=Directional intensity=0.65
+Light Directional Light active=True enabled=True type=Directional intensity=0.72
 Light 暖光 (3)/Spot Light (2) active=True enabled=True type=Spot intensity=20
 Light Spot Light (3) active=True enabled=True type=Spot intensity=10
 Light 暖光 (9)/Spot Light (2) active=True enabled=True type=Spot intensity=25
@@ -37,18 +38,18 @@ Light Spot Light (4) active=True enabled=True type=Spot intensity=10
 Light 暖光 (8)/Spot Light (2) active=True enabled=True type=Spot intensity=25
 Player First Person Player active=False position=(449.78, 93.36, 75.34) rotation=(0.00, 0.00, 0.00)
 MAP SteelFactory
-Renderers=218 enabled=218 bounds=Center: (142.74, -53.63, 0.00), Extents: (832.00, 104.00, 832.00)
-Camera First Person Player/Main Camera active=False enabled=True position=(270.40, 130.84, -6.19) rotation=(0.00, 0.00, 0.00) clear=Skybox mask=-1 near=0.1 far=1000
+Renderers=218 enabled=218 bounds=Center: (142.74, -53.63, 0.00), Extents: (104.00, 13.00, 104.00)
+Camera First Person Player/Main Camera active=False enabled=True position=(170.67, -64.70, 85.33) rotation=(0.00, 104.88, 0.00) clear=Skybox mask=-1 near=0.1 far=1000
 Light Directional Light active=True enabled=True type=Directional intensity=1
-Player First Person Player active=False position=(270.40, 130.20, -6.19) rotation=(0.00, 0.00, 0.00)
+Player First Person Player active=False position=(170.67, -65.34, 85.33) rotation=(0.00, 104.88, 0.00)
 MAP IceFireMaze
 Renderers=3254 enabled=3253 bounds=Center: (380.41, -448.50, -2368.54), Extents: (50000.00, 818.99, 50000.00)
-Camera First Person Player/Main Camera active=False enabled=True position=(685.80, 362.91, -2035.84) rotation=(0.00, 0.00, 0.00) clear=Skybox mask=-1 near=0.1 far=1000
-Light Directional Light active=True enabled=True type=Directional intensity=1
+Camera First Person Player/Main Camera active=False enabled=True position=(95.22, 112.91, -1959.83) rotation=(0.00, 273.16, 0.00) clear=Skybox mask=-1 near=0.1 far=1000
+Light Directional Light active=True enabled=True type=Directional intensity=0.82
 Light Area Light active=True enabled=True type=Rectangle intensity=1
-Player First Person Player active=False position=(685.80, 362.27, -2035.84) rotation=(0.00, 0.00, 0.00)
+Player First Person Player active=False position=(95.22, 112.27, -1959.83) rotation=(0.00, 273.16, 0.00)
 MAP RadiationDistrict
 Renderers=24 enabled=24 bounds=Center: (-166.41, 41.21, -39.99), Extents: (112.69, 31.46, 138.50)
-Camera First Person Player/Main Camera active=False enabled=True position=(-166.41, 12.67, -39.99) rotation=(0.00, 0.00, 0.00) clear=Skybox mask=-1 near=0.1 far=1000
-Light Directional Light active=True enabled=True type=Directional intensity=0.5
-Player First Person Player active=False position=(-166.41, 12.03, -39.99) rotation=(0.00, 0.00, 0.00)
+Camera First Person Player/Main Camera active=False enabled=True position=(-157.06, 12.68, -34.78) rotation=(0.00, 111.53, 0.00) clear=Skybox mask=-1 near=0.1 far=1000
+Light Directional Light active=True enabled=True type=Directional intensity=0.78
+Player First Person Player active=False position=(-157.06, 12.04, -34.78) rotation=(0.00, 111.53, 0.00)

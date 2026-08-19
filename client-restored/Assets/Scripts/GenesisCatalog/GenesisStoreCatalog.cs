@@ -45,14 +45,39 @@ namespace GenesisSoldierSoul.Catalog
                     "OriginalGame/FirstPerson/Pistol/Pistol01"),
                 Standard("knife", "KNIFE 01",
                     "OriginalGame/FirstPerson/Knife/Knife01"),
+                AvailableEquipment("axe", "MILITARY AXE",
+                    "OriginalGame/HandAxe"),
+                AvailableEquipment("nepal", "NEPAL KNIFE",
+                    "OriginalGame/Nepal"),
                 Standard("grenade", "GRENADE 01",
                     "OriginalGame/FirstPerson/RecoveredClosures/Grenade01/"
                         + "GameObject/Grenade01"),
                 Primary("ak74m", "AK-74M",
                     "OriginalGame/FirstPerson/AK74MViewmodelCandidate",
                     equippedPrimary, experimentalWeaponsEnabled),
-                Primary("awp", "AWP",
+                Primary("awp", "AWM",
                     "OriginalGame/FirstPerson/AWPViewmodelCandidate",
+                    equippedPrimary, experimentalWeaponsEnabled),
+                Primary("an94", "AN94",
+                    "OriginalGame/FirstPerson/AN94ViewmodelCandidate",
+                    equippedPrimary, experimentalWeaponsEnabled),
+                Primary("m249", "M249",
+                    "OriginalGame/M249",
+                    equippedPrimary, experimentalWeaponsEnabled),
+                Primary("famas", "FAMAS",
+                    "OriginalGame/FAMAS",
+                    equippedPrimary, experimentalWeaponsEnabled),
+                Primary("microgalil_baxi", "MICRO GALIL BRAZIL",
+                    "OriginalGame/MicroGalilBaxi",
+                    equippedPrimary, experimentalWeaponsEnabled),
+                Primary("gatling", "GATLING",
+                    "OriginalGame/Gatling",
+                    equippedPrimary, experimentalWeaponsEnabled),
+                Primary("auga1", "AUG A1",
+                    "OriginalGame/AUGA1",
+                    equippedPrimary, experimentalWeaponsEnabled),
+                Primary("ak47_bingzuan", "ICE AK47",
+                    "OriginalGame/AK47Ice",
                     equippedPrimary, experimentalWeaponsEnabled),
             };
         }
@@ -89,6 +114,19 @@ namespace GenesisSoldierSoul.Catalog
                 DisplayName = displayName,
                 ResourcePath = resourcePath,
                 Availability = GenesisCatalogAvailability.StandardIssue,
+                CanEquipPrimary = false,
+            };
+        }
+
+        private static GenesisStoreCatalogEntry AvailableEquipment(
+            string id, string displayName, string resourcePath)
+        {
+            return new GenesisStoreCatalogEntry
+            {
+                Id = id,
+                DisplayName = displayName,
+                ResourcePath = resourcePath,
+                Availability = GenesisCatalogAvailability.Available,
                 CanEquipPrimary = false,
             };
         }

@@ -538,17 +538,177 @@ public static class GenesisRestoredBuild
             "Assets/RecoveredWeapons/M16/M16.fbx",
             prefabDirectory + "/M16.prefab",
             "M16");
+        CreateRuntimePrefabFromModel(
+            "Assets/RecoveredWeapons/AN94/AN94.fbx",
+            prefabDirectory + "/AN94.prefab",
+            "AN94");
+        CreateRuntimePrefabFromModel(
+            "Assets/RecoveredWeapons/M249/M249.fbx",
+            prefabDirectory + "/M249.prefab",
+            "M249");
+        CreateRuntimePrefabFromModel(
+            "Assets/RecoveredWeapons/FAMAS/FAMASFP.fbx",
+            prefabDirectory + "/FAMAS.prefab",
+            "FAMAS");
+        CreateRuntimePrefabFromModel(
+            "Assets/RecoveredWeapons/FAMAS/FAMASTP.fbx",
+            prefabDirectory + "/FAMASTP.prefab",
+            "FAMASTP");
+        CreateRuntimePrefabFromModel(
+            "Assets/RecoveredWeapons/MicroGalilBaxi/MicroGalilBaxiFP.fbx",
+            prefabDirectory + "/MicroGalilBaxi.prefab",
+            "MicroGalilBaxi");
+        CreateRuntimePrefabFromModel(
+            "Assets/RecoveredWeapons/MicroGalilBaxi/MicroGalilBaxiTP.fbx",
+            prefabDirectory + "/MicroGalilBaxiTP.prefab",
+            "MicroGalilBaxiTP");
+        CreateRuntimePrefabFromModel(
+            "Assets/RecoveredWeapons/Gatling/Gatling.fbx",
+            prefabDirectory + "/Gatling.prefab",
+            "Gatling");
+        CreateRuntimePrefabFromModel(
+            "Assets/RecoveredWeapons/Gatling/Gatling.fbx",
+            prefabDirectory + "/GatlingTP.prefab",
+            "GatlingTP");
+        CreateRuntimePrefabFromModel(
+            "Assets/RecoveredWeapons/AUGA1/AUGA1FP.fbx",
+            prefabDirectory + "/AUGA1.prefab",
+            "AUGA1");
+        CreateRuntimePrefabFromModel(
+            "Assets/RecoveredWeapons/AUGA1/AUGA1TP.fbx",
+            prefabDirectory + "/AUGA1TP.prefab",
+            "AUGA1TP");
+        CreateRuntimePrefabFromModel(
+            "Assets/RecoveredWeapons/AK47Ice/AK47IceFP.fbx",
+            prefabDirectory + "/AK47Ice.prefab",
+            "AK47Ice");
+        CreateRuntimePrefabFromModel(
+            "Assets/RecoveredWeapons/AK47Ice/AK47IceTP.fbx",
+            prefabDirectory + "/AK47IceTP.prefab",
+            "AK47IceTP");
+        CreateRuntimePrefabFromModel(
+            "Assets/RecoveredWeapons/AWM/AWMTP.fbx",
+            prefabDirectory + "/AWMTP.prefab",
+            "AWMTP");
+        CreateRuntimePrefabFromModel(
+            "Assets/RecoveredWeapons/HandAxe/HandAxe.fbx",
+            prefabDirectory + "/HandAxe.prefab",
+            "HandAxe");
+        CreateRuntimePrefabFromModel(
+            "Assets/RecoveredWeapons/Nepal/NepalFP.fbx",
+            prefabDirectory + "/Nepal.prefab",
+            "Nepal");
+        CreateRuntimePrefabFromModel(
+            "Assets/RecoveredWeapons/Nepal/NepalTP.fbx",
+            prefabDirectory + "/NepalTP.prefab",
+            "NepalTP");
         CreateRecoveredM16MaterialClosure();
         ApplyRecoveredM16MaterialsToPrefab(prefabDirectory + "/M16.prefab");
+        CreateRecoveredAN94MaterialClosure();
+        ApplyRecoveredAN94MaterialToPrefab(prefabDirectory + "/AN94.prefab");
+        CreateRecoveredM249MaterialClosure();
+        ApplyRecoveredM249MaterialToPrefab(prefabDirectory + "/M249.prefab");
+        CreateRecoveredFAMASMaterialClosure();
+        ApplyRecoveredFAMASMaterialToPrefab(prefabDirectory + "/FAMAS.prefab");
+        ApplyRecoveredFAMASMaterialToPrefab(prefabDirectory + "/FAMASTP.prefab");
+        CreateRecoveredMicroGalilMaterialClosure();
+        ApplyRecoveredMicroGalilMaterialToPrefab(
+            prefabDirectory + "/MicroGalilBaxi.prefab");
+        ApplyRecoveredMicroGalilMaterialToPrefab(
+            prefabDirectory + "/MicroGalilBaxiTP.prefab");
+        CreateRecoveredGatlingMaterialClosure();
+        ApplyRecoveredGatlingMaterialsToPrefab(
+            prefabDirectory + "/Gatling.prefab");
+        ApplyRecoveredGatlingMaterialsToPrefab(
+            prefabDirectory + "/GatlingTP.prefab");
+        CreateRecoveredAUGA1MaterialClosure();
+        ApplyRecoveredAUGA1MaterialToPrefab(
+            prefabDirectory + "/AUGA1.prefab");
+        ApplyRecoveredAUGA1MaterialToPrefab(
+            prefabDirectory + "/AUGA1TP.prefab");
+        CreateRecoveredAK47IceMaterialClosure();
+        ApplyRecoveredAK47IceMaterialToPrefab(
+            prefabDirectory + "/AK47Ice.prefab");
+        ApplyRecoveredAK47IceMaterialToPrefab(
+            prefabDirectory + "/AK47IceTP.prefab");
+        CreateRecoveredAWMMaterialClosure();
+        ApplyRecoveredAWMMaterialToPrefab(prefabDirectory + "/AWMTP.prefab");
+        CreateRecoveredHandAxeMaterialClosure();
+        ApplyRecoveredHandAxeMaterialToPrefab(
+            prefabDirectory + "/HandAxe.prefab");
+        CreateRecoveredNepalMaterialClosure();
+        ApplyRecoveredNepalMaterialToPrefab(prefabDirectory + "/Nepal.prefab");
+        ApplyRecoveredNepalMaterialToPrefab(prefabDirectory + "/NepalTP.prefab");
         CreateRuntimePrefabFromModel(
             "Assets/Resources/OriginalGame/Weapons/M9/M9.obj",
             prefabDirectory + "/M9.prefab",
             "M9");
         CreateRecoveredM9Material();
+        CreateRuntimeImpactMaterials();
         CreateFirstPersonRifleViewmodels();
         CreateFirstPersonM9Viewmodel();
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
+    }
+
+    private static void CreateRuntimeImpactMaterials()
+    {
+        const string directory =
+            "Assets/Resources/OriginalGame/Effects";
+        Directory.CreateDirectory(directory);
+        const string texturePath = directory + "/ImpactParticle.asset";
+        var texture = AssetDatabase.LoadAssetAtPath<Texture2D>(texturePath);
+        if (texture == null)
+        {
+            texture = new Texture2D(32, 32, TextureFormat.RGBA32, false)
+            {
+                name = "Recovered Impact Particle",
+                wrapMode = TextureWrapMode.Clamp,
+                filterMode = FilterMode.Bilinear,
+            };
+            AssetDatabase.CreateAsset(texture, texturePath);
+        }
+        var pixels = new Color[32 * 32];
+        for (var y = 0; y < 32; y += 1)
+        for (var x = 0; x < 32; x += 1)
+        {
+            var dx = (x + 0.5f) / 16f - 1f;
+            var dy = (y + 0.5f) / 16f - 1f;
+            var alpha = Mathf.Clamp01(1f - Mathf.Sqrt(dx * dx + dy * dy));
+            pixels[y * 32 + x] = new Color(1f, 1f, 1f, alpha * alpha);
+        }
+        texture.SetPixels(pixels);
+        texture.Apply(false, false);
+        EditorUtility.SetDirty(texture);
+
+        var shader = Shader.Find("Sprites/Default");
+        if (shader == null)
+            throw new InvalidOperationException(
+                "Required impact particle shader is unavailable.");
+        CreateImpactMaterial(
+            directory + "/BloodImpact.mat",
+            "Recovered Blood Material", shader, texture);
+        CreateImpactMaterial(
+            directory + "/BulletImpact.mat",
+            "Recovered Impact Material", shader, texture);
+    }
+
+    private static void CreateImpactMaterial(
+        string path,
+        string name,
+        Shader shader,
+        Texture2D texture)
+    {
+        var material = AssetDatabase.LoadAssetAtPath<Material>(path);
+        if (material == null)
+        {
+            material = new Material(shader) { name = name };
+            AssetDatabase.CreateAsset(material, path);
+        }
+        material.shader = shader;
+        material.mainTexture = texture;
+        material.color = Color.white;
+        EditorUtility.SetDirty(material);
     }
 
     private static void CreateFirstPersonRifleViewmodels()
@@ -578,12 +738,680 @@ public static class GenesisRestoredBuild
             "Recovered_AK74M_Candidate",
             Quaternion.Euler(-90f, 0f, 0f));
         CreateFirstPersonRifleViewmodel(
-            "Assets/Resources/OriginalGame/Weapons/AWP/awp.obj",
+            "Assets/RecoveredWeapons/AWM/AWMFP.fbx",
             "Assets/Resources/OriginalGame/FirstPerson/"
                 + "AWPViewmodelCandidate.prefab",
             "AWPViewmodelCandidate",
             "Recovered_AWP_Candidate",
             Quaternion.identity);
+        CreateFirstPersonRifleViewmodel(
+            "Assets/Resources/OriginalGame/AN94.prefab",
+            "Assets/Resources/OriginalGame/FirstPerson/"
+                + "AN94ViewmodelCandidate.prefab",
+            "AN94ViewmodelCandidate",
+            "Recovered_AN94_Candidate",
+            Quaternion.Euler(0f, 0f, 90f));
+    }
+
+    private static void CreateRecoveredAN94MaterialClosure()
+    {
+        const string directory =
+            "Assets/Resources/OriginalGame/Weapons/AN94";
+        Directory.CreateDirectory(directory);
+        const string materialPath = directory + "/AN94_Original.mat";
+        var material = AssetDatabase.LoadAssetAtPath<Material>(materialPath);
+        if (material == null)
+        {
+            material = new Material(Shader.Find("Standard"))
+            {
+                name = "AN94_Original",
+            };
+            AssetDatabase.CreateAsset(material, materialPath);
+        }
+        material.mainTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(
+            "Assets/RecoveredWeapons/AN94/an94.png");
+        if (material.mainTexture == null)
+            throw new InvalidOperationException(
+                "Recovered AN94 original texture is missing.");
+        // The original atlas is intentionally dark, but the restored maps use
+        // much lower weapon-camera lighting than the source renderer. A mild
+        // neutral gain preserves the exact atlas while keeping receiver,
+        // magazine and stock detail readable instead of collapsing to black.
+        material.color = new Color(1.25f, 1.25f, 1.25f, 1f);
+        material.SetFloat("_Metallic", 0.08f);
+        material.SetFloat("_Glossiness", 0.18f);
+        material.SetTexture("_EmissionMap", material.mainTexture);
+        material.SetColor("_EmissionColor", new Color(0.16f, 0.16f, 0.16f, 1f));
+        material.EnableKeyword("_EMISSION");
+        EditorUtility.SetDirty(material);
+    }
+
+    private static void CreateRecoveredAWMMaterialClosure()
+    {
+        const string directory =
+            "Assets/Resources/OriginalGame/Weapons/AWM";
+        Directory.CreateDirectory(directory);
+        const string materialPath = directory + "/AWM_Original.mat";
+        var material = AssetDatabase.LoadAssetAtPath<Material>(materialPath);
+        if (material == null)
+        {
+            material = new Material(Shader.Find("Standard"))
+            {
+                name = "AWM_Original",
+            };
+            AssetDatabase.CreateAsset(material, materialPath);
+        }
+        material.mainTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(
+            "Assets/RecoveredWeapons/AWM/AWM.png");
+        if (material.mainTexture == null)
+            throw new InvalidOperationException(
+                "Recovered AWM original ATF texture is missing.");
+        material.color = new Color(1.18f, 1.18f, 1.18f, 1f);
+        material.SetFloat("_Metallic", 0.08f);
+        material.SetFloat("_Glossiness", 0.2f);
+        material.SetTexture("_EmissionMap", material.mainTexture);
+        material.SetColor(
+            "_EmissionColor", new Color(0.1f, 0.1f, 0.1f, 1f));
+        material.EnableKeyword("_EMISSION");
+        EditorUtility.SetDirty(material);
+    }
+
+    private static void ApplyRecoveredAWMMaterialToPrefab(string prefabPath)
+    {
+        var root = PrefabUtility.LoadPrefabContents(prefabPath);
+        if (root == null)
+            throw new InvalidOperationException(
+                "Recovered AWM runtime prefab is missing: " + prefabPath);
+        try
+        {
+            ApplyRecoveredAWMMaterial(
+                root.GetComponentsInChildren<Renderer>(true));
+            PrefabUtility.SaveAsPrefabAsset(root, prefabPath);
+        }
+        finally
+        {
+            PrefabUtility.UnloadPrefabContents(root);
+        }
+    }
+
+    private static void ApplyRecoveredAWMMaterial(Renderer[] renderers)
+    {
+        var material = AssetDatabase.LoadAssetAtPath<Material>(
+            "Assets/Resources/OriginalGame/Weapons/AWM/AWM_Original.mat");
+        if (material == null || material.mainTexture == null)
+            throw new InvalidOperationException(
+                "Recovered AWM material closure is incomplete.");
+        foreach (var renderer in renderers)
+        {
+            var count = Mathf.Max(1, renderer.sharedMaterials.Length);
+            renderer.sharedMaterials = Enumerable
+                .Repeat(material, count)
+                .ToArray();
+        }
+    }
+
+    private static void CreateRecoveredM249MaterialClosure()
+    {
+        const string directory =
+            "Assets/Resources/OriginalGame/Weapons/M249";
+        Directory.CreateDirectory(directory);
+        const string materialPath = directory + "/M249_Original.mat";
+        var material = AssetDatabase.LoadAssetAtPath<Material>(materialPath);
+        if (material == null)
+        {
+            material = new Material(Shader.Find("Standard"))
+            {
+                name = "M249_Original",
+            };
+            AssetDatabase.CreateAsset(material, materialPath);
+        }
+        material.mainTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(
+            "Assets/RecoveredWeapons/M249/m249.jpg");
+        if (material.mainTexture == null)
+            throw new InvalidOperationException(
+                "Recovered M249 original texture is missing.");
+        material.color = new Color(1.18f, 1.18f, 1.18f, 1f);
+        material.SetFloat("_Metallic", 0.12f);
+        material.SetFloat("_Glossiness", 0.2f);
+        material.SetTexture("_EmissionMap", material.mainTexture);
+        material.SetColor("_EmissionColor", new Color(0.1f, 0.1f, 0.1f, 1f));
+        material.EnableKeyword("_EMISSION");
+        EditorUtility.SetDirty(material);
+    }
+
+    private static void CreateRecoveredHandAxeMaterialClosure()
+    {
+        const string directory =
+            "Assets/Resources/OriginalGame/Weapons/HandAxe";
+        Directory.CreateDirectory(directory);
+        const string materialPath = directory + "/HandAxe_Original.mat";
+        var material = AssetDatabase.LoadAssetAtPath<Material>(materialPath);
+        if (material == null)
+        {
+            material = new Material(Shader.Find("Standard"))
+            {
+                name = "HandAxe_Original",
+            };
+            AssetDatabase.CreateAsset(material, materialPath);
+        }
+        material.mainTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(
+            "Assets/RecoveredWeapons/HandAxe/401e6fb1.bmp");
+        if (material.mainTexture == null)
+            throw new InvalidOperationException(
+                "Recovered hand axe original texture is missing.");
+        material.color = new Color(1.12f, 1.12f, 1.12f, 1f);
+        material.SetFloat("_Metallic", 0.18f);
+        material.SetFloat("_Glossiness", 0.24f);
+        material.SetTexture("_EmissionMap", material.mainTexture);
+        material.SetColor("_EmissionColor", new Color(0.08f, 0.08f, 0.08f, 1f));
+        material.EnableKeyword("_EMISSION");
+        EditorUtility.SetDirty(material);
+    }
+
+    private static void CreateRecoveredFAMASMaterialClosure()
+    {
+        const string directory =
+            "Assets/Resources/OriginalGame/Weapons/FAMAS";
+        Directory.CreateDirectory(directory);
+        const string materialPath = directory + "/FAMAS_Original.mat";
+        var material = AssetDatabase.LoadAssetAtPath<Material>(materialPath);
+        if (material == null)
+        {
+            material = new Material(Shader.Find("Standard"))
+            {
+                name = "FAMAS_Original",
+            };
+            AssetDatabase.CreateAsset(material, materialPath);
+        }
+        material.mainTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(
+            "Assets/RecoveredWeapons/FAMAS/Famas_dif.png");
+        if (material.mainTexture == null)
+            throw new InvalidOperationException(
+                "Recovered FAMAS original ATF texture is missing.");
+        material.color = new Color(1.22f, 1.22f, 1.22f, 1f);
+        material.SetFloat("_Metallic", 0.1f);
+        material.SetFloat("_Glossiness", 0.2f);
+        material.SetTexture("_EmissionMap", material.mainTexture);
+        material.SetColor("_EmissionColor", new Color(0.12f, 0.12f, 0.12f, 1f));
+        material.EnableKeyword("_EMISSION");
+        EditorUtility.SetDirty(material);
+    }
+
+    private static void ApplyRecoveredFAMASMaterialToPrefab(string prefabPath)
+    {
+        var root = PrefabUtility.LoadPrefabContents(prefabPath);
+        if (root == null)
+            throw new InvalidOperationException(
+                "Recovered FAMAS runtime prefab is missing: " + prefabPath);
+        try
+        {
+            var material = AssetDatabase.LoadAssetAtPath<Material>(
+                "Assets/Resources/OriginalGame/Weapons/FAMAS/"
+                    + "FAMAS_Original.mat");
+            if (material == null || material.mainTexture == null)
+                throw new InvalidOperationException(
+                    "Recovered FAMAS material closure is incomplete.");
+            foreach (var renderer in root.GetComponentsInChildren<Renderer>(true))
+            {
+                var count = Mathf.Max(1, renderer.sharedMaterials.Length);
+                renderer.sharedMaterials = Enumerable
+                    .Repeat(material, count)
+                    .ToArray();
+            }
+            PrefabUtility.SaveAsPrefabAsset(root, prefabPath);
+        }
+        finally
+        {
+            PrefabUtility.UnloadPrefabContents(root);
+        }
+    }
+
+    private static void CreateRecoveredAUGA1MaterialClosure()
+    {
+        const string directory =
+            "Assets/Resources/OriginalGame/Weapons/AUGA1";
+        Directory.CreateDirectory(directory);
+        const string materialPath = directory + "/AUGA1_Original.mat";
+        var material = AssetDatabase.LoadAssetAtPath<Material>(materialPath);
+        if (material == null)
+        {
+            material = new Material(Shader.Find("Standard"))
+            {
+                name = "AUGA1_Original",
+            };
+            AssetDatabase.CreateAsset(material, materialPath);
+        }
+        material.mainTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(
+            "Assets/RecoveredMaps/IceFireMaze/Texture2D/augTEX.png");
+        if (material.mainTexture == null)
+            throw new InvalidOperationException(
+                "Recovered AUG A1 original 1024px diffuse texture is missing.");
+        material.color = new Color(1.18f, 1.18f, 1.18f, 1f);
+        material.SetFloat("_Metallic", 0.1f);
+        material.SetFloat("_Glossiness", 0.24f);
+        material.SetTexture("_EmissionMap", material.mainTexture);
+        material.SetColor(
+            "_EmissionColor", new Color(0.1f, 0.1f, 0.1f, 1f));
+        material.EnableKeyword("_EMISSION");
+        EditorUtility.SetDirty(material);
+    }
+
+    private static void ApplyRecoveredAUGA1MaterialToPrefab(string prefabPath)
+    {
+        var root = PrefabUtility.LoadPrefabContents(prefabPath);
+        if (root == null)
+            throw new InvalidOperationException(
+                "Recovered AUG A1 runtime prefab is missing: " + prefabPath);
+        try
+        {
+            var material = AssetDatabase.LoadAssetAtPath<Material>(
+                "Assets/Resources/OriginalGame/Weapons/AUGA1/"
+                    + "AUGA1_Original.mat");
+            if (material == null || material.mainTexture == null)
+                throw new InvalidOperationException(
+                    "Recovered AUG A1 material closure is incomplete.");
+            foreach (var renderer in root.GetComponentsInChildren<Renderer>(true))
+            {
+                var count = Mathf.Max(1, renderer.sharedMaterials.Length);
+                renderer.sharedMaterials = Enumerable
+                    .Repeat(material, count)
+                    .ToArray();
+                // The source includes a dedicated muzzle-effect plane. It is
+                // authored for the legacy effect system, not a persistent mesh.
+                if (renderer.name.IndexOf(
+                        "texiao", StringComparison.OrdinalIgnoreCase) >= 0)
+                    renderer.enabled = false;
+            }
+            PrefabUtility.SaveAsPrefabAsset(root, prefabPath);
+        }
+        finally
+        {
+            PrefabUtility.UnloadPrefabContents(root);
+        }
+    }
+
+    private static void CreateRecoveredAK47IceMaterialClosure()
+    {
+        const string directory =
+            "Assets/Resources/OriginalGame/Weapons/AK47Ice";
+        Directory.CreateDirectory(directory);
+        const string materialPath = directory + "/AK47Ice_Original.mat";
+        var material = AssetDatabase.LoadAssetAtPath<Material>(materialPath);
+        if (material == null)
+        {
+            material = new Material(Shader.Find("Standard"))
+            {
+                name = "AK47Ice_Original",
+            };
+            AssetDatabase.CreateAsset(material, materialPath);
+        }
+        material.mainTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(
+            "Assets/RecoveredWeapons/AK47Ice/AK47Ice.png");
+        if (material.mainTexture == null)
+            throw new InvalidOperationException(
+                "Recovered Ice AK47 original ATF texture is missing.");
+        material.color = new Color(1.16f, 1.16f, 1.16f, 1f);
+        material.SetFloat("_Metallic", 0.12f);
+        material.SetFloat("_Glossiness", 0.28f);
+        material.SetTexture("_EmissionMap", material.mainTexture);
+        material.SetColor(
+            "_EmissionColor", new Color(0.12f, 0.16f, 0.2f, 1f));
+        material.EnableKeyword("_EMISSION");
+        EditorUtility.SetDirty(material);
+    }
+
+    private static void ApplyRecoveredAK47IceMaterialToPrefab(
+        string prefabPath)
+    {
+        var root = PrefabUtility.LoadPrefabContents(prefabPath);
+        if (root == null)
+            throw new InvalidOperationException(
+                "Recovered Ice AK47 runtime prefab is missing: " + prefabPath);
+        try
+        {
+            var material = AssetDatabase.LoadAssetAtPath<Material>(
+                "Assets/Resources/OriginalGame/Weapons/AK47Ice/"
+                    + "AK47Ice_Original.mat");
+            if (material == null || material.mainTexture == null)
+                throw new InvalidOperationException(
+                    "Recovered Ice AK47 material closure is incomplete.");
+            foreach (var renderer in root.GetComponentsInChildren<Renderer>(true))
+            {
+                var count = Mathf.Max(1, renderer.sharedMaterials.Length);
+                renderer.sharedMaterials = Enumerable
+                    .Repeat(material, count)
+                    .ToArray();
+                if (renderer.name.IndexOf(
+                        "texiao", StringComparison.OrdinalIgnoreCase) >= 0)
+                    renderer.enabled = false;
+            }
+            PrefabUtility.SaveAsPrefabAsset(root, prefabPath);
+        }
+        finally
+        {
+            PrefabUtility.UnloadPrefabContents(root);
+        }
+    }
+
+    private static void CreateRecoveredMicroGalilMaterialClosure()
+    {
+        const string directory =
+            "Assets/Resources/OriginalGame/Weapons/MicroGalilBaxi";
+        Directory.CreateDirectory(directory);
+        const string materialPath =
+            directory + "/MicroGalilBaxi_Original.mat";
+        var material = AssetDatabase.LoadAssetAtPath<Material>(materialPath);
+        if (material == null)
+        {
+            material = new Material(Shader.Find("Standard"))
+            {
+                name = "MicroGalilBaxi_Original",
+            };
+            AssetDatabase.CreateAsset(material, materialPath);
+        }
+        material.mainTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(
+            "Assets/RecoveredWeapons/MicroGalilBaxi/MicroGalilBaxi.png");
+        if (material.mainTexture == null)
+            throw new InvalidOperationException(
+                "Recovered Micro Galil Brazil original ATF texture is missing.");
+        material.color = new Color(1.22f, 1.22f, 1.22f, 1f);
+        material.SetFloat("_Metallic", 0.1f);
+        material.SetFloat("_Glossiness", 0.22f);
+        material.SetTexture("_EmissionMap", material.mainTexture);
+        material.SetColor(
+            "_EmissionColor", new Color(0.12f, 0.12f, 0.12f, 1f));
+        material.EnableKeyword("_EMISSION");
+        EditorUtility.SetDirty(material);
+    }
+
+    private static void ApplyRecoveredMicroGalilMaterialToPrefab(
+        string prefabPath)
+    {
+        var root = PrefabUtility.LoadPrefabContents(prefabPath);
+        if (root == null)
+            throw new InvalidOperationException(
+                "Recovered Micro Galil runtime prefab is missing: "
+                    + prefabPath);
+        try
+        {
+            var material = AssetDatabase.LoadAssetAtPath<Material>(
+                "Assets/Resources/OriginalGame/Weapons/MicroGalilBaxi/"
+                    + "MicroGalilBaxi_Original.mat");
+            if (material == null || material.mainTexture == null)
+                throw new InvalidOperationException(
+                    "Recovered Micro Galil material closure is incomplete.");
+            foreach (var renderer in root.GetComponentsInChildren<Renderer>(true))
+            {
+                var count = Mathf.Max(1, renderer.sharedMaterials.Length);
+                renderer.sharedMaterials = Enumerable
+                    .Repeat(material, count)
+                    .ToArray();
+            }
+            PrefabUtility.SaveAsPrefabAsset(root, prefabPath);
+        }
+        finally
+        {
+            PrefabUtility.UnloadPrefabContents(root);
+        }
+    }
+
+    private static void CreateRecoveredGatlingMaterialClosure()
+    {
+        const string directory =
+            "Assets/Resources/OriginalGame/Weapons/Gatling";
+        Directory.CreateDirectory(directory);
+        CreateOrUpdateSolidMaterial(
+            directory + "/GatlingBody.mat",
+            "GatlingBody",
+            new Color(0.11f, 0.14f, 0.17f, 1f),
+            0.08f,
+            0.18f);
+        CreateOrUpdateSolidMaterial(
+            directory + "/GatlingSteel.mat",
+            "GatlingSteel",
+            new Color(0.4f, 0.44f, 0.48f, 1f),
+            0.16f,
+            0.2f);
+        CreateOrUpdateSolidMaterial(
+            directory + "/GatlingAccent.mat",
+            "GatlingAccent",
+            new Color(0.22f, 0.26f, 0.3f, 1f),
+            0.08f,
+            0.2f);
+        CreateOrUpdateSolidMaterial(
+            directory + "/GatlingBronze.mat",
+            "GatlingBronze",
+            new Color(0.34f, 0.11f, 0.025f, 1f),
+            0.12f,
+            0.2f);
+    }
+
+    private static void CreateOrUpdateSolidMaterial(
+        string path,
+        string materialName,
+        Color color,
+        float metallic,
+        float glossiness)
+    {
+        var material = AssetDatabase.LoadAssetAtPath<Material>(path);
+        var shader = Shader.Find("Unlit/Color");
+        if (shader == null)
+            throw new InvalidOperationException(
+                "Required Gatling solid-color shader is unavailable.");
+        if (material == null)
+        {
+            material = new Material(shader)
+            {
+                name = materialName,
+            };
+            AssetDatabase.CreateAsset(material, path);
+        }
+        material.shader = shader;
+        material.color = color;
+        if (material.HasProperty("_Metallic"))
+            material.SetFloat("_Metallic", metallic);
+        if (material.HasProperty("_Glossiness"))
+            material.SetFloat("_Glossiness", glossiness);
+        material.DisableKeyword("_EMISSION");
+        EditorUtility.SetDirty(material);
+    }
+
+    private static void ApplyRecoveredGatlingMaterialsToPrefab(
+        string prefabPath)
+    {
+        var root = PrefabUtility.LoadPrefabContents(prefabPath);
+        if (root == null)
+            throw new InvalidOperationException(
+                "Recovered Gatling runtime prefab is missing: " + prefabPath);
+        try
+        {
+            const string directory =
+                "Assets/Resources/OriginalGame/Weapons/Gatling/";
+            var body = AssetDatabase.LoadAssetAtPath<Material>(
+                directory + "GatlingBody.mat");
+            var steel = AssetDatabase.LoadAssetAtPath<Material>(
+                directory + "GatlingSteel.mat");
+            var accent = AssetDatabase.LoadAssetAtPath<Material>(
+                directory + "GatlingAccent.mat");
+            var bronze = AssetDatabase.LoadAssetAtPath<Material>(
+                directory + "GatlingBronze.mat");
+            if (body == null || steel == null || accent == null || bronze == null)
+                throw new InvalidOperationException(
+                    "Recovered Gatling solid-material closure is incomplete.");
+            foreach (var renderer in root.GetComponentsInChildren<Renderer>(true))
+            {
+                var source = renderer.sharedMaterials;
+                if (source.Length == 0)
+                    source = new Material[1];
+                renderer.sharedMaterials = source.Select(material =>
+                {
+                    var name = material == null ? string.Empty : material.name;
+                    if (name.IndexOf("GatlingSteel", StringComparison.OrdinalIgnoreCase)
+                        >= 0)
+                        return steel;
+                    if (name.IndexOf("GatlingAccent", StringComparison.OrdinalIgnoreCase)
+                        >= 0)
+                        return accent;
+                    if (name.IndexOf("GatlingBronze", StringComparison.OrdinalIgnoreCase)
+                        >= 0)
+                        return bronze;
+                    return body;
+                }).ToArray();
+            }
+            PrefabUtility.SaveAsPrefabAsset(root, prefabPath);
+        }
+        finally
+        {
+            PrefabUtility.UnloadPrefabContents(root);
+        }
+    }
+
+    private static void ApplyRecoveredHandAxeMaterialToPrefab(string prefabPath)
+    {
+        var root = PrefabUtility.LoadPrefabContents(prefabPath);
+        if (root == null)
+            throw new InvalidOperationException(
+                "Recovered hand axe runtime prefab is missing: " + prefabPath);
+        try
+        {
+            var material = AssetDatabase.LoadAssetAtPath<Material>(
+                "Assets/Resources/OriginalGame/Weapons/HandAxe/"
+                    + "HandAxe_Original.mat");
+            if (material == null || material.mainTexture == null)
+                throw new InvalidOperationException(
+                    "Recovered hand axe material closure is incomplete.");
+            foreach (var renderer in root.GetComponentsInChildren<Renderer>(true))
+            {
+                var count = Mathf.Max(1, renderer.sharedMaterials.Length);
+                renderer.sharedMaterials = Enumerable
+                    .Repeat(material, count)
+                    .ToArray();
+            }
+            PrefabUtility.SaveAsPrefabAsset(root, prefabPath);
+        }
+        finally
+        {
+            PrefabUtility.UnloadPrefabContents(root);
+        }
+    }
+
+    private static void CreateRecoveredNepalMaterialClosure()
+    {
+        const string directory =
+            "Assets/Resources/OriginalGame/Weapons/Nepal";
+        Directory.CreateDirectory(directory);
+        const string materialPath = directory + "/Nepal_Original.mat";
+        var material = AssetDatabase.LoadAssetAtPath<Material>(materialPath);
+        if (material == null)
+        {
+            material = new Material(Shader.Find("Standard"))
+            {
+                name = "Nepal_Original",
+            };
+            AssetDatabase.CreateAsset(material, materialPath);
+        }
+        material.mainTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(
+            "Assets/RecoveredWeapons/Nepal/nbe.png");
+        if (material.mainTexture == null)
+            throw new InvalidOperationException(
+                "Recovered Nepal original ATF texture is missing.");
+        material.color = new Color(1.2f, 1.2f, 1.2f, 1f);
+        material.SetFloat("_Metallic", 0.28f);
+        material.SetFloat("_Glossiness", 0.32f);
+        material.SetTexture("_EmissionMap", material.mainTexture);
+        material.SetColor("_EmissionColor", new Color(0.12f, 0.12f, 0.12f, 1f));
+        material.EnableKeyword("_EMISSION");
+        EditorUtility.SetDirty(material);
+    }
+
+    private static void ApplyRecoveredNepalMaterialToPrefab(string prefabPath)
+    {
+        var root = PrefabUtility.LoadPrefabContents(prefabPath);
+        if (root == null)
+            throw new InvalidOperationException(
+                "Recovered Nepal runtime prefab is missing: " + prefabPath);
+        try
+        {
+            var material = AssetDatabase.LoadAssetAtPath<Material>(
+                "Assets/Resources/OriginalGame/Weapons/Nepal/"
+                    + "Nepal_Original.mat");
+            if (material == null || material.mainTexture == null)
+                throw new InvalidOperationException(
+                    "Recovered Nepal material closure is incomplete.");
+            foreach (var renderer in root.GetComponentsInChildren<Renderer>(true))
+            {
+                var count = Mathf.Max(1, renderer.sharedMaterials.Length);
+                renderer.sharedMaterials = Enumerable
+                    .Repeat(material, count)
+                    .ToArray();
+            }
+            PrefabUtility.SaveAsPrefabAsset(root, prefabPath);
+        }
+        finally
+        {
+            PrefabUtility.UnloadPrefabContents(root);
+        }
+    }
+
+    private static void ApplyRecoveredM249MaterialToPrefab(string prefabPath)
+    {
+        var root = PrefabUtility.LoadPrefabContents(prefabPath);
+        if (root == null)
+            throw new InvalidOperationException(
+                "Recovered M249 runtime prefab is missing: " + prefabPath);
+        try
+        {
+            var material = AssetDatabase.LoadAssetAtPath<Material>(
+                "Assets/Resources/OriginalGame/Weapons/M249/"
+                    + "M249_Original.mat");
+            if (material == null || material.mainTexture == null)
+                throw new InvalidOperationException(
+                    "Recovered M249 material closure is incomplete.");
+            foreach (var renderer in root.GetComponentsInChildren<Renderer>(true))
+            {
+                var count = Mathf.Max(1, renderer.sharedMaterials.Length);
+                renderer.sharedMaterials = Enumerable
+                    .Repeat(material, count)
+                    .ToArray();
+            }
+            PrefabUtility.SaveAsPrefabAsset(root, prefabPath);
+        }
+        finally
+        {
+            PrefabUtility.UnloadPrefabContents(root);
+        }
+    }
+
+    private static void ApplyRecoveredAN94MaterialToPrefab(string prefabPath)
+    {
+        var root = PrefabUtility.LoadPrefabContents(prefabPath);
+        if (root == null)
+            throw new InvalidOperationException(
+                "Recovered AN94 runtime prefab is missing: " + prefabPath);
+        try
+        {
+            ApplyRecoveredAN94Material(
+                root.GetComponentsInChildren<Renderer>(true));
+            PrefabUtility.SaveAsPrefabAsset(root, prefabPath);
+        }
+        finally
+        {
+            PrefabUtility.UnloadPrefabContents(root);
+        }
+    }
+
+    private static void ApplyRecoveredAN94Material(Renderer[] renderers)
+    {
+        var material = AssetDatabase.LoadAssetAtPath<Material>(
+            "Assets/Resources/OriginalGame/Weapons/AN94/AN94_Original.mat");
+        if (material == null || material.mainTexture == null)
+            throw new InvalidOperationException(
+                "Recovered AN94 material closure is incomplete.");
+        foreach (var renderer in renderers)
+        {
+            var count = Mathf.Max(1, renderer.sharedMaterials.Length);
+            renderer.sharedMaterials = Enumerable.Repeat(material, count).ToArray();
+        }
     }
 
     private static void CreateRecoveredM16MaterialClosure()
@@ -775,8 +1603,11 @@ public static class GenesisRestoredBuild
             if (modelRenderers.Length == 0)
                 throw new InvalidOperationException(
                     viewmodelName + " model has no renderers.");
-            if (viewmodelName == "AK74MViewmodelCandidate"
-                || viewmodelName == "AWPViewmodelCandidate")
+            if (viewmodelName == "AN94ViewmodelCandidate")
+                ApplyRecoveredAN94Material(modelRenderers);
+            else if (viewmodelName == "AWPViewmodelCandidate")
+                ApplyRecoveredAWMMaterial(modelRenderers);
+            else if (viewmodelName == "AK74MViewmodelCandidate")
                 ApplyArchivedRifleCandidateMaterial(modelRenderers);
             var modelBounds = modelRenderers[0].bounds;
             foreach (var renderer in modelRenderers.Skip(1))

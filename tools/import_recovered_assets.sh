@@ -10,6 +10,8 @@ genesis_sound="$workspace_root/_解压资源/sound/sound"
 cf_message="$workspace_root/CF2.0/CrossFire/rez/Snd2/TheFates/MESSAGE"
 cf_sound="$workspace_root/CF2.0/CrossFire/rez/Snd2"
 weapon_archive="$workspace_root/_解压资源/创世兵魂武器/武器"
+weapon_cache="$workspace_root/_解压资源/创世兵魂素材/创世兵魂"
+flash_converted="$repository_root/recovery/special-formats/flash-atf-converted"
 
 copy_asset() {
     source_path=$1
@@ -44,6 +46,29 @@ copy_asset "$genesis_sound/radio.66759/english/male/Stage_Start_Default.mp3" \
     "$unity_resources/Audio/Genesis/stage_start.mp3"
 copy_asset "$genesis_sound/radio.66759/english/male/Round_End_Win.mp3" \
     "$unity_resources/Audio/Genesis/round_win.mp3"
+
+# 原版 AUG A1 基础枪皮和独立武器音效。模型由同一缓存中的
+# auga1xilie A3D2 数据通过 client-restored/tools/a3d2_to_glb.py 恢复。
+copy_asset "$weapon_cache/auga1.27760.png" \
+    "$repository_root/client-restored/Assets/RecoveredWeapons/AUGA1/AUGA1.png"
+copy_asset "$genesis_sound/weapon.93689/rifle/auga1/deploy.mp3" \
+    "$unity_resources/Audio/AUGA1/deploy.mp3"
+copy_asset "$genesis_sound/weapon.93689/rifle/auga1/fire.mp3" \
+    "$unity_resources/Audio/AUGA1/fire.mp3"
+copy_asset "$genesis_sound/weapon.93689/rifle/auga1/reload.mp3" \
+    "$unity_resources/Audio/AUGA1/reload.mp3"
+
+# 冰钻 AK47 使用 ak47xilie 的原 FP/TP A3D2 几何和该皮肤 material.swf
+# 中解码的 512px ATF 枪体贴图；不使用商城缩略图替代 UV 材质。
+copy_asset \
+    "$flash_converted/material.32654__07125be89c36/binary/tag-000006-code-87-id-1.png" \
+    "$repository_root/client-restored/Assets/RecoveredWeapons/AK47Ice/AK47Ice.png"
+copy_asset "$genesis_sound/weapon.93689/rifle/ak47/deploy.mp3" \
+    "$unity_resources/Audio/AK47Ice/deploy.mp3"
+copy_asset "$genesis_sound/weapon.93689/rifle/ak47/fire.mp3" \
+    "$unity_resources/Audio/AK47Ice/fire.mp3"
+copy_asset "$genesis_sound/weapon.93689/rifle/ak47/reload.mp3" \
+    "$unity_resources/Audio/AK47Ice/reload.mp3"
 
 # CF2.0 已直接解包的 PCM 播报；不运行包内来源不明的 Windows 程序。
 copy_asset "$cf_message/Headshot_GR.wav" \

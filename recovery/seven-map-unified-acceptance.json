@@ -1,5 +1,5 @@
 {
-    "generatedAtUtc": "2026-08-05T08:53:35.0063660Z",
+    "generatedAtUtc": "2026-08-13T02:42:38.7581430Z",
     "unityVersion": "2022.3.62f3c1",
     "mapCount": 7,
     "passedMapCount": 7,
@@ -118,7 +118,7 @@
             "minimumTrainingTargetSpacing": 5.566186428070068,
             "reachableHeightSpan": 0.8333358764648438,
             "estimatedBatchUpperBound": 341,
-            "estimatedResidentAssetBytes": 24488368,
+            "estimatedResidentAssetBytes": 24496560,
             "spatialAudioSourceCount": 0,
             "failures": []
         },
@@ -147,7 +147,7 @@
             "minimumTrainingTargetSpacing": 5.658851146697998,
             "reachableHeightSpan": 0.0,
             "estimatedBatchUpperBound": 218,
-            "estimatedResidentAssetBytes": 1236368,
+            "estimatedResidentAssetBytes": 1228176,
             "spatialAudioSourceCount": 0,
             "failures": []
         },

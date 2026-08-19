@@ -50,6 +50,7 @@ namespace GenesisSoldierSoul.Multiplayer
         private Texture2D grenadeIconTexture;
         private GameObject rifle;
         private Animation rifleAnimation;
+        private GenesisGatlingBarrelMotor gatlingBarrelMotor;
         private bool usesRecoveredFirstPersonRig;
         private Transform rifleMuzzle;
         private Vector3 rifleRestPosition;
@@ -85,6 +86,7 @@ namespace GenesisSoldierSoul.Multiplayer
         private AudioClip rifleReloadAudio;
         private AudioClip rifleDeployAudio;
         private AudioClip slashAudio;
+        private AudioClip meleeDeployAudio;
         private AudioClip hitAudio;
         private AudioClip harmedAudio;
         private AudioClip deathAudio;
@@ -194,6 +196,12 @@ namespace GenesisSoldierSoul.Multiplayer
 
         [DllImport("__Internal")]
         private static extern float GenesisConsumeMouseDeltaY();
+
+        [DllImport("__Internal")]
+        private static extern void GenesisRequestPointerLock();
+
+        [DllImport("__Internal")]
+        private static extern int GenesisIsPointerLocked();
 #endif
 
         public void Configure(
@@ -249,6 +257,13 @@ namespace GenesisSoldierSoul.Multiplayer
             mouseLook = viewCamera == null
                 ? null
                 : viewCamera.GetComponent<MouseLook>();
+#if UNITY_WEBGL && !UNITY_EDITOR
+            // The recovered MouseLook also consumes mouse axes and keeps its
+            // own pitch accumulator. Running it beside the browser look path
+            // applies input twice and can leave the camera staring at the floor.
+            if (mouseLook != null)
+                mouseLook.enabled = false;
+#endif
             if (viewCamera != null)
             {
                 cameraRestPosition = viewCamera.transform.localPosition;
@@ -309,11 +324,10 @@ namespace GenesisSoldierSoul.Multiplayer
             if (trainingArena != null && mapText != null)
                 mapText.text = "TRAINING  PYRAMID    TARGETS 4";
             UpdateHud();
-            Cursor.visible = false;
+            Cursor.visible = true;
 #if UNITY_WEBGL && !UNITY_EDITOR
-            // Browser mouse-look already consumes canvas-relative movement.
-            // Requesting Pointer Lock from background QA/game tabs produces
-            // Chromium UnknownError entries and is unnecessary for this path.
+            // Browser pointer lock must be requested from a user gesture. Keep
+            // the cursor available until the player clicks the canvas.
             Cursor.lockState = CursorLockMode.None;
 #else
             Cursor.lockState = CursorLockMode.Locked;
@@ -411,15 +425,17 @@ namespace GenesisSoldierSoul.Multiplayer
                 return;
             }
 
-#if !UNITY_WEBGL || UNITY_EDITOR
             if (Input.GetMouseButtonDown(0)
                 && Cursor.lockState != CursorLockMode.Locked)
             {
+#if UNITY_WEBGL && !UNITY_EDITOR
+                GenesisRequestPointerLock();
+#else
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
+#endif
                 return;
             }
-#endif
 
             roundSeconds = Mathf.Max(0f, roundSeconds - Time.unscaledDeltaTime);
             if (!roundOver && roundSeconds <= 0f)
@@ -451,7 +467,8 @@ namespace GenesisSoldierSoul.Multiplayer
                     && selectedWeapon != WeaponSlot.Grenade
                     && Input.GetKeyDown(KeyCode.R))
                     BeginReload();
-                if (rifleWeaponId == GenesisWeaponLoadout.AWP
+                if ((rifleWeaponId == GenesisWeaponLoadout.AWP
+                        || rifleWeaponId == GenesisWeaponLoadout.AUGA1)
                     && selectedWeapon == WeaponSlot.Rifle
                     && Input.GetMouseButtonDown(1))
                     scoped = !scoped;
@@ -465,6 +482,17 @@ namespace GenesisSoldierSoul.Multiplayer
                     : Input.GetMouseButton(0);
                 if (attackPressed && Time.time >= nextAttackAt)
                     Attack();
+            }
+
+            if (gatlingBarrelMotor != null)
+            {
+                gatlingBarrelMotor.SetInput(
+                    alive
+                    && !roundOver
+                    && !reloading
+                    && selectedWeapon == WeaponSlot.Rifle
+                    && rifleWeaponId == GenesisWeaponLoadout.Gatling
+                    && (Input.GetMouseButton(0) || Input.GetMouseButton(1)));
             }
 
             recoil = Mathf.MoveTowards(recoil, 0f, Time.deltaTime * 7f);
@@ -811,7 +839,13 @@ namespace GenesisSoldierSoul.Multiplayer
                 canvas.transform, "GenesisWeaponBarPanel", new Vector2(1f, 0f),
                 new Vector2(-20f, 102f), new Vector2(290f, 34f),
                 new Color(0.02f, 0.035f, 0.045f, 0.84f));
-            var slotNames = new[] { "1  M4A1", "2  PISTOL", "3  KNIFE", "4  GRENADE" };
+            var slotNames = new[]
+            {
+                "1  " + rifleDisplayName,
+                "2  PISTOL",
+                "3  KNIFE",
+                "4  GRENADE"
+            };
             for (var slot = 0; slot < weaponSlotLabels.Length; slot += 1)
             {
                 weaponSlotLabels[slot] = CreateText(
@@ -861,7 +895,8 @@ namespace GenesisSoldierSoul.Multiplayer
             SetAnchor(controlsText.rectTransform, new Vector2(0.5f, 0f));
             controlsText.text =
                 "1-4 SWITCH    R RELOAD    SPACE JUMP    SHIFT RUN    TAB SCOREBOARD";
-            if (rifleWeaponId == GenesisWeaponLoadout.AWP)
+            if (rifleWeaponId == GenesisWeaponLoadout.AWP
+                || rifleWeaponId == GenesisWeaponLoadout.AUGA1)
                 controlsText.text += "   RMB SCOPE";
             controlsText.color = new Color(0.65f, 0.72f, 0.7f, 0.82f);
             controlsText.gameObject.SetActive(false);
@@ -1116,11 +1151,28 @@ namespace GenesisSoldierSoul.Multiplayer
                 return;
             var handPrefab = Resources.Load<GameObject>(
                 "OriginalGame/FirstPerson/Pistol/Pistol01");
-            var knifeMesh = Resources.Load<Mesh>(
-                "OriginalGame/FirstPerson/Meshes/Knife");
-            var knifeMaterial = Resources.Load<Material>(
-                "OriginalGame/FirstPerson/Materials/Knife01");
-            if (handPrefab == null || knifeMesh == null || knifeMaterial == null)
+            var useHandAxe = GenesisWeaponLoadout.Melee
+                == GenesisWeaponLoadout.HandAxe;
+            var useNepal = GenesisWeaponLoadout.Melee
+                == GenesisWeaponLoadout.Nepal;
+            var useRecoveredMelee = useHandAxe || useNepal;
+            var knifeMesh = useRecoveredMelee
+                ? null
+                : Resources.Load<Mesh>(
+                    "OriginalGame/FirstPerson/Meshes/Knife");
+            var knifeMaterial = useRecoveredMelee
+                ? null
+                : Resources.Load<Material>(
+                    "OriginalGame/FirstPerson/Materials/Knife01");
+            var recoveredMeleePrefab = useHandAxe
+                ? Resources.Load<GameObject>("OriginalGame/HandAxe")
+                : useNepal
+                    ? Resources.Load<GameObject>("OriginalGame/Nepal")
+                    : null;
+            if (handPrefab == null
+                || (useRecoveredMelee && recoveredMeleePrefab == null)
+                || (!useRecoveredMelee
+                    && (knifeMesh == null || knifeMaterial == null)))
                 return;
             var parent = weaponCamera == null
                 ? viewCamera.transform
@@ -1140,27 +1192,60 @@ namespace GenesisSoldierSoul.Multiplayer
             foreach (var arm in knifeAnimationRoot.GetComponentsInChildren<SkinnedMeshRenderer>(true))
                 arm.enabled = arm.gameObject.name == "Right";
 
-            var blade = new GameObject(
-                "Recovered_Knife_Blade",
-                typeof(MeshFilter),
-                typeof(MeshRenderer));
-            blade.transform.SetParent(knifeAnimationRoot.transform, false);
-            blade.GetComponent<MeshFilter>().sharedMesh = knifeMesh;
-            var bladeRenderer = blade.GetComponent<MeshRenderer>();
-            bladeRenderer.sharedMaterial = knifeMaterial;
-            var recoveredKnifeRotation = new Quaternion(
-                -0.17290609f,
-                -0.7868852f,
-                0.56706953f,
-                -0.17131063f);
-            blade.transform.localRotation =
-                Quaternion.AngleAxis(-24f, Vector3.forward)
-                * recoveredKnifeRotation;
-            blade.transform.localScale = Vector3.one * 0.92f;
+            GameObject blade;
+            Renderer bladeRenderer;
+            if (useRecoveredMelee)
+            {
+                blade = Instantiate(
+                    recoveredMeleePrefab, knifeAnimationRoot.transform);
+                blade.name = useHandAxe
+                    ? "Recovered_Original_HandAxe"
+                    : "Recovered_Original_Nepal";
+                blade.transform.localPosition = Vector3.zero;
+                blade.transform.localRotation = useHandAxe
+                    ? Quaternion.AngleAxis(-12f, Vector3.forward)
+                        * Quaternion.AngleAxis(90f, Vector3.up)
+                        * Quaternion.Euler(90f, 0f, 0f)
+                    : Quaternion.AngleAxis(-18f, Vector3.forward)
+                        * Quaternion.AngleAxis(90f, Vector3.up)
+                        * Quaternion.Euler(90f, 0f, 0f);
+                // Unity's FBX importer applies a 0.01 unit conversion to the
+                // recovered 3DS mesh. Compensate here so the 27-unit source
+                // handle becomes an approximately 0.9-metre held weapon.
+                blade.transform.localScale = Vector3.one
+                    * (useHandAxe ? 2.35f : 1.35f);
+                foreach (var collider in blade.GetComponentsInChildren<Collider>(true))
+                    collider.enabled = false;
+                bladeRenderer = blade.GetComponentInChildren<Renderer>(true);
+            }
+            else
+            {
+                blade = new GameObject(
+                    "Recovered_Knife_Blade",
+                    typeof(MeshFilter),
+                    typeof(MeshRenderer));
+                blade.transform.SetParent(knifeAnimationRoot.transform, false);
+                blade.GetComponent<MeshFilter>().sharedMesh = knifeMesh;
+                bladeRenderer = blade.GetComponent<MeshRenderer>();
+                bladeRenderer.sharedMaterial = knifeMaterial;
+                var recoveredKnifeRotation = new Quaternion(
+                    -0.17290609f,
+                    -0.7868852f,
+                    0.56706953f,
+                    -0.17131063f);
+                blade.transform.localRotation =
+                    Quaternion.AngleAxis(-24f, Vector3.forward)
+                    * recoveredKnifeRotation;
+                blade.transform.localScale = Vector3.one * 0.92f;
+            }
             CenterRecoveredRenderer(
                 bladeRenderer,
                 knife.transform,
-                new Vector3(-0.02f, 0.065f, 0.61f));
+                useHandAxe
+                    ? new Vector3(0.08f, 0.285f, 0.61f)
+                    : useNepal
+                        ? new Vector3(-0.12f, 0.21f, 0.66f)
+                    : new Vector3(-0.02f, 0.065f, 0.61f));
 
             knifeRestPosition = knife.transform.localPosition;
             knifeRestRotation = knife.transform.localRotation;
@@ -1307,8 +1392,24 @@ namespace GenesisSoldierSoul.Multiplayer
             {
                 if (rifleWeaponId == GenesisWeaponLoadout.M4A1)
                     return GenesisViewmodelKind.M4A1;
+                if (rifleWeaponId == GenesisWeaponLoadout.M16)
+                    return GenesisViewmodelKind.M16;
                 if (rifleWeaponId == GenesisWeaponLoadout.AK74M)
                     return GenesisViewmodelKind.AK74M;
+                if (rifleWeaponId == GenesisWeaponLoadout.AN94)
+                    return GenesisViewmodelKind.AN94;
+                if (rifleWeaponId == GenesisWeaponLoadout.M249)
+                    return GenesisViewmodelKind.M249;
+                if (rifleWeaponId == GenesisWeaponLoadout.FAMAS)
+                    return GenesisViewmodelKind.FAMAS;
+                if (rifleWeaponId == GenesisWeaponLoadout.MicroGalilBaxi)
+                    return GenesisViewmodelKind.MicroGalilBaxi;
+                if (rifleWeaponId == GenesisWeaponLoadout.Gatling)
+                    return GenesisViewmodelKind.Gatling;
+                if (rifleWeaponId == GenesisWeaponLoadout.AUGA1)
+                    return GenesisViewmodelKind.AUGA1;
+                if (rifleWeaponId == GenesisWeaponLoadout.AK47Ice)
+                    return GenesisViewmodelKind.AK47Ice;
                 if (rifleWeaponId == GenesisWeaponLoadout.AWP)
                     return GenesisViewmodelKind.AWP;
                 if (rifleWeaponId == GenesisWeaponLoadout.Shotgun)
@@ -1404,9 +1505,365 @@ namespace GenesisSoldierSoul.Multiplayer
             if (usesRecoveredFirstPersonRig)
             {
                 rifle = CreateViewmodelRoot(parent, resourceName);
+                var animationPrefab = firstPersonPrefab;
+                if (rifleWeaponId == GenesisWeaponLoadout.Shotgun
+                    || rifleWeaponId == GenesisWeaponLoadout.AWP
+                    || rifleWeaponId == GenesisWeaponLoadout.AN94
+                    || rifleWeaponId == GenesisWeaponLoadout.M249
+                    || rifleWeaponId == GenesisWeaponLoadout.FAMAS
+                    || rifleWeaponId == GenesisWeaponLoadout.MicroGalilBaxi
+                    || rifleWeaponId == GenesisWeaponLoadout.Gatling
+                    || rifleWeaponId == GenesisWeaponLoadout.AUGA1
+                    || rifleWeaponId == GenesisWeaponLoadout.AK47Ice)
+                {
+                    var recoveredHands = Resources.Load<GameObject>(
+                        "OriginalGame/FirstPerson/M4A1Viewmodel");
+                    if (recoveredHands != null)
+                        animationPrefab = recoveredHands;
+                }
                 var rifleAnimationRoot = Instantiate(
-                    firstPersonPrefab, rifle.transform);
+                    animationPrefab, rifle.transform);
                 rifleAnimationRoot.name = "AnimationRoot_" + resourceName;
+                Transform recoveredWeaponRoot = null;
+                Transform recoveredVisualHierarchyRoot = null;
+                if (rifleWeaponId == GenesisWeaponLoadout.Shotgun)
+                {
+                    rifleAnimationRoot.transform.localPosition = Vector3.zero;
+                    rifleAnimationRoot.transform.localRotation =
+                        Quaternion.identity;
+
+                    // Shotgun01's recovered arm meshes and bind pose are
+                    // corrupt even before animation sampling. Keep every
+                    // intact firearm mesh/material from that closure, but pair
+                    // them with the already validated recovered M4A1 hands.
+                    // This avoids synthetic geometry and prevents the torn,
+                    // bulbous forearms seen in the WebGL frame.
+                    var handsReferenceWeapon = rifleAnimationRoot
+                        .GetComponentsInChildren<Transform>(true)
+                        .FirstOrDefault(item =>
+                            item.name == "Recovered_M4A1_Sopmod");
+                    var shotgunVisual = Instantiate(
+                        firstPersonPrefab, rifleAnimationRoot.transform);
+                    shotgunVisual.name = "Recovered_Shotgun01_Visual";
+                    shotgunVisual.transform.localPosition = Vector3.zero;
+                    shotgunVisual.transform.localRotation = Quaternion.identity;
+                    foreach (var damagedArm in shotgunVisual
+                        .GetComponentsInChildren<SkinnedMeshRenderer>(true))
+                        damagedArm.enabled = false;
+                    var shotgunAnimation = shotgunVisual.GetComponent<Animation>();
+                    if (shotgunAnimation != null)
+                        shotgunAnimation.enabled = false;
+                    AlignRecoveredShotgunToHands(
+                        handsReferenceWeapon, shotgunVisual);
+                    foreach (var firearmPart in rifleAnimationRoot
+                        .GetComponentsInChildren<MeshRenderer>(true))
+                    {
+                        if (!firearmPart.transform.IsChildOf(
+                            shotgunVisual.transform))
+                            firearmPart.enabled = false;
+                    }
+                    recoveredWeaponRoot = shotgunVisual.transform;
+                }
+                else if (rifleWeaponId == GenesisWeaponLoadout.AWP)
+                {
+                    rifleAnimationRoot.transform.localPosition = Vector3.zero;
+                    rifleAnimationRoot.transform.localRotation =
+                        Quaternion.identity;
+                    var handsReferenceWeapon = rifleAnimationRoot
+                        .GetComponentsInChildren<Transform>(true)
+                        .FirstOrDefault(item =>
+                            item.name == "Recovered_M4A1_Sopmod");
+                    var awpVisual = Instantiate(
+                        firstPersonPrefab, rifleAnimationRoot.transform);
+                    awpVisual.name = "Recovered_AWP_Visual";
+                    awpVisual.transform.localPosition = Vector3.zero;
+                    awpVisual.transform.localRotation = Quaternion.identity;
+                    foreach (var archivedArm in rifleAnimationRoot
+                        .GetComponentsInChildren<SkinnedMeshRenderer>(true))
+                        archivedArm.enabled = false;
+                    var archivedAnimation = awpVisual.GetComponent<Animation>();
+                    if (archivedAnimation != null)
+                        archivedAnimation.enabled = false;
+                    AlignRecoveredWeaponToHands(
+                        handsReferenceWeapon,
+                        awpVisual,
+                        "Recovered_AWP_Candidate",
+                        1.34f);
+                    foreach (var m4Part in rifleAnimationRoot
+                        .GetComponentsInChildren<MeshRenderer>(true))
+                    {
+                        if (!m4Part.transform.IsChildOf(awpVisual.transform))
+                            m4Part.enabled = false;
+                    }
+                    recoveredWeaponRoot = awpVisual
+                        .GetComponentsInChildren<Transform>(true)
+                        .FirstOrDefault(item =>
+                            item.name == "Recovered_AWP_Candidate");
+                    recoveredVisualHierarchyRoot = awpVisual.transform;
+                }
+                else if (rifleWeaponId == GenesisWeaponLoadout.AN94)
+                {
+                    rifleAnimationRoot.transform.localPosition = Vector3.zero;
+                    rifleAnimationRoot.transform.localRotation =
+                        Quaternion.identity;
+
+                    // Both archived first-person arm rigs have visibly broken
+                    // skin bind poses in WebGL. Instantiate the recovered AN94
+                    // firearm closure directly, align it against the original
+                    // M4 weapon socket, and suppress every damaged arm mesh.
+                    // This keeps the authentic gun and animation motion while
+                    // preventing torn palms/sleeves from covering the weapon.
+                    var handsReferenceWeapon = rifleAnimationRoot
+                        .GetComponentsInChildren<Transform>(true)
+                        .FirstOrDefault(item =>
+                            item.name == "Recovered_M4A1_Sopmod");
+                    var an94Model = Resources.Load<GameObject>(
+                        "OriginalGame/AN94");
+                    var an94Visual = Instantiate(
+                        an94Model, rifleAnimationRoot.transform);
+                    an94Visual.name = "Recovered_AN94_Candidate";
+                    an94Visual.transform.localPosition = Vector3.zero;
+                    an94Visual.transform.localRotation =
+                        Quaternion.Euler(0f, 0f, 90f);
+                    foreach (var archivedArm in rifleAnimationRoot
+                        .GetComponentsInChildren<SkinnedMeshRenderer>(true))
+                        archivedArm.enabled = false;
+                    AlignRecoveredWeaponToHands(
+                        handsReferenceWeapon,
+                        an94Visual,
+                        "Recovered_AN94_Candidate",
+                        0.86f);
+                    foreach (var m4Part in rifleAnimationRoot
+                        .GetComponentsInChildren<MeshRenderer>(true))
+                    {
+                        if (!m4Part.transform.IsChildOf(an94Visual.transform))
+                            m4Part.enabled = false;
+                    }
+                    recoveredWeaponRoot = an94Visual.transform;
+                    recoveredVisualHierarchyRoot = an94Visual.transform;
+                }
+                else if (rifleWeaponId == GenesisWeaponLoadout.M249)
+                {
+                    rifleAnimationRoot.transform.localPosition = Vector3.zero;
+                    rifleAnimationRoot.transform.localRotation =
+                        Quaternion.identity;
+                    var handsReferenceWeapon = rifleAnimationRoot
+                        .GetComponentsInChildren<Transform>(true)
+                        .FirstOrDefault(item =>
+                            item.name == "Recovered_M4A1_Sopmod");
+                    var m249Visual = Instantiate(
+                        firstPersonPrefab, rifleAnimationRoot.transform);
+                    m249Visual.name = "Recovered_M249_Candidate";
+                    m249Visual.transform.localPosition = Vector3.zero;
+                    // The recovered source's long axis is +Y; rotate it onto
+                    // Unity's first-person forward axis before socket fitting.
+                    m249Visual.transform.localRotation =
+                        Quaternion.Euler(90f, 0f, 0f);
+                    foreach (var archivedArm in rifleAnimationRoot
+                        .GetComponentsInChildren<SkinnedMeshRenderer>(true))
+                        archivedArm.enabled = false;
+                    AlignRecoveredWeaponToHands(
+                        handsReferenceWeapon,
+                        m249Visual,
+                        "Recovered_M249_Candidate",
+                        0.94f);
+                    foreach (var m4Part in rifleAnimationRoot
+                        .GetComponentsInChildren<MeshRenderer>(true))
+                    {
+                        if (!m4Part.transform.IsChildOf(m249Visual.transform))
+                            m4Part.enabled = false;
+                    }
+                    recoveredWeaponRoot = m249Visual.transform;
+                    recoveredVisualHierarchyRoot = m249Visual.transform;
+                }
+                else if (rifleWeaponId == GenesisWeaponLoadout.FAMAS)
+                {
+                    rifleAnimationRoot.transform.localPosition = Vector3.zero;
+                    rifleAnimationRoot.transform.localRotation =
+                        Quaternion.identity;
+                    var handsReferenceWeapon = rifleAnimationRoot
+                        .GetComponentsInChildren<Transform>(true)
+                        .FirstOrDefault(item =>
+                            item.name == "Recovered_M4A1_Sopmod");
+                    var famasVisual = Instantiate(
+                        firstPersonPrefab, rifleAnimationRoot.transform);
+                    famasVisual.name = "Recovered_FAMAS_Candidate";
+                    famasVisual.transform.localPosition = Vector3.zero;
+                    famasVisual.transform.localRotation = Quaternion.identity;
+                    foreach (var archivedArm in rifleAnimationRoot
+                        .GetComponentsInChildren<SkinnedMeshRenderer>(true))
+                        archivedArm.enabled = false;
+                    AlignRecoveredWeaponToHands(
+                        handsReferenceWeapon,
+                        famasVisual,
+                        "Recovered_FAMAS_Candidate",
+                        0.9f);
+                    foreach (var m4Part in rifleAnimationRoot
+                        .GetComponentsInChildren<MeshRenderer>(true))
+                    {
+                        if (!m4Part.transform.IsChildOf(famasVisual.transform))
+                            m4Part.enabled = false;
+                    }
+                    recoveredWeaponRoot = famasVisual.transform;
+                    recoveredVisualHierarchyRoot = famasVisual.transform;
+                }
+                else if (rifleWeaponId == GenesisWeaponLoadout.MicroGalilBaxi)
+                {
+                    rifleAnimationRoot.transform.localPosition = Vector3.zero;
+                    rifleAnimationRoot.transform.localRotation =
+                        Quaternion.identity;
+                    var handsReferenceWeapon = rifleAnimationRoot
+                        .GetComponentsInChildren<Transform>(true)
+                        .FirstOrDefault(item =>
+                            item.name == "Recovered_M4A1_Sopmod");
+                    var microGalilVisual = Instantiate(
+                        firstPersonPrefab, rifleAnimationRoot.transform);
+                    microGalilVisual.name =
+                        "Recovered_MicroGalilBaxi_Candidate";
+                    microGalilVisual.transform.localPosition = Vector3.zero;
+                    microGalilVisual.transform.localRotation =
+                        Quaternion.identity;
+                    foreach (var archivedArm in rifleAnimationRoot
+                        .GetComponentsInChildren<SkinnedMeshRenderer>(true))
+                        archivedArm.enabled = false;
+                    AlignRecoveredWeaponToHands(
+                        handsReferenceWeapon,
+                        microGalilVisual,
+                        "Recovered_MicroGalilBaxi_Candidate",
+                        0.56f);
+                    foreach (var m4Part in rifleAnimationRoot
+                        .GetComponentsInChildren<MeshRenderer>(true))
+                    {
+                        if (!m4Part.transform.IsChildOf(
+                            microGalilVisual.transform))
+                            m4Part.enabled = false;
+                    }
+                    recoveredWeaponRoot = microGalilVisual.transform;
+                    recoveredVisualHierarchyRoot = microGalilVisual.transform;
+                }
+                else if (rifleWeaponId == GenesisWeaponLoadout.Gatling)
+                {
+                    rifleAnimationRoot.transform.localPosition = Vector3.zero;
+                    rifleAnimationRoot.transform.localRotation =
+                        Quaternion.identity;
+                    var handsReferenceWeapon = rifleAnimationRoot
+                        .GetComponentsInChildren<Transform>(true)
+                        .FirstOrDefault(item =>
+                            item.name == "Recovered_M4A1_Sopmod");
+                    var gatlingVisual = Instantiate(
+                        firstPersonPrefab, rifleAnimationRoot.transform);
+                    gatlingVisual.name = "Recovered_Gatling_Visual";
+                    gatlingVisual.transform.localPosition = Vector3.zero;
+                    // The recovered MAX scene's barrel axis arrives on Unity Y.
+                    // Rotate it onto the viewmodel's forward Z axis before the
+                    // bounds-based hand alignment runs.
+                    gatlingVisual.transform.localRotation =
+                        Quaternion.Euler(90f, 180f, 0f);
+                    foreach (var archivedArm in rifleAnimationRoot
+                        .GetComponentsInChildren<SkinnedMeshRenderer>(true))
+                        archivedArm.enabled = false;
+                    AlignRecoveredWeaponToHands(
+                        handsReferenceWeapon,
+                        gatlingVisual,
+                        "Recovered_Gatling_Visual",
+                        1.08f);
+                    foreach (var m4Part in rifleAnimationRoot
+                        .GetComponentsInChildren<MeshRenderer>(true))
+                    {
+                        if (!m4Part.transform.IsChildOf(gatlingVisual.transform))
+                            m4Part.enabled = false;
+                    }
+                    gatlingBarrelMotor = gatlingVisual
+                        .AddComponent<GenesisGatlingBarrelMotor>();
+                    if (!gatlingBarrelMotor.Configure(gatlingVisual.transform))
+                        Debug.LogError(
+                            "[GenesisGatling] Barrel assembly anchor missing.");
+                    recoveredWeaponRoot = gatlingVisual.transform;
+                    recoveredVisualHierarchyRoot = gatlingVisual.transform;
+                }
+                else if (rifleWeaponId == GenesisWeaponLoadout.AUGA1)
+                {
+                    rifleAnimationRoot.transform.localPosition = Vector3.zero;
+                    rifleAnimationRoot.transform.localRotation =
+                        Quaternion.identity;
+                    var handsReferenceWeapon = rifleAnimationRoot
+                        .GetComponentsInChildren<Transform>(true)
+                        .FirstOrDefault(item =>
+                            item.name == "Recovered_M4A1_Sopmod");
+                    var augVisual = Instantiate(
+                        firstPersonPrefab, rifleAnimationRoot.transform);
+                    augVisual.name = "Recovered_AUGA1_Candidate";
+                    augVisual.transform.localPosition = Vector3.zero;
+                    // The recovered Alternativa3D model's barrel axis arrives
+                    // on Unity Y. The first WebGL framing pass proved that
+                    // mapping it to camera-forward Z presents the rifle end-on;
+                    // map it to the viewmodel's horizontal X axis instead.
+                    augVisual.transform.localRotation =
+                        Quaternion.Euler(0f, 0f, -90f);
+                    foreach (var archivedArm in rifleAnimationRoot
+                        .GetComponentsInChildren<SkinnedMeshRenderer>(true))
+                        archivedArm.enabled = false;
+                    foreach (var renderer in augVisual
+                        .GetComponentsInChildren<Renderer>(true))
+                    {
+                        if (renderer.name.IndexOf(
+                                "texiao", StringComparison.OrdinalIgnoreCase)
+                            >= 0)
+                            renderer.enabled = false;
+                    }
+                    AlignRecoveredWeaponToHands(
+                        handsReferenceWeapon,
+                        augVisual,
+                        "Recovered_AUGA1_Candidate",
+                        0.68f);
+                    foreach (var m4Part in rifleAnimationRoot
+                        .GetComponentsInChildren<MeshRenderer>(true))
+                    {
+                        if (!m4Part.transform.IsChildOf(augVisual.transform))
+                            m4Part.enabled = false;
+                    }
+                    recoveredWeaponRoot = augVisual.transform;
+                    recoveredVisualHierarchyRoot = augVisual.transform;
+                }
+                else if (rifleWeaponId == GenesisWeaponLoadout.AK47Ice)
+                {
+                    rifleAnimationRoot.transform.localPosition = Vector3.zero;
+                    rifleAnimationRoot.transform.localRotation =
+                        Quaternion.identity;
+                    var handsReferenceWeapon = rifleAnimationRoot
+                        .GetComponentsInChildren<Transform>(true)
+                        .FirstOrDefault(item =>
+                            item.name == "Recovered_M4A1_Sopmod");
+                    var ak47Visual = Instantiate(
+                        firstPersonPrefab, rifleAnimationRoot.transform);
+                    ak47Visual.name = "Recovered_AK47Ice_Candidate";
+                    ak47Visual.transform.localPosition = Vector3.zero;
+                    ak47Visual.transform.localRotation = Quaternion.identity;
+                    foreach (var archivedArm in rifleAnimationRoot
+                        .GetComponentsInChildren<SkinnedMeshRenderer>(true))
+                        archivedArm.enabled = false;
+                    foreach (var renderer in ak47Visual
+                        .GetComponentsInChildren<Renderer>(true))
+                    {
+                        if (renderer.name.IndexOf(
+                                "texiao", StringComparison.OrdinalIgnoreCase)
+                            >= 0)
+                            renderer.enabled = false;
+                    }
+                    AlignRecoveredWeaponToHands(
+                        handsReferenceWeapon,
+                        ak47Visual,
+                        "Recovered_AK47Ice_Candidate",
+                        0.88f);
+                    foreach (var m4Part in rifleAnimationRoot
+                        .GetComponentsInChildren<MeshRenderer>(true))
+                    {
+                        if (!m4Part.transform.IsChildOf(ak47Visual.transform))
+                            m4Part.enabled = false;
+                    }
+                    recoveredWeaponRoot = ak47Visual.transform;
+                    recoveredVisualHierarchyRoot = ak47Visual.transform;
+                }
                 rifle.transform.localPosition =
                     rifleWeaponId == GenesisWeaponLoadout.M4A1
                         ? new Vector3(0.08f, -0.14f, 0.12f)
@@ -1424,17 +1881,18 @@ namespace GenesisSoldierSoul.Multiplayer
                     if (wield != null && rifleAnimation.GetClip("Wield") == null)
                         rifleAnimation.AddClip(wield, "Wield");
                     rifleAnimation.Stop();
-                    var idle = rifleAnimation["Idle01"];
-                    if (idle != null)
-                        idle.wrapMode = WrapMode.Loop;
-                    rifleAnimation.Play("Idle01");
-                    rifleAnimation.Sample();
+                    PlayRifleIdle();
                 }
-                rifleMuzzle = rifle
-                    .GetComponentsInChildren<Transform>(true)
-                    .FirstOrDefault(child => child.name == "Muzzle");
+                rifleMuzzle = recoveredVisualHierarchyRoot != null
+                    ? recoveredVisualHierarchyRoot
+                        .GetComponentsInChildren<Transform>(true)
+                        .FirstOrDefault(child => child.name == "Muzzle")
+                    : rifle.GetComponentsInChildren<Transform>(true)
+                        .FirstOrDefault(child => child.name == "Muzzle");
                 rifle.GetComponent<GenesisViewmodelRigStructure>().Configure(
-                    rifleAnimationRoot.transform, null, rifleMuzzle);
+                    rifleAnimationRoot.transform,
+                    recoveredWeaponRoot,
+                    rifleMuzzle);
             }
             else if (selectedWeapon == WeaponSlot.Knife)
             {
@@ -1488,6 +1946,56 @@ namespace GenesisSoldierSoul.Multiplayer
                 skinned.updateWhenOffscreen = true;
         }
 
+        public static void AlignRecoveredShotgunToHands(
+            Transform referenceWeapon,
+            GameObject shotgunVisual)
+        {
+            AlignRecoveredWeaponToHands(
+                referenceWeapon, shotgunVisual, "WeaponMainMesh", 1.08f);
+        }
+
+        public static void AlignRecoveredWeaponToHands(
+            Transform referenceWeapon,
+            GameObject recoveredVisual,
+            string recoveredWeaponRootName,
+            float relativeLength)
+        {
+            if (referenceWeapon == null || recoveredVisual == null)
+                return;
+            var referenceRenderers = referenceWeapon
+                .GetComponentsInChildren<Renderer>(true)
+                .Where(item => item.enabled)
+                .ToArray();
+            var recoveredRoot = recoveredVisual
+                .GetComponentsInChildren<Transform>(true)
+                .FirstOrDefault(item => item.name == recoveredWeaponRootName);
+            var recoveredRenderers = recoveredRoot == null
+                ? new Renderer[0]
+                : recoveredRoot.GetComponentsInChildren<Renderer>(true)
+                    .Where(item => item.enabled)
+                    .ToArray();
+            if (referenceRenderers.Length == 0 || recoveredRenderers.Length == 0)
+                return;
+            var referenceBounds = referenceRenderers[0].bounds;
+            foreach (var renderer in referenceRenderers.Skip(1))
+                referenceBounds.Encapsulate(renderer.bounds);
+            var recoveredBounds = recoveredRenderers[0].bounds;
+            foreach (var renderer in recoveredRenderers.Skip(1))
+                recoveredBounds.Encapsulate(renderer.bounds);
+            var referenceLength = Mathf.Max(referenceBounds.size.x,
+                Mathf.Max(referenceBounds.size.y, referenceBounds.size.z));
+            var recoveredLength = Mathf.Max(recoveredBounds.size.x,
+                Mathf.Max(recoveredBounds.size.y, recoveredBounds.size.z));
+            if (recoveredLength > 0.0001f)
+                recoveredVisual.transform.localScale *=
+                    referenceLength * relativeLength / recoveredLength;
+            recoveredBounds = recoveredRenderers[0].bounds;
+            foreach (var renderer in recoveredRenderers.Skip(1))
+                recoveredBounds.Encapsulate(renderer.bounds);
+            recoveredVisual.transform.position +=
+                referenceBounds.center - recoveredBounds.center;
+        }
+
         private void CenterRecoveredShotgunViewmodel()
         {
             if (rifleWeaponId != GenesisWeaponLoadout.Shotgun
@@ -1495,16 +2003,29 @@ namespace GenesisSoldierSoul.Multiplayer
                 || !rifle.activeInHierarchy
                 || rifle.transform.parent == null)
                 return;
-            var renderers = rifle.GetComponentsInChildren<Renderer>(true)
+            var allRenderers = rifle.GetComponentsInChildren<Renderer>(true)
                 .Where(item => item.enabled && item.gameObject.activeInHierarchy)
                 .ToArray();
+            // Frame the actual firearm mesh. The archived arm skeleton has very
+            // large animated bounds; centring the combined rig pushes the gun
+            // below the viewport even though the resource is loaded correctly.
+            var firearmRoot = rifle.GetComponentsInChildren<Transform>(true)
+                .FirstOrDefault(item => item.name == "WeaponMainMesh");
+            var renderers = firearmRoot == null
+                ? new Renderer[0]
+                : firearmRoot.GetComponentsInChildren<Renderer>(true)
+                    .Where(item => item.enabled
+                        && item.gameObject.activeInHierarchy)
+                    .ToArray();
+            if (renderers.Length == 0)
+                renderers = allRenderers;
             if (renderers.Length == 0)
                 return;
             var bounds = renderers[0].bounds;
             for (var index = 1; index < renderers.Length; index += 1)
                 bounds.Encapsulate(renderers[index].bounds);
             var targetCenter = rifle.transform.parent.TransformPoint(
-                new Vector3(0.33f, -0.22f, 0.82f));
+                new Vector3(0.26f, -0.2f, 1.6f));
             rifle.transform.position += targetCenter - bounds.center;
         }
 
@@ -1644,13 +2165,41 @@ namespace GenesisSoldierSoul.Multiplayer
             pistolDeployAudio = Resources.Load<AudioClip>("music/deploy");
             var rifleAudioPath = rifleWeaponId == GenesisWeaponLoadout.M16
                 ? "OriginalGame/Audio/M16/"
+                : rifleWeaponId == GenesisWeaponLoadout.AN94
+                    ? "OriginalGame/Audio/AN94/"
+                : rifleWeaponId == GenesisWeaponLoadout.M249
+                    ? "OriginalGame/Audio/M249/"
+                : rifleWeaponId == GenesisWeaponLoadout.FAMAS
+                    ? "OriginalGame/Audio/FAMAS/"
+                : rifleWeaponId == GenesisWeaponLoadout.MicroGalilBaxi
+                    ? "OriginalGame/Audio/MicroGalilBaxi/"
+                : rifleWeaponId == GenesisWeaponLoadout.Gatling
+                    ? "OriginalGame/Audio/Gatling/"
+                : rifleWeaponId == GenesisWeaponLoadout.AUGA1
+                    ? "OriginalGame/Audio/AUGA1/"
+                : rifleWeaponId == GenesisWeaponLoadout.AK47Ice
+                    ? "OriginalGame/Audio/AK47Ice/"
+                : rifleWeaponId == GenesisWeaponLoadout.AWP
+                    ? "OriginalGame/Audio/AWM/"
                 : rifleWeaponId == GenesisWeaponLoadout.Shotgun
                     ? "OriginalGame/Audio/Shotgun01/"
                     : "OriginalGame/Audio/M4A1/";
             rifleFireAudio = Resources.Load<AudioClip>(rifleAudioPath + "fire");
             rifleReloadAudio = Resources.Load<AudioClip>(rifleAudioPath + "reload");
             rifleDeployAudio = Resources.Load<AudioClip>(rifleAudioPath + "deploy");
-            slashAudio = Resources.Load<AudioClip>("music/slash");
+            var meleeAudioPath = GenesisWeaponLoadout.Melee
+                == GenesisWeaponLoadout.HandAxe
+                    ? "OriginalGame/Audio/HandAxe/"
+                    : GenesisWeaponLoadout.Melee == GenesisWeaponLoadout.Nepal
+                        ? "OriginalGame/Audio/Nepal/"
+                        : string.Empty;
+            slashAudio = Resources.Load<AudioClip>(string.IsNullOrEmpty(meleeAudioPath)
+                ? "music/slash"
+                : meleeAudioPath + "slash");
+            meleeDeployAudio = Resources.Load<AudioClip>(
+                string.IsNullOrEmpty(meleeAudioPath)
+                    ? "music/slash"
+                    : meleeAudioPath + "deploy");
             hitAudio =
                 Resources.Load<AudioClip>("OriginalGame/Audio/Genesis/bullet_hit");
             harmedAudio =
@@ -1851,7 +2400,7 @@ namespace GenesisSoldierSoul.Multiplayer
                 grenade.SetActive(
                     weapon == WeaponSlot.Grenade && alive && !roundOver);
             if (weapon == WeaponSlot.Rifle && rifleAnimation != null)
-                rifleAnimation.Play("Idle01");
+                PlayRifleIdle();
             if (weapon == WeaponSlot.Pistol && pistolAnimation != null)
                 pistolAnimation.Play("Idle01");
             if (weapon == WeaponSlot.Grenade && grenadeAnimation != null)
@@ -1924,7 +2473,7 @@ namespace GenesisSoldierSoul.Multiplayer
                     ? pistolDeployAudio
                     : weapon == WeaponSlot.Grenade
                         ? rifleDeployAudio
-                        : slashAudio;
+                        : meleeDeployAudio;
             PlayCombatSound(deploy, 0.78f);
 
             elapsed = 0f;
@@ -2098,7 +2647,8 @@ namespace GenesisSoldierSoul.Multiplayer
         private void UpdateScopePresentation()
         {
             var active = scoped
-                && rifleWeaponId == GenesisWeaponLoadout.AWP
+                && (rifleWeaponId == GenesisWeaponLoadout.AWP
+                    || rifleWeaponId == GenesisWeaponLoadout.AUGA1)
                 && selectedWeapon == WeaponSlot.Rifle
                 && alive
                 && !roundOver
@@ -2108,7 +2658,7 @@ namespace GenesisSoldierSoul.Multiplayer
                 viewCamera.fieldOfView = Mathf.MoveTowards(
                     viewCamera.fieldOfView,
                     active
-                        ? 24f
+                        ? rifleWeaponId == GenesisWeaponLoadout.AWP ? 24f : 32f
                         : defaultViewFieldOfView + sprintBlend * 3f,
                     Time.unscaledDeltaTime * 125f);
             }
@@ -2509,16 +3059,12 @@ namespace GenesisSoldierSoul.Multiplayer
             emission.rateOverTime = 0f;
             particles.Emit(blood ? 16 : 11);
             var renderer = particles.GetComponent<ParticleSystemRenderer>();
-            var shader = Shader.Find("Sprites/Default");
-            if (renderer != null && shader != null)
+            var material = Resources.Load<Material>(
+                blood
+                    ? "OriginalGame/Effects/BloodImpact"
+                    : "OriginalGame/Effects/BulletImpact");
+            if (renderer != null && material != null)
             {
-                var material = new Material(shader);
-                material.name = blood
-                    ? "Recovered Blood Material"
-                    : "Recovered Impact Material";
-                material.color = blood
-                    ? new Color(0.52f, 0.012f, 0.004f, 0.95f)
-                    : new Color(1f, 0.58f, 0.12f, 0.9f);
                 renderer.material = material;
             }
             particles.Play(true);
@@ -2666,9 +3212,36 @@ namespace GenesisSoldierSoul.Multiplayer
                 || reloading
                 || selectedWeapon != WeaponSlot.Rifle)
                 yield break;
-            rifleAnimation.CrossFade("Idle01", 0.12f);
+            PlayRifleIdle(0.12f);
             if (weaponAction == GenesisWeaponActionState.Firing)
                 weaponActions.Transition(GenesisWeaponActionState.Ready);
+        }
+
+        private void PlayRifleIdle(float fadeLength = 0f)
+        {
+            if (rifleAnimation == null
+                || rifleAnimation.GetClip("Idle01") == null)
+                return;
+            var idle = rifleAnimation["Idle01"];
+            idle.wrapMode = WrapMode.Loop;
+            if (rifleWeaponId == GenesisWeaponLoadout.AWP)
+            {
+                // The archived AWP idle contains a long legacy camera/rig
+                // excursion. Its validated quarter-frame is the stable held
+                // pose; freeze there between fire/reload actions so the real
+                // rifle does not wander completely outside the viewmodel
+                // camera in WebGL.
+                rifleAnimation.Play("Idle01");
+                idle.time = Mathf.Min(0.35f, idle.length * 0.25f);
+                idle.speed = 0f;
+                rifleAnimation.Sample();
+                return;
+            }
+            idle.speed = 1f;
+            if (fadeLength > 0f)
+                rifleAnimation.CrossFade("Idle01", fadeLength);
+            else
+                rifleAnimation.Play("Idle01");
         }
 
         private void PlayPistolAnimation(string clipName, float fadeLength)
@@ -2705,18 +3278,23 @@ namespace GenesisSoldierSoul.Multiplayer
 
         private void PlayKnifeAnimation()
         {
-            if (knifeAnimation == null
-                || knifeAnimation.GetClip("Throw") == null)
+            if (knifeAnimation == null)
             {
                 if (weaponAction == GenesisWeaponActionState.Melee)
                     weaponActions.Transition(GenesisWeaponActionState.Ready);
                 return;
             }
-            var state = knifeAnimation["Throw"];
-            state.wrapMode = WrapMode.Once;
-            knifeAnimation.CrossFade("Throw", 0.025f);
+
+            // The recovered pistol rig's Throw clip drives its arm through the
+            // weapon camera because that clip was authored for a different
+            // hierarchy. Keep the intact hand in its grip pose and perform the
+            // slash on the complete viewmodel root in UpdateFirstPersonMotion.
+            // This retains the recovered mesh/material without the screen-wide
+            // forearm deformation seen in WebGL.
+            if (knifeAnimation.GetClip("Idle01") != null)
+                knifeAnimation.CrossFade("Idle01", 0.04f);
             StartCoroutine(ReturnKnifeToIdle(
-                state.length, weaponActionRevision));
+                0.46f, weaponActionRevision));
         }
 
         private IEnumerator ReturnKnifeToIdle(float delay, int actionRevision)
@@ -2770,11 +3348,11 @@ namespace GenesisSoldierSoul.Multiplayer
             reloading = false;
             if (selectedWeapon == weapon)
             {
-                var animation = weapon == WeaponSlot.Rifle
-                    ? rifleAnimation
-                    : pistolAnimation;
-                if (animation != null && animation.GetClip("Idle01") != null)
-                    animation.CrossFade("Idle01", 0.12f);
+                if (weapon == WeaponSlot.Rifle)
+                    PlayRifleIdle(0.12f);
+                else if (pistolAnimation != null
+                    && pistolAnimation.GetClip("Idle01") != null)
+                    pistolAnimation.CrossFade("Idle01", 0.12f);
             }
             weaponActions.Transition(GenesisWeaponActionState.Ready);
             reloadRoutine = null;
@@ -3144,18 +3722,9 @@ namespace GenesisSoldierSoul.Multiplayer
 #if UNITY_WEBGL && !UNITY_EDITOR
             if (viewCamera == null || player == null)
                 return;
+            Cursor.visible = GenesisIsPointerLocked() == 0;
             var mouseX = GenesisConsumeMouseDeltaX();
             var mouseY = GenesisConsumeMouseDeltaY();
-            var mousePosition = Input.mousePosition;
-            if (Mathf.Approximately(mouseX, 0f)
-                && Mathf.Approximately(mouseY, 0f)
-                && hasBrowserMousePosition)
-            {
-                mouseX = mousePosition.x - previousBrowserMousePosition.x;
-                mouseY = mousePosition.y - previousBrowserMousePosition.y;
-            }
-            previousBrowserMousePosition = mousePosition;
-            hasBrowserMousePosition = true;
             if (Mathf.Approximately(mouseX, 0f)
                 && Mathf.Approximately(mouseY, 0f))
                 return;
@@ -3225,7 +3794,12 @@ namespace GenesisSoldierSoul.Multiplayer
                     ? "PISTOL\nRELOADING"
                     : "PISTOL\n" + pistolMagazine + "  /  " + pistolReserve;
             else if (selectedWeapon == WeaponSlot.Knife)
-                ammoText.text = "KNIFE\nREADY";
+                ammoText.text = GenesisWeaponLoadout.Melee
+                        == GenesisWeaponLoadout.HandAxe
+                    ? "MILITARY AXE\nREADY"
+                    : GenesisWeaponLoadout.Melee == GenesisWeaponLoadout.Nepal
+                        ? "NEPAL KNIFE\nREADY"
+                        : "KNIFE\nREADY";
             else
                 ammoText.text = "GRENADE\n" + grenadeCount;
             if (weaponIcon != null)

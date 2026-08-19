@@ -6,6 +6,13 @@ public sealed class GenesisCombatRulesTests
 {
     [TestCase("m4a1", 30, 90, 30, 0.1f, 2.1f)]
     [TestCase("m16", 30, 90, 27, 0.085f, 2.1f)]
+    [TestCase("an94", 30, 90, 31, 0.107f, 2.51f)]
+    [TestCase("m249", 100, 100, 28, 0.08547f, 3.45f)]
+    [TestCase("famas", 25, 75, 29, 0.09091f, 2.7f)]
+    [TestCase("microgalil_baxi", 35, 105, 18, 0.07502f, 2.23f)]
+    [TestCase("gatling", 150, 150, 32, 0.08f, 3.69f)]
+    [TestCase("auga1", 30, 60, 27, 0.09671f, 3.96f)]
+    [TestCase("ak47_bingzuan", 30, 60, 34, 0.10471f, 2.42f)]
     [TestCase("shotgun01", 8, 32, 10, 0.85f, 2.8f)]
     [TestCase("pistol", 12, 48, 34, 0.25f, 1.45f)]
     public void FormalWeaponsExposeCompleteFiniteProfiles(
@@ -40,6 +47,16 @@ public sealed class GenesisCombatRulesTests
             Is.GreaterThan(0.01f));
         Assert.That(Vector3.Angle(Vector3.forward, direction),
             Is.LessThanOrEqualTo(firing + 0.001f));
+    }
+
+    [Test]
+    public void AUGA1ScopeReducesBaseSpread()
+    {
+        var hip = GenesisCombatRules.SpreadDegrees(
+            "auga1", 0f, 0f, false);
+        var scoped = GenesisCombatRules.SpreadDegrees(
+            "auga1", 0f, 0f, true);
+        Assert.That(scoped, Is.LessThan(hip));
     }
 
     [Test]

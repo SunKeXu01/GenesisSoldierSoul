@@ -80,7 +80,7 @@ dotnet build tools/UnrealAssetAudit/UnrealAssetAudit.csproj --configuration Rele
   2>&1 | tee "$output_dir/unreal-asset-audit-build.log"
 dotnet run --project tools/UnrealAssetAudit/UnrealAssetAudit.csproj \
   --configuration Release --no-build -- \
-  --closure "$unreal_analysis_root/package-closure.json" \
+  --closure "$unreal_analysis_root/package-closure-v2.json" \
   --extracted-root "$unreal_extracted_root" \
   --json-output-root "$unreal_json_root" \
   --output "$unreal_analysis_root/uassetapi-audit.json" \
@@ -96,7 +96,7 @@ output_root = pathlib.Path(sys.argv[2])
 report = json.loads(report_path.read_text(encoding="utf-8"))
 summary = report["summary"]
 expected = summary["candidates"]
-if expected != 56 or summary["structural_parsed"] != expected or summary["full_parsed"] != expected:
+if expected != 518 or summary["structural_parsed"] != expected or summary["full_parsed"] != expected:
     raise SystemExit(f"Unreal UObject audit is incomplete: {summary}")
 for record in report["records"]:
     full = record["full_parse"]

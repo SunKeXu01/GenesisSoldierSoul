@@ -82,6 +82,32 @@ class ResourceClosureAuditTests(unittest.TestCase):
             assets = root / "client-restored/Assets/Resources/Test"
             assets.mkdir(parents=True)
             (assets / "clip.wav").write_bytes(b"RIFFfixture")
+            rights = root / "rights"
+            rights.mkdir()
+            evidence = rights / "grant.txt"
+            evidence.write_text("fixture licence grant", encoding="utf-8")
+            _, manifest_sha256 = subject.asset_inventory(
+                root / "client-restored", ["Assets/Resources/Test/clip.wav"]
+            )
+            record = rights / "test.json"
+            record.write_text(json.dumps({
+                "schema_version": 1,
+                "record_type": "formal_resource_rights_approval",
+                "resource_group": "test",
+                "disposition": "approved_for_formal_release",
+                "asset_manifest_sha256": manifest_sha256,
+                "rights_basis": "copyright_owner_license",
+                "grantor": "Fixture Rights Owner",
+                "grantee": "Fixture Project",
+                "license_identifier": "fixture-grant-1",
+                "scope": ["formal_release", "redistribution"],
+                "approved_by": "Fixture Maintainer",
+                "approved_at_utc": "2026-08-09T00:00:00Z",
+                "evidence": [{
+                    "path": "rights/grant.txt",
+                    "sha256": subject.sha256(evidence),
+                }],
+            }), encoding="utf-8")
             policy = root / "policy.json"
             policy.write_text(json.dumps({
                 "approved_rights_records": ["rights/test.json"],
@@ -95,6 +121,38 @@ class ResourceClosureAuditTests(unittest.TestCase):
             report = subject.audit(root, policy)
             self.assertEqual("A", report["groups"][0]["grade"])
             self.assertTrue(report["formalBuildAllowed"])
+            self.assertEqual(
+                "approved_and_verified",
+                report["groups"][0]["rights_record_validation"]["status"],
+            )
+            self.assertEqual(
+                ["policy.json", "rights/grant.txt", "rights/test.json"],
+                [item["path"] for item in report["approvalInputs"]],
+            )
+
+    def test_allowlisted_rights_path_cannot_bypass_record_validation(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            assets = root / "client-restored/Assets/Resources/Test"
+            assets.mkdir(parents=True)
+            (assets / "clip.wav").write_bytes(b"RIFFfixture")
+            policy = root / "policy.json"
+            policy.write_text(json.dumps({
+                "approved_rights_records": ["rights/missing.json"],
+                "formal_resource_groups": [{
+                    "id": "test", "seeds": ["Assets/Resources/Test"],
+                    "source": "fixture", "fallback": "silence",
+                    "rights_record": "rights/missing.json", "intended_runtime": True,
+                }],
+                "reference_groups": [],
+            }), encoding="utf-8")
+            report = subject.audit(root, policy)
+            self.assertEqual("D", report["groups"][0]["grade"])
+            self.assertEqual(
+                "invalid",
+                report["groups"][0]["rights_record_validation"]["status"],
+            )
+            self.assertFalse(report["formalBuildAllowed"])
 
 
 if __name__ == "__main__":

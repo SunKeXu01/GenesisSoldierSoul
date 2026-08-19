@@ -36,11 +36,50 @@ namespace GenesisSoldierSoul.WeaponActions
                 case "ak74m":
                     return Make(weapon, 30, 90, 33, 0.095f, 2.1f,
                         0.26f, 1f, 0.62f, 0.86f, 105f);
+                case "an94":
+                    // Original props.xml: 30-round magazine, 9.34 rounds/sec
+                    // and the dedicated AN94 reload/sound family.
+                    return Make(weapon, 30, 90, 31, 0.107f, 2.51f,
+                        0.2f, 0.9f, 0.52f, 0.76f, 110f);
+                case "m249":
+                    // Original props.xml id=706: 100-round box, 11.7
+                    // rounds/sec, 3.45-second reload and jtjl=28.
+                    return Make(weapon, 100, 100, 28, 1f / 11.7f, 3.45f,
+                        0.34f, 1.2f, 0.72f, 0.92f, 105f);
+                case "famas":
+                    // Original weapon id=311: djrl=25, zdl=75, shesu=11
+                    // and hdjsd=2.7. Keep damage in the restored assault-rifle
+                    // band because the source's gjl display value is not the
+                    // network hit-point value used by this runtime.
+                    return Make(weapon, 25, 75, 29, 1f / 11f, 2.7f,
+                        0.23f, 0.92f, 0.54f, 0.78f, 105f);
+                case "microgalil_baxi":
+                    // Original props.xml id=212: Micro Galil Brazil uses a
+                    // 35-round magazine, 105 reserve, 13.33 rounds/sec,
+                    // 2.23-second reload and jtjl=18.
+                    return Make(weapon, 35, 105, 18, 1f / 13.33f, 2.23f,
+                        0.3f, 1.05f, 0.58f, 0.72f, 92f);
+                case "gatling":
+                    // Original props.xml id=702: 150-round magazine/reserve,
+                    // 12.5 rounds/sec, 3.69-second reload and jtjl=32.
+                    return Make(weapon, 150, 150, 32, 1f / 12.5f, 3.69f,
+                        0.38f, 1.3f, 0.68f, 0.62f, 105f);
+                case "auga1":
+                    // Original props.xml id=306: 30-round magazine, 60 reserve,
+                    // 10.34 rounds/sec and 3.96-second reload. The archived
+                    // jtjl display field is not the runtime hit-point value.
+                    return Make(weapon, 30, 60, 27, 1f / 10.34f, 3.96f,
+                        0.2f, 0.86f, 0.5f, 0.74f, 110f);
+                case "ak47_bingzuan":
+                    // Original props.xml id=326: 30/60 ammunition, 9.55
+                    // rounds/sec and 2.42-second reload for Ice Diamond AK47.
+                    return Make(weapon, 30, 60, 34, 1f / 9.55f, 2.42f,
+                        0.27f, 1.02f, 0.62f, 0.88f, 105f);
                 case "shotgun01":
                     return Make(weapon, 8, 32, 10, 0.85f, 2.8f,
                         0f, 0f, 0f, 1.1f, 55f);
                 case "awp":
-                    return Make(weapon, 10, 30, 85, 1.25f, 2.65f,
+                    return Make(weapon, 10, 20, 85, 1.25f, 3.03f,
                         0.03f, 0.7f, 0.2f, 1.35f, 160f);
                 case "pistol":
                     return Make(weapon, 12, 48, 34, 0.25f, 1.45f,
@@ -77,7 +116,9 @@ namespace GenesisSoldierSoul.WeaponActions
                 return 0f;
             var baseSpread = weapon == "awp" && !scoped
                 ? 1.6f
-                : profile.BaseSpreadDegrees;
+                : weapon == "auga1" && scoped
+                    ? profile.BaseSpreadDegrees * 0.35f
+                    : profile.BaseSpreadDegrees;
             return baseSpread
                 + Mathf.Clamp01(movement) * profile.MovementSpreadDegrees
                 + Mathf.Clamp(recoil, 0f, 2.5f)

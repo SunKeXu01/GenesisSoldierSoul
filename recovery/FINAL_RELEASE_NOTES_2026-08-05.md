@@ -72,8 +72,8 @@ tools/verify_delivery.sh --full
 - 364 个 CF LTC 已全部恢复为 LTA（51,657,941 字节、失败 0、同名明文对精确匹配）；
   LTB 8,721/8,721 已转 GLB，321 个 skin 与源内 818 个骨骼/顶点动画均已恢复；
   两份 RF019 和两份 RF199 已额外严格恢复 28,273 个连续资源（含 SWF/FLV/HTML、CP949 bundle 和 UI layout），RF164/RF266 又完整恢复
-  2 个完整 world v85；`RB001` 又连续恢复 492 个同源 loose 精确区段、28,520,661 字节。
-  当前已无完全未知私有 REZ，5 个精确停止的未知后缀和受 Oodle 限制的 Unreal 内容仍未完成。
+  2 个完整 world v85；`RB001` 的 4 个加密目录表、769 个文件项及目录 MD5 已严格解析验证。
+  2026-08-09 共恢复 974 个 zero-mirror 连续帧，7 个原未分帧 REZ 的未知尾段均已闭合为 0；同日又通过 SHA-256 锁定的 Oodle 解码器恢复两份 Pak v11 的 1,318 个 Oodle 条目，Android 518 个 UAsset/UMap 闭包、完整 UObject 解析与二进制一致性验证全部通过。UTOC/UCAS 的 IoStore 内容仍只保留目录级证据。
   538 个 Flash ATF 已于 2026-08-06 补充转为 538 DDS + 538 RGBA PNG，失败 0。
 - 正式发布许可尚未闭合，正式发布门禁保持关闭；技术 GUID 闭包已修正为七个运行时组 0 缺失。
 - 长时间 Chromium 自动化偶发浏览器层 `UnknownError`；已与 Unity、资源、Shader 和 WebSocket 应用错误分开记录。

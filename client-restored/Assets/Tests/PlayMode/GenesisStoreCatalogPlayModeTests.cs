@@ -28,7 +28,7 @@ public sealed class GenesisStoreCatalogPlayModeTests
         Assert.That(catalog, Is.Not.Null);
         var cards = catalog.transform.Cast<Transform>()
             .Count(item => item.name.StartsWith("Catalog_"));
-        Assert.That(cards, Is.EqualTo(8));
+        Assert.That(cards, Is.EqualTo(17));
         var buttons = catalog.GetComponentsInChildren<Button>(true);
         Assert.That(buttons.Length, Is.EqualTo(1));
         Assert.That(buttons[0].name, Is.EqualTo("CloseRecoveredCatalog"));

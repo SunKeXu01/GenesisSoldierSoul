@@ -9,6 +9,13 @@ using UnityEngine;
 public static class GenesisResourceClosureGate
 {
     [Serializable]
+    private sealed class ApprovalInput
+    {
+        public string path;
+        public string sha256;
+    }
+
+    [Serializable]
     private sealed class ClosureReport
     {
         public string generatedAtUtc;
@@ -16,6 +23,7 @@ public static class GenesisResourceClosureGate
         public bool formalBuildAllowed;
         public int formalGroupCount;
         public int formalAGradeCount;
+        public ApprovalInput[] approvalInputs;
     }
 
     [MenuItem("Genesis/Audit/Formal Resource Closure Gate")]
@@ -44,6 +52,36 @@ public static class GenesisResourceClosureGate
             throw new InvalidOperationException(
                 "Resource policy changed after the audit. Re-run "
                 + "tools/audit_resource_closures.py.");
+
+        if (report.approvalInputs == null || report.approvalInputs.Length == 0)
+            throw new InvalidOperationException(
+                "Resource closure approval input hashes are missing. Re-run "
+                + "tools/audit_resource_closures.py.");
+        var repositoryPrefix = repositoryRoot.TrimEnd(
+            Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)
+            + Path.DirectorySeparatorChar;
+        foreach (var input in report.approvalInputs)
+        {
+            if (input == null || string.IsNullOrEmpty(input.path)
+                || string.IsNullOrEmpty(input.sha256))
+                throw new InvalidOperationException(
+                    "Resource closure approval input is malformed.");
+            var inputPath = Path.GetFullPath(Path.Combine(
+                repositoryRoot,
+                input.path.Replace('/', Path.DirectorySeparatorChar)));
+            if (!inputPath.StartsWith(repositoryPrefix, StringComparison.Ordinal)
+                || !File.Exists(inputPath))
+                throw new InvalidOperationException(
+                    "Resource closure approval input is missing or escapes the repository: "
+                    + input.path);
+            var inputHash = ComputeSha256(inputPath);
+            if (!string.Equals(
+                    inputHash, input.sha256,
+                    StringComparison.OrdinalIgnoreCase))
+                throw new InvalidOperationException(
+                    "Resource closure approval input changed after the audit: "
+                    + input.path);
+        }
 
         DateTime generatedAt;
         if (!DateTime.TryParse(

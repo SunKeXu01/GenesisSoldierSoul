@@ -47,6 +47,15 @@ namespace GenesisSoldierSoul.Multiplayer
         private static IEnumerator ApplyAfterLayout()
         {
             yield return null;
+            var activeScene = SceneManager.GetActiveScene();
+            if (activeScene.name == "Loading1")
+            {
+                // Loading1 is a later fan-made memorial/notice screen, not the
+                // recovered game's home UI. Start the browser build at the
+                // archived lobby instead of presenting that overlay as a home.
+                SceneManager.LoadScene("Ziyou1");
+                yield break;
+            }
             var restoredCloseButtons = 0;
             // AssetRipper preserved the serialized Button.onClick callbacks.
             // The recovered scripts also add the same callback again in Start(),
@@ -89,7 +98,6 @@ namespace GenesisSoldierSoul.Multiplayer
                     + " 个大厅弹窗关闭按钮。");
             }
 
-            var activeScene = SceneManager.GetActiveScene();
             if (activeScene.name == "Ziyou1")
             {
                 GenesisExitGameplayMode();
@@ -111,7 +119,8 @@ namespace GenesisSoldierSoul.Multiplayer
             }
             else if (GenesisMultiplayerBootstrap.IsPlayableMap(activeScene.name))
             {
-                Cursor.visible = false;
+                GenesisEnterGameplayMode();
+                Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
             }
 
@@ -131,9 +140,8 @@ namespace GenesisSoldierSoul.Multiplayer
 
         private static void EnterPyramid()
         {
-            // Install canvas-relative mouse tracking before loading gameplay.
-            // Fullscreen remains an explicit template-button choice and the
-            // WebGL client intentionally does not request Pointer Lock.
+            // Install the original FPS-style relative mouse path before the
+            // map loads. The first click inside gameplay acquires pointer lock.
             GenesisEnterGameplayMode();
             GenesisLobbySession.EnterTraining();
             SceneManager.LoadScene("Pyramid");

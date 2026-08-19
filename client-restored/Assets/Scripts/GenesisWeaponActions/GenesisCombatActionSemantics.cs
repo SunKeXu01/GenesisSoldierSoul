@@ -156,6 +156,11 @@ namespace GenesisSoldierSoul.WeaponActions
                 : requested.Trim().ToLowerInvariant();
             if (weapon == "pistol" || weapon == "knife" || weapon == "grenade"
                 || weapon == "m4a1" || weapon == "m16" || weapon == "ak74m"
+                || weapon == "an94" || weapon == "m249" || weapon == "famas"
+                || weapon == "microgalil_baxi"
+                || weapon == "gatling"
+                || weapon == "auga1"
+                || weapon == "ak47_bingzuan"
                 || weapon == "awp")
                 return weapon;
             if (weapon == "shotgun" || weapon == "shotgun01")
